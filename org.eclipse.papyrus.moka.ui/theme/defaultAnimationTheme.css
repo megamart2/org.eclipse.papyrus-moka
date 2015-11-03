@@ -1,0 +1,10 @@
+:animation{
+	lineColor: red;
+	fillColor: #56f99b;
+	font-weight: bold;
+} 
+
+:suspended{
+	lineColor: #ff0315;
+	fillColor: #fab953;
+}
