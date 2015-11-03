@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:css="http://www.eclipse.org/papyrus/infra/gmfdiag/css" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+  <notation:Diagram xmi:id="_4kmfoDWSEeOZWaRFoNoLkA" type="PapyrusUMLClassDiagram" name="LociL1_Extensions" measurementUnit="Pixel">
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_4kmfoTWSEeOZWaRFoNoLkA"/>
+    <element xmi:type="uml:Package" href="fUML_Semantics.uml#Semantics-Loci-LociL1"/>
+  </notation:Diagram>
+  <css:ModelStyleSheets xmi:id="_cbLtoN9WEeOMLpW5MQOjKg"/>
+</xmi:XMI>
