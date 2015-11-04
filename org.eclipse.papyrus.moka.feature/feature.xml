@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.moka.feature" label="%featureName" provider-name="%providerName" version="1.2.0.qualifier">
+
+   <description url="http://www.example.com/description">
+      MOKA is a framework for executing/simulating debugging fUML models. 
+      It implements:
+       1 - The execution semantics of Foundational UML
+       2 - The extension of the fUML semantics for Composite Structures
+      It provides the following possibilities:
+       1 - Execute models built from the UML subset considered by fUML (i.e. Classes, Actions, Activities, Composite Structures, Parts, Ports and Connectors)
+       2 - At runtime models are animated (i.e. current executed nodes are hilighted in a specific way)
+       3 - At runtime models can be debugged. According to breakpoints placed on a model, the execution engines stops and the UI provides variables snapshops which are presented to the user.
+   </description>
+
+   <copyright url="http://www.example.com/copyright">
+      Copyright (c) 2013 CEA LIST.
+   
+  All rights reserved.   This program and the accompanying materials
+  are made available under the terms of the Eclipse Public License
+  v1.0 which accompanies this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html
+   </copyright>
+
+   <license url="%licenseURL">
+      %license
+   </license>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.async.fuml" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.composites" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.fuml" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.fuml.assertionlibrary" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.fuml.standardlibrary" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.ui" install-size="0" unpack="false" version="0.0.0"/>
+
+   <plugin download-size="0" id="org.eclipse.papyrus.moka.composites.utils" install-size="0" unpack="false" version="0.0.0"/>
+
+</feature>

@@ -25,6 +25,8 @@
 		<module>org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
 		<module>org.eclipse.papyrus.moka.fuml.standardlibrary</module>
 		<!-- target platform -->
+		<module>org.eclipse.papyrus.moka.feature</module>
+		<module>org.eclipse.papyrus.moka.p2</module>
 		<module>targetplatform</module>
 	</modules>
 
