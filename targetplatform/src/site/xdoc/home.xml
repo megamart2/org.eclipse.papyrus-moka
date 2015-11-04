@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document xmlns="http://maven.apache.org/XDOC/2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/XDOC/2.0 http://maven.apache.org/xsd/xdoc-2.0.xsd">
+
+	<properties>
+		<title>SysML Target</title>
+	</properties>
+
+	<body>
+		<section name="Generate the last target platform configuration">
+			<p>Follow the tutorial : <a href="http://codeandme.blogspot.fr/2012/12/tycho-build-8-using-target-platform.html?m=1">http://codeandme.blogspot.fr/2012/12/tycho-build-8-using-target-platform.html?m=1</a></p>
+		</section>
+
+	</body>
+
+</document>
