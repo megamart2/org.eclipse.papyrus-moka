@@ -27,9 +27,22 @@
 		<!-- target platform -->
 		<module>org.eclipse.papyrus.moka.feature</module>
 		<module>org.eclipse.papyrus.moka.p2</module>
+		<module>org.eclipse.papyrus.moka.tests</module>
 		<module>targetplatform</module>
 	</modules>
-
+	<repositories>
+	
+		    <repository>
+	      <id>eclipse-neon</id>
+	      <layout>p2</layout>
+	      <url>http://download.eclipse.org/releases/neon</url>
+	    </repository>
+		<repository>
+			<id>papyrus-neon-nightly-developer</id>
+			<layout>p2</layout>
+			<url>https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/</url>
+		</repository>		
+	</repositories>
 	<properties>
 		<!-- plugins versions -->
 		<!-- use 'mvn versions:display-plugin-updates' to check for the latest -->
@@ -46,6 +59,9 @@
 
 		<!-- Platform properties -->
 		<env.ui.test>-Xms512m -Xmx2048m -XX:MaxPermSize=512M</env.ui.test>
+		
+		<testConfig>CI_TESTS_CONFIG</testConfig> <!-- See org.eclipse.papyrus.junit.framework.classification.ClassificationConfig -->
+	
 	</properties>
 
 	<pluginRepositories>
@@ -231,21 +247,14 @@
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-surefire-plugin</artifactId>
 				<configuration>
+					<testClass>org.eclipse.papyrus.moka.tests.AllTests</testClass>
 					<failIfNoTests>false</failIfNoTests>
 					<useUIHarness>true</useUIHarness>
 					<useUIThread>true</useUIThread>
-					<!--<showEclipseLog>true</showEclipseLog> -->
-					<!--<testFailureIgnore>true</testFailureIgnore> -->
-					<argLine>${ui.test.vmargs}</argLine>
-					<bundleStartLevel>
-						<!-- <bundle> <id>org.eclipse.papyrus.sysml14.service.types</id> <level>6</level> 
-							<autoStart>true</autoStart> </bundle> -->
-						<bundle>
-							<id>org.eclipse.equinox.launcher</id>
-							<level>4</level>
-							<autoStart>true</autoStart>
-						</bundle>
-					</bundleStartLevel>
+					<argLine>-Xms512m -Xmx2048m</argLine>
+					<appArgLine>-testConfig=${testConfig}</appArgLine>
+					<product>org.eclipse.sdk.ide</product>
+					<application>org.eclipse.ui.ide.workbench</application>
 				</configuration>
 			</plugin>
 			<plugin>

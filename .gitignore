@@ -1,9 +1,6 @@
 # ignore all class files
 *.class
 
-# ignore OSGI-INF directories
-OSGI-INF/
-
 # ignore target directories
 target/
 bin/
