@@ -23,6 +23,8 @@ import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Suspend_Event;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
@@ -34,7 +36,6 @@ import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
-import org.eclipse.papyrus.moka.ui.presentation.AnimationUtils;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.Pin;
 
@@ -45,6 +46,11 @@ public class ControlDelegate {
 	 */
 	protected AbstractExecutionEngine engine;
 
+	/**
+	 * The animation manager that is attached to this delegate
+	 */
+	protected AnimationManager manager;
+	
 	/**
 	 * The list of threads implied by current execution
 	 */
@@ -91,7 +97,7 @@ public class ControlDelegate {
 		EObject modelElement = breakpoint.getModelElement();
 		if (modelElement != null) {
 			if (modelElement.eIsProxy()) {
-				modelElement = AnimationUtils.resolve(modelElement);
+				//modelElement = AnimationManager.resolve(modelElement);
 			}
 			this.elementsWithBreakpoints.add(modelElement);
 		}
@@ -107,7 +113,7 @@ public class ControlDelegate {
 		EObject modelElement = breakpoint.getModelElement();
 		if (modelElement != null) {
 			if (modelElement.eIsProxy()) {
-				modelElement = AnimationUtils.resolve(modelElement);
+				//modelElement = AnimationManager.resolve(modelElement);
 			}
 			this.elementsWithBreakpoints.remove(modelElement);
 		}
@@ -261,28 +267,26 @@ public class ControlDelegate {
 	}
 
 	protected void animate(EObject element) {
-		try {
 			// If the element is an activity edge,
 			// Also animates the source, in the case where it is a pin
 			if (element instanceof ActivityEdge) {
 				ActivityEdge edge = (ActivityEdge) element;
 				if (edge.getSource() instanceof Pin) {
-					if (AnimationUtils.getInstance().diagramsExistFor(edge.getSource())) {
-						AnimationUtils.getInstance().addAnimationMarker(edge.getSource());
+					//if (AnimationManager.getInstance().diagramsExistFor(edge.getSource())) {
+						/*AnimationManager.getInstance().addAnimationMarker(edge.getSource());
 						Thread.sleep(MokaConstants.MOKA_ANIMATION_DELAY);
-						AnimationUtils.getInstance().removeAnimationMarker(edge.getSource());
-					}
+						AnimationManager.getInstance().removeAnimationMarker(edge.getSource());*/
+						AnimationManager.getInstance().render(edge.getSource(), AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
+					//}
 				}
 			}
 			// Animates the element
-			if ((AnimationUtils.getInstance().diagramsExistFor(element))) {
-				AnimationUtils.getInstance().addAnimationMarker(element);
+			//if ((AnimationManager.getInstance().diagramsExistFor(element))) {
+				/*AnimationManager.getInstance().addAnimationMarker(element);
 				Thread.sleep(MokaConstants.MOKA_ANIMATION_DELAY);
-				AnimationUtils.getInstance().removeAnimationMarker(element);
-			}
-		} catch (InterruptedException e) {
-			Activator.log.error(e);
-		}
+				AnimationManager.getInstance().removeAnimationMarker(element);*/
+				AnimationManager.getInstance().render(element, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
+			//}
 	}
 
 	public void waitForTermination() {

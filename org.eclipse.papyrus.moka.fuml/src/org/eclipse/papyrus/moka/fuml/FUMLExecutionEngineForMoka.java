@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
 import org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request;
@@ -37,7 +38,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
-import org.eclipse.papyrus.moka.ui.presentation.AnimationUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
@@ -68,7 +68,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 			this.debugTarget = debugTarget;
 			this.debugTarget.setName("FUML Execution Engine");
 			FUMLPresentationUtils.init(eObjectToExecute);
-			AnimationUtils.init(eObjectToExecute);
+			AnimationManager.getInstance().init(eObjectToExecute);
 			FUMLExecutionEngine.eInstance = this;
 		}
 	}

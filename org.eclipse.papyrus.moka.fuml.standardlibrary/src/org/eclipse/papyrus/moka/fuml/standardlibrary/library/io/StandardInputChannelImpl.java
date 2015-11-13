@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *
+ *  Jeremie Tatibouet (CEA LIST) - Align service code with abstract service
  *****************************************************************************/
 
 package org.eclipse.papyrus.moka.fuml.standardlibrary.library.io;
@@ -22,7 +22,6 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.StringValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.registry.service.framework.AbstractService;
@@ -37,16 +36,17 @@ public class StandardInputChannelImpl extends AbstractService {
 
 	public StandardInputChannelImpl(Class service) {
 		super(service);
-		this.types.add(service);
 		this.in = StandardOutputChannelImpl.getConsole().getInputStream();
 	}
-
+	
 	@Override
-	public Execution dispatch(Operation operation) {
-		if (operation.getName().equals("readLine")) {
-			return new ReadLineExecution(operation);
+	public void doOperationExecutionMapping() {
+		Class type = this.types.get(0);
+		for(Operation operation : type.getOwnedOperations()){
+			if (operation.getName().equals("readLine")) {
+				this.operationExecution.put(operation, new ReadLineExecution(operation));
+			}
 		}
-		return null;
 	}
 
 	protected class ReadLineExecution extends AbstractService.ServiceOperationExecution {

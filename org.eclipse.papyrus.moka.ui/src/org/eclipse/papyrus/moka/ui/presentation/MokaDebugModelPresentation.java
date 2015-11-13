@@ -13,8 +13,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.ui.presentation;
 
-import java.util.List;
-
 import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.debug.core.model.IThread;
 import org.eclipse.debug.core.model.IValue;
@@ -25,12 +23,13 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.ILabelProviderListener;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.launch.EditorUtils;
@@ -170,7 +169,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 			MokaStackFrame stackFrame = (MokaStackFrame) frame;
 			EObject modelElement = stackFrame.getModelElement();
 			if (modelElement.eIsProxy()) {
-				AnimationUtils.getInstance().resetDiagrams(modelElement);
+				//AnimationUtils.getInstance().resetDiagrams(modelElement);
 				ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
 				ResourceSet resourceSet = null;
 				try {
@@ -180,11 +179,11 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 				}
 				modelElement = (EcoreUtil.resolve(modelElement, resourceSet));
 			}
-			List<Diagram> diagrams = AnimationUtils.getInstance().getDiagrams(modelElement);
+			/*List<Diagram> diagrams = AnimationUtils.getInstance().getDiagrams(modelElement);
 			for (Diagram diagram : diagrams) {
 				AnimationUtils.getInstance().openDiagram(diagram, false);
-			}
-			AnimationUtils.getInstance().addSuspendedMarker(modelElement);
+			}*/
+			AnimationManager.getInstance().startRendering(modelElement, AnimationKind.SUSPENDED);
 			return true;
 		}
 		return false;
@@ -196,7 +195,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#removeAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IThread)
 	 */
 	public void removeAnnotations(IEditorPart editorPart, IThread thread) {
-		AnimationUtils.getInstance().removeSuspendedMarker(thread);
+		//AnimationUtils.getInstance().removeSuspendedMarker(thread);
 	}
 
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.infra.gmfdiag.css.markertopseudoselectormappingprovider">
+      <provider
+            class="org.eclipse.papyrus.moka.animation.css.AnimationPseudoSelectorMappingProvider">
+      </provider>
+   </extension>
+   <extension
+         id="org.eclipse.papyrus.moka.animation.suspendedmarker"
+         name="SUSPENDED MARKER"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.papyrus.modelmarker">
+      </super>
+      <persistent
+            value="false">
+      </persistent>
+   </extension>
+   <extension
+         id="org.eclipse.papyrus.moka.animation.animatedmarker"
+         name="ANIMATED MARKER"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.papyrus.modelmarker">
+      </super>
+      <persistent
+            value="false">
+      </persistent>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.gmfdiag.css.theme">
+      <themeContribution
+            id="org.eclipse.papyrus.css.papyrus_theme">
+         <stylesheet
+               stylesheetPath="theme/defaultAnimationTheme.css">
+         </stylesheet>
+      </themeContribution>
+   </extension>
+
+</plugin>

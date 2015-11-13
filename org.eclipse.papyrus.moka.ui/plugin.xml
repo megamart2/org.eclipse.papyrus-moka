@@ -170,32 +170,6 @@
       </client>
    </extension>
    <extension
-         id="org.eclipse.papyrus.moka.ui.suspendedmarker"
-         point="org.eclipse.core.resources.markers">
-      <super
-            type="org.eclipse.papyrus.modelmarker">
-      </super>
-      <persistent
-            value="false">
-      </persistent>
-   </extension>
-   <extension
-         id="org.eclipse.papyrus.moka.ui.animationmarker"
-         point="org.eclipse.core.resources.markers">
-      <super
-            type="org.eclipse.papyrus.modelmarker">
-      </super>
-      <persistent
-            value="false">
-      </persistent>
-   </extension>
-   <extension
-         point="org.eclipse.papyrus.infra.gmfdiag.css.markertopseudoselectormappingprovider">
-      <provider
-            class="org.eclipse.papyrus.moka.ui.presentation.DebugMarkerMappingToPseudoSelector">
-      </provider>
-   </extension>
-   <extension
          point="org.eclipse.ui.perspectiveExtensions">
       <perspectiveExtension
             targetID="org.eclipse.debug.ui.DebugPerspective">
@@ -220,15 +194,6 @@
             id="org.eclipse.papyrus.moka.ui.views.MokaAnimationView"
             name="Animation Configuration">
       </view>
-   </extension>
-   <extension
-         point="org.eclipse.papyrus.infra.gmfdiag.css.theme">
-      <themeContribution
-            id="org.eclipse.papyrus.css.papyrus_theme">
-         <stylesheet
-               stylesheetPath="theme/defaultAnimationTheme.css">
-         </stylesheet>
-      </themeContribution>
    </extension>
 
 </plugin>

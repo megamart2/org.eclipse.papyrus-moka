@@ -24,6 +24,8 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Resume_Event;
@@ -47,7 +49,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.Ob
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.debug.FUMLThread;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
-import org.eclipse.papyrus.moka.ui.presentation.AnimationUtils;
 import org.eclipse.uml2.uml.AcceptEventAction;
 
 // TODO: Auto-generated Javadoc
@@ -208,7 +209,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		this.terminateRequestByClient = true;
 		for (List<AcceptEventAction> waitingOn : this.objectActivationToWaitingAcceptEventActions.values()) {
 			for (EObject o : waitingOn) {
-				AnimationUtils.getInstance().removeAnimationMarker(o);
+				//AnimationManager.getInstance().removeAnimationMarker(o);
 			}
 		}
 		/**********/
@@ -234,7 +235,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		synchronized (this) {
 			notifyAll();
 		}
-		AnimationUtils.getInstance().removeAllAnimationMarker();
+		//AnimationManager.getInstance().removeAllAnimationMarker();
 	}
 
 	/**
@@ -417,7 +418,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 					if (eventAccepter instanceof AcceptEventActionEventAccepter) {
 						AcceptEventAction action = (AcceptEventAction) ((AcceptEventActionEventAccepter) eventAccepter).actionActivation.node;
 						waitingAcceptEventActions.add(action);
-						AnimationUtils.getInstance().addAnimationMarker(action);
+						AnimationManager.getInstance().startRendering(action, AnimationKind.ANIMATED);
 					}
 				}
 				objectActivationToWaitingAcceptEventActions.put(asyncObjectActivation, waitingAcceptEventActions);
@@ -451,7 +452,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 				}
 				objectActivationToWaitingAcceptEventActions.put(asyncObjectActivation, waitingAcceptEventActions);
 				if (action != null) {
-					AnimationUtils.getInstance().removeAnimationMarker(action);
+					AnimationManager.getInstance().stopRendering(action);
 				}
 			}
 		}

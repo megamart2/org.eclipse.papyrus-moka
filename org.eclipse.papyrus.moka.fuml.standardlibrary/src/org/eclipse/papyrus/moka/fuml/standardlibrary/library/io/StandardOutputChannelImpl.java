@@ -18,7 +18,6 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.StringValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.registry.service.framework.AbstractService;
@@ -51,16 +50,17 @@ public class StandardOutputChannelImpl extends AbstractService {
 		super(service);
 		this.out = getConsole().newOutputStream();
 	}
-
+	
 	@Override
-	public Execution dispatch(Operation operation) {
-		if (operation.getName().equals("writeLine")) {
-			return new WriteLineExecution(operation);
-		} else if (operation.getName().equals("write")) {
-			return new Write(operation);
+	public void doOperationExecutionMapping() {
+		Class type = this.types.get(0);
+		for(Operation operation : type.getOwnedOperations()){
+			if (operation.getName().equals("writeLine")) {
+				this.operationExecution.put(operation, new WriteLineExecution(operation));
+			} else if (operation.getName().equals("write")) {
+				this.operationExecution.put(operation, new Write(operation));
+			}
 		}
-		// TODO complete with other operations
-		return null;
 	}
 
 	protected class WriteLineExecution extends AbstractService.ServiceOperationExecution {

@@ -14,7 +14,8 @@ Require-Bundle: org.eclipse.ui,
  org.apache.commons.lang;bundle-version="2.6.0",
  org.eclipse.emf.ecore,
  org.eclipse.emf.codegen;bundle-version="2.9.0",
- org.eclipse.uml2.codegen.ecore;bundle-version="1.9.0"
+ org.eclipse.uml2.codegen.ecore;bundle-version="1.9.0",
+ org.eclipse.papyrus.moka.animation
 Export-Package: org.eclipse.papyrus.moka.fuml;uses:="org.eclipse.ui.plugin,
  org.osgi.framework",
  org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions,

@@ -1,4 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><feature id="org.eclipse.papyrus.moka.feature" label="%featureName" provider-name="%providerName" version="1.2.0.qualifier">
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.eclipse.papyrus.moka.feature"
+      label="%featureName"
+      version="1.2.0.qualifier"
+      provider-name="%providerName">
 
    <description url="http://www.example.com/description">
       MOKA is a framework for executing/simulating debugging fUML models. 
@@ -23,22 +28,74 @@
       %license
    </license>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.async.fuml" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.async.fuml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.composites" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.composites"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.fuml" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.fuml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.fuml.assertionlibrary" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.fuml.assertionlibrary"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.fuml.standardlibrary" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.fuml.standardlibrary"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.ui" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.composites.utils" install-size="0" unpack="false" version="0.0.0"/>
+   <plugin
+         id="org.eclipse.papyrus.moka.composites.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
 
-   <plugin download-size="0" id="org.eclipse.papyrus.moka.doc" install-size="0" unpack="false" version="0.0.0"/>
-  
+   <plugin
+         id="org.eclipse.papyrus.moka.doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.animation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>

@@ -8,6 +8,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Refine service code to avoid deadlocks when model execution starts
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.registry.service.framework;
 
@@ -23,29 +24,19 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Pa
 import org.eclipse.papyrus.moka.fuml.registry.SystemServicesRegistryUtils;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Operation;
 
 public abstract class AbstractService extends Object_ {
 
-	protected HashMap<Operation, OpaqueBehavior> ownedOperation;
-
 	protected HashMap<Operation, Execution> operationExecution;
-
-	private void initializeOperations(Class classifier) {
-		this.ownedOperation = new HashMap<Operation, OpaqueBehavior>();
-		for (Operation op : classifier.getAllOperations()) {
-			this.ownedOperation.put(op, SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(op));
-		}
-	}
 
 	public AbstractService(Class service) {
 		super();
 		this.types.add(service);
-		this.initializeOperations(service);
 		this.operationExecution = new HashMap<Operation, Execution>();
+		this.doOperationExecutionMapping();
 	}
-
+	
 	@Override
 	public Execution dispatch(Operation operation) {
 		if (this.operationExecution.containsKey(operation)) {
@@ -53,6 +44,8 @@ public abstract class AbstractService extends Object_ {
 		}
 		throw new NotImplementedException("Not any ServiceOperationExecution implemented/registered for this operation");
 	}
+	
+	public abstract void doOperationExecutionMapping();
 
 	public abstract class ServiceOperationExecution extends OpaqueBehaviorExecution {
 
@@ -64,7 +57,7 @@ public abstract class AbstractService extends Object_ {
 
 		@Override
 		public Behavior getBehavior() {
-			return AbstractService.this.ownedOperation.get(this.operation);
+			return SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(operation);
 		}
 
 		@Override

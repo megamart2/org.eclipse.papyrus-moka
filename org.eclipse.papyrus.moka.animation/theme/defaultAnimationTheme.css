@@ -1,0 +1,17 @@
+:animated{
+	/*Edge of the shape affected by the pseudo selector*/
+	lineColor: #92d050;
+	lineWidth: 2px;
+	/*Content of the shape affected by the pseudo selector*/
+	fillColor: #0070c0;
+	bold: true;
+} 
+
+:suspended{
+	/*Edge of the shape affected by the pseudo selector*/
+	lineColor: #c00000;
+	lineWidth: 2px;
+	/*Content of the shape affected by the pseudo selector*/
+	fillColor: #fab953;
+	bold: true;
+}
