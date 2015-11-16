@@ -69,6 +69,24 @@
                      class="CallAction">
                </target>
             </constraint>
+            <constraint
+                  class="org.eclipse.papyrus.moka.fuml.validation.constraints.NoDelegationConnectorOnNonBehaviorPort_Constraint"
+                  id="org.eclipse.papyrus.moka.fuml.validation.no_delegation_connectors_on_behavior_port"
+                  lang="java"
+                  mode="Batch"
+                  name="no_delegation_connectors_on_behavior_port"
+                  severity="WARNING"
+                  statusCode="1">
+               <message>
+                  [Moka] {0}
+               </message>
+               <description>
+                  Non-behavior ports shall have delegation connectors
+               </description>
+               <target
+                     class="Port">
+               </target>
+            </constraint>
          </constraints>
       </constraintProvider>
    </extension>
