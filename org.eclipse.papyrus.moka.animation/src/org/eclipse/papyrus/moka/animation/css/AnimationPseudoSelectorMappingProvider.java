@@ -16,6 +16,8 @@ public class AnimationPseudoSelectorMappingProvider implements IMarkerToPseudoSe
 
 	public final static String ANIMATION_MARKER_PSEUDO_SELECTOR = "animated";
 
+	public final static String VISITED_MARKER_PSEUDO_SELECTOR = "visited";
+	
 	public AnimationPseudoSelectorMappingProvider() {}
 	
 	public Map<String, String> getMappings() {
@@ -24,6 +26,7 @@ public class AnimationPseudoSelectorMappingProvider implements IMarkerToPseudoSe
 			// Adds pseudo selectors for 'suspended' and 'animation' markers
 			this.mappings.put(AnimationUtils.SUSPENDED_MARKER_ID, SUSPENDED_MARKER_PSEUDO_SELECTOR);
 			this.mappings.put(AnimationUtils.ANIMATED_MARKER_ID, ANIMATION_MARKER_PSEUDO_SELECTOR);
+			this.mappings.put(AnimationUtils.VISITED_MARKER_ID, VISITED_MARKER_PSEUDO_SELECTOR);
 		}
 		return this.mappings;
 	}

@@ -76,6 +76,8 @@ public class AnimationManager implements IAnimationManager{
 				found = type.equals(AnimationUtils.ANIMATED_MARKER_ID);
 			}else if(kind==AnimationKind.SUSPENDED){
 				found = type.equals(AnimationUtils.SUSPENDED_MARKER_ID);
+			}else if(kind==AnimationKind.VISITED){
+				found = type.equals(AnimationUtils.VISITED_MARKER_ID);
 			}
 			i++;
 		}
@@ -84,6 +86,8 @@ public class AnimationManager implements IAnimationManager{
 
 	@SuppressWarnings("unchecked")
 	private IPapyrusMarker createMarker(final EObject modelElement,  final String markerID,  @SuppressWarnings("rawtypes") Map attributes){
+		// Create a marker of the given type (c.f. markerID) and set the attributes
+		// with the provided map
 		IPapyrusMarker marker = null;
 		// Assert that the model element is usable
 		if(modelElement==null || modelElement.eResource()==null){
@@ -109,6 +113,38 @@ public class AnimationManager implements IAnimationManager{
 			}
 		}
 		return marker;
+	}
+	
+	private IPapyrusMarker deleteMarker(final EObject modelElement,  AnimationKind kind){
+		// Find out a marker of the given type placed on a model element. This marker is 
+		// then deleted. The deleted marker is returned by the operation.
+		List<IPapyrusMarker> markers = this.modelElementMarkers.get(modelElement);
+		Iterator<IPapyrusMarker> markersIterator = markers.iterator();
+		IPapyrusMarker deletedMarker = null; 
+		while(deletedMarker==null && markersIterator.hasNext()){
+			IPapyrusMarker currentMarker = markersIterator.next();
+			String markerType="";
+			try {
+				markerType = currentMarker.getType();
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+			if(kind==AnimationKind.ANIMATED){
+				deletedMarker = markerType.equals(AnimationUtils.ANIMATED_MARKER_ID) ? currentMarker : null;
+			}else if(kind==AnimationKind.SUSPENDED){
+				deletedMarker = markerType.equals(AnimationUtils.SUSPENDED_MARKER_ID) ? currentMarker : null;
+			}else if(kind==AnimationKind.VISITED){
+				deletedMarker = markerType.equals(AnimationUtils.VISITED_MARKER_ID) ? currentMarker : null;
+			}
+		}
+		if(deletedMarker!=null){
+			try {
+				deletedMarker.delete();
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+		}
+		return deletedMarker;
 	}
 	
 	private IResource getWorkspaceResource(final EObject modelElement){
@@ -148,16 +184,23 @@ public class AnimationManager implements IAnimationManager{
 		// this latter has not already a marker applied on it
 		// and if so this marker is not of the kind of the requested
 		// marker
+		IPapyrusMarker requestedMarker = null;
+		// This is not the first time the element is visited
+		if(this.hasMarker(modelElement, AnimationKind.VISITED)){
+			IPapyrusMarker visitedMarker = this.deleteMarker(modelElement, AnimationKind.VISITED);
+			if(visitedMarker!=null){
+				this.modelElementMarkers.get(modelElement).remove(visitedMarker);
+			}
+		}
+		// Apply requested marker
 		if(!this.hasMarker(modelElement, animationKind)){
-			IPapyrusMarker marker = null; 
-			// Build attributes
 			Map<String, String> attributes = new HashMap<String, String>();
 			attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
 			// Defined which type of animation is expected
 			if(animationKind.equals(AnimationKind.ANIMATED)){
-				marker = this.createMarker(modelElement, AnimationUtils.ANIMATED_MARKER_ID, attributes);
+				requestedMarker = this.createMarker(modelElement, AnimationUtils.ANIMATED_MARKER_ID, attributes);
 			}else if(animationKind.equals(AnimationKind.SUSPENDED)){
-				marker = this.createMarker(modelElement, AnimationUtils.SUSPENDED_MARKER_ID, attributes);
+				requestedMarker = this.createMarker(modelElement, AnimationUtils.SUSPENDED_MARKER_ID, attributes);
 			}else{
 				System.err.println("[startRendering] - animation kind not recognized");
 			}
@@ -165,10 +208,10 @@ public class AnimationManager implements IAnimationManager{
 			List<IPapyrusMarker> markerList = this.modelElementMarkers.get(modelElement);
 			if(markerList==null){
 				markerList = new ArrayList<IPapyrusMarker>();
-				markerList.add(marker);
 				this.modelElementMarkers.put(modelElement, markerList);
-			}else{
-				markerList.add(marker);
+			}
+			if(requestedMarker!=null){
+				markerList.add(requestedMarker);
 			}
 		}
 	}
@@ -189,33 +232,20 @@ public class AnimationManager implements IAnimationManager{
 
 	@Override
 	public void stopRendering(EObject modelElement, AnimationKind kind) {
-		// A 
+		// A marker can only be removed from a model element if it is applied on it.
+		// As a model element can have multiple markers applied, only the one corresponding
+		// to the specific animation kind is removed
 		if(this.hasMarker(modelElement, kind)){
-			List<IPapyrusMarker> markers = this.modelElementMarkers.get(modelElement);
-			Iterator<IPapyrusMarker> markersIterator = markers.iterator();
-			IPapyrusMarker marker = null; 
-			while(marker==null && markersIterator.hasNext()){
-				IPapyrusMarker currentMarker = markersIterator.next();
-				String markerType="";
-				try {
-					markerType = currentMarker.getType();
-				} catch (CoreException e) {
-					e.printStackTrace();
-				}
-				if(kind==AnimationKind.ANIMATED){
-					marker = markerType.equals(AnimationUtils.ANIMATED_MARKER_ID) ? currentMarker : null;
-				}else if(kind==AnimationKind.SUSPENDED){
-					marker = markerType.equals(AnimationUtils.SUSPENDED_MARKER_ID) ? currentMarker : null;
-				}
-			}
+			IPapyrusMarker marker = this.deleteMarker(modelElement, kind); 
 			if(marker!=null){
 				this.modelElementMarkers.get(modelElement).remove(marker);
-				try {
-					marker.delete();
-				} catch (CoreException e) {
-					e.printStackTrace();
-				}
 			}
+		}
+		if(!this.hasMarker(modelElement, AnimationKind.VISITED)){
+			Map<String, String> attributes = new HashMap<String, String>();
+			attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
+			IPapyrusMarker visitedMarker = this.createMarker(modelElement, AnimationUtils.VISITED_MARKER_ID, attributes);
+			this.modelElementMarkers.get(modelElement).add(visitedMarker);
 		}
 	}
 
@@ -229,4 +259,30 @@ public class AnimationManager implements IAnimationManager{
 		return false;
 	}
 
+	@Override
+	public void deleteAllMarkers() {
+		// Make sure any marker placed by the framework over a model element is deleted when this operation is called
+		// The operation is thread safe and lock a model element before starting to remove the markers
+		for(EObject modelElement : this.modelElementMarkers.keySet()){
+			synchronized(modelElement){
+				for(IPapyrusMarker marker : this.modelElementMarkers.get(modelElement)){
+					if(marker.exists()){
+						try {
+							marker.delete();
+						} catch (CoreException e) {
+							e.printStackTrace();
+						}
+					}
+				}
+			}
+		}
+	}
+
+	public void clean(){
+		// The clean operation is in charge of:
+		// 1 - Releasing all model elements from their makers (if placed by the animation framework)
+		// 2 - Releasing all diagram referenced by the animation diagram manager
+		this.deleteAllMarkers();
+		// TODO: release diagrams
+	}
 }

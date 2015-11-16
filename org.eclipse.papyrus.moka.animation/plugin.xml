@@ -38,5 +38,16 @@
          </stylesheet>
       </themeContribution>
    </extension>
+   <extension
+         id="org.eclipse.papyrus.moka.animation.visitedmarker"
+         name="VISITED MARKER"
+         point="org.eclipse.core.resources.markers">
+      <super
+            type="org.eclipse.papyrus.modelmarker">
+      </super>
+      <persistent
+            value="false">
+      </persistent>
+   </extension>
 
 </plugin>

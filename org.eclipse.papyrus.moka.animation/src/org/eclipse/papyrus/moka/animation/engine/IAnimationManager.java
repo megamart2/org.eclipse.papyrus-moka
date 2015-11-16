@@ -12,4 +12,8 @@ public interface IAnimationManager {
 	
 	public boolean isRenderable(EObject modelElement);
 	
+	public void deleteAllMarkers();
+	
+	public void clean();
+	
 }

@@ -160,6 +160,7 @@ public class ControlDelegate {
 		synchronized (this) {
 			notify();
 		}
+		AnimationManager.getInstance().clean();
 	}
 
 	/**
