@@ -29,10 +29,11 @@
 		<module>org.eclipse.papyrus.moka.p2</module>
 		<module>org.eclipse.papyrus.moka.tests</module>
 		<module>targetplatform</module>
+		<!-- doc -->
+		<module>org.eclipse.papyrus.moka.doc</module>
 	</modules>
 	<repositories>
-	
-		    <repository>
+	<repository>
 	      <id>eclipse-neon</id>
 	      <layout>p2</layout>
 	      <url>http://download.eclipse.org/releases/neon</url>
@@ -41,7 +42,7 @@
 			<id>papyrus-neon-nightly-developer</id>
 			<layout>p2</layout>
 			<url>https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/</url>
-		</repository>		
+		</repository>
 	</repositories>
 	<properties>
 		<!-- plugins versions -->
@@ -53,7 +54,7 @@
 		<maven-pmd-version>3.1</maven-pmd-version>
 		<maven-jxr-version>2.3</maven-jxr-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+		<mylyn.wikitext.version>2.4.0-SNAPSHOT</mylyn.wikitext.version>
 		<!-- Eclipse properties -->
 		<eclipse.release>neon</eclipse.release>
 
@@ -72,6 +73,10 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
+		<pluginRepository>
+			<id>eclipse.org-mylyn</id>
+			<url>https://repo.eclipse.org/content/repositories/mylyn/</url>
+		</pluginRepository>			
 	</pluginRepositories>
 	<build>
 		<pluginManagement>
