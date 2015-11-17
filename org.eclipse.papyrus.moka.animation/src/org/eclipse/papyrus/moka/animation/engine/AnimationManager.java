@@ -263,8 +263,8 @@ public class AnimationManager implements IAnimationManager{
 	public void deleteAllMarkers() {
 		// Make sure any marker placed by the framework over a model element is deleted when this operation is called
 		// The operation is thread safe and lock a model element before starting to remove the markers
-		for(EObject modelElement : this.modelElementMarkers.keySet()){
-			synchronized(modelElement){
+		synchronized(this.modelElementMarkers){
+			for(EObject modelElement : this.modelElementMarkers.keySet()){
 				for(IPapyrusMarker marker : this.modelElementMarkers.get(modelElement)){
 					if(marker.exists()){
 						try {
@@ -274,11 +274,13 @@ public class AnimationManager implements IAnimationManager{
 						}
 					}
 				}
+				this.modelElementMarkers.get(modelElement).clear();
 			}
+			this.modelElementMarkers.clear();
 		}
 	}
 
-	public void clean(){
+	public synchronized void clean(){
 		// The clean operation is in charge of:
 		// 1 - Releasing all model elements from their makers (if placed by the animation framework)
 		// 2 - Releasing all diagram referenced by the animation diagram manager

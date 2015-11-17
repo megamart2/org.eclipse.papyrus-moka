@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
@@ -16,6 +17,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.IAnimationManager;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.Token;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
@@ -114,6 +117,7 @@ public class AcceptEventActionActivation extends ActionActivation {
 					this.putTokens(resultPin, featureValue.values);
 				}
 			}
+			this.notifyAnimationEnd();
 			this.sendOffers();
 			this.waiting = false;
 			Debug.println("[fire] Checking if " + this.node.getName() + " should fire again...");
@@ -144,6 +148,23 @@ public class AcceptEventActionActivation extends ActionActivation {
 		if (this.isWaiting()) { // CHANGED "this.waiting" to "this.isWaiting()".
 			this.getExecutionContext().unregister(this.eventAccepter);
 			this.waiting = false;
+		}
+	}
+	
+	public void animate(IAnimationManager animationManager){
+		// An accept event action is animated during an undefined period of time
+		// The animation terminates when an event triggers the execution of this action
+		if(animationManager!=null){
+			this.animationManager = animationManager;
+			this.animationManager.startRendering(this.node, AnimationKind.ANIMATED);
+		}
+	}
+	
+	public void notifyAnimationEnd(){
+		// Notify the animation manager of the termination of the animation period of the
+		// accept event action
+		if(this.animationManager!=null){
+			this.animationManager.stopRendering(this.node, AnimationKind.ANIMATED);
 		}
 	}
 }

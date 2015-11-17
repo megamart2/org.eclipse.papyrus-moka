@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions;
@@ -16,6 +17,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.IAnimationManager;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.CallAction;
@@ -79,6 +82,8 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 			}
 			callExecution.destroy();
 			this.removeCallExecution(callExecution);
+			// Specific to Moka
+			this.notifyAnimationEnd();
 		}
 	}
 
@@ -104,6 +109,27 @@ public abstract class CallActionActivation extends InvocationActionActivation {
 				this.callExecutions.remove(i - 1);
 				notFound = false;
 			}
+		}
+	}
+	
+	public void animate(IAnimationManager animationManager){
+		// If a call is not synchronous then the node is animated as usual following the period of
+		// time specified by Moka constant. If it is synchronous then the node is animated until
+		// the animation is notified of the termination of the call
+		if(animationManager!=null){
+			this.animationManager = animationManager;	
+			if(((CallAction)this.node).isSynchronous()){
+				animationManager.startRendering(this.node, AnimationKind.ANIMATED);
+			}else{
+				super.animate(animationManager);
+			}
+		}
+	}
+	
+	public void notifyAnimationEnd(){
+		// Notify the termination of the animation period of the call action
+		if(this.animationManager!=null){
+			this.animationManager.stopRendering(this.node, AnimationKind.ANIMATED);
 		}
 	}
 }

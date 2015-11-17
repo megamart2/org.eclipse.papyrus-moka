@@ -20,4 +20,6 @@
 	/*Edge of the shape affected by the pseudo selector*/
 	lineColor: #c00000;
 	lineWidth: 2px;
+	/*Content of the shape affected by the pseudo selector*/
+	fillColor: #c00000;
 }

@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities;
@@ -16,11 +17,18 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.IAnimated;
+import org.eclipse.papyrus.moka.animation.engine.IAnimationManager;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.uml2.uml.ActivityEdge;
 
-public class ActivityEdgeInstance {
+public class ActivityEdgeInstance implements IAnimated{
 
+	// Specific to Moka
+	protected IAnimationManager animationManager;
+	
 	/*
 	 * The activity edge of which this is an instance. [This is optional to
 	 * allow for an implicit fork node execution to be connected to its action
@@ -141,5 +149,18 @@ public class ActivityEdgeInstance {
 			i = i + 1;
 		}
 		return hasTokens;
+	}
+	
+	public void animate(IAnimationManager animationManager){
+		// An edge is animation during a certain period of time that is specified through
+		// Moka constants
+		if(animationManager!=null){
+			this.animationManager = animationManager;
+			animationManager.render(this.edge, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
+		}
+	}
+
+	public void notifyAnimationEnd() {
+		// Do nothing
 	}
 }

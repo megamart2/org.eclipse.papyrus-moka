@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities;
@@ -17,6 +18,9 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.IAnimationManager;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
@@ -292,5 +296,13 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 	public void resume() {
 		// Resume this activation within the activation group that contains it.
 		this.group.resume(this);
+	}
+	
+	public void animate(IAnimationManager animationManager){
+		// An activity node is animated for the period indicated by the MOKA_ANIMATION_DELAY
+		if(animationManager!=null){
+			this.animationManager = animationManager;
+			animationManager.render(this.node, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
+		}
 	}
 }

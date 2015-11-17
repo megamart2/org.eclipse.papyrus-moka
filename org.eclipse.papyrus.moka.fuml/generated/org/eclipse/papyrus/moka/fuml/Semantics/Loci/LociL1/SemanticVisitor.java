@@ -9,17 +9,33 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 
-public abstract class SemanticVisitor {
+import org.eclipse.papyrus.moka.animation.engine.IAnimated;
+import org.eclipse.papyrus.moka.animation.engine.IAnimationManager;
 
+public abstract class SemanticVisitor implements IAnimated{
+
+	protected IAnimationManager animationManager;
+	
 	public void _endIsolation() {
 		// System.out.println("_endIsolation");
 	}
 
 	public void _beginIsolation() {
 		// System.out.println("_beginIsolation");
+	}
+	
+	public void animate(IAnimationManager animationManager){
+		// Do nothing by default
+		// Should be overridden in adequate visitors
+	}
+	
+	public void notifyAnimationEnd(){
+		// Do nothing by default
+		// Should be overridden in adequate visitors
 	}
 }

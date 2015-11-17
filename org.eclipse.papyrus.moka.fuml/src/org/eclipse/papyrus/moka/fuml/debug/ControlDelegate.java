@@ -23,7 +23,6 @@ import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
 import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Suspend_Event;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
@@ -33,11 +32,11 @@ import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.debug.MokaThread;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.PinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticVisitor;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
-import org.eclipse.uml2.uml.ActivityEdge;
-import org.eclipse.uml2.uml.Pin;
 
 public class ControlDelegate {
 
@@ -218,13 +217,8 @@ public class ControlDelegate {
 			return false;
 		}
 
-		// Manages animation
-		// if (object instanceof ActivityNodeActivation && semanticElement != null && MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.mode.equals(ILaunchManager.DEBUG_MODE)) {
-		// this.animate((ActivityNodeActivation)object, (ActivityNode)semanticElement) ;
-		// }
 		if (semanticElement != null && MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.mode.equals(ILaunchManager.DEBUG_MODE)) {
-			// this.animate((ActivityNodeActivation)object, (ActivityNode)semanticElement) ;
-			this.animate(semanticElement);
+			this.animate(object);
 		}
 
 		if (this.suspended) { /* Client request */
@@ -267,27 +261,16 @@ public class ControlDelegate {
 		return !this.engine.isTerminated();
 	}
 
-	protected void animate(EObject element) {
-			// If the element is an activity edge,
-			// Also animates the source, in the case where it is a pin
-			if (element instanceof ActivityEdge) {
-				ActivityEdge edge = (ActivityEdge) element;
-				if (edge.getSource() instanceof Pin) {
-					//if (AnimationManager.getInstance().diagramsExistFor(edge.getSource())) {
-						/*AnimationManager.getInstance().addAnimationMarker(edge.getSource());
-						Thread.sleep(MokaConstants.MOKA_ANIMATION_DELAY);
-						AnimationManager.getInstance().removeAnimationMarker(edge.getSource());*/
-						AnimationManager.getInstance().render(edge.getSource(), AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
-					//}
-				}
+	protected void animate(Object target) {
+		// Animate the object given as parameter
+		if(target instanceof SemanticVisitor){
+			((SemanticVisitor)target).animate(AnimationManager.getInstance());
+		}else if(target instanceof ActivityEdgeInstance){
+			((ActivityEdgeInstance)target).animate(AnimationManager.getInstance());
+			if(((ActivityEdgeInstance)target).source instanceof PinActivation){
+				((ActivityEdgeInstance)target).source.animate(AnimationManager.getInstance());
 			}
-			// Animates the element
-			//if ((AnimationManager.getInstance().diagramsExistFor(element))) {
-				/*AnimationManager.getInstance().addAnimationMarker(element);
-				Thread.sleep(MokaConstants.MOKA_ANIMATION_DELAY);
-				AnimationManager.getInstance().removeAnimationMarker(element);*/
-				AnimationManager.getInstance().render(element, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
-			//}
+		}	
 	}
 
 	public void waitForTermination() {
