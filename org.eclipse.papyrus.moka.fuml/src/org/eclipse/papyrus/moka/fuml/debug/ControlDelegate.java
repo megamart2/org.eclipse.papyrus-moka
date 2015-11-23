@@ -263,13 +263,14 @@ public class ControlDelegate {
 
 	protected void animate(Object target) {
 		// Animate the object given as parameter
+		AnimationManager animationManager = AnimationManager.getInstance();
 		if(target instanceof SemanticVisitor){
-			((SemanticVisitor)target).animate(AnimationManager.getInstance());
+			((SemanticVisitor)target).animate(animationManager);
 		}else if(target instanceof ActivityEdgeInstance){
-			((ActivityEdgeInstance)target).animate(AnimationManager.getInstance());
 			if(((ActivityEdgeInstance)target).source instanceof PinActivation){
-				((ActivityEdgeInstance)target).source.animate(AnimationManager.getInstance());
+				((ActivityEdgeInstance)target).source.animate(animationManager);
 			}
+			((ActivityEdgeInstance)target).animate(animationManager);
 		}	
 	}
 

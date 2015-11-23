@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -15,10 +16,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.gmf.runtime.notation.View;
+import org.eclipse.papyrus.infra.core.sasheditor.contentprovider.IPageManager;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
 import org.eclipse.papyrus.infra.gmfdiag.common.utils.DiagramUtils;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
-
+
+import org.eclipse.papyrus.moka.launch.EditorUtils;
+import org.eclipse.ui.IEditorPart;
 public class AnimatedDiagramManager {
 
 	// The set of diagrams identified for a given model
@@ -37,14 +45,10 @@ public class AnimatedDiagramManager {
 		this.init(model);
 	}
 	
-	/**
-	 * Initialize the animated diagrams manager. The initialize process consist in:
-	 * 		1 - Identifying diagrams located in a model
-	 *      2 - Build a cache linking a model element to a list of diagrams in which it appears
-	 *       
-	 * @param modelElement - the model element used as a starting point for the initialization
-	 */
 	public void init(EObject modelElement){
+		// Initialize the animated diagrams manager. The initialize process consist in:
+		// 	 1 - Identifying diagrams located in a model
+		//   2 - Build a cache linking a model element to a list of diagrams in which it appears
 		if(modelElement instanceof Element){
 			// Find all diagrams available in this model
 			Job diagramsLoading = new InitiliazeDiagramManagerJob(((Element)modelElement).getModel());
@@ -54,20 +58,11 @@ public class AnimatedDiagramManager {
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
-			System.out.println("here");
 		}
 	}
 	
-	/**
-	 * Find the set of diagrams in which in the given model element appears 
-	 * 
-	 * @param modelElement - the model element for which the diagrams are searched
-	 * 
-	 * @param notationResource - the resource (.notation) in which the associated diagrams can be found
-	 * 
-	 * @return associatedDiagrams - the list of diagrams associated to the given model element
-	 */
 	private List<Diagram> getAssociatedDiagrams(EObject modelElement, Resource notationResource){
+		// Find the set of diagrams in which in the given model element appears 
 		List<Diagram> associatedDiagrams = new ArrayList<Diagram>();
 		if(notationResource!=null && modelElement!=null){
 			 return DiagramUtils.getAssociatedDiagramsFromNotationResource(modelElement, notationResource);
@@ -75,22 +70,16 @@ public class AnimatedDiagramManager {
 		return associatedDiagrams;	
 	}
 	
-	/**
-	 * Identify all diagrams that are available in a model. The unique place from which this operation
-	 * is called  is the job in charge of executing the search.
-	 * 
-	 * @param model - The model in which the diagrams should identified
-	 * 
-	 * @param monitor - The monitor used to report progress of our search
-	 */
 	private void searchDiagrams(Model model, IProgressMonitor monitor){
-		// Initialization
+		// Identify all diagrams that are available in a model. The unique place from which 
+		// this operation is called  is the job in charge of executing the search.
 		Resource resource = model.eResource();
 		ResourceSet resourceSet = resource.getResourceSet();
 		// Load the resource corresponding to the notation
 		final String resourceNotationURI = model.eResource().getURI().toString().replaceAll("\\.uml$", ".notation");
 		Resource notationResource = resourceSet.getResource(URI.createURI(resourceNotationURI), true);
-		// Iterate over all model elements in order to discover all diagrams
+		// Discover all diagrams
+		monitor.subTask("Find all diagrams");
 		Iterator<EObject> modelContentIterator = model.eAllContents();
 		while(modelContentIterator.hasNext()){
 			EObject currentModelElement = modelContentIterator.next();
@@ -98,18 +87,35 @@ public class AnimatedDiagramManager {
 			List<Diagram> diagrams = this.getAssociatedDiagrams(currentModelElement, notationResource);
 			// Build the cache to relate the model element the set of diagrams where it is shown
 			if(!diagrams.isEmpty()){
-				if(this.modelDiagramMapping.get(currentModelElement)==null){
-					HashSet<Diagram> setOfDiagrams = new HashSet<Diagram>();
-					setOfDiagrams.addAll(diagrams);
-					this.modelDiagramMapping.put(currentModelElement, setOfDiagrams);
-				}else{
-					this.modelDiagramMapping.get(currentModelElement).addAll(diagrams);
-				}
 				// Add newly found diagrams to the set 
 				this.modelDiagrams.addAll(diagrams);
 			}
-			monitor.worked(1);
 		}
+		monitor.worked(1);
+		// Build the map to enable the possibility
+		monitor.subTask("Build mapping with model elements");
+		Iterator<Diagram> diagramIterator = this.modelDiagrams.iterator();
+		while(diagramIterator.hasNext()){
+			Diagram currentDiagram = diagramIterator.next();
+			Iterator<EObject> diagramViews = currentDiagram.eAllContents();
+			while(diagramViews.hasNext()){
+				EObject potentialView = diagramViews.next();
+				if(potentialView instanceof View){
+					EObject modelElement = ((View)(potentialView)).getElement();
+					if(this.modelDiagramMapping.containsKey(modelElement)){
+						HashSet<Diagram> diagrams = this.modelDiagramMapping.get(modelElement);
+						if(!diagrams.contains(currentDiagram)){
+							diagrams.add(currentDiagram);
+						}
+					}else{
+						HashSet<Diagram> diagramSet = new HashSet<Diagram>();
+						diagramSet.add(currentDiagram);
+						this.modelDiagramMapping.put(modelElement, diagramSet);
+					}
+				}
+			}
+		}
+		monitor.worked(1);
 	}
 	
 	/**
@@ -127,7 +133,7 @@ public class AnimatedDiagramManager {
 
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
-			monitor.beginTask("Diagrams lookup", IProgressMonitor.UNKNOWN);
+			monitor.beginTask("Prepare execution", 2);
 			AnimatedDiagramManager.this.searchDiagrams(this.model, monitor);
 			monitor.done();
 			return Status.OK_STATUS;
@@ -135,14 +141,65 @@ public class AnimatedDiagramManager {
 		
 	}
 	
-	/**
-	 * A model element is considered as being "renderable" if it has diagrams in which it appears  
-	 * 
-	 * @param modelElement - the model element that we assess as being renderable
-	 * 
-	 * @return true if the the element is present in the cache; false otherwise
-	 */
+	public boolean hasOpenedDiagram(EObject modelElement){
+		// Determine if a model element has at least one of its diagrams opened (i.e., visible to the user)
+		boolean opened = false;
+		Set<Diagram> diagramSet = this.modelDiagramMapping.get(modelElement);
+		if(diagramSet!=null){
+			Iterator<Diagram> diagramIterator = diagramSet.iterator();
+			while(!opened && diagramIterator.hasNext()){
+				Diagram diagram = diagramIterator.next();
+				IEditorPart editorPart = EditorUtils.getEditorPart(diagram);
+				ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
+				IPageManager pageManager = null;
+				try {
+					pageManager = ServiceUtils.getInstance().getIPageManager(servicesRegistry);
+				} catch (ServiceException e) {
+					e.printStackTrace();
+				}
+				if(pageManager!=null){
+					opened = pageManager.isOpen(diagram);
+				}
+			}
+		}
+		return opened;
+	}
+	
+	public void openDiagrams(EObject modelElement){
+		// Open every diagrams on which the specify on which this model element appear
+		HashSet<Diagram> diagrams = this.modelDiagramMapping.get(modelElement);
+		if(!diagrams.isEmpty()){
+			for(Diagram diagram: diagrams){
+				IEditorPart editorPart = EditorUtils.getEditorPart(diagram);
+				ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
+				IPageManager pageManager = null;
+				try {
+					pageManager = ServiceUtils.getInstance().getIPageManager(servicesRegistry);
+				} catch (ServiceException e) {
+					e.printStackTrace();
+				}
+				if(pageManager!=null){
+					pageManager.openPage(diagram);
+					pageManager.selectPage(diagram);
+				}
+			}
+		}
+	}
+	
 	public boolean isRenderable(EObject modelElement){
+		// A model element can be rendered as soon as it exists a diagram in which it
+		// appear in the model
 		return this.modelDiagramMapping.get(modelElement)!=null;
+	}
+	
+	public boolean isStrictlyRenderable(EObject modelElement){
+		// A model element can be rendered only if it exists a diagram in which it appear
+		// in the model and this diagram is currently open
+		return this.isRenderable(modelElement) && this.hasOpenedDiagram(modelElement);
+	}
+	
+	public synchronized void clean(){
+		this.modelDiagrams.clear();
+		this.modelDiagramMapping.clear();
 	}
 }

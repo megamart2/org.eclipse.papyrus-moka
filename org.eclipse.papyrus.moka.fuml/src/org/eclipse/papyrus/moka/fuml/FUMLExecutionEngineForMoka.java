@@ -62,13 +62,13 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 	 */
 	@Override
 	public void init(EObject eObjectToExecute, String[] args, MokaDebugTarget debugTarget, int requestPort, int replyPort, int eventPort) throws UnknownHostException, IOException {
+		AnimationManager.getInstance().init(eObjectToExecute);
 		super.init(eObjectToExecute, args, debugTarget, requestPort, replyPort, eventPort);
 		if (eObjectToExecute instanceof Behavior) {
 			main = (Behavior) eObjectToExecute;
 			this.debugTarget = debugTarget;
 			this.debugTarget.setName("FUML Execution Engine");
 			FUMLPresentationUtils.init(eObjectToExecute);
-			AnimationManager.getInstance().init(eObjectToExecute);
 			FUMLExecutionEngine.eInstance = this;
 		}
 	}

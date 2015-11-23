@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker;
 import org.eclipse.papyrus.infra.services.markerlistener.PapyrusMarkerAdapter;
+import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.animation.utils.AnimationUtils;
 
 /**
@@ -39,7 +40,7 @@ import org.eclipse.papyrus.moka.animation.utils.AnimationUtils;
 public class AnimationManager implements IAnimationManager{
 
 	// The diagram manager handles every action done by the animation regarding diagrams
-	AnimatedDiagramManager diagramManager;
+	protected AnimatedDiagramManager diagramManager;
 	
 	// The static instance for this class
 	protected static AnimationManager eInstance = null;
@@ -50,11 +51,13 @@ public class AnimationManager implements IAnimationManager{
 
 
 	private AnimationManager() {
+		// Constructor
 		this.diagramManager = new AnimatedDiagramManager();
 		this.modelElementMarkers = new HashMap<EObject, List<IPapyrusMarker>>();
 	}
 	
 	private boolean hasMarker(EObject modelElement, AnimationKind kind){
+		// Find out if a marker of the given kind is applied on the model element
 		if(modelElement==null){
 			return false;
 		}
@@ -156,26 +159,27 @@ public class AnimationManager implements IAnimationManager{
 		return resource;
 	}
 	
-	/**
-	 * Returns an instance of AnimationManager. Guarantees that AnimationManager is instantiated only once.
-	 *
-	 * @return An instance of AnimationManagers
-	 */
 	public static AnimationManager getInstance() {
+		// Provide a reference on the unique instance of the Animation manager
 		if (eInstance == null) {
 			eInstance = new AnimationManager();
 		}
 		return eInstance;
 	}
 
-	/**
-	 * Initialize the animation manager
-	 *  
-	 * @param modelElement
-	 */
 	public void init(EObject modelElement){
 		// Triggers diagrams search when called
 		this.diagramManager.init(modelElement);
+	}
+	
+	protected void preRendering(EObject modelElement){
+		// This operation specifies pre-actions that need to be accomplished
+		// before proceeding to the animation.
+		if(MokaConstants.MOKA_OPEN_DIAGRAM_IN_AUTOMATIC_ANIMATION){
+			if(!this.diagramManager.hasOpenedDiagram(modelElement)){
+				this.diagramManager.openDiagrams(modelElement);
+			}
+		}
 	}
 	
 	@Override
@@ -184,34 +188,37 @@ public class AnimationManager implements IAnimationManager{
 		// this latter has not already a marker applied on it
 		// and if so this marker is not of the kind of the requested
 		// marker
-		IPapyrusMarker requestedMarker = null;
-		// This is not the first time the element is visited
-		if(this.hasMarker(modelElement, AnimationKind.VISITED)){
-			IPapyrusMarker visitedMarker = this.deleteMarker(modelElement, AnimationKind.VISITED);
-			if(visitedMarker!=null){
-				this.modelElementMarkers.get(modelElement).remove(visitedMarker);
+		if(this.isRenderable(modelElement)){
+			this.preRendering(modelElement);
+			IPapyrusMarker requestedMarker = null;
+			// This is not the first time the element is visited
+			if(this.hasMarker(modelElement, AnimationKind.VISITED)){
+				IPapyrusMarker visitedMarker = this.deleteMarker(modelElement, AnimationKind.VISITED);
+				if(visitedMarker!=null){
+					this.modelElementMarkers.get(modelElement).remove(visitedMarker);
+				}
 			}
-		}
-		// Apply requested marker
-		if(!this.hasMarker(modelElement, animationKind)){
-			Map<String, String> attributes = new HashMap<String, String>();
-			attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
-			// Defined which type of animation is expected
-			if(animationKind.equals(AnimationKind.ANIMATED)){
-				requestedMarker = this.createMarker(modelElement, AnimationUtils.ANIMATED_MARKER_ID, attributes);
-			}else if(animationKind.equals(AnimationKind.SUSPENDED)){
-				requestedMarker = this.createMarker(modelElement, AnimationUtils.SUSPENDED_MARKER_ID, attributes);
-			}else{
-				System.err.println("[startRendering] - animation kind not recognized");
-			}
-			// Update map of applied markers
-			List<IPapyrusMarker> markerList = this.modelElementMarkers.get(modelElement);
-			if(markerList==null){
-				markerList = new ArrayList<IPapyrusMarker>();
-				this.modelElementMarkers.put(modelElement, markerList);
-			}
-			if(requestedMarker!=null){
-				markerList.add(requestedMarker);
+			// Apply requested marker
+			if(!this.hasMarker(modelElement, animationKind)){
+				Map<String, String> attributes = new HashMap<String, String>();
+				attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
+				// Defined which type of animation is expected
+				if(animationKind.equals(AnimationKind.ANIMATED)){
+					requestedMarker = this.createMarker(modelElement, AnimationUtils.ANIMATED_MARKER_ID, attributes);
+				}else if(animationKind.equals(AnimationKind.SUSPENDED)){
+					requestedMarker = this.createMarker(modelElement, AnimationUtils.SUSPENDED_MARKER_ID, attributes);
+				}else{
+					System.err.println("[startRendering] - animation kind not recognized");
+				}
+				// Update map of applied markers
+				List<IPapyrusMarker> markerList = this.modelElementMarkers.get(modelElement);
+				if(markerList==null){
+					markerList = new ArrayList<IPapyrusMarker>();
+					this.modelElementMarkers.put(modelElement, markerList);
+				}
+				if(requestedMarker!=null){
+					markerList.add(requestedMarker);
+				}
 			}
 		}
 	}
@@ -235,17 +242,19 @@ public class AnimationManager implements IAnimationManager{
 		// A marker can only be removed from a model element if it is applied on it.
 		// As a model element can have multiple markers applied, only the one corresponding
 		// to the specific animation kind is removed
-		if(this.hasMarker(modelElement, kind)){
-			IPapyrusMarker marker = this.deleteMarker(modelElement, kind); 
-			if(marker!=null){
-				this.modelElementMarkers.get(modelElement).remove(marker);
+		if(this.isRenderable(modelElement)){
+			if(this.hasMarker(modelElement, kind)){
+				IPapyrusMarker marker = this.deleteMarker(modelElement, kind); 
+				if(marker!=null){
+					this.modelElementMarkers.get(modelElement).remove(marker);
+				}
 			}
-		}
-		if(!this.hasMarker(modelElement, AnimationKind.VISITED)){
-			Map<String, String> attributes = new HashMap<String, String>();
-			attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
-			IPapyrusMarker visitedMarker = this.createMarker(modelElement, AnimationUtils.VISITED_MARKER_ID, attributes);
-			this.modelElementMarkers.get(modelElement).add(visitedMarker);
+			if(!this.hasMarker(modelElement, AnimationKind.VISITED)){
+				Map<String, String> attributes = new HashMap<String, String>();
+				attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
+				IPapyrusMarker visitedMarker = this.createMarker(modelElement, AnimationUtils.VISITED_MARKER_ID, attributes);
+				this.modelElementMarkers.get(modelElement).add(visitedMarker);
+			}
 		}
 	}
 
@@ -255,8 +264,7 @@ public class AnimationManager implements IAnimationManager{
 	
 	@Override
 	public boolean isRenderable(EObject modelElement) {
-		// TODO Auto-generated method stub
-		return false;
+		return this.diagramManager.isRenderable(modelElement);
 	}
 
 	@Override
@@ -285,6 +293,6 @@ public class AnimationManager implements IAnimationManager{
 		// 1 - Releasing all model elements from their makers (if placed by the animation framework)
 		// 2 - Releasing all diagram referenced by the animation diagram manager
 		this.deleteAllMarkers();
-		// TODO: release diagrams
+		this.diagramManager.clean();
 	}
 }
