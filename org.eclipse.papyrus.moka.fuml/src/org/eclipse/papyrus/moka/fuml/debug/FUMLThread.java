@@ -13,14 +13,20 @@ package org.eclipse.papyrus.moka.fuml.debug;
 
 import org.eclipse.debug.core.DebugEvent;
 import org.eclipse.debug.core.DebugException;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
+import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.debug.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.MokaThread;
-import org.eclipse.papyrus.moka.ui.presentation.IPresentation;
+import org.eclipse.papyrus.moka.fuml.presentation.IPresentation;
 import org.eclipse.swt.graphics.Image;
 
 public class FUMLThread extends MokaThread implements IPresentation {
 
+	// Indicate the object on which the FUMLThread was suspended
+	protected EObject  suspensionPoint;
+	
 	/**
 	 * Determines if this thread is terminated
 	 */
@@ -46,6 +52,15 @@ public class FUMLThread extends MokaThread implements IPresentation {
 		super(debugTarget);
 	}
 
+	public void setSuspensionPoint(EObject modelElement){
+		this.suspensionPoint = modelElement;
+		AnimationManager.getInstance().startRendering(modelElement, AnimationKind.SUSPENDED);
+	}
+	
+	public EObject getSuspensionPoint(){
+		return this.suspensionPoint;
+	}
+	
 	/*
 	 * (non-Javadoc)
 	 *
@@ -250,7 +265,9 @@ public class FUMLThread extends MokaThread implements IPresentation {
 		}
 		return super.canStepReturn();
 	}
-
-
-
+	
+	public void resume() throws DebugException{
+		AnimationManager.getInstance().stopRendering(this.getSuspensionPoint(), AnimationKind.SUSPENDED);
+		super.resume();
+	}
 }

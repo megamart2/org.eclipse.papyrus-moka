@@ -188,7 +188,7 @@ public class AnimationManager implements IAnimationManager{
 		// this latter has not already a marker applied on it
 		// and if so this marker is not of the kind of the requested
 		// marker
-		if(this.isRenderable(modelElement)){
+		if(modelElement!= null && this.isRenderable(modelElement)){
 			this.preRendering(modelElement);
 			IPapyrusMarker requestedMarker = null;
 			// This is not the first time the element is visited
@@ -224,7 +224,7 @@ public class AnimationManager implements IAnimationManager{
 	}
 
 	@Override
-	public synchronized void render(EObject modelElement, AnimationKind animationKind, int renderingDuration) {
+	public void render(EObject modelElement, AnimationKind animationKind, int renderingDuration) {
 		// Place the marker to trigger the user view to change
 		this.startRendering(modelElement, animationKind);
 		// The duration for which the marker is in place
@@ -242,7 +242,7 @@ public class AnimationManager implements IAnimationManager{
 		// A marker can only be removed from a model element if it is applied on it.
 		// As a model element can have multiple markers applied, only the one corresponding
 		// to the specific animation kind is removed
-		if(this.isRenderable(modelElement)){
+		if(modelElement != null && this.isRenderable(modelElement)){
 			if(this.hasMarker(modelElement, kind)){
 				IPapyrusMarker marker = this.deleteMarker(modelElement, kind); 
 				if(marker!=null){
@@ -258,10 +258,6 @@ public class AnimationManager implements IAnimationManager{
 		}
 	}
 
-	public void stopRendering(EObject modelElement){
-		
-	}
-	
 	@Override
 	public boolean isRenderable(EObject modelElement) {
 		return this.diagramManager.isRenderable(modelElement);

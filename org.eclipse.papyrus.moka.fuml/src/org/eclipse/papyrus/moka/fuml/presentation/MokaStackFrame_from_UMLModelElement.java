@@ -16,7 +16,6 @@ import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.ui.presentation.IPresentation;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 

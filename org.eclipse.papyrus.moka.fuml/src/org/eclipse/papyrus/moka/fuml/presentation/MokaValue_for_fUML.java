@@ -15,7 +15,6 @@ import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.MokaValue;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
-import org.eclipse.papyrus.moka.ui.presentation.IPresentation;
 import org.eclipse.swt.graphics.Image;
 
 public abstract class MokaValue_for_fUML extends MokaValue implements IPresentation {

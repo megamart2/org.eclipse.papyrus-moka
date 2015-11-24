@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.ui.presentation;
+package org.eclipse.papyrus.moka.fuml.presentation;
 
 import org.eclipse.swt.graphics.Image;
 

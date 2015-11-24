@@ -28,10 +28,9 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
-import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
+import org.eclipse.papyrus.moka.fuml.presentation.IPresentation;
 import org.eclipse.papyrus.moka.launch.EditorUtils;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorInput;
@@ -179,11 +178,6 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 				}
 				modelElement = (EcoreUtil.resolve(modelElement, resourceSet));
 			}
-			/*List<Diagram> diagrams = AnimationUtils.getInstance().getDiagrams(modelElement);
-			for (Diagram diagram : diagrams) {
-				AnimationUtils.getInstance().openDiagram(diagram, false);
-			}*/
-			AnimationManager.getInstance().startRendering(modelElement, AnimationKind.SUSPENDED);
 			return true;
 		}
 		return false;
@@ -195,7 +189,7 @@ public class MokaDebugModelPresentation implements IDebugModelPresentation, IDeb
 	 * @see org.eclipse.debug.ui.IDebugEditorPresentation#removeAnnotations(org.eclipse.ui.IEditorPart, org.eclipse.debug.core.model.IThread)
 	 */
 	public void removeAnnotations(IEditorPart editorPart, IThread thread) {
-		//AnimationUtils.getInstance().removeSuspendedMarker(thread);
+	
 	}
 
 }

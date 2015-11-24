@@ -225,7 +225,7 @@ public class ControlDelegate {
 			try {
 				synchronized (this) {
 					this.getThreads(); // To make sure that this.threads is neither null nor empty
-					MokaThread mainThread = this.threads.get(0);
+					FUMLThread mainThread = this.threads.get(0);
 					mainThread.setSuspended(true);
 					MokaStackFrame stackFrame = FUMLPresentationUtils.getMokaStackFrame(object);
 					stackFrame.setThread(mainThread);
@@ -243,8 +243,9 @@ public class ControlDelegate {
 					try {
 						synchronized (this) {
 							this.getThreads(); // To make sure that this.threads is neither null nor empty
-							MokaThread mainThread = this.threads.get(0);
+							FUMLThread mainThread = this.threads.get(0);
 							mainThread.setSuspended(true);
+							mainThread.setSuspensionPoint(semanticElement);
 							MokaStackFrame stackFrame = FUMLPresentationUtils.getMokaStackFrame(object);
 							stackFrame.setThread(mainThread);
 							mainThread.setStackFrames(new IStackFrame[] { stackFrame });

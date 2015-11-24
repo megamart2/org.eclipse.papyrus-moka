@@ -24,6 +24,7 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
 import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
@@ -127,6 +128,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		if (reasonForResuming == DebugEvent.STEP_OVER) {
 			thread.setIsStepping(true);
 		}
+		AnimationManager.getInstance().stopRendering(thread.getSuspensionPoint(), AnimationKind.SUSPENDED);
 		thread.setStackFrames(new IStackFrame[] {});
 		Object lock = this.locks.get(thread);
 		synchronized (lock) {
@@ -366,6 +368,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 					reasonForSuspending = DebugEvent.STEP_END;
 				} else if (this.elementsWithBreakpoints.contains(semanticElement)) { // Tries to check if a breakpoint applies
 					reasonForSuspending = DebugEvent.BREAKPOINT;
+					thread.setSuspensionPoint(semanticElement);
 				}
 				if (reasonForSuspending != -1) {
 					thread.setSuspended(true);
