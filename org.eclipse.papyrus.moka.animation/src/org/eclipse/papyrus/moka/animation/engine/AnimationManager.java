@@ -183,7 +183,7 @@ public class AnimationManager implements IAnimationManager{
 	}
 	
 	@Override
-	public void startRendering(EObject modelElement, AnimationKind animationKind) {
+	public synchronized void startRendering(EObject modelElement, AnimationKind animationKind) {
 		// A marker is only registered on a model element if
 		// this latter has not already a marker applied on it
 		// and if so this marker is not of the kind of the requested
@@ -224,7 +224,7 @@ public class AnimationManager implements IAnimationManager{
 	}
 
 	@Override
-	public void render(EObject modelElement, AnimationKind animationKind, int renderingDuration) {
+	public synchronized void render(EObject modelElement, AnimationKind animationKind, int renderingDuration) {
 		// Place the marker to trigger the user view to change
 		this.startRendering(modelElement, animationKind);
 		// The duration for which the marker is in place
@@ -238,7 +238,7 @@ public class AnimationManager implements IAnimationManager{
 	}
 
 	@Override
-	public void stopRendering(EObject modelElement, AnimationKind kind) {
+	public synchronized void stopRendering(EObject modelElement, AnimationKind kind) {
 		// A marker can only be removed from a model element if it is applied on it.
 		// As a model element can have multiple markers applied, only the one corresponding
 		// to the specific animation kind is removed

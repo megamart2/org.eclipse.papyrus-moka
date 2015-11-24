@@ -24,7 +24,6 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
 import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
@@ -207,11 +206,6 @@ public class AsyncControlDelegate extends ControlDelegate {
 	public void terminate(Terminate_Request request) {
 		engine.setIsTerminated(true);
 		this.terminateRequestByClient = true;
-		for (List<AcceptEventAction> waitingOn : this.objectActivationToWaitingAcceptEventActions.values()) {
-			for (EObject o : waitingOn) {
-				//AnimationManager.getInstance().removeAnimationMarker(o);
-			}
-		}
 		/**********/
 		// 439639: [Moka] oepm.async.fuml.debug.AsyncControlDelegate.terminate shall send a TerminateSignalInstance to all objects in the execution locus
 		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=439639
@@ -235,7 +229,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		synchronized (this) {
 			notifyAll();
 		}
-		//AnimationManager.getInstance().removeAllAnimationMarker();
+		AnimationManager.getInstance().deleteAllMarkers();
 	}
 
 	/**
@@ -362,8 +356,8 @@ public class AsyncControlDelegate extends ControlDelegate {
 						thread = this.mainThread;
 					}
 				}
-				if (semanticElement != null && MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.mode.equals(ILaunchManager.DEBUG_MODE) && !thread.isStepping()) {
-					this.animate(semanticElement);
+				if (object != null && MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.mode.equals(ILaunchManager.DEBUG_MODE) && !thread.isStepping()) {
+					this.animate(object);
 				}
 				int reasonForSuspending = -1;
 				if (thread.getReasonForSuspending() != -1) {
@@ -418,7 +412,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 					if (eventAccepter instanceof AcceptEventActionEventAccepter) {
 						AcceptEventAction action = (AcceptEventAction) ((AcceptEventActionEventAccepter) eventAccepter).actionActivation.node;
 						waitingAcceptEventActions.add(action);
-						AnimationManager.getInstance().startRendering(action, AnimationKind.ANIMATED);
+						((AcceptEventActionEventAccepter) eventAccepter).actionActivation.animate(AnimationManager.getInstance());
 					}
 				}
 				objectActivationToWaitingAcceptEventActions.put(asyncObjectActivation, waitingAcceptEventActions);
@@ -452,7 +446,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 				}
 				objectActivationToWaitingAcceptEventActions.put(asyncObjectActivation, waitingAcceptEventActions);
 				if (action != null) {
-					AnimationManager.getInstance().stopRendering(action);
+					accepter.actionActivation.animate(AnimationManager.getInstance());
 				}
 			}
 		}
