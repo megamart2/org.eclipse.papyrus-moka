@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Issue FUML12-23 RemoveStructuralFeatureValueAction: Removal of links does not consider provided input value
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions;
@@ -57,7 +58,7 @@ public class RemoveStructuralFeatureValueActionActivation extends WriteStructura
 			removeAt = ((UnlimitedNaturalValue) this.takeTokens(action.getRemoveAt()).get(0)).value;
 		}
 		if (association != null) {
-			List<Link> links = this.getMatchingLinks(association, feature, value);
+			List<Link> links = this.getMatchingLinksForEndValue(association, feature, value, inputValue); // FUML12-23 RemoveStructuralFeatureValueAction: Removal of links does not consider provided input value
 			if (action.isRemoveDuplicates()) {
 				for (int i = 0; i < links.size(); i++) {
 					Link link = links.get(i);
