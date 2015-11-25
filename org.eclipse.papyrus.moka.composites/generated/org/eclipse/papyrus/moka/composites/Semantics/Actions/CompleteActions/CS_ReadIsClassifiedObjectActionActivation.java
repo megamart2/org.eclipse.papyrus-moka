@@ -24,7 +24,7 @@ import org.eclipse.uml2.uml.InterfaceRealization;
 public class CS_ReadIsClassifiedObjectActionActivation extends ReadIsClassifiedObjectActionActivation {
 
 	@Override
-	public Boolean checkAllParents(Classifier type, Classifier classifier) {
+	public boolean checkAllParents(Classifier type, Classifier classifier) {
 		// If the given classifier is not an Interface, behaves like in fUML.
 		// Otherwise, check if the given type (or one of its direct or indirect ancestors)
 		// has an InterfaceRealization relationships with the given classifier.

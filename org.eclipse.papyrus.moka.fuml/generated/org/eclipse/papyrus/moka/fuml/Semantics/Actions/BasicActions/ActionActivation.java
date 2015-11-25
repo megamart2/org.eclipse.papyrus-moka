@@ -10,7 +10,8 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *	Jeremie Tatibouet (CEA LIST) - Apply fix fUML12-10 certain boolean flags are not properly initialized in come cases 
- *
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix fUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions;
 
@@ -33,6 +34,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ConditionalNode;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.LiteralBoolean;
@@ -371,6 +373,27 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		// fUML12-10 certain boolean flags are not properly initialized in come cases 
 		super.initialize(node, group);
 		this.firing = false;
+	}
+	
+	public boolean checkAllParents(Classifier type, Classifier classifier){
+		// Check if the given classifier matches any of the direct or indirect
+		// ancestors of a given type.
+		
+		// fUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
+		
+		List<Classifier> directParents = type.getGenerals();
+		boolean matched = false;
+		int i = 1;
+		while (!matched & i <= directParents.size()) {
+			Classifier directParent = directParents.get(i - 1);
+			if (directParent == classifier) {
+				matched = true;
+			} else {
+				matched = this.checkAllParents(directParent, classifier);
+			}
+			i = i + 1;
+		}
+		return matched;
 	}
 	
 	// ADDED:

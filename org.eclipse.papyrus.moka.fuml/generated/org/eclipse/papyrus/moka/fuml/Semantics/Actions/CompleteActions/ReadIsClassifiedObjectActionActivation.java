@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - FUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
@@ -51,23 +52,5 @@ public class ReadIsClassifiedObjectActionActivation extends ActionActivation {
 		List<Value> values = new ArrayList<Value>();
 		values.add(this.makeBooleanValue(result));
 		this.putTokens(action.getResult(), values);
-	}
-
-	public Boolean checkAllParents(Classifier type, Classifier classifier) {
-		// Check if the given classifier matches any of the direct or indirect
-		// ancestors of a given type.
-		List<Classifier> directParents = type.getGenerals();
-		boolean matched = false;
-		int i = 1;
-		while (!matched & i <= directParents.size()) {
-			Classifier directParent = directParents.get(i - 1);
-			if (directParent == classifier) {
-				matched = true;
-			} else {
-				matched = this.checkAllParents(directParent, classifier);
-			}
-			i = i + 1;
-		}
-		return matched;
 	}
 }

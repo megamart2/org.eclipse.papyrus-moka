@@ -12,6 +12,7 @@
  *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
  *  Jeremie Tatibouet (CEA LIST) - Apply fix for Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
  *  Jeremie Tatibouet (CEA LIST) - Apply fix for Issue FUML12-10 certain boolean flags are not properly initialized in come cases 
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for Issue FUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
@@ -142,14 +143,21 @@ public class AcceptEventActionActivation extends ActionActivation {
 	public Boolean match(SignalInstance signalInstance) {
 		// Return true if the given signal instance matches a trigger of the
 		// accept action of this activation.
+		
+		// FUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
+		
 		AcceptEventAction action = (AcceptEventAction) (this.node);
 		List<Trigger> triggers = action.getTriggers();
 		Signal signal = signalInstance.type;
 		boolean matches = false;
 		int i = 1;
 		while (!matches & i <= triggers.size()) {
-			matches = ((SignalEvent) (triggers.get(i - 1).getEvent())).getSignal() == signal;
-			i = i + 1;
+			Signal triggerSignal = ((SignalEvent) (triggers.get(i - 1).getEvent())).getSignal();
+			if (triggerSignal == signal) {
+				matches = true;
+			}else{
+				matches = this.checkAllParents(signal, triggerSignal);
+			}			i = i + 1;
 		}
 		return matches;
 	}
