@@ -32,7 +32,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 
 	public List<Values> bodyOutputLists = new ArrayList<Values>();
 
-	public Boolean isTerminateAll;
+	public Boolean isTerminateAll; // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 
 	@Override
 	public void doStructuredActivity() {
@@ -60,7 +60,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 			bodyOutputList.values = this.takeTokens(loopVariableInput);
 			this.bodyOutputLists.add(bodyOutputList);
 		}
-		this.isTerminateAll = false;
+		this.isTerminateAll = false; // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 		this.doLoop(true);
 	}
 
@@ -107,14 +107,14 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 					continuing = this.runTest();
 				}
 			}
-			if (!this.isTerminateAll & this.isRunning() & !this.isSuspended()) {
+			if (!this.isTerminateAll & this.isRunning() & !this.isSuspended()) { // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 				this.activationGroup.terminateAll();
 			} else {
 				continuing = false;
 			}
 			Debug.println("[doStructuredActivity] " + (continuing ? "Continuing." : this.isSuspended() ? "Suspended" : "Done."));
 		}
-		if (!this.isTerminateAll & this.isRunning() & !this.isSuspended()) {
+		if (!this.isTerminateAll & this.isRunning() & !this.isSuspended()) { // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 			for (int i = 0; i < bodyOutputLists.size(); i++) {
 				Values bodyOutputList = bodyOutputLists.get(i);
 				OutputPin resultPin = resultPins.get(i);
@@ -145,7 +145,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 		Debug.println("[runBody] Running body...");
 		LoopNode loopNode = (LoopNode) this.node;
 		this.activationGroup.runNodes(this.makeActivityNodeList(loopNode.getBodyParts()));
-		if (!this.isTerminateAll && !this.isSuspended()) {
+		if (!this.isTerminateAll & !this.isSuspended()) { // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 			this.saveBodyOutputs();
 		}
 	}
@@ -193,7 +193,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 	public void terminateAll() {
 		// Copy the values of the body outputs to the loop outputs, and then
 		// terminate all activations in the loop.
-		this.isTerminateAll = true;
+		this.isTerminateAll = true; // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 		LoopNode loopNode = (LoopNode) this.node;
 		List<OutputPin> bodyOutputs = loopNode.getBodyOutputs();
 		List<OutputPin> resultPins = this.getResults();
@@ -212,7 +212,7 @@ public class LoopNodeActivation extends StructuredActivityNodeActivation {
 		// without being suspended again, complete the action.
 		LoopNode loopNode = (LoopNode) (this.node);
 		this.saveBodyOutputs();
-		if (!this.isTerminateAll) {
+		if (!this.isTerminateAll) { // FUML12-8 LoopNodeActivation does not correctly handle the firing of a contained activity final node
 			if (loopNode.isMustIsolate()) {
 				_beginIsolation();
 				this.continueLoop();
