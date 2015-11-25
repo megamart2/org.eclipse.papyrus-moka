@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *	Jeremie Tatibouet (CEA LIST) - Apply fix fUML12-10 certain boolean flags are not properly initialized in come cases 
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions;
@@ -20,6 +21,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ControlToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ForkNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ObjectToken;
@@ -238,7 +240,7 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		ActivityNodeActivation forkNodeActivation;
 		if (this.outgoingEdges.size() == 0) {
 			forkNodeActivation = new ForkNodeActivation();
-			forkNodeActivation.running = false; // ADDED
+			forkNodeActivation.running = false; // fUML12-10 certain boolean flags are not properly initialized in come cases 
 			ActivityEdgeInstance newEdge = new ActivityEdgeInstance();
 			super.addOutgoingEdge(newEdge);
 			forkNodeActivation.addIncomingEdge(newEdge);
@@ -365,6 +367,12 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 		return (BooleanValue) (this.getExecutionLocus().executor.evaluate(booleanLiteral));
 	}
 
+	public void initialize(ActivityNode node, ActivityNodeActivationGroup group){
+		// fUML12-10 certain boolean flags are not properly initialized in come cases 
+		super.initialize(node, group);
+		this.firing = false;
+	}
+	
 	// ADDED:
 	protected static List<InputPin> getInputs(Action action) {
 		return action instanceof LoopNode ? ((LoopNode) action).getLoopVariableInputs() : action.getInputs();
@@ -373,5 +381,4 @@ public abstract class ActionActivation extends ActivityNodeActivation {
 	protected static List<OutputPin> getOutputs(Action action) {
 		return action instanceof LoopNode ? ((LoopNode) action).getResults() : action instanceof ConditionalNode ? ((ConditionalNode) action).getResults() : action.getOutputs();
 	}
-	//
 }

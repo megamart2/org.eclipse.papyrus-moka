@@ -10,6 +10,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix fUML12-10 certain boolean flags are not properly initialized in come cases
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities;
@@ -288,6 +289,16 @@ public abstract class ActivityNodeActivation extends SemanticVisitor {
 		return tokens;
 	}
 
+	public void initialize(ActivityNode node, ActivityNodeActivationGroup group){
+		// Initialize this node activation.
+				
+		//fUML12-10 certain boolean flags are not properly initialized in come cases 
+				
+		this.node = node;
+		this.group = group;
+		this.running = false;
+	}
+	
 	public void suspend() {
 		// Suspend this activation within the activation group that contains it.
 		this.group.suspend(this);

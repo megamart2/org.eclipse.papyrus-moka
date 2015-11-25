@@ -141,7 +141,7 @@ public class ExpansionRegionActivation extends ActionActivation {
 			while (j <= outputElements.size()) {
 				OutputPinActivation groupOutput = new OutputPinActivation();
 				groupOutput.run();
-				activationGroup.groupOutputs.add(groupOutput); // CHANGED "new OutputPinActivation()" to "groupOutput"
+				activationGroup.groupOutputs.add(groupOutput); // fUML12-10 certain boolean flags are not properly initialized in come cases 
 				j = j + 1;
 			}
 			activationGroup.createNodeActivations(region.getNodes());

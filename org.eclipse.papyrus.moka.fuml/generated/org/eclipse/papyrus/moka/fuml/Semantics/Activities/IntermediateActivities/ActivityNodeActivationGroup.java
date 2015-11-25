@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix fUML12-10 certain boolean flags are not properly initialized in come cases 
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities;
@@ -167,18 +168,14 @@ public class ActivityNodeActivationGroup {
 	public ActivityNodeActivation createNodeActivation(ActivityNode node) {
 		// Create an activity node activation for a given activity node in this
 		// activity node activation group.
+		
+		// fUML12-10 certain boolean flags are not properly initialized in come cases 
+		
 		ActivityNodeActivation activation = (ActivityNodeActivation) (this.getActivityExecution().locus.factory.instantiateVisitor(node));
-		activation.node = node;
-		activation.running = false;
-		this.addNodeActivation(activation);
+		activation.initialize(node, this);
+		this.nodeActivations.add(activation);
 		activation.createNodeActivations();
 		return activation;
-	}
-
-	public void addNodeActivation(ActivityNodeActivation activation) {
-		// Add the given node activation to this group.
-		activation.group = this;
-		this.nodeActivations.add(activation);
 	}
 
 	public ActivityNodeActivation getNodeActivation(ActivityNode node) {
@@ -203,12 +200,16 @@ public class ActivityNodeActivationGroup {
 	public void createEdgeInstances(List<ActivityEdge> edges) {
 		// Create instance edges for the given activity edges, as well as for
 		// edge instances within any nodes activated in this group.
+		
+		// fUML12-10 certain boolean flags are not properly initialized in come cases 
+		
 		for (int i = 0; i < edges.size(); i++) {
 			ActivityEdge edge = edges.get(i);
 			Debug.println("[createEdgeInstances] Creating an edge instance from " + edge.getSource().getName() + " to " + edge.getTarget().getName() + ".");
 			ActivityEdgeInstance edgeInstance = new ActivityEdgeInstance();
 			edgeInstance.edge = edge;
-			this.addEdgeInstance(edgeInstance);
+			edgeInstance.group = this;
+			this.edgeInstances.add(edgeInstance);
 			this.getNodeActivation(edge.getSource()).addOutgoingEdge(edgeInstance);
 			this.getNodeActivation(edge.getTarget()).addIncomingEdge(edgeInstance);
 			// Debug.println("[createEdgeInstances] Edge instance created...");
@@ -219,12 +220,6 @@ public class ActivityNodeActivationGroup {
 			nodeActivation.createEdgeInstances();
 		}
 		// Debug.println("[createEdgeInstances] Done creating edge instances.");
-	}
-
-	public void addEdgeInstance(ActivityEdgeInstance instance) {
-		// Add the given edge instance to this group.
-		instance.group = this;
-		this.edgeInstances.add(instance);
 	}
 
 	public ActivityExecution getActivityExecution() {
