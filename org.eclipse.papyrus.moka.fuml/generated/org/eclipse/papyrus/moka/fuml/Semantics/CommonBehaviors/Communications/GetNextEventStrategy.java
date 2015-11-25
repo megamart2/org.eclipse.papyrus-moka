@@ -9,7 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *
+ *   Jeremie Tatibouet (CEA) - Apply Fix fUML12-35 Initial execution of an activity is not run to completion
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
 
@@ -23,5 +23,5 @@ public abstract class GetNextEventStrategy extends SemanticStrategy {
 		return "getNextEvent";
 	}
 
-	public abstract SignalInstance getNextEvent(ObjectActivation objectActivation);
+	public abstract EventOccurrence getNextEvent(ObjectActivation objectActivation); // fUML12-35 Initial execution of an activity is not run to completion
 }

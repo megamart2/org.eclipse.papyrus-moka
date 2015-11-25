@@ -24,7 +24,7 @@ public class AssertionExecutionContextHelper {
 				context = getExecutionContext((Execution) assertionExecution.context);
 			} else {
 				if (assertionExecution.context.objectActivation != null) {
-					context = assertionExecution.context.objectActivation.classifierBehaviorExecutions.get(0).classifier;
+					context = assertionExecution.context.objectActivation.classifierBehaviorInvocations.get(0).classifier;
 				} else {
 					context = assertionExecution.context.types.get(0);
 				}

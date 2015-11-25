@@ -9,13 +9,21 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST)
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
+
 public abstract class EventAccepter {
 
-	public abstract void accept(SignalInstance signalInstance);
+	/**
+	 * Context in which the accepter was registered;
+	 */
+	public Execution registrationContext;
+	
+	public abstract void accept(EventOccurrence eventOccurrence);
 
-	public abstract Boolean match(SignalInstance signalInstance);
+	public abstract Boolean match(EventOccurrence eventOccurrence);
 }

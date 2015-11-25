@@ -8,26 +8,20 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Alignment of the asynchronous implementation of fUML with the version 1.2 of the standard
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
 
 
-// TODO: Auto-generated Javadoc
 /**
  * The Class AsyncGetNextEventStrategy.
- *
- * @author CEA LIST (jt605650)
  */
 public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 
-	/*
-	 * (non-Javadoc)
-	 *
-	 * @see org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy#getName()
-	 */
 	@Override
 	public String getName() {
 		return "getNextEvent";
@@ -40,5 +34,5 @@ public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 	 *            the event pool
 	 * @return the next event
 	 */
-	public abstract SignalInstance getNextEvent(AsyncEventPool eventPool);
+	public abstract EventOccurrence getNextEvent(AsyncEventPool eventPool);
 }

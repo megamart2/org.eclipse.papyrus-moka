@@ -9,12 +9,14 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA) - Apply Fix fUML12-35 Initial execution of an activity is not run to completion
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalEventOccurrence;
 
 public class AcceptEventActionEventAccepter extends EventAccepter {
 
@@ -25,16 +27,28 @@ public class AcceptEventActionEventAccepter extends EventAccepter {
 	public AcceptEventActionActivation actionActivation;
 
 	@Override
-	public void accept(SignalInstance signalInstance) {
-		// Accept a signal occurance for the given signal instance.
-		// Forward the signal occuranceto the action activation.
-		this.actionActivation.accept(signalInstance);
+	public void accept(EventOccurrence eventOccurrence) {
+		// Accept a signal event occurrence. Forward the signal instance to the action activation.
+		
+		//fUML12-35 Initial execution of an activity is not run to completion
+		
+		
+		if (eventOccurrence instanceof SignalEventOccurrence) {
+			this.actionActivation.accept(((SignalEventOccurrence)eventOccurrence).signalInstance);
+		}
 	}
 
 	@Override
-	public Boolean match(SignalInstance signalInstance) {
-		// Return true if the given signal instance matches a trigger of the
-		// accept action of the action activation.
-		return this.actionActivation.match(signalInstance);
+	public Boolean match(EventOccurrence eventOccurrence) {
+		// Return true if the given event occurrence is a signal event occurrence and the
+		// signal instance matches a trigger of the accept action of the action activation.
+		
+		//fUML12-35 Initial execution of an activity is not run to completion
+		
+		boolean matches = false;
+		if (eventOccurrence instanceof SignalEventOccurrence) {
+			matches = this.actionActivation.match(((SignalEventOccurrence)eventOccurrence).signalInstance);
+		}
+		return matches;
 	}
 }

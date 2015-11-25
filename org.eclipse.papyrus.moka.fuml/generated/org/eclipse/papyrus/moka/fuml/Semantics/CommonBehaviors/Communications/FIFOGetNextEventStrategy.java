@@ -9,18 +9,21 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *
+ *  Jeremie Tatibouet (CEA) - Apply Fix fUML12-35 Initial execution of an activity is not run to completion
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
 
 public class FIFOGetNextEventStrategy extends GetNextEventStrategy {
 
 	@Override
-	public SignalInstance getNextEvent(ObjectActivation objectActivation) {
+	public EventOccurrence getNextEvent(ObjectActivation objectActivation) {
 		// Get the first event from the given event pool. The event is removed
 		// from the pool.
-		SignalInstance signalInstance = objectActivation.eventPool.get(0);
+		
+		// fUML12-35 Initial execution of an activity is not run to completion
+		
+		EventOccurrence eventOccurrence = objectActivation.eventPool.get(0);
 		objectActivation.eventPool.remove(0);
-		return signalInstance;
+		return eventOccurrence;
 	}
 }

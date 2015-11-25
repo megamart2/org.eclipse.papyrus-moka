@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST)
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
@@ -27,22 +28,24 @@ import org.eclipse.uml2.uml.Class;
 public class ObjectActivation {
 
 	/*
-	 * The executing classifier behaviors for this object activation.
+	 * The invocations of the executing classifier behaviors for this object activation
+	 * 
+	 * fUML12-35 Initial execution of an activity is not run to completion
 	 */
-	public List<ClassifierBehaviorExecution> classifierBehaviorExecutions = new ArrayList<ClassifierBehaviorExecution>();
+	public List<ClassifierBehaviorInvocationEventAccepter> classifierBehaviorInvocations = new ArrayList<ClassifierBehaviorInvocationEventAccepter>();
 
 	/*
-	 * The set of event accepters waiting for signals to be received by the
-	 * object of this object activation.
+	 * The set of event accepters waiting for event occurrences to be dispatched from the pool
 	 */
 	public List<EventAccepter> waitingEventAccepters = new ArrayList<EventAccepter>();
 
 	/*
-	 * The pool of signals sent to the object of this object activation, pending
-	 * dispatching as events. (All the data values in the pool must be signal
-	 * instances -- that is, they must have a single type that is a signal.)
+	 * The pool of event occurrences received by the object of this object activation, pending
+	 * dispatching as events.
+	 * 
+	 * fUML12-35 Initial execution of an activity is not run to completion
 	 */
-	public List<SignalInstance> eventPool = new ArrayList<SignalInstance>();
+	public List<EventOccurrence> eventPool = new ArrayList<EventOccurrence>();
 
 	/*
 	 * The object whose active behavior is being handled by this active object.
@@ -52,9 +55,12 @@ public class ObjectActivation {
 	public void stop() {
 		// Stop this object activation by terminating all classifier behavior
 		// executions.
-		List<ClassifierBehaviorExecution> classifierBehaviorExecutions = this.classifierBehaviorExecutions;
+		
+		//fUML12-35 Initial execution of an activity is not run to completion
+		
+		List<ClassifierBehaviorInvocationEventAccepter> classifierBehaviorExecutions = this.classifierBehaviorInvocations;
 		for (int i = 0; i < classifierBehaviorExecutions.size(); i++) {
-			ClassifierBehaviorExecution classifierBehaviorExecution = classifierBehaviorExecutions.get(i);
+			ClassifierBehaviorInvocationEventAccepter classifierBehaviorExecution = classifierBehaviorExecutions.get(i);
 			classifierBehaviorExecution.terminate();
 		}
 	}
@@ -84,18 +90,15 @@ public class ObjectActivation {
 	}
 
 	public void dispatchNextEvent() {
-		// Get the next signal instance out of the event pool.
-		// If there is one or more waiting event accepters with triggers that
-		// match the signal instance, then dispatch it to exactly one of those
-		// waiting accepters.
+		//fUML12-35 Initial execution of an activity is not run to completion
 		if (this.eventPool.size() > 0) {
-			SignalInstance signalInstance = this.getNextEvent();
-			Debug.println("[dispatchNextEvent] signalInstance = " + signalInstance);
+			EventOccurrence eventOccurrence = this.getNextEvent();
+			Debug.println("[dispatchNextEvent] eventOccurrence = " + eventOccurrence);
 			List<Integer> matchingEventAccepterIndexes = new ArrayList<Integer>();
 			List<EventAccepter> waitingEventAccepters = this.waitingEventAccepters;
 			for (int i = 0; i < waitingEventAccepters.size(); i++) {
 				EventAccepter eventAccepter = waitingEventAccepters.get(i);
-				if (eventAccepter.match(signalInstance)) {
+				if (eventAccepter.match(eventOccurrence)) {
 					matchingEventAccepterIndexes.add(i);
 				}
 			}
@@ -104,22 +107,31 @@ public class ObjectActivation {
 				// ***
 				int j = ((ChoiceStrategy) this.object.locus.factory.getStrategy("choice")).choose(matchingEventAccepterIndexes.size());
 				EventAccepter selectedEventAccepter = this.waitingEventAccepters.get(matchingEventAccepterIndexes.get(j - 1));
-				this.waitingEventAccepters.remove(j - 1);
-				selectedEventAccepter.accept(signalInstance);
+				int removeAt = matchingEventAccepterIndexes.get(j - 1);
+				this.waitingEventAccepters.remove(removeAt);
+				selectedEventAccepter.accept(eventOccurrence);
 			}
 		}
 	}
 
-	public SignalInstance getNextEvent() {
+	public EventOccurrence getNextEvent() {
 		// Get the next event from the event pool, using a get next event
 		// strategy.
+		
+		//fUML12-35 Initial execution of an activity is not run to completion
+		
 		return ((GetNextEventStrategy) this.object.locus.factory.getStrategy("getNextEvent")).getNextEvent(this);
 	}
 
 	public void send(SignalInstance signalInstance) {
-		// Add the given signal instance to the event pool and signal that a new
-		// signal instance has arrived.
-		this.eventPool.add((SignalInstance) (signalInstance.copy()));
+		// Add a signal event occurrence for the given signal instance to the event pool
+		// and signal that a new event occurrence has arrived.
+		
+		//fUML12-35 Initial execution of an activity is not run to completion
+		
+		SignalEventOccurrence eventOccurrence = new SignalEventOccurrence();
+		eventOccurrence.signalInstance = (SignalInstance) signalInstance.copy();
+		this.eventPool.add(eventOccurrence);
 		_send(new ArrivalSignal());
 	}
 
@@ -127,14 +139,17 @@ public class ObjectActivation {
 		// Start the event dispatch loop for this object activation (if it has
 		// not already been started).
 		// If a classifier is given that is a type of the object of this object
-		// activation and there is not already a classifier behavior execution
+		// activation and there is not already a classifier behavior invocation
 		// for it,
-		// then create a classifier behavior execution for it.
-		// Otherwise, create a classifier behavior execution for each of the
+		// then create a classifier behavior invocation for it.
+		// Otherwise, create a classifier behavior invocation for each of the
 		// types of the object of this object activation which has a classifier
 		// behavior or which is a behavior itself
-		// and for which there is not currently a classifier behavior execution.
+		// and for which there is not currently a classifier behavior invocation.
 		// Start EventDispatchLoop
+		
+		//fUML12-35 Initial execution of an activity is not run to completion
+		
 		_startObjectBehavior();
 		if (classifier == null) {
 			Debug.println("[startBehavior] Starting behavior for all classifiers...");
@@ -150,15 +165,24 @@ public class ObjectActivation {
 			Debug.println("[startBehavior] Starting behavior for " + classifier.getName() + "...");
 			boolean notYetStarted = true;
 			int i = 1;
-			while (notYetStarted & i <= this.classifierBehaviorExecutions.size()) {
-				notYetStarted = (this.classifierBehaviorExecutions.get(i - 1).classifier != classifier);
+			while (notYetStarted & i <= this.classifierBehaviorInvocations.size()) {
+				notYetStarted = (this.classifierBehaviorInvocations.get(i - 1).classifier != classifier);
 				i = i + 1;
 			}
 			if (notYetStarted) {
-				ClassifierBehaviorExecution newExecution = new ClassifierBehaviorExecution();
-				newExecution.objectActivation = this;
-				this.classifierBehaviorExecutions.add(newExecution);
-				newExecution.execute(classifier, inputs);
+				/*
+				 * 1. Register an event accepter to denote the waiting of an InvocationEventoccurence that allows the classifier behavior to start
+				 * 2. Place in the event pool an InvocationEventOccurrence. When consumed it will triggers the execution of the classifier behavior in an RTC step
+				 * 3. Force the starting of the dispatch loop using the usual pattern of the ArrivalSignal
+				 */
+				ClassifierBehaviorInvocationEventAccepter newInvocation = new ClassifierBehaviorInvocationEventAccepter();
+				newInvocation.objectActivation = this;
+				this.classifierBehaviorInvocations.add(newInvocation);
+				newInvocation.invokeBehavior(classifier, inputs);
+				InvocationEventOccurrence eventOccurrence = new InvocationEventOccurrence();
+				eventOccurrence.execution = newInvocation.execution;
+				this.eventPool.add(eventOccurrence);
+				_send(new ArrivalSignal());
 			}
 		}
 	}

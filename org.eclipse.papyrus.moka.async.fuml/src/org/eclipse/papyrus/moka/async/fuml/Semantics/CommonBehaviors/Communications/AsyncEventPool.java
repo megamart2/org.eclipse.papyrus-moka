@@ -8,20 +8,17 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Alignment of the asynchronous implementation of fUML with the version 1.2 of the standard
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications;
 
 import java.util.concurrent.LinkedBlockingQueue;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
 
-// TODO: Auto-generated Javadoc
-/**
- * The Class AsyncEventPool.
- */
-@SuppressWarnings("serial")
 /**
  * The event pool provide a way for an object activation to communicate with others.
  * An instance of such class is always owned by an object activation
@@ -29,9 +26,9 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
  * object activation.
  * Every object activation that need to communicate with the one owning the event pool can
  * use the send method to offer a new SignalInstance
- * @author CEA LIST (jt605650)
  */
-public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implements IAsyncEventPool {
+@SuppressWarnings("serial")
+class AsyncEventPool extends LinkedBlockingQueue<EventOccurrence> implements IAsyncEventPool {
 
 	/* Event pool owner */
 	/** The object activation. */
@@ -56,8 +53,8 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 *            that need to be added to the event pool
 	 * @return true, if successful
 	 */
-	public boolean send(SignalInstance signalInstance) {
-		return this.offer(signalInstance);
+	public boolean send(EventOccurrence eventOccurrence) {
+		return this.offer(eventOccurrence);
 	}
 
 	/**
@@ -65,7 +62,7 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	 *
 	 * @return the next event
 	 */
-	public SignalInstance getNextEvent() {
+	public EventOccurrence getNextEvent() {
 		SemanticStrategy strategy = this.objectActivation.object.locus.factory.getStrategy("getNextEvent");
 		return ((AsyncGetNextEventStrategy) strategy).getNextEvent(this);
 	}
@@ -88,5 +85,4 @@ public class AsyncEventPool extends LinkedBlockingQueue<SignalInstance> implemen
 	public synchronized void setObjectActivation(ObjectActivation objectActivation) {
 		this.objectActivation = objectActivation;
 	}
-
 }

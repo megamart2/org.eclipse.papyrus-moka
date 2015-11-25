@@ -8,10 +8,11 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Alignment of the asynchronous implementation of fUML with the version 1.2 of the standard
+ *  
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -24,29 +25,23 @@ import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.AcceptEventActionEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ClassifierBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ClassifierBehaviorInvocationEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.InvocationEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardOutputChannelImpl;
-import org.eclipse.swt.graphics.Color;
-import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.console.IOConsoleOutputStream;
-import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Signal;
-import org.eclipse.uml2.uml.SignalEvent;
-import org.eclipse.uml2.uml.Trigger;
 
-// TODO: Auto-generated Javadoc
 /**
  * Extend the original ObjectActivation class in order to support starting of execution
  * of the different classifiers behaviors over a new Java Thread.
- *
- * @author CEA LIST (JT605650)
  */
 public class AsyncObjectActivation extends ObjectActivation implements Runnable {
 
@@ -154,9 +149,9 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 */
 	@Override
 	public synchronized void send(SignalInstance signalInstance) {
-		SignalInstance copy = (SignalInstance) signalInstance.copy();
-		this.evtPool.send(copy);
-		AsyncDebug.println("[SignalInstance sent] " + signalInstance.type.getName());
+		SignalEventOccurrence eventOccurrence = new SignalEventOccurrence();
+		eventOccurrence.signalInstance = (SignalInstance) signalInstance.copy();
+		this.evtPool.send(eventOccurrence);
 	}
 
 	// Added for connection with debug API
@@ -169,21 +164,25 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 * @return the next event
 	 */
 	@Override
-	public SignalInstance getNextEvent() {
+	public EventOccurrence getNextEvent() {
 		// Added for connection with debug API
 		if (this.evtPool.isEmpty()) {
 			this.currentState = ObjectActivationState.WAITING;
 			this.hasBeenWaiting = true;
 			((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateEntered(this);
 		}
-		SignalInstance signalInstance = this.evtPool.getNextEvent();
+		EventOccurrence eventOccurrence = this.evtPool.getNextEvent();
 		this.currentState = ObjectActivationState.RUNNING;
-		//
 
-		if (signalInstance != null) {
-			AsyncDebug.println("[consumed SignalInstance] " + signalInstance.type.getName());
+		if (eventOccurrence != null) {
+			if(eventOccurrence instanceof SignalEventOccurrence){
+				AsyncDebug.println("[EVENT CONSUMED] occurrence for a signal:  " + ((SignalEventOccurrence)eventOccurrence).signalInstance);
+			}
+			if(eventOccurrence instanceof InvocationEventOccurrence){
+				AsyncDebug.println("[EVENT CONSUMED] occurrence to start a classifier behavior: " + ((InvocationEventOccurrence)eventOccurrence).execution);
+			}
 		}
-		return signalInstance;
+		return eventOccurrence;
 	}
 
 	/**
@@ -220,15 +219,23 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			AsyncDebug.println("Starting behavior for " + classifier.getName() + "...");
 			boolean notYetStarted = true;
 			int i = 1;
-			while (notYetStarted & i <= this.classifierBehaviorExecutions.size()) {
-				notYetStarted = (this.classifierBehaviorExecutions.get(i - 1).classifier != classifier);
+			while (notYetStarted & i <= this.classifierBehaviorInvocations.size()) {
+				notYetStarted = (this.classifierBehaviorInvocations.get(i - 1).classifier != classifier);
 				i = i + 1;
 			}
 			if (notYetStarted) {
-				ClassifierBehaviorExecution newExecution = new ClassifierBehaviorExecution();
-				newExecution.objectActivation = this;
-				this.classifierBehaviorExecutions.add(newExecution);
-				newExecution.execute(classifier, inputs);
+				/*
+				 * 1. Register an event accepter to denote the waiting of an InvocationEventoccurence that allows the classifier behavior to start
+				 * 2. Place in the event pool an InvocationEventOccurrence. When consumed it will triggers the execution of the classifier behavior in an RTC step
+				 * 3. Force the starting of the dispatch loop using the usual pattern of the ArrivalSignal
+				 */
+				ClassifierBehaviorInvocationEventAccepter newInvocation = new ClassifierBehaviorInvocationEventAccepter();
+				newInvocation.objectActivation = this;
+				this.classifierBehaviorInvocations.add(newInvocation);
+				newInvocation.invokeBehavior(classifier, inputs);
+				InvocationEventOccurrence eventOccurrence = new InvocationEventOccurrence();
+				eventOccurrence.execution = newInvocation.execution;
+				this.evtPool.send(eventOccurrence);
 			}
 		}
 
@@ -246,7 +253,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	}
 
 	/** The out. */
-	protected IOConsoleOutputStream out;
+	final static protected IOConsoleOutputStream out = StandardOutputChannelImpl.getConsole().newOutputStream();;
 
 	/**
 	 * Get the next signal instance out of the event pool.
@@ -257,14 +264,14 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	@Override
 	public void dispatchNextEvent() {
 		/* 1. Get next event is blocking if used on a empty event pool */
-		SignalInstance signalInstance = this.getNextEvent();
-		AsyncDebug.println("[dispatchNextEvent] signalInstance = " + signalInstance);
+		EventOccurrence eventOccurrence = this.getNextEvent();
+		AsyncDebug.println("[dispatchNextEvent] eventOccurrence = " + eventOccurrence);
 		/* 2. Look for EventAccepter that match the selected SignalInstance */
 		List<Integer> matchingEventAccepterIndexes = new ArrayList<Integer>();
 		List<EventAccepter> waitingEventAccepters = this.waitingEventAccepters;
 		for (int i = 0; i < waitingEventAccepters.size(); i++) {
 			EventAccepter eventAccepter = waitingEventAccepters.get(i);
-			if (eventAccepter.match(signalInstance)) {
+			if (eventAccepter.match(eventOccurrence)) {
 				matchingEventAccepterIndexes.add(i);
 			}
 		}
@@ -280,46 +287,9 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 					((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateExit(this, (AcceptEventActionEventAccepter) selectedEventAccepter);
 				}
 			}
-			selectedEventAccepter.accept(signalInstance);
-		} else {
-			if (this.out == null) {
-				this.out = StandardOutputChannelImpl.getConsole().newOutputStream();
-			}
-
-			String expectedSignals = "";
-			for (EventAccepter eventAccepter : this.waitingEventAccepters) {
-				if (eventAccepter instanceof AcceptEventActionEventAccepter) {
-					AcceptEventActionEventAccepter acceptEventAccepter = (AcceptEventActionEventAccepter) eventAccepter;
-					AcceptEventAction acceptEventAction = (AcceptEventAction) acceptEventAccepter.actionActivation.node;
-					for (Trigger trigger : acceptEventAction.getTriggers()) {
-						if (trigger.getEvent() instanceof SignalEvent) {
-							SignalEvent signalEvent = (SignalEvent) trigger.getEvent();
-							Signal signal = signalEvent.getSignal();
-							if (!expectedSignals.isEmpty()) {
-								expectedSignals += ", ";
-							}
-							expectedSignals += signal.getName();
-						}
-					}
-				}
-			}
-
-			final SignalInstance finalSignalInstance = signalInstance;
-			final String finalExpectedSignals = expectedSignals;
-			Display.getDefault().syncExec(new Runnable() {
-
-				public void run() {
-					try {
-						out.setColor(new Color(null, new RGB(200, 120, 10)));
-						out.write("[ WARNING : Lost signal " + finalSignalInstance.getTypes().get(0).getName() + " (classifier behavior of " + classifier.getName() + " was waiting for " + finalExpectedSignals + ") ]\n");
-						out.flush();
-					} catch (IOException e) {
-						Activator.log.error(e);
-					}
-				}
-			});
+			selectedEventAccepter.accept(eventOccurrence);
+		}else{
+			AsyncDebug.printLostSignal(eventOccurrence, this, out);
 		}
-
-
-	}
+	}	
 }
