@@ -10,6 +10,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Jeremie Tatibouet (CEA LIST) - Issue FUML12-23 RemoveStructuralFeatureValueAction: Removal of links does not consider provided input value
+ *  Jeremie Tatibouet (CEA LIST) - Issue FUML12-24 RemoveStructuralFeatureValueAction: Removing links with specified remove at value works incorrectly
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions;
@@ -74,7 +75,7 @@ public class RemoveStructuralFeatureValueActionActivation extends WriteStructura
 			} else {
 				boolean notFound = true;
 				int i = 1;
-				while (notFound & i < links.size()) {
+				while (notFound & i <= links.size()) { // FUML12-24 RemoveStructuralFeatureValueAction: Removing links with specified remove at value works incorrectly
 					Link link = links.get(i - 1);
 					if (link.getFeatureValue(feature).position == removeAt) {
 						notFound = false;
