@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
@@ -17,14 +18,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
-import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.ReclassifyObjectAction;
-import org.eclipse.uml2.uml.StructuralFeature;
 
 public class ReclassifyObjectActionActivation extends ActionActivation {
 
@@ -66,8 +66,7 @@ public class ReclassifyObjectActionActivation extends ActionActivation {
 					toBeRemoved = !notInOld;
 				}
 				if (toBeRemoved) {
-					object.types.remove(i - 1);
-					object.removeFeatureValues(type);
+					object.types.remove(i - 1); // Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
 				} else {
 					i = i + 1;
 				}
@@ -81,16 +80,13 @@ public class ReclassifyObjectActionActivation extends ActionActivation {
 					j = j + 1;
 				}
 				if (toBeAdded) {
-					object.types.add((Class) classifier);
-					List<NamedElement> members = classifier.getMembers();
-					for (int k = 0; k < members.size(); k++) {
-						NamedElement member = members.get(k);
-						if (member instanceof StructuralFeature) {
-							object.setFeatureValue((StructuralFeature) member, new ArrayList<Value>(), 0);
-						}
-					}
+					object.types.add((Class) classifier); // Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
 				}
 			}
+			// Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
+			List<FeatureValue> oldFeatureValues = object.getFeatureValues();
+			object.featureValues = new ArrayList<FeatureValue>();
+			object.addFeatureValues(oldFeatureValues);
 		}
 	}
 }

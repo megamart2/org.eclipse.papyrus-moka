@@ -9,7 +9,9 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
- *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-33 Extensional values should have an unique identifier
+ *  Jeremie Tatibouet (CEA LIST) 
+ *  	- Apply fix for FUML12-33 Extensional values should have an unique identifier
+ *  	- Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
@@ -104,19 +106,6 @@ public abstract class CompoundValue extends StructuredValue {
 	public List<FeatureValue> getFeatureValues() {
 		// Return the feature values for this compound value.
 		return this.featureValues;
-	}
-
-	public void removeFeatureValues(Classifier classifier) {
-		// Remove all feature values for features whose type is the given
-		// classifier.
-		int i = 1;
-		while (i <= this.featureValues.size()) {
-			if (this.featureValues.get(i - 1).feature.getType() == classifier) {
-				this.featureValues.remove(i - 1);
-			} else {
-				i = i + 1;
-			}
-		}
 	}
 
 	@Override
