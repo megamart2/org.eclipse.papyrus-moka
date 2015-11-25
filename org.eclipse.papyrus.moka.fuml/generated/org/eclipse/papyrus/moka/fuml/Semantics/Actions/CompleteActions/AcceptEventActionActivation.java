@@ -10,6 +10,7 @@
  * Contributors:
  *  CEA LIST - Initial API and implementation
  *  Jeremie TATIBOUET (CEA LIST) - Animation refactoring and improvements
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
@@ -110,7 +111,7 @@ public class AcceptEventActionActivation extends ActionActivation {
 					this.putTokens(resultPins.get(0), result);
 				}
 			} else {
-				List<FeatureValue> featureValues = signalInstance.getFeatureValues();
+				List<FeatureValue> featureValues = signalInstance.getMemberValues(); // Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
 				for (int i = 0; i < featureValues.size(); i++) {
 					FeatureValue featureValue = featureValues.get(i);
 					OutputPin resultPin = resultPins.get(i);
