@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-33 Extensional values should have an unique identifier
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
@@ -84,10 +85,4 @@ public abstract class Value extends SemanticVisitor {
 
 	@Override
 	public abstract String toString();
-
-	public String objectId() {
-		// Return an identifier for this object.
-		// [Non-normative.]
-		return super.toString();
-	}
 }

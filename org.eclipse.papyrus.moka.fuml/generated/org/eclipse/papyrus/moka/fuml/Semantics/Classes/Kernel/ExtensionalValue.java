@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-33 Extensional values should have an unique identifier
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
@@ -17,6 +18,12 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
 
 public abstract class ExtensionalValue extends CompoundValue {
 
+	/*
+	 * Issue FUML12-33 Extensional values should have an unique identifier
+	 * identifier (unique IF) of an extensional value 
+	 */
+	public String identifier;
+	
 	/*
 	 * The locus of the extent of which this value is a member. (If the value
 	 * has been destroyed, it has no locus.)
@@ -40,5 +47,11 @@ public abstract class ExtensionalValue extends CompoundValue {
 			this.locus.add(newValue);
 		}
 		return newValue;
+	}
+	
+	@Override
+	public String toString() {
+		// Issue FUML12-33 Extensional values should have an unique identifier
+		return this.identifier + super.toString();
 	}
 }

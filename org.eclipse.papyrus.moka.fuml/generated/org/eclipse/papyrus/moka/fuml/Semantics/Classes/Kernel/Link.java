@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-33 Extensional values should have an unique identifier
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
@@ -17,7 +18,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Property;
@@ -34,7 +34,9 @@ public class Link extends ExtensionalValue {
 		// Remove the type of this link and destroy it.
 		// Shift the positions of the feature values of any remaining links in
 		// the extent of the same association, for ends that are ordered.
-		Debug.println("[destroy] link = " + this.objectId());
+
+		// Issue FUML12-33 Extensional values should have an unique identifier
+
 		List<Property> ends = this.type.getMemberEnds();
 		List<ExtensionalValue> extent = this.locus.getExtent(this.type);
 		for (int i = 0; i < extent.size(); i++) {
@@ -116,7 +118,9 @@ public class Link extends ExtensionalValue {
 		// Add this link to the extent of its association at the given locus.
 		// Shift the positions of ends of other links, as appropriate, for ends
 		// that are ordered.
-		Debug.println("[addTo] link = " + this.objectId());
+
+		// Issue FUML12-33 Extensional values should have an unique identifier
+
 		List<Property> ends = this.type.getMemberEnds();
 		List<ExtensionalValue> extent = locus.getExtent(this.type);
 		for (int i = 0; i < ends.size(); i++) {

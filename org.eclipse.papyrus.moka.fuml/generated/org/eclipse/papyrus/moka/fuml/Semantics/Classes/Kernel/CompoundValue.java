@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-33 Extensional values should have an unique identifier
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
@@ -120,11 +121,15 @@ public abstract class CompoundValue extends StructuredValue {
 
 	@Override
 	public String toString() {
-		String buffer = "(" + this.objectId() + ":";
+		// Issue FUML12-33 Extensional values should have an unique identifier
+		String buffer = "(";
 		List<Classifier> types = this.getTypes();
 		int i = 1;
 		while (i <= types.size()) {
-			buffer = buffer + " " + types.get(i - 1).getName();
+			if (i != 1) {
+				buffer = buffer + " ";
+			}
+			buffer = buffer + types.get(i - 1).getName();
 			i = i + 1;
 		}
 		int k = 1;
@@ -136,11 +141,14 @@ public abstract class CompoundValue extends StructuredValue {
 				Value value = featureValue.values.get(j - 1);
 				if (value instanceof Reference) {
 					Object_ object = ((Reference) value).referent;
-					buffer = buffer + " Reference to (" + object.objectId() + ":";
+					buffer = buffer + " Reference to " + object.identifier + "(";
 					types = object.getTypes();
 					int n = 1;
 					while (n <= types.size()) {
-						buffer = buffer + " " + types.get(n - 1).getName();
+						if (n != 1) {
+							buffer = buffer + " ";
+						}
+						buffer = buffer + types.get(n - 1).getName();
 						n = n + 1;
 					}
 					buffer = buffer + ")";

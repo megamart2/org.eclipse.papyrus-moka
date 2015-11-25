@@ -9,6 +9,7 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST) - Apply fix for FUML12-33 Extensional values should have an unique identifier
  *
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
@@ -21,7 +22,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Pa
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
-import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Operation;
@@ -74,7 +74,9 @@ public class Object_ extends ExtensionalValue {
 	public void destroy() {
 		// Stop the object activation (if any), clear all types and destroy the
 		// object as an extensional value.
-		Debug.println("[destroy] object = " + this.objectId());
+
+		// Issue FUML12-33 Extensional values should have an unique identifier
+
 		if (this.objectActivation != null) {
 			this.objectActivation.stop();
 			this.objectActivation = null;
