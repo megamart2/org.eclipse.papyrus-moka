@@ -267,21 +267,19 @@ public class AnimationManager implements IAnimationManager{
 	public void deleteAllMarkers() {
 		// Make sure any marker placed by the framework over a model element is deleted when this operation is called
 		// The operation is thread safe and lock a model element before starting to remove the markers
-		synchronized(this.modelElementMarkers){
-			for(EObject modelElement : this.modelElementMarkers.keySet()){
-				for(IPapyrusMarker marker : this.modelElementMarkers.get(modelElement)){
-					if(marker.exists()){
-						try {
-							marker.delete();
-						} catch (CoreException e) {
-							e.printStackTrace();
-						}
+		for(EObject modelElement : this.modelElementMarkers.keySet()){
+			for(IPapyrusMarker marker : this.modelElementMarkers.get(modelElement)){
+				if(marker.exists()){
+					try {
+						marker.delete();
+					} catch (CoreException e) {
+						e.printStackTrace();
 					}
 				}
-				this.modelElementMarkers.get(modelElement).clear();
 			}
-			this.modelElementMarkers.clear();
+			this.modelElementMarkers.get(modelElement).clear();
 		}
+		this.modelElementMarkers.clear();
 	}
 
 	public synchronized void clean(){

@@ -231,7 +231,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		synchronized (this) {
 			notifyAll();
 		}
-		AnimationManager.getInstance().deleteAllMarkers();
+		AnimationManager.getInstance().clean();
 	}
 
 	/**

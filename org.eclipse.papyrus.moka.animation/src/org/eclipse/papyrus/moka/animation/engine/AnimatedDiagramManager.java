@@ -189,7 +189,8 @@ public class AnimatedDiagramManager {
 	public boolean isRenderable(EObject modelElement){
 		// A model element can be rendered as soon as it exists a diagram in which it
 		// appear in the model
-		return this.modelDiagramMapping.get(modelElement)!=null;
+		Set<Diagram> diagramSet = this.modelDiagramMapping.get(modelElement);
+		return diagramSet!=null && !diagramSet.isEmpty();
 	}
 	
 	public boolean isStrictlyRenderable(EObject modelElement){
