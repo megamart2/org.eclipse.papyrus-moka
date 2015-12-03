@@ -22,6 +22,8 @@ import org.eclipse.swt.widgets.Composite;
 
 public class MokaAdditionalSemanticsSelectionComponent extends MokaGroupComponent {
 
+	// This class is currently not used
+	
 	public MokaLibrariesComboBox registeredLibraries;
 
 	public MokaAdditionalSemanticsSelectionComponent(Composite parent, int style, String name, int columns) {

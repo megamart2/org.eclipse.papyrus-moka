@@ -26,7 +26,6 @@ import org.eclipse.ui.IWorkbenchPreferencePage;
  * A preference page for Moka. It enables to select the
  * default execution engine, to be used when a launch
  * configuration is started.
- * FIXME It should part of Papyrus preferences
  *
  */
 public class MokaPreferencePage extends FieldEditorPreferencePage implements IWorkbenchPreferencePage {

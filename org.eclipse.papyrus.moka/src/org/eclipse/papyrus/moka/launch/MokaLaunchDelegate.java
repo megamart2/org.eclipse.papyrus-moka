@@ -70,6 +70,11 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 	 * This arguments are given to the execution engine for initialization, before actually starting execution.
 	 */
 	public static String ARGS_ATTRIBUTE_NAME = "ARGS_ATTRIBUTE";
+	
+	/**
+	 * The attribute name for the execution engine associated with the launch configuration
+	 */
+	public static String EXECUTION_ENGINE_ATTRIBUTE_NAME = "EXECUTION_ENGINE_ATTRIBUTE" ;
 
 	/*
 	 * (non-Javadoc)
@@ -80,7 +85,11 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor) throws CoreException {
 
 		// instantiates the actual execution engine
-		IExecutionEngine engine = this.instantiateExecutionEngine();
+		String selectedExecutionEngine = configuration.getAttribute(EXECUTION_ENGINE_ATTRIBUTE_NAME, "");
+		if (selectedExecutionEngine == null || selectedExecutionEngine.isEmpty()) {
+			selectedExecutionEngine = "" + Activator.getDefault().getPreferenceStore().getString(MokaConstants.MOKA_DEFAULT_EXECUTION_ENGINE_PREF);
+		}
+		IExecutionEngine engine = this.instantiateExecutionEngine(selectedExecutionEngine);
 		if (engine == null) {
 			this.abort("Could not instantiate execution engine", null);
 		}
@@ -149,12 +158,11 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 	 *
 	 * @return
 	 */
-	protected IExecutionEngine instantiateExecutionEngine() {
+	protected IExecutionEngine instantiateExecutionEngine(String selectedExecutionEngine) {
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(MokaConstants.MOKA_ENGINE_EXTENSION_POINT_ID);
 		try {
 			IConfigurationElement e = null;
-			String selectedExecutionEngine = "" + Activator.getDefault().getPreferenceStore().getString(MokaConstants.MOKA_DEFAULT_EXECUTION_ENGINE_PREF);
 			if (selectedExecutionEngine == null || selectedExecutionEngine.equals("")) {
 				// This situation happens when the preferences for the default moka execution engine have never been changed
 				e = config[0];
