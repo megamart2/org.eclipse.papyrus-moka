@@ -213,6 +213,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	 *
 	 */
 	public ActiveObjectControllerUI() {
+		this.display = Display.getDefault();
 		eInstance = this;
 	}
 
@@ -235,8 +236,6 @@ public class ActiveObjectControllerUI extends ViewPart {
 				if (this.model == null) {
 					this.model = referent.getTypes().get(0).getModel();
 				}
-
-				this.display = Display.getDefault();
 
 				InputStream redStream = ActiveObjectControllerUI.class.getResourceAsStream("/icons/error.gif");
 				this.redStatus = new Image(this.display, redStream);
@@ -284,9 +283,11 @@ public class ActiveObjectControllerUI extends ViewPart {
 		eInstance.signalsList.removeAll();
 		signals.clear();
 		eInstance.table.removeAll();
-		eInstance.disabledTableHeaderColumn();
-		eInstance.disabledSendButton();
-		eInstance.disabledUnexplicitSignalButton();
+		if (eInstance.display != null) {
+			eInstance.disabledTableHeaderColumn();
+			eInstance.disabledSendButton();
+			eInstance.disabledUnexplicitSignalButton();
+		}
 		eInstance.dispose();
 	}
 
@@ -513,7 +514,9 @@ public class ActiveObjectControllerUI extends ViewPart {
 						display.syncExec(new Runnable() {
 							@Override
 							public void run() {
-								table.setHeaderVisible(false);
+								if (table != null) {
+									table.setHeaderVisible(false);
+								}
 							}
 						});
 						enabledSendButton();
@@ -883,7 +886,9 @@ public class ActiveObjectControllerUI extends ViewPart {
 
 			@Override
 			public void run() {
-				table.setHeaderVisible(true);
+				if (table != null) {
+					table.setHeaderVisible(true);
+				}
 			}
 		});
 	}
