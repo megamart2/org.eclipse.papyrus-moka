@@ -31,10 +31,28 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:org.eclipse.papyrus.views.modelexplorer.popup.moka">
-         <menu
+         <command
+               commandId="org.eclipse.papyrus.moka.ui.runAsCommand"
+               icon="icons/run.gif"
+               label="Run"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         </command>
+         <command
+               commandId="org.eclipse.papyrus.moka.ui.debugAsCommand"
                icon="icons/debug.gif"
+               label="Debug"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         </command>
+         <menu
+               icon="icons/brkp_16x16.gif"
                id="org.eclipse.papyrus.views.modelexplorer.popup.moka.debug"
-               label="Debug">
+               label="Breakpoints">
             <visibleWhen
                   checkEnabled="true">
             </visibleWhen>
@@ -61,6 +79,15 @@
                style="push">
             <visibleWhen
                   checkEnabled="true">
+         <command
+               commandId="org.eclipse.papyrus.moka.ui.runAsCommand"
+               icon="icons/run.gif"
+               label="Run"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         </command>
             </visibleWhen>
          </command>
       </menuContribution>
@@ -79,10 +106,28 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu.moka">
-         <menu
+         <command
+               commandId="org.eclipse.papyrus.moka.ui.runAsCommand"
+               icon="icons/run.gif"
+               label="Run"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         </command>   
+         <command
+               commandId="org.eclipse.papyrus.moka.ui.debugAsCommand"
                icon="icons/debug.gif"
+               label="Debug"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         </command>
+         <menu
+               icon="icons/brkp_16x16.gif"
                id="org.eclipse.gmf.runtime.diagram.ui.DiagramEditorContextMenu.moka.debug"
-               label="Debug">
+               label="Breakpoints">
             <visibleWhen
                   checkEnabled="true">
             </visibleWhen>
@@ -128,6 +173,18 @@
             description="ToggleBreakpointActivation"
             id="org.eclipse.papyrus.moka.togglebreakpointactivation"
             name="ToggleBreakpointActivation">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            description="DebugAsCommand"
+            id="org.eclipse.papyrus.moka.ui.debugAsCommand"
+            name="DebugAsCommand">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            description="RunAsCommand"
+            id="org.eclipse.papyrus.moka.ui.runAsCommand"
+            name="RunAsCommand">
       </command>
    </extension>
    <extension
@@ -194,6 +251,47 @@
             id="org.eclipse.papyrus.moka.ui.views.MokaAnimationView"
             name="Animation Configuration">
       </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="org.eclipse.papyrus.moka.ui.breakpoint.handlers.DebugAsHandler"
+            commandId="org.eclipse.papyrus.moka.ui.debugAsCommand">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                     <instanceof
+                           value="org.eclipse.uml2.uml.Activity">
+                     </instanceof>
+                  </adapt>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="org.eclipse.papyrus.moka.ui.breakpoint.handlers.RunAsHandler"
+            commandId="org.eclipse.papyrus.moka.ui.runAsCommand">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                     <instanceof
+                           value="org.eclipse.uml2.uml.Activity">
+                     </instanceof>
+                  </adapt>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
    </extension>
 
 </plugin>
