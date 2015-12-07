@@ -1,9 +1,9 @@
 :animated{
 	/*Edge of the shape affected by the pseudo selector*/
-	lineColor: #92d050;
+	lineColor: #c00000;
 	lineWidth: 3px;
 	/*Content of the shape affected by the pseudo selector*/
-	fillColor: #92d050;
+	fillColor: #c00000;
 	bold: true;
 } 
 
@@ -18,8 +18,8 @@
 
 :visited{
 	/*Edge of the shape affected by the pseudo selector*/
-	lineColor: #c00000;
+	lineColor: #92d050;
 	lineWidth: 2px;
 	/*Content of the shape affected by the pseudo selector*/
-	fillColor: #c00000;
+	fillColor: #92d050;
 }
