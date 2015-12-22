@@ -1,0 +1,24 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SIMplified EXecutable UML
+Bundle-SymbolicName: org.eclipse.papyrus.moka.simex;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.moka.simex.Activator
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.papyrus.infra.viewpoints.policy,
+ org.eclipse.papyrus.infra.gmfdiag.dnd,
+ org.eclipse.papyrus.infra.elementtypesconfigurations,
+ org.eclipse.gef,
+ org.eclipse.gmf.runtime.diagram.ui,
+ org.eclipse.uml2.uml,
+ org.eclipse.papyrus.uml.tools.utils,
+ org.eclipse.papyrus.uml.extensionpoints,
+ org.eclipse.papyrus.infra.services.edit,
+ org.eclipse.papyrus.uml.diagram.activity,
+ org.eclipse.papyrus.uml.service.types,
+ org.eclipse.papyrus.infra.gmfdiag.common,
+ org.eclipse.papyrus.uml.diagram.common,
+ org.eclipse.papyrus.infra.widgets,
+ org.eclipse.papyrus.infra.emf
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy

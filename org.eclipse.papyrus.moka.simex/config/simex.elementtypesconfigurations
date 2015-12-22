@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="ASCII"?>
+<elementtypesconfigurations:ElementTypeSetConfiguration
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:elementtypesconfigurations="http://www.eclipse.org/papyrus/infra/elementtypesconfigurations/1.0"
+    xmi:id="_tL86sLazEeSbnofizoRSMQ"
+    name="Simex ElementTypesSet"
+    identifier="com.cea.papyrus.iptg.elementtypeset"
+    metamodelNsURI="http://www.eclipse.org/uml2/5.0.0/UML">
+  <adviceBindingsConfigurations
+      xmi:id="_tvSJEKiZEeW8cJChdmfSPQ"
+      name="UpdatePinsOnNodeSetRequest"
+      description="Generic Helper advice in charge of managing ActivityNode pins"
+      identifier="org.eclipse.papyrus.moka.simex.ActivityNodePinUpdateEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_ScTgJVYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_tRFxMKiZEeW8cJChdmfSPQ"
+      name="AddStructuralActionReplaceAllAdvice"
+      description="Set 'isReplaceAll' to true by default on AddStructuralFeatureActions"
+      identifier="org.eclipse.papyrus.moka.simex.advices.AddStructuralFeatureActionEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.AddStructuralFeatureActionEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_ScWjU1YCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_uJLPwKiZEeW8cJChdmfSPQ"
+      name="UpdatePinsOnTriggerSetRequest"
+      description="Generic Helper advice in charge of managing ActivityNode, also called for Trigger event modification"
+      identifier="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdviceForTriggerEvent"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdLCt1YCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_uomWsKiZEeW8cJChdmfSPQ"
+      name="UpdatePinsOnSignalEventSetRequest"
+      description="Generic Helper advice in charge of managing ActivityNode, also called for Signal event modification "
+      identifier="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdviceForSignalEvent"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdB44VYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_afN7sKibEeW8cJChdmfSPQ"
+      name="UpdatePinsOnCallEventSetRequest"
+      description="Generic Helper advice in charge of managing ActivityNode, also called for call event modification "
+      identifier="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdviceForCallEvent"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ActivityNodePinUpdateEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_ScaNylYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_bDhioKibEeW8cJChdmfSPQ"
+      name="CreateReadIsClassifiedObjectActionPins"
+      description="Helper advice in charge of ReadIsClassifiedObject pins creation"
+      identifier="org.eclipse.papyrus.moka.simex.advices.ReadIsClassifiedObjectActionEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ReadIsClassifiedObjectActionEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_Sc_clVYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_biEf0KibEeW8cJChdmfSPQ"
+      name="CreateReadLinkAction"
+      description="Helper advice in charge of LinkAction creation"
+      identifier="org.eclipse.papyrus.moka.simex.advices.LinkActionEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.LinkActionEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="platform:plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_Scz2WVYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_P5Q-wKidEeW8cJChdmfSPQ"
+      name="OnPortUpdate"
+      description="Update &quot;on port&quot; on send signal actions"
+      identifier="org.eclipse.papyrus.moka.simex.advices.SendSignalActionEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.SendSignalActionEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdB4xlYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_pibxUKidEeW8cJChdmfSPQ"
+      name="ManageEventForSignal"
+      description="Create, align name and destroy events"
+      identifier="org.eclipse.papyrus.moka.simex.advices.SignalEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.SignalEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdB431YCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+</elementtypesconfigurations:ElementTypeSetConfiguration>
