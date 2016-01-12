@@ -275,20 +275,22 @@ public class ActiveObjectControllerUI extends ViewPart {
 	 * Clear contents of the view and disable buttons and dispose the view.
 	 */
 	public static void terminate() {
-		eInstance.objectsList.removeAll();
-		eInstance.objectsList.removeAll();
-		registeredObjects.clear();
-		eInstance.portsList.removeAll();
-		ports.clear();
-		eInstance.signalsList.removeAll();
-		signals.clear();
-		eInstance.table.removeAll();
-		if (eInstance.display != null) {
-			eInstance.disabledTableHeaderColumn();
-			eInstance.disabledSendButton();
-			eInstance.disabledUnexplicitSignalButton();
+		if (eInstance != null) {
+			eInstance.objectsList.removeAll();
+			eInstance.objectsList.removeAll();
+			registeredObjects.clear();
+			eInstance.portsList.removeAll();
+			ports.clear();
+			eInstance.signalsList.removeAll();
+			signals.clear();
+			eInstance.table.removeAll();
+			if (eInstance.display != null) {
+				eInstance.disabledTableHeaderColumn();
+				eInstance.disabledSendButton();
+				eInstance.disabledUnexplicitSignalButton();
+			}
+			eInstance.dispose();
 		}
-		eInstance.dispose();
 	}
 
 	/**
