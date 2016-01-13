@@ -1,6 +1,6 @@
 CallOperationAction,CallBehaviorAction, SendSignalAction, BroadcastSignalAction, AcceptEventAction, 
 ReadStructuralFeatureAction, AddStructuralFeatureValueAction, ClearStructuralFeatureAction, AcceptCallAction, 
-ReadIsClassifiedObjectAction, ReadExtentAction, CreateObjectAction, ReduceAction, ClearAssociationAction {
+ReadIsClassifiedObjectAction, ReadExtentAction, CreateObjectAction, ReduceAction, ClearAssociationAction, ValueSpecificationAction {
 	canonical:true;
 }
 
