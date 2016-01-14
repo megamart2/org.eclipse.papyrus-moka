@@ -4,7 +4,7 @@
    <extension
          point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
       <configuration
-            file="/org.eclipse.papyrus.moka.simex/config/simex.configuration"
+            file="config/simex.configuration"
             priority="100">
       </configuration>
    </extension>

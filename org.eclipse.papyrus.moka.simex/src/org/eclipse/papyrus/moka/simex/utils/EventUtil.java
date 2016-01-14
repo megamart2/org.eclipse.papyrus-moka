@@ -30,21 +30,28 @@ public class EventUtil {
 		return ret;
 	}
 	
-	public static SignalEvent getSignalEvent(Signal signal){
-		Package eventPack = getEventPackage(signal);
+	public static SignalEvent getSignalEvent(Signal signal, boolean create){
+	Package eventPack = getEventPackage(signal, create);
 		
-		for (PackageableElement elem : eventPack.getPackagedElements()){
-			if (elem instanceof SignalEvent && signal.equals(((SignalEvent)elem).getSignal())) {
-				return (SignalEvent) elem;
+		if (eventPack != null){
+			for (PackageableElement elem : eventPack.getPackagedElements()){
+				if (elem instanceof SignalEvent && signal.equals(((SignalEvent)elem).getSignal())) {
+					return (SignalEvent) elem;
+				}
 			}
+			if (create) {
+				SignalEvent event = (SignalEvent) eventPack.createPackagedElement(signal.getName()+EVENT_SUFFIX , UMLPackage.eINSTANCE.getSignalEvent());
+				event.setSignal(signal);
+				return event;
+			}
+		
 		}
 		
-		SignalEvent event = (SignalEvent) eventPack.createPackagedElement(signal.getName()+EVENT_SUFFIX , UMLPackage.eINSTANCE.getSignalEvent());
-		event.setSignal(signal);
-		return event;
-		
-		
-		
+		return null;
+	}
+	
+	public static SignalEvent getSignalEvent(Signal signal){	
+		return getSignalEvent(signal, true);
 	}
 	
 	public static void  alignEventName(Signal signal) {

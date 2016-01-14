@@ -66,29 +66,13 @@ protected ICommand getAfterConfigureCommand(ConfigureRequest request) {
 	}
 
 
-@Override
-protected ICommand getBeforeDestroyElementCommand(DestroyElementRequest request) {
-	if( request.getElementToDestroy() instanceof Signal){
-		final Signal signal = (Signal) request.getElementToDestroy();
-		
-		return new DestroyElementCommand(request){
-			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
-					throws ExecutionException {
-				
-				RequestUtils.deleteObjectWithRequest(EventUtil.getSignalEvent(signal));
-				return CommandResult.newOKCommandResult();
-			}
-		};
-	}else {
-		return super.getBeforeDestroyElementCommand(request);
-	}
-}
+
 	
 @Override
 	protected ICommand getBeforeDestroyDependentsCommand(DestroyDependentsRequest request) {
 	if( request.getElementToDestroy() instanceof Signal){
 		final Signal signal = (Signal) request.getElementToDestroy();
-		final SignalEvent event = EventUtil.getSignalEvent(signal);
+		final SignalEvent event = EventUtil.getSignalEvent(signal, false);
 		if (event != null){
 			ICommand ret = new AbstractTransactionalCommand(request.getEditingDomain(), "Destroy depending signal events", Collections.EMPTY_LIST) {
 				
