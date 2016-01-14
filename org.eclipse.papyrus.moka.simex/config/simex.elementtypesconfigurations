@@ -107,4 +107,15 @@
         xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
         href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdB431YCEeS0WsAAtVmToA"/>
   </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_R15X8LrPEeW4_Z8HM447OQ"
+      name="ManageCreationOfLoopNodeDetails"
+      description="Create a pre-configured loop node, where only the body part has to be specified"
+      identifier="org.eclipse.papyrus.moka.simex.advices.LoopNodeEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.LoopNodeEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_Sc58-VYCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
 </elementtypesconfigurations:ElementTypeSetConfiguration>
