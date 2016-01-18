@@ -54,8 +54,8 @@ public class LoopNodeEditHelperAdvice extends AbstractEditHelperAdvice {
 		node.setIsTestedFirst(true);
 		
 		// Creation of loop variable input pins
-		/*InputPin lvi_index = */ node.createLoopVariableInput("index", _integer) ;
-		/*InputPin lvi_max = */node.createLoopVariableInput("max", _integer) ;
+		/*InputPin lvi_index = */ node.createLoopVariableInput("from", _integer) ;
+		/*InputPin lvi_max = */node.createLoopVariableInput("to", _integer) ;
 
 		// Creation of loop variable pins
 		OutputPin lv_index = node.createLoopVariable("indexVar", _integer) ;
