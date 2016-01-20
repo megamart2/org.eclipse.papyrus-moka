@@ -118,4 +118,15 @@
         xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
         href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_Sc58-VYCEeS0WsAAtVmToA"/>
   </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_QFhkIL99EeWpJNXrCZFrtQ"
+      name="ManageObjectPinForReadSelfAction"
+      description="Create a ReadSelfAction with an object output pin"
+      identifier="org.eclipse.papyrus.moka.simex.advices.ReadSelfActionEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ReadSelfActionEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdADk1YCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
 </elementtypesconfigurations:ElementTypeSetConfiguration>

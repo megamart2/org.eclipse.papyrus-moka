@@ -8,7 +8,6 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
-import org.eclipse.papyrus.moka.simex.utils.EventUtil;
 import org.eclipse.papyrus.moka.simex.utils.FoundationalModelLibraryUtils;
 import org.eclipse.papyrus.moka.simex.utils.UMLPrimitiveTypesUtils;
 import org.eclipse.uml2.uml.Behavior;

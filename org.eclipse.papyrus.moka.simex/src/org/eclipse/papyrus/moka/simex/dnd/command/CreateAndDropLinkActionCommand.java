@@ -18,7 +18,6 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
@@ -28,7 +27,6 @@ import org.eclipse.papyrus.infra.services.edit.service.ElementEditServiceUtils;
 import org.eclipse.papyrus.infra.services.edit.service.IElementEditService;
 import org.eclipse.papyrus.moka.simex.advices.LinkActionEditHelperAdvice;
 import org.eclipse.papyrus.moka.simex.utils.RequestUtils;
-
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityNode;
 
@@ -46,6 +44,8 @@ public class CreateAndDropLinkActionCommand extends CreateAndDropGenericCommand 
 		// TODO Auto-generated constructor stub
 	}
 
+	
+	@SuppressWarnings("unchecked")
 	@Override
 	protected ActivityNode createNode() {
 		CreateElementRequest createReq = new CreateElementRequest(targetActivity, elementTypeToCreate);

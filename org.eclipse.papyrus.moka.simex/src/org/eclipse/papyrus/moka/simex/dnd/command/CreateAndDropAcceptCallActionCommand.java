@@ -16,7 +16,6 @@ package org.eclipse.papyrus.moka.simex.dnd.command;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EReference;
-import org.eclipse.gef.EditPart;
 import org.eclipse.gmf.runtime.diagram.ui.editparts.GraphicalEditPart;
 import org.eclipse.gmf.runtime.emf.type.core.IElementType;
 import org.eclipse.papyrus.moka.simex.utils.EventUtil;
@@ -27,7 +26,6 @@ import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.CallEvent;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Trigger;
-import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @author SR246418

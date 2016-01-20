@@ -1,29 +1,20 @@
 package org.eclipse.papyrus.moka.simex.advices;
 
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 
 import org.eclipse.core.commands.ExecutionException;
-import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IAdaptable;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.core.runtime.IProgressMonitor;
-import org.eclipse.emf.common.util.URI;
 import org.eclipse.gmf.runtime.common.core.command.CommandResult;
 import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.commands.core.command.AbstractTransactionalCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
 import org.eclipse.jface.window.Window;
-import org.eclipse.papyrus.infra.widgets.editors.ReferenceDialog;
 import org.eclipse.papyrus.infra.widgets.editors.TreeSelectorDialog;
-import org.eclipse.papyrus.infra.widgets.providers.AbstractStaticContentProvider;
-import org.eclipse.papyrus.infra.widgets.providers.WorkspaceContentProvider;
-import org.eclipse.papyrus.uml.tools.providers.UMLContainerContentProvider;
 import org.eclipse.papyrus.uml.tools.providers.UMLContentProvider;
 import org.eclipse.papyrus.uml.tools.providers.UMLLabelProvider;
-import org.eclipse.papyrus.uml.tools.util.UMLProviderHelper;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.EncapsulatedClassifier;

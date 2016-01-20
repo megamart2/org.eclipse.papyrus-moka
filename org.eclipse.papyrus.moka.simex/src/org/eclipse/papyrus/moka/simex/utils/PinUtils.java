@@ -22,7 +22,6 @@ import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.gmf.runtime.emf.type.core.IHintedType;
 import org.eclipse.papyrus.uml.service.types.element.UMLElementTypes;
-import org.eclipse.papyrus.uml.tools.utils.PrimitivesTypesUtils;
 import org.eclipse.uml2.uml.AcceptCallAction;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Action;
