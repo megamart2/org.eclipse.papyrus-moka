@@ -8,14 +8,11 @@ import org.eclipse.gmf.runtime.common.core.command.ICommand;
 import org.eclipse.gmf.runtime.emf.type.core.commands.ConfigureElementCommand;
 import org.eclipse.gmf.runtime.emf.type.core.edithelper.AbstractEditHelperAdvice;
 import org.eclipse.gmf.runtime.emf.type.core.requests.ConfigureRequest;
-import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Behavior;
-import org.eclipse.uml2.uml.BehavioralFeature;
-import org.eclipse.uml2.uml.Element;
-import org.eclipse.uml2.uml.ReadSelfAction;
 import org.eclipse.uml2.uml.Type;
+import org.eclipse.uml2.uml.ValueSpecificationAction;
 
-public class ReadSelfActionEditHelperAdvice extends AbstractEditHelperAdvice {
+public class ValueSpecificationActionEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	protected Type _integer = null ;
 	protected Type _boolean = null ;
@@ -24,43 +21,20 @@ public class ReadSelfActionEditHelperAdvice extends AbstractEditHelperAdvice {
 
 	@Override
 	protected ICommand getBeforeConfigureCommand(ConfigureRequest request) {
-		ReadSelfAction node = (ReadSelfAction)request.getElementToConfigure() ;
+		ValueSpecificationAction node = (ValueSpecificationAction)request.getElementToConfigure() ;
 		return new ConfigureElementCommand(request){
 			@Override
 			protected CommandResult doExecuteWithResult(IProgressMonitor monitor, IAdaptable info)
 					throws ExecutionException {
-				buildReadSelfAction(node) ;
+				buildValueSpecificationAction(node) ;
 				return CommandResult.newOKCommandResult(node);
 			}
 			
 		};
 	}
 
-	protected void buildReadSelfAction(ReadSelfAction node) {
-
-		// first, recovers the context Activity
-		Activity contextActivity = node.getActivity() ;
-		Type resultType = null ; 
-		node.setName("self");
-		if (contextActivity == null) {
-			Element owner = node.getOwner() ;
-			while (owner != null && !(owner instanceof Activity)) {
-				owner = owner.getOwner() ;
-			}
-			if (owner != null) {
-				contextActivity = (Activity)owner ;
-			}
-		}
-		if (contextActivity.getSpecification() == null) {
-			resultType = contextActivity ;
-		}
-		else {
-			BehavioralFeature specification = contextActivity.getSpecification() ;
-			resultType = (Type)specification.getOwner() ;
-		}
-		
-		node.createResult("result", resultType) ;
-		
+	protected void buildValueSpecificationAction(ValueSpecificationAction node) {
+		node.createResult("result", null) ;
 	}
 }
 

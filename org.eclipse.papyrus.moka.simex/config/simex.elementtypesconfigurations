@@ -120,13 +120,24 @@
   </adviceBindingsConfigurations>
   <adviceBindingsConfigurations
       xmi:id="_QFhkIL99EeWpJNXrCZFrtQ"
-      name="ManageObjectPinForReadSelfAction"
-      description="Create a ReadSelfAction with an object output pin"
+      name="ManageResultPinForReadSelfAction"
+      description="Create a ReadSelfAction with a result output pin correctly typed"
       identifier="org.eclipse.papyrus.moka.simex.advices.ReadSelfActionEditHelperAdvice"
       editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ReadSelfActionEditHelperAdvice"
       inheritance="all">
     <target
         xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
         href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdADk1YCEeS0WsAAtVmToA"/>
+  </adviceBindingsConfigurations>
+  <adviceBindingsConfigurations
+      xmi:id="_IlGUEL-HEeWpJNXrCZFrtQ"
+      name="ManageResultPinForReadSelfAction"
+      description="Create a ValueSpecificationAction with a result output pin"
+      identifier="org.eclipse.papyrus.moka.simex.advices.ValueSpecificationActionEditHelperAdvice"
+      editHelperAdviceClassName="org.eclipse.papyrus.moka.simex.advices.ValueSpecificationActionEditHelperAdvice"
+      inheritance="all">
+    <target
+        xsi:type="elementtypesconfigurations:MetamodelTypeConfiguration"
+        href="../../../plugin/org.eclipse.papyrus.uml.service.types/model/uml.elementtypesconfigurations#_SdM4AVYCEeS0WsAAtVmToA"/>
   </adviceBindingsConfigurations>
 </elementtypesconfigurations:ElementTypeSetConfiguration>
