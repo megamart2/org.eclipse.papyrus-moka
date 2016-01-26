@@ -40,7 +40,7 @@
 								<project.website>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-website/ws/site-staging/index.html</project.website>
 								<project.issues>${project.issueManagement.url}</project.issues>
 								<eclipse.target>${eclipse.targetrelease}</eclipse.target>
-								<update.site.nightly>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka/ws/releng/org.eclipse.papyrus.moka.p2/target/repository/</update.site.nightly>
+								<update.site.nightly>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-neon/ws/releng/org.eclipse.papyrus.moka.p2/target/repository/</update.site.nightly>
 							</symbols>
 							<associateSites>
 								<site>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-website/ws/site-staging/index.html</site>
