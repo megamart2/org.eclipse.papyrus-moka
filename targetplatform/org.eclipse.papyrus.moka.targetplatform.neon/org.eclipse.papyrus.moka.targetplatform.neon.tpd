@@ -9,13 +9,13 @@ location "http://download.eclipse.org/releases/neon/" eclipse-neon {
 }
 
 location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/" papyrus-neon-nightly {
- org.eclipse.papyrus.sdk.feature.feature.group
+ org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 
 location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/" papyrus-neon-developper-nightly {
- org.eclipse.papyrus.dev.feature.feature.group
+ org.eclipse.papyrus.dev.feature.feature.group lazy
 }
 
 location "http://download.eclipse.org/upr/nightly/standardized/update/" eclipse-upr-nightly{
-	org.eclipse.upr.depl.papyrus.feature.feature.group
+	org.eclipse.upr.depl.papyrus.feature.feature.group lazy
 }

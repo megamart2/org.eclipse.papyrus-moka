@@ -25,6 +25,8 @@
 		<!-- moka libraries -->
 		<module>org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
 		<module>org.eclipse.papyrus.moka.fuml.standardlibrary</module>
+		<!-- moka methodology -->
+		<module>org.eclipse.papyrus.moka.simex</module>
 		<!-- target platform -->
 		<module>releng</module>
 		<module>org.eclipse.papyrus.moka.tests</module>
@@ -32,18 +34,6 @@
 		<!-- doc -->
 		<module>org.eclipse.papyrus.moka.doc</module>
 	</modules>
-	<repositories>
-	<repository>
-	      <id>eclipse-neon</id>
-	      <layout>p2</layout>
-	      <url>http://download.eclipse.org/releases/neon</url>
-	    </repository>
-		<repository>
-			<id>papyrus-neon-nightly-developer</id>
-			<layout>p2</layout>
-			<url>https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/</url>
-		</repository>
-	</repositories>
 	<properties>
 		<!-- plugins versions -->
 		<!-- use 'mvn versions:display-plugin-updates' to check for the latest -->
