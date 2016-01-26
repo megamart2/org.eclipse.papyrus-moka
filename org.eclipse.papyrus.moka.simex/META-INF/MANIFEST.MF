@@ -19,6 +19,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.papyrus.infra.gmfdiag.common,
  org.eclipse.papyrus.uml.diagram.common,
  org.eclipse.papyrus.infra.widgets,
- org.eclipse.papyrus.infra.emf
+ org.eclipse.papyrus.infra.ui.emf;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
