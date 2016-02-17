@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary.library.list;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 
 public class ListConcat extends OpaqueBehaviorExecution {
@@ -26,9 +26,9 @@ public class ListConcat extends OpaqueBehaviorExecution {
 	@Override
 	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
 		try {
-			List<Value> list1 = inputParameters.get(0).values;
-			List<Value> list2 = inputParameters.get(1).values;
-			List<Value> result = new ArrayList<Value>();
+			List<IValue> list1 = inputParameters.get(0).values;
+			List<IValue> list2 = inputParameters.get(1).values;
+			List<IValue> result = new ArrayList<IValue>();
 			result.addAll(list1);
 			result.addAll(list2);
 			outputParameters.get(0).values = result;
@@ -38,7 +38,7 @@ public class ListConcat extends OpaqueBehaviorExecution {
 	}
 
 	@Override
-	public Value new_() {
+	public IValue new_() {
 		return new ListConcat();
 	}
 }

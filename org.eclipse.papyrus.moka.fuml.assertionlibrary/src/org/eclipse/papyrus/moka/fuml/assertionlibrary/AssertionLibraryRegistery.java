@@ -11,7 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.assertionlibrary;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.basic.AssertEquals;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.basic.AssertFalse;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.basic.AssertList;
@@ -47,7 +47,7 @@ public class AssertionLibraryRegistery extends AbstractOpaqueBehaviorExecutionRe
 	 * Register OpaqueBehaviorExecution implementing the behaviors associated
 	 * to OpaqueBehavior assertions
 	 */
-	public void registerOpaqueBehaviorExecutions(Locus locus) {
+	public void registerOpaqueBehaviorExecutions(ILocus locus) {
 		this.locus = locus;
 		this.buildOpaqueBehaviorsMap(ASSERTION_LIBRARY);
 		this.registerOpaqueBehaviorExecution(new AssertEquals(), ASSERT_EQUALS);

@@ -16,8 +16,8 @@ import java.util.List;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.MokaVariable;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 
 public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 
@@ -78,12 +78,12 @@ public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 
 	protected String computeDetails() {
 		String valueString = FUMLPresentationUtils.isCollection(featureValue) ? "{ " : "";
-		List<Value> values = featureValue.values;
+		List<IValue> values = featureValue.values;
 		boolean first = true;
 		if (values.isEmpty() && !FUMLPresentationUtils.isCollection(featureValue)) {
 			return "null";
 		}
-		for (Value v : values) {
+		for (IValue v : values) {
 			if (first) {
 				valueString += v.toString();
 				first = false;

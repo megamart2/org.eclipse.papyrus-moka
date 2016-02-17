@@ -11,7 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.registry.service.framework;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.uml2.uml.Class;
 
 public interface IServiceFactory {

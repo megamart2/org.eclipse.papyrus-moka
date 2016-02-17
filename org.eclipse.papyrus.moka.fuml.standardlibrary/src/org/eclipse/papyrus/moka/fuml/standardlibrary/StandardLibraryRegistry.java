@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.standardlibrary;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.registry.AbstractOpaqueBehaviorExecutionRegistry;
 
 
@@ -22,7 +22,7 @@ public class StandardLibraryRegistry extends AbstractOpaqueBehaviorExecutionRegi
 	protected final static String FUML_LIBRARY_NAME = "FoundationalModelLibrary";
 
 	@Override
-	public void registerOpaqueBehaviorExecutions(Locus locus) {
+	public void registerOpaqueBehaviorExecutions(ILocus locus) {
 		this.locus = locus;
 		this.buildOpaqueBehaviorsMap(FUML_LIBRARY_NAME);
 		try {

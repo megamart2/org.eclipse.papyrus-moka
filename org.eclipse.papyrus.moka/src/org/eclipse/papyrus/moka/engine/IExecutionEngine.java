@@ -82,6 +82,8 @@ public interface IExecutionEngine {
 	 */
 	public void start() throws IOException;
 
+	public void stop();
+	
 	/**
 	 * Returns the collection of MokaThread for this execution engine. If no threads are defined, the returned collection is empty, but not null.
 	 *

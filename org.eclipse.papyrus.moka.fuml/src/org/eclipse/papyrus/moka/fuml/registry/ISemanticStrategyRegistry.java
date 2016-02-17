@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.registry;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Locus;
 
 public interface ISemanticStrategyRegistry {
 

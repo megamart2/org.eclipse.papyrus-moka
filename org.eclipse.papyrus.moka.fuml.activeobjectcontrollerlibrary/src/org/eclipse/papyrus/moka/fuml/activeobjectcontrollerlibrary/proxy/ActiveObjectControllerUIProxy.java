@@ -12,9 +12,9 @@
 package org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary.proxy;
 
 import org.eclipse.papyrus.moka.async.fuml.debug.TerminateSignalInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary.proxy.executions.RegisterExecution;
 import org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary.ui.ActiveObjectControllerUI;
 import org.eclipse.swt.widgets.Display;

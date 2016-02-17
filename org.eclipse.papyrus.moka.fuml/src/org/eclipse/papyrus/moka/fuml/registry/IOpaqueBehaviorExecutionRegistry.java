@@ -13,11 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.registry;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 
 public interface IOpaqueBehaviorExecutionRegistry {
 
 	public IOpaqueBehaviorExecutionRegistry init(Object parameters);
 
-	public void registerOpaqueBehaviorExecutions(Locus locus);
+	public void registerOpaqueBehaviorExecutions(ILocus locus);
 }

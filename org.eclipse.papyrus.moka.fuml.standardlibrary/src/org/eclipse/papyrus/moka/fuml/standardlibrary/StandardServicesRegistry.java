@@ -17,7 +17,7 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardInputChannelImpl;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardOutputChannelImpl;

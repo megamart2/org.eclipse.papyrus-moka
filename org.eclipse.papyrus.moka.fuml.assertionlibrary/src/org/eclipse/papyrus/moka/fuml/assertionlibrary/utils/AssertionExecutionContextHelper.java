@@ -11,7 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.assertionlibrary.utils;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.Execution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.uml2.uml.Classifier;
 
 
@@ -23,10 +23,10 @@ public class AssertionExecutionContextHelper {
 			if (assertionExecution.context instanceof Execution) {
 				context = getExecutionContext((Execution) assertionExecution.context);
 			} else {
-				if (assertionExecution.context.objectActivation != null) {
-					context = assertionExecution.context.objectActivation.classifierBehaviorInvocations.get(0).classifier;
+				if (assertionExecution.context.getObjectActivation() != null) {
+					context = assertionExecution.context.getObjectActivation().getClassifierBehaviorInvocations().get(0).getExecutedClassifier();
 				} else {
-					context = assertionExecution.context.types.get(0);
+					context = assertionExecution.context.getTypes().get(0);
 				}
 			}
 		} else {

@@ -13,15 +13,17 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.composites;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.CommonBehaviors.Communications.CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions.CS_DefaultRequestPropagationStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_ExecutionFactory;
-import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_Executor;
-import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_Locus;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultRequestPropagationStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_ExecutionFactory;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Locus;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngineForMoka;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
+import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.ExecutionFactoryWrapper;
+import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.LocusWrapper;
 import org.eclipse.uml2.uml.Behavior;
 
 public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMoka {
@@ -34,9 +36,11 @@ public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMo
 			main = behavior;
 
 			// creates the locus, executor and execution factory
-			this.locus = new CS_Locus();
+			LocusWrapper locusWrapper = new LocusWrapper(new CS_Locus());
+			this.initLocus(locusWrapper);
+			this.locus = locusWrapper;
 			locus.setExecutor(new CS_Executor());
-			locus.setFactory(new CS_ExecutionFactory());
+			locus.setFactory(new ExecutionFactoryWrapper(new CS_ExecutionFactory()));
 
 			// initializes built-in primitive types
 			this.initializeBuiltInPrimitiveTypes(locus);
@@ -57,17 +61,17 @@ public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMo
 			this.started = true;
 
 			// Finally launches the execution
-			locus.executor.execute(main, null, this.arguments);
+			locus.getExecutor().execute(main, null, this.arguments);
 		}
 	}
 
 	// Register semantic strategies available in the environment
 	@Override
-	protected void registerSemanticStrategies(Locus locus) {
+	protected void registerSemanticStrategies(ILocus locus) {
 		super.registerSemanticStrategies(locus);
-		locus.factory.setStrategy(new CS_DispatchOperationOfInterfaceStrategy());
-		locus.factory.setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
-		locus.factory.setStrategy(new CS_DefaultRequestPropagationStrategy());
-		locus.factory.setStrategy(new CS_DefaultConstructStrategy());
+		locus.getFactory().setStrategy(new CS_DispatchOperationOfInterfaceStrategy());
+		locus.getFactory().setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
+		locus.getFactory().setStrategy(new CS_DefaultRequestPropagationStrategy());
+		locus.getFactory().setStrategy(new CS_DefaultConstructStrategy());
 	}
 }

@@ -15,10 +15,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.RealValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.PrimitiveType;
 
 public class Abs extends OpaqueBehaviorExecution {
@@ -29,8 +29,8 @@ public class Abs extends OpaqueBehaviorExecution {
 			Double x = ((RealValue) inputParameters.get(0).values.get(0)).value;
 			RealValue result = new RealValue();
 			result.value = Math.abs(x);
-			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Real");
-			List<Value> outputs = new ArrayList<Value>();
+			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Real");
+			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {
@@ -39,7 +39,7 @@ public class Abs extends OpaqueBehaviorExecution {
 	}
 
 	@Override
-	public Value new_() {
+	public IValue new_() {
 		// ADDED:
 		return new Abs();
 	}

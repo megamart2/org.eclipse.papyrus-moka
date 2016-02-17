@@ -58,6 +58,8 @@ import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.MokaValue;
 import org.eclipse.papyrus.moka.debug.MokaVariable;
+import org.eclipse.papyrus.moka.services.IMokaService;
+import org.eclipse.papyrus.moka.services.MokaServiceRegistry;
 
 /**
  * An abstract implementation of IExecutionEngine, consistent with the communication
@@ -180,6 +182,11 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	 */
 	public void start() throws IOException {
 		if (eObjectToExecute != null) {
+			// Instantiate Moka services, fill up the registry and initialize services
+			MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
+			for(IMokaService service : registry.getServices()){
+				service.init(eObjectToExecute);
+			}
 			String request = "";
 			// First accepts connection of the request socket (from the moka debug target) and initializes reader/writer
 			requestSocket = requestServer.accept();
@@ -237,6 +244,14 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 			}
 			// Communication protocol ends by notifying the moka debug target that execution has terminated
 			this.sendEvent(new Terminate_Event(this.debugTarget, this.getThreads()));
+		}
+	}
+	
+	public void stop(){
+		// Instantiate Moka services, fill up the registry and initialize services
+		MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
+		for(IMokaService service : registry.getServices()){
+			service.dispose();
 		}
 	}
 

@@ -15,7 +15,7 @@ package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communicat
 
 import org.eclipse.papyrus.moka.async.fuml.Activator;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
 
 /**
  * FIFO strategy that retrieve the oldest SignalInstance owned by the EventPool object.

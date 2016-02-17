@@ -188,13 +188,6 @@
       </command>
    </extension>
    <extension
-         point="org.eclipse.debug.ui.debugModelPresentations">
-      <debugModelPresentation
-            class="org.eclipse.papyrus.moka.ui.presentation.MokaDebugModelPresentation"
-            id="org.eclipse.papyrus.moka">
-      </debugModelPresentation>
-   </extension>
-   <extension
          point="org.eclipse.debug.ui.launchConfigurationTabGroups">
       <launchConfigurationTabGroup
             class="org.eclipse.papyrus.moka.ui.launch.MokaLaunchConfigurationTabGroup"
@@ -242,7 +235,7 @@
          point="org.eclipse.ui.views">
       <category
             id="org.eclipse.papyrus.moka.ui"
-            name="Moka Animation View Category">
+            name="Moka Views">
       </category>
       <view
             category="org.eclipse.papyrus.moka.ui"

@@ -23,12 +23,12 @@ import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResource;
 import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Reference;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.launch.EditorUtils;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorPart;
@@ -83,25 +83,25 @@ public class FUMLPresentationUtils {
 	}
 
 	public static MokaStackFrame getMokaStackFrame(Object baseElement) {
-		if (baseElement instanceof ActivityNodeActivation) {
-			return getMokaStackFrame((ActivityNodeActivation) baseElement);
-		} else if (baseElement instanceof ActivityEdgeInstance) {
-			return getMokaStackFrame((ActivityEdgeInstance) baseElement);
+		if (baseElement instanceof IActivityNodeActivation) {
+			return getMokaStackFrame((IActivityNodeActivation) baseElement);
+		} else if (baseElement instanceof IActivityEdgeInstance) {
+			return getMokaStackFrame((IActivityEdgeInstance) baseElement);
 		} else {
 			Activator.log.error(new Exception("Unexpected base element for construction of a MokaStackFrame"));
 			return null;
 		}
 	}
 
-	public static MokaStackFrame getMokaStackFrame(ActivityNodeActivation activityNodeActivation) {
+	public static MokaStackFrame getMokaStackFrame(IActivityNodeActivation activityNodeActivation) {
 		return new MokaStackFrame_from_ActivityNodeActivation(activityNodeActivation);
 	}
 
-	public static MokaStackFrame getMokaStackFrame(ActivityEdgeInstance activityEdgeInstance) {
+	public static MokaStackFrame getMokaStackFrame(IActivityEdgeInstance activityEdgeInstance) {
 		return new MokaStackFrame_from_ActivityEdgeInstance(activityEdgeInstance);
 	}
 
-	public static String getValueString(Value value) {
+	public static String getValueString(IValue value) {
 		if (value == null) {
 			return "null";
 		}
@@ -121,7 +121,7 @@ public class FUMLPresentationUtils {
 			valueString += "[] (size=" + featureValue.values.size();
 			valueString += (")");
 		} else {
-			Value value = featureValue.values.size() == 1 ? featureValue.values.get(0) : null;
+			IValue value = featureValue.values.size() == 1 ? featureValue.values.get(0) : null;
 			return getValueString(value);
 		}
 		return valueString;

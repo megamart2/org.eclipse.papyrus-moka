@@ -18,9 +18,9 @@ import org.eclipse.papyrus.moka.async.fuml.Activator;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_Object;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.Class;
 
 /**
@@ -44,7 +44,7 @@ public class AsyncObject_ extends CS_Object {
 	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
 		if (this.objectActivation == null) {
 			this.objectActivation = new AsyncObjectActivation(classifier, inputs);
-			this.objectActivation.object = this;
+			this.objectActivation.setObject(this);
 		}
 		/* 1. Create Thread Name */
 		String threadName = "Thread_";

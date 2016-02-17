@@ -22,8 +22,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -33,7 +33,7 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 
 	protected EObject contextEObject = null;
 
-	protected Locus locus = null;
+	protected ILocus locus = null;
 
 	protected Map<String, OpaqueBehavior> opaqueBehaviorsMap = null;
 
@@ -44,7 +44,7 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 		return this;
 	}
 
-	public void registerOpaqueBehaviorExecutions(Locus locus) {
+	public void registerOpaqueBehaviorExecutions(ILocus locus) {
 		this.locus = locus;
 	}
 
@@ -73,6 +73,6 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 
 	protected void registerOpaqueBehaviorExecution(OpaqueBehaviorExecution behaviorExecution, String behaviorQualifiedName) {
 		behaviorExecution.types.add(this.opaqueBehaviorsMap.get(behaviorQualifiedName));
-		locus.factory.addPrimitiveBehaviorPrototype(behaviorExecution);
+		locus.getFactory().addPrimitiveBehaviorPrototype(behaviorExecution);
 	}
 }

@@ -11,15 +11,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.presentation;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public class MokaStackFrame_from_ActivityEdgeInstance extends MokaStackFrame_from_UMLModelElement {
 
-	protected ActivityEdgeInstance activityEdgeInstance;
+	protected IActivityEdgeInstance activityEdgeInstance;
 
-	public MokaStackFrame_from_ActivityEdgeInstance(ActivityEdgeInstance activityEdgeInstance) {
-		super(activityEdgeInstance.edge);
+	public MokaStackFrame_from_ActivityEdgeInstance(IActivityEdgeInstance activityEdgeInstance) {
+		super(activityEdgeInstance.getEdge());
 		this.activityEdgeInstance = activityEdgeInstance;
 	}
 
@@ -29,8 +29,8 @@ public class MokaStackFrame_from_ActivityEdgeInstance extends MokaStackFrame_fro
 
 	@Override
 	public String getLabel() {
-		String activityName = activityEdgeInstance.edge.getActivity().getName();
-		String nodeName = activityEdgeInstance.edge.getName();
+		String activityName = activityEdgeInstance.getEdge().getActivity().getName();
+		String nodeName = activityEdgeInstance.getEdge().getName();
 		if (nodeName == null || nodeName.length() == 0) {
 			nodeName = "Anonymous edge";
 		}
@@ -42,8 +42,8 @@ public class MokaStackFrame_from_ActivityEdgeInstance extends MokaStackFrame_fro
 	// /////////////////////////////
 
 	@Override
-	protected Object_ getContextObject() {
-		return activityEdgeInstance.group.getActivityExecution().context;
+	protected IObject_ getContextObject() {
+		return activityEdgeInstance.getGroup().getActivityExecution().getContext();
 	}
 
 

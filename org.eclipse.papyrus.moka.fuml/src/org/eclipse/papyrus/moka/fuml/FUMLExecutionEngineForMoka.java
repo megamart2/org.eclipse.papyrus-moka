@@ -23,19 +23,19 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
 import org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request;
 import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.MokaThread;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IntegerValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.StringValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.UnlimitedNaturalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
 import org.eclipse.swt.widgets.Display;
@@ -62,7 +62,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 	 */
 	@Override
 	public void init(EObject eObjectToExecute, String[] args, MokaDebugTarget debugTarget, int requestPort, int replyPort, int eventPort) throws UnknownHostException, IOException {
-		AnimationManager.getInstance().init(eObjectToExecute);
+		//RenderHandler.getInstance().init(eObjectToExecute);
 		super.init(eObjectToExecute, args, debugTarget, requestPort, replyPort, eventPort);
 		if (eObjectToExecute instanceof Behavior) {
 			main = (Behavior) eObjectToExecute;
@@ -114,7 +114,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 			Type t = p.getType();
 			if (t != null) {
 				// FIXME
-				PrimitiveType pt = (PrimitiveType) this.locus.factory.getBuiltInType(t.getName());
+				PrimitiveType pt = (PrimitiveType) this.locus.getFactory().getBuiltInType(t.getName());
 				if (pt == null) {
 					return;
 				}
@@ -146,7 +146,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 		for (Value v : tmpArgs) {
 			ParameterValue arg = new ParameterValue();
 			arg.parameter = parameters.get(i);
-			arg.values = new ArrayList<Value>();
+			arg.values = new ArrayList<IValue>();
 			arg.values.add(v);
 			this.arguments.add(arg);
 			i++;
@@ -259,6 +259,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 	@Override
 	public void terminate(Terminate_Request request) {
 		this.getControlDelegate().terminate(request);
+		this.stop();
 	}
 
 	/*

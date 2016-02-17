@@ -19,7 +19,7 @@ public interface IAnimated {
 	// that this period may also be unknown. Indeed when blocked on a signal
 	// acceptance the accept event signal action must terminate its animation
 	// period only when a signal is dispatched and match its related accepter
-	public void animate(IAnimationManager animationManager);
+	public void animate(IRender animationManager);
 	
 	// Callback used by specific nodes such as CallBehaviorAction, CallOperationAction and
 	// AcceptEventAction in order to notify the animation service that a specific

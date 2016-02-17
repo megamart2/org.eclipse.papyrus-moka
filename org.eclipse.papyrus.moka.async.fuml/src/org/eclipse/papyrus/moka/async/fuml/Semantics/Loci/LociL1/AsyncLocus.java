@@ -8,22 +8,17 @@
  *
  * Contributors:
  *  CEA LIST - Initial API and implementation
+ *  Jeremie Tatibouet (CEA LIST)
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.Loci.LociL1;
 
 import org.eclipse.papyrus.moka.async.fuml.Semantics.Classes.Kernel.AsyncObject_;
-import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_Locus;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 
-// TODO: Auto-generated Javadoc
-/**
- * Extends the original Locus class.
- *
- * @author CEA LIST (jt605650)
- */
 public class AsyncLocus extends CS_Locus {
 
 	/**
@@ -34,14 +29,14 @@ public class AsyncLocus extends CS_Locus {
 	 * @return the object_
 	 */
 	@Override
-	public Object_ instantiate(Class type) {
+	public IObject_ instantiate(Class type) {
 		// Instantiate the given class at this locus.
-		Object_ object = null;
+		IObject_ object = null;
 		if (type instanceof Behavior) {
 			object = this.factory.createExecution((Behavior) type, null);
 		} else {
 			object = new AsyncObject_();
-			object.types.add(type);
+			object.addType(type);
 			object.createFeatureValues();
 			this.add(object);
 		}
@@ -54,7 +49,7 @@ public class AsyncLocus extends CS_Locus {
 	 * @see org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus#remove(org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue)
 	 */
 	@Override
-	public void remove(ExtensionalValue value) {
+	public void remove(IExtensionalValue value) {
 		synchronized (this) {
 			super.remove(value);
 		}

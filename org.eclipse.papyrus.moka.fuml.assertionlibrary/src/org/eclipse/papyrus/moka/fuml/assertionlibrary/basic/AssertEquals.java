@@ -13,10 +13,10 @@ package org.eclipse.papyrus.moka.fuml.assertionlibrary.basic;
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.StringValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.reporting.Reporter;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.reporting.TestDecision;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.reporting.TestReport;

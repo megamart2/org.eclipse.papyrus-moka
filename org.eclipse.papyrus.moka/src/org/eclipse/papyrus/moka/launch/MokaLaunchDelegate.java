@@ -83,7 +83,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 	 * org.eclipse.debug.core.ILaunch, org.eclipse.core.runtime.IProgressMonitor)
 	 */
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor) throws CoreException {
-
+		
 		// instantiates the actual execution engine
 		String selectedExecutionEngine = configuration.getAttribute(EXECUTION_ENGINE_ATTRIBUTE_NAME, "");
 		if (selectedExecutionEngine == null || selectedExecutionEngine.isEmpty()) {
@@ -120,7 +120,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		// ResourceSet resourceSet = new ResourceSetImpl() ;
 		Resource resource = resourceSet.getResource(URI.createURI(resourceURI), true);
 		final EObject eObjectToExecute = resource.getEObject(uriFragment);
-
+		
 		// Gets port addresses for sockets
 		int requestPort = -1;
 		int replyPort = -1;

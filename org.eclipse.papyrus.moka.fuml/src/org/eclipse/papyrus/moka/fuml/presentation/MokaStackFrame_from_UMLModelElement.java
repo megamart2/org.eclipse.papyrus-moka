@@ -15,7 +15,7 @@ import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.Element;
 
@@ -77,7 +77,7 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 	 */
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		Object_ contextObject = this.getContextObject();
+		IObject_ contextObject = this.getContextObject();
 		IVariable[] variables;
 		if (contextObject == null) {
 			variables = new IVariable[] {};
@@ -93,6 +93,6 @@ public abstract class MokaStackFrame_from_UMLModelElement extends MokaStackFrame
 	 *
 	 * @return the context fUML Object_ for this stack frame
 	 */
-	protected abstract Object_ getContextObject();
+	protected abstract IObject_ getContextObject();
 
 }

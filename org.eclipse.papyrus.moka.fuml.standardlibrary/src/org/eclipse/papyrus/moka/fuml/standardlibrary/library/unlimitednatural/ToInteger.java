@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary.library.unlimitednatural;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IntegerValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.UnlimitedNaturalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.PrimitiveType;
 
@@ -34,8 +34,8 @@ public class ToInteger extends OpaqueBehaviorExecution {
 			if (x != 1) {
 				result.value = new Integer(x);
 			}
-			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Integer");
-			List<Value> outputs = new ArrayList<Value>();
+			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Integer");
+			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {
@@ -44,7 +44,7 @@ public class ToInteger extends OpaqueBehaviorExecution {
 	}
 
 	@Override
-	public Value new_() {
+	public IValue new_() {
 		return new ToInteger();
 	}
 }

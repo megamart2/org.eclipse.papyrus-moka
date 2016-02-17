@@ -49,5 +49,22 @@
             value="false">
       </persistent>
    </extension>
+   <extension
+         name="Animation Service"
+         point="org.eclipse.papyrus.moka.service">
+      <service
+            class="org.eclipse.papyrus.moka.animation.engine.AnimationService"></service>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            category="org.eclipse.papyrus.moka.ui"
+            class="org.eclipse.papyrus.moka.animation.presentation.control.AnimationControlView"
+            icon="icons/moka_icon.png"
+            id="org.eclipse.papyrus.moka.animation.presentation.control.controlview"
+            name="Animation Observation Control"
+            restorable="true">
+      </view>
+   </extension>
 
 </plugin>

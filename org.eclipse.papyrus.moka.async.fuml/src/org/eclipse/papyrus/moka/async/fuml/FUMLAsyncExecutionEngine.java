@@ -22,14 +22,14 @@ import org.eclipse.papyrus.moka.communication.Marshaller;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Resume_Event;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.composites.CompositeStructuresExecutionEngine;
-import org.eclipse.papyrus.moka.composites.Semantics.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.CommonBehaviors.Communications.CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions.CS_DefaultRequestPropagationStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_ExecutionFactory;
-import org.eclipse.papyrus.moka.composites.Semantics.Loci.LociL3.CS_Executor;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultRequestPropagationStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_ExecutionFactory;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Behavior;
@@ -69,7 +69,7 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 			this.initializeArguments(this.args);
 			// Finally launches the execution
 			this.started = true;
-			this.locus.executor.execute(main, null, this.arguments);
+			this.locus.getExecutor().execute(main, null, this.arguments);
 			((AsyncControlDelegate) eInstance.getControlDelegate()).notifyMainThreadLogicallyEnded();
 		}
 	}
@@ -82,13 +82,13 @@ public class FUMLAsyncExecutionEngine extends CompositeStructuresExecutionEngine
 	 * .LociL1.Locus)
 	 */
 	@Override
-	protected void registerSemanticStrategies(Locus locus) {
+	protected void registerSemanticStrategies(ILocus locus) {
 		super.registerSemanticStrategies(locus);
-		locus.factory.setStrategy(new AsyncFIFOGetNextEventStrategy());
-		locus.factory.setStrategy(new CS_DispatchOperationOfInterfaceStrategy());
-		locus.factory.setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
-		locus.factory.setStrategy(new CS_DefaultRequestPropagationStrategy());
-		locus.factory.setStrategy(new CS_DefaultConstructStrategy());
+		locus.getFactory().setStrategy(new AsyncFIFOGetNextEventStrategy());
+		locus.getFactory().setStrategy(new CS_DispatchOperationOfInterfaceStrategy());
+		locus.getFactory().setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
+		locus.getFactory().setStrategy(new CS_DefaultRequestPropagationStrategy());
+		locus.getFactory().setStrategy(new CS_DefaultConstructStrategy());
 	}
 
 	/*

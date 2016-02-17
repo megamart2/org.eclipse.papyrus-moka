@@ -11,15 +11,15 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.presentation;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public class MokaStackFrame_from_ActivityNodeActivation extends MokaStackFrame_from_UMLModelElement {
 
-	protected ActivityNodeActivation activityNodeActivation;
+	protected IActivityNodeActivation activityNodeActivation;
 
-	public MokaStackFrame_from_ActivityNodeActivation(ActivityNodeActivation activityNodeActivation) {
-		super(activityNodeActivation.node);
+	public MokaStackFrame_from_ActivityNodeActivation(IActivityNodeActivation activityNodeActivation) {
+		super(activityNodeActivation.getNode());
 		this.activityNodeActivation = activityNodeActivation;
 	}
 
@@ -30,7 +30,7 @@ public class MokaStackFrame_from_ActivityNodeActivation extends MokaStackFrame_f
 	@Override
 	public String getLabel() {
 		String activityName = activityNodeActivation.getActivityExecution().getBehavior().getName();
-		String nodeName = activityNodeActivation.node.getName();
+		String nodeName = activityNodeActivation.getNode().getName();
 		if (nodeName == null || nodeName.length() == 0) {
 			nodeName = "Anonymous node";
 		}
@@ -42,7 +42,7 @@ public class MokaStackFrame_from_ActivityNodeActivation extends MokaStackFrame_f
 	// /////////////////////////////
 
 	@Override
-	protected Object_ getContextObject() {
+	protected IObject_ getContextObject() {
 		return activityNodeActivation.getExecutionContext();
 	}
 }

@@ -18,18 +18,21 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.InvocationActions.CS_SignalInstance;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_InteractionPoint;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_Object;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.CS_Reference;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IntegerValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.RealValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.StringValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.UnlimitedNaturalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_SignalInstance;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.custom.TableEditor;
 import org.eclipse.swt.events.ModifyEvent;
@@ -171,7 +174,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 	/**
 	 * Java List containing fUML Object_ synchronized with @objectsList
 	 */
-	protected static java.util.List<Object_> registeredObjects = new ArrayList<Object_>();
+	protected static java.util.List<IObject_> registeredObjects = new ArrayList<IObject_>();
 
 	/**
 	 * Java List containing PSCS CS_InteractionPoint synchronized with @portsList
@@ -225,10 +228,10 @@ public class ActiveObjectControllerUI extends ViewPart {
 	 */
 	public void register(Object object) {
 		Object arg = object;
-		if (arg instanceof CS_Reference) {
+		if (arg instanceof ICS_Reference) {
 			CS_Reference ref = (CS_Reference) arg;
 			if (ref.compositeReferent instanceof CS_Object) {
-				CS_Object referent = ref.compositeReferent;
+				ICS_Object referent = ref.getCompositeReferent();
 				// Add the registered object to the Object_ list
 				registeredObjects.add(referent);
 
@@ -358,7 +361,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 				boolean hasPort = false;
 				if (objectsList.getSelectionCount() > 0) {
 					int selectionIndex = objectsList.getSelectionIndices()[0];
-					Object_ target = registeredObjects.get(selectionIndex);
+					IObject_ target = registeredObjects.get(selectionIndex);
 					for (Classifier c : target.getTypes()) {
 						for (Property prop : c.getAttributes()) {
 							if (prop instanceof Port) {
@@ -366,7 +369,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 								;
 								Port p = (Port) prop;
 								FeatureValue f = target.getFeatureValue(p);
-								for (Value v : f.values) {
+								for (IValue v : f.values) {
 									if (v instanceof CS_InteractionPoint) {
 										int index = f.values.indexOf(v) + 1;
 										portsList.add(p.getName() + "[" + index + "]");
@@ -572,9 +575,9 @@ public class ActiveObjectControllerUI extends ViewPart {
 			public void mouseUp(MouseEvent e) {
 				if (signalsList.getSelection().length > 0 && portsList.getSelection().length > 0 && objectsList.getSelection().length > 0) {
 					int objectSelectionIndex = objectsList.getSelectionIndices()[0];
-					Object_ target = registeredObjects.get(objectSelectionIndex);
+					IObject_ target = registeredObjects.get(objectSelectionIndex);
 					int portSelectionIndex = portsList.getSelectionIndices()[0];
-					CS_InteractionPoint interactionPoint = null;
+					ICS_InteractionPoint interactionPoint = null;
 					if (portSelectionIndex >= 0) {
 						interactionPoint = ports.get(portSelectionIndex);
 					}
@@ -927,7 +930,7 @@ public class ActiveObjectControllerUI extends ViewPart {
 			isChecked = true;
 			if (objectsList.getSelection().length > 0) {
 				int objectSelectionIndex = objectsList.getSelectionIndices()[0];
-				Object_ target = registeredObjects.get(objectSelectionIndex);
+				IObject_ target = registeredObjects.get(objectSelectionIndex);
 				if (portsList.getSelection().length > 0) {
 					int portSelectionIndex = portsList.getSelectionIndices()[0];
 					CS_InteractionPoint interactionPoint = ports.get(portSelectionIndex);

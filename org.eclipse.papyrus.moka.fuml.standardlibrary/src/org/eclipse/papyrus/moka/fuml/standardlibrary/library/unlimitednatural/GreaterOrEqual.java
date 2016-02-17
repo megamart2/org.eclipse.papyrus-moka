@@ -16,11 +16,12 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary.library.unlimitednatural;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.BooleanValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.UnlimitedNaturalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.PrimitiveType;
 
@@ -33,8 +34,8 @@ public class GreaterOrEqual extends OpaqueBehaviorExecution {
 			Integer y = ((UnlimitedNaturalValue) inputParameters.get(1).values.get(0)).value;
 			BooleanValue result = new BooleanValue();
 			result.value = x == y || x < 0 || y >= 0 && x > y;
-			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Boolean");
-			List<Value> outputs = new ArrayList<Value>();
+			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Boolean");
+			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {

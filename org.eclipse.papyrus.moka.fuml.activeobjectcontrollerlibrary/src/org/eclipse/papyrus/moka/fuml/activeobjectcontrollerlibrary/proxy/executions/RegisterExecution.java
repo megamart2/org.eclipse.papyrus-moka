@@ -14,10 +14,10 @@ package org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary.proxy.execut
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary.ui.ActiveObjectControllerUI;
 import org.eclipse.papyrus.moka.fuml.registry.SystemServicesRegistryUtils;
 import org.eclipse.uml2.uml.Behavior;
@@ -36,7 +36,7 @@ public class RegisterExecution extends ActiveObjectControlerUIProxyMethodExecuti
 		return method;
 	}
 
-	public RegisterExecution(Operation operation, Object_ context) {
+	public RegisterExecution(Operation operation, IObject_ context) {
 		super(operation, context);
 	}
 
@@ -48,17 +48,17 @@ public class RegisterExecution extends ActiveObjectControlerUIProxyMethodExecuti
 		 * Then, register it in the UI.
 		 */
 		try {
-			Value v = inputParameters.get(0).values.get(0);
-			Object_ context = this.context;
-			if (context.featureValues.size() == 0) {
+			IValue v = inputParameters.get(0).values.get(0);
+			IObject_ context = this.getContext();
+			if (context.getFeatureValues().size() == 0) {
 				context.createFeatureValues();
 			}
-			List<FeatureValue> featureValues = context.featureValues;
+			List<FeatureValue> featureValues = context.getFeatureValues();
 			for (int i = 0; i < featureValues.size(); i++) {
 				FeatureValue cddFeature = featureValues.get(i);
 				if (cddFeature.feature instanceof Property) {
 					if (cddFeature.feature.getName().equals("registered")) {
-						Value cddValue = v.copy();
+						IValue cddValue = v.copy();
 						cddFeature.values.add(cddValue);
 					}
 				}
@@ -72,7 +72,7 @@ public class RegisterExecution extends ActiveObjectControlerUIProxyMethodExecuti
 	}
 
 	@Override
-	public Value new_() {
+	public IValue new_() {
 		return new RegisterExecution(this.operation, this.context);
 	}
 

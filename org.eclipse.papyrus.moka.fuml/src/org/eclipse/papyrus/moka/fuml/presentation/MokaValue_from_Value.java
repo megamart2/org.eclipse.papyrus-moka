@@ -13,16 +13,16 @@ package org.eclipse.papyrus.moka.fuml.presentation;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IVariable;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.CompoundValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.CompoundValue;
 
 public class MokaValue_from_Value extends MokaValue_for_fUML {
 
-	protected Value value;
+	protected IValue value;
 
 	protected IVariable[] variables;
 
-	public MokaValue_from_Value(Value value) {
+	public MokaValue_from_Value(IValue value) {
 		super();
 		this.value = value;
 	}

@@ -14,7 +14,7 @@
 
 package org.eclipse.papyrus.moka.fuml.registry;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 
 
 /**
@@ -43,6 +43,6 @@ public interface ISystemServicesRegistry {
 	 * @param locus
 	 *            The locus where services have to be registered
 	 */
-	public void registerSystemServices(Locus locus);
+	public void registerSystemServices(ILocus locus);
 
 }

@@ -16,10 +16,11 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IntegerValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.PrimitiveType;
 
@@ -32,8 +33,8 @@ public class Min extends OpaqueBehaviorExecution {
 			Integer y = ((IntegerValue) inputParameters.get(1).values.get(0)).value;
 			IntegerValue result = new IntegerValue();
 			result.value = Math.min(x, y);
-			List<Value> outputs = new ArrayList<Value>();
-			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("Integer"); // ADDED
+			List<IValue> outputs = new ArrayList<IValue>();
+			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Integer"); // ADDED
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {

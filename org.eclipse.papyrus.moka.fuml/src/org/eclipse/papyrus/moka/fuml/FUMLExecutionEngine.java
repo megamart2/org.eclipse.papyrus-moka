@@ -28,18 +28,24 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.DefaultGetAssociationStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.RedefinitionBasedDispatchStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.FIFOGetNextEventStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Executor;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.FirstChoiceStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL3.ExecutionFactoryL3;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
+import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.ExecutionFactoryWrapper;
+import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.LocusWrapper;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RedefinitionBasedDispatchStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.FIFOGetNextEventStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Executor;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.FirstChoiceStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL3.ExecutionFactoryL3;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.registry.IOpaqueBehaviorExecutionRegistry;
 import org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry;
+import org.eclipse.papyrus.moka.services.IMokaService;
+import org.eclipse.papyrus.moka.services.MokaServiceRegistry;
+import org.eclipse.papyrus.moka.services.animation.AbstractAnimationService;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -68,7 +74,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	protected List<ParameterValue> arguments;
 
 	/** The locus. */
-	protected Locus locus;
+	protected ILocus locus;
 
 	/** The started. */
 	protected boolean started = false;
@@ -87,10 +93,12 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		if (behavior != null) {
 			main = behavior;
 			// creates the locus, executor and execution factory
-			this.locus = new Locus();
+			LocusWrapper locusWrapper = new LocusWrapper(new Locus());
+			this.initLocus(locusWrapper);
+			this.locus = locusWrapper;
 			this.locus.setExecutor(new Executor());
-			this.locus.setFactory(new ExecutionFactoryL3());
-			this.locus.currentModelToBeExecuted = main;
+			this.locus.setFactory(new ExecutionFactoryWrapper(new ExecutionFactoryL3()));
+			this.locus.setExecutedTarget(main);
 			// initializes built-in primitive types
 			this.initializeBuiltInPrimitiveTypes(locus);
 			// Initializes opaque behavior executions
@@ -103,11 +111,18 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 			this.initializeArguments(this.args);
 			// Finally launches the execution
 			this.started = true;
-			this.locus.executor.execute(main, null, this.arguments);
+			this.locus.getExecutor().execute(main, null, this.arguments);
 			eInstance.getControlDelegate().waitForTermination();
 		}
 	}
 
+	protected void initLocus(LocusWrapper wrapper){
+		IMokaService animationService = MokaServiceRegistry.getInstance().getService(AbstractAnimationService.class);
+		if(animationService!=null){
+			wrapper.addListener(animationService);
+		}
+	}
+	
 	// Register semantic strategies available in the environment
 	/**
 	 * Register semantic strategies.
@@ -115,12 +130,12 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @param locus
 	 *            the locus
 	 */
-	protected void registerSemanticStrategies(Locus locus) {
-		locus.factory.setStrategy(new FirstChoiceStrategy());
-		locus.factory.setStrategy(new FIFOGetNextEventStrategy());
-		locus.factory.setStrategy(new RedefinitionBasedDispatchStrategy());
-		locus.factory.setStrategy(new DefaultCreateObjectActionStrategy());
-		locus.factory.setStrategy(new DefaultGetAssociationStrategy());
+	protected void registerSemanticStrategies(ILocus locus) {
+		locus.getFactory().setStrategy(new FirstChoiceStrategy());
+		locus.getFactory().setStrategy(new FIFOGetNextEventStrategy());
+		locus.getFactory().setStrategy(new RedefinitionBasedDispatchStrategy());
+		locus.getFactory().setStrategy(new DefaultCreateObjectActionStrategy());
+		locus.getFactory().setStrategy(new DefaultGetAssociationStrategy());
 	}
 
 	// Register OpaqueBehaviorExecutions available in the environment
@@ -130,7 +145,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @param locus
 	 *            the locus
 	 */
-	protected void registerOpaqueBehaviorExecutions(Locus locus) {
+	protected void registerOpaqueBehaviorExecutions(ILocus locus) {
 		// Load any OpaqueBehaviorExecution library contributing to the extension LIBRAY_EXTENSION_POINT_ID
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(LIBRAY_EXTENSION_POINT_ID);
@@ -154,7 +169,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @param locus
 	 *            the locus
 	 */
-	protected void registerSystemServices(Locus locus) {
+	protected void registerSystemServices(ILocus locus) {
 		// Load any contribution to the extension SERVICES_EXTENSION_POINT_ID
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(SERVICES_EXTENSION_POINT_ID);
@@ -178,7 +193,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @param locus
 	 *            the locus
 	 */
-	protected void initializeBuiltInPrimitiveTypes(Locus locus) {
+	protected void initializeBuiltInPrimitiveTypes(ILocus locus) {
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
 		for (IRegisteredLibrary l : libraries) {
@@ -189,7 +204,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 				while (libElementIterator.hasNext()) {
 					EObject currentElement = libElementIterator.next();
 					if (currentElement instanceof PrimitiveType) {
-						locus.factory.addBuiltInType((Type) currentElement);
+						locus.getFactory().addBuiltInType((Type) currentElement);
 					}
 				}
 			}
@@ -207,7 +222,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @param context
 	 *            the context
 	 */
-	protected static void loadLibrary(final Object o, final Locus locus, final Object context) {
+	protected static void loadLibrary(final Object o, final ILocus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
 
 			public void handleException(Throwable e) {
@@ -232,7 +247,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 * @param context
 	 *            the context
 	 */
-	protected static void loadServices(final Object o, final Locus locus, final Object context) {
+	protected static void loadServices(final Object o, final ILocus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
 
 			public void handleException(Throwable e) {
@@ -261,7 +276,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	 *
 	 * @return the fUML locus associated with this engine
 	 */
-	public Locus getLocus() {
+	public ILocus getLocus() {
 		return this.locus;
 	}
 }

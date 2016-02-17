@@ -12,15 +12,15 @@
 
 package org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary.proxy.executions;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.uml2.uml.Operation;
 
 public abstract class ActiveObjectControlerUIProxyMethodExecution extends OpaqueBehaviorExecution {
 
 	protected Operation operation;
 
-	public ActiveObjectControlerUIProxyMethodExecution(Operation operation, Object_ context) {
+	public ActiveObjectControlerUIProxyMethodExecution(Operation operation, IObject_ context) {
 		this.operation = operation;
 		this.context = context;
 	}

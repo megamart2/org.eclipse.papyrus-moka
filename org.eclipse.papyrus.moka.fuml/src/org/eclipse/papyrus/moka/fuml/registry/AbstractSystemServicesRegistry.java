@@ -22,8 +22,9 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Locus;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -38,7 +39,7 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 
 	protected EObject contextEObject;
 
-	protected Locus locus;
+	protected ILocus locus;
 
 	/*
 	 * (non-Javadoc)
@@ -59,13 +60,13 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 * org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry#registerSystemServices(org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.Locus
 	 * )
 	 */
-	public void registerSystemServices(Locus locus) {
+	public void registerSystemServices(ILocus locus) {
 		this.locus = locus;
 		List<Object_> services = this.instantiateServices();
 		// Guarantees that created services are added to the locus
 		for (Object_ o : services) {
 			o.locus = locus;
-			locus.extensionalValues.add(o);
+			locus.add(o);
 		}
 	}
 

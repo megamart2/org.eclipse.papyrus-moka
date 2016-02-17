@@ -24,8 +24,6 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
-import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Resume_Event;
@@ -38,14 +36,16 @@ import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.debug.MokaThread;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.AcceptEventActionEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ExtensionalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.AcceptEventActionEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.debug.FUMLThread;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
@@ -61,10 +61,10 @@ public class AsyncControlDelegate extends ControlDelegate {
 	protected FUMLThread mainThread;
 
 	/** The object activations. */
-	protected List<ObjectActivation> objectActivations = new ArrayList<ObjectActivation>();
+	protected List<IObjectActivation> objectActivations = new ArrayList<IObjectActivation>();
 
 	/** The object activations to fuml thread. */
-	protected Map<ObjectActivation, FUMLThread> objectActivationsToFUMLThread = new HashMap<ObjectActivation, FUMLThread>();
+	protected Map<IObjectActivation, FUMLThread> objectActivationsToFUMLThread = new HashMap<IObjectActivation, FUMLThread>();
 
 	/** The terminate request by client. */
 	protected boolean terminateRequestByClient = false;
@@ -128,7 +128,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		if (reasonForResuming == DebugEvent.STEP_OVER) {
 			thread.setIsStepping(true);
 		}
-		AnimationManager.getInstance().stopRendering(thread.getSuspensionPoint(), AnimationKind.SUSPENDED);
+		//RenderHandler.getInstance().stopRendering(thread.getSuspensionPoint(), AnimationKind.SUSPENDED);
 		thread.setStackFrames(new IStackFrame[] {});
 		Object lock = this.locks.get(thread);
 		synchronized (lock) {
@@ -171,7 +171,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 	 * @param activationName
 	 *            the activation name
 	 */
-	public synchronized void registerObjectActivation(ObjectActivation activation, String activationName) {
+	public synchronized void registerObjectActivation(IObjectActivation activation, String activationName) {
 		FUMLThread fUMLThread = new FUMLThread(FUMLExecutionEngine.eInstance.getDebugTarget());
 		this.threads.add(0, fUMLThread);
 		if (activation == null) { // this is the main thread
@@ -211,7 +211,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		/**********/
 		// 439639: [Moka] oepm.async.fuml.debug.AsyncControlDelegate.terminate shall send a TerminateSignalInstance to all objects in the execution locus
 		// https://bugs.eclipse.org/bugs/show_bug.cgi?id=439639
-		for (ExtensionalValue v : FUMLExecutionEngine.eInstance.getLocus().extensionalValues) {
+		for (IExtensionalValue v : FUMLExecutionEngine.eInstance.getLocus().getExtensionalValues()) {
 			if (v instanceof Object_) {
 				((Object_) v).send(new TerminateSignalInstance());
 			}
@@ -231,7 +231,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 		synchronized (this) {
 			notifyAll();
 		}
-		AnimationManager.getInstance().clean();
+		//RenderHandler.getInstance().clean();
 	}
 
 	/**
@@ -328,7 +328,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 
 		// Retrieves the semantic element
 		EObject semanticElement = null;
-		Object_ executionContext = null;
+		IObject_ executionContext = null;
 		if (object instanceof ActivityNodeActivation) {
 			semanticElement = ((ActivityNodeActivation) object).node;
 			if (((ActivityNodeActivation) object).group != null) {
@@ -352,14 +352,14 @@ public class AsyncControlDelegate extends ControlDelegate {
 					// Execution takes place in the context of the Main thread
 					thread = this.mainThread;
 				} else {
-					ObjectActivation objectActivation = executionContext.objectActivation;
+					IObjectActivation objectActivation = executionContext.getObjectActivation();
 					thread = this.objectActivationsToFUMLThread.get(objectActivation);
 					if (thread == null) { // This means that the context is a passive object executing in the context of the main thread ?? TODO check this...
 						thread = this.mainThread;
 					}
 				}
 				if (object != null && MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.mode.equals(ILaunchManager.DEBUG_MODE) && !thread.isStepping()) {
-					this.animate(object);
+					this.animate(semanticElement);
 				}
 				int reasonForSuspending = -1;
 				if (thread.getReasonForSuspending() != -1) {
@@ -411,11 +411,11 @@ public class AsyncControlDelegate extends ControlDelegate {
 				Suspend_Event suspendEvent = new Suspend_Event(thread, DebugEvent.CHANGE, this.getThreads());
 				engine.sendEvent(suspendEvent);
 				List<AcceptEventAction> waitingAcceptEventActions = new ArrayList<AcceptEventAction>();
-				for (EventAccepter eventAccepter : asyncObjectActivation.waitingEventAccepters) {
+				for (IEventAccepter eventAccepter : asyncObjectActivation.waitingEventAccepters) {
 					if (eventAccepter instanceof AcceptEventActionEventAccepter) {
 						AcceptEventAction action = (AcceptEventAction) ((AcceptEventActionEventAccepter) eventAccepter).actionActivation.node;
 						waitingAcceptEventActions.add(action);
-						((AcceptEventActionEventAccepter) eventAccepter).actionActivation.animate(AnimationManager.getInstance());
+						//((AcceptEventActionEventAccepter) eventAccepter).actionActivation.animate(RenderHandler.getInstance());
 					}
 				}
 				objectActivationToWaitingAcceptEventActions.put(asyncObjectActivation, waitingAcceptEventActions);
@@ -449,7 +449,7 @@ public class AsyncControlDelegate extends ControlDelegate {
 				}
 				objectActivationToWaitingAcceptEventActions.put(asyncObjectActivation, waitingAcceptEventActions);
 				if (action != null) {
-					accepter.actionActivation.animate(AnimationManager.getInstance());
+					//accepter.actionActivation.animate(RenderHandler.getInstance());
 				}
 			}
 		}

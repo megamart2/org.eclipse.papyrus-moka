@@ -13,7 +13,7 @@ package org.eclipse.papyrus.moka.fuml.presentation;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.FeatureValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.swt.graphics.Image;
 
 public class MokaVariable_from_FeatureValue extends MokaVariable_for_fUML {

@@ -23,21 +23,22 @@ import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.AcceptEventActionEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ClassifierBehaviorInvocationEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.InvocationEventOccurrence;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalEventOccurrence;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.SignalInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ChoiceStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.AcceptEventActionEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ClassifierBehaviorInvocationEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.InvocationEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardOutputChannelImpl;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.console.IOConsoleOutputStream;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
+import org.eclipse.uml2.uml.Classifier;
 
 /**
  * Extend the original ObjectActivation class in order to support starting of execution
@@ -208,11 +209,11 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		if (classifier == null) {
 			AsyncDebug.println("Starting behavior for all classifiers...");
 			// *** Start all classifier behaviors concurrently. ***
-			List<Class> types = this.object.types;
-			for (Iterator<Class> i = types.iterator(); i.hasNext();) {
-				Class type = i.next();
-				if (type instanceof Behavior | type.getClassifierBehavior() != null) {
-					this.startBehavior(type, new ArrayList<ParameterValue>());
+			List<Classifier> types = this.object.getTypes();
+			for (Iterator<Classifier> i = types.iterator(); i.hasNext();) {
+				Classifier type = i.next();
+				if (type instanceof Behavior | ((Class)type).getClassifierBehavior() != null) {
+					this.startBehavior((Class)type, new ArrayList<ParameterValue>());
 				}
 			}
 		} else {
@@ -220,7 +221,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			boolean notYetStarted = true;
 			int i = 1;
 			while (notYetStarted & i <= this.classifierBehaviorInvocations.size()) {
-				notYetStarted = (this.classifierBehaviorInvocations.get(i - 1).classifier != classifier);
+				notYetStarted = (this.classifierBehaviorInvocations.get(i - 1).getExecutedClassifier() != classifier);
 				i = i + 1;
 			}
 			if (notYetStarted) {
@@ -268,17 +269,17 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		AsyncDebug.println("[dispatchNextEvent] eventOccurrence = " + eventOccurrence);
 		/* 2. Look for EventAccepter that match the selected SignalInstance */
 		List<Integer> matchingEventAccepterIndexes = new ArrayList<Integer>();
-		List<EventAccepter> waitingEventAccepters = this.waitingEventAccepters;
+		List<IEventAccepter> waitingEventAccepters = this.waitingEventAccepters;
 		for (int i = 0; i < waitingEventAccepters.size(); i++) {
-			EventAccepter eventAccepter = waitingEventAccepters.get(i);
+			IEventAccepter eventAccepter = waitingEventAccepters.get(i);
 			if (eventAccepter.match(eventOccurrence)) {
 				matchingEventAccepterIndexes.add(i);
 			}
 		}
 		/* 3. Choose one matching event accepter non-deterministically */
 		if (matchingEventAccepterIndexes.size() > 0) {
-			int j = ((ChoiceStrategy) this.object.locus.factory.getStrategy("choice")).choose(matchingEventAccepterIndexes.size());
-			EventAccepter selectedEventAccepter = this.waitingEventAccepters.get(matchingEventAccepterIndexes.get(j - 1));
+			int j = ((ChoiceStrategy) this.object.getLocus().getFactory().getStrategy("choice")).choose(matchingEventAccepterIndexes.size());
+			IEventAccepter selectedEventAccepter = this.waitingEventAccepters.get(matchingEventAccepterIndexes.get(j - 1));
 			// this.waitingEventAccepters.remove(j - 1);
 			this.waitingEventAccepters.remove(selectedEventAccepter);
 			if (this.hasBeenWaiting) {

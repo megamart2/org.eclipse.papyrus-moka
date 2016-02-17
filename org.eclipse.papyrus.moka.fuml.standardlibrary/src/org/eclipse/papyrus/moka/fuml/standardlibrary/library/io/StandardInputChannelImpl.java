@@ -20,9 +20,10 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.StringValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.registry.service.framework.AbstractService;
 import org.eclipse.uml2.uml.Class;
@@ -72,7 +73,7 @@ public class StandardInputChannelImpl extends AbstractService {
 				String line = bufferedReader.readLine();
 				StringValue result = new StringValue();
 				result.value = "" + line;
-				List<Value> outputs = new ArrayList<Value>();
+				List<IValue> outputs = new ArrayList<IValue>();
 				outputs.add(result);
 				outputParameters.get(0).values = outputs;
 			} catch (Exception e) {

@@ -3,7 +3,7 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Moka animation framework
 Bundle-SymbolicName: org.eclipse.papyrus.moka.animation;singleton:=true
 Bundle-Version: 1.2.0.qualifier
-Bundle-Activator: org.eclipse.papyrus.moka.animation.Activator
+Bundle-Activator: org.eclipse.papyrus.moka.animation.AnimationPlugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore,
@@ -21,7 +21,9 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.jobs,
  org.eclipse.jface,
  org.eclipse.ui.workbench,
- org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="1.2.0"
+ org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="1.2.0",
+ org.eclipse.papyrus.moka.fuml,
+ org.eclipse.papyrus.infra.core.sashwindows.di;bundle-version="1.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.animation,

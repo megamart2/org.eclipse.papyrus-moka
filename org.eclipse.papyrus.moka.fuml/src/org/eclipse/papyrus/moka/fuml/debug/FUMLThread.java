@@ -15,8 +15,6 @@ import org.eclipse.debug.core.DebugEvent;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.animation.engine.AnimationKind;
-import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.debug.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.MokaThread;
 import org.eclipse.papyrus.moka.fuml.presentation.IPresentation;
@@ -54,7 +52,7 @@ public class FUMLThread extends MokaThread implements IPresentation {
 
 	public void setSuspensionPoint(EObject modelElement){
 		this.suspensionPoint = modelElement;
-		AnimationManager.getInstance().startRendering(modelElement, AnimationKind.SUSPENDED);
+		//RenderHandler.getInstance().startRendering(modelElement, AnimationKind.SUSPENDED);
 	}
 	
 	public EObject getSuspensionPoint(){
@@ -267,7 +265,7 @@ public class FUMLThread extends MokaThread implements IPresentation {
 	}
 	
 	public void resume() throws DebugException{
-		AnimationManager.getInstance().stopRendering(this.getSuspensionPoint(), AnimationKind.SUSPENDED);
+		//RenderHandler.getInstance().stopRendering(this.getSuspensionPoint(), AnimationKind.SUSPENDED);
 		super.resume();
 	}
 }

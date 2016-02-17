@@ -12,16 +12,16 @@
 package org.eclipse.papyrus.moka.fuml.presentation;
 
 import org.eclipse.debug.core.DebugException;
-import org.eclipse.debug.core.model.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.uml2.uml.UMLPackage;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+
 public class MokaVariable_from_Value extends MokaVariable_for_fUML {
 
-	protected Value fUMLValue;
+	protected IValue fUMLValue;
 
-	public MokaVariable_from_Value(Value value) {
+	public MokaVariable_from_Value(IValue value) {
 		super();
 		this.fUMLValue = value;
 	}
@@ -40,7 +40,7 @@ public class MokaVariable_from_Value extends MokaVariable_for_fUML {
 	// Debug
 	// ////////////////////////////////
 	@Override
-	public IValue getValue() throws DebugException {
+	public org.eclipse.debug.core.model.IValue getValue() throws DebugException {
 		return new MokaValue_from_Value(fUMLValue);
 	}
 

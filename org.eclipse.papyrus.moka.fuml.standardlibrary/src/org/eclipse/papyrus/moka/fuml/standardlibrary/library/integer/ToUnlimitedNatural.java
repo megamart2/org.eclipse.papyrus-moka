@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IntegerValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.UnlimitedNaturalValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.PrimitiveType;
 
@@ -32,8 +32,8 @@ public class ToUnlimitedNatural extends OpaqueBehaviorExecution {
 			Integer x = ((IntegerValue) inputParameters.get(0).values.get(0)).value;
 			UnlimitedNaturalValue result = new UnlimitedNaturalValue();
 			result.value = x;
-			result.type = (PrimitiveType) this.locus.factory.getBuiltInType("UnlimitedNatural"); // ADDED
-			List<Value> outputs = new ArrayList<Value>();
+			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("UnlimitedNatural"); // ADDED
+			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
 			outputParameters.get(0).values = outputs;
 		} catch (Exception e) {
@@ -42,7 +42,7 @@ public class ToUnlimitedNatural extends OpaqueBehaviorExecution {
 	}
 
 	@Override
-	public Value new_() {
+	public IValue new_() {
 		return new ToUnlimitedNatural();
 	}
 }

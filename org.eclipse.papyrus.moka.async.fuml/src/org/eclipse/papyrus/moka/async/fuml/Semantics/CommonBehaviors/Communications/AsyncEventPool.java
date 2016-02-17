@@ -15,9 +15,9 @@ package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communicat
 
 import java.util.concurrent.LinkedBlockingQueue;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.EventOccurrence;
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.SemanticStrategy;
 
 /**
  * The event pool provide a way for an object activation to communicate with others.
@@ -63,7 +63,7 @@ class AsyncEventPool extends LinkedBlockingQueue<EventOccurrence> implements IAs
 	 * @return the next event
 	 */
 	public EventOccurrence getNextEvent() {
-		SemanticStrategy strategy = this.objectActivation.object.locus.factory.getStrategy("getNextEvent");
+		SemanticStrategy strategy = this.objectActivation.object.getLocus().getFactory().getStrategy("getNextEvent");
 		return ((AsyncGetNextEventStrategy) strategy).getNextEvent(this);
 	}
 

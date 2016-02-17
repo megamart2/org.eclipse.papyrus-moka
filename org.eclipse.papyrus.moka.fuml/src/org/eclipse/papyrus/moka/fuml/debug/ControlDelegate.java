@@ -23,7 +23,6 @@ import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.animation.engine.AnimationManager;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Suspend_Event;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
@@ -32,13 +31,13 @@ import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.debug.MokaThread;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
-import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.PinActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityEdgeInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.ActivityNodeActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.SemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
+import org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener;
+import org.eclipse.papyrus.moka.services.animation.events.AnimationEvent;
 
-public class ControlDelegate {
+public class ControlDelegate implements IAnimatedModelListener{
 
 	/**
 	 * The execution engine associated with this ControlDelegate object
@@ -48,7 +47,6 @@ public class ControlDelegate {
 	/**
 	 * The animation manager that is attached to this delegate
 	 */
-	protected AnimationManager manager;
 	
 	/**
 	 * The list of threads implied by current execution
@@ -84,6 +82,7 @@ public class ControlDelegate {
 		this.engine = engine;
 		this.mode = this.engine.getDebugTarget().getLaunch().getLaunchMode();
 		this.elementsWithBreakpoints = new HashSet<EObject>();
+		//this.manager = RenderHandler.getInstance();
 	}
 
 	/**
@@ -159,7 +158,7 @@ public class ControlDelegate {
 		synchronized (this) {
 			notify();
 		}
-		AnimationManager.getInstance().clean();
+		//RenderHandler.getInstance().clean();
 	}
 
 	/**
@@ -218,7 +217,7 @@ public class ControlDelegate {
 		}
 
 		if (semanticElement != null && MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.mode.equals(ILaunchManager.DEBUG_MODE)) {
-			this.animate(object);
+			this.animate(semanticElement);
 		}
 
 		if (this.suspended) { /* Client request */
@@ -264,7 +263,7 @@ public class ControlDelegate {
 
 	protected void animate(Object target) {
 		// Animate the object given as parameter
-		AnimationManager animationManager = AnimationManager.getInstance();
+		/*RenderHandler animationManager = RenderHandler.getInstance();
 		if(target instanceof SemanticVisitor){
 			((SemanticVisitor)target).animate(animationManager);
 		}else if(target instanceof ActivityEdgeInstance){
@@ -272,10 +271,50 @@ public class ControlDelegate {
 				((ActivityEdgeInstance)target).source.animate(animationManager);
 			}
 			((ActivityEdgeInstance)target).animate(animationManager);
-		}	
+		}	*/
 	}
 
 	public void waitForTermination() {
 		// Nothing to do
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#nodeVisited(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
+	 *
+	 * @param event
+	 */
+	public void nodeVisited(AnimationEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#nodeLeft(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
+	 *
+	 * @param event
+	 */
+	public void nodeLeft(AnimationEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#valueCreated(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
+	 *
+	 * @param event
+	 */
+	public void valueCreated(AnimationEvent event) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/**
+	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#valueDestroyed(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
+	 *
+	 * @param event
+	 */
+	public void valueDestroyed(AnimationEvent event) {
+		// TODO Auto-generated method stub
+		
 	}
 }
