@@ -50,7 +50,7 @@ public class AnimationManager implements IAnimationManager{
 	protected Map<EObject, List<IPapyrusMarker>> modelElementMarkers = new HashMap<EObject, List<IPapyrusMarker>>();
 
 
-	private AnimationManager() {
+	protected AnimationManager() {
 		// Constructor
 		this.diagramManager = new AnimatedDiagramManager();
 		this.modelElementMarkers = new HashMap<EObject, List<IPapyrusMarker>>();
