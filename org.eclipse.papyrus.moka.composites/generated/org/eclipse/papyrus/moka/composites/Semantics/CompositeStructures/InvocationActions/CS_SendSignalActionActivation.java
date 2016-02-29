@@ -77,7 +77,9 @@ public class CS_SendSignalActionActivation extends SendSignalActionActivation {
 				// target, through onPort
 				CS_Reference targetReference = (CS_Reference) target;
 				// Port onPort = action.onPort ;
-				Object_ executionContext = this.group.activityExecution.context;
+				// Fix for PSCS11-4
+				// was : Object_ executionContext = this.group.activityExecution.context;
+				Object_ executionContext = this.getActivityExecution().context ;
 				if (executionContext == targetReference.referent || targetReference.compositeReferent.contains(executionContext)) {
 					targetReference.sendOut(signalInstance, action.getOnPort());
 				} else {
