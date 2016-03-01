@@ -22,6 +22,7 @@ import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.Structu
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.ReadExtentActionActivation;
@@ -55,7 +56,7 @@ public class CS_ReadExtentActionActivation extends ReadExtentActionActivation {
 			} else {
 				reference = new Reference();
 			}
-			reference.setReferent((ICS_Object) object);
+			reference.setReferent((IObject_) object);
 			references.add(reference);
 		}
 

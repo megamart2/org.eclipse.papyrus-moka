@@ -50,6 +50,8 @@ public abstract class AbstractService extends Object_ {
 	public abstract class ServiceOperationExecution extends OpaqueBehaviorExecution {
 
 		protected Operation operation;
+		
+		protected Behavior behaviorSignature;
 
 		public ServiceOperationExecution(Operation operation) {
 			this.operation = operation;
@@ -57,7 +59,10 @@ public abstract class AbstractService extends Object_ {
 
 		@Override
 		public Behavior getBehavior() {
-			return SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(operation);
+			if(behaviorSignature==null){
+				behaviorSignature = SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(operation);
+			}
+			return behaviorSignature;
 		}
 
 		@Override
