@@ -25,3 +25,4 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Eclipse Modeling Project
+Export-Package: org.eclipse.papyrus.moka.simex.utils
