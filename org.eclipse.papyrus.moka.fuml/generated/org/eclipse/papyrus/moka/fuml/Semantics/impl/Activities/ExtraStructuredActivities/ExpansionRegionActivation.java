@@ -77,9 +77,7 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 		for (int i = 0; i < inputElements.size(); i++) {
 			ExpansionNode inputElement = inputElements.get(i);
 			ExpansionNodeActivation expansionNodeActivation = this.getExpansionNodeActivation(inputElement);
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(expansionNodeActivation)) {
-				expansionNodeActivation.fire(expansionNodeActivation.takeOfferedTokens());
-			}
+			expansionNodeActivation.fire(expansionNodeActivation.takeOfferedTokens());
 			List<IToken> tokens = expansionNodeActivation.takeTokens();
 			TokenSet tokenSet = new TokenSet();
 			int j = 1;
