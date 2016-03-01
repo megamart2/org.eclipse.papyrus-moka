@@ -13,9 +13,11 @@
 
 package org.eclipse.papyrus.moka.services;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
@@ -26,8 +28,11 @@ public class MokaServiceRegistry{
 
 	protected static String MOKA_SERVICE_EXTENSION_POIN_ID = "org.eclipse.papyrus.moka.service";
 	
+	// The registry map associates the actual type of the service to the
+	// service instance
 	protected HashMap<java.lang.Class<?>, IMokaService> registry; 
 	
+	// The service registry is a singleton
 	private static MokaServiceRegistry INSTANCE;
 	
 	private MokaServiceRegistry(){
@@ -43,7 +48,7 @@ public class MokaServiceRegistry{
 	}
 	
 	protected void loadServices(){
-		// Instantiate all services known as being Moka services 
+		// Instantiate registered services
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] configurations = registry.getConfigurationElementsFor(MOKA_SERVICE_EXTENSION_POIN_ID);
 		for(int i=0; i < configurations.length; i++){
@@ -60,24 +65,28 @@ public class MokaServiceRegistry{
 	}
 	
 	protected void register(IMokaService service){
+		// Register service within the registry
 		if(service!=null){
 			this.registry.put(service.getClass(), service);
 		}
 	}
 	
-	public IMokaService getService(java.lang.Class<?> clazz){
-		IMokaService targetService = null;
+	public List<IMokaService> getService(java.lang.Class<?> clazz){
+		// Return the list of service that are compatible with the given type
+		List<IMokaService> services = new ArrayList<>();
 		Iterator<Class<?>> iterator = this.registry.keySet().iterator();
-		while(targetService==null && iterator.hasNext()){
-			Class<?> currentClass = iterator.next();
-			if(clazz.isAssignableFrom(currentClass)){
-				targetService = this.registry.get(currentClass);
+		while(iterator.hasNext()){
+			Class<?> type = iterator.next();
+			if(clazz.isAssignableFrom(type)){
+				services.add(this.registry.get(type));
 			}
 		}
-		return targetService;
+		return services;
 	}
 	
-	public Collection<IMokaService> getServices(){
+	public Collection<IMokaService> getAllServices(){
+		// Provide the list of all registered services
 		return this.registry.values();
 	}
+	
 }

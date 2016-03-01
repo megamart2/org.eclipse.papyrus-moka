@@ -15,9 +15,10 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.uml2.uml.ActivityEdge;
 
-public interface IActivityEdgeInstance {
+public interface IActivityEdgeInstance extends ISemanticVisitor{
 
 	public void sendOffer(List<IToken> tokens);
 	

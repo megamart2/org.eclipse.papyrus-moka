@@ -15,10 +15,6 @@ package org.eclipse.papyrus.moka.services.animation.events;
 
 import org.eclipse.papyrus.moka.services.MokaEvent;
 
-/**
- * @author JT605650
- *
- */
 @SuppressWarnings("serial")
 public class AnimationEvent extends MokaEvent {
 

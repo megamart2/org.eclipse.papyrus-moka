@@ -19,8 +19,8 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
@@ -53,7 +53,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 	 * The activations of the pins owned by the action of this action
 	 * activation.
 	 */
-	public List<PinActivation> pinActivations = new ArrayList<PinActivation>();
+	public List<IPinActivation> pinActivations = new ArrayList<IPinActivation>();
 
 	/*
 	 * Whether this action activation is already firing. This attribute is only
@@ -98,11 +98,9 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		List<InputPin> inputPins = getInputs(action); // CHANGED from: action.getInputs();
 		for (Iterator<InputPin> i = inputPins.iterator(); i.hasNext();) {
 			InputPin pin = i.next();
-			PinActivation pinActivation = this.getPinActivation(pin);
+			IPinActivation pinActivation = this.getPinActivation(pin);
 			List<IToken> tokens = pinActivation.takeOfferedTokens();
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(pinActivation)) {
-				pinActivation.fire(tokens);
-			}
+			pinActivation.fire(tokens);
 			for (int j = 0; j < tokens.size(); j++) {
 				IToken token = tokens.get(j);
 				offeredTokens.add(token);
@@ -192,7 +190,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		List<OutputPin> outputPins = getOutputs(action); // CHANGED from: action.getOutputs();
 		for (Iterator<OutputPin> i = outputPins.iterator(); i.hasNext();) {
 			OutputPin outputPin = i.next();
-			PinActivation pinActivation = this.getPinActivation(outputPin);
+			IPinActivation pinActivation = this.getPinActivation(outputPin);
 			pinActivation.sendUnofferedTokens();
 		}
 		// Send offers on all outgoing control flows.
@@ -220,7 +218,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		this.group.createNodeActivations(inputPinNodes);
 		for (int i = 0; i < inputPinNodes.size(); i++) {
 			ActivityNode node = inputPinNodes.get(i);
-			this.addPinActivation((PinActivation) (this.group.getNodeActivation(node)));
+			this.addPinActivation((IPinActivation) (this.group.getNodeActivation(node)));
 		}
 		List<ActivityNode> outputPinNodes = new ArrayList<ActivityNode>();
 		List<OutputPin> outputPins = getOutputs(action); // CHANGED from: action.getOutputs();
@@ -231,7 +229,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		this.group.createNodeActivations(outputPinNodes);
 		for (int i = 0; i < outputPinNodes.size(); i++) {
 			ActivityNode node = outputPinNodes.get(i);
-			this.addPinActivation((PinActivation) (this.group.getNodeActivation(node)));
+			this.addPinActivation((IPinActivation) (this.group.getNodeActivation(node)));
 		}
 	}
 
@@ -256,21 +254,21 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		forkNodeActivation.addOutgoingEdge(edge);
 	}
 
-	public void addPinActivation(PinActivation pinActivation) {
+	public void addPinActivation(IPinActivation pinActivation) {
 		// Add a pin activation to this action activation.
 		this.pinActivations.add(pinActivation);
-		pinActivation.actionActivation = this;
+		pinActivation.setActionActivation(this);
 	}
 
-	public PinActivation getPinActivation(Pin pin) {
+	public IPinActivation getPinActivation(Pin pin) {
 		// Precondition: The given pin is owned by the action of the action
 		// activation.
 		// Return the pin activation corresponding to the given pin.
-		PinActivation pinActivation = null;
+		IPinActivation pinActivation = null;
 		int i = 1;
 		while (pinActivation == null & i <= this.pinActivations.size()) {
-			PinActivation thisPinActivation = this.pinActivations.get(i - 1);
-			if (thisPinActivation.node == pin) {
+			IPinActivation thisPinActivation = this.pinActivations.get(i - 1);
+			if (thisPinActivation.getNode() == pin) {
 				pinActivation = thisPinActivation;
 			}
 			i = i + 1;
@@ -286,7 +284,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		Debug.println("[putToken] node = " + this.node.getName());
 		IObjectToken token = new ObjectToken();
 		token.setValue(value);
-		PinActivation pinActivation = this.getPinActivation(pin);
+		IPinActivation pinActivation = this.getPinActivation(pin);
 		pinActivation.addToken(token);
 	}
 
@@ -309,7 +307,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		// input pin and return them
 		// (but leave the tokens on the pin).
 		Debug.println("[getTokens] node = " + this.node.getName() + ", pin = " + pin.getName());
-		PinActivation pinActivation = this.getPinActivation(pin);
+		IPinActivation pinActivation = this.getPinActivation(pin);
 		List<IToken> tokens = pinActivation.getUnofferedTokens();
 		List<IValue> values = new ArrayList<IValue>();
 		for (int i = 0; i < tokens.size(); i++) {
@@ -328,7 +326,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		// Take any tokens held by the pin activation corresponding to the given
 		// input pin and return them.
 		Debug.println("[takeTokens] node = " + this.node.getName() + ", pin = " + pin.getName());
-		PinActivation pinActivation = this.getPinActivation(pin);
+		IPinActivation pinActivation = this.getPinActivation(pin);
 		List<IToken> tokens = pinActivation.takeUnofferedTokens();
 		List<IValue> values = new ArrayList<IValue>();
 		for (int i = 0; i < tokens.size(); i++) {

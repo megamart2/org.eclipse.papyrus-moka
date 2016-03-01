@@ -30,10 +30,11 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.papyrus.moka.animation.presentation.control.AnimationControlView;
 import org.eclipse.papyrus.moka.animation.presentation.data.AnimatedDiagramTree;
+import org.eclipse.papyrus.moka.animation.presentation.data.AnimatingInstanceNode;
 import org.eclipse.papyrus.moka.animation.presentation.data.AnimationTreeNodeFactory;
 import org.eclipse.papyrus.moka.animation.presentation.data.DiagramAnimationNode;
 import org.eclipse.papyrus.moka.animation.presentation.data.IAnimationTreeNode;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.launch.EditorUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
@@ -113,7 +114,7 @@ public class DiagramHandler{
 	}
 	
 	private List<Diagram> getAssociatedDiagrams(EObject modelElement, Resource notationResource){
-		// Find the set of diagrams in which in the given model element appears 
+		// Find the set of diagrams in which the given model element appears 
 		List<Diagram> associatedDiagrams = new ArrayList<Diagram>();
 		if(notationResource!=null && modelElement!=null){
 			 return DiagramUtils.getAssociatedDiagramsFromNotationResource(modelElement, notationResource);
@@ -244,13 +245,7 @@ public class DiagramHandler{
 		return diagramSet!=null && !diagramSet.isEmpty();
 	}
 	
-	public boolean isStrictlyRenderable(EObject modelElement){
-		// A model element can be rendered only if it exists a diagram in which it appear
-		// in the model and this diagram is currently open
-		return this.isRenderable(modelElement) && this.hasOpenedDiagram(modelElement);
-	}
-	
-	public boolean isRenderable(Object_ instance){
+	public boolean isRegistered(IObject_ instance){
 		// Verifies if a particular instance is allowed to trigger animation
 		// An instance is allowed to trigger animation if it is part of the "AnimatedDiagramTree"
 		// Note that users may have decided to manually disallow a particular instance
@@ -261,7 +256,7 @@ public class DiagramHandler{
 			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
 			while(!isRenderable && nodesIterator.hasNext()){
 				DiagramAnimationNode node = (DiagramAnimationNode) nodesIterator.next();
-				if(node.isAnimatedBy(instance)){
+				if(node.hasAnimator(instance)){
 					isRenderable = true;
 				}
 			}
@@ -269,7 +264,23 @@ public class DiagramHandler{
 		return isRenderable;
 	}
 	
-	public Set<Diagram> findDiagramsInvolved(Object_ instance){
+	public Set<Diagram> getAnimatedDiagrams(IObject_ instance){
+		// Provides the list of diagrams on which the given instance is allowed
+		// to trigger animation actions. 
+		Set<Diagram> diagrams = new HashSet<Diagram>();
+		if(instance!=null && this.animatedDiagrams!=null){
+			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
+			while(nodesIterator.hasNext()){
+				DiagramAnimationNode node = (DiagramAnimationNode) nodesIterator.next();
+				if(node.isAnimatorAllowed(instance)){
+					diagrams.add(node.getAnimatedDiagram());
+				}
+			}
+		}
+		return diagrams;
+	}
+	
+	public Set<Diagram> findDiagramsInvolved(IObject_ instance){
 		// Find any diagram on which this particular instance may trigger
 		// animations. The research is based on the analysis of the classifier
 		// behavior (if any) and operation implementations
@@ -278,14 +289,19 @@ public class DiagramHandler{
 			Iterator<Classifier> types = instance.getTypes().iterator();
 			while(types.hasNext()){
 				Class type = (Class)types.next();
-				if(type.isActive()){
-					Behavior classifierBehavior = type.getClassifierBehavior();
-					if(classifierBehavior!=null){
-						Iterator<Element> elementIterator = classifierBehavior.getOwnedElements().iterator();
+				if(type.isActive() || type instanceof Behavior){
+					Behavior behavior = null;
+					if(type instanceof Behavior){
+						behavior = (Behavior) type;
+					}else{
+						behavior = type.getClassifierBehavior();
+					}					
+					if(behavior!=null){
+						Iterator<Element> elementIterator = behavior.getOwnedElements().iterator();
 						while(elementIterator.hasNext()){
-							Element classifierBehaviorElement = elementIterator.next();
-							if(this.isRenderable(classifierBehaviorElement)){
-								relatedDiagrams.addAll(this.modelDiagramMapping.get(classifierBehaviorElement));
+							Element behaviorElement = elementIterator.next();
+							if(this.isRenderable(behaviorElement)){
+								relatedDiagrams.addAll(this.modelDiagramMapping.get(behaviorElement));
 							}
 						}
 					}
@@ -310,7 +326,7 @@ public class DiagramHandler{
 		return relatedDiagrams;
 	}
 	
-	public void addRenderable(Object_ instance, Diagram  diagram){
+	public void addRenderable(IObject_ instance, Diagram  diagram){
 		// Add the relation between the diagram and the instance. This relation
 		// is formalized through the data model (see AnimatedDiagramExecutionTree).
 		if(instance!=null && diagram!=null){	
@@ -324,8 +340,26 @@ public class DiagramHandler{
 		}
 	}
 	
-	public void deleteRenderable(Object_ instance){
-		
+	public void deleteRenderable(IObject_ instance){
+		// Removes the relation existing between this instance and any diagram. This relationship
+		// is formalized through the data model.
+		if(instance != null && this.animatedDiagrams!=null){
+			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
+			while(nodesIterator.hasNext()){
+				IAnimationTreeNode node = nodesIterator.next();
+				Iterator<IAnimationTreeNode> childrenIterator = node.getChildren().iterator();
+				List<IAnimationTreeNode> unregisteredAnimators = new ArrayList<IAnimationTreeNode>();
+				while(childrenIterator.hasNext()){
+					IAnimationTreeNode animator = childrenIterator.next();
+					if(((AnimatingInstanceNode)animator).instance==instance){
+						unregisteredAnimators.add(animator);
+					}
+				}
+				for(IAnimationTreeNode animator : unregisteredAnimators){
+					node.removeChild(animator);
+				}
+			}
+		}
 	}
 	
 	public synchronized void clean(){

@@ -14,17 +14,19 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalEventOccurrence;
 
-public class AcceptEventActionEventAccepter extends EventAccepter {
+public class AcceptEventActionEventAccepter extends EventAccepter implements IAcceptEventActionEventAccepter {
 
 	/*
 	 * The accept event action activation on behalf of which this event accepter
 	 * is waiting.
 	 */
-	public AcceptEventActionActivation actionActivation;
+	public IAcceptEventActionActivation actionActivation;
 
 	public void accept(EventOccurrence eventOccurrence) {
 		// Accept a signal event occurrence. Forward the signal instance to the action activation.
@@ -48,5 +50,13 @@ public class AcceptEventActionEventAccepter extends EventAccepter {
 			matches = this.actionActivation.match(((SignalEventOccurrence)eventOccurrence).signalInstance);
 		}
 		return matches;
+	}
+
+	public IAcceptEventActionActivation getActionActivation() {
+		return this.getActionActivation();
+	}
+
+	public void setAcceptEventActionActivation(IAcceptEventActionActivation actionActivation) {
+		this.actionActivation = actionActivation;
 	}
 }

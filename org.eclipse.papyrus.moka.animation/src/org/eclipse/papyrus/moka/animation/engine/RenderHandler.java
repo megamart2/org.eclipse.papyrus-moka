@@ -33,6 +33,7 @@ import org.eclipse.papyrus.infra.services.markerlistener.PapyrusMarkerAdapter;
 import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.animation.utils.AnimationUtils;
 import org.eclipse.papyrus.moka.services.animation.events.AnimationKind;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 /**
  * Some facilities to manage animation in diagrams.
@@ -174,7 +175,7 @@ public class RenderHandler implements IRender{
 	}
 	
 	@Override
-	public synchronized void startRendering(EObject modelElement, AnimationKind animationKind) {
+	public synchronized void startRendering(EObject modelElement, IObject_ animator, AnimationKind animationKind) {
 		// A marker is only registered on a model element if
 		// this latter has not already a marker applied on it
 		// and if so this marker is not of the kind of the requested
@@ -183,7 +184,7 @@ public class RenderHandler implements IRender{
 			this.diagramManager.init(modelElement);
 			this.isReady = true;
 		}
-		if(modelElement!= null && this.isRenderable(modelElement)){
+		if(modelElement!= null && this.isRenderable(modelElement, animator)){
 			this.preRendering(modelElement);
 			IPapyrusMarker requestedMarker = null;
 			// This is not the first time the element is visited
@@ -195,8 +196,9 @@ public class RenderHandler implements IRender{
 			}
 			// Apply requested marker
 			if(!this.hasMarker(modelElement, animationKind)){
-				Map<String, String> attributes = new HashMap<String, String>();
+				Map<String, Object> attributes = new HashMap<String, Object>();
 				attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
+				attributes.put("CONSTRAINTS", this.diagramManager.getAnimatedDiagrams(animator));
 				// Defined which type of animation is expected
 				if(animationKind.equals(AnimationKind.ANIMATED)){
 					requestedMarker = this.createMarker(modelElement, AnimationUtils.ANIMATED_MARKER_ID, attributes);
@@ -219,9 +221,9 @@ public class RenderHandler implements IRender{
 	}
 
 	@Override
-	public void render(EObject modelElement, AnimationKind animationKind, int renderingDuration) {
+	public void render(EObject modelElement, IObject_ animator, AnimationKind animationKind, int renderingDuration) {
 		// Place the marker to trigger the user view to change
-		this.startRendering(modelElement, animationKind);
+		this.startRendering(modelElement, animator, animationKind);
 		// The duration for which the marker is in place
 		try {
 			Thread.sleep(renderingDuration);
@@ -229,11 +231,11 @@ public class RenderHandler implements IRender{
 			e.printStackTrace();
 		}
 		// Remove the marker to trigger the user view to change
-		this.stopRendering(modelElement, animationKind);
+		this.stopRendering(modelElement, animator, animationKind);
 	}
 
 	@Override
-	public synchronized void stopRendering(EObject modelElement, AnimationKind kind) {
+	public synchronized void stopRendering(EObject modelElement, IObject_ animator, AnimationKind kind) {
 		// A marker can only be removed from a model element if it is applied on it.
 		// As a model element can have multiple markers applied, only the one corresponding
 		// to the specific animation kind is removed
@@ -241,25 +243,25 @@ public class RenderHandler implements IRender{
 			this.diagramManager.init(modelElement);
 			this.isReady = true;
 		}
-		if(modelElement != null && this.isRenderable(modelElement)){
-			if(this.hasMarker(modelElement, kind)){
-				IPapyrusMarker marker = this.deleteMarker(modelElement, kind); 
+		if(modelElement != null && this.isRenderable(modelElement, animator)){
+			if(this.hasMarker(modelElement, AnimationKind.ANIMATED)){
+				IPapyrusMarker marker = this.deleteMarker(modelElement, AnimationKind.ANIMATED); 
 				if(marker!=null){
 					this.modelElementMarkers.get(modelElement).remove(marker);
 				}
 			}
-			if(!this.hasMarker(modelElement, AnimationKind.VISITED)){
-				Map<String, String> attributes = new HashMap<String, String>();
+			if(!this.hasMarker(modelElement, kind)){
+				Map<String, Object> attributes = new HashMap<String, Object>();
 				attributes.put(EValidator.URI_ATTRIBUTE, EcoreUtil.getURI(modelElement).toString());
+				attributes.put("CONSTRAINTS", this.diagramManager.getAnimatedDiagrams(animator));
 				IPapyrusMarker visitedMarker = this.createMarker(modelElement, AnimationUtils.VISITED_MARKER_ID, attributes);
 				this.modelElementMarkers.get(modelElement).add(visitedMarker);
 			}
 		}
 	}
 
-	@Override
-	public boolean isRenderable(EObject modelElement) {
-		return this.diagramManager.isRenderable(modelElement);
+	public boolean isRenderable(EObject modelElement, IObject_ animator) {
+		return MokaConstants.MOKA_AUTOMATIC_ANIMATION && this.diagramManager.isRenderable(modelElement); 
 	}
 
 	@Override

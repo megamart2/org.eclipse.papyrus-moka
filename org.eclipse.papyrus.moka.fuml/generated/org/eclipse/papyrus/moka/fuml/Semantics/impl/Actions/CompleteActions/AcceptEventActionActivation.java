@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
@@ -41,7 +42,7 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 	 * If the accept event action activation is waiting for an event, then this
 	 * is the accepter it has registered for the event.
 	 */
-	public AcceptEventActionEventAccepter eventAccepter;
+	public IAcceptEventActionEventAccepter eventAccepter;
 
 	public Boolean waiting;
 
@@ -50,7 +51,7 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 		// Create an event accepter and initialize waiting to false.
 		super.run();
 		this.eventAccepter = new AcceptEventActionEventAccepter();
-		this.eventAccepter.actionActivation = this;
+		this.eventAccepter.setAcceptEventActionActivation(this);
 		this.waiting = false;
 	}
 	
@@ -169,21 +170,9 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 			this.waiting = false;
 		}
 	}
-	
-	/*public void animate(IRender animationManager){
-		// An accept event action is animated during an undefined period of time
-		// The animation terminates when an event triggers the execution of this action
-		if(animationManager!=null){
-			this.animationManager = animationManager;
-			this.animationManager.startRendering(this.node, AnimationKind.ANIMATED);
-		}
+
+	public IAcceptEventActionEventAccepter getEventAccepter() {
+		return this.eventAccepter;
 	}
 	
-	public void notifyAnimationEnd(){
-		// Notify the animation manager of the termination of the animation period of the
-		// accept event action
-		if(this.animationManager!=null){
-			this.animationManager.stopRendering(this.node, AnimationKind.ANIMATED);
-		}
-	}*/
 }

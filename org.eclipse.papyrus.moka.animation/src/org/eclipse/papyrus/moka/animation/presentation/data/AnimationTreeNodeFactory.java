@@ -14,7 +14,7 @@
 package org.eclipse.papyrus.moka.animation.presentation.data;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.ExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public final class AnimationTreeNodeFactory {
 
@@ -35,8 +35,8 @@ public final class AnimationTreeNodeFactory {
 			node = this.createAnimationTreeNode();
 		}else if(input instanceof Diagram){
 			node = this.createDiagramAnimationNode((Diagram)input);
-		}else if(input instanceof ExtensionalValue){
-			node = this.createAnimatingInstanceNode((ExtensionalValue)input);
+		}else if(input instanceof IObject_){
+			node = this.createAnimatingInstanceNode((IObject_)input);
 		}
 		return node;
 	}
@@ -45,7 +45,7 @@ public final class AnimationTreeNodeFactory {
 		return new AnimationTreeNode();
 	}
 	
-	public IAnimationTreeNode createAnimatingInstanceNode(ExtensionalValue value){
+	public IAnimationTreeNode createAnimatingInstanceNode(IObject_ value){
 		AnimatingInstanceNode node = new AnimatingInstanceNode();
 		node.setInstance(value);
 		return node;

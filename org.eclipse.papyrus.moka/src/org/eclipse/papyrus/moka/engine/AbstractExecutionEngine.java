@@ -184,7 +184,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 		if (eObjectToExecute != null) {
 			// Instantiate Moka services, fill up the registry and initialize services
 			MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
-			for(IMokaService service : registry.getServices()){
+			for(IMokaService service : registry.getAllServices()){
 				service.init(eObjectToExecute);
 			}
 			String request = "";
@@ -250,7 +250,7 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 	public void stop(){
 		// Instantiate Moka services, fill up the registry and initialize services
 		MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
-		for(IMokaService service : registry.getServices()){
+		for(IMokaService service : registry.getAllServices()){
 			service.dispose();
 		}
 	}

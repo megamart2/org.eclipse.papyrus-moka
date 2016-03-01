@@ -4,7 +4,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.uml2.uml;bundle-version="4.0.1",
  org.eclipse.papyrus.moka.fuml;bundle-version="1.2.0",
  org.eclipse.papyrus.moka;bundle-version="1.2.0",
- org.eclipse.debug.core;bundle-version="3.8.0"
+ org.eclipse.debug.core;bundle-version="3.8.0",
+ org.aspectj.runtime
 Export-Package: org.eclipse.papyrus.moka.composites,
  org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses,
  org.eclipse.papyrus.moka.composites.Semantics.impl.Actions.CompleteActions,

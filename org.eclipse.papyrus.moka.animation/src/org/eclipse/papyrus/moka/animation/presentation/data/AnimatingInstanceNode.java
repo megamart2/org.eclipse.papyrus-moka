@@ -13,11 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.presentation.data;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.ExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public class AnimatingInstanceNode extends AnimationTreeNode {
 	
-	public ExtensionalValue instance;
+	public IObject_ instance;
 
 	public boolean allowed;
 
@@ -26,11 +26,11 @@ public class AnimatingInstanceNode extends AnimationTreeNode {
 		this.allowed = true;
 	}
 	
-	public ExtensionalValue getInstance() {
+	public IObject_ getInstance() {
 		return instance;
 	}
 
-	public void setInstance(ExtensionalValue instance) {
+	public void setInstance(IObject_ instance) {
 		this.instance = instance;
 	}
 	

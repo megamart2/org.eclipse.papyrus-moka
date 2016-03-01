@@ -32,6 +32,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.RemoveStructuralFeatureValueActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.TestIdentityActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.ValueSpecificationActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityFinalNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityParameterNodeActivation;
@@ -43,6 +44,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActiv
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.MergeNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ExecutionFactoryL1;
 import org.eclipse.uml2.uml.Activity;
+import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityFinalNode;
 import org.eclipse.uml2.uml.ActivityParameterNode;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
@@ -136,7 +138,9 @@ public class ExecutionFactoryL2 extends ExecutionFactoryL1 {
 			visitor = new CreateLinkActionActivation();
 		} else if (element instanceof DestroyLinkAction) {
 			visitor = new DestroyLinkActionActivation();
-		} else {
+		} else if (element instanceof ActivityEdge){
+			visitor = new ActivityEdgeInstance();
+		}else {
 			visitor = super.instantiateVisitor(element);
 		}
 		return visitor;

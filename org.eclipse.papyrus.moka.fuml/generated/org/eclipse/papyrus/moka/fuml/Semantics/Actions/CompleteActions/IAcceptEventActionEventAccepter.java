@@ -11,14 +11,14 @@
  *   
  *****************************************************************************/
 
-package org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions;
+package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
 
-public interface IPinActivation extends IObjectNodeActivation {
+public interface IAcceptEventActionEventAccepter extends IEventAccepter {
 	
-	public IActionActivation getActionActivation();
+	public IAcceptEventActionActivation getActionActivation();
 	
-	public void setActionActivation(IActionActivation actionActivation);
+	public void setAcceptEventActionActivation(IAcceptEventActionActivation actionActivation);
 
 }

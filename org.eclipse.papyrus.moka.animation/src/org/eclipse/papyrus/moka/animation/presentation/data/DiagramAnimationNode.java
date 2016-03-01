@@ -16,7 +16,7 @@ package org.eclipse.papyrus.moka.animation.presentation.data;
 import java.util.Iterator;
 
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.ExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public class DiagramAnimationNode extends AnimationTreeNode {
 	
@@ -34,7 +34,7 @@ public class DiagramAnimationNode extends AnimationTreeNode {
 		this.animatedDiagram = animatedDiagram;
 	}
 	
-	public boolean isAnimatedBy(ExtensionalValue instance){
+	public boolean hasAnimator(IObject_ instance){
 		boolean found = false;
 		Iterator<IAnimationTreeNode> childrenIterator = this.getChildren().iterator();
 		while(!found && childrenIterator.hasNext()){
@@ -44,6 +44,18 @@ public class DiagramAnimationNode extends AnimationTreeNode {
 			}
 		}
 		return found;
+	}
+	
+	public boolean isAnimatorAllowed(IObject_ instance){
+		boolean allowed = false;
+		Iterator<IAnimationTreeNode> childrenIterator = this.getChildren().iterator();
+		while(!allowed && childrenIterator.hasNext()){
+			AnimatingInstanceNode node = (AnimatingInstanceNode) childrenIterator.next();
+			if(node.getInstance()==instance && node.isAllowed()){
+				allowed = true;
+			}
+		}
+		return allowed;
 	}
 
 }

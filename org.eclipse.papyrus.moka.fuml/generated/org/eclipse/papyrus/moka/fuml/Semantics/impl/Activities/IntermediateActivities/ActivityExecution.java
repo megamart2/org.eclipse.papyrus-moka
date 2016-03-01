@@ -15,6 +15,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActi
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityParameterNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
@@ -45,13 +46,13 @@ public class ActivityExecution extends Execution {
 		this.activationGroup.activityExecution = this;
 		this.activationGroup.activate(activity.getNodes(), activity.getEdges());
 		// Debug.println("[execute] Getting output parameter node activations...");
-		List<ActivityParameterNodeActivation> outputActivations = this.activationGroup.getOutputParameterNodeActivations();
+		List<IActivityParameterNodeActivation> outputActivations = this.activationGroup.getOutputParameterNodeActivations();
 		// Debug.println("[execute] There are " + outputActivations.size() +
 		// " output parameter node activations.");
 		for (int i = 0; i < outputActivations.size(); i++) {
-			ActivityParameterNodeActivation outputActivation = outputActivations.get(i);
+			IActivityParameterNodeActivation outputActivation = outputActivations.get(i);
 			ParameterValue parameterValue = new ParameterValue();
-			parameterValue.parameter = ((ActivityParameterNode) (outputActivation.node)).getParameter();
+			parameterValue.parameter = ((ActivityParameterNode) (outputActivation.getNode())).getParameter();
 			List<IToken> tokens = outputActivation.getTokens();
 			for (int j = 0; j < tokens.size(); j++) {
 				IToken token = tokens.get(j);

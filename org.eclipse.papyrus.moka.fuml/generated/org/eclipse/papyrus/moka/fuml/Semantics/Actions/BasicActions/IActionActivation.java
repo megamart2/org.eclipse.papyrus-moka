@@ -18,7 +18,6 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.PinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.InputPin;
@@ -31,9 +30,9 @@ public interface IActionActivation extends IActivityNodeActivation {
 	
 	public void sendOffers();
 	
-	public void addPinActivation(PinActivation pinActivation);
+	public void addPinActivation(IPinActivation pinActivation);
 	
-	public PinActivation getPinActivation(Pin pin);
+	public IPinActivation getPinActivation(Pin pin);
 	
 	public void putToken(OutputPin pin, IValue value);
 	

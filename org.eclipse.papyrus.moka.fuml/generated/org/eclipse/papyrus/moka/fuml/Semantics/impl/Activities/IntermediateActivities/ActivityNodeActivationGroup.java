@@ -22,6 +22,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredActi
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityParameterNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IControlNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IActionActivation;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Action;
@@ -75,7 +77,7 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		for (int i = 0; i < activations.size(); i++) {
 			IActivityNodeActivation activation = activations.get(i);
 			Debug.println("[run] Checking node " + activation.getNode().getName() + "...");
-			if (activation instanceof IActionActivation | activation instanceof ControlNodeActivation | activation instanceof ActivityParameterNodeActivation) {
+			if (activation instanceof IActionActivation | activation instanceof IControlNodeActivation | activation instanceof IActivityParameterNodeActivation) {
 				boolean isEnabled = this.checkIncomingEdges(activation.getIncomingEdges(), activations);
 				// For an action activation, also consider incoming edges to
 				// input pins
@@ -84,7 +86,7 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 					int j = 1;
 					while (j <= inputPins.size() & isEnabled) {
 						InputPin inputPin = inputPins.get(j - 1);
-						List<IActivityEdgeInstance> inputEdges = ((IActionActivation) activation).getPinActivation(inputPin).incomingEdges;
+						List<IActivityEdgeInstance> inputEdges = ((IActionActivation) activation).getPinActivation(inputPin).getIncomingEdges();
 						isEnabled = this.checkIncomingEdges(inputEdges, activations);
 						j = j + 1;
 					}
@@ -209,9 +211,10 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		for (int i = 0; i < edges.size(); i++) {
 			ActivityEdge edge = edges.get(i);
 			Debug.println("[createEdgeInstances] Creating an edge instance from " + edge.getSource().getName() + " to " + edge.getTarget().getName() + ".");
-			ActivityEdgeInstance edgeInstance = new ActivityEdgeInstance();
-			edgeInstance.edge = edge;
-			edgeInstance.group = this;
+			//Note creation of visitors for edge instance is made by the execution factory
+			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) (this.getActivityExecution().locus.getFactory().instantiateVisitor(edge));
+			edgeInstance.setEdge(edge);
+			edgeInstance.setGroup(this);
 			this.edgeInstances.add(edgeInstance);
 			this.getNodeActivation(edge.getSource()).addOutgoingEdge(edgeInstance);
 			this.getNodeActivation(edge.getTarget()).addIncomingEdge(edgeInstance);
@@ -237,16 +240,16 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		return activityExecution;
 	}
 
-	public List<ActivityParameterNodeActivation> getOutputParameterNodeActivations() {
+	public List<IActivityParameterNodeActivation> getOutputParameterNodeActivations() {
 		// Return the set of all activations in this group of activity parameter
 		// nodes for output (inout, out and return) parameters.
-		List<ActivityParameterNodeActivation> parameterNodeActivations = new ArrayList<ActivityParameterNodeActivation>();
+		List<IActivityParameterNodeActivation> parameterNodeActivations = new ArrayList<IActivityParameterNodeActivation>();
 		List<IActivityNodeActivation> nodeActivations = this.nodeActivations;
 		for (int i = 0; i < nodeActivations.size(); i++) {
 			IActivityNodeActivation activation = nodeActivations.get(i);
-			if (activation instanceof ActivityParameterNodeActivation) {
+			if (activation instanceof IActivityParameterNodeActivation) {
 				if (activation.getIncomingEdges().size() > 0) {
-					parameterNodeActivations.add((ActivityParameterNodeActivation) activation);
+					parameterNodeActivations.add((IActivityParameterNodeActivation) activation);
 				}
 			}
 		}

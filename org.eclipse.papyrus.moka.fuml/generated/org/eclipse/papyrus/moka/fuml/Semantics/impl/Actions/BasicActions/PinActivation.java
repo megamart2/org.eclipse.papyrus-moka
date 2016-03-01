@@ -16,6 +16,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
@@ -28,7 +29,7 @@ public abstract class PinActivation extends ObjectNodeActivation implements IPin
 	/*
 	 * The activation of the action that owns the pin for this pin activation.
 	 */
-	public ActionActivation actionActivation;
+	public IActionActivation actionActivation;
 
 	@Override
 	public void fire(List<IToken> incomingTokens) {
@@ -70,5 +71,13 @@ public abstract class PinActivation extends ObjectNodeActivation implements IPin
 			}
 		}
 		return tokens;
+	}
+	
+	public IActionActivation getActionActivation(){
+		return this.actionActivation;
+	}
+	
+	public void setActionActivation(IActionActivation actionActivation){
+		this.actionActivation = actionActivation;
 	}
 }

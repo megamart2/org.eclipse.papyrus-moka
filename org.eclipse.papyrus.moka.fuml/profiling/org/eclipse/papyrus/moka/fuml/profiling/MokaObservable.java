@@ -11,12 +11,13 @@
  *   
  *****************************************************************************/
 
-package org.eclipse.papyrus.moka.fuml;
+package org.eclipse.papyrus.moka.fuml.profiling;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.services.IMokaService;
+import org.eclipse.papyrus.moka.services.MokaServiceRegistry;
 
 public abstract class MokaObservable {
 	
@@ -24,6 +25,14 @@ public abstract class MokaObservable {
 	
 	public MokaObservable(){
 		this.listeners = new ArrayList<IMokaService>();
+		this.initialize();
+	}
+	
+	public void initialize() {
+		// An observable is by default listened by any registered service
+		for(IMokaService service : MokaServiceRegistry.getInstance().getAllServices()){
+			this.addListener(service);
+		}
 	}
 	
 	public void addListener(IMokaService service){
@@ -32,5 +41,9 @@ public abstract class MokaObservable {
 	
 	public void removeListener(IMokaService service){
 		this.listeners.remove(service);
+	}
+	
+	public void finalize(){
+		this.listeners.clear();
 	}
 }

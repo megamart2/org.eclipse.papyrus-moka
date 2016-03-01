@@ -15,13 +15,7 @@
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
 
 public abstract class EventAccepter implements IEventAccepter {
-
-	/**
-	 * Context in which the accepter was registered;
-	 */
-	public Execution registrationContext;
 	
 }

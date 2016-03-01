@@ -15,10 +15,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActi
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IControlNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 
-public abstract class ControlNodeActivation extends ActivityNodeActivation {
+public abstract class ControlNodeActivation extends ActivityNodeActivation implements IControlNodeActivation {
 
 	@Override
 	public void fire(List<IToken> incomingTokens) {

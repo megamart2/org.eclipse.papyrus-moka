@@ -17,7 +17,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 
 public abstract class SemanticVisitor implements ISemanticVisitor{
-
+	
 	public void _endIsolation() {
 		// System.out.println("_endIsolation");
 	}

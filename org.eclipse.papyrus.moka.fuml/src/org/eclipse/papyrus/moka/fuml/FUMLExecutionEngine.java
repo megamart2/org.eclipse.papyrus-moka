@@ -29,8 +29,6 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
-import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.ExecutionFactoryWrapper;
-import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.LocusWrapper;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RedefinitionBasedDispatchStrategy;
@@ -43,9 +41,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL3.ExecutionFactory
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.registry.IOpaqueBehaviorExecutionRegistry;
 import org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry;
-import org.eclipse.papyrus.moka.services.IMokaService;
-import org.eclipse.papyrus.moka.services.MokaServiceRegistry;
-import org.eclipse.papyrus.moka.services.animation.AbstractAnimationService;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -93,11 +88,9 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		if (behavior != null) {
 			main = behavior;
 			// creates the locus, executor and execution factory
-			LocusWrapper locusWrapper = new LocusWrapper(new Locus());
-			this.initLocus(locusWrapper);
-			this.locus = locusWrapper;
+			this.locus = new Locus();
 			this.locus.setExecutor(new Executor());
-			this.locus.setFactory(new ExecutionFactoryWrapper(new ExecutionFactoryL3()));
+			this.locus.setFactory(new ExecutionFactoryL3());
 			this.locus.setExecutedTarget(main);
 			// initializes built-in primitive types
 			this.initializeBuiltInPrimitiveTypes(locus);
@@ -113,13 +106,6 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 			this.started = true;
 			this.locus.getExecutor().execute(main, null, this.arguments);
 			eInstance.getControlDelegate().waitForTermination();
-		}
-	}
-
-	protected void initLocus(LocusWrapper wrapper){
-		IMokaService animationService = MokaServiceRegistry.getInstance().getService(AbstractAnimationService.class);
-		if(animationService!=null){
-			wrapper.addListener(animationService);
 		}
 	}
 	

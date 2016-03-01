@@ -17,7 +17,6 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredActivities.IStructuredActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityParameterNodeActivation;
 import org.eclipse.uml2.uml.ActivityEdge;
 import org.eclipse.uml2.uml.ActivityNode;
 
@@ -43,7 +42,7 @@ public interface IActivityNodeActivationGroup {
 	
 	public ActivityExecution getActivityExecution();
 	
-	public List<ActivityParameterNodeActivation> getOutputParameterNodeActivations();
+	public List<IActivityParameterNodeActivation> getOutputParameterNodeActivations();
 	
 	public Boolean hasSourceFor(IActivityEdgeInstance edgeInstance);
 	

@@ -22,4 +22,6 @@ public interface IAcceptEventActionActivation extends IActionActivation {
 	
 	public Boolean match(SignalInstance signalInstance);
 	
+	public IAcceptEventActionEventAccepter getEventAccepter();
+	
 }

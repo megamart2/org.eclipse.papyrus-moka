@@ -18,6 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredActivities.IStructuredActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
@@ -68,7 +69,7 @@ public class StructuredActivityNodeActivation extends ActionActivation implement
 		List<InputPin> inputPins = getInputs(action); // CHANGED from: action.getInputs();
 		for (Iterator<InputPin> i = inputPins.iterator(); i.hasNext();) {
 			InputPin inputPin = i.next();
-			PinActivation pinActivation = this.getPinActivation(inputPin);
+			IPinActivation pinActivation = this.getPinActivation(inputPin);
 			pinActivation.sendUnofferedTokens();
 		}
 		this.activationGroup.run(this.activationGroup.nodeActivations);

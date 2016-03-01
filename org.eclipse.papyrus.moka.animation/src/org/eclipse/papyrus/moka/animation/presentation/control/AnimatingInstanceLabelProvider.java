@@ -25,7 +25,7 @@ public class AnimatingInstanceLabelProvider extends LabelProvider {
 	@Override
 	public String getText(Object element) {
 		if(element instanceof AnimatingInstanceNode){
-			return ((AnimatingInstanceNode)element).instance.identifier;
+			return ((AnimatingInstanceNode)element).instance.getIdentifier();
 		}
 		return null;
 	}

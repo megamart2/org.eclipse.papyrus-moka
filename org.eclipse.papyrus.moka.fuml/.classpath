@@ -4,6 +4,6 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="generated"/>
-	<classpathentry kind="src" path="adapters"/>
-	<classpathentry kind="output" path="bin"/>
+	<classpathentry kind="src" path="profiling"/>
+	<classpathentry kind="output" path="target/classes"/>
 </classpath>

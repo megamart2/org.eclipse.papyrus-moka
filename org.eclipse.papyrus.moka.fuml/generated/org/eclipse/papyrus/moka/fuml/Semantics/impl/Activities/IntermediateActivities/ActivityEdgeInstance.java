@@ -17,7 +17,6 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActi
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
@@ -59,9 +58,6 @@ public class ActivityEdgeInstance implements IActivityEdgeInstance{
 		// Keep the offered tokens until taken by the target.
 		// (Note that any one edge should only be handling either all object
 		// tokens or all control tokens.)
-		if (!FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) { // Added for connection with the debug API
-			return;
-		}
 		IOffer offer = new Offer();
 		for (int i = 0; i < tokens.size(); i++) {
 			IToken token = tokens.get(i);
@@ -180,17 +176,10 @@ public class ActivityEdgeInstance implements IActivityEdgeInstance{
 	public ActivityEdge getEdge() {
 		return this.edge;
 	}
-	
-	/*public void animate(IRender animationManager){
-		// An edge is animation during a certain period of time that is specified through
-		// Moka constants
-		if(animationManager!=null){
-			this.animationManager = animationManager;
-			animationManager.render(this.edge, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
-		}
+
+	public void _endIsolation() {
 	}
 
-	public void notifyAnimationEnd() {
-		// Do nothing
-	}*/
+	public void _beginIsolation() {
+	}
 }

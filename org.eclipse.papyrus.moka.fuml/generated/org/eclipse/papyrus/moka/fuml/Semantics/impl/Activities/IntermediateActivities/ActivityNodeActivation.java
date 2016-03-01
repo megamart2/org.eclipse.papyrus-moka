@@ -19,7 +19,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
@@ -87,9 +86,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor implements 
 		}
 		_endIsolation();
 		if (ready) {
-			if (FUMLExecutionEngine.eInstance.getControlDelegate().control(this)) {
-				this.fire(tokens);
-			}
+			this.fire(tokens);
 		}
 	}
 

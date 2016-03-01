@@ -21,9 +21,9 @@ import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executi
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Locus;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngineForMoka;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
-import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.ExecutionFactoryWrapper;
-import org.eclipse.papyrus.moka.fuml.Semantics.adapters.Loci.LociL1.LocusWrapper;
 import org.eclipse.uml2.uml.Behavior;
 
 public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMoka {
@@ -36,11 +36,9 @@ public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMo
 			main = behavior;
 
 			// creates the locus, executor and execution factory
-			LocusWrapper locusWrapper = new LocusWrapper(new CS_Locus());
-			this.initLocus(locusWrapper);
-			this.locus = locusWrapper;
+			this.locus = new CS_Locus();
 			locus.setExecutor(new CS_Executor());
-			locus.setFactory(new ExecutionFactoryWrapper(new CS_ExecutionFactory()));
+			locus.setFactory(new CS_ExecutionFactory());
 
 			// initializes built-in primitive types
 			this.initializeBuiltInPrimitiveTypes(locus);
@@ -61,7 +59,13 @@ public class CompositeStructuresExecutionEngine extends FUMLExecutionEngineForMo
 			this.started = true;
 
 			// Finally launches the execution
-			locus.getExecutor().execute(main, null, this.arguments);
+			//locus.getExecutor().execute(main, null, this.arguments);
+			IObject_ launcher = locus.instantiate(behavior);
+			if(launcher instanceof IExecution){
+				((IExecution)launcher).execute();
+			}else{
+				
+			}
 		}
 	}
 
