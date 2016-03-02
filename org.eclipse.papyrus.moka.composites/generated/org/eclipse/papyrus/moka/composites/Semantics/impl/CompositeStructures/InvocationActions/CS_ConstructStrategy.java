@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.SemanticStrategy;
 import org.eclipse.uml2.uml.Operation;

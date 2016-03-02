@@ -16,19 +16,19 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.Actions.IntermediateA
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.Actions.IntermediateActions.ICS_ClearStructuralFeatureValueActionActivation;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Link;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.Actions.IntermediateActions.ICS_ClearStructuralFeatureValueActionActivation;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.ClearStructuralFeatureActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.ClearStructuralFeatureAction;
 import org.eclipse.uml2.uml.Port;
@@ -79,12 +79,12 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 			ICS_Reference context = (CS_Reference) value;
 			// Retrieves the feature values for the structural feature associated with this action,
 			// in the context of this reference
-			FeatureValue featureValue = context.getFeatureValue(feature);
+			IFeatureValue featureValue = context.getFeatureValue(feature);
 			if (feature instanceof Port) {
 				// all values are interaction points
 				// any link targeting this interaction point must be destroyed
-				for (int i = 0; i < featureValue.values.size(); i++) {
-					ICS_InteractionPoint interactionPoint = (ICS_InteractionPoint) featureValue.values.get(i);
+				for (int i = 0; i < featureValue.getValues().size(); i++) {
+					ICS_InteractionPoint interactionPoint = (ICS_InteractionPoint) featureValue.getValues().get(i);
 					List<ICS_Link> connectorInstances = context.getCompositeReferent().getLinks(interactionPoint);
 					for (int j = 0; j < connectorInstances.size(); j++) {
 						ICS_Link link = connectorInstances.get(j);
@@ -100,7 +100,7 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 				List<IValue> allValuesForFeature = new ArrayList<IValue>();
 				List<IValue> allOtherValues = new ArrayList<IValue>();
 				for (int i = 0; i < context.getReferent().getFeatureValues().size(); i++) {
-					StructuralFeature currentFeature = context.getReferent().getFeatureValues().get(i).feature;
+					StructuralFeature currentFeature = context.getReferent().getFeatureValues().get(i).getFeature();
 					List<IValue> values = this.getPotentialLinkEnds(context, currentFeature);
 					for (int j = 0; j < values.size(); j++) {
 						IValue v = values.get(j);
@@ -131,11 +131,11 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 							// Check if feature values of this link for other features
 							// contains elements identified in allOtherValue
 							for (int k = 0; k < link.getFeatureValues().size() && !linkHasToBeDestroyed; k++) {
-								FeatureValue otherFeatureValue = link.getFeatureValues().get(k);
-								if (otherFeatureValue.feature != featureForV) {
-									for (int l = 0; l < otherFeatureValue.values.size() && !linkHasToBeDestroyed; l++) {
+								IFeatureValue otherFeatureValue = link.getFeatureValues().get(k);
+								if (otherFeatureValue.getFeature() != featureForV) {
+									for (int l = 0; l < otherFeatureValue.getValues().size() && !linkHasToBeDestroyed; l++) {
 										for (int m = 0; m < allOtherValues.size() && !linkHasToBeDestroyed; m++) {
-											if (otherFeatureValue.values.get(l) == allOtherValues.get(m)) {
+											if (otherFeatureValue.getValues().get(l) == allOtherValues.get(m)) {
 												linkHasToBeDestroyed = true;
 											}
 										}
@@ -157,15 +157,15 @@ public class CS_ClearStructuralFeatureValueActionActivation extends ClearStructu
 		// Retrieves all feature values for the context object for the given feature,
 		// as well as all interaction point for these values
 		List<IValue> potentialLinkEnds = new ArrayList<IValue>();
-		FeatureValue featureValue = context.getFeatureValue(feature);
-		for (int i = 0; i < featureValue.values.size(); i++) {
-			IValue v = featureValue.values.get(i);
+		IFeatureValue featureValue = context.getFeatureValue(feature);
+		for (int i = 0; i < featureValue.getValues().size(); i++) {
+			IValue v = featureValue.getValues().get(i);
 			potentialLinkEnds.add(v);
 			if (v instanceof ICS_Reference) {
 				// add all interaction points associated with v
 				for (int j = 0; j < ((CS_Reference) v).getReferent().getFeatureValues().size(); j++) {
-					if (((ICS_Reference) v).getReferent().getFeatureValues().get(j).feature instanceof Port) {
-						List<IValue> interactionPoints = (((ICS_Reference) v).getReferent().getFeatureValues().get(j)).values;
+					if (((ICS_Reference) v).getReferent().getFeatureValues().get(j).getFeature() instanceof Port) {
+						List<IValue> interactionPoints = (((ICS_Reference) v).getReferent().getFeatureValues().get(j)).getValues();
 						for (int k = 0; k < interactionPoints.size(); k++) {
 							potentialLinkEnds.add(interactionPoints.get(k));
 						}

@@ -45,7 +45,7 @@ public class ReadStructuralFeatureActionActivation extends StructuralFeatureActi
 			List<ILink> links = this.getMatchingLinks(association, feature, value);
 			for (int i = 0; i < links.size(); i++) {
 				ILink link = links.get(i);
-				resultValues.add(link.getFeatureValue(feature).values.get(0));
+				resultValues.add(link.getFeatureValue(feature).getValues().get(0));
 			}
 		} else if (value instanceof IStructuredValue) {
 			// Debug.println("[ReadStructuralFeatureActionActivation] value = "

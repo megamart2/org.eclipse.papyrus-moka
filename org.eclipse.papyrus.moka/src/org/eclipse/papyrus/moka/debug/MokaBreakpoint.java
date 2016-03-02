@@ -32,8 +32,8 @@ import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
-import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.launch.EditorUtils;
+import org.eclipse.papyrus.moka.utils.helper.EditorUtils;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.uml2.uml.NamedElement;
 

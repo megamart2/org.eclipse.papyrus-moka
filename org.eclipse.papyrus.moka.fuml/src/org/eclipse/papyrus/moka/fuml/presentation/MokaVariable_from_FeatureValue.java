@@ -13,19 +13,19 @@ package org.eclipse.papyrus.moka.fuml.presentation;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.swt.graphics.Image;
 
 public class MokaVariable_from_FeatureValue extends MokaVariable_for_fUML {
 
-	protected FeatureValue featureValue;
+	protected IFeatureValue featureValue;
 
 	protected IValue value;
 
-	public MokaVariable_from_FeatureValue(FeatureValue featureValue) {
+	public MokaVariable_from_FeatureValue(IFeatureValue featureValue) {
 		super();
 		this.featureValue = featureValue;
-		this.name = featureValue.feature.getName();
+		this.name = featureValue.getFeature().getName();
 	}
 
 	// //////////////////////
@@ -34,7 +34,7 @@ public class MokaVariable_from_FeatureValue extends MokaVariable_for_fUML {
 
 	@Override
 	public Image getImage() {
-		return FUMLPresentationUtils.getImage(featureValue.feature);
+		return FUMLPresentationUtils.getImage(featureValue.getFeature());
 	}
 
 	// //////////////////////

@@ -17,25 +17,26 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.S
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_StructuralFeatureOfInterfaceAccessStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_RequestPropagationStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_SignalInstance;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.CS_LinkKind;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.CallOperationActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.SendSignalActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -87,7 +88,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 	}
 
 
-	public void sendIn(SignalInstance signalInstance, ICS_InteractionPoint interactionPoint) {
+	public void sendIn(ISignalInstance signalInstance, ICS_InteractionPoint interactionPoint) {
 		// If the interaction is a behavior port,
 		// creates a CS_SignalInstance from the signal instance,
 		// sets its interaction point,
@@ -105,7 +106,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 			List<ICS_Link> cddLinks = this.getLinks(interactionPoint);
 			Integer linkIndex = 1;
 			while (linkIndex <= cddLinks.size()) {
-				List<IReference> validTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, signalInstance.type, toInternal);
+				List<IReference> validTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, signalInstance.getType(), toInternal);
 				Integer targetIndex = 1;
 				while (targetIndex <= validTargets.size()) {
 					potentialTargets.add(validTargets.get(targetIndex - 1));
@@ -137,7 +138,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToInternal) {
 				Integer i = 1;
 				while (i <= link.getFeatureValues().size()) {
-					List<IValue> values = link.getFeatureValues().get(i - 1).values;
+					List<IValue> values = link.getFeatureValues().get(i - 1).getValues();
 					if (!values.isEmpty()) {
 						Integer j = 1;
 						while (j <= values.size()) {
@@ -155,7 +156,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToEnvironment) {
 				Integer i = 1;
 				while (i <= link.getFeatureValues().size()) {
-					List<IValue> values = link.getFeatureValues().get(i - 1).values;
+					List<IValue> values = link.getFeatureValues().get(i - 1).getValues();
 					if (!values.isEmpty() && values.get(0) instanceof Reference) {
 						Reference cddTarget = (Reference) values.get(0);
 						if (connectorKind == ConnectorKind.ASSEMBLY_LITERAL) {
@@ -223,7 +224,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToInternal) {
 				Integer i = 1;
 				while (i <= link.getFeatureValues().size()) {
-					List<IValue> values = link.getFeatureValues().get(i - 1).values;
+					List<IValue> values = link.getFeatureValues().get(i - 1).getValues();
 					if (!values.isEmpty() && values.get(0) instanceof Reference) {
 						Reference cddTarget = (Reference) values.get(0);
 						if (cddTarget != interactionPoint && this.isOperationProvided(cddTarget, operation)) {
@@ -237,7 +238,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 			if (this.getLinkKind(link, interactionPoint) == CS_LinkKind.ToEnvironment) {
 				Integer i = 1;
 				while (i <= link.getFeatureValues().size()) {
-					List<IValue> values = link.getFeatureValues().get(i - 1).values;
+					List<IValue> values = link.getFeatureValues().get(i - 1).getValues();
 					if (!values.isEmpty() && values.get(0) instanceof Reference) {
 						Reference cddTarget = (Reference) values.get(0);
 						if (connectorKind == ConnectorKind.ASSEMBLY_LITERAL) {
@@ -297,7 +298,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 		return potentialTargets;
 	}
 
-	public void sendOut(SignalInstance signalInstance, ICS_InteractionPoint interactionPoint) {
+	public void sendOut(ISignalInstance signalInstance, ICS_InteractionPoint interactionPoint) {
 		// Select appropriate delegation links from interactionPoint,
 		// and propagates the signal instance through these links
 		// Appropriate links are links which target elements
@@ -314,14 +315,14 @@ public class CS_Object extends Object_ implements ICS_Object {
 		List<ICS_Link> cddLinks = this.getLinks(interactionPoint);
 		Integer linkIndex = 1;
 		while (linkIndex <= cddLinks.size()) {
-			List<IReference> validAssemblyTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.ASSEMBLY_LITERAL, signalInstance.type, notToInternal);
+			List<IReference> validAssemblyTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.ASSEMBLY_LITERAL, signalInstance.getType(), notToInternal);
 			Integer targetIndex = 1;
 			while (targetIndex <= validAssemblyTargets.size()) {
 				allPotentialTargets.add(validAssemblyTargets.get(targetIndex - 1));
 				targetsForSendingIn.add(validAssemblyTargets.get(targetIndex - 1));
 				targetIndex = targetIndex + 1;
 			}
-			List<IReference> validDelegationTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, signalInstance.type, notToInternal);
+			List<IReference> validDelegationTargets = this.selectTargetsForSending(cddLinks.get(linkIndex - 1), interactionPoint, ConnectorKind.DELEGATION_LITERAL, signalInstance.getType(), notToInternal);
 			targetIndex = 1;
 			while (targetIndex <= validDelegationTargets.size()) {
 				allPotentialTargets.add(validDelegationTargets.get(targetIndex - 1));
@@ -416,7 +417,7 @@ public class CS_Object extends Object_ implements ICS_Object {
 	}
 
 	@Override
-	public FeatureValue getFeatureValue(StructuralFeature feature) {
+	public IFeatureValue getFeatureValue(StructuralFeature feature) {
 		// In the case where the feature belongs to an Interface,
 		// fUML semantics is extended in the sense that reading is
 		// delegated to a CS_StructuralFeatureOfInterfaceAccessStrategy
@@ -448,8 +449,8 @@ public class CS_Object extends Object_ implements ICS_Object {
 		// if object is not directly contained, restart the research
 		// recursively on the objects owned by this CS_Object
 		for (int i = 0; i < this.featureValues.size() && !objectIsContained; i++) {
-			FeatureValue featureValue = this.featureValues.get(i);
-			List<IValue> values = featureValue.values;
+			IFeatureValue featureValue = this.featureValues.get(i);
+			List<IValue> values = featureValue.getValues();
 			for (int j = 0; j < values.size() && !objectIsContained; j++) {
 				IValue value = values.get(j);
 				if (value instanceof CS_Object) {
@@ -468,8 +469,8 @@ public class CS_Object extends Object_ implements ICS_Object {
 		// contained by this CS_Object
 		boolean objectIsContained = false;
 		for (int i = 0; i < this.featureValues.size() && !objectIsContained; i++) {
-			FeatureValue featureValue = this.featureValues.get(i);
-			List<IValue> values = featureValue.values;
+			IFeatureValue featureValue = this.featureValues.get(i);
+			List<IValue> values = featureValue.getValues();
 			for (int j = 0; j < values.size() && !objectIsContained; j++) {
 				IValue value = values.get(j);
 				if (value == object) {
@@ -592,14 +593,14 @@ public class CS_Object extends Object_ implements ICS_Object {
 			return CS_LinkKind.None;
 		}
 		CS_LinkKind kind = CS_LinkKind.ToInternal;
-		List<FeatureValue> featureValues = link.getFeatureValues();
+		List<IFeatureValue> featureValues = link.getFeatureValues();
 		Integer i = 1;
 		while (i <= featureValues.size() && kind != CS_LinkKind.None) {
-			FeatureValue value = featureValues.get(i - 1);
-			if (value.values.isEmpty()) {
+			IFeatureValue value = featureValues.get(i - 1);
+			if (value.getValues().isEmpty()) {
 				kind = CS_LinkKind.None;
 			} else {
-				IValue v = value.values.get(0);
+				IValue v = value.getValues().get(0);
 				boolean vIsAValueForAFeatureOfContext = false;
 				if (v.equals(interactionPoint)) {
 					vIsAValueForAFeatureOfContext = true;
@@ -639,16 +640,16 @@ public class CS_Object extends Object_ implements ICS_Object {
 
 	public Boolean hasValueForAFeature(IValue value) {
 		// Returns true if the given value object is used as a value for a feature value of this object
-		List<FeatureValue> allFeatureValues = this.getFeatureValues();
+		List<IFeatureValue> allFeatureValues = this.getFeatureValues();
 		Integer i = 1;
 		boolean isAValue = false;
 		while (i <= allFeatureValues.size() && !isAValue) {
-			FeatureValue featureValue = allFeatureValues.get(i - 1);
-			if (!featureValue.values.isEmpty()) {
-				List<IValue> valuesForCurrentFeature = featureValue.values;
+			IFeatureValue featureValue = allFeatureValues.get(i - 1);
+			if (!featureValue.getValues().isEmpty()) {
+				List<IValue> valuesForCurrentFeature = featureValue.getValues();
 				Integer j = 1;
 				while (j <= valuesForCurrentFeature.size() && !isAValue) {
-					isAValue = featureValue.values.get(j - 1).equals(value);
+					isAValue = featureValue.getValues().get(j - 1).equals(value);
 					j = j + 1;
 				}
 			}
@@ -657,11 +658,11 @@ public class CS_Object extends Object_ implements ICS_Object {
 		return isAValue;
 	}
 
-	public void sendOut(SignalInstance signalInstance, Port onPort) {
+	public void sendOut(ISignalInstance signalInstance, Port onPort) {
 		// Select a CS_InteractionPoint value playing onPort,
 		// and send the signal instance to this interaction point
-		FeatureValue featureValue = this.getFeatureValue(onPort);
-		List<IValue> values = featureValue.values;
+		IFeatureValue featureValue = this.getFeatureValue(onPort);
+		List<IValue> values = featureValue.getValues();
 		List<IReference> potentialTargets = new ArrayList<IReference>();
 		for (int i = 0; i < values.size(); i++) {
 			potentialTargets.add((IReference) values.get(i));
@@ -678,8 +679,8 @@ public class CS_Object extends Object_ implements ICS_Object {
 		// Select a CS_InteractionPoint value playing onPort,
 		// and dispatches the operation to this interaction point
 		IExecution execution = null;
-		FeatureValue featureValue = this.getFeatureValue(onPort);
-		List<IValue> values = featureValue.values;
+		IFeatureValue featureValue = this.getFeatureValue(onPort);
+		List<IValue> values = featureValue.getValues();
 		List<IReference> potentialTargets = new ArrayList<IReference>();
 		for (int i = 0; i < values.size(); i++) {
 			potentialTargets.add((Reference) values.get(i));
@@ -699,18 +700,18 @@ public class CS_Object extends Object_ implements ICS_Object {
 		// delegates dispatching to composite referent
 		// Select a CS_InteractionPoint value playing onPort,
 		// and dispatches the operation call to this interaction point
-		FeatureValue featureValue = this.getFeatureValue(onPort);
-		List<IValue> values = featureValue.values;
-		Integer choice = ((ChoiceStrategy) this.locus.getFactory().getStrategy("choice")).choose(featureValue.values.size()) - 1;
+		IFeatureValue featureValue = this.getFeatureValue(onPort);
+		List<IValue> values = featureValue.getValues();
+		Integer choice = ((ChoiceStrategy) this.locus.getFactory().getStrategy("choice")).choose(featureValue.getValues().size()) - 1;
 		CS_InteractionPoint interactionPoint = (CS_InteractionPoint) values.get(choice);
 		return interactionPoint.dispatch(operation);
 	}
 
-	public void sendIn(SignalInstance signalInstance, Port onPort) {
+	public void sendIn(ISignalInstance signalInstance, Port onPort) {
 		// Select a Reference value playing onPort,
 		// and send the signal instance to this interaction point
-		FeatureValue featureValue = this.getFeatureValue(onPort);
-		List<IValue> values = featureValue.values;
+		IFeatureValue featureValue = this.getFeatureValue(onPort);
+		List<IValue> values = featureValue.getValues();
 		List<IReference> potentialTargets = new ArrayList<IReference>();
 		for (int i = 0; i < values.size(); i++) {
 			potentialTargets.add((Reference) values.get(i));

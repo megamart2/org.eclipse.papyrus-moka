@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.S
 // Imports
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Link;
 import org.eclipse.uml2.uml.StructuralFeature;
 
@@ -31,13 +31,13 @@ public class CS_Link extends Link implements ICS_Link {
 	}
 
 	public StructuralFeature getFeature(IValue value) {
-		List<FeatureValue> allFeatureValues = this.getFeatureValues();
+		List<IFeatureValue> allFeatureValues = this.getFeatureValues();
 		Integer i = 1;
 		StructuralFeature feature = null;
 		while (i <= allFeatureValues.size() && feature == null) {
-			FeatureValue featureValue = allFeatureValues.get(i - 1);
-			if (!featureValue.values.isEmpty() && featureValue.values.get(0).equals(value)) {
-				feature = featureValue.feature;
+			IFeatureValue featureValue = allFeatureValues.get(i - 1);
+			if (!featureValue.getValues().isEmpty() && featureValue.getValues().get(0).equals(value)) {
+				feature = featureValue.getFeature();
 			}
 			i = i + 1;
 		}

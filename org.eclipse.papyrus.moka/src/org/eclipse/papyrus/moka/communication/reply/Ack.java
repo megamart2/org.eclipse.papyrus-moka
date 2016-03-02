@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.communication.reply;
 
-import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**
  * A reply message used to synchronize the debug target and the execution engine,

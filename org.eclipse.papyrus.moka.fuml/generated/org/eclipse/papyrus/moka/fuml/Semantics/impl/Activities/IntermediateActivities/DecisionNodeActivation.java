@@ -21,6 +21,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
@@ -138,16 +139,16 @@ public class DecisionNodeActivation extends ControlNodeActivation implements IDe
 				i = i + 1;
 			}
 			this.decisionInputExecution.execute();
-			List<ParameterValue> outputParameterValues = this.decisionInputExecution.getOutputParameterValues();
+			List<IParameterValue> outputParameterValues = this.decisionInputExecution.getOutputParameterValues();
 			decisionInputExecution.destroy();
-			if (outputParameterValues.get(0).values.size() == 0) {
+			if (outputParameterValues.get(0).getValues().size() == 0) {
 				// FIXME Added for connection with debug API
 				// When execution stops due to client request, outputParameterValues is empty
 				// Just puts true. Execution flow is supposed to stop "by itself" then
 				decisionInputResult = new BooleanValue();
 				((BooleanValue) decisionInputResult).value = true;
 			} else {
-				decisionInputResult = outputParameterValues.get(0).values.get(0);
+				decisionInputResult = outputParameterValues.get(0).getValues().get(0);
 			}
 		}
 		return decisionInputResult;

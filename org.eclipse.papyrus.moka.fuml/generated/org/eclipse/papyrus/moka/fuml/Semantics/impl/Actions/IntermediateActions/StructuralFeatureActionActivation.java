@@ -53,21 +53,21 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 		List<ILink> links = new ArrayList<ILink>();
 		for (int i = 0; i<extent.size(); i++) {
 			IExtensionalValue link = extent.get(i);
-			if (link.getFeatureValue(oppositeEnd).values.get(0).equals(oppositeValue)) {
+			if (link.getFeatureValue(oppositeEnd).getValues().get(0).equals(oppositeValue)) {
 				boolean matches = true;
 				if (endValue != null) {
-					matches = link.getFeatureValue(end).values.get(0).equals(endValue);
+					matches = link.getFeatureValue(end).getValues().get(0).equals(endValue);
 				}
 				if (matches) {
 					if (!end.isOrdered() | links.size() == 0) {
 						links.add((ILink)link);
 					} else {
-						int n = link.getFeatureValue(end).position;
+						int n = link.getFeatureValue(end).getPosition();
 						boolean continueSearching = true;
 						int j = 0;
 						while (continueSearching & j < links.size()) {
 							j = j + 1;
-							continueSearching = links.get(j-1).getFeatureValue(end).position < n;
+							continueSearching = links.get(j-1).getFeatureValue(end).getPosition() < n;
 						}
 						if (continueSearching) {
 							links.add((ILink)link);

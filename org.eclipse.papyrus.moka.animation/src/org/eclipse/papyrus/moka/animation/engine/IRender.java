@@ -2,7 +2,6 @@ package org.eclipse.papyrus.moka.animation.engine;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
-import org.eclipse.papyrus.moka.services.animation.events.AnimationKind;
 
 public interface IRender {
 	

@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.uml2.uml.Association;
@@ -46,9 +47,9 @@ public class Link extends ExtensionalValue implements ILink {
 			for (int j = 0; j < ends.size(); j++) {
 				Property end = ends.get(j);
 				if (end.isOrdered()) {
-					FeatureValue featureValue = otherLink.getFeatureValue(end);
-					if (this.getFeatureValue(end).position < featureValue.position) {
-						featureValue.position = featureValue.position - 1;
+					IFeatureValue featureValue = otherLink.getFeatureValue(end);
+					if (this.getFeatureValue(end).getPosition() < featureValue.getPosition()) {
+						featureValue.setPosition(featureValue.getPosition() - 1);
 					}
 				}
 			}
@@ -93,7 +94,7 @@ public class Link extends ExtensionalValue implements ILink {
 		int i = 1;
 		while (matches & i <= ends.size()) {
 			Property otherEnd = ends.get(i - 1);
-			if (otherEnd != end && !this.getFeatureValue(otherEnd).values.isEmpty() && !link.getFeatureValue(otherEnd).values.isEmpty() && !this.getFeatureValue(otherEnd).values.get(0).equals(link.getFeatureValue(otherEnd).values.get(0))) {
+			if (otherEnd != end && !this.getFeatureValue(otherEnd).getValues().isEmpty() && !link.getFeatureValue(otherEnd).getValues().isEmpty() && !this.getFeatureValue(otherEnd).getValues().get(0).equals(link.getFeatureValue(otherEnd).getValues().get(0))) {
 				matches = false;
 			}
 			i = i + 1;
@@ -101,10 +102,10 @@ public class Link extends ExtensionalValue implements ILink {
 		return matches;
 	}
 
-	public List<FeatureValue> getOtherFeatureValues(List<IExtensionalValue> extent, Property end) {
+	public List<IFeatureValue> getOtherFeatureValues(List<IExtensionalValue> extent, Property end) {
 		// Return all feature values for the given end of links in the given
 		// extent whose other ends match this link.
-		List<FeatureValue> featureValues = new ArrayList<FeatureValue>();
+		List<IFeatureValue> featureValues = new ArrayList<IFeatureValue>();
 		for (int i = 0; i < extent.size(); i++) {
 			IExtensionalValue link = extent.get(i);
 			if (link != this) {
@@ -128,19 +129,19 @@ public class Link extends ExtensionalValue implements ILink {
 		for (int i = 0; i < ends.size(); i++) {
 			Property end = ends.get(i);
 			if (end.isOrdered()) {
-				FeatureValue featureValue = this.getFeatureValue(end);
-				List<FeatureValue> otherFeatureValues = this.getOtherFeatureValues(extent, end);
+				IFeatureValue featureValue = this.getFeatureValue(end);
+				List<IFeatureValue> otherFeatureValues = this.getOtherFeatureValues(extent, end);
 				int n = otherFeatureValues.size();
-				if (featureValue.position < 0 | featureValue.position > n) {
-					featureValue.position = n + 1;
+				if (featureValue.getPosition() < 0 | featureValue.getPosition() > n) {
+					featureValue.setPosition(n + 1);
 				} else {
-					if (featureValue.position == 0) {
-						featureValue.position = 1;
+					if (featureValue.getPosition() == 0) {
+						featureValue.setPosition(1);
 					}
 					for (int j = 0; j < otherFeatureValues.size(); j++) {
-						FeatureValue otherFeatureValue = otherFeatureValues.get(j);
-						if (featureValue.position <= otherFeatureValue.position) {
-							otherFeatureValue.position = otherFeatureValue.position + 1;
+						IFeatureValue otherFeatureValue = otherFeatureValues.get(j);
+						if (featureValue.getPosition() <= otherFeatureValue.getPosition()) {
+							otherFeatureValue.setPosition(otherFeatureValue.getPosition() + 1);
 						}
 					}
 				}

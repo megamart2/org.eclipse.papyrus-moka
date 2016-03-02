@@ -14,7 +14,7 @@
 package org.eclipse.papyrus.moka.ui.views;
 
 
-import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionEvent;
 import org.eclipse.swt.events.SelectionListener;

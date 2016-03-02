@@ -21,7 +21,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.2.0",
  org.eclipse.papyrus.infra.core.log;bundle-version="1.2.0",
  org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.2.0",
- org.eclipse.uml2.uml;bundle-version="4.1.0"
+ org.eclipse.uml2.uml;bundle-version="4.1.0",
+ org.eclipse.papyrus.moka.utils
 Export-Package: org.eclipse.papyrus.moka.ui.launch
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 1.2.0.qualifier

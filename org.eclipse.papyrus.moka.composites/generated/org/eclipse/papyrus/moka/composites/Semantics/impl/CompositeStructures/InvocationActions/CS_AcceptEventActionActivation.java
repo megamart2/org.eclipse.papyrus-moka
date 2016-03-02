@@ -16,8 +16,8 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.I
 // Imports
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.AcceptEventActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Signal;
@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Trigger;
 public class CS_AcceptEventActionActivation extends AcceptEventActionActivation {
 
 	@Override
-	public Boolean match(SignalInstance signalInstance) {
+	public Boolean match(ISignalInstance signalInstance) {
 		// Return true if the given signal instance matches a trigger of the accept
 		// event action of this activation.
 		// Matching implies that the type of the signalInstance matches the Signal
@@ -40,7 +40,7 @@ public class CS_AcceptEventActionActivation extends AcceptEventActionActivation 
 
 		AcceptEventAction action = (AcceptEventAction) (this.node);
 		List<Trigger> triggers = action.getTriggers();
-		Signal signal = signalInstance.type;
+		Signal signal = signalInstance.getType();
 
 		Boolean matches = false;
 		Integer i = 1;

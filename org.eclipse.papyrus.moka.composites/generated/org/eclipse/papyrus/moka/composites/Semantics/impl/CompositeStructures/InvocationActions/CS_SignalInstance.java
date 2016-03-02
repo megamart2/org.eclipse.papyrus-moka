@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 

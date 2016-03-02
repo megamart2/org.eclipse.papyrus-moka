@@ -23,7 +23,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.papyrus.moka.fuml.registry.service.framework.AbstractService;
 import org.eclipse.uml2.uml.Class;
@@ -64,7 +64,7 @@ public class StandardInputChannelImpl extends AbstractService {
 		}
 
 		@Override
-		public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
+		public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 			// This implementation does not produce errorStatus information.
 			try {
 				if (bufferedReader == null) {
@@ -75,7 +75,7 @@ public class StandardInputChannelImpl extends AbstractService {
 				result.value = "" + line;
 				List<IValue> outputs = new ArrayList<IValue>();
 				outputs.add(result);
-				outputParameters.get(0).values = outputs;
+				outputParameters.get(0).setValues(outputs);
 			} catch (Exception e) {
 				Debug.println("An error occured during the execution of readLine " + e.getMessage());
 			}

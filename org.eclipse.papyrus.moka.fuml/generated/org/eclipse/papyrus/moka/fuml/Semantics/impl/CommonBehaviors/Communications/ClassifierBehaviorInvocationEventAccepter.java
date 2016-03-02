@@ -19,9 +19,10 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IClassifierBehaviorInvocationEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
+
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
@@ -48,7 +49,7 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 	 */
 	public IObjectActivation objectActivation;
 	
-	public void invokeBehavior(Class classifier, List<ParameterValue> inputs) {
+	public void invokeBehavior(Class classifier, List<IParameterValue> inputs) {
 		// Set the classifier for this classifier behavior execution to the
 		// given class.
 		// If the given class is a behavior, set the execution to be the object
@@ -66,13 +67,13 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 		this.classifier = classifier;
 		IObject_ object = this.objectActivation.getObject();
 		if (classifier instanceof Behavior) {
-			this.execution = (Execution) object;
+			this.execution = (IExecution) object;
 		} else {
 			this.execution = object.getLocus().getFactory().createExecution(classifier.getClassifierBehavior(), object);
 		}
 		if (inputs != null) {
 			for (int i = 0; i < inputs.size(); i++) {
-				ParameterValue input = inputs.get(i);
+				IParameterValue input = inputs.get(i);
 				this.execution.setParameterValue(input);
 			}
 		}
@@ -91,7 +92,7 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 		}
 	}
 
-	public void accept(EventOccurrence eventOccurrence) {
+	public void accept(IEventOccurrence eventOccurrence) {
 		// Accept an invocation event occurrence. Execute the execution of this
 		// classifier behavior invocation event accepter.
 		
@@ -102,7 +103,7 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 		}
 	}
 
-	public Boolean match(EventOccurrence eventOccurrence) {
+	public Boolean match(IEventOccurrence eventOccurrence) {
 		// Return true if the given event occurrence is an invocation event
 		// occurrence for the execution of this classifier behavior invocation
 		// event accepter.

@@ -16,10 +16,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public class FeatureValue {
+public class FeatureValue implements IFeatureValue {
 
 	/*
 	 * The structural feature being given value(s).
@@ -39,13 +40,13 @@ public class FeatureValue {
 	 */
 	public Integer position;
 
-	public Boolean hasEqualValues(FeatureValue other) {
+	public Boolean hasEqualValues(IFeatureValue other) {
 		// Determine if this feature value has an equal set of values as another
 		// feature value.
 		// If the feature is ordered, then the values also have to be in the
 		// same order.
 		boolean equal = true;
-		if (this.values.size() != other.values.size()) {
+		if (this.values.size() != other.getValues().size()) {
 			equal = false;
 		} else {
 			// Debug.println("[hasEqualValues] feature = " + this.feature.name +
@@ -53,7 +54,7 @@ public class FeatureValue {
 			if (this.feature.isOrdered()) {
 				int i = 1;
 				while (equal & i <= this.values.size()) {
-					equal = this.values.get(i - 1).equals(other.values.get(i - 1));
+					equal = this.values.get(i - 1).equals(other.getValues().get(i - 1));
 					i = i + 1;
 				}
 			} else {
@@ -62,7 +63,7 @@ public class FeatureValue {
 				// since the Java to UML mapping conventions do not allow
 				// "remove" on a local list variable.
 				FeatureValue otherFeatureValues = new FeatureValue();
-				List<IValue> values = other.values;
+				List<IValue> values = other.getValues();
 				for (int i = 0; i < values.size(); i++) {
 					IValue value = values.get(i);
 					otherFeatureValues.values.add(value);
@@ -91,15 +92,15 @@ public class FeatureValue {
 		return equal;
 	}
 
-	public FeatureValue copy() {
+	public IFeatureValue copy() {
 		// Create a copy of this feature value.
-		FeatureValue newValue = new FeatureValue();
-		newValue.feature = this.feature;
-		newValue.position = this.position;
+		IFeatureValue newValue = new FeatureValue();
+		newValue.setFeature(this.feature);
+		newValue.setPosition(this.position);
 		List<IValue> values = this.values;
 		for (int i = 0; i < values.size(); i++) {
 			IValue value = values.get(i);
-			newValue.values.add(value.copy());
+			newValue.getValues().add(value.copy());
 		}
 		return newValue;
 	}
@@ -112,5 +113,21 @@ public class FeatureValue {
 		if (values != null) {
 			this.values = values;
 		}
+	}
+
+	public StructuralFeature getFeature() {
+		return this.feature;
+	}
+
+	public void setFeature(StructuralFeature feature) {
+		this.feature = feature;
+	}
+
+	public Integer getPosition() {
+		return this.position;
+	}
+
+	public void setPosition(Integer position) {
+		this.position = position;
 	}
 }

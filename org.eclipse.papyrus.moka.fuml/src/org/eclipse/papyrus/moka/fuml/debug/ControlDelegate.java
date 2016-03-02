@@ -22,7 +22,6 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Suspend_Event;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
@@ -34,10 +33,9 @@ import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
-import org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener;
-import org.eclipse.papyrus.moka.services.animation.events.AnimationEvent;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
-public class ControlDelegate implements IAnimatedModelListener{
+public class ControlDelegate{
 
 	/**
 	 * The execution engine associated with this ControlDelegate object
@@ -276,45 +274,5 @@ public class ControlDelegate implements IAnimatedModelListener{
 
 	public void waitForTermination() {
 		// Nothing to do
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#nodeVisited(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
-	 *
-	 * @param event
-	 */
-	public void nodeVisited(AnimationEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#nodeLeft(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
-	 *
-	 * @param event
-	 */
-	public void nodeLeft(AnimationEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#valueCreated(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
-	 *
-	 * @param event
-	 */
-	public void valueCreated(AnimationEvent event) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	/**
-	 * @see org.eclipse.papyrus.moka.services.animation.IAnimatedModelListener#valueDestroyed(org.eclipse.papyrus.moka.services.animation.events.AnimationEvent)
-	 *
-	 * @param event
-	 */
-	public void valueDestroyed(AnimationEvent event) {
-		// TODO Auto-generated method stub
-		
 	}
 }

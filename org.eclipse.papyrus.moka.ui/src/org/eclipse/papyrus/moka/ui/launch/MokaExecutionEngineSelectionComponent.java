@@ -14,7 +14,7 @@ package org.eclipse.papyrus.moka.ui.launch;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.widgets.Composite;

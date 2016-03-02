@@ -13,8 +13,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticStrategy;
 
-public abstract class SemanticStrategy {
+public abstract class SemanticStrategy implements ISemanticStrategy {
 
 	public abstract String getName();
 }

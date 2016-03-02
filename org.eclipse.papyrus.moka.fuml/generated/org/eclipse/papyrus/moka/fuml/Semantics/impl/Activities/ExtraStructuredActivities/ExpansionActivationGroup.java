@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.ExtraStructuredA
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IOutputPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivities.IExpansionActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivities.IExpansionRegionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.OutputPinActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityNodeActivationGroup;
 import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ExpansionRegion;
@@ -31,13 +31,13 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup implem
 	 * Output pin activations corresponding, in order, to the input pins of the
 	 * expansion region of this activation group.
 	 */
-	public List<OutputPinActivation> regionInputs = new ArrayList<OutputPinActivation>();
+	public List<IOutputPinActivation> regionInputs = new ArrayList<IOutputPinActivation>();
 
 	/*
 	 * Output pin activations corresponding, in order, to the input expansion
 	 * nodes of the expansion region of this activation group.
 	 */
-	public List<OutputPinActivation> groupInputs = new ArrayList<OutputPinActivation>();
+	public List<IOutputPinActivation> groupInputs = new ArrayList<IOutputPinActivation>();
 
 	/*
 	 * The expansion region activation this activation group is for.
@@ -48,7 +48,7 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup implem
 	 * Output pin activations corresponding, in order, to the output expansion
 	 * nodes of the expansion region of this activation group.
 	 */
-	public List<OutputPinActivation> groupOutputs = new ArrayList<OutputPinActivation>();
+	public List<IOutputPinActivation> groupOutputs = new ArrayList<IOutputPinActivation>();
 
 	/*
 	 * The index (starting at 1) of this activation group in the list held by
@@ -98,7 +98,7 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup implem
 	}
 
 	@Override
-	public ActivityExecution getActivityExecution() {
+	public IActivityExecution getActivityExecution() {
 		// Get the activity execution that contains the expansion region
 		// activation for this activation group.
 		return this.regionActivation.getActivityExecution();
@@ -126,15 +126,15 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup implem
 		}
 	}
 	
-	public List<OutputPinActivation> getRegionInputs(){
+	public List<IOutputPinActivation> getRegionInputs(){
 		return this.regionInputs;
 	}
 	
-	public List<OutputPinActivation> getGroupInputs(){
+	public List<IOutputPinActivation> getGroupInputs(){
 		return this.groupInputs;
 	}
 	
-	public List<OutputPinActivation> getGroupOutputs(){
+	public List<IOutputPinActivation> getGroupOutputs(){
 		return this.groupOutputs;
 	}
 	

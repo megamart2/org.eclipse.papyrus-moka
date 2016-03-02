@@ -17,8 +17,8 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.Actions.IntermediateA
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Link;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.CreateLinkActionActivation;

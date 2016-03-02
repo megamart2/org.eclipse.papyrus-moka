@@ -30,7 +30,6 @@ import org.eclipse.debug.core.model.IThread;
 import org.eclipse.debug.core.model.IValue;
 import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.communication.Marshaller;
 import org.eclipse.papyrus.moka.communication.event.EventMessage;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
@@ -58,8 +57,9 @@ import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
 import org.eclipse.papyrus.moka.debug.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.MokaValue;
 import org.eclipse.papyrus.moka.debug.MokaVariable;
-import org.eclipse.papyrus.moka.services.IMokaService;
-import org.eclipse.papyrus.moka.services.MokaServiceRegistry;
+import org.eclipse.papyrus.moka.service.IMokaService;
+import org.eclipse.papyrus.moka.service.MokaServiceRegistry;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**
  * An abstract implementation of IExecutionEngine, consistent with the communication

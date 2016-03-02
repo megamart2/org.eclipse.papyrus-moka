@@ -18,11 +18,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.uml2.uml.Association;
@@ -77,7 +77,7 @@ public class RemoveStructuralFeatureValueActionActivation extends WriteStructura
 				int i = 1;
 				while (notFound & i <= links.size()) { // FUML12-24 RemoveStructuralFeatureValueAction: Removing links with specified remove at value works incorrectly
 					ILink link = links.get(i - 1);
-					if (link.getFeatureValue(feature).position == removeAt) {
+					if (link.getFeatureValue(feature).getPosition() == removeAt) {
 						notFound = false;
 						link.destroy();
 					}
@@ -89,29 +89,29 @@ public class RemoveStructuralFeatureValueActionActivation extends WriteStructura
 			if (!(value instanceof IReference)) {
 				value = value.copy();
 			}
-			FeatureValue featureValue = ((IStructuredValue) value).getFeatureValue(action.getStructuralFeature());
+			IFeatureValue featureValue = ((IStructuredValue) value).getFeatureValue(action.getStructuralFeature());
 			if (action.isRemoveDuplicates()) {
-				int j = this.position(inputValue, featureValue.values, 1);
+				int j = this.position(inputValue, featureValue.getValues(), 1);
 				while (j > 0) {
-					featureValue.values.remove(j - 1);
-					j = this.position(inputValue, featureValue.values, j);
+					featureValue.getValues().remove(j - 1);
+					j = this.position(inputValue, featureValue.getValues(), j);
 				}
 			} else if (action.getRemoveAt() == null) {
 				List<Integer> positions = new ArrayList<Integer>();
-				int j = this.position(inputValue, featureValue.values, 1);
+				int j = this.position(inputValue, featureValue.getValues(), 1);
 				while (j > 0) {
 					positions.add(j);
-					j = this.position(inputValue, featureValue.values, j);
+					j = this.position(inputValue, featureValue.getValues(), j);
 				}
 				if (positions.size() > 0) {
 					// *** Nondeterministically choose which value to remove.
 					// ***
 					int k = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(positions.size());
-					featureValue.values.remove(positions.get(k - 1) - 1);
+					featureValue.getValues().remove(positions.get(k - 1) - 1);
 				}
 			} else {
-				if (featureValue.values.size() >= removeAt) {
-					featureValue.values.remove(removeAt - 1);
+				if (featureValue.getValues().size() >= removeAt) {
+					featureValue.getValues().remove(removeAt - 1);
 				}
 			}
 		}

@@ -16,16 +16,16 @@ import java.util.List;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.MokaVariable;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 
 public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 
-	protected FeatureValue featureValue;
+	protected IFeatureValue featureValue;
 
 	protected IVariable[] variables;
 
-	public MokaValue_from_FeatureValue(FeatureValue featureValue) {
+	public MokaValue_from_FeatureValue(IFeatureValue featureValue) {
 		super();
 		this.featureValue = featureValue;
 	}
@@ -57,12 +57,12 @@ public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 	@Override
 	public IVariable[] getVariables() throws DebugException {
 		if (variables == null) {
-			if (featureValue.values.isEmpty()) {
+			if (featureValue.getValues().isEmpty()) {
 				variables = new IVariable[] {};
 			} else {
-				variables = new IVariable[featureValue.values.size()];
+				variables = new IVariable[featureValue.getValues().size()];
 				for (int i = 0; i < variables.length; i++) {
-					MokaVariable valueVariable = new MokaVariable_from_Value(featureValue.values.get(i));
+					MokaVariable valueVariable = new MokaVariable_from_Value(featureValue.getValues().get(i));
 					valueVariable.setName("[" + (i + 1) + "]");
 					variables[i] = valueVariable;
 				}
@@ -78,7 +78,7 @@ public class MokaValue_from_FeatureValue extends MokaValue_for_fUML {
 
 	protected String computeDetails() {
 		String valueString = FUMLPresentationUtils.isCollection(featureValue) ? "{ " : "";
-		List<IValue> values = featureValue.values;
+		List<IValue> values = featureValue.getValues();
 		boolean first = true;
 		if (values.isEmpty() && !FUMLPresentationUtils.isCollection(featureValue)) {
 			return "null";

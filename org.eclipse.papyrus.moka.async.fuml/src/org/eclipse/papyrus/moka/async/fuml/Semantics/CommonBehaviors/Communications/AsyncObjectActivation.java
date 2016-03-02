@@ -19,7 +19,6 @@ import java.util.List;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
@@ -34,6 +33,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communicatio
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardOutputChannelImpl;
+import org.eclipse.papyrus.moka.utils.MokaConstants;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.console.IOConsoleOutputStream;
 import org.eclipse.uml2.uml.Behavior;

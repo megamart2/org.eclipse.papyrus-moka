@@ -28,11 +28,11 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RedefinitionBasedDispatchStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.FIFOGetNextEventStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Executor;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.FirstChoiceStrategy;
@@ -66,7 +66,7 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 	protected String[] args;
 
 	/** The arguments. */
-	protected List<ParameterValue> arguments;
+	protected List<IParameterValue> arguments;
 
 	/** The locus. */
 	protected ILocus locus;

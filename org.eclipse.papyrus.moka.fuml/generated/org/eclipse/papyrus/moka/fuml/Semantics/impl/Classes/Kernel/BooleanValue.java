@@ -13,21 +13,18 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class BooleanValue extends PrimitiveValue {
+public class BooleanValue extends PrimitiveValue implements IBooleanValue {
 
 	/*
 	 * The actual Boolean value.
 	 */
 	public Boolean value;
-
-	public Object getUnderlying() {
-		return this.value;
-	}
 
 	@Override
 	public ValueSpecification specify() {
@@ -73,7 +70,12 @@ public class BooleanValue extends PrimitiveValue {
 		return stringValue;
 	}
 
-	public Object getValue() {
+	public Boolean getValue() {
 		return this.value;
 	}
+
+	public void setValue(Boolean value) {
+		this.value = value;
+	}
+
 }

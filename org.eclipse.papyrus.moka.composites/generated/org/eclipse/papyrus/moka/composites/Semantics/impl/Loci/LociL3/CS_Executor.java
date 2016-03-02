@@ -16,14 +16,14 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3;
 // Imports
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Executor;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Class;
@@ -32,7 +32,7 @@ import org.eclipse.uml2.uml.Class;
 public class CS_Executor extends Executor {
 
 	@Override
-	public IReference start(Class type, List<ParameterValue> inputs) {
+	public IReference start(Class type, List<IParameterValue> inputs) {
 		// Instantiate the given class and start any behavior of the resulting
 		// object.
 		// (The behavior of an object includes any classifier behaviors for an

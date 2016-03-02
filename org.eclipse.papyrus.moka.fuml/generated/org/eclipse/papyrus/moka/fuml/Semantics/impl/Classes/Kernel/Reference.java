@@ -15,12 +15,13 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Operation;
@@ -30,7 +31,7 @@ public class Reference extends StructuredValue implements IReference {
 
 	public IObject_ referent;
 
-	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
+	public void startBehavior(Class classifier, List<IParameterValue> inputs) {
 		// Asynchronously start the behavior of the given classifier for the
 		// referent object.
 		this.referent.startBehavior(classifier, inputs);
@@ -41,7 +42,7 @@ public class Reference extends StructuredValue implements IReference {
 		return this.referent.dispatch(operation);
 	}
 
-	public void send(SignalInstance signalInstance) {
+	public void send(ISignalInstance signalInstance) {
 		// Send the given signal instance to the referent object.
 		this.referent.send(signalInstance);
 	}
@@ -84,7 +85,7 @@ public class Reference extends StructuredValue implements IReference {
 	}
 
 	@Override
-	public FeatureValue getFeatureValue(StructuralFeature feature) {
+	public IFeatureValue getFeatureValue(StructuralFeature feature) {
 		// Get the feature value associated with the given feature in the
 		// referent object.
 		return this.referent.getFeatureValue(feature);
@@ -98,7 +99,7 @@ public class Reference extends StructuredValue implements IReference {
 	}
 
 	@Override
-	public List<FeatureValue> getFeatureValues() {
+	public List<IFeatureValue> getFeatureValues() {
 		// Return the feature values of the referent.
 		return this.referent.getFeatureValues();
 	}
@@ -116,7 +117,7 @@ public class Reference extends StructuredValue implements IReference {
 		return this.referent;
 	}
 
-	public void setFeatureValues(List<FeatureValue> featureValues) {
+	public void setFeatureValues(List<IFeatureValue> featureValues) {
 		this.referent.setFeatureValues(featureValues);		
 	}
 }

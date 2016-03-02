@@ -16,7 +16,6 @@ package org.eclipse.papyrus.moka.communication;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Resume_Event;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Suspend_Event;
@@ -37,6 +36,7 @@ import org.eclipse.papyrus.moka.communication.request.ithread.GetStackFrames_Req
 import org.eclipse.papyrus.moka.communication.request.ivalue.GetValueString_Request;
 import org.eclipse.papyrus.moka.communication.request.ivariable.GetReferenceTypeName_Request;
 import org.eclipse.papyrus.moka.communication.request.ivariable.GetValue_Request;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 
 /**

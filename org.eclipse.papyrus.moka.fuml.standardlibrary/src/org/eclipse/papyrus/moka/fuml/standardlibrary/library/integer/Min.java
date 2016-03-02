@@ -20,23 +20,23 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.PrimitiveType;
 
 public class Min extends OpaqueBehaviorExecution {
 
 	@Override
-	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
+	public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 		try {
-			Integer x = ((IntegerValue) inputParameters.get(0).values.get(0)).value;
-			Integer y = ((IntegerValue) inputParameters.get(1).values.get(0)).value;
+			Integer x = ((IntegerValue) inputParameters.get(0).getValues().get(0)).value;
+			Integer y = ((IntegerValue) inputParameters.get(1).getValues().get(0)).value;
 			IntegerValue result = new IntegerValue();
 			result.value = Math.min(x, y);
 			List<IValue> outputs = new ArrayList<IValue>();
 			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Integer"); // ADDED
 			outputs.add(result);
-			outputParameters.get(0).values = outputs;
+			outputParameters.get(0).setValues(outputs);
 		} catch (Exception e) {
 			Debug.println("An error occured during the execution of Min " + e.getMessage());
 		}

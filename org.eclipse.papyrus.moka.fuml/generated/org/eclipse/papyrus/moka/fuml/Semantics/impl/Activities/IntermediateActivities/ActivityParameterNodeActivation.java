@@ -18,7 +18,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityParameterNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.ActivityParameterNode;
 import org.eclipse.uml2.uml.Parameter;
@@ -34,12 +34,12 @@ public class ActivityParameterNodeActivation extends ObjectNodeActivation implem
 		if (this.getNode().getIncomings().size() == 0) {
 			Debug.println("[fire] Input activity parameter node " + this.getNode().getName() + "...");
 			Parameter parameter = ((ActivityParameterNode) (this.getNode())).getParameter();
-			ParameterValue parameterValue = this.getActivityExecution().getParameterValue(parameter);
+			IParameterValue parameterValue = this.getActivityExecution().getParameterValue(parameter);
 			// Debug.println("[fire] parameter = " + parameter.name);
 			if (parameterValue != null) {
-				Debug.println("[fire] Parameter has " + parameterValue.values.size() + " value(s).");
+				Debug.println("[fire] Parameter has " + parameterValue.getValues().size() + " value(s).");
 				// List<Token> tokens = new ArrayList<Token>();
-				List<IValue> values = parameterValue.values;
+				List<IValue> values = parameterValue.getValues();
 				for (int i = 0; i < values.size(); i++) {
 					IValue value = values.get(i);
 					ObjectToken token = new ObjectToken();

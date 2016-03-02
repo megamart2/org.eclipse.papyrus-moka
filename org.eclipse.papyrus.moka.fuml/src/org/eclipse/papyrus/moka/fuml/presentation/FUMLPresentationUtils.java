@@ -25,11 +25,11 @@ import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderSer
 import org.eclipse.papyrus.moka.debug.MokaStackFrame;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
-import org.eclipse.papyrus.moka.launch.EditorUtils;
+import org.eclipse.papyrus.moka.utils.helper.EditorUtils;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.uml2.uml.StructuralFeature;
@@ -113,21 +113,21 @@ public class FUMLPresentationUtils {
 		return value.toString();
 	}
 
-	public static String getValueString(FeatureValue featureValue) {
-		StructuralFeature f = featureValue.feature;
+	public static String getValueString(IFeatureValue featureValue) {
+		StructuralFeature f = featureValue.getFeature();
 		String valueString = "";
 		if (isCollection(featureValue)) {
 			valueString += f.getType() != null ? f.getType().getName() : "any";
-			valueString += "[] (size=" + featureValue.values.size();
+			valueString += "[] (size=" + featureValue.getValues().size();
 			valueString += (")");
 		} else {
-			IValue value = featureValue.values.size() == 1 ? featureValue.values.get(0) : null;
+			IValue value = featureValue.getValues().size() == 1 ? featureValue.getValues().get(0) : null;
 			return getValueString(value);
 		}
 		return valueString;
 	}
 
-	public static boolean isCollection(FeatureValue featureValue) {
-		return featureValue.feature.getUpper() == -1 || featureValue.feature.getUpper() > 1 || featureValue.values.size() > 1;
+	public static boolean isCollection(IFeatureValue featureValue) {
+		return featureValue.getFeature().getUpper() == -1 || featureValue.getFeature().getUpper() > 1 || featureValue.getValues().size() > 1;
 	}
 }

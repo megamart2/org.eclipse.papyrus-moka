@@ -20,6 +20,7 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredActivities.IStructuredActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityParameterNodeActivation;
@@ -48,7 +49,7 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 	 * The activity execution to which this group belongs. (This will be empty
 	 * if the group is for a structured activity node activation.)
 	 */
-	public ActivityExecution activityExecution;
+	public IActivityExecution activityExecution;
 
 	/*
 	 * The structured activity node activation to which this group belongs.
@@ -176,7 +177,7 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		
 		// fUML12-10 certain boolean flags are not properly initialized in come cases 
 		
-		IActivityNodeActivation activation = (IActivityNodeActivation) (this.getActivityExecution().locus.getFactory().instantiateVisitor(node));
+		IActivityNodeActivation activation = (IActivityNodeActivation) (this.getActivityExecution().getLocus().getFactory().instantiateVisitor(node));
 		activation.initialize(node, this);
 		this.nodeActivations.add(activation);
 		activation.createNodeActivations();
@@ -212,7 +213,7 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 			ActivityEdge edge = edges.get(i);
 			Debug.println("[createEdgeInstances] Creating an edge instance from " + edge.getSource().getName() + " to " + edge.getTarget().getName() + ".");
 			//Note creation of visitors for edge instance is made by the execution factory
-			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) (this.getActivityExecution().locus.getFactory().instantiateVisitor(edge));
+			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) (this.getActivityExecution().getLocus().getFactory().instantiateVisitor(edge));
 			edgeInstance.setEdge(edge);
 			edgeInstance.setGroup(this);
 			this.edgeInstances.add(edgeInstance);
@@ -228,10 +229,10 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		// Debug.println("[createEdgeInstances] Done creating edge instances.");
 	}
 
-	public ActivityExecution getActivityExecution() {
+	public IActivityExecution getActivityExecution() {
 		// Return the activity execution to which this group belongs, directly
 		// or indirectly.
-		ActivityExecution activityExecution = this.activityExecution;
+		IActivityExecution activityExecution = this.activityExecution;
 		if (activityExecution == null) {
 			activityExecution = this.containingNodeActivation.getGroup().getActivityExecution();
 		}
@@ -323,5 +324,9 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 	
 	public List<IActivityNodeActivation> getActivityNodeActivations(){
 		return this.nodeActivations;
+	}
+
+	public void setActivityExecution(IActivityExecution execution) {
+		this.activityExecution = execution;
 	}
 }

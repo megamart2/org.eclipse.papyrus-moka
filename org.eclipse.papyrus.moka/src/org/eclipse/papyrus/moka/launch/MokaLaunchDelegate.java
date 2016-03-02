@@ -39,11 +39,12 @@ import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.moka.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.debug.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.MokaProcess;
 import org.eclipse.papyrus.moka.engine.IExecutionEngine;
 import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
+import org.eclipse.papyrus.moka.utils.helper.EditorUtils;
 import org.eclipse.ui.IEditorPart;
 
 

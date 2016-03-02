@@ -16,12 +16,13 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communicati
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.CompoundValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Signal;
 
-public class SignalInstance extends CompoundValue {
+public class SignalInstance extends CompoundValue implements ISignalInstance {
 
 	public Signal type;
 
@@ -46,5 +47,13 @@ public class SignalInstance extends CompoundValue {
 		SignalInstance newValue = (SignalInstance) (super.copy());
 		newValue.type = this.type;
 		return newValue;
+	}
+
+	public void setType(Signal type) {
+		this.type = type;
+	}
+
+	public Signal getType() {
+		return this.type;
 	}
 }

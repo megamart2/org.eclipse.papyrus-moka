@@ -14,7 +14,6 @@ package org.eclipse.papyrus.moka.async.fuml;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncFIFOGetNextEventStrategy;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.Loci.LociL1.AsyncLocus;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
@@ -31,6 +30,7 @@ import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executo
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
+import org.eclipse.papyrus.moka.utils.MokaConstants;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Behavior;
 

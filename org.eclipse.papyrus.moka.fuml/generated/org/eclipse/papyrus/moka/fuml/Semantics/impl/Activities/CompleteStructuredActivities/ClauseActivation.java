@@ -18,6 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredActivities.IClauseActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
@@ -52,10 +53,10 @@ public class ClauseActivation implements IClauseActivation {
 					this.selectBody();
 				} else {
 					Debug.println("[receiveControl] Test failed.");
-					List<ClauseActivation> successors = this.getSuccessors();
+					List<IClauseActivation> successors = this.getSuccessors();
 					// *** Give control to all successors concurrently. ***
-					for (Iterator<ClauseActivation> i = successors.iterator(); i.hasNext();) {
-						ClauseActivation successor = i.next();
+					for (Iterator<IClauseActivation> i = successors.iterator(); i.hasNext();) {
+						IClauseActivation successor = i.next();
 						successor.receiveControl();
 					}
 				}
@@ -65,18 +66,18 @@ public class ClauseActivation implements IClauseActivation {
 
 	public Boolean isReady() {
 		// Test if all predecessors to this clause activation have failed.
-		List<ClauseActivation> predecessors = this.getPredecessors();
+		List<IClauseActivation> predecessors = this.getPredecessors();
 		boolean ready = true;
 		int i = 1;
 		while (ready & i <= predecessors.size()) {
-			ClauseActivation predecessor = predecessors.get(i - 1);
-			BooleanValue decisionValue = predecessor.getDecision();
+			IClauseActivation predecessor = predecessors.get(i - 1);
+			IBooleanValue decisionValue = predecessor.getDecision();
 			// Note that the decision will be null if the predecessor clause has
 			// not run yet.
 			if (decisionValue == null) {
 				ready = false;
 			} else {
-				ready = !decisionValue.value;
+				ready = !decisionValue.getValue();
 			}
 			i = i + 1;
 		}
@@ -104,10 +105,10 @@ public class ClauseActivation implements IClauseActivation {
 		return deciderValue;
 	}
 
-	public List<ClauseActivation> getPredecessors() {
+	public List<IClauseActivation> getPredecessors() {
 		// Return the clause activations for the predecessors of the clause for
 		// this clause activation.
-		List<ClauseActivation> predecessors = new ArrayList<ClauseActivation>();
+		List<IClauseActivation> predecessors = new ArrayList<IClauseActivation>();
 		List<Clause> predecessorClauses = this.clause.getPredecessorClauses();
 		for (int i = 0; i < predecessorClauses.size(); i++) {
 			Clause predecessorClause = predecessorClauses.get(i);
@@ -116,10 +117,10 @@ public class ClauseActivation implements IClauseActivation {
 		return predecessors;
 	}
 
-	public List<ClauseActivation> getSuccessors() {
+	public List<IClauseActivation> getSuccessors() {
 		// Return the clause activations for the successors of the clause for
 		// this clause activation.
-		List<ClauseActivation> successors = new ArrayList<ClauseActivation>();
+		List<IClauseActivation> successors = new ArrayList<IClauseActivation>();
 		List<Clause> successorClauses = this.clause.getSuccessorClauses();
 		for (int i = 0; i < successorClauses.size(); i++) {
 			Clause successorClause = successorClauses.get(i);

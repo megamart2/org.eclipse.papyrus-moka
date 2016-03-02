@@ -19,7 +19,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IClassifierBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
+
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 
@@ -41,7 +42,7 @@ public class ClassifierBehaviorExecution implements IClassifierBehaviorExecution
 	 */
 	public IObjectActivation objectActivation;
 
-	public void execute(Class classifier, List<ParameterValue> inputs) {
+	public void execute(Class classifier, List<IParameterValue> inputs) {
 		// Set the classifier for this classifier behavior execution to the
 		// given class.
 		// If the given class is a behavior, set the execution to be the object
@@ -63,7 +64,7 @@ public class ClassifierBehaviorExecution implements IClassifierBehaviorExecution
 		}
 		if (inputs != null) {
 			for (int i = 0; i < inputs.size(); i++) {
-				ParameterValue input = inputs.get(i);
+				IParameterValue input = inputs.get(i);
 				this.execution.setParameterValue(input);
 			}
 		}

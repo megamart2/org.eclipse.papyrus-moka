@@ -15,6 +15,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActi
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityParameterNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
@@ -24,12 +26,12 @@ import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.ActivityParameterNode;
 
-public class ActivityExecution extends Execution {
+public class ActivityExecution extends Execution implements IActivityExecution {
 
 	/*
 	 * The group of activations of the activity nodes of the activity.
 	 */
-	public ActivityNodeActivationGroup activationGroup;
+	public IActivityNodeActivationGroup activationGroup;
 
 	@Override
 	public void execute() {
@@ -43,7 +45,7 @@ public class ActivityExecution extends Execution {
 		// Debug.println("[execute] context = " + this.context.objectId());
 		Debug.println("[event] Execute activity=" + activity.getName());
 		this.activationGroup = new ActivityNodeActivationGroup();
-		this.activationGroup.activityExecution = this;
+		this.activationGroup.setActivityExecution(this);
 		this.activationGroup.activate(activity.getNodes(), activity.getEdges());
 		// Debug.println("[execute] Getting output parameter node activations...");
 		List<IActivityParameterNodeActivation> outputActivations = this.activationGroup.getOutputParameterNodeActivations();
@@ -88,5 +90,13 @@ public class ActivityExecution extends Execution {
 		if (this.activationGroup != null) {
 			this.activationGroup.terminateAll();
 		}
+	}
+
+	public void setGroup(IActivityNodeActivationGroup group) {
+		this.activationGroup = group;
+	}
+
+	public IActivityNodeActivationGroup getGroup() {
+		return this.activationGroup;
 	}
 }

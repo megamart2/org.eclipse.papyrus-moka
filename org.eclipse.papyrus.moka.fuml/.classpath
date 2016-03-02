@@ -4,6 +4,7 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="src" path="generated"/>
-	<classpathentry kind="src" path="profiling"/>
+	<classpathentry kind="src" path="aspects"/>
+	<classpathentry kind="src" path="/org.eclipse.papyrus.moka.fuml.interfaces"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

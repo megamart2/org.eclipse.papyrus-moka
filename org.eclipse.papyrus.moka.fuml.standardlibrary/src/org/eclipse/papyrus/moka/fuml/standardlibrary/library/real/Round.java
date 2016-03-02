@@ -20,21 +20,21 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.uml2.uml.PrimitiveType;
 
 public class Round extends OpaqueBehaviorExecution {
 
 	@Override
-	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
+	public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 		try {
-			Double x = ((RealValue) inputParameters.get(0).values.get(0)).value;
+			Double x = ((RealValue) inputParameters.get(0).getValues().get(0)).value;
 			IntegerValue result = new IntegerValue();
 			result.value = (int) Math.round(x);
 			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Real");
 			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
-			outputParameters.get(0).values = outputs;
+			outputParameters.get(0).setValues(outputs);
 		} catch (Exception e) {
 			Activator.log.error("An error occured during the execution of Abs " + e.getMessage(), e);
 		}

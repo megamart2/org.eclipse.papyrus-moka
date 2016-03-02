@@ -22,6 +22,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IE
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IOpaqueBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.IExecutionFactory;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
@@ -59,12 +60,12 @@ public abstract class ExecutionFactory implements IExecutionFactory{
 	 * The set of semantic strategies currently registered with this execution
 	 * factory.
 	 */
-	public List<SemanticStrategy> strategies;
+	public List<ISemanticStrategy> strategies;
 
 	public ExecutionFactory() {
 		super();
 		this.builtInTypes = new ArrayList<Type>();
-		this.strategies = new ArrayList<SemanticStrategy>();
+		this.strategies = new ArrayList<ISemanticStrategy>();
 		this.primitiveBehaviorPrototypes = new ArrayList<IOpaqueBehaviorExecution>();
 	}
 
@@ -148,7 +149,7 @@ public abstract class ExecutionFactory implements IExecutionFactory{
 		return type;
 	}
 
-	public void setStrategy(SemanticStrategy strategy) {
+	public void setStrategy(ISemanticStrategy strategy) {
 		// Set the strategy for a semantic variation point. Any existing
 		// strategy for the same SVP is replaced.
 		int i = this.getStrategyIndex(strategy.getName());
@@ -158,10 +159,10 @@ public abstract class ExecutionFactory implements IExecutionFactory{
 		this.strategies.add(strategy);
 	}
 
-	public SemanticStrategy getStrategy(String name) {
+	public ISemanticStrategy getStrategy(String name) {
 		// Get the strategy with the given name.
 		int i = this.getStrategyIndex(name);
-		SemanticStrategy strategy = null;
+		ISemanticStrategy strategy = null;
 		if (i <= this.strategies.size()) {
 			strategy = this.strategies.get(i - 1);
 		}
@@ -171,7 +172,7 @@ public abstract class ExecutionFactory implements IExecutionFactory{
 	public Integer getStrategyIndex(String name) {
 		// Get the index of the strategy with the given name.
 		// If there is no such strategy, return the size of the strategies list.
-		List<SemanticStrategy> strategies = this.strategies;
+		List<ISemanticStrategy> strategies = this.strategies;
 		int i = 1;
 		boolean unmatched = true;
 		while (unmatched & (i <= strategies.size())) {

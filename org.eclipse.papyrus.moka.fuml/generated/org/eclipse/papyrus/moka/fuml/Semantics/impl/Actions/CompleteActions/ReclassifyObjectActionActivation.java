@@ -17,11 +17,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.ActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ReclassifyObjectAction;
@@ -84,8 +84,8 @@ public class ReclassifyObjectActionActivation extends ActionActivation {
 				}
 			}
 			// Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
-			List<FeatureValue> oldFeatureValues = object.getFeatureValues();
-			object.setFeatureValues(new ArrayList<FeatureValue>());
+			List<IFeatureValue> oldFeatureValues = object.getFeatureValues();
+			object.setFeatureValues(new ArrayList<IFeatureValue>());
 			object.addFeatureValues(oldFeatureValues);
 		}
 	}

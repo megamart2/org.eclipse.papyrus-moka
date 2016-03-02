@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Moka Utils (Incubation)
+Bundle-SymbolicName: org.eclipse.papyrus.moka.utils
+Bundle-Version: 1.2.0.qualifier
+Bundle-Activator: org.eclipse.papyrus.moka.utils.Activator
+Bundle-Vendor: Eclipse Modeling Framework
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.workbench,
+ org.eclipse.emf.ecore,
+ org.eclipse.core.resources;bundle-version="3.11.0",
+ org.eclipse.papyrus.infra.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrus.moka.utils.constants,
+ org.eclipse.papyrus.moka.utils.helper

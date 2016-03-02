@@ -22,9 +22,9 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Operation;
@@ -50,7 +50,7 @@ public class Object_ extends ExtensionalValue implements IObject_{
 		this.types.remove(type);
 	}
 
-	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
+	public void startBehavior(Class classifier, List<IParameterValue> inputs) {
 		// Create an object activation for this object (if one does not already
 		// exist) and start its behavior(s).
 		// Debug.println("[startBehavior] On object...");
@@ -69,7 +69,7 @@ public class Object_ extends ExtensionalValue implements IObject_{
 		return ((DispatchStrategy) this.locus.getFactory().getStrategy("dispatch")).dispatch(this, operation);
 	}
 
-	public void send(SignalInstance signalInstance) {
+	public void send(ISignalInstance signalInstance) {
 		// If the object is active, add the given signal instance to the event
 		// pool and signal that a new signal instance has arrived.
 		if (this.objectActivation != null) {

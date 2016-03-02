@@ -22,7 +22,6 @@ import org.eclipse.debug.core.model.IThread;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request;
 import org.eclipse.papyrus.moka.communication.request.isuspendresume.Suspend_Request;
 import org.eclipse.papyrus.moka.communication.request.iterminate.Terminate_Request;
@@ -36,8 +35,10 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
@@ -85,7 +86,7 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 			return;
 		}
 
-		this.arguments = new ArrayList<ParameterValue>();
+		this.arguments = new ArrayList<IParameterValue>();
 		if (this.args == null) {
 			return;
 		}
@@ -144,10 +145,10 @@ public class FUMLExecutionEngineForMoka extends FUMLExecutionEngine {
 		i = 0;
 		// creates actual arguments
 		for (Value v : tmpArgs) {
-			ParameterValue arg = new ParameterValue();
-			arg.parameter = parameters.get(i);
-			arg.values = new ArrayList<IValue>();
-			arg.values.add(v);
+			IParameterValue arg = new ParameterValue();
+			arg.setParameter(parameters.get(i));
+			arg.setValues(new ArrayList<IValue>());
+			arg.getValues().add(v);
 			this.arguments.add(arg);
 			i++;
 		}

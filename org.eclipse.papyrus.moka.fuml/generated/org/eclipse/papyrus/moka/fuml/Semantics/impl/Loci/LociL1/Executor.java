@@ -22,7 +22,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IE
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.IExecutor;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
@@ -35,7 +35,7 @@ public class Executor implements IExecutor {
 	 */
 	public ILocus locus;
 
-	public List<ParameterValue> execute(Behavior behavior, IObject_ context, List<ParameterValue> inputs) {
+	public List<IParameterValue> execute(Behavior behavior, IObject_ context, List<IParameterValue> inputs) {
 		// Execute the given behavior with the given input values in the given
 		// context, producing the given output values.
 		// There must be one input parameter value for each input (in or in-out)
@@ -48,7 +48,7 @@ public class Executor implements IExecutor {
 			execution.setParameterValue(inputs.get(i));
 		}
 		execution.execute();
-		List<ParameterValue> outputValues = execution.getOutputParameterValues();
+		List<IParameterValue> outputValues = execution.getOutputParameterValues();
 		execution.destroy();
 		return outputValues;
 	}
@@ -60,7 +60,7 @@ public class Executor implements IExecutor {
 		return this.locus.getFactory().createEvaluation(specification).evaluate();
 	}
 
-	public IReference start(Class type, List<ParameterValue> inputs) {
+	public IReference start(Class type, List<IParameterValue> inputs) {
 		// Instantiate the given class and start any behavior of the resulting
 		// object.
 		// (The behavior of an object includes any classifier behaviors for an

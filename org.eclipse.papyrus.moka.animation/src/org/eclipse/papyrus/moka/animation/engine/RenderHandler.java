@@ -30,9 +30,8 @@ import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.services.markerlistener.IPapyrusMarker;
 import org.eclipse.papyrus.infra.services.markerlistener.PapyrusMarkerAdapter;
-import org.eclipse.papyrus.moka.MokaConstants;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.papyrus.moka.animation.utils.AnimationUtils;
-import org.eclipse.papyrus.moka.services.animation.events.AnimationKind;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 /**

@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Commu
 // Imports
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.SemanticStrategy;
 import org.eclipse.uml2.uml.StructuralFeature;
 
@@ -30,7 +30,7 @@ public abstract class CS_StructuralFeatureOfInterfaceAccessStrategy extends Sema
 		return "structuralFeature";
 	}
 
-	public abstract FeatureValue read(ICS_Object cs_Object, StructuralFeature feature);
+	public abstract IFeatureValue read(ICS_Object cs_Object, StructuralFeature feature);
 
 	public abstract void write(ICS_Object cs_Object, StructuralFeature feature, List<IValue> values, Integer position);
 }

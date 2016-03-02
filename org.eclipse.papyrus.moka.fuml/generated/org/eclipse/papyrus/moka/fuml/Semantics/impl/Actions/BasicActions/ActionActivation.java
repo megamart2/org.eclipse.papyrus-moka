@@ -26,6 +26,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
@@ -34,7 +35,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActiv
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ForkNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ObjectToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityNode;
@@ -352,11 +352,11 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 
 	public Boolean valueParticipatesInLink(IValue value, ILink link) {
 		// Test if the given value participates in the given link.
-		List<FeatureValue> linkFeatureValues = link.getFeatureValues();
+		List<IFeatureValue> linkFeatureValues = link.getFeatureValues();
 		boolean participates = false;
 		int i = 1;
 		while (!participates & i <= linkFeatureValues.size()) {
-			participates = linkFeatureValues.get(i - 1).values.get(0).equals(value);
+			participates = linkFeatureValues.get(i - 1).getValues().get(0).equals(value);
 			i = i + 1;
 		}
 		return participates;

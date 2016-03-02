@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IOpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
@@ -28,8 +29,8 @@ public abstract class OpaqueBehaviorExecution extends Execution implements IOpaq
 		// Execute the body of the opaque behavior.
 		Debug.println("[execute] Opaque behavior " + this.getBehavior().getName() + "...");
 		List<Parameter> parameters = this.getBehavior().getOwnedParameters();
-		List<ParameterValue> inputs = new ArrayList<ParameterValue>();
-		List<ParameterValue> outputs = new ArrayList<ParameterValue>();
+		List<IParameterValue> inputs = new ArrayList<IParameterValue>();
+		List<IParameterValue> outputs = new ArrayList<IParameterValue>();
 		for (int i = 0; i < parameters.size(); i++) {
 			Parameter parameter = parameters.get(i);
 			if ((parameter.getDirection() == ParameterDirectionKind.IN_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL)) {
@@ -45,5 +46,5 @@ public abstract class OpaqueBehaviorExecution extends Execution implements IOpaq
 		this.doBody(inputs, outputs);
 	}
 
-	public abstract void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters);
+	public abstract void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters);
 }

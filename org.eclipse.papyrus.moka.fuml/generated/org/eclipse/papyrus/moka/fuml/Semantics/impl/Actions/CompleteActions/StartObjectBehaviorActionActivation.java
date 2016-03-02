@@ -18,6 +18,7 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.InvocationActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.Behavior;
@@ -43,7 +44,7 @@ public class StartObjectBehaviorActionActivation extends InvocationActionActivat
 		if (object instanceof IReference) {
 			Class type = (Class) (action.getObject().getType());
 			List<InputPin> argumentPins = action.getArguments();
-			List<ParameterValue> inputs = new ArrayList<ParameterValue>();
+			List<IParameterValue> inputs = new ArrayList<IParameterValue>();
 			if (type != null) {
 				Behavior behavior;
 				if (type instanceof Behavior) {

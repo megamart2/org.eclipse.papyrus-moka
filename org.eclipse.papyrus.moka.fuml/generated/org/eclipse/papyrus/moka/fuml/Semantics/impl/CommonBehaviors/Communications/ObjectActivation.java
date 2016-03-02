@@ -19,11 +19,12 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IClassifierBehaviorInvocationEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
@@ -127,7 +128,7 @@ public class ObjectActivation implements IObjectActivation {
 		return ((GetNextEventStrategy) this.object.getLocus().getFactory().getStrategy("getNextEvent")).getNextEvent(this);
 	}
 
-	public void send(SignalInstance signalInstance) {
+	public void send(ISignalInstance signalInstance) {
 		// Add a signal event occurrence for the given signal instance to the event pool
 		// and signal that a new event occurrence has arrived.
 		
@@ -139,7 +140,7 @@ public class ObjectActivation implements IObjectActivation {
 		_send(new ArrivalSignal());
 	}
 
-	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
+	public void startBehavior(Class classifier, List<IParameterValue> inputs) {
 		// Start the event dispatch loop for this object activation (if it has
 		// not already been started).
 		// If a classifier is given that is a type of the object of this object
@@ -162,7 +163,7 @@ public class ObjectActivation implements IObjectActivation {
 			for (Iterator<Class> i = types.iterator(); i.hasNext();) {
 				Class type = i.next();
 				if (type instanceof Behavior | type.getClassifierBehavior() != null) {
-					this.startBehavior(type, new ArrayList<ParameterValue>());
+					this.startBehavior(type, new ArrayList<IParameterValue>());
 				}
 			}
 		} else {

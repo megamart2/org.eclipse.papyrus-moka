@@ -17,7 +17,8 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Commu
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.uml2.uml.StructuralFeature;
@@ -25,26 +26,26 @@ import org.eclipse.uml2.uml.StructuralFeature;
 public class CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy extends CS_StructuralFeatureOfInterfaceAccessStrategy {
 
 	@Override
-	public FeatureValue read(ICS_Object cs_Object, StructuralFeature feature) {
+	public IFeatureValue read(ICS_Object cs_Object, StructuralFeature feature) {
 		// returns the a copy of the first feature value of cs_Object where the name of the corresponding feature
 		// matches the name of the feature given as a parameter
 		// Otherwise, returns an empty feature value
-		List<FeatureValue> featureValues = cs_Object.getFeatureValues();
-		FeatureValue matchingFeatureValue = null;
+		List<IFeatureValue> featureValues = cs_Object.getFeatureValues();
+		IFeatureValue matchingFeatureValue = null;
 		for (int i = 0; i < featureValues.size() && matchingFeatureValue == null; i++) {
-			FeatureValue featureValue = featureValues.get(i);
-			if (featureValue.feature.getName().equals(feature.getName())) {
+			IFeatureValue featureValue = featureValues.get(i);
+			if (featureValue.getFeature().getName().equals(feature.getName())) {
 				matchingFeatureValue = featureValue;
 			}
 		}
 		if (matchingFeatureValue != null) {
 			matchingFeatureValue = matchingFeatureValue.copy();
-			matchingFeatureValue.feature = feature;
+			matchingFeatureValue.setFeature(feature);
 		} else {
 			matchingFeatureValue = new FeatureValue();
-			matchingFeatureValue.feature = feature;
-			matchingFeatureValue.values = new ArrayList<IValue>();
-			matchingFeatureValue.position = 0;
+			matchingFeatureValue.setFeature(feature);
+			matchingFeatureValue.setValues(new ArrayList<IValue>());
+			matchingFeatureValue.setPosition(0);
 		}
 
 		return matchingFeatureValue;
@@ -55,16 +56,16 @@ public class CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy extends CS_
 		// Retrieves the first feature value of cs_Object where the name of the corresponding feature
 		// matches the name of the feature given as a parameter
 		// Then updates the values for this feature value
-		List<FeatureValue> featureValues = cs_Object.getFeatureValues();
-		FeatureValue matchingFeatureValue = null;
+		List<IFeatureValue> featureValues = cs_Object.getFeatureValues();
+		IFeatureValue matchingFeatureValue = null;
 		for (int i = 0; i < featureValues.size() && matchingFeatureValue == null; i++) {
-			FeatureValue featureValue = featureValues.get(i);
-			if (featureValue.feature.getName().equals(feature.getName())) {
+			IFeatureValue featureValue = featureValues.get(i);
+			if (featureValue.getFeature().getName().equals(feature.getName())) {
 				matchingFeatureValue = featureValue;
 			}
 		}
 		if (matchingFeatureValue != null) {
-			cs_Object.setFeatureValue(matchingFeatureValue.feature, values, position);
+			cs_Object.setFeatureValue(matchingFeatureValue.getFeature(), values, position);
 		}
 	}
 }

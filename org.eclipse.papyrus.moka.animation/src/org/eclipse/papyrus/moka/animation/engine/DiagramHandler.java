@@ -35,7 +35,7 @@ import org.eclipse.papyrus.moka.animation.presentation.data.AnimationTreeNodeFac
 import org.eclipse.papyrus.moka.animation.presentation.data.DiagramAnimationNode;
 import org.eclipse.papyrus.moka.animation.presentation.data.IAnimationTreeNode;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
-import org.eclipse.papyrus.moka.launch.EditorUtils;
+import org.eclipse.papyrus.moka.utils.helper.EditorUtils;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.IEditorPart;
 import org.eclipse.ui.IViewPart;

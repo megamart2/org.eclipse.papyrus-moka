@@ -24,10 +24,10 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEv
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.ActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.ActivityNode;
@@ -102,7 +102,7 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 		return;
 	}
 
-	public void accept(SignalInstance signalInstance) {
+	public void accept(ISignalInstance signalInstance) {
 		// Accept a signal occurance for the given signal instance.
 		// If the action does not unmarshall, then place the signal instance on
 		// the result pin, if any.
@@ -124,11 +124,11 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 					this.putTokens(resultPins.get(0), result);
 				}
 			} else {
-				List<FeatureValue> featureValues = signalInstance.getMemberValues(); // Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
+				List<IFeatureValue> featureValues = signalInstance.getMemberValues(); // Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
 				for (int i = 0; i < featureValues.size(); i++) {
-					FeatureValue featureValue = featureValues.get(i);
+					IFeatureValue featureValue = featureValues.get(i);
 					OutputPin resultPin = resultPins.get(i);
-					this.putTokens(resultPin, featureValue.values);
+					this.putTokens(resultPin, featureValue.getValues());
 				}
 			}
 			this.sendOffers();
@@ -139,7 +139,7 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 		}
 	}
 
-	public Boolean match(SignalInstance signalInstance) {
+	public Boolean match(ISignalInstance signalInstance) {
 		// Return true if the given signal instance matches a trigger of the
 		// accept action of this activation.
 		
@@ -147,7 +147,7 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 		
 		AcceptEventAction action = (AcceptEventAction) (this.node);
 		List<Trigger> triggers = action.getTriggers();
-		Signal signal = signalInstance.type;
+		Signal signal = signalInstance.getType();
 		boolean matches = false;
 		int i = 1;
 		while (!matches & i <= triggers.size()) {

@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.moka;bundle-version="1.2.0",
  org.eclipse.papyrus.infra.core;bundle-version="1.2.0",
  org.eclipse.papyrus.infra.core.log;bundle-version="1.2.0",
- org.eclipse.ui.console;bundle-version="3.5.200"
+ org.eclipse.ui.console;bundle-version="3.5.200",
+ org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="1.2.0"
 Export-Package: org.eclipse.papyrus.moka.fuml.standardlibrary.library.boolean_,
  org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer,
  org.eclipse.papyrus.moka.fuml.standardlibrary.library.io,

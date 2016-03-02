@@ -77,7 +77,7 @@ public class ReduceActionActivation extends ActionActivation {
 				parameterValue2.values.add(values.get(j - 1));
 				this.currentExecution.setParameterValue(parameterValue2);
 				this.currentExecution.execute();
-				parameterValue1.values = this.currentExecution.getParameterValue(output).values;
+				parameterValue1.values = this.currentExecution.getParameterValue(output).getValues();
 				j = j + 1;
 				if (parameterValue1.values.isEmpty() & j <= values.size()) {
 					parameterValue1.values.add(values.get(j - 1));

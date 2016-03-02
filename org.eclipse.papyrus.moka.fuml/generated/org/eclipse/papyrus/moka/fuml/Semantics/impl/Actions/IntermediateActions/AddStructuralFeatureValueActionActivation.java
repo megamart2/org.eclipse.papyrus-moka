@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Link;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
@@ -70,9 +70,9 @@ public class AddStructuralFeatureValueActionActivation extends WriteStructuralFe
 				boolean destroyed = false;
 				while (!destroyed & i <= links.size()) {
 					ILink link = links.get(i - 1);
-					FeatureValue featureValue = link.getFeatureValue(feature);
-					if (featureValue.values.get(0).equals(inputValue)) {
-						position = link.getFeatureValue(oppositeEnd).position;
+					IFeatureValue featureValue = link.getFeatureValue(feature);
+					if (featureValue.getValues().get(0).equals(inputValue)) {
+						position = link.getFeatureValue(oppositeEnd).getPosition();
 						link.destroy();
 						destroyed = true;
 					}
@@ -96,25 +96,25 @@ public class AddStructuralFeatureValueActionActivation extends WriteStructuralFe
 			if (action.isReplaceAll()) {
 				structuredValue.setFeatureValue(feature, inputValues, 0);
 			} else {
-				FeatureValue featureValue = structuredValue.getFeatureValue(feature);
-				if (featureValue.values.size() > 0 & insertAt == 0) {
+				IFeatureValue featureValue = structuredValue.getFeatureValue(feature);
+				if (featureValue.getValues().size() > 0 & insertAt == 0) {
 					// *** If there is no insertAt pin, then the structural
 					// feature must be unordered, and the insertion position is
 					// immaterial. ***
-					insertAt = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(featureValue.values.size());
+					insertAt = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(featureValue.getValues().size());
 				}
 				if (feature.isUnique()) {
 					// Remove any existing value that duplicates the input value
-					int j = position(inputValue, featureValue.values, 1);
+					int j = position(inputValue, featureValue.getValues(), 1);
 					if (j > 0) {
-						featureValue.values.remove(j - 1);
+						featureValue.getValues().remove(j - 1);
 					}
 				}
 				if (insertAt <= 0) { // Note: insertAt = -1 indicates an
 										// unlimited value of "*"
-					featureValue.values.add(inputValue);
+					featureValue.getValues().add(inputValue);
 				} else {
-					featureValue.values.add(insertAt - 1, inputValue);
+					featureValue.getValues().add(insertAt - 1, inputValue);
 				}
 			}
 		}

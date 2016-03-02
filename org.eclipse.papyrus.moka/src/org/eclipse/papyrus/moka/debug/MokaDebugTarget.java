@@ -41,7 +41,6 @@ import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.debug.core.model.IThread;
 import org.eclipse.debug.core.model.IValue;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.communication.Marshaller;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Resume_Event;
@@ -59,6 +58,7 @@ import org.eclipse.papyrus.moka.communication.request.ithread.GetStackFrames_Req
 import org.eclipse.papyrus.moka.communication.request.ivalue.GetValueString_Request;
 import org.eclipse.papyrus.moka.communication.request.ivariable.GetReferenceTypeName_Request;
 import org.eclipse.papyrus.moka.communication.request.ivariable.GetValue_Request;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**
  * An implementation of IDebugTarget.

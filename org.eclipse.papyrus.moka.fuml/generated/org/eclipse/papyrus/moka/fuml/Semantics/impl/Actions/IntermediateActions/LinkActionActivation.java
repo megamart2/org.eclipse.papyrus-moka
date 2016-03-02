@@ -16,10 +16,10 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.ILinkActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.ActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.LinkAction;
@@ -48,17 +48,17 @@ public abstract class LinkActionActivation extends ActionActivation implements I
 			matches = true;
 		} else {
 			Property end = endData.getEnd();
-			FeatureValue linkFeatureValue = link.getFeatureValue(end);
+			IFeatureValue linkFeatureValue = link.getFeatureValue(end);
 			IValue endValue = this.getTokens(endData.getValue()).get(0);
 			if (endData instanceof LinkEndDestructionData) {
 				if (!((LinkEndDestructionData) endData).isDestroyDuplicates() & !end.isUnique() & end.isOrdered()) {
 					int destroyAt = ((UnlimitedNaturalValue) (this.getTokens(((LinkEndDestructionData) endData).getDestroyAt()).get(0))).value;
-					matches = linkFeatureValue.values.get(0).equals(endValue) && linkFeatureValue.position == destroyAt;
+					matches = linkFeatureValue.getValues().get(0).equals(endValue) && linkFeatureValue.getPosition() == destroyAt;
 				} else {
-					matches = linkFeatureValue.values.get(0).equals(endValue);
+					matches = linkFeatureValue.getValues().get(0).equals(endValue);
 				}
 			} else {
-				matches = linkFeatureValue.values.get(0).equals(endValue);
+				matches = linkFeatureValue.getValues().get(0).equals(endValue);
 			}
 		}
 		return matches;

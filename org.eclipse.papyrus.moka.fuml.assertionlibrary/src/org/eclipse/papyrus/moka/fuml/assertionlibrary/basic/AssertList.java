@@ -13,10 +13,10 @@ package org.eclipse.papyrus.moka.fuml.assertionlibrary.basic;
 
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.reporting.Reporter;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.reporting.TestDecision;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.reporting.TestReport;
@@ -27,14 +27,14 @@ import org.eclipse.uml2.uml.Classifier;
 public class AssertList extends OpaqueBehaviorExecution {
 
 	@Override
-	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
+	public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 		Classifier executionContext = AssertionExecutionContextHelper.getExecutionContext(this);
-		StringValue label = (StringValue) inputParameters.get(0).values.get(0);
+		StringValue label = (StringValue) inputParameters.get(0).getValues().get(0);
 		boolean equal = true;
-		if (inputParameters.get(1).values.size() == inputParameters.get(2).values.size()) {
+		if (inputParameters.get(1).getValues().size() == inputParameters.get(2).getValues().size()) {
 			Integer i = 0;
-			while (equal == true && i < inputParameters.get(1).values.size()) {
-				equal = inputParameters.get(1).values.get(i).equals(inputParameters.get(2).values.get(i));
+			while (equal == true && i < inputParameters.get(1).getValues().size()) {
+				equal = inputParameters.get(1).getValues().get(i).equals(inputParameters.get(2).getValues().get(i));
 				i++;
 			}
 		} else {

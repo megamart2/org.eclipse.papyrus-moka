@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions;
 import java.util.ArrayList;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.ActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.StartClassifierBehaviorAction;
 
@@ -36,7 +36,7 @@ public class StartClassifierBehaviorActionActivation extends ActionActivation {
 		StartClassifierBehaviorAction action = (StartClassifierBehaviorAction) (this.node);
 		IValue object = this.takeTokens(action.getObject()).get(0);
 		if (object instanceof Reference) {
-			((Reference) object).startBehavior((Class) (action.getObject().getType()), new ArrayList<ParameterValue>());
+			((Reference) object).startBehavior((Class) (action.getObject().getType()), new ArrayList<IParameterValue>());
 		}
 	}
 }

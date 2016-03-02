@@ -20,6 +20,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
@@ -179,7 +180,7 @@ public abstract class ActivityNodeActivation extends SemanticVisitor implements 
 		return edgeInstance.getSource() == this;
 	}
 
-	public ActivityExecution getActivityExecution() {
+	public IActivityExecution getActivityExecution() {
 		// Return the activity execution that contains this activity node
 		// activation, directly or indirectly.
 		return this.getGroup().getActivityExecution();

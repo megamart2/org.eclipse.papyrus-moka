@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.uml2.uml.LinkEndData;
 import org.eclipse.uml2.uml.ReadLinkAction;
 
@@ -41,21 +41,21 @@ public class ReadLinkActionActivation extends LinkActionActivation{
 			i = i + 1;
 		}
 		List<IExtensionalValue> extent = this.getExecutionLocus().getExtent(this.getAssociation());
-		List<FeatureValue> featureValues = new ArrayList<FeatureValue>();
+		List<IFeatureValue> featureValues = new ArrayList<IFeatureValue>();
 		for (int j = 0; j < extent.size(); j++) {
 			IExtensionalValue value = extent.get(j);
 			ILink link = (ILink) value;
 			if (this.linkMatchesEndData(link, endDataList)) {
-				FeatureValue featureValue = link.getFeatureValue(openEnd.getEnd());
+				IFeatureValue featureValue = link.getFeatureValue(openEnd.getEnd());
 				if (!openEnd.getEnd().isOrdered() | featureValues.size() == 0) {
 					featureValues.add(featureValue);
 				} else {
-					int n = featureValue.position;
+					int n = featureValue.getPosition();
 					boolean continueSearching = true;
 					int k = 0;
 					while (continueSearching & k < featureValues.size()) {
 						k = k + 1;
-						continueSearching = featureValues.get(k - 1).position < n;
+						continueSearching = featureValues.get(k - 1).getPosition() < n;
 					}
 					if (continueSearching) {
 						featureValues.add(featureValue);
@@ -66,8 +66,8 @@ public class ReadLinkActionActivation extends LinkActionActivation{
 			}
 		}
 		for (int j = 0; j < featureValues.size(); j++) {
-			FeatureValue featureValue = featureValues.get(j);
-			this.putToken(action.getResult(), featureValue.values.get(0));
+			IFeatureValue featureValue = featureValues.get(j);
+			this.putToken(action.getResult(), featureValue.getValues().get(0));
 		}
 		// Now that matching is done, ensure that all tokens on end data input
 		// pins

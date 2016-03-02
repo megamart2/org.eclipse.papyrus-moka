@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ICompoundValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
@@ -28,7 +29,7 @@ import org.eclipse.uml2.uml.StructuralFeature;
 
 public abstract class CompoundValue extends StructuredValue implements ICompoundValue{
 
-	public List<FeatureValue> featureValues = new ArrayList<FeatureValue>();
+	public List<IFeatureValue> featureValues = new ArrayList<IFeatureValue>();
 
 	@Override
 	public Boolean equals(IValue otherValue) {
@@ -47,12 +48,12 @@ public abstract class CompoundValue extends StructuredValue implements ICompound
 			isEqual = super.equals(otherValue) & otherCompoundValue.featureValues.size() == this.featureValues.size();
 			int i = 1;
 			while (isEqual & i <= this.featureValues.size()) {
-				FeatureValue thisFeatureValue = this.featureValues.get(i - 1);
+				IFeatureValue thisFeatureValue = this.featureValues.get(i - 1);
 				boolean matched = false;
 				int j = 1;
 				while (!matched & j <= otherCompoundValue.featureValues.size()) {
-					FeatureValue otherFeatureValue = otherCompoundValue.featureValues.get(j - 1);
-					if (thisFeatureValue.feature == otherFeatureValue.feature) {
+					IFeatureValue otherFeatureValue = otherCompoundValue.featureValues.get(j - 1);
+					if (thisFeatureValue.getFeature() == otherFeatureValue.getFeature()) {
 						matched = thisFeatureValue.hasEqualValues(otherFeatureValue);
 					}
 					j = j + 1;
@@ -69,22 +70,22 @@ public abstract class CompoundValue extends StructuredValue implements ICompound
 		// Create a new data value with the same featureValues as this data
 		// value.
 		CompoundValue newValue = (CompoundValue) (super.copy());
-		List<FeatureValue> featureValues = this.featureValues;
+		List<IFeatureValue> featureValues = this.featureValues;
 		for (int i = 0; i < featureValues.size(); i++) {
-			FeatureValue featureValue = featureValues.get(i);
+			IFeatureValue featureValue = featureValues.get(i);
 			newValue.featureValues.add(featureValue.copy());
 		}
 		return newValue;
 	}
 
 	@Override
-	public FeatureValue getFeatureValue(StructuralFeature feature) {
+	public IFeatureValue getFeatureValue(StructuralFeature feature) {
 		// Get the value(s) of the member of featureValues for the given
 		// feature.
-		FeatureValue featureValue = null;
+		IFeatureValue featureValue = null;
 		int i = 1;
 		while (featureValue == null & i <= this.featureValues.size()) {
-			if (this.featureValues.get(i - 1).feature == feature) {
+			if (this.featureValues.get(i - 1).getFeature() == feature) {
 				featureValue = this.featureValues.get(i - 1);
 			}
 			i = i + 1;
@@ -96,18 +97,18 @@ public abstract class CompoundValue extends StructuredValue implements ICompound
 	public void setFeatureValue(StructuralFeature feature, List<IValue> values, Integer position) {
 		// Set the value(s) of the member of featureValues for the given
 		// feature.
-		FeatureValue featureValue = this.getFeatureValue(feature);
+		IFeatureValue featureValue = this.getFeatureValue(feature);
 		if (featureValue == null) {
 			featureValue = new FeatureValue();
 			this.featureValues.add(featureValue);
 		}
-		featureValue.feature = feature;
-		featureValue.values = values;
-		featureValue.position = position;
+		featureValue.setFeature(feature);
+		featureValue.setValues(values);
+		featureValue.setPosition(position);
 	}
 
 	@Override
-	public List<FeatureValue> getFeatureValues() {
+	public List<IFeatureValue> getFeatureValues() {
 		// Return the feature values for this compound value.
 		return this.featureValues;
 	}
@@ -127,11 +128,11 @@ public abstract class CompoundValue extends StructuredValue implements ICompound
 		}
 		int k = 1;
 		while (k <= this.featureValues.size()) {
-			FeatureValue featureValue = this.featureValues.get(k - 1);
-			buffer = buffer + "\n\t\t" + featureValue.feature.getName() + "[" + featureValue.position + "]  =";
+			IFeatureValue featureValue = this.featureValues.get(k - 1);
+			buffer = buffer + "\n\t\t" + featureValue.getFeature().getName() + "[" + featureValue.getPosition() + "]  =";
 			int j = 1;
-			while (j <= featureValue.values.size()) {
-				IValue value = featureValue.values.get(j - 1);
+			while (j <= featureValue.getValues().size()) {
+				IValue value = featureValue.getValues().get(j - 1);
 				if (value instanceof IReference) {
 					IObject_ object = ((IReference) value).getReferent();
 					buffer = buffer + " Reference to " + object.getIdentifier() + "(";
@@ -155,7 +156,7 @@ public abstract class CompoundValue extends StructuredValue implements ICompound
 		return buffer + ")";
 	}
 	
-	public void setFeatureValues(List<FeatureValue> featureValues){
+	public void setFeatureValues(List<IFeatureValue> featureValues){
 		this.featureValues = featureValues;
 	}
 }

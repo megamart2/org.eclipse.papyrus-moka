@@ -16,8 +16,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalEventOccurrence;
 
 public class AcceptEventActionEventAccepter extends EventAccepter implements IAcceptEventActionEventAccepter {
@@ -28,7 +28,7 @@ public class AcceptEventActionEventAccepter extends EventAccepter implements IAc
 	 */
 	public IAcceptEventActionActivation actionActivation;
 
-	public void accept(EventOccurrence eventOccurrence) {
+	public void accept(IEventOccurrence eventOccurrence) {
 		// Accept a signal event occurrence. Forward the signal instance to the action activation.
 		
 		//fUML12-35 Initial execution of an activity is not run to completion
@@ -39,7 +39,7 @@ public class AcceptEventActionEventAccepter extends EventAccepter implements IAc
 		}
 	}
 
-	public Boolean match(EventOccurrence eventOccurrence) {
+	public Boolean match(IEventOccurrence eventOccurrence) {
 		// Return true if the given event occurrence is a signal event occurrence and the
 		// signal instance matches a trigger of the accept action of the action activation.
 		

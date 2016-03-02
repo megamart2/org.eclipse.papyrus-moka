@@ -16,21 +16,21 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.I
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Classes.Kernel.CS_OpaqueExpressionEvaluation;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_InteractionPoint;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Link;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IEvaluation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Connector;
@@ -95,7 +95,7 @@ public class CS_DefaultConstructStrategy extends CS_ConstructStrategy {
 						value = this.constructObject((ICS_Object) value, (Class) p.getType());
 						this.addStructuralFeatureValue(referenceToContext, p, value);
 						if (((Class) p.getType()).isActive()) {
-							value.startBehavior((Class) p.getType(), new ArrayList<ParameterValue>());
+							value.startBehavior((Class) p.getType(), new ArrayList<IParameterValue>());
 						}
 					}
 					j = j + 1;
@@ -122,9 +122,9 @@ public class CS_DefaultConstructStrategy extends CS_ConstructStrategy {
 	}
 
 	public void addStructuralFeatureValue(ICS_Reference context, Property feature, IValue value) {
-		FeatureValue featureValue = context.getFeatureValue(feature);
+		IFeatureValue featureValue = context.getFeatureValue(feature);
 		if (featureValue != null) {
-			List<IValue> values = featureValue.values;
+			List<IValue> values = featureValue.getValues();
 			if (feature instanceof Port) {
 				// insert an interaction point
 				ICS_InteractionPoint interactionPoint = new CS_InteractionPoint();
@@ -169,23 +169,23 @@ public class CS_DefaultConstructStrategy extends CS_ConstructStrategy {
 	public List<IReference> getValuesFromConnectorEnd(ICS_Reference context, ConnectorEnd end) {
 		List<IReference> endValues = new ArrayList<IReference>();
 		if (end.getPartWithPort() != null) {
-			FeatureValue valueForPart = context.getFeatureValue(end.getPartWithPort());
+			IFeatureValue valueForPart = context.getFeatureValue(end.getPartWithPort());
 			if (valueForPart != null) {
-				for (int i = 0; i < valueForPart.values.size(); i++) {
-					IReference reference = (IReference) valueForPart.values.get(i);
-					FeatureValue valueForPort = reference.getFeatureValue((Port) end.getRole());
+				for (int i = 0; i < valueForPart.getValues().size(); i++) {
+					IReference reference = (IReference) valueForPart.getValues().get(i);
+					IFeatureValue valueForPort = reference.getFeatureValue((Port) end.getRole());
 					if (valueForPort != null) {
-						for (int j = 0; j < valueForPort.values.size(); j++) {
-							endValues.add((IReference) valueForPort.values.get(j));
+						for (int j = 0; j < valueForPort.getValues().size(); j++) {
+							endValues.add((IReference) valueForPort.getValues().get(j));
 						}
 					}
 				}
 			}
 		} else {
-			FeatureValue valueForRole = context.getFeatureValue((Property) end.getRole());
+			IFeatureValue valueForRole = context.getFeatureValue((Property) end.getRole());
 			if (valueForRole != null) {
-				for (int i = 0; i < valueForRole.values.size(); i++) {
-					endValues.add((IReference) valueForRole.values.get(i));
+				for (int i = 0; i < valueForRole.getValues().size(); i++) {
+					endValues.add((IReference) valueForRole.getValues().get(i));
 				}
 			}
 		}

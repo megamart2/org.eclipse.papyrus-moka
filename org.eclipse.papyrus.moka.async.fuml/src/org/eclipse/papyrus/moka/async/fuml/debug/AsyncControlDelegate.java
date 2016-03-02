@@ -23,7 +23,6 @@ import org.eclipse.debug.core.model.IDebugTarget;
 import org.eclipse.debug.core.model.IStackFrame;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications.AsyncObjectActivation;
 import org.eclipse.papyrus.moka.communication.event.Start_Event;
 import org.eclipse.papyrus.moka.communication.event.isuspendresume.Resume_Event;
@@ -49,6 +48,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communicatio
 import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.debug.FUMLThread;
 import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
+import org.eclipse.papyrus.moka.utils.MokaConstants;
 import org.eclipse.uml2.uml.AcceptEventAction;
 
 // TODO: Auto-generated Javadoc

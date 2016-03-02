@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**
  * A handler for managing creation/destruction of a Moka Breakpoint

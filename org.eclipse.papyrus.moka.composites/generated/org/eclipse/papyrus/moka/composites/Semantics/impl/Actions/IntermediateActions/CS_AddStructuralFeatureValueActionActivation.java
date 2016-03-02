@@ -17,18 +17,18 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.Actions.IntermediateA
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_InteractionPoint;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Link;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Link;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.AddStructuralFeatureValueActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
@@ -84,21 +84,21 @@ public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralF
 				if (action.isReplaceAll()) {
 					owner.setFeatureValue(feature, inputValues, 0);
 				} else {
-					FeatureValue featureValue = owner.getFeatureValue(feature);
+					IFeatureValue featureValue = owner.getFeatureValue(feature);
 
-					if (featureValue.values.size() > 0 & insertAt == 0) {
+					if (featureValue.getValues().size() > 0 & insertAt == 0) {
 						// If there is no insertAt pin, then the structural
 						// feature must
 						// be unordered, and the insertion position is
 						// immaterial.
-						insertAt = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(featureValue.values.size());
+						insertAt = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(featureValue.getValues().size());
 					}
 					if (feature.isUnique()) {
 						// Remove any existing value that duplicates the input
 						// value
-						Integer j = position(interactionPoint, featureValue.values, 1);
+						Integer j = position(interactionPoint, featureValue.getValues(), 1);
 						if (j > 0) {
-							featureValue.values.remove(j - 1);
+							featureValue.getValues().remove(j - 1);
 							if (insertAt > 0 & j < insertAt) {
 								insertAt = insertAt - 1;
 							}
@@ -108,9 +108,9 @@ public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralF
 					if (insertAt <= 0) {
 						// Note: insertAt = -1 indicates an unlimited value of
 						// "*"
-						featureValue.values.add(interactionPoint);
+						featureValue.getValues().add(interactionPoint);
 					} else {
-						featureValue.values.add(insertAt - 1, interactionPoint);
+						featureValue.getValues().add(insertAt - 1, interactionPoint);
 					}
 				}
 				if (action.getResult() != null) {
@@ -170,10 +170,10 @@ public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralF
 			} else if (feature.isUnique()) {
 				for (int i = 0; i < links.size(); i++) {
 					ILink link = links.get(i);
-					FeatureValue featureValue = link.getFeatureValue(feature);
-					if (featureValue.values.get(0).equals(inputValue)) {
-						position = link.getFeatureValue(oppositeEnd).position;
-						if (insertAt > 0 & featureValue.position < insertAt) {
+					IFeatureValue featureValue = link.getFeatureValue(feature);
+					if (featureValue.getValues().get(0).equals(inputValue)) {
+						position = link.getFeatureValue(oppositeEnd).getPosition();
+						if (insertAt > 0 & featureValue.getPosition() < insertAt) {
 							insertAt = insertAt - 1;
 						}
 						link.destroy();
@@ -202,20 +202,20 @@ public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralF
 			if (action.isReplaceAll()) {
 				structuredValue.setFeatureValue(feature, inputValues, 0);
 			} else {
-				FeatureValue featureValue = structuredValue.getFeatureValue(feature);
+				IFeatureValue featureValue = structuredValue.getFeatureValue(feature);
 
-				if (featureValue.values.size() > 0 & insertAt == 0) {
+				if (featureValue.getValues().size() > 0 & insertAt == 0) {
 					// *** If there is no insertAt pin, then the structural
 					// feature must be unordered, and the insertion position is
 					// immaterial. ***
-					insertAt = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(featureValue.values.size());
+					insertAt = ((ChoiceStrategy) this.getExecutionLocus().getFactory().getStrategy("choice")).choose(featureValue.getValues().size());
 				}
 
 				if (feature.isUnique()) {
 					// Remove any existing value that duplicates the input value
-					int j = position(inputValue, featureValue.values, 1);
+					int j = position(inputValue, featureValue.getValues(), 1);
 					if (j > 0) {
-						featureValue.values.remove(j - 1);
+						featureValue.getValues().remove(j - 1);
 						if (insertAt > 0 & j < insertAt) {
 							insertAt = insertAt - 1;
 						}
@@ -224,9 +224,9 @@ public class CS_AddStructuralFeatureValueActionActivation extends AddStructuralF
 
 				if (insertAt <= 0) { // Note: insertAt = -1 indicates an
 					// unlimited value of "*"
-					featureValue.values.add(inputValue);
+					featureValue.getValues().add(inputValue);
 				} else {
-					featureValue.values.add(insertAt - 1, inputValue);
+					featureValue.getValues().add(insertAt - 1, inputValue);
 				}
 			}
 		}

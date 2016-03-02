@@ -13,9 +13,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.composites.Semantics.impl.Actions.IntermediateActions;
 
-import org.eclipse.papyrus.moka.composites.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.ReadSelfActionActivation;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.ReadSelfAction;

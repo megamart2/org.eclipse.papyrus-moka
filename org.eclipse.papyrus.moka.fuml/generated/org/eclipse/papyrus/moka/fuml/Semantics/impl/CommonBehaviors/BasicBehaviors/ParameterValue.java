@@ -16,10 +16,12 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehavi
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+
 import org.eclipse.uml2.uml.Parameter;
 
-public class ParameterValue {
+public class ParameterValue implements IParameterValue {
 
 	public Parameter parameter;
 
@@ -29,7 +31,7 @@ public class ParameterValue {
 	 */
 	public List<IValue> values = new ArrayList<IValue>();
 
-	public ParameterValue copy() {
+	public IParameterValue copy() {
 		// Create a new parameter value for the same parameter as this parameter
 		// value, but with copies of the values of this parameter value.
 		ParameterValue newValue = new ParameterValue();
@@ -40,5 +42,21 @@ public class ParameterValue {
 			newValue.values.add(value.copy());
 		}
 		return newValue;
+	}
+
+	public void setParameter(Parameter parameter) {
+		this.parameter = parameter;
+	}
+
+	public Parameter getParameter() {
+		return this.parameter;
+	}
+
+	public List<IValue> getValues() {
+		return this.values;
+	}
+
+	public void setValues(List<IValue> values) {
+		this.values = values;
 	}
 }

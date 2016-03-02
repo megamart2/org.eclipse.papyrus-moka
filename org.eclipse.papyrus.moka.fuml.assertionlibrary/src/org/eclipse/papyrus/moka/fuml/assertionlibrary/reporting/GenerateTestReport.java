@@ -26,9 +26,9 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.Activator;
 import org.eclipse.papyrus.moka.fuml.assertionlibrary.utils.ReportNameSingleton;
 import org.w3c.dom.Document;
@@ -37,7 +37,7 @@ import org.w3c.dom.Document;
 public class GenerateTestReport extends OpaqueBehaviorExecution {
 
 	@Override
-	public void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters) {
+	public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 		Document report = null;
 		Transformer transformer = null;
 		TransformerFactory factory = TransformerFactory.newInstance();

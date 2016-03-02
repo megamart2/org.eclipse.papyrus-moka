@@ -17,11 +17,11 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.IDestroyObjectActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.ActionActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.FeatureValue;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.DestroyObjectAction;
@@ -69,11 +69,11 @@ public class DestroyObjectActionActivation extends ActionActivation implements I
 			}
 			if (isDestroyOwnedObjects) {
 				Debug.println("[destroyObject] Destroying owned objects...");
-				List<FeatureValue> objectFeatureValues = reference.getFeatureValues();
+				List<IFeatureValue> objectFeatureValues = reference.getFeatureValues();
 				for (int i = 0; i < objectFeatureValues.size(); i++) {
-					FeatureValue featureValue = objectFeatureValues.get(i);
-					if (((Property) featureValue.feature).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
-						List<IValue> values = featureValue.values;
+					IFeatureValue featureValue = objectFeatureValues.get(i);
+					if (((Property) featureValue.getFeature()).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+						List<IValue> values = featureValue.getValues();
 						for (int j = 0; j < values.size(); j++) {
 							IValue ownedValue = values.get(j);
 							this.destroyObject(ownedValue, isDestroyLinks, isDestroyOwnedObjects);
@@ -88,12 +88,12 @@ public class DestroyObjectActionActivation extends ActionActivation implements I
 	public Boolean objectIsComposite(IReference reference, ILink link) {
 		// Test whether the given reference participates in the given link as a
 		// composite.
-		List<FeatureValue> linkFeatureValues = link.getFeatureValues();
+		List<IFeatureValue> linkFeatureValues = link.getFeatureValues();
 		boolean isComposite = false;
 		int i = 1;
 		while (!isComposite & i <= linkFeatureValues.size()) {
-			FeatureValue featureValue = linkFeatureValues.get(i - 1);
-			if (!featureValue.values.get(0).equals(reference) & ((Property) featureValue.feature).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
+			IFeatureValue featureValue = linkFeatureValues.get(i - 1);
+			if (!featureValue.getValues().get(0).equals(reference) & ((Property) featureValue.getFeature()).getAggregation() == AggregationKind.COMPOSITE_LITERAL) {
 				isComposite = true;
 			}
 			i = i + 1;

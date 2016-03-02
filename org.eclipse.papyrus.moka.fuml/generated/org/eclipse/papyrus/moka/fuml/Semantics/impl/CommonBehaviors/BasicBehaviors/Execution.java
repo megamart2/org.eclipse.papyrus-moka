@@ -19,6 +19,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
@@ -39,7 +40,7 @@ public abstract class Execution extends Object_ implements IExecution{
 	 * of all input (in and in-out) parameters must be set before the execution
 	 * is executed.
 	 */
-	public List<ParameterValue> parameterValues = new ArrayList<ParameterValue>();
+	public List<IParameterValue> parameterValues = new ArrayList<IParameterValue>();
 
 	public abstract void execute();
 
@@ -55,9 +56,9 @@ public abstract class Execution extends Object_ implements IExecution{
 		// Debug.println("[Copy] execution = " + this);
 		IExecution newValue = (IExecution) (super.copy());
 		newValue.setContext(this.getContext());
-		List<ParameterValue> parameterValues = this.getParameterValues();
+		List<IParameterValue> parameterValues = this.getParameterValues();
 		for (int i = 0; i < parameterValues.size(); i++) {
-			ParameterValue parameterValue = parameterValues.get(i);
+			IParameterValue parameterValue = parameterValues.get(i);
 			newValue.getParameterValues().add(parameterValue.copy());
 		}
 		// Debug.println("[Copy] Done.");
@@ -67,26 +68,26 @@ public abstract class Execution extends Object_ implements IExecution{
 	@Override
 	public abstract IValue new_();
 
-	public void setParameterValue(ParameterValue parameterValue) {
+	public void setParameterValue(IParameterValue parameterValue) {
 		// Set the given parameter value for this execution.
 		// If a parameter value already existed for the parameter of the given
 		// parameter value, then replace its value.
 		// Debug.println("[setParameterValue] parameter = " +
 		// parameterValue.parameter.name + " with " +
 		// parameterValue.values.size() + " values");
-		ParameterValue existingParameterValue = this.getParameterValue(parameterValue.parameter);
+		IParameterValue existingParameterValue = this.getParameterValue(parameterValue.getParameter());
 		if (existingParameterValue == null) {
 			this.getParameterValues().add(parameterValue);
 		} else {
-			existingParameterValue.values = parameterValue.values;
+			existingParameterValue.setValues(parameterValue.getValues());
 		}
 	}
 
-	public ParameterValue getReturnParameterValue() {
-		ParameterValue value = null;
+	public IParameterValue getReturnParameterValue() {
+		IParameterValue value = null;
 		int i = 0;
 		while (value == null && i < this.getParameterValues().size()) {
-			Parameter parameter = this.getParameterValues().get(i).parameter;
+			Parameter parameter = this.getParameterValues().get(i).getParameter();
 			if (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL) {
 				value = this.getParameterValues().get(i);
 			}
@@ -95,13 +96,13 @@ public abstract class Execution extends Object_ implements IExecution{
 		return value;
 	}
 
-	public ParameterValue getParameterValue(Parameter parameter) {
+	public IParameterValue getParameterValue(Parameter parameter) {
 		// Get the parameter value of this execution corresponding to the given
 		// parameter (if any).
-		ParameterValue parameterValue = null;
+		IParameterValue parameterValue = null;
 		int i = 1;
 		while (parameterValue == null & i <= this.getParameterValues().size()) {
-			if (this.getParameterValues().get(i - 1).parameter == parameter) {
+			if (this.getParameterValues().get(i - 1).getParameter() == parameter) {
 				parameterValue = this.getParameterValues().get(i - 1);
 			}
 			i = i + 1;
@@ -109,14 +110,14 @@ public abstract class Execution extends Object_ implements IExecution{
 		return parameterValue;
 	}
 
-	public List<ParameterValue> getOutputParameterValues() {
+	public List<IParameterValue> getOutputParameterValues() {
 		// Return the parameter values for output (in-out, out and return)
 		// parameters.
-		List<ParameterValue> outputs = new ArrayList<ParameterValue>();
-		List<ParameterValue> parameterValues = this.getParameterValues();
+		List<IParameterValue> outputs = new ArrayList<IParameterValue>();
+		List<IParameterValue> parameterValues = this.getParameterValues();
 		for (int i = 0; i < parameterValues.size(); i++) {
-			ParameterValue parameterValue = parameterValues.get(i);
-			Parameter parameter = parameterValue.parameter;
+			IParameterValue parameterValue = parameterValues.get(i);
+			Parameter parameter = parameterValue.getParameter();
 			if ((parameter.getDirection() == ParameterDirectionKind.INOUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.OUT_LITERAL) | (parameter.getDirection() == ParameterDirectionKind.RETURN_LITERAL)) {
 				outputs.add(parameterValue);
 			}
@@ -137,7 +138,7 @@ public abstract class Execution extends Object_ implements IExecution{
 		return this.context;
 	}
 	
-	public List<ParameterValue> getParameterValues(){
+	public List<IParameterValue> getParameterValues(){
 		return this.parameterValues;
 	}
 }

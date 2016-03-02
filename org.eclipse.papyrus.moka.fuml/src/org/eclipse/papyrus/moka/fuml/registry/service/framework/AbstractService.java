@@ -16,11 +16,11 @@ import java.util.HashMap;
 import java.util.List;
 
 import org.apache.commons.lang.NotImplementedException;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.registry.SystemServicesRegistryUtils;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
@@ -66,7 +66,7 @@ public abstract class AbstractService extends Object_ {
 		}
 
 		@Override
-		public abstract void doBody(List<ParameterValue> inputParameters, List<ParameterValue> outputParameters);
+		public abstract void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters);
 
 		@Override
 		public abstract Value new_();

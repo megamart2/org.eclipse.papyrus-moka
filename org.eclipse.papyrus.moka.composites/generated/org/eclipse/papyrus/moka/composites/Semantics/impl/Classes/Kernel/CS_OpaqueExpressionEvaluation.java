@@ -17,8 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Evaluation;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.OpaqueExpression;
 
@@ -45,11 +45,11 @@ public class CS_OpaqueExpressionEvaluation extends Evaluation {
 		OpaqueExpression expression = (OpaqueExpression) this.specification;
 		Behavior behavior = expression.getBehavior();
 		if (behavior != null) {
-			List<ParameterValue> inputs = new ArrayList<ParameterValue>();
-			List<ParameterValue> results = this.locus.getExecutor().execute(behavior, null, inputs);
+			List<IParameterValue> inputs = new ArrayList<IParameterValue>();
+			List<IParameterValue> results = this.locus.getExecutor().execute(behavior, null, inputs);
 			for (int i = 0; i < results.size(); i++) { // results.size should be 1
-				ParameterValue parameterValue = results.get(i);
-				List<IValue> values = parameterValue.values;
+				IParameterValue parameterValue = results.get(i);
+				List<IValue> values = parameterValue.getValues();
 				for (int j = 0; j < values.size(); j++) {
 					evaluation.add(values.get(j));
 				}

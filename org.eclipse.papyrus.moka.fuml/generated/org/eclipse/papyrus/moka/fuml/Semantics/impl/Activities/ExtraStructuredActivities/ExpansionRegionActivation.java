@@ -18,6 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IOutputPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivities.IExpansionActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivities.IExpansionRegionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
@@ -191,9 +192,9 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 		if (!this.isSuspended()) {
 			for (int i = 0; i < activationGroups.size(); i++) {
 				IExpansionActivationGroup activationGroup = activationGroups.get(i);
-				List<OutputPinActivation> groupOutputs = activationGroup.getGroupOutputs();
+				List<IOutputPinActivation> groupOutputs = activationGroup.getGroupOutputs();
 				for (int j = 0; j < groupOutputs.size(); j++) {
-					OutputPinActivation groupOutput = groupOutputs.get(j);
+					IOutputPinActivation groupOutput = groupOutputs.get(j);
 					ExpansionNode outputElement = outputElements.get(j);
 					this.getExpansionNodeActivation(outputElement).addTokens(groupOutput.takeTokens());
 				}
@@ -208,10 +209,10 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 		List<IExpansionActivationGroup> activationGroups = this.activationGroups;
 		for (int i = 0; i < activationGroups.size(); i++) {
 			IExpansionActivationGroup activationGroup = this.activationGroups.get(i);
-			List<OutputPinActivation> groupOutputs = activationGroup.getGroupOutputs();
+			List<IOutputPinActivation> groupOutputs = activationGroup.getGroupOutputs();
 			_beginIsolation();
 			for (int j = 0; j < groupOutputs.size(); j++) {
-				OutputPinActivation groupOutput = groupOutputs.get(j);
+				IOutputPinActivation groupOutput = groupOutputs.get(j);
 				if (FUMLExecutionEngine.eInstance.getControlDelegate().control(groupOutput)) {
 					groupOutput.fire(groupOutput.takeOfferedTokens());
 				}
@@ -245,7 +246,7 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 			List<TokenSet> inputTokens = this.inputTokens;
 			for (int j = 0; j < inputTokens.size(); j++) {
 				TokenSet tokenSet = inputTokens.get(j);
-				OutputPinActivation regionInput = activationGroup.getRegionInputs().get(j);
+				IOutputPinActivation regionInput = activationGroup.getRegionInputs().get(j);
 				regionInput.clearTokens();
 				regionInput.addTokens(tokenSet.tokens);
 				regionInput.sendUnofferedTokens();
@@ -253,7 +254,7 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 			List<TokenSet> inputExpansionTokens = this.inputExpansionTokens;
 			for (int j = 0; j < inputExpansionTokens.size(); j++) {
 				TokenSet tokenSet = inputExpansionTokens.get(j);
-				OutputPinActivation groupInput = activationGroup.getGroupInputs().get(j);
+				IOutputPinActivation groupInput = activationGroup.getGroupInputs().get(j);
 				groupInput.clearTokens();
 				if (tokenSet.tokens.size() >= activationGroup.getIndex()) {
 					groupInput.addToken(tokenSet.tokens.get(activationGroup.getIndex() - 1));
@@ -269,9 +270,9 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 		// Terminate the given activation group, after preserving any group
 		// outputs.
 		if (this.isRunning() & !this.isSuspended()) {
-			List<OutputPinActivation> groupOutputs = activationGroup.getGroupOutputs();
+			List<IOutputPinActivation> groupOutputs = activationGroup.getGroupOutputs();
 			for (int i = 0; i < groupOutputs.size(); i++) {
-				OutputPinActivation groupOutput = groupOutputs.get(i);
+				IOutputPinActivation groupOutput = groupOutputs.get(i);
 				if (FUMLExecutionEngine.eInstance.getControlDelegate().control(groupOutput)) {
 					groupOutput.fire(groupOutput.takeOfferedTokens());
 				}
