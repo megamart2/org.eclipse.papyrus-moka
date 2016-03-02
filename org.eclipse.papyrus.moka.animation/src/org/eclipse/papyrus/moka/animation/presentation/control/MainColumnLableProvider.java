@@ -13,8 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.presentation.control;
 
+import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.jface.viewers.ColumnLabelProvider;
 import org.eclipse.jface.viewers.ViewerCell;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.moka.animation.AnimationPlugin;
 import org.eclipse.papyrus.moka.animation.presentation.data.AnimatingInstanceNode;
 import org.eclipse.papyrus.moka.animation.presentation.data.AnimationTreeNode;
 import org.eclipse.papyrus.moka.animation.presentation.data.DiagramAnimationNode;
@@ -30,6 +33,10 @@ public class MainColumnLableProvider extends ColumnLabelProvider {
 		this.animatorLabelProvider = new AnimatingInstanceLabelProvider(); 
 	}
 	
+	protected void initPapyrusLabelProviderService(){
+		
+	}
+	
 	@Override
 	public void update(ViewerCell cell) {
 		Object element = cell.getElement();
@@ -37,8 +44,10 @@ public class MainColumnLableProvider extends ColumnLabelProvider {
 			  cell.setText(this.animatorLabelProvider.getText(element));
 			  cell.setImage(this.animatorLabelProvider.getImage(element));
 		  }else if(element instanceof DiagramAnimationNode){
-			  DiagramAnimationNode node = (DiagramAnimationNode) element;
-			  cell.setText(node.getAnimatedDiagram().getName());
+			  LabelProviderService papyrusLabelProviderService = AnimationPlugin.getDefault().getPapyrusLabelProvider();
+			  Diagram diagram = ((DiagramAnimationNode) element).getAnimatedDiagram();
+			  cell.setText(papyrusLabelProviderService.getLabelProvider(diagram).getText(diagram));
+			  cell.setImage(papyrusLabelProviderService.getLabelProvider(diagram).getImage(diagram));
 		  }else if(element instanceof AnimationTreeNode){
 			  cell.setText(this.rootLabelProvider.getText(element));
 			  cell.setImage(this.rootLabelProvider.getImage(element));

@@ -17,6 +17,9 @@ import java.net.URL;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
+import org.eclipse.papyrus.infra.services.labelprovider.service.impl.LabelProviderServiceImpl;
 import org.eclipse.papyrus.moka.animation.presentation.control.AnimatingInstanceLabelProvider;
 import org.eclipse.papyrus.moka.animation.presentation.control.RootLabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
@@ -33,6 +36,9 @@ public class AnimationPlugin extends AbstractUIPlugin {
 	// The shared instance
 	private static AnimationPlugin plugin;
 	
+	// Papyrus label provider service
+	private LabelProviderService labelProviderService; 
+	
 	/**
 	 * The constructor
 	 */
@@ -47,6 +53,7 @@ public class AnimationPlugin extends AbstractUIPlugin {
 		super.start(context);
 		plugin = this;
 		this.initImageRegistry();
+		this.getPapyrusLabelProvider();
 	}
 
 	/*
@@ -80,5 +87,15 @@ public class AnimationPlugin extends AbstractUIPlugin {
 			descriptor = ImageDescriptor.createFromURL(url);
 		}
 		return descriptor;
+	}
+	
+	public LabelProviderService getPapyrusLabelProvider(){
+		this.labelProviderService = new LabelProviderServiceImpl();
+		try {
+			this.labelProviderService.startService();
+		} catch (ServiceException e) {
+			this.labelProviderService = null;
+		}
+		return this.labelProviderService;
 	}
 }

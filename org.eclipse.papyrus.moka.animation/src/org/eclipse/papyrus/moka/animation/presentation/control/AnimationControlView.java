@@ -33,6 +33,7 @@ public class AnimationControlView extends ViewPart {
 	public void createPartControl(Composite parent) {
 		this.viewer = new TreeViewer(parent, SWT.FULL_SELECTION | SWT.H_SCROLL | SWT.V_SCROLL);
 		this.viewer.setContentProvider(new AnimatedDiagramTreeContentProvider());
+		this.viewer.addFilter(new AnimationControlViewFilter());
 		this.viewer.getTree().setHeaderVisible(true);
 		this.viewer.getTree().setLinesVisible(true);
 		this.createColumns(this.viewer);

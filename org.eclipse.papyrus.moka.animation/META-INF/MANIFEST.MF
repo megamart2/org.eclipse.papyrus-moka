@@ -23,7 +23,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.workbench,
  org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="1.2.0",
  org.eclipse.papyrus.moka.fuml,
- org.eclipse.papyrus.infra.core.sashwindows.di;bundle-version="1.2.0"
+ org.eclipse.papyrus.infra.core.sashwindows.di;bundle-version="1.2.0",
+ org.eclipse.papyrus.infra.services.labelprovider
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.animation,
