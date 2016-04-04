@@ -23,7 +23,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**
  * An handler for launching the Run from a selected model element
@@ -44,8 +44,8 @@ public class RunAsHandler extends MokaAbstractHandler implements IHandler {
 				ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager() ;
 				ILaunchConfigurationType type = manager.getLaunchConfigurationType("org.eclipse.papyrus.moka.launchConfiguration") ;
 				ILaunchConfigurationWorkingCopy configuration = type.newInstance(null, "New Moka Debug Configuration") ;
-				configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, resourceURI);
-				configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, selectedElement.eResource().getURIFragment(selectedElement));
+				configuration.setAttribute(MokaConstants.URI_ATTRIBUTE_NAME, resourceURI);
+				configuration.setAttribute(MokaConstants.FRAGMENT_ATTRIBUTE_NAME, selectedElement.eResource().getURIFragment(selectedElement));
 				configuration.doSave() ;
 				DebugUITools.launch(configuration, "run");
 			} catch (CoreException e) {

@@ -41,4 +41,5 @@ public interface IObject_ extends IExtensionalValue {
 	
 	public IObjectActivation getObjectActivation();
 	
+	public void setObjectActivation(IObjectActivation objectActivation);
 }

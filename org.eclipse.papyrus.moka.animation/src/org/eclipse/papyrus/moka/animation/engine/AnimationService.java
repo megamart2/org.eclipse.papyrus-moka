@@ -2,6 +2,7 @@ package org.eclipse.papyrus.moka.animation.engine;
 
 import java.util.Set;
 
+import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ICallActionActivation;
@@ -14,16 +15,16 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.AbstractMokaService;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
-public class AnimationService extends AbstractMokaService{
+public class AnimationService extends AbstractMokaService implements IAnimation{
 
 	// The handler responsible for markers application
-	protected RenderHandler engine;
+	protected AnimationEngine engine;
 	
 	public AnimationService(){
-		this.engine = new RenderHandler();
+		this.engine = new AnimationEngine();
 	}
 	
-	public void init(EObject modelElement){
+	public void init(ILaunch launcher, EObject modelElement){
 		this.engine.init(modelElement);
 	}
 
@@ -33,9 +34,9 @@ public class AnimationService extends AbstractMokaService{
 			IActivityNodeActivation activation = (IActivityNodeActivation) nodeVisitor;
 			if(activation.getNode()!=null){
 				if(activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation){
-					this.engine.startRendering(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED); 
+					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED); 
 				}else{
-					this.engine.render(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
+					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED, AnimationKind.VISITED, MokaConstants.MOKA_ANIMATION_DELAY);
 				}
 			}
 		}else if(nodeVisitor instanceof IActivityEdgeInstance){
@@ -51,12 +52,12 @@ public class AnimationService extends AbstractMokaService{
 		if(nodeVisitor instanceof IActivityNodeActivation){
 			IActivityNodeActivation activation = (IActivityNodeActivation) nodeVisitor;
 			if(activation.getNode()!=null && (activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation)){
-				this.engine.stopRendering(activation.getNode(), activation.getExecutionContext(), AnimationKind.VISITED); 
+				this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.VISITED); 
 			}
 		}else if(nodeVisitor instanceof IActivityEdgeInstance){
 			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) nodeVisitor;
 			if(edgeInstance.getEdge() != null){
-				this.engine.stopRendering(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.VISITED);
+				this.renderAs(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.VISITED);
 			}
 		}
 	}
@@ -83,6 +84,25 @@ public class AnimationService extends AbstractMokaService{
 	
 	public void dispose(){
 		this.engine.clean();
+	}
+
+	@Override
+	public void renderAs(EObject modelElement, IObject_ animator, AnimationKind targetStyle) {
+		this.engine.removeRenderingRules(modelElement);
+		this.engine.startRendering(modelElement, animator, targetStyle);
+	}
+
+	@Override
+	public void renderAs(EObject modelElement, IObject_ animator, AnimationKind sourceStyle, AnimationKind targetStyle, int duration) {
+		this.engine.removeRenderingRules(modelElement);
+		this.engine.startRendering(modelElement, animator, sourceStyle);
+		try {
+			Thread.sleep(duration);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+		this.engine.stopRendering(modelElement, animator, sourceStyle);
+		this.engine.startRendering(modelElement, animator, targetStyle);
 	}
 
 }

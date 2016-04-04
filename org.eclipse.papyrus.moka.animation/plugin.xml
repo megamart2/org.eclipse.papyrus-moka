@@ -64,7 +64,7 @@
          point="org.eclipse.papyrus.moka.service.service">
       <service
             class="org.eclipse.papyrus.moka.animation.engine.AnimationService"
-            description="Handle basic animation for executed UML models">
+            description="Moka Animation Service">
       </service>
    </extension>
 

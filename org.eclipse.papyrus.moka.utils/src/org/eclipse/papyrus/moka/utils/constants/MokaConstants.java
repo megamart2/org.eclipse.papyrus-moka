@@ -28,7 +28,7 @@ public class MokaConstants {
 	/**
 	 * The ID of the "moka debug model". All moka debug elements use/return this ID.
 	 */
-	public final static String MOKA_DEBUG_MODEL_ID = "org.eclipse.papyrus.moka";
+	public final static String MOKA_DEBUG_MODEL_ID = "org.eclipse.papyrus.moka.debug";
 
 	/** ID of the moka breakpoint marker type. */
 	public final static String MOKA_BREAKPOINT_MARKER_ID = "org.eclipse.papyrus.moka.breakpointmarker";
@@ -164,5 +164,36 @@ public class MokaConstants {
 	// ////////////////////////
 	/** Prefix for a getValueString request. */
 	public final static String request_getValueString = "request_getValueString";
+	
+	/**
+	 * The attribute name for the resource uri associated with a launch configuration
+	 * The corresponding resource contains the EObject to be executed
+	 */
+	public static String URI_ATTRIBUTE_NAME = "URI_ATTRIBUTE";
+
+	/**
+	 * The attribute name for the uri fragment associated with a launch configuration
+	 * This fragment is an id for the EObject to be executed
+	 */
+	public static String FRAGMENT_ATTRIBUTE_NAME = "FRAGMENT_ATTRIBUTE";
+
+	/**
+	 * The attribute name for the arguments associated with a launch configuration
+	 * This arguments are given to the execution engine for initialization, before actually starting execution.
+	 */
+	public static String ARGS_ATTRIBUTE_NAME = "ARGS_ATTRIBUTE";
+	
+	/**
+	 * The attribute name for the execution engine associated with the launch configuration
+	 */
+	public static String EXECUTION_ENGINE_ATTRIBUTE_NAME = "EXECUTION_ENGINE_ATTRIBUTE" ;
+	
+	public static String EXECUTION_ENGINE_JOB_NAME = "Moka Execution Engine";
+	
+	/** The Constant LIBRAY_EXTENSION_POINT_ID. */
+	public final static String LIBRAY_EXTENSION_POINT_ID = "org.eclipse.papyrus.moka.fuml.library";
+
+	/** The Constant SERVICES_EXTENSION_POINT_ID. */
+	public final static String SERVICES_EXTENSION_POINT_ID = "org.eclipse.papyrus.moka.fuml.services";
 
 }

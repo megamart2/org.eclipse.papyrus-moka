@@ -13,6 +13,7 @@
 
 package org.eclipse.papyrus.moka.service;
 
+import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
 
 public interface IMokaService {
@@ -20,7 +21,7 @@ public interface IMokaService {
 	// Let any service know the model on which the current execution is focused
 	// Users are not intended to call directly this operation. It is automatically
 	// called as soon as the execution begin
-	public void init(EObject modelElement);
+	public void init(ILaunch launcher, EObject modelElement);
 	
 	// Let any service release all its resources when the execution terminates
 	// Users are not intended to call directly this operation. It is automatically

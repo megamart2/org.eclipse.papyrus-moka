@@ -17,7 +17,7 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.ui.AbstractLaunchConfigurationTab;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.Image;
 import org.eclipse.swt.layout.GridLayout;
@@ -40,13 +40,13 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 
 	public void initializeFrom(ILaunchConfiguration configuration) {
 		try {
-			String init_uri = configuration.getAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, "");
+			String init_uri = configuration.getAttribute(MokaConstants.URI_ATTRIBUTE_NAME, "");
 			if (!init_uri.equals("")) {
 				this.projectSelectionComp.projectSelectionText.setText(init_uri);
-				String init_fragment = configuration.getAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, "");
+				String init_fragment = configuration.getAttribute(MokaConstants.FRAGMENT_ATTRIBUTE_NAME, "");
 				this.executableSelectionComp.eligibleExecutableElement.selectByURIFragment(init_fragment);
 			}
-			String selectedExecutionEngine = configuration.getAttribute(MokaLaunchDelegate.EXECUTION_ENGINE_ATTRIBUTE_NAME, "") ;
+			String selectedExecutionEngine = configuration.getAttribute(MokaConstants.EXECUTION_ENGINE_ATTRIBUTE_NAME, "") ;
 			if (selectedExecutionEngine != null) {
 				this.executionEngineSelectionComp.eligibleExecutionEngineCombo.setText(selectedExecutionEngine);
 			} 
@@ -56,14 +56,14 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 	}
 
 	public void performApply(ILaunchConfigurationWorkingCopy configuration) {
-		configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, this.projectSelectionComp.projectSelectionText.getText());
+		configuration.setAttribute(MokaConstants.URI_ATTRIBUTE_NAME, this.projectSelectionComp.projectSelectionText.getText());
 		EObject selected = this.executableSelectionComp.eligibleExecutableElement.getSelected();
 		if (selected != null) {
-			configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, selected.eResource().getURIFragment(selected));
+			configuration.setAttribute(MokaConstants.FRAGMENT_ATTRIBUTE_NAME, selected.eResource().getURIFragment(selected));
 		}
 		String executionEngine = this.executionEngineSelectionComp.eligibleExecutionEngineCombo.getText();
 		if (executionEngine != null) {
-			configuration.setAttribute(MokaLaunchDelegate.EXECUTION_ENGINE_ATTRIBUTE_NAME, executionEngine) ; 
+			configuration.setAttribute(MokaConstants.EXECUTION_ENGINE_ATTRIBUTE_NAME, executionEngine) ; 
 		}
 	}
 

@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.UUID;
 
@@ -87,7 +88,7 @@ public class Locus implements ILocus{
 	public void add(IExtensionalValue value) {
 		// Add the given extensional value to this locus
 		value.setLocus(this);
-		value.setIdentifier(this.identifier + "#" + this.makeIdentifier(value));
+		value.setIdentifier(this.makeIdentifier(value));
 		this.extensionalValues.add(value);
 	}
 
@@ -138,7 +139,22 @@ public class Locus implements ILocus{
 	public String makeIdentifier(IExtensionalValue value) {
 		// Issue FUML12-33 Extensional values should have an unique identifier
 		// Implementation of this method is not normative
-		return UUID.randomUUID().toString();
+		String prefix = "";
+		boolean multipleTypes = value.getTypes().size() > 1;
+		if(multipleTypes){
+			prefix += "[";
+		}
+		Iterator<Classifier> typeIterator = value.getTypes().iterator();
+		while(typeIterator.hasNext()){
+			prefix += typeIterator.next().getName();
+			if(typeIterator.hasNext()){
+				prefix += ", ";
+			}
+		}
+		if(multipleTypes){
+			prefix += "]";
+		}
+		return prefix + "@" + UUID.randomUUID().toString();
 	}
 
 	public IExecutor getExecutor() {

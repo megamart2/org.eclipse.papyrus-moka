@@ -23,7 +23,7 @@ import org.eclipse.debug.core.model.IBreakpoint;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.debug.MokaBreakpoint;
+import org.eclipse.papyrus.moka.debug.breakpoint.MokaBreakpoint;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**

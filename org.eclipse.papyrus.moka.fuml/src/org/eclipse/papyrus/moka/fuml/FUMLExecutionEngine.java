@@ -13,85 +13,80 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
+import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.ISafeRunnable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.SafeRunner;
+import org.eclipse.debug.core.model.IStreamMonitor;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RedefinitionBasedDispatchStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.UnlimitedNaturalValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.FIFOGetNextEventStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Executor;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.FirstChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.Locus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL3.ExecutionFactoryL3;
-import org.eclipse.papyrus.moka.fuml.debug.ControlDelegate;
 import org.eclipse.papyrus.moka.fuml.registry.IOpaqueBehaviorExecutionRegistry;
 import org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Parameter;
+import org.eclipse.uml2.uml.ParameterDirectionKind;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Type;
 
-/**
- * The Class FUMLExecutionEngine.
- */
-public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
+public class FUMLExecutionEngine extends AbstractExecutionEngine {
 
-	/** The Constant LIBRAY_EXTENSION_POINT_ID. */
-	protected final static String LIBRAY_EXTENSION_POINT_ID = "org.eclipse.papyrus.moka.fuml.library";
-
-	/** The Constant SERVICES_EXTENSION_POINT_ID. */
-	protected final static String SERVICES_EXTENSION_POINT_ID = "org.eclipse.papyrus.moka.fuml.services";
-
-	/** The main. */
-	protected static Behavior main = null;
-
-	/** The args. */
-	protected String[] args;
-
-	/** The arguments. */
-	protected List<IParameterValue> arguments;
-
-	/** The locus. */
+	// Locus at which the execution occurs
 	protected ILocus locus;
+	
+	// fUML parameter values passed in the execution
+	protected List<IParameterValue> executionArguments;
+	
+	public FUMLExecutionEngine(){
+		this.executionArguments = new ArrayList<IParameterValue>();
+	}
 
-	/** The started. */
-	protected boolean started = false;
-
-	/** The e instance. */
-	public static FUMLExecutionEngine eInstance;
-
-	// Starts the execution of the given behavior
-	/**
-	 * Start.
-	 *
-	 * @param behavior
-	 *            the behavior
-	 */
-	protected void start(Behavior behavior) {
-		if (behavior != null) {
-			main = behavior;
-			// creates the locus, executor and execution factory
-			this.locus = new Locus();
-			this.locus.setExecutor(new Executor());
-			this.locus.setFactory(new ExecutionFactoryL3());
-			this.locus.setExecutedTarget(main);
+	public ILocus initializeLocus(){
+		// creates the locus, executor and execution factory
+		ILocus locus = new Locus();
+		locus.setExecutor(new Executor());
+		locus.setFactory(new ExecutionFactoryL3());
+		return locus;
+	}
+	
+	public void start(IProgressMonitor monitor) {
+		super.start(monitor);
+		this.locus = this.initializeLocus();
+		if (this.executionEntryPoint != null &&
+				this.executionEntryPoint instanceof Behavior) {
 			// initializes built-in primitive types
 			this.initializeBuiltInPrimitiveTypes(locus);
 			// Initializes opaque behavior executions
@@ -101,21 +96,31 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 			// Initializes semantic strategies
 			this.registerSemanticStrategies(locus);
 			// Initializes arguments
-			this.initializeArguments(this.args);
-			// Finally launches the execution
-			this.started = true;
-			this.locus.getExecutor().execute(main, null, this.arguments);
-			eInstance.getControlDelegate().waitForTermination();
+			this.initializeArguments(this.executionArgs);
+			// Finally launches the execution$
+			this.locus.getExecutor().execute((Behavior)this.executionEntryPoint, null, this.executionArguments);
 		}
 	}
 	
-	// Register semantic strategies available in the environment
-	/**
-	 * Register semantic strategies.
-	 *
-	 * @param locus
-	 *            the locus
-	 */
+	public void stop(IProgressMonitor monitor) {
+		super.stop(monitor);
+		if(this.locus!=null){
+			monitor.subTask("Cleanup execution locus");
+			
+			Iterator<IExtensionalValue> extents = this.locus.getExtensionalValues().listIterator();
+			while(extents.hasNext()){
+				IExtensionalValue value = extents.next(); 
+				if(value instanceof IObject_ && ((IObject_)value).getObjectActivation()!=null){
+					((IObject_)value).getObjectActivation().stop();
+					((IObject_)value).getObjectActivation().setObject((IObject_)value);
+					((IObject_)value).setObjectActivation(null);
+				}
+				value.getTypes().clear();
+			}
+			this.locus.getExtensionalValues().clear();
+		}
+	}
+	
 	protected void registerSemanticStrategies(ILocus locus) {
 		locus.getFactory().setStrategy(new FirstChoiceStrategy());
 		locus.getFactory().setStrategy(new FIFOGetNextEventStrategy());
@@ -124,22 +129,15 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		locus.getFactory().setStrategy(new DefaultGetAssociationStrategy());
 	}
 
-	// Register OpaqueBehaviorExecutions available in the environment
-	/**
-	 * Register opaque behavior executions.
-	 *
-	 * @param locus
-	 *            the locus
-	 */
 	protected void registerOpaqueBehaviorExecutions(ILocus locus) {
 		// Load any OpaqueBehaviorExecution library contributing to the extension LIBRAY_EXTENSION_POINT_ID
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] config = registry.getConfigurationElementsFor(LIBRAY_EXTENSION_POINT_ID);
+		IConfigurationElement[] config = registry.getConfigurationElementsFor(MokaConstants.LIBRAY_EXTENSION_POINT_ID);
 		try {
 			for (int i = 0; i < config.length; i++) {
 				IConfigurationElement e = config[i];
 				final Object o = e.createExecutableExtension("class");
-				loadLibrary(o, locus, this.eObjectToExecute);
+				loadLibrary(o, locus, this.executionEntryPoint);
 			}
 		} catch (CoreException ex) {
 			Activator.log.error(ex);
@@ -148,22 +146,15 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		}
 	}
 
-	// Register System Services available in the environment
-	/**
-	 * Register system services.
-	 *
-	 * @param locus
-	 *            the locus
-	 */
 	protected void registerSystemServices(ILocus locus) {
 		// Load any contribution to the extension SERVICES_EXTENSION_POINT_ID
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] config = registry.getConfigurationElementsFor(SERVICES_EXTENSION_POINT_ID);
+		IConfigurationElement[] config = registry.getConfigurationElementsFor(MokaConstants.SERVICES_EXTENSION_POINT_ID);
 		try {
 			for (int i = 0; i < config.length; i++) {
 				IConfigurationElement e = config[i];
 				final Object o = e.createExecutableExtension("class");
-				loadServices(o, locus, this.eObjectToExecute);
+				loadServices(o, locus, this.executionEntryPoint);
 			}
 		} catch (CoreException ex) {
 			Activator.log.error(ex);
@@ -172,13 +163,6 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		}
 	}
 
-	// Initializes primitive types of the locus with content of UMLPrimitiveTypes
-	/**
-	 * Initialize built in primitive types.
-	 *
-	 * @param locus
-	 *            the locus
-	 */
 	protected void initializeBuiltInPrimitiveTypes(ILocus locus) {
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		ResourceSet resourceSet = Util.createTemporaryResourceSet();
@@ -197,17 +181,6 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		}
 	}
 
-	// Loads a library of OpaqueBehaviorExecutions using the safe runner pattern
-	/**
-	 * Load library.
-	 *
-	 * @param o
-	 *            the o
-	 * @param locus
-	 *            the locus
-	 * @param context
-	 *            the context
-	 */
 	protected static void loadLibrary(final Object o, final ILocus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
 
@@ -222,17 +195,6 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		SafeRunner.run(runnable);
 	}
 
-	// Loads System services using the safe runner pattern
-	/**
-	 * Load services.
-	 *
-	 * @param o
-	 *            the o
-	 * @param locus
-	 *            the locus
-	 * @param context
-	 *            the context
-	 */
 	protected static void loadServices(final Object o, final ILocus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
 
@@ -246,23 +208,89 @@ public abstract class FUMLExecutionEngine extends AbstractExecutionEngine {
 		};
 		SafeRunner.run(runnable);
 	}
+	
+	public void initializeArguments(String[] args) {
+		if (this.locus == null) {
+			return;
+		}
+		this.executionArguments = new ArrayList<IParameterValue>();
+		if (args == null) {
+			return;
+		}
+		List<IValue> tmpArgs = new ArrayList<IValue>();
+		// analyzes arguments versus parameters of the main behavior
+		List<Parameter> parameters = ((Behavior)this.executionEntryPoint).getOwnedParameters();
+		if (parameters == null) {
+			return;
+		}
+		List<Parameter> parametersWhichNeedArguments = new ArrayList<Parameter>();
+		// There must be the same number of parameters (except the return parameter)
+		for (Parameter p : parameters) {
+			if (p.getDirection() != ParameterDirectionKind.RETURN_LITERAL) {
+				parametersWhichNeedArguments.add(p);
+			}
+		}
+		if (parametersWhichNeedArguments.size() != args.length) {
+			return;
+		}
 
-	/**
-	 * Returns the ControlDelegate object associated with this engine.
-	 * This object can be used by fUML visitors as a kind of control manager,
-	 * which is charge of managing debug specific aspects (e.g., suspension,
-	 * termination, animation, etc.)
-	 *
-	 * @return The ControlDelegate object associated with this engine
-	 */
-	public abstract ControlDelegate getControlDelegate();
+		// iterates on parameters, and tries to create tokens corresponding to arguments
+		int i = 0;
+		for (Parameter p : parametersWhichNeedArguments) {
+			Type t = p.getType();
+			if (t != null) {
+				// FIXME
+				PrimitiveType pt = (PrimitiveType) this.locus.getFactory().getBuiltInType(t.getName());
+				if (pt == null) {
+					return;
+				}
+				if (pt.getName().equals("Integer")) {
+					IntegerValue value = new IntegerValue();
+					value.value = new Integer(args[i]);
+					tmpArgs.add(value);
+				} else if (pt.getName().equals("String")) {
+					StringValue value = new StringValue();
+					value.value = args[i];
+					tmpArgs.add(value);
+				} else if (pt.getName().equals("Boolean")) {
+					BooleanValue value = new BooleanValue();
+					value.value = new Boolean(args[i]);
+					tmpArgs.add(value);
+				} else if (pt.getName().equals("UnlimitedNatural")) {
+					UnlimitedNaturalValue value = new UnlimitedNaturalValue();
+					value.value = new Integer(args[i]);
+					tmpArgs.add(value);
+				} else {
+					return; // Unsupported type. TODO Consider Real
+				}
+			}
+			i++;
+		}
 
-	/**
-	 * Returns the fUML locus associated with this engine
-	 *
-	 * @return the fUML locus associated with this engine
-	 */
-	public ILocus getLocus() {
-		return this.locus;
+		i = 0;
+		// creates actual arguments
+		for (IValue v : tmpArgs) {
+			IParameterValue arg = new ParameterValue();
+			arg.setParameter(parameters.get(i));
+			arg.setValues(new ArrayList<IValue>());
+			arg.getValues().add(v);
+			this.executionArguments.add(arg);
+			i++;
+		}
+	}
+
+	public IStreamMonitor getErrorStreamMonitor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public IStreamMonitor getOutputStreamMonitor() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	public void write(String input) throws IOException {
+		// TODO Auto-generated method stub
+		
 	}
 }

@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.SemanticStrategy;
 
 public abstract class GetNextEventStrategy extends SemanticStrategy {
@@ -23,5 +24,5 @@ public abstract class GetNextEventStrategy extends SemanticStrategy {
 		return "getNextEvent";
 	}
 
-	public abstract EventOccurrence getNextEvent(ObjectActivation objectActivation); // fUML12-35 Initial execution of an activity is not run to completion
+	public abstract IEventOccurrence getNextEvent(ObjectActivation objectActivation); // fUML12-35 Initial execution of an activity is not run to completion
 }

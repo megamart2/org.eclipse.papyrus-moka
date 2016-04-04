@@ -22,6 +22,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IClassifierBehaviorInvocationEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
@@ -50,7 +51,7 @@ public class ObjectActivation implements IObjectActivation {
 	 * 
 	 * fUML12-35 Initial execution of an activity is not run to completion
 	 */
-	public List<EventOccurrence> eventPool = new ArrayList<EventOccurrence>();
+	public List<IEventOccurrence> eventPool = new ArrayList<IEventOccurrence>();
 
 	/*
 	 * The object whose active behavior is being handled by this active object.
@@ -97,7 +98,7 @@ public class ObjectActivation implements IObjectActivation {
 	public void dispatchNextEvent() {
 		//fUML12-35 Initial execution of an activity is not run to completion
 		if (this.eventPool.size() > 0) {
-			EventOccurrence eventOccurrence = this.getNextEvent();
+			IEventOccurrence eventOccurrence = this.getNextEvent();
 			Debug.println("[dispatchNextEvent] eventOccurrence = " + eventOccurrence);
 			List<Integer> matchingEventAccepterIndexes = new ArrayList<Integer>();
 			List<IEventAccepter> waitingEventAccepters = this.waitingEventAccepters;
@@ -119,7 +120,7 @@ public class ObjectActivation implements IObjectActivation {
 		}
 	}
 
-	public EventOccurrence getNextEvent() {
+	public IEventOccurrence getNextEvent() {
 		// Get the next event from the event pool, using a get next event
 		// strategy.
 		
@@ -225,6 +226,10 @@ public class ObjectActivation implements IObjectActivation {
 
 	public List<IClassifierBehaviorInvocationEventAccepter> getClassifierBehaviorInvocations() {
 		return this.classifierBehaviorInvocations;
+	}
+
+	public List<IEventOccurrence> getEvents() {
+		return this.eventPool;
 	}
 
 }

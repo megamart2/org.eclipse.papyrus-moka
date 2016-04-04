@@ -13,12 +13,13 @@
 
 package org.eclipse.papyrus.moka.service;
 
+import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
 
 public abstract class AbstractMokaService implements IMokaService, IMokaExecutionListener {
 
 	@Override
-	public void init(EObject modelElement) {
+	public void init(ILaunch launcher, EObject modelElement) {
 		// By default do nothing - convenience for services which do not need to know
 		// the model that is currently related to this instance of the execution
 	}

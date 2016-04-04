@@ -144,4 +144,8 @@ public class Object_ extends ExtensionalValue implements IObject_{
 	public IObjectActivation getObjectActivation(){
 		return this.objectActivation;
 	}
+
+	public void setObjectActivation(IObjectActivation objectActivation) {
+		this.objectActivation = objectActivation;
+	}
 }

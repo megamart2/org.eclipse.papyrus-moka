@@ -10,8 +10,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.ui.workbench,
  org.eclipse.emf.ecore,
  org.eclipse.core.resources;bundle-version="3.11.0",
- org.eclipse.papyrus.infra.ui
+ org.eclipse.papyrus.infra.ui,
+ org.eclipse.papyrus.moka.fuml.interfaces,
+ org.eclipse.uml2.uml
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.utils.constants,
- org.eclipse.papyrus.moka.utils.helper
+ org.eclipse.papyrus.moka.utils.helper,
+ org.eclipse.papyrus.moka.utils.helper.semantics
