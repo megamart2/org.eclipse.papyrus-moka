@@ -25,7 +25,7 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.viewers.ITableLabelProvider;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.papyrus.moka.composites.utils.handlers.Utils;
-import org.eclipse.papyrus.moka.fuml.presentation.FUMLPresentationUtils;
+import org.eclipse.papyrus.moka.utils.helper.presentation.LabelProviderHelper;
 import org.eclipse.papyrus.uml.tools.utils.PackageUtil;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
@@ -301,9 +301,7 @@ public class GenerateConstructorUsingFieldsDialog extends TrayDialog {
 				Property current = (Property) element;
 				switch (columnIndex) {
 				case 0:
-					FUMLPresentationUtils.init(current);
-					Image image = FUMLPresentationUtils.getImage(current);
-					return image;
+					return LabelProviderHelper.getInstance().getImage(current);
 				default:
 					return null;
 				}

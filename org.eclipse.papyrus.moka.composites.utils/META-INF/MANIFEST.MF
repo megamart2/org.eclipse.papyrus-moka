@@ -13,7 +13,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.gmf.runtime.diagram.ui,
  org.eclipse.papyrus.uml.icons;bundle-version="1.2.0",
  org.eclipse.papyrus.editor;bundle-version="1.2.0",
- org.eclipse.papyrus.moka.composites;bundle-version="1.2.0"
+ org.eclipse.papyrus.moka.composites;bundle-version="1.2.0",
+ org.eclipse.papyrus.moka.utils
 Export-Package: org.eclipse.papyrus.moka.composites.utils.handlers
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
