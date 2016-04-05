@@ -3,8 +3,7 @@ package org.eclipse.papyrus.moka.debug.model.data.mapping.variables;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IValue;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.ActivityNodeActivationValueAdapter;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterFactory;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 
 public class SuspensionPointVariableAdapter extends MokaVariableAdapter {
@@ -23,9 +22,7 @@ public class SuspensionPointVariableAdapter extends MokaVariableAdapter {
 	@Override
 	public IValue getValue() throws DebugException {
 		if(this.value == null){
-			if(this.suspensionPoint instanceof IActivityNodeActivation){
-				this.value = new ActivityNodeActivationValueAdapter(this.debugTarget, (IActivityNodeActivation)this.suspensionPoint);
-			}
+			this.value = MokaValueAdapterFactory.getInstance().instantiate(this.suspensionPoint, this.debugTarget);
 		}
 		return this.value;
 	}

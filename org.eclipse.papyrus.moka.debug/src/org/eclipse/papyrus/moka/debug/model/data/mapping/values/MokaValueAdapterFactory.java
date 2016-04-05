@@ -1,6 +1,7 @@
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IForkedToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
@@ -9,6 +10,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IPrimitiveValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 
 public class MokaValueAdapterFactory {
 
@@ -45,8 +47,13 @@ public class MokaValueAdapterFactory {
 				}else if(value instanceof IPrimitiveValue){
 					adapter = new PrimitiveValueAdapter(debugTarget, (IPrimitiveValue)value);
 				}
+			}else if(value instanceof ISemanticVisitor){
+				if(value instanceof IActivityNodeActivation){
+					adapter = new ActivityNodeActivationValueAdapter(debugTarget, (IActivityNodeActivation)value);
+				}
 			}
-		}else{
+		}
+		if(adapter == null){
 			adapter = new NullValueAdapter(debugTarget);
 		}
 		return adapter;
