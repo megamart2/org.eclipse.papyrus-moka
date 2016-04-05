@@ -32,7 +32,6 @@ Export-Package: org.eclipse.papyrus.moka.fuml;uses:="org.eclipse.ui.plugin,org.o
  org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL2,
  org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL3,
  org.eclipse.papyrus.moka.fuml.debug,
- org.eclipse.papyrus.moka.fuml.presentation,
  org.eclipse.papyrus.moka.fuml.registry,
  org.eclipse.papyrus.moka.fuml.registry.service.framework,
  org.eclipse.papyrus.moka.fuml.profiling.Semantics.Actions.CompleteActions,

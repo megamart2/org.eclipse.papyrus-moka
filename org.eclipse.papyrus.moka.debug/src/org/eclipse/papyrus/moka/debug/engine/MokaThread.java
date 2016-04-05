@@ -118,7 +118,7 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 					}
 					this.resumeCondition.await();
 					if(animationService !=null){
-						animationService.renderAs(visitedModelElement, this.object, AnimationKind.ANIMATED);
+						animationService.renderAs(visitedModelElement, this.object, AnimationKind.VISITED);
 					}
 				} catch (InterruptedException e) {}
 			}
