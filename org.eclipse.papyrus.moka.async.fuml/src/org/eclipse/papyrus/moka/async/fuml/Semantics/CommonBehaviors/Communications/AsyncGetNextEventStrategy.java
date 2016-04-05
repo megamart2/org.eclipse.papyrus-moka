@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.SemanticStrategy;
 
 
@@ -34,5 +34,5 @@ public abstract class AsyncGetNextEventStrategy extends SemanticStrategy {
 	 *            the event pool
 	 * @return the next event
 	 */
-	public abstract EventOccurrence getNextEvent(AsyncEventPool eventPool);
+	public abstract IEventOccurrence getNextEvent(AsyncEventPool eventPool);
 }

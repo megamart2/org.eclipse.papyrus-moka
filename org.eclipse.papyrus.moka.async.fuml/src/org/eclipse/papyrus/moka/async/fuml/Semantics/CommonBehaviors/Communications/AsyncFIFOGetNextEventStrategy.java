@@ -15,7 +15,7 @@ package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communicat
 
 import org.eclipse.papyrus.moka.async.fuml.Activator;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 
 /**
  * FIFO strategy that retrieve the oldest SignalInstance owned by the EventPool object.
@@ -27,8 +27,8 @@ public class AsyncFIFOGetNextEventStrategy extends AsyncGetNextEventStrategy {
 	 * This method is always called by the object activation owning the event pool.
 	 * The call is blocking if no SignalInstance can be retrieved from the event pool.
 	 */
-	public EventOccurrence getNextEvent(AsyncEventPool eventPool) {
-		EventOccurrence eventOccurrence = null;
+	public IEventOccurrence getNextEvent(AsyncEventPool eventPool) {
+		IEventOccurrence eventOccurrence = null;
 		try {
 			eventOccurrence = eventPool.take();
 		} catch (InterruptedException e) {

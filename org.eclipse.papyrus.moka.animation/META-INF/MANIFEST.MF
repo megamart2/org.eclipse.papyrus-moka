@@ -2,30 +2,30 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Moka animation framework
 Bundle-SymbolicName: org.eclipse.papyrus.moka.animation;singleton:=true
-Bundle-Version: 1.2.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.animation.AnimationPlugin
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.eclipse.emf.ecore,
- org.eclipse.papyrus.infra.services.markerlistener,
- org.eclipse.gmf.runtime.notation.edit,
- org.eclipse.papyrus.infra.core,
- org.eclipse.emf.transaction,
- org.eclipse.papyrus.infra.emf,
- org.eclipse.gef,
- org.eclipse.debug.core,
+Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
+ org.eclipse.core.runtime;bundle-version="3.12.0",
+ org.eclipse.emf.ecore;bundle-version="2.12.0",
+ org.eclipse.papyrus.infra.services.markerlistener;bundle-version="1.2.0",
+ org.eclipse.gmf.runtime.notation.edit;bundle-version="1.7.0",
+ org.eclipse.papyrus.infra.core;bundle-version="2.0.0",
+ org.eclipse.emf.transaction;bundle-version="1.9.0",
+ org.eclipse.papyrus.infra.emf;bundle-version="2.0.0",
+ org.eclipse.gef;bundle-version="3.11.0",
+ org.eclipse.debug.core;bundle-version="3.10.0",
  org.eclipse.papyrus.infra.core.log;bundle-version="1.2.0",
- org.eclipse.uml2.uml,
+ org.eclipse.uml2.uml;bundle-version="5.2.0",
  org.eclipse.papyrus.infra.gmfdiag.common;bundle-version="1.2.0",
- org.eclipse.core.jobs,
- org.eclipse.jface,
- org.eclipse.ui.workbench,
+ org.eclipse.core.jobs;bundle-version="3.8.0",
+ org.eclipse.jface;bundle-version="3.12.0",
+ org.eclipse.ui.workbench;bundle-version="3.108.0",
  org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="1.2.0",
  org.eclipse.papyrus.infra.core.sashwindows.di;bundle-version="1.2.0",
- org.eclipse.papyrus.infra.services.labelprovider,
+ org.eclipse.papyrus.infra.services.labelprovider;bundle-version="1.2.0",
  org.eclipse.papyrus.moka.service;bundle-version="1.2.0",
- org.eclipse.papyrus.moka.fuml.interfaces,
- org.eclipse.papyrus.moka.utils
+ org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.papyrus.moka.utils;bundle-version="[2.0.0,3.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.animation,

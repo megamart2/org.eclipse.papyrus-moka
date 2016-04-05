@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.papyrus.moka.feature"
       label="%featureName"
-      version="1.2.0.qualifier"
+      version="2.0.0.qualifier"
       provider-name="%providerName">
 
    <description url="http://www.example.com/description">
@@ -30,13 +30,6 @@
 
    <plugin
          id="org.eclipse.papyrus.moka"
-         download-size="0"
-         install-size="0"
-         version="0.0.0"
-         unpack="false"/>
-
-   <plugin
-         id="org.eclipse.papyrus.moka.async.fuml"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -85,14 +78,49 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.moka.doc"
+         id="org.eclipse.papyrus.moka.animation"
          download-size="0"
          install-size="0"
          version="0.0.0"
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.moka.animation"
+         id="org.eclipse.papyrus.moka.composites.interfaces"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.fuml.interfaces"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.fuml.validation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.utils"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.service"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.debug"
          download-size="0"
          install-size="0"
          version="0.0.0"

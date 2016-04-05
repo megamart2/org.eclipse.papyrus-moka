@@ -13,7 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.async.fuml.Semantics.CommonBehaviors.Communications;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 
 /**
  * Interface that need to be implemented by the AsyncEventPool.
@@ -27,12 +27,12 @@ public interface IAsyncEventPool {
 	 *            the signal instance
 	 * @return true, if successful
 	 */
-	public boolean send(EventOccurrence eventOccurrence);
+	public boolean send(IEventOccurrence eventOccurrence);
 
 	/**
 	 * Gets the next event.
 	 *
 	 * @return the next event
 	 */
-	public EventOccurrence getNextEvent();
+	public IEventOccurrence getNextEvent();
 }

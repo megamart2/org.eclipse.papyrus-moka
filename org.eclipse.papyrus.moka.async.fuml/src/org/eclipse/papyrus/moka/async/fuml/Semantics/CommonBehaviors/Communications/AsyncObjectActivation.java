@@ -19,21 +19,19 @@ import java.util.List;
 
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.papyrus.infra.core.Activator;
-import org.eclipse.papyrus.moka.async.fuml.debug.AsyncControlDelegate;
 import org.eclipse.papyrus.moka.async.fuml.debug.AsyncDebug;
-import org.eclipse.papyrus.moka.fuml.FUMLExecutionEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.AcceptEventActionEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.ParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ClassifierBehaviorInvocationEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.InvocationEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardOutputChannelImpl;
-import org.eclipse.papyrus.moka.utils.MokaConstants;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.ui.console.IOConsoleOutputStream;
 import org.eclipse.uml2.uml.Behavior;
@@ -68,7 +66,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	final protected Class classifier;
 
 	/** The inputs. */
-	final protected List<ParameterValue> inputs;
+	final protected List<IParameterValue> inputs;
 
 	/* The event pool handled by the ObjectActivation */
 	/** The evt pool. */
@@ -82,7 +80,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 * @param inputs
 	 *            parameters that are provided to the execution
 	 */
-	public AsyncObjectActivation(Class classifier, List<ParameterValue> inputs) {
+	public AsyncObjectActivation(Class classifier, List<IParameterValue> inputs) {
 		super();
 		this.classifier = classifier;
 		this.inputs = inputs;
@@ -107,10 +105,9 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 					}
 				});
 			}
-			((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 		}
 		/* 3. While current object activation is running then dispatch events */
-		while (!FUMLExecutionEngine.eInstance.isTerminated() && this.currentState.equals(ObjectActivationState.RUNNING)) {
+		while (this.currentState.equals(ObjectActivationState.RUNNING)) {
 			try {
 				this.dispatchNextEvent(); /* Dispatch is blocking if no SignalInstance available */
 			} catch (Exception e) {
@@ -122,13 +119,11 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 						}
 					});
 				}
-				((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 			}
 			if (this.waitingEventAccepters.isEmpty()) {
 				this.currentState = ObjectActivationState.STOPPED;
 			}
 		}
-		((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyThreadTermination(this); // Added for connection with debug api
 	}
 
 	// Added for connection with debug API
@@ -149,7 +144,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 *            the signal instance
 	 */
 	@Override
-	public synchronized void send(SignalInstance signalInstance) {
+	public synchronized void send(ISignalInstance signalInstance) {
 		SignalEventOccurrence eventOccurrence = new SignalEventOccurrence();
 		eventOccurrence.signalInstance = (SignalInstance) signalInstance.copy();
 		this.evtPool.send(eventOccurrence);
@@ -165,14 +160,13 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 * @return the next event
 	 */
 	@Override
-	public EventOccurrence getNextEvent() {
+	public IEventOccurrence getNextEvent() {
 		// Added for connection with debug API
 		if (this.evtPool.isEmpty()) {
 			this.currentState = ObjectActivationState.WAITING;
 			this.hasBeenWaiting = true;
-			((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateEntered(this);
 		}
-		EventOccurrence eventOccurrence = this.evtPool.getNextEvent();
+		IEventOccurrence eventOccurrence = this.evtPool.getNextEvent();
 		this.currentState = ObjectActivationState.RUNNING;
 
 		if (eventOccurrence != null) {
@@ -204,7 +198,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	 *            the inputs
 	 */
 	@Override
-	public void startBehavior(Class classifier, List<ParameterValue> inputs) {
+	public void startBehavior(Class classifier, List<IParameterValue> inputs) {
 		/* 1. Start behavior of the current classifier */
 		if (classifier == null) {
 			AsyncDebug.println("Starting behavior for all classifiers...");
@@ -213,7 +207,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			for (Iterator<Classifier> i = types.iterator(); i.hasNext();) {
 				Classifier type = i.next();
 				if (type instanceof Behavior | ((Class)type).getClassifierBehavior() != null) {
-					this.startBehavior((Class)type, new ArrayList<ParameterValue>());
+					this.startBehavior((Class)type, new ArrayList<IParameterValue>());
 				}
 			}
 		} else {
@@ -265,7 +259,7 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 	@Override
 	public void dispatchNextEvent() {
 		/* 1. Get next event is blocking if used on a empty event pool */
-		EventOccurrence eventOccurrence = this.getNextEvent();
+		IEventOccurrence eventOccurrence = this.getNextEvent();
 		AsyncDebug.println("[dispatchNextEvent] eventOccurrence = " + eventOccurrence);
 		/* 2. Look for EventAccepter that match the selected SignalInstance */
 		List<Integer> matchingEventAccepterIndexes = new ArrayList<Integer>();
@@ -284,9 +278,6 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			this.waitingEventAccepters.remove(selectedEventAccepter);
 			if (this.hasBeenWaiting) {
 				this.hasBeenWaiting = false;
-				if (selectedEventAccepter instanceof AcceptEventActionEventAccepter) {
-					((AsyncControlDelegate) FUMLExecutionEngine.eInstance.getControlDelegate()).notifyWaitingStateExit(this, (AcceptEventActionEventAccepter) selectedEventAccepter);
-				}
 			}
 			selectedEventAccepter.accept(eventOccurrence);
 		}else{

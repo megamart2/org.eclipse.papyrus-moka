@@ -16,9 +16,9 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
-import org.eclipse.papyrus.moka.MokaConstants;
 import org.eclipse.papyrus.moka.engine.IExecutionEngine;
 import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 public class AsyncFUMLEngineLaunchDelegate extends AbstractMokaLaunchConfigurationDelegate {
 

@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.async.fuml.debug;
 import java.io.IOException;
 
 import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionEventAccepter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.AcceptEventActionEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalInstance;
@@ -71,12 +71,12 @@ public class AsyncDebug extends Debug {
 	 * @param outstream
 	 * 			the stream on which the message must be displayed
 	 */
-	public static void printLostSignal(final EventOccurrence eventOccurrence, final ObjectActivation objectActivation, final IOConsoleOutputStream outstream){
+	public static void printLostSignal(final IEventOccurrence eventOccurrence, final ObjectActivation objectActivation, final IOConsoleOutputStream outstream){
 		String expectedSignals = "";
 		for (IEventAccepter eventAccepter : objectActivation.waitingEventAccepters) {
-			if (eventAccepter instanceof AcceptEventActionEventAccepter) {
-				AcceptEventActionEventAccepter acceptEventAccepter = (AcceptEventActionEventAccepter) eventAccepter;
-				AcceptEventAction acceptEventAction = (AcceptEventAction) acceptEventAccepter.actionActivation.node;
+			if (eventAccepter instanceof IAcceptEventActionEventAccepter) {
+				IAcceptEventActionEventAccepter acceptEventAccepter = (IAcceptEventActionEventAccepter) eventAccepter;
+				AcceptEventAction acceptEventAction = (AcceptEventAction) acceptEventAccepter.getActionActivation().getNode();
 				for (Trigger trigger : acceptEventAction.getTriggers()) {
 					if (trigger.getEvent() instanceof SignalEvent) {
 						SignalEvent signalEvent = (SignalEvent) trigger.getEvent();

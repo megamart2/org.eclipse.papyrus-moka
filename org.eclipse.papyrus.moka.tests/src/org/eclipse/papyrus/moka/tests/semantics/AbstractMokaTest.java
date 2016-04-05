@@ -26,10 +26,9 @@ import org.eclipse.papyrus.infra.core.resource.AbstractBaseModel;
 import org.eclipse.papyrus.infra.core.resource.IModel;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.junit.utils.tests.AbstractEditorTest;
-import org.eclipse.papyrus.moka.MokaConstants;
-import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
 import org.eclipse.papyrus.moka.tests.AbstractMokaLaunchConfigurationDelegate;
 import org.eclipse.papyrus.moka.tests.Activator;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.uml2.uml.Activity;
 import org.eclipse.uml2.uml.Model;
@@ -171,9 +170,9 @@ public abstract class AbstractMokaTest extends AbstractEditorTest {
 		ILaunchConfigurationType type = manager.getLaunchConfigurationType("org.eclipse.papyrus.moka.launchConfiguration");
 
 		ILaunchConfigurationWorkingCopy configuration = type.newInstance(null, "MOKA JUNIT TESTS");
-		configuration.setAttribute(MokaLaunchDelegate.URI_ATTRIBUTE_NAME, model.eResource().getURI().toString());
-		configuration.setAttribute(MokaLaunchDelegate.FRAGMENT_ATTRIBUTE_NAME, testCaseActivity.eResource().getURIFragment(testCaseActivity));
-		configuration.setAttribute(MokaLaunchDelegate.ARGS_ATTRIBUTE_NAME, "");
+		configuration.setAttribute(MokaConstants.URI_ATTRIBUTE_NAME, model.eResource().getURI().toString());
+		configuration.setAttribute(MokaConstants.FRAGMENT_ATTRIBUTE_NAME, testCaseActivity.eResource().getURIFragment(testCaseActivity));
+		configuration.setAttribute(MokaConstants.ARGS_ATTRIBUTE_NAME, "");
 
 		// save and return new configuration
 		configuration.doSave();

@@ -23,7 +23,6 @@ import org.eclipse.debug.core.ILaunchConfigurationWorkingCopy;
 import org.eclipse.debug.core.ILaunchManager;
 import org.eclipse.debug.ui.DebugUITools;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.moka.launch.MokaLaunchDelegate;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 /**

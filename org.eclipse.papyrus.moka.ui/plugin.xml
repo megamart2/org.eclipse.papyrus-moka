@@ -31,17 +31,13 @@
       <menuContribution
             allPopups="false"
             locationURI="popup:org.eclipse.papyrus.views.modelexplorer.popup.moka">
-         <command
-               commandId="org.eclipse.papyrus.moka.ui.runAsCommand"
+         <command commandId="org.eclipse.papyrus.moka.ui.runAsCommand"
                icon="icons/run.gif"
                label="Run"
                style="push">
-            <visibleWhen
-                  checkEnabled="false">
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
-         <command
-               commandId="org.eclipse.papyrus.moka.ui.debugAsCommand"
+         <command commandId="org.eclipse.papyrus.moka.ui.debugAsCommand"
                icon="icons/debug.gif"
                label="Debug"
                style="push">
@@ -79,16 +75,14 @@
                style="push">
             <visibleWhen
                   checkEnabled="true">
+            </visibleWhen>
+         </command>
          <command
                commandId="org.eclipse.papyrus.moka.ui.runAsCommand"
                icon="icons/run.gif"
                label="Run"
                style="push">
-            <visibleWhen
-                  checkEnabled="false">
-            </visibleWhen>
-         </command>
-            </visibleWhen>
+            <visibleWhen checkEnabled="false"></visibleWhen>
          </command>
       </menuContribution>
       <menuContribution

@@ -4,47 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.eclipse.papyrus.moka</groupId>
 	<artifactId>org.eclipse.papyrus.moka.parent</artifactId>
-	<version>1.2.0-SNAPSHOT</version>
+	<version>2.0.0-SNAPSHOT</version>
+	
+	<!-- Project aggregation: any command executed against the parent is also executed against each declared module -->
 	<packaging>pom</packaging>
-	<name>Moka</name>
-	<description>Papyrus model execution platform</description>
-
-	<modules>
-		<!-- moka core -->
-		<module>org.eclipse.papyrus.moka</module>
-		<module>org.eclipse.papyrus.moka.ui</module>
-		<!-- moka engines -->
-		<module>org.eclipse.papyrus.moka.fuml</module>
-		<module>org.eclipse.papyrus.moka.composites</module>
-		<module>org.eclipse.papyrus.moka.async.fuml</module>
-		<!-- moka utils -->
-		<module>org.eclipse.papyrus.moka.animation</module>
-		<module>org.eclipse.papyrus.moka.fuml.validation</module>
-		<module>org.eclipse.papyrus.moka.composites.utils</module>
-		<module>org.eclipse.papyrus.moka.fuml.activeobjectcontrollerlibrary</module>
-		<!-- moka libraries -->
-		<module>org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
-		<module>org.eclipse.papyrus.moka.fuml.standardlibrary</module>
-		<!-- target platform -->
-		<module>org.eclipse.papyrus.moka.feature</module>
-		<module>org.eclipse.papyrus.moka.p2</module>
-		<module>org.eclipse.papyrus.moka.tests</module>
-		<module>targetplatform</module>
-		<!-- doc -->
-		<module>org.eclipse.papyrus.moka.doc</module>
-	</modules>
-	<repositories>
-	<repository>
-	      <id>eclipse-neon</id>
-	      <layout>p2</layout>
-	      <url>http://download.eclipse.org/releases/neon</url>
-	    </repository>
-		<repository>
-			<id>papyrus-neon-nightly-developer</id>
-			<layout>p2</layout>
-			<url>https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/</url>
-		</repository>
-	</repositories>
+	
 	<properties>
 		<!-- plugins versions -->
 		<!-- use 'mvn versions:display-plugin-updates' to check for the latest -->
@@ -63,8 +27,15 @@
 		<env.ui.test>-Xms512m -Xmx2048m -XX:MaxPermSize=512M</env.ui.test>
 		
 		<testConfig>CI_TESTS_CONFIG</testConfig> <!-- See org.eclipse.papyrus.junit.framework.classification.ClassificationConfig -->
-	
 	</properties>
+	
+	<name>Moka</name>
+	<description>Papyrus model execution platform</description>
+
+	<modules>
+		<!-- Feature referencing all MOKA plugins -->
+		<module>org.eclipse.papyrus.moka.feature</module>
+	</modules>
 
 	<pluginRepositories>
 		<pluginRepository>
@@ -79,6 +50,7 @@
 			<url>https://repo.eclipse.org/content/repositories/mylyn/</url>
 		</pluginRepository>			
 	</pluginRepositories>
+
 	<build>
 		<pluginManagement>
 			<plugins>
