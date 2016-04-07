@@ -36,6 +36,13 @@
          unpack="false"/>
 
    <plugin
+         id="org.eclipse.papyrus.moka.async.fuml"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.eclipse.papyrus.moka.composites"
          download-size="0"
          install-size="0"
@@ -78,7 +85,21 @@
          unpack="false"/>
 
    <plugin
+         id="org.eclipse.papyrus.moka.doc"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
          id="org.eclipse.papyrus.moka.animation"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.papyrus.moka.simex"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -106,7 +127,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.moka.utils"
+         id="org.eclipse.papyrus.moka.debug"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -120,7 +141,7 @@
          unpack="false"/>
 
    <plugin
-         id="org.eclipse.papyrus.moka.debug"
+         id="org.eclipse.papyrus.moka.utils"
          download-size="0"
          install-size="0"
          version="0.0.0"

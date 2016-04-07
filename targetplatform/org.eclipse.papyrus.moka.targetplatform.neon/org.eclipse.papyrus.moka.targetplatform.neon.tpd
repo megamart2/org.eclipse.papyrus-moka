@@ -8,7 +8,7 @@ location "http://download.eclipse.org/releases/neon/" eclipse-neon {
  org.eclipse.equinox.executable.feature.group
 }
 
-location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/" papyrus-neon-nightly{
+location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/" papyrus-neon-nightly {
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 

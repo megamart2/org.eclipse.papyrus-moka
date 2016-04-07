@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.eclipse.papyrus.moka</groupId>
+		<artifactId>org.eclipse.papyrus.moka.releng</artifactId>
+		<version>1.2.0-SNAPSHOT</version>
+	</parent>
+	<artifactId>org.eclipse.papyrus.moka.p2</artifactId>
+	<packaging>eclipse-repository</packaging>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<!-- https://github.com/jbosstools/jbosstools-maven-plugins/wiki -->
+				<groupId>org.jboss.tools.tycho-plugins</groupId>
+				<artifactId>repository-utils</artifactId>
+				<version>0.23.2</version>
+				<executions>
+					<execution>
+						<id>generate-facade</id>
+						<phase>package</phase>
+						<goals>
+							<goal>generate-repository-facade</goal>
+						</goals>
+						<configuration>
+							<symbols>
+								<update.site.name>MOKA</update.site.name>
+								<update.site.description>Use this URL in Eclipse to install
+									Moka</update.site.description>
+								<update.site.version>${project.version}</update.site.version>
+								<project.website>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-website/ws/site-staging/index.html</project.website>
+								<project.issues>${project.issueManagement.url}</project.issues>
+								<eclipse.target>${eclipse.targetrelease}</eclipse.target>
+								<update.site.nightly>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-neon/ws/releng/org.eclipse.papyrus.moka.p2/target/repository/</update.site.nightly>
+							</symbols>
+							<associateSites>
+								<site>https://hudson.eclipse.org/papyrus/view/Moka/job/papyrus-moka-website/ws/site-staging/index.html</site>
+							</associateSites>
+							<siteTemplateFolder>siteTemplate</siteTemplateFolder>
+							<p2StatsUrl>http://download.eclipse.org/stats</p2StatsUrl>
+						</configuration>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.eclipse.tycho</groupId>
+						<artifactId>tycho-packaging-plugin</artifactId>
+						<version>${tycho-version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+	<name>org.eclipse.papyrus.moka.p2</name>
+	<description>This plugin defines the update site of Moka plugins and feature.</description>
+</project>

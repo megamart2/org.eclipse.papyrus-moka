@@ -54,8 +54,10 @@
 		<!-- moka libraries -->
 		<module>org.eclipse.papyrus.moka.fuml.assertionlibrary</module>
 		<module>org.eclipse.papyrus.moka.fuml.standardlibrary</module>
-		<!-- Feature referencing all moka plugins -->
-		<module>org.eclipse.papyrus.moka.feature</module>
+		<!-- moka methodology -->
+		<module>org.eclipse.papyrus.moka.simex</module>
+		<!-- Releng (contains feature definition) -->
+		<module>releng</module>
 		<!-- Target platform against which the build is performed -->
 		<module>targetplatform</module>
 	</modules>
