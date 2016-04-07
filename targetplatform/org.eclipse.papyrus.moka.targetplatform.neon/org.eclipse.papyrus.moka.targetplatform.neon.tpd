@@ -11,3 +11,7 @@ location "http://download.eclipse.org/releases/neon/" eclipse-neon {
 location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/" papyrus-neon-nightly{
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
+
+location "http://download.eclipse.org/tools/ajdt/45/dev/update" aspectj-neon{
+	org.aspectj.feature.group
+}
