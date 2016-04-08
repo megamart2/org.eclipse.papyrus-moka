@@ -70,10 +70,12 @@ public class BooleanValue extends PrimitiveValue implements IBooleanValue {
 		return stringValue;
 	}
 
+	@Override
 	public Boolean getValue() {
 		return this.value;
 	}
-
+	
+	@Override
 	public void setValue(Boolean value) {
 		this.value = value;
 	}

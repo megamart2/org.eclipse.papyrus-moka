@@ -22,8 +22,8 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
 import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
@@ -61,10 +61,10 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 */
 	public void registerSystemServices(ILocus locus) {
 		this.locus = locus;
-		List<Object_> services = this.instantiateServices();
+		List<IObject_> services = this.instantiateServices();
 		// Guarantees that created services are added to the locus
-		for (Object_ o : services) {
-			o.locus = locus;
+		for (IObject_ o : services) {
+			o.setLocus(locus);
 			locus.add(o);
 		}
 	}
@@ -76,7 +76,7 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 *
 	 * @return A List<Object_> containing instantiated services, to be added to a specific locus
 	 */
-	protected abstract List<Object_> instantiateServices();
+	protected abstract List<IObject_> instantiateServices();
 
 	/**
 	 * Convenience method which calls the instantiate method on each service identified in the given serviceQualifiedNames list,
@@ -90,8 +90,8 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 *            The list of qualified names of service classes to be instantiated
 	 * @return A List<Object_> containing instantiated services, to be added to a specific locus
 	 */
-	protected List<Object_> instantiateServices(String libraryName, List<String> serviceQualifiedNames) {
-		List<Object_> serviceInstances = new ArrayList<Object_>();
+	protected List<IObject_> instantiateServices(String libraryName, List<String> serviceQualifiedNames) {
+		List<IObject_> serviceInstances = new ArrayList<IObject_>();
 		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
 		IRegisteredLibrary library = null;
 		for (IRegisteredLibrary l : libraries) {
@@ -124,6 +124,6 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	 *            The class representing the service to be instantiated
 	 * @return The instance of the service class, to be added at a specific locus
 	 */
-	protected abstract Object_ instantiateService(Class service);
+	protected abstract IObject_ instantiateService(Class service);
 
 }

@@ -43,4 +43,8 @@ public interface IObjectActivation {
 	public List<IClassifierBehaviorInvocationEventAccepter> getClassifierBehaviorInvocations();
 	
 	public List<IEventOccurrence> getEvents();
+	
+	public void _startObjectBehavior();
+	
+	public List<IEventAccepter> getWaitingEventAccepters();
 }

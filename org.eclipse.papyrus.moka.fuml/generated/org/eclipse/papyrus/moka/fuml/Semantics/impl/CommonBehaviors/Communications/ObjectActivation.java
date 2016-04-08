@@ -232,4 +232,9 @@ public class ObjectActivation implements IObjectActivation {
 		return this.eventPool;
 	}
 
+	@Override
+	public List<IEventAccepter> getWaitingEventAccepters() {
+		return this.waitingEventAccepters;
+	}
+
 }

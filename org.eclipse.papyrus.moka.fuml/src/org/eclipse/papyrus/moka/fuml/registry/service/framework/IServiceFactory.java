@@ -11,10 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.registry.service.framework;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.uml2.uml.Class;
 
 public interface IServiceFactory {
 
-	public Object_ instantiate(Class service);
+	public IObject_ instantiate(Class service);
 }

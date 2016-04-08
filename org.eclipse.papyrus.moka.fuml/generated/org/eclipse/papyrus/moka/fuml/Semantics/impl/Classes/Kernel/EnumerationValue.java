@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IEnumerationValue;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
@@ -24,7 +25,7 @@ import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class EnumerationValue extends Value {
+public class EnumerationValue extends Value implements IEnumerationValue{
 
 	/*
 	 * The literal value of this enumeration value.
@@ -83,5 +84,21 @@ public class EnumerationValue extends Value {
 	@Override
 	public String toString() {
 		return literal.getName();
+	}
+	@Override
+	public EnumerationLiteral getLiteral() {
+		return literal;
+	}
+	@Override
+	public void setLiteral(EnumerationLiteral literal) {
+		this.literal = literal;
+	}
+	@Override
+	public Enumeration getType() {
+		return type;
+	}
+	@Override
+	public void setType(Enumeration type) {
+		this.type = type;
 	}
 }

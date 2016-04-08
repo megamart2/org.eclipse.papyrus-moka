@@ -14,11 +14,12 @@
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IRealValue;
 import org.eclipse.uml2.uml.LiteralReal;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class RealValue extends PrimitiveValue {
+public class RealValue extends PrimitiveValue implements IRealValue {
 
 	/*
 	 * The actual Real value.
@@ -97,7 +98,14 @@ public class RealValue extends PrimitiveValue {
 		return stringValue;
 	}
 
-	public Object getValue() {
+
+	@Override
+	public Double getValue(){
 		return this.value;
+	}
+	
+	@Override
+	public void setValue(Double value) {
+		this.value = value;
 	}
 }

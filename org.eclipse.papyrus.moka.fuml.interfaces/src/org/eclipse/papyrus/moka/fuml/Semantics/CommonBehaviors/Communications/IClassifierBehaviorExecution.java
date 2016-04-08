@@ -16,6 +16,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.uml2.uml.Class;
 
 public interface IClassifierBehaviorExecution {
@@ -23,4 +24,6 @@ public interface IClassifierBehaviorExecution {
 	public void execute(Class classifier, List<IParameterValue> inputs);
 	
 	public void terminate();
+	
+	public IExecution getExecution();
 }

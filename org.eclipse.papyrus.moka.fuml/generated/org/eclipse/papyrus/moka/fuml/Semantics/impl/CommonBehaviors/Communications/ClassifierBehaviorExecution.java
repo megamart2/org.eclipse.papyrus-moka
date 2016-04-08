@@ -86,4 +86,9 @@ public class ClassifierBehaviorExecution implements IClassifierBehaviorExecution
 			this.execution.destroy();
 		}
 	}
+
+	@Override
+	public IExecution getExecution() {
+		return this.execution;
+	}
 }

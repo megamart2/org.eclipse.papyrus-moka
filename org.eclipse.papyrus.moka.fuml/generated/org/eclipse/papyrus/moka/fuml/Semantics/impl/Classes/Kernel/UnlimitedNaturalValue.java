@@ -13,12 +13,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IUnlimitedNaturalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class UnlimitedNaturalValue extends PrimitiveValue {
+public class UnlimitedNaturalValue extends PrimitiveValue implements IUnlimitedNaturalValue{
 
 	/*
 	 * The actual unlimited natural value.
@@ -76,8 +77,15 @@ public class UnlimitedNaturalValue extends PrimitiveValue {
 		}
 		return stringValue;
 	}
+	
+	
+	@Override
+	public void setValue(Integer value) {
+		this.value= value;
+	}
 
-	public Object getValue() {
+	@Override
+	public Integer getValue() {
 		return this.value;
 	}
 }

@@ -14,7 +14,7 @@ package org.eclipse.papyrus.moka.fuml.registry.service.framework;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry;
 import org.eclipse.uml2.uml.Class;
 
@@ -40,12 +40,12 @@ public abstract class AbstractServicesRegistery extends AbstractSystemServicesRe
 	}
 
 	@Override
-	public List<Object_> instantiateServices() {
+	public List<IObject_> instantiateServices() {
 		return this.instantiateServices(this.libraryName, this.serviceQualifiedNames);
 	}
 
 	@Override
-	protected Object_ instantiateService(Class service) {
+	protected IObject_ instantiateService(Class service) {
 		return this.serviceFactory.instantiate(service);
 	}
 }

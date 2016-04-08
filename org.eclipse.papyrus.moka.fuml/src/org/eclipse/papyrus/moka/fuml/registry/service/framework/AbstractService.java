@@ -18,9 +18,9 @@ import java.util.List;
 import org.apache.commons.lang.NotImplementedException;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Value;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.registry.SystemServicesRegistryUtils;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
@@ -28,17 +28,17 @@ import org.eclipse.uml2.uml.Operation;
 
 public abstract class AbstractService extends Object_ {
 
-	protected HashMap<Operation, Execution> operationExecution;
+	protected HashMap<Operation, IExecution> operationExecution;
 
 	public AbstractService(Class service) {
 		super();
 		this.types.add(service);
-		this.operationExecution = new HashMap<Operation, Execution>();
+		this.operationExecution = new HashMap<Operation, IExecution>();
 		this.doOperationExecutionMapping();
 	}
 	
 	@Override
-	public Execution dispatch(Operation operation) {
+	public IExecution dispatch(Operation operation) {
 		if (this.operationExecution.containsKey(operation)) {
 			return this.operationExecution.get(operation);
 		}
@@ -69,6 +69,6 @@ public abstract class AbstractService extends Object_ {
 		public abstract void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters);
 
 		@Override
-		public abstract Value new_();
+		public abstract IValue new_();
 	}
 }

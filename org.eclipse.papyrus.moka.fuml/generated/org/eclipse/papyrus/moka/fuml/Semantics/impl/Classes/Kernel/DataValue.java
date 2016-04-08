@@ -17,16 +17,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IDataValue;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.DataType;
 
-public class DataValue extends CompoundValue {
+public class DataValue extends CompoundValue implements IDataValue {
 
 	/*
 	 * The type of this data value. This must not be a primitive or an
 	 * enumeration.
 	 */
 	public DataType type;
+
+	@Override
+	public DataType getType() {
+		return type;
+	}
+
+	@Override
+	public void setType(DataType type) {
+		this.type = type;
+	}
 
 	@Override
 	public List<Classifier> getTypes() {
