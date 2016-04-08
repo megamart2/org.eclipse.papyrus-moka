@@ -1,0 +1,351 @@
+modeltype UMLTypes uses "http://www.eclipse.org/uml2/5.0.0/Types";
+modeltype UML uses 'http://www.eclipse.org/uml2/5.0.0/UML';
+modeltype FMI uses 'platform:/plugin/org.eclipse.papyrus.moka.fmi/schema/fmi2ModelDescription.xsd';
+modeltype ecore uses ecore('http://www.eclipse.org/emf/2002/Ecore');
+//modeltype fmiML uses FmiMLProfile('http:///schemas/FmiMLProfile/_1LNqQBwfEeWeGufsnalS6A/44');
+
+transformation FMI2UML(in fmu : FMI, in umlTypes : UML, in fmiMLProfile : UML , in fmuProxyLibrary : UML, out output_model :UML);
+
+/*
+* fmi profile and its stereotypes
+*/
+property fmiProfile : UML::Profile = fmiMLProfile.rootObjects()![UML::Profile];
+
+//fmu type (coSimulation or modelExchange)
+property cs_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "CS_FMU"];
+	
+//fmu Port/locals/parameters/calculated parameters/independent
+property port_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "Port"];
+property parameter_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "Parameter"];
+property calculatedParameter_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "CalculatedParameter"];	
+property local_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "Local"];
+property independent_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "Independent"];
+
+//fmu dependencies
+property outputDependency_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "OutputDependency"];
+property derivativeDependency_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "DerivativeDependency"];
+property initialUnknownDependency_stereotype : UML::Stereotype = 
+	fmiProfile.ownedStereotype![name = "InitialUnknownDependency"];
+	
+//create a generalization for the generated class
+property fmu2ProxyGeneralization : UML::Generalization = object Generalization{general := fmuProxyLibrary.rootObjects()[Package]->any(true).getOwnedMembers()->selectOne(name="Fmu2Proxy").oclAsType(Class)};
+		
+configuration property dllPath : String;
+configuration property fmuLocation : String;
+	
+	
+//variables for the FMU structure (class, ports and attrinbutes)
+property globalPropertiesList : Sequence(UML::Property);
+
+//queries
+query getUmlClassifier(name : String) : Classifier{
+	var classifiers : Collection(Classifier) := umlTypes.rootObjects()[Model].packagedElement->selectByKind(Classifier);
+	return classifiers->any(classifier : Classifier | classifier.name = name);
+}
+query InitialType::findLiteral() : EnumerationLiteral {
+	var enumeration := findEnumeration("InitialType"); 
+	return enumeration.ownedLiteral![name = self.toString()];
+}
+
+query VariabilityType::findLiteral() : EnumerationLiteral {
+	var enumeration := findEnumeration("VariabilityType"); 
+	return enumeration.ownedLiteral![name = self.toString()];
+}
+
+query DependenciesKindTypeItem::findLiteral() : EnumerationLiteral {
+	var enumeration := findEnumeration("DependenciesKindType"); 
+	return enumeration.ownedLiteral![name = self.toString()];
+}
+
+query findEnumeration(enumName : String) : Enumeration {
+	return fmiMLProfile.objectsOfType(Enumeration)![name=enumName];
+}
+query findStereotype(fmiVariable : FMI::Fmi2ScalarVariable) : Stereotype {
+	var stereotypeToApply : UML::Stereotype := local_stereotype;
+	switch {
+			case(fmiVariable.causality = CausalityType::local){
+				stereotypeToApply := local_stereotype;				
+			};
+			case(fmiVariable.causality = CausalityType::parameter){
+				stereotypeToApply := parameter_stereotype;
+			};
+			case(fmiVariable.causality = CausalityType::calculatedParameter){
+				stereotypeToApply := calculatedParameter_stereotype;
+			};
+			case(fmiVariable.causality = CausalityType::independent){
+				stereotypeToApply := independent_stereotype;
+			};
+			case(fmiVariable.causality = CausalityType::input or fmiVariable.causality = CausalityType::output){
+				stereotypeToApply := port_stereotype;
+			};
+		};
+		return stereotypeToApply;
+}
+
+//helpers
+helper setPropertyType (inout myProperty : UML::Property , in fmiVariable : FMI::Fmi2ScalarVariable ){
+	//type of the port and its default value
+	switch{
+		case (fmiVariable.real <> null) {
+			myProperty.type := getUmlClassifier("Real");
+			myProperty.defaultValue := object UML::LiteralReal{value := fmiVariable.real.start->any(true)};	
+		}
+		case(fmiVariable.integer <> null) {
+			myProperty.type := getUmlClassifier("Integer");
+			myProperty.defaultValue := object UML::LiteralInteger{value := fmiVariable.integer.start->any(true)};
+		}
+		case(fmiVariable.boolean <> null) {
+			myProperty.type := getUmlClassifier("Boolean");
+			myProperty.defaultValue := object UML::LiteralBoolean{value := fmiVariable.boolean.start->any(true)};
+		}
+		case(fmiVariable.string <> null) {
+			myProperty.type := getUmlClassifier("String");
+			myProperty.defaultValue := object UML::LiteralString{value := fmiVariable.string.start->any(true)};
+		}
+		case(fmiVariable.enumeration <> null) {
+			/*type := self.resolveIn(FMI::Fmi2SimpleType :: mapEnumerations,UML::Enumeration)->any(true);
+			defaultValue := self.enumeration.resolveIn(FMI::ItemType :: item2EnumerationLiteral,UML::EnumerationLiteral)->any(true).specification;
+			var enumeration : UML::Enumeration := object UML::Enumeration{};*/
+			myProperty.type := getUmlClassifier("String");
+			myProperty.defaultValue := object UML::LiteralString{value := fmiVariable.enumeration.start.toString()->any(true)};
+		};			
+	};
+}
+
+//helper to set attribtes of "cs_fmu" stereotype
+helper setClassStereotypeValues(inout myClass : UML::Class, in fmiElement : FMI::FmiModelDescriptionType){
+		
+	if (fmiElement.fmiVersion -> size() =1){
+			myClass.setValue(cs_stereotype,"fmiVersion",fmiElement.fmiVersion ->any(true));
+	}endif;
+	if (fmiElement.modelName -> size() =1){
+		myClass.setValue(cs_stereotype,"modelName",fmiElement.modelName ->any(true));
+	}endif;
+	if (fmiElement.guid -> size() =1){
+		myClass.setValue(cs_stereotype,"guid",fmiElement.guid ->any(true));
+	}endif;
+	if (fmiElement.description -> size() =1){
+		myClass.setValue(cs_stereotype,"description",fmiElement.description ->any(true));
+	}endif;
+	if (fmiElement.author -> size() =1){
+		myClass.setValue(cs_stereotype,"author",fmiElement.author ->any(true));
+	}endif;
+	if (fmiElement.version -> size() =1){
+		myClass.setValue(cs_stereotype,"version",fmiElement.version ->any(true));
+	}endif;
+	if (fmiElement.copyright -> size() =1){
+		myClass.setValue(cs_stereotype,"copyright",fmiElement.copyright ->any(true));
+	}endif;
+	if (fmiElement.license -> size() =1){
+		myClass.setValue(cs_stereotype,"license",fmiElement.license ->any(true));
+	}endif;
+	if (fmiElement.generationTool -> size() =1){
+		myClass.setValue(cs_stereotype,"generationTool",fmiElement.generationTool ->any(true));
+	}endif;
+	if (fmiElement.generationDateAndTime -> size() =1){
+		myClass.setValue(cs_stereotype,"generationDateAndTime",fmiElement.generationDateAndTime ->any(true));
+	}endif;
+	if (fmiElement.variableNamingConvention -> size() =1){
+		myClass.setValue(cs_stereotype,"variableNamingConvention",fmiElement.variableNamingConvention ->any(true));
+	}endif;
+	if (fmiElement.numberOfEventIndicators -> size() =1){
+		myClass.setValue(cs_stereotype,"numberOfEventIndicators",fmiElement.numberOfEventIndicators ->any(true));
+	}endif;
+	
+	//cosimulation specific propoerties
+	if (fmiElement.coSimulation.sourceFiles -> size() = 1){
+		myClass.setValue(cs_stereotype,"sourceFiles",fmiElement.coSimulation.sourceFiles ->any(true));
+	}endif;
+	if (fmiElement.coSimulation.canBeInstantiatedOnlyOncePerProcess -> size() = 1){
+		myClass.setValue(cs_stereotype,"canBeInstantiatedOnlyOncePerProcess",fmiElement.coSimulation.canBeInstantiatedOnlyOncePerProcess -> any(true));
+	}endif;
+	if (fmiElement.coSimulation.canGetAndSetFMUstate -> size() = 1){
+		myClass.setValue(cs_stereotype,"canGetAndSetFMUstate",fmiElement.coSimulation.canGetAndSetFMUstate -> any(true));
+	}endif;
+	if (fmiElement.coSimulation.canHandleVariableCommunicationStepSize -> size() = 1){
+		myClass.setValue(cs_stereotype,"canHandleVariableCommunicationStepSize",fmiElement.coSimulation.canHandleVariableCommunicationStepSize -> any(true));
+	}endif;
+	if (fmiElement.coSimulation.canInterpolateInputs -> size() = 1){
+		myClass.setValue(cs_stereotype,"canInterpolateInputs",fmiElement.coSimulation.canInterpolateInputs -> any(true));
+	}endif;
+	if (fmiElement.coSimulation.canNotUseMemoryManagementFunctions -> size() = 1){
+		myClass.setValue(cs_stereotype,"canNotUseMemoryManagementFunctions",fmiElement.coSimulation.canNotUseMemoryManagementFunctions -> any(true));
+	}endif;
+	if (fmiElement.coSimulation.canRunAsynchronuously -> size() = 1){
+		myClass.setValue(cs_stereotype,"canRunAsynchronuously",fmiElement.coSimulation.canRunAsynchronuously -> any(true));
+	}endif;		
+	if (fmiElement.coSimulation.canSerializeFMUstate -> size() = 1){
+		myClass.setValue(cs_stereotype,"canSerializeFMUstate",fmiElement.coSimulation.canSerializeFMUstate -> any(true));
+	}endif;	
+	if (fmiElement.coSimulation.maxOutputDerivativeOrder -> size() = 1){
+		myClass.setValue(cs_stereotype,"maxOutputDerivativeOrder",fmiElement.coSimulation.maxOutputDerivativeOrder -> any(true));
+	}endif;			
+	if (fmiElement.coSimulation.modelIdentifier -> size() = 1){
+		myClass.setValue(cs_stereotype,"modelIdentifier",fmiElement.coSimulation.modelIdentifier -> any(true));
+	}endif;	
+	if (fmiElement.coSimulation.needsExecutionTool -> size() = 1){
+		myClass.setValue(cs_stereotype,"needsExecutionTool",fmiElement.coSimulation.needsExecutionTool -> any(true));
+	}endif;		
+	if (fmiElement.coSimulation.providesDirectionalDerivative -> size() = 1){
+		myClass.setValue(cs_stereotype,"providesDirectionalDerivative",fmiElement.coSimulation.providesDirectionalDerivative -> any(true));
+	}endif;		
+	if (fmiElement.defaultExperiment.startTime -> size() = 1){
+		myClass.setValue(cs_stereotype,"startTime",fmiElement.defaultExperiment.startTime -> any(true));
+	}endif;
+	if (fmiElement.defaultExperiment.stopTime -> size() = 1){
+		myClass.setValue(cs_stereotype,"stopTime",fmiElement.defaultExperiment.stopTime -> any(true));
+	}endif;
+	if (fmiElement.defaultExperiment.tolerance -> size() = 1){
+		myClass.setValue(cs_stereotype,"tolerance",fmiElement.defaultExperiment.tolerance -> any(true));
+	}endif;
+	//Stereotype cs_fmu = generatedFmu.getAppliedStereotype("FmiMLProfile::CS_FMU");
+	myClass.setValue(cs_stereotype, "dllPath", dllPath.toString());
+	myClass.setValue(cs_stereotype, "fmuLocation", fmuLocation.toString());
+
+}
+	
+
+helper setPropertyStereotypeValues (inout myProperty : UML::Property, in appliedStereotype : UML::Stereotype, in fmiVariable :FMI::Fmi2ScalarVariable){
+	if (fmiVariable.valueReference <> null){
+			myProperty.setValue(appliedStereotype,"valueReference",fmiVariable.valueReference);
+	}endif;
+	if (fmiVariable.initial <> null){
+		myProperty.setValue(appliedStereotype,"initial",fmiVariable.initial.findLiteral());
+	}endif;
+	if (fmiVariable.description <> null){
+		myProperty.setValue(appliedStereotype,"description",fmiVariable.description);
+	}endif;
+	if (fmiVariable.variability <> null){
+		myProperty.setValue(appliedStereotype,"variability",fmiVariable.variability.findLiteral());
+	}endif;
+	if (fmiVariable.causality <> null){
+		myProperty.setValue(appliedStereotype,"causality",fmiVariable.causality.toString());
+	}endif;
+	
+	switch{
+		case (fmiVariable.causality = CausalityType::input){
+			myProperty.setValue(appliedStereotype,"causality","in");
+		};
+		case (fmiVariable.causality = CausalityType::output){
+			myProperty.setValue(appliedStereotype,"causality","out");
+		};
+	};
+}
+
+//main function
+main() {
+   //map xml file to UML Package containing a class (the FMU) and list of dependencies    	
+	var targetPackage : UML::Package := fmu.rootObjects()![FMI::DocumentRoot].map map2UMLPackage();
+	
+
+}
+
+mapping inout Package::addPackageImport(targetPackage : Package) : PackageImport{
+	self.packageImport += result;
+	result.importedPackage := targetPackage;
+}
+
+//mappings
+mapping FMI::DocumentRoot :: map2UMLPackage() : UML::Package {
+	result.applyProfile(fmiProfile);
+	result.name := self.fmiModelDescription->first().coSimulation.modelIdentifier->any(true);
+	var classes := self.map map2UMLClass(result);
+	var dependencies := fmu.objectsOfType(FMI::ModelStructureType).map map2Dependencies(result);
+}
+
+mapping FMI::DocumentRoot :: map2UMLClass(inout mypackage : UML::Package) : UML::Class{
+	mypackage.packagedElement += result;
+	result.name := self.fmiModelDescription->first().coSimulation.modelIdentifier->any(true);
+	result.applyStereotype(cs_stereotype);
+	result.ownedAttribute := self.fmiModelDescription->first().modelVariables.scalarVariable.map map2UMLAttributes(result) 
+						-> union (self.fmiModelDescription->first().modelVariables.scalarVariable. map map2UMLPorts(result));
+	setClassStereotypeValues(result, self.fmiModelDescription->first());
+	generalization := fmu2ProxyGeneralization;
+}
+
+mapping FMI::Fmi2ScalarVariable :: map2UMLAttributes(inout myClass : UML::Class) : UML::Property
+when{
+	self -> exists(s|s.causality <> CausalityType::input and s.causality <> CausalityType::output)
+}
+{
+	myClass.ownedAttribute +=result;
+	result.name := self.name; 
+	var stereotypeToApply := findStereotype(self);
+	result.applyStereotype(stereotypeToApply);
+	setPropertyStereotypeValues(result,stereotypeToApply,self);	
+	setPropertyType(result,self);
+	globalPropertiesList += result;
+}
+
+mapping FMI::Fmi2ScalarVariable :: map2UMLPorts(inout myClass : UML::Class) : UML::Port
+when{
+	self -> exists(s|s.causality = CausalityType::input or s.causality = CausalityType::output)
+}
+{
+	myClass.ownedAttribute += result;
+	result.name := self.name; 
+	result.applyStereotype(port_stereotype);
+	setPropertyStereotypeValues(result,port_stereotype,self);	
+	setPropertyType(result,self);
+	globalPropertiesList += result;
+}
+
+mapping FMI::ModelStructureType :: map2Dependencies(inout myPackage : UML::Package) : Sequence(UML::Dependency){
+	init{
+		result := self.outputs.map map2Dependencies(myPackage,outputDependency_stereotype)->asSequence()
+				-> union (self.derivatives.map map2Dependencies(myPackage,derivativeDependency_stereotype)->asSequence())
+				-> union (self.initialUnknowns.map map2Dependencies(myPackage,initialUnknownDependency_stereotype)->asSequence());
+	}
+}
+
+mapping FMI::Fmi2VariableDependency :: map2Dependencies(inout myPackage : UML::Package, in sterestotypeToApply : UML::Stereotype) : Sequence(UML::Dependency){
+	init{
+		result := self.unknown.map map2Dependencies(myPackage,sterestotypeToApply);
+	}
+}
+
+mapping FMI::InitialUnknownsType :: map2Dependencies(inout myPackage : UML::Package, in sterestotypeToApply : UML::Stereotype) :  Sequence(UML::Dependency){
+	init{
+		result := self.unknown.map map2Dependencies(myPackage, sterestotypeToApply);
+	}
+}
+
+mapping FMI::UnknownType1 :: map2Dependencies(inout myPackage : UML::Package, in sterestotypeToApply : UML::Stereotype) : Sequence(UML::Dependency) {
+	init{
+		self.dependencies->forEach(dependency) {
+			result += self.map map2Dependency(myPackage, sterestotypeToApply, dependency.toString().toInteger());
+		};
+	}
+}
+
+mapping FMI::UnknownType1 :: map2Dependency(inout myPackage : UML::Package, in sterestotypeToApply : UML::Stereotype, in supplier_index : Integer) : UML::Dependency {
+	myPackage.packagedElement += result;
+	var client_index := self.index.toString().toInteger();
+	result.client := globalPropertiesList->at(client_index);
+	result.supplier += globalPropertiesList -> at(supplier_index);
+	result.applyStereotype(sterestotypeToApply);
+}
+
+mapping FMI::UnknownType :: map2Dependencies(inout myPackage : UML::Package, in sterestotypeToApply : UML::Stereotype) : Sequence(UML::Dependency) {
+	init{
+		self.dependencies->forEach(dependency) {
+			result += self.map map2Dependency(myPackage, sterestotypeToApply, dependency.toString().toInteger());
+		};
+	}
+}
+
+mapping FMI::UnknownType :: map2Dependency(inout myPackage : UML::Package, in sterestotypeToApply : UML::Stereotype, in supplier_index : Integer) : UML::Dependency {
+	myPackage.packagedElement += result;
+	var client_index := self.index.toString().toInteger();
+	result.client := globalPropertiesList->at(client_index);
+	result.supplier += globalPropertiesList -> at(supplier_index);
+	result.applyStereotype(sterestotypeToApply);
+}

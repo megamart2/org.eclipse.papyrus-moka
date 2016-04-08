@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated Fmi2ModelDescription -->
+      <package
+            uri="platform:/plugin/org.eclipse.papyrus.moka.fmi/schema/fmi2ModelDescription.xsd"
+            class="org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage"
+            genModel="model/Fmi2ModelDescription.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated Fmi2ModelDescription -->
+      <parser
+            type="fmi"
+            class="org.eclipse.papyrus.moka.fmi.modeldescription.util.FmiResourceFactoryImpl"/>
+   </extension>
+</plugin>

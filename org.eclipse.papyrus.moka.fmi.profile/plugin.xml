@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            name="FMI 2.0 Profile"
+            path="pathmap://FmiML_PROFILE/FmiML.profile.uml">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://FmiML_PROFILE/"
+            target="platform:/plugin/org.eclipse.papyrus.moka.fmi.profile/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.uml2.uml.dynamic_package">
+      <profile
+            location="pathmap://FmiML_PROFILE/FmiML.profile.uml#__Ki3oavFEeSXqKqlHzx1gA"
+            uri="http:///schemas/FmiMLProfile/_1LNqQBwfEeWeGufsnalS6A/44">
+      </profile>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.dynamic_package">
+      <resource
+            location="pathmap://FmiML_PROFILE/FmiML.profile.uml#_1LQtkBwfEeWeGufsnalS6A"
+            uri="http:///schemas/FmiMLProfile/_1LNqQBwfEeWeGufsnalS6A/44">
+      </resource>
+   </extension>
+
+</plugin>

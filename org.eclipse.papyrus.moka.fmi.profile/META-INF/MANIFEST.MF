@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.papyrus.uml.extensionpoints,
+ org.eclipse.emf.ecore,
+ org.eclipse.uml2.uml;bundle-version="5.1.0"
+Bundle-ActivationPolicy: lazy
+Bundle-Version: 2.0.0.qualifier
+Bundle-Name: UML Profile for FMI 2.0 cosimulation standard
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.eclipse.papyrus.moka.fmi.profile;singleton:=true
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-Vendor: Eclipse Modeling Project

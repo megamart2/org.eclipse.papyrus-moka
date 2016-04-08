@@ -1,0 +1,39 @@
+package org.eclipse.papyrus.moka.fmi.master.masterlibrary;
+
+
+
+public class Edge {
+	private Node source, target;
+	private boolean visited = false;
+	
+	public Edge(Node sourceNode, Node targetNode) {
+		// TODO Auto-generated constructor stub
+		this.source = sourceNode;
+		this.target = targetNode;
+	}
+
+	public Node getSource() {
+		return source;
+	}
+
+	public void setSource(Node source) {
+		this.source = source;
+	}
+
+	public Node getTarget() {
+		return target;
+	}
+
+	public void setTarget(Node target) {
+		this.target = target;
+	}
+
+	public boolean isVisited() {
+		return visited;
+	}
+
+	public void setVisited(boolean visited) {
+		this.visited = visited;
+	}
+	
+}
