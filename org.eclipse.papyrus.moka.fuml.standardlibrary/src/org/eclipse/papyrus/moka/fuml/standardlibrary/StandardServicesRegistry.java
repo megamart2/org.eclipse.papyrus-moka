@@ -17,6 +17,7 @@ package org.eclipse.papyrus.moka.fuml.standardlibrary;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
 import org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry;
 import org.eclipse.papyrus.moka.fuml.standardlibrary.library.io.StandardInputChannelImpl;
@@ -42,7 +43,7 @@ public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 	 * @see org.eclipse.papyrus.moka.fuml.registry.AbstractSystemServicesRegistry#instantiateServices()
 	 */
 	@Override
-	public List<Object_> instantiateServices() {
+	public List<IObject_> instantiateServices() {
 		List<String> serviceQualifiedNames = new ArrayList<String>();
 		serviceQualifiedNames.add(STANDARD_INPUT_CHANNEL_SERVICE_NAME);
 		serviceQualifiedNames.add(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME);
