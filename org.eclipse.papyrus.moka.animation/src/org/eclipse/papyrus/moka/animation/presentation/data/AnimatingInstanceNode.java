@@ -16,16 +16,16 @@ package org.eclipse.papyrus.moka.animation.presentation.data;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public class AnimatingInstanceNode extends AnimationTreeNode {
-	
+
 	public IObject_ instance;
 
 	public boolean allowed;
 
-	public AnimatingInstanceNode(){
+	public AnimatingInstanceNode() {
 		super();
 		this.allowed = true;
 	}
-	
+
 	public IObject_ getInstance() {
 		return instance;
 	}
@@ -33,7 +33,7 @@ public class AnimatingInstanceNode extends AnimationTreeNode {
 	public void setInstance(IObject_ instance) {
 		this.instance = instance;
 	}
-	
+
 	@Override
 	public boolean addChild(IAnimationTreeNode node) {
 		// This node is not intended to have children
@@ -45,7 +45,7 @@ public class AnimatingInstanceNode extends AnimationTreeNode {
 		// This node is not intended to have children
 		return false;
 	}
-	
+
 	public boolean isAllowed() {
 		return allowed;
 	}

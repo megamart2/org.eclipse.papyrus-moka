@@ -19,11 +19,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 public interface IMokaExecutionListener {
 
 	public void nodeVisited(ISemanticVisitor nodeVisitor);
-	
+
 	public void nodeLeft(ISemanticVisitor nodeVisitor);
-	
+
 	public void valueCreated(IValue value);
-	
-	public void valueDestroyed(IValue value); 
-	
+
+	public void valueDestroyed(IValue value);
+
 }

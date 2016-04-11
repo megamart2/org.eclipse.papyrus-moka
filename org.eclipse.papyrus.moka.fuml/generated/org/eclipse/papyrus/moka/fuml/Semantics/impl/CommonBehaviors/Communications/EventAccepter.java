@@ -17,5 +17,5 @@ package org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communicati
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
 
 public abstract class EventAccepter implements IEventAccepter {
-	
+
 }

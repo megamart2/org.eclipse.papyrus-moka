@@ -21,22 +21,22 @@ import org.eclipse.papyrus.moka.animation.presentation.data.AnimatingInstanceNod
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 
-public class AnimationEditingSupport extends EditingSupport{
+public class AnimationEditingSupport extends EditingSupport {
 
 	// The viewer for which an editing support is provided
 	private TreeViewer viewer;
-	
+
 	// The cell editor used to realize the edition
 	private ComboBoxCellEditor cellEditor;
-	
+
 	public static final String YES = "Yes";
-	
+
 	public static final String NO = "No";
-	
+
 	public AnimationEditingSupport(TreeViewer treeViewer) {
 		super(treeViewer);
 		this.viewer = treeViewer;
-		this.cellEditor = new ComboBoxCellEditor((Composite)treeViewer.getControl(), new String[]{YES, NO});
+		this.cellEditor = new ComboBoxCellEditor((Composite) treeViewer.getControl(), new String[] { YES, NO });
 		this.cellEditor.setStyle(SWT.CENTER);
 	}
 
@@ -45,7 +45,7 @@ public class AnimationEditingSupport extends EditingSupport{
 		// A cell editor is only provided in the case the data behind
 		// the tree item is actually an animator (i.e., an extensional value)
 		// provided by the Moka runtime
-		if(element instanceof AnimatingInstanceNode){
+		if (element instanceof AnimatingInstanceNode) {
 			return this.cellEditor;
 		}
 		return null;
@@ -56,7 +56,7 @@ public class AnimationEditingSupport extends EditingSupport{
 		// Editing support is only provided in the case the data behind
 		// the tree item is actually an animator (i.e., an extensional value)
 		// provided by the Moka runtime
-		if(element instanceof AnimatingInstanceNode){
+		if (element instanceof AnimatingInstanceNode) {
 			return true;
 		}
 		return false;
@@ -65,11 +65,11 @@ public class AnimationEditingSupport extends EditingSupport{
 	@Override
 	protected Object getValue(Object element) {
 		// The value that is displayed by the control is the view
-		// of the rights of the animator 
-		if(element instanceof AnimatingInstanceNode){
-			if(((AnimatingInstanceNode)element).isAllowed()){
+		// of the rights of the animator
+		if (element instanceof AnimatingInstanceNode) {
+			if (((AnimatingInstanceNode) element).isAllowed()) {
 				return 0;
-			}else{
+			} else {
 				return 1;
 			}
 		}
@@ -80,11 +80,11 @@ public class AnimationEditingSupport extends EditingSupport{
 	protected void setValue(Object element, Object value) {
 		// When the value change then these changes are both propagated
 		// to the viewer and the data model
-		if(element instanceof AnimatingInstanceNode){
-			if(((Integer)value)==0){
-				((AnimatingInstanceNode)element).setAllowed(true);
-			}else{
-				((AnimatingInstanceNode)element).setAllowed(false);
+		if (element instanceof AnimatingInstanceNode) {
+			if (((Integer) value) == 0) {
+				((AnimatingInstanceNode) element).setAllowed(true);
+			} else {
+				((AnimatingInstanceNode) element).setAllowed(false);
 			}
 			viewer.update(element, null);
 		}

@@ -22,15 +22,15 @@ import org.eclipse.uml2.uml.ValueSpecification;
 public interface IValue extends ISemanticVisitor {
 
 	public ValueSpecification specify();
-	
+
 	public Boolean equals(IValue otherValue);
-	
+
 	public IValue copy();
-	
+
 	public IValue new_();
-	
+
 	public List<Classifier> getTypes();
-	
+
 	public Boolean hasType(Classifier type);
-	
+
 }

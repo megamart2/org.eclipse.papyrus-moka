@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectNodeActivation;
 
 public interface IPinActivation extends IObjectNodeActivation {
-	
+
 	public IActionActivation getActionActivation();
-	
+
 	public void setActionActivation(IActionActivation actionActivation);
 
 }

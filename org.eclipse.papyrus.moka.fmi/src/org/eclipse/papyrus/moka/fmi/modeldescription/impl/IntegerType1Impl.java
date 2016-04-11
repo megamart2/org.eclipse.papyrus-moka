@@ -29,9 +29,9 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +41,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * This is true if the Max attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -70,6 +73,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -80,6 +84,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -90,6 +95,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * This is true if the Min attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +105,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -109,6 +116,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -118,6 +126,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected IntegerType1Impl() {
@@ -127,6 +136,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getMax() {
@@ -146,6 +157,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMax(int newMax) {
@@ -160,6 +172,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMax() {
@@ -174,6 +187,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMax() {
@@ -183,6 +197,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getMin() {
@@ -192,6 +207,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMin(int newMin) {
@@ -206,6 +222,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMin() {
@@ -220,6 +237,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMin() {
@@ -229,6 +247,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getQuantity() {
@@ -238,6 +257,7 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setQuantity(String newQuantity) {
@@ -250,17 +270,18 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.INTEGER_TYPE1__MAX:
-				return getMax();
-			case FmiPackage.INTEGER_TYPE1__MIN:
-				return getMin();
-			case FmiPackage.INTEGER_TYPE1__QUANTITY:
-				return getQuantity();
+		case FmiPackage.INTEGER_TYPE1__MAX:
+			return getMax();
+		case FmiPackage.INTEGER_TYPE1__MIN:
+			return getMin();
+		case FmiPackage.INTEGER_TYPE1__QUANTITY:
+			return getQuantity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,20 +289,21 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.INTEGER_TYPE1__MAX:
-				setMax((Integer)newValue);
-				return;
-			case FmiPackage.INTEGER_TYPE1__MIN:
-				setMin((Integer)newValue);
-				return;
-			case FmiPackage.INTEGER_TYPE1__QUANTITY:
-				setQuantity((String)newValue);
-				return;
+		case FmiPackage.INTEGER_TYPE1__MAX:
+			setMax((Integer) newValue);
+			return;
+		case FmiPackage.INTEGER_TYPE1__MIN:
+			setMin((Integer) newValue);
+			return;
+		case FmiPackage.INTEGER_TYPE1__QUANTITY:
+			setQuantity((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -289,20 +311,21 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.INTEGER_TYPE1__MAX:
-				unsetMax();
-				return;
-			case FmiPackage.INTEGER_TYPE1__MIN:
-				unsetMin();
-				return;
-			case FmiPackage.INTEGER_TYPE1__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
+		case FmiPackage.INTEGER_TYPE1__MAX:
+			unsetMax();
+			return;
+		case FmiPackage.INTEGER_TYPE1__MIN:
+			unsetMin();
+			return;
+		case FmiPackage.INTEGER_TYPE1__QUANTITY:
+			setQuantity(QUANTITY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,17 +333,18 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.INTEGER_TYPE1__MAX:
-				return isSetMax();
-			case FmiPackage.INTEGER_TYPE1__MIN:
-				return isSetMin();
-			case FmiPackage.INTEGER_TYPE1__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+		case FmiPackage.INTEGER_TYPE1__MAX:
+			return isSetMax();
+		case FmiPackage.INTEGER_TYPE1__MIN:
+			return isSetMin();
+		case FmiPackage.INTEGER_TYPE1__QUANTITY:
+			return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,21 +352,29 @@ public class IntegerType1Impl extends MinimalEObjectImpl.Container implements In
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (max: ");
-		if (maxESet) result.append(max); else result.append("<unset>");
+		if (maxESet)
+			result.append(max);
+		else
+			result.append("<unset>");
 		result.append(", min: ");
-		if (minESet) result.append(min); else result.append("<unset>");
+		if (minESet)
+			result.append(min);
+		else
+			result.append("<unset>");
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(')');
 		return result.toString();
 	}
 
-} //IntegerType1Impl
+} // IntegerType1Impl

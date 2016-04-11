@@ -25,7 +25,7 @@ Export-Package: org.eclipse.papyrus.moka.async.fuml,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 2.0.0.qualifier
-Bundle-Name: Moka Async Runner (Incubation)
+Bundle-Name: Moka fUML Multi-threaded Execution Engine
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.moka.async.fuml.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.moka.async.fuml;singleton:=true

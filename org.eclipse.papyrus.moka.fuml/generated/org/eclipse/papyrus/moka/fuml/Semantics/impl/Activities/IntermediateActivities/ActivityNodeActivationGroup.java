@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.Pin;
 
-public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup{
+public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup {
 
 	/*
 	 * The set of activity edge instances for this group.
@@ -174,9 +174,9 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 	public IActivityNodeActivation createNodeActivation(ActivityNode node) {
 		// Create an activity node activation for a given activity node in this
 		// activity node activation group.
-		
-		// fUML12-10 certain boolean flags are not properly initialized in come cases 
-		
+
+		// fUML12-10 certain boolean flags are not properly initialized in come cases
+
 		IActivityNodeActivation activation = (IActivityNodeActivation) (this.getActivityExecution().getLocus().getFactory().instantiateVisitor(node));
 		activation.initialize(node, this);
 		this.nodeActivations.add(activation);
@@ -206,13 +206,13 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 	public void createEdgeInstances(List<ActivityEdge> edges) {
 		// Create instance edges for the given activity edges, as well as for
 		// edge instances within any nodes activated in this group.
-		
-		// fUML12-10 certain boolean flags are not properly initialized in come cases 
-		
+
+		// fUML12-10 certain boolean flags are not properly initialized in come cases
+
 		for (int i = 0; i < edges.size(); i++) {
 			ActivityEdge edge = edges.get(i);
 			Debug.println("[createEdgeInstances] Creating an edge instance from " + edge.getSource().getName() + " to " + edge.getTarget().getName() + ".");
-			//Note creation of visitors for edge instance is made by the execution factory
+			// Note creation of visitors for edge instance is made by the execution factory
 			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) (this.getActivityExecution().getLocus().getFactory().instantiateVisitor(edge));
 			edgeInstance.setEdge(edge);
 			edgeInstance.setGroup(this);
@@ -313,16 +313,16 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 			}
 		}
 	}
-	
-	public void setContainingActivation(IStructuredActivityNodeActivation activation){
+
+	public void setContainingActivation(IStructuredActivityNodeActivation activation) {
 		this.containingNodeActivation = activation;
 	}
-	
-	public IStructuredActivityNodeActivation getContainingActivation(){
+
+	public IStructuredActivityNodeActivation getContainingActivation() {
 		return this.containingNodeActivation;
 	}
-	
-	public List<IActivityNodeActivation> getActivityNodeActivations(){
+
+	public List<IActivityNodeActivation> getActivityNodeActivations() {
 		return this.nodeActivations;
 	}
 

@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.CreateLinkAction;
 import org.eclipse.uml2.uml.LinkEndCreationData;
 import org.eclipse.uml2.uml.LinkEndData;
 
-public class CreateLinkActionActivation extends WriteLinkActionActivation{
+public class CreateLinkActionActivation extends WriteLinkActionActivation {
 
 	@Override
 	public void doAction() {

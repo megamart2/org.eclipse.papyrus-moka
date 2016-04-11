@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getCategoryType()
@@ -38,6 +38,7 @@ public interface CategoryType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Description of the log category
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getCategoryType_Description()
@@ -51,7 +52,9 @@ public interface CategoryType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -62,8 +65,10 @@ public interface CategoryType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Name of Category element. "name" must be unique with respect to all other elements of the LogCategories list. Standardized names: "logEvents", "logSingularLinearSystems", "logNonlinearSystems", "logDynamicStateSelection", "logStatusWarning", "logStatusDiscard", "logStatusError", "logStatusFatal", "logStatusPending", "logAll"
+	 * Name of Category element. "name" must be unique with respect to all other elements of the LogCategories list. Standardized names: "logEvents", "logSingularLinearSystems", "logNonlinearSystems", "logDynamicStateSelection", "logStatusWarning",
+	 * "logStatusDiscard", "logStatusError", "logStatusFatal", "logStatusPending", "logAll"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getCategoryType_Name()
@@ -77,7 +82,9 @@ public interface CategoryType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

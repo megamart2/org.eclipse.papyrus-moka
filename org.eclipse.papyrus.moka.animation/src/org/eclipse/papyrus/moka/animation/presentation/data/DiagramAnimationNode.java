@@ -19,13 +19,13 @@ import org.eclipse.gmf.runtime.notation.Diagram;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 
 public class DiagramAnimationNode extends AnimationTreeNode {
-	
+
 	protected Diagram animatedDiagram;
 
-	public DiagramAnimationNode(){
+	public DiagramAnimationNode() {
 		super();
 	}
-	
+
 	public Diagram getAnimatedDiagram() {
 		return animatedDiagram;
 	}
@@ -33,25 +33,25 @@ public class DiagramAnimationNode extends AnimationTreeNode {
 	public void setAnimatedDiagram(Diagram animatedDiagram) {
 		this.animatedDiagram = animatedDiagram;
 	}
-	
-	public boolean hasAnimator(IObject_ instance){
+
+	public boolean hasAnimator(IObject_ instance) {
 		boolean found = false;
 		Iterator<IAnimationTreeNode> childrenIterator = this.getChildren().iterator();
-		while(!found && childrenIterator.hasNext()){
+		while (!found && childrenIterator.hasNext()) {
 			AnimatingInstanceNode node = (AnimatingInstanceNode) childrenIterator.next();
-			if(node.getInstance()==instance){
+			if (node.getInstance() == instance) {
 				found = true;
 			}
 		}
 		return found;
 	}
-	
-	public boolean isAnimatorAllowed(IObject_ instance){
+
+	public boolean isAnimatorAllowed(IObject_ instance) {
 		boolean allowed = false;
 		Iterator<IAnimationTreeNode> childrenIterator = this.getChildren().iterator();
-		while(!allowed && childrenIterator.hasNext()){
+		while (!allowed && childrenIterator.hasNext()) {
 			AnimatingInstanceNode node = (AnimatingInstanceNode) childrenIterator.next();
-			if(node.getInstance()==instance && node.isAllowed()){
+			if (node.getInstance() == instance && node.isAllowed()) {
 				allowed = true;
 			}
 		}

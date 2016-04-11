@@ -20,6 +20,6 @@ import org.eclipse.uml2.uml.StructuralFeature;
 public interface ICS_Link extends ILink {
 
 	public Boolean hasValueForAFeature(IValue value);
-	
+
 	public StructuralFeature getFeature(IValue value);
 }

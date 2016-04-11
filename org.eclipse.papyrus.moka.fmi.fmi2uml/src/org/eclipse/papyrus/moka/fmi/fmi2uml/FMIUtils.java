@@ -29,7 +29,7 @@ import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.FileLocator;
 import org.eclipse.emf.common.util.URI;
- 
+
 public class FMIUtils {
 
 	public final static String PARAMETER_STEREO_NAME = "FmiMLProfile::Parameter";
@@ -38,8 +38,8 @@ public class FMIUtils {
 	public static final String PORT_STEREO = "FmiMLProfile::Port";
 	public static final String PORT_CAUSALITY_FEATURE_NAME = "causality";
 	public static final String FMU_STEREOTYPE_NAME = "FmiMLProfile::CS_FMU";
-	
-	public static String getFilePath(URI uri){
+
+	public static String getFilePath(URI uri) {
 		URL fileURL;
 		try {
 			fileURL = FileLocator.toFileURL(
@@ -55,51 +55,51 @@ public class FMIUtils {
 		}
 		return null;
 	}
-	
-     public static void extractZipContents(String zipPath,String destDir ){
-    	 try {
-    		 ZipFile zipFile = new ZipFile(zipPath);
-    		 Enumeration<?> enu = zipFile.entries();
-    		 while (enu.hasMoreElements()) {
-    			 ZipEntry zipEntry = (ZipEntry) enu.nextElement();
-    			 String name = destDir + zipEntry.getName();
-    			 
-    			 File file = new File(name);
-    			 if (name.endsWith("/")) {
-    				 file.mkdirs();
-    				 continue;
-    			 }
-    			 
-    			 File parent = file.getParentFile();
-    			 if (parent != null) {
-    				 parent.mkdirs();
-    			 }
-    			 
-    			 InputStream is = zipFile.getInputStream(zipEntry);
-    			 FileOutputStream fos = new FileOutputStream(file);
-    			 byte[] bytes = new byte[2048];
-    			 int length;
-    			 while ((length = is.read(bytes)) >= 0) {
-    				 fos.write(bytes, 0, length);
-    			 }
-    			 is.close();
-    			 fos.close();
-    		 }
-    		 zipFile.close();
-    		 System.out.printf("Unzip terminated with success");
-    	 } catch (IOException e) {
-    		 e.printStackTrace();
-    	 }
-     }
-     
-     public static void refreshWS() {
-    	 for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()){
-    		 try {
-    			 if(project!=null)
-    				 project.refreshLocal(IResource.DEPTH_INFINITE, null);
-    			 }catch (CoreException e) {	
-    				 e.printStackTrace();
-    			 }
-    		 }	
-    	 }
-     }
+
+	public static void extractZipContents(String zipPath, String destDir) {
+		try {
+			ZipFile zipFile = new ZipFile(zipPath);
+			Enumeration<?> enu = zipFile.entries();
+			while (enu.hasMoreElements()) {
+				ZipEntry zipEntry = (ZipEntry) enu.nextElement();
+				String name = destDir + zipEntry.getName();
+
+				File file = new File(name);
+				if (name.endsWith("/")) {
+					file.mkdirs();
+					continue;
+				}
+
+				File parent = file.getParentFile();
+				if (parent != null) {
+					parent.mkdirs();
+				}
+
+				InputStream is = zipFile.getInputStream(zipEntry);
+				FileOutputStream fos = new FileOutputStream(file);
+				byte[] bytes = new byte[2048];
+				int length;
+				while ((length = is.read(bytes)) >= 0) {
+					fos.write(bytes, 0, length);
+				}
+				is.close();
+				fos.close();
+			}
+			zipFile.close();
+			System.out.printf("Unzip terminated with success");
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public static void refreshWS() {
+		for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()) {
+			try {
+				if (project != null)
+					project.refreshLocal(IResource.DEPTH_INFINITE, null);
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+}

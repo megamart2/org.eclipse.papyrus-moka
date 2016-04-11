@@ -20,11 +20,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IE
  * An invocation event occurrence represents a signal occurrence of the event of the asynchronous
  * invocation of a specific behavior execution.
  */
-public class InvocationEventOccurrence extends EventOccurrence{
-	
+public class InvocationEventOccurrence extends EventOccurrence {
+
 	/*
 	 * The execution being asynchronously invoked.
 	 */
 	public IExecution execution;
-	
+
 }

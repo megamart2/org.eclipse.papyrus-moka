@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EFactory;
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage
  * @generated
  */
@@ -26,6 +27,7 @@ public interface FmiFactory extends EFactory {
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	FmiFactory eINSTANCE = org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiFactoryImpl.init();
@@ -34,6 +36,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Base Unit Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Base Unit Type</em>'.
 	 * @generated
 	 */
@@ -43,6 +46,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Boolean Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Boolean Type</em>'.
 	 * @generated
 	 */
@@ -52,6 +56,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Category Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Category Type</em>'.
 	 * @generated
 	 */
@@ -61,6 +66,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Co Simulation Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Co Simulation Type</em>'.
 	 * @generated
 	 */
@@ -70,6 +76,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Default Experiment Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Default Experiment Type</em>'.
 	 * @generated
 	 */
@@ -79,6 +86,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Display Unit Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Display Unit Type</em>'.
 	 * @generated
 	 */
@@ -88,6 +96,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Document Root</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Document Root</em>'.
 	 * @generated
 	 */
@@ -97,6 +106,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Enumeration Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Enumeration Type</em>'.
 	 * @generated
 	 */
@@ -106,6 +116,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Enumeration Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Enumeration Type1</em>'.
 	 * @generated
 	 */
@@ -115,6 +126,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>File Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>File Type</em>'.
 	 * @generated
 	 */
@@ -124,6 +136,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>File Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>File Type1</em>'.
 	 * @generated
 	 */
@@ -133,6 +146,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Fmi2 Annotation</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Fmi2 Annotation</em>'.
 	 * @generated
 	 */
@@ -142,6 +156,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Fmi2 Scalar Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Fmi2 Scalar Variable</em>'.
 	 * @generated
 	 */
@@ -151,6 +166,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Fmi2 Simple Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Fmi2 Simple Type</em>'.
 	 * @generated
 	 */
@@ -160,6 +176,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Fmi2 Unit</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Fmi2 Unit</em>'.
 	 * @generated
 	 */
@@ -169,6 +186,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Fmi2 Variable Dependency</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Fmi2 Variable Dependency</em>'.
 	 * @generated
 	 */
@@ -178,6 +196,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Model Description Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Model Description Type</em>'.
 	 * @generated
 	 */
@@ -187,6 +206,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Initial Unknowns Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Initial Unknowns Type</em>'.
 	 * @generated
 	 */
@@ -196,6 +216,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Integer Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Integer Type</em>'.
 	 * @generated
 	 */
@@ -205,6 +226,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Integer Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Integer Type1</em>'.
 	 * @generated
 	 */
@@ -214,6 +236,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Item Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Item Type</em>'.
 	 * @generated
 	 */
@@ -223,6 +246,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Log Categories Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Log Categories Type</em>'.
 	 * @generated
 	 */
@@ -232,6 +256,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Model Exchange Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Model Exchange Type</em>'.
 	 * @generated
 	 */
@@ -241,6 +266,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Model Structure Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Model Structure Type</em>'.
 	 * @generated
 	 */
@@ -250,6 +276,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Model Variables Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Model Variables Type</em>'.
 	 * @generated
 	 */
@@ -259,6 +286,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Real Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Real Type</em>'.
 	 * @generated
 	 */
@@ -268,6 +296,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Real Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Real Type1</em>'.
 	 * @generated
 	 */
@@ -277,6 +306,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Source Files Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Source Files Type</em>'.
 	 * @generated
 	 */
@@ -286,6 +316,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Source Files Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Source Files Type1</em>'.
 	 * @generated
 	 */
@@ -295,6 +326,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>String Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>String Type</em>'.
 	 * @generated
 	 */
@@ -304,6 +336,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Tool Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Tool Type</em>'.
 	 * @generated
 	 */
@@ -313,6 +346,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Type Definitions Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Type Definitions Type</em>'.
 	 * @generated
 	 */
@@ -322,6 +356,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Unit Definitions Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Unit Definitions Type</em>'.
 	 * @generated
 	 */
@@ -331,6 +366,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Unknown Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Unknown Type</em>'.
 	 * @generated
 	 */
@@ -340,6 +376,7 @@ public interface FmiFactory extends EFactory {
 	 * Returns a new object of class '<em>Unknown Type1</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return a new object of class '<em>Unknown Type1</em>'.
 	 * @generated
 	 */
@@ -349,9 +386,10 @@ public interface FmiFactory extends EFactory {
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
 	FmiPackage getFmiPackage();
 
-} //FmiFactory
+} // FmiFactory

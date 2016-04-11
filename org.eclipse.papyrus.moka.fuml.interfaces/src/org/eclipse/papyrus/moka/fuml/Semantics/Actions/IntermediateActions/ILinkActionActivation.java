@@ -21,10 +21,10 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.LinkEndData;
 
 public interface ILinkActionActivation extends IActionActivation {
-	
+
 	public Boolean linkMatchesEndData(ILink link, List<LinkEndData> endDataList);
-	
+
 	public Boolean endMatchesEndData(ILink link, LinkEndData endData);
-	
+
 	public Association getAssociation();
 }

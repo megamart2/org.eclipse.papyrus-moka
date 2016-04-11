@@ -135,8 +135,8 @@ public class CS_DefaultConstructStrategy extends CS_ConstructStrategy {
 			} else if (value instanceof ICS_Object) {
 				// insert a reference
 				ICS_Reference reference = new CS_Reference();
-				reference.setCompositeReferent((ICS_Object)value);
-				reference.setReferent((ICS_Object)value);
+				reference.setCompositeReferent((ICS_Object) value);
+				reference.setReferent((ICS_Object) value);
 				values.add(reference);
 			} else {
 				values.add(value);

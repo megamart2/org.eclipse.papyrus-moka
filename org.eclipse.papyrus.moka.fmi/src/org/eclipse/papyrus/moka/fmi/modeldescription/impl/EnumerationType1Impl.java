@@ -40,9 +40,9 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.ItemType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl#getItem <em>Item</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl#getItem <em>Item</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +52,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
@@ -62,6 +63,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -72,6 +74,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -81,6 +84,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EnumerationType1Impl() {
@@ -90,6 +94,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -100,6 +105,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
@@ -112,6 +118,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ItemType> getItem() {
@@ -121,6 +128,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getQuantity() {
@@ -130,6 +138,7 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setQuantity(String newQuantity) {
@@ -142,15 +151,16 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE1__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-			case FmiPackage.ENUMERATION_TYPE1__ITEM:
-				return ((InternalEList<?>)getItem()).basicRemove(otherEnd, msgs);
+		case FmiPackage.ENUMERATION_TYPE1__GROUP:
+			return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
+		case FmiPackage.ENUMERATION_TYPE1__ITEM:
+			return ((InternalEList<?>) getItem()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -158,18 +168,20 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE1__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
-			case FmiPackage.ENUMERATION_TYPE1__ITEM:
-				return getItem();
-			case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
-				return getQuantity();
+		case FmiPackage.ENUMERATION_TYPE1__GROUP:
+			if (coreType)
+				return getGroup();
+			return ((FeatureMap.Internal) getGroup()).getWrapper();
+		case FmiPackage.ENUMERATION_TYPE1__ITEM:
+			return getItem();
+		case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
+			return getQuantity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -177,22 +189,23 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE1__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
-				return;
-			case FmiPackage.ENUMERATION_TYPE1__ITEM:
-				getItem().clear();
-				getItem().addAll((Collection<? extends ItemType>)newValue);
-				return;
-			case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
-				setQuantity((String)newValue);
-				return;
+		case FmiPackage.ENUMERATION_TYPE1__GROUP:
+			((FeatureMap.Internal) getGroup()).set(newValue);
+			return;
+		case FmiPackage.ENUMERATION_TYPE1__ITEM:
+			getItem().clear();
+			getItem().addAll((Collection<? extends ItemType>) newValue);
+			return;
+		case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
+			setQuantity((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -200,20 +213,21 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE1__GROUP:
-				getGroup().clear();
-				return;
-			case FmiPackage.ENUMERATION_TYPE1__ITEM:
-				getItem().clear();
-				return;
-			case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
+		case FmiPackage.ENUMERATION_TYPE1__GROUP:
+			getGroup().clear();
+			return;
+		case FmiPackage.ENUMERATION_TYPE1__ITEM:
+			getItem().clear();
+			return;
+		case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
+			setQuantity(QUANTITY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -221,17 +235,18 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE1__GROUP:
-				return group != null && !group.isEmpty();
-			case FmiPackage.ENUMERATION_TYPE1__ITEM:
-				return !getItem().isEmpty();
-			case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+		case FmiPackage.ENUMERATION_TYPE1__GROUP:
+			return group != null && !group.isEmpty();
+		case FmiPackage.ENUMERATION_TYPE1__ITEM:
+			return !getItem().isEmpty();
+		case FmiPackage.ENUMERATION_TYPE1__QUANTITY:
+			return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -239,11 +254,13 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -254,4 +271,4 @@ public class EnumerationType1Impl extends MinimalEObjectImpl.Container implement
 		return result.toString();
 	}
 
-} //EnumerationType1Impl
+} // EnumerationType1Impl

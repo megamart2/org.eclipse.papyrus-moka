@@ -18,7 +18,7 @@ import org.eclipse.jface.viewers.IContentProvider;
 public interface IContentProviderListener {
 
 	public boolean addListener(IContentProvider contentProvider);
-	
+
 	public boolean removeListener(IContentProvider contentProvider);
-	
+
 }

@@ -26,13 +26,13 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getReal <em>Real</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getInteger <em>Integer</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getString <em>String</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getEnumeration <em>Enumeration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getReal <em>Real</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getInteger <em>Integer</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getBoolean <em>Boolean</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getString <em>String</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getEnumeration <em>Enumeration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType()
@@ -48,6 +48,7 @@ public interface Fmi2SimpleType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Real</em>' containment reference.
 	 * @see #setReal(RealType1)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_Real()
@@ -61,7 +62,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getReal <em>Real</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Real</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Real</em>' containment reference.
 	 * @see #getReal()
 	 * @generated
 	 */
@@ -75,6 +78,7 @@ public interface Fmi2SimpleType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Integer</em>' containment reference.
 	 * @see #setInteger(IntegerType1)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_Integer()
@@ -88,7 +92,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getInteger <em>Integer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Integer</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Integer</em>' containment reference.
 	 * @see #getInteger()
 	 * @generated
 	 */
@@ -102,6 +108,7 @@ public interface Fmi2SimpleType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Boolean</em>' containment reference.
 	 * @see #setBoolean(EObject)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_Boolean()
@@ -115,7 +122,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getBoolean <em>Boolean</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Boolean</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Boolean</em>' containment reference.
 	 * @see #getBoolean()
 	 * @generated
 	 */
@@ -129,6 +138,7 @@ public interface Fmi2SimpleType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>String</em>' containment reference.
 	 * @see #setString(EObject)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_String()
@@ -142,7 +152,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getString <em>String</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>String</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>String</em>' containment reference.
 	 * @see #getString()
 	 * @generated
 	 */
@@ -156,6 +168,7 @@ public interface Fmi2SimpleType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Enumeration</em>' containment reference.
 	 * @see #setEnumeration(EnumerationType1)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_Enumeration()
@@ -169,7 +182,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getEnumeration <em>Enumeration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enumeration</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Enumeration</em>' containment reference.
 	 * @see #getEnumeration()
 	 * @generated
 	 */
@@ -182,6 +197,7 @@ public interface Fmi2SimpleType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Description of the SimpleType
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_Description()
@@ -195,7 +211,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -206,8 +224,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Name of SimpleType element. "name" must be unique with respect to all other elements of the TypeDefinitions list. Furthermore,  "name" of a SimpleType must be different to all "name"s of ScalarVariable.
+	 * Name of SimpleType element. "name" must be unique with respect to all other elements of the TypeDefinitions list. Furthermore, "name" of a SimpleType must be different to all "name"s of ScalarVariable.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2SimpleType_Name()
@@ -221,7 +240,9 @@ public interface Fmi2SimpleType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

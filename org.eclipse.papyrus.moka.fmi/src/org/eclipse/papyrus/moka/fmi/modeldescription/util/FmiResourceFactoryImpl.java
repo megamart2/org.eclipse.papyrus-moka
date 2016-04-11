@@ -32,6 +32,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * <!-- begin-user-doc -->
  * The <b>Resource Factory</b> associated with the package.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.util.FmiResourceImpl
  * @generated
  */
@@ -39,6 +40,7 @@ public class FmiResourceFactoryImpl extends ResourceFactoryImpl {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ExtendedMetaData extendedMetaData;
@@ -47,6 +49,7 @@ public class FmiResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiResourceFactoryImpl() {
@@ -59,6 +62,7 @@ public class FmiResourceFactoryImpl extends ResourceFactoryImpl {
 	 * Creates an instance of the resource.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -76,4 +80,4 @@ public class FmiResourceFactoryImpl extends ResourceFactoryImpl {
 		return result;
 	}
 
-} //FmiResourceFactoryImpl
+} // FmiResourceFactoryImpl

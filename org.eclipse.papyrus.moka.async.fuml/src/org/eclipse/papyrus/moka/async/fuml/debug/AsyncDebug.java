@@ -57,21 +57,21 @@ public class AsyncDebug extends Debug {
 		// ," ")+message);
 		// }
 	}
-	
+
 	/**
 	 * The displayed message states:
-	 * 	- What event was lost
-	 *  - The object to which the signal was sent
-	 *  - What were the registered event accepters at the time which the event was consumed  
+	 * - What event was lost
+	 * - The object to which the signal was sent
+	 * - What were the registered event accepters at the time which the event was consumed
 	 * 
 	 * @param eventOccurrence
-	 * 			the event that is lost 
+	 *            the event that is lost
 	 * @param objectActivation
-	 * 			the event activation attached to the object that lost the signal
+	 *            the event activation attached to the object that lost the signal
 	 * @param outstream
-	 * 			the stream on which the message must be displayed
+	 *            the stream on which the message must be displayed
 	 */
-	public static void printLostSignal(final IEventOccurrence eventOccurrence, final ObjectActivation objectActivation, final IOConsoleOutputStream outstream){
+	public static void printLostSignal(final IEventOccurrence eventOccurrence, final ObjectActivation objectActivation, final IOConsoleOutputStream outstream) {
 		String expectedSignals = "";
 		for (IEventAccepter eventAccepter : objectActivation.waitingEventAccepters) {
 			if (eventAccepter instanceof IAcceptEventActionEventAccepter) {
@@ -89,8 +89,8 @@ public class AsyncDebug extends Debug {
 				}
 			}
 		}
-		if(eventOccurrence instanceof SignalEventOccurrence){
-			final SignalInstance finalSignalInstance = ((SignalEventOccurrence)eventOccurrence).signalInstance;
+		if (eventOccurrence instanceof SignalEventOccurrence) {
+			final SignalInstance finalSignalInstance = ((SignalEventOccurrence) eventOccurrence).signalInstance;
 			final String finalExpectedSignals = expectedSignals;
 			Display.getDefault().syncExec(new Runnable() {
 				public void run() {
@@ -103,6 +103,6 @@ public class AsyncDebug extends Debug {
 					}
 				}
 			});
-		}	
+		}
 	}
 }

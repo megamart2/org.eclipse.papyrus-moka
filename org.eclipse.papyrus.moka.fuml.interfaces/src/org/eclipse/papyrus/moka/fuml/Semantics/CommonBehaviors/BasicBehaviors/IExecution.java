@@ -22,23 +22,23 @@ import org.eclipse.uml2.uml.Parameter;
 public interface IExecution extends IObject_ {
 
 	public void execute();
-	
+
 	public void setParameterValue(IParameterValue parameterValue);
-	
+
 	public IParameterValue getReturnParameterValue();
-	
+
 	public IParameterValue getParameterValue(Parameter parameter);
-	
+
 	public List<IParameterValue> getOutputParameterValues();
-	
+
 	public Behavior getBehavior();
-	
+
 	public void terminate();
-	
+
 	public void setContext(IObject_ context);
-	
+
 	public IObject_ getContext();
-	
+
 	public List<IParameterValue> getParameterValues();
-	
+
 }

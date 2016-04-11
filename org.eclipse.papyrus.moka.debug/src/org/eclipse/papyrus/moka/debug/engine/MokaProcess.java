@@ -30,28 +30,28 @@ import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 public class MokaProcess implements IProcess {
 
 	protected HashMap<String, String> attributes;
-	
+
 	// The launch configuration from which the process was created
 	protected ILaunch launch;
 
 	// The job at which the execution takes place
 	protected Job executionEngineJob;
-	
+
 	private IStatus jobStatus;
-	
-	public MokaProcess(ILaunch launch, Job executionEngineJob){
+
+	public MokaProcess(ILaunch launch, Job executionEngineJob) {
 		this.attributes = new HashMap<String, String>();
 		this.launch = launch;
 		this.jobStatus = null;
 		this.executionEngineJob = executionEngineJob;
 	}
-	
-	public void schedule(int priority){
+
+	public void schedule(int priority) {
 		this.executionEngineJob.setName(MokaConstants.EXECUTION_ENGINE_JOB_NAME);
 		this.executionEngineJob.setPriority(priority);
 		this.executionEngineJob.schedule();
 	}
-	
+
 
 	@Override
 	public boolean canTerminate() {
@@ -62,15 +62,15 @@ public class MokaProcess implements IProcess {
 
 	@Override
 	public boolean isTerminated() {
-		return  this.jobStatus != null && (this.jobStatus.getSeverity() == IStatus.OK | 
-			   this.jobStatus.getSeverity() == IStatus.CANCEL | 
-			   this.jobStatus.getSeverity() == IStatus.ERROR);
+		return this.jobStatus != null && (this.jobStatus.getSeverity() == IStatus.OK |
+				this.jobStatus.getSeverity() == IStatus.CANCEL |
+				this.jobStatus.getSeverity() == IStatus.ERROR);
 	}
 
 	@Override
 	public void terminate() throws DebugException {
-		if(this.executionEngineJob!=null){
-			if(!this.executionEngineJob.cancel()){
+		if (this.executionEngineJob != null) {
+			if (!this.executionEngineJob.cancel()) {
 				try {
 					this.executionEngineJob.join();
 				} catch (InterruptedException e) {
@@ -78,7 +78,7 @@ public class MokaProcess implements IProcess {
 				}
 			}
 			this.jobStatus = this.executionEngineJob.getResult();
-			DebugPlugin.getDefault().fireDebugEventSet(new DebugEvent[]{new DebugEvent(this, DebugEvent.TERMINATE)});
+			DebugPlugin.getDefault().fireDebugEventSet(new DebugEvent[] { new DebugEvent(this, DebugEvent.TERMINATE) });
 		}
 	}
 
@@ -99,31 +99,31 @@ public class MokaProcess implements IProcess {
 
 	@Override
 	public int getExitValue() throws DebugException {
-		if(this.isTerminated()){
+		if (this.isTerminated()) {
 			return this.jobStatus.getSeverity();
 		}
 		throw new DebugException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Moka execution process is still running"));
 	}
-	
+
 
 	@Override
 	public void setAttribute(String key, String value) {
 		String keyValue = this.attributes.get(key);
-		if(keyValue!=null){
-			if(!value.equals(keyValue)){
+		if (keyValue != null) {
+			if (!value.equals(keyValue)) {
 				keyValue = value;
 			}
-		}else{
+		} else {
 			this.attributes.put(key, value);
 		}
-		
+
 	}
 
 	@Override
 	public String getAttribute(String key) {
 		return this.attributes.get(key);
 	}
-	
+
 	@Override
 	public <T> T getAdapter(Class<T> adapter) {
 		// TODO Auto-generated method stub

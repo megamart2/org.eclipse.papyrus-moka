@@ -29,16 +29,16 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getA <em>A</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getCd <em>Cd</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getFactor <em>Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getK <em>K</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getKg <em>Kg</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getM <em>M</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getMol <em>Mol</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getRad <em>Rad</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getS <em>S</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getA <em>A</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getCd <em>Cd</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getFactor <em>Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getK <em>K</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getKg <em>Kg</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getM <em>M</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getMol <em>Mol</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getRad <em>Rad</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl#getS <em>S</em>}</li>
  * </ul>
  *
  * @generated
@@ -48,6 +48,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getA() <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getA() <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getA()
 	 * @generated
 	 * @ordered
@@ -68,6 +70,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the A attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -77,6 +80,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getCd() <em>Cd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCd()
 	 * @generated
 	 * @ordered
@@ -87,6 +91,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getCd() <em>Cd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCd()
 	 * @generated
 	 * @ordered
@@ -97,6 +102,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the Cd attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -106,6 +112,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getFactor() <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFactor()
 	 * @generated
 	 * @ordered
@@ -116,6 +123,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getFactor() <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFactor()
 	 * @generated
 	 * @ordered
@@ -126,6 +134,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the Factor attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -135,6 +144,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getK() <em>K</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getK()
 	 * @generated
 	 * @ordered
@@ -145,6 +155,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getK() <em>K</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getK()
 	 * @generated
 	 * @ordered
@@ -155,6 +166,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the K attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -164,6 +176,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getKg() <em>Kg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKg()
 	 * @generated
 	 * @ordered
@@ -174,6 +187,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getKg() <em>Kg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getKg()
 	 * @generated
 	 * @ordered
@@ -184,6 +198,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the Kg attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -193,6 +208,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getM() <em>M</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getM()
 	 * @generated
 	 * @ordered
@@ -203,6 +219,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getM() <em>M</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getM()
 	 * @generated
 	 * @ordered
@@ -213,6 +230,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the M attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -222,6 +240,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getMol() <em>Mol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMol()
 	 * @generated
 	 * @ordered
@@ -232,6 +251,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getMol() <em>Mol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMol()
 	 * @generated
 	 * @ordered
@@ -242,6 +262,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the Mol attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -251,6 +272,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -261,6 +283,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -271,6 +294,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the Offset attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -280,6 +304,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getRad() <em>Rad</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRad()
 	 * @generated
 	 * @ordered
@@ -290,6 +315,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getRad() <em>Rad</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getRad()
 	 * @generated
 	 * @ordered
@@ -300,6 +326,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the Rad attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -309,6 +336,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The default value of the '{@link #getS() <em>S</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getS()
 	 * @generated
 	 * @ordered
@@ -319,6 +347,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * The cached value of the '{@link #getS() <em>S</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getS()
 	 * @generated
 	 * @ordered
@@ -329,6 +358,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	 * This is true if the S attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -337,6 +367,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BaseUnitTypeImpl() {
@@ -346,6 +377,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -356,6 +388,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getA() {
@@ -365,6 +398,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setA(int newA) {
@@ -379,6 +413,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetA() {
@@ -393,6 +428,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetA() {
@@ -402,6 +438,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getCd() {
@@ -411,6 +448,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCd(int newCd) {
@@ -425,6 +463,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCd() {
@@ -439,6 +478,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCd() {
@@ -448,6 +488,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getFactor() {
@@ -457,6 +498,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFactor(double newFactor) {
@@ -471,6 +513,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetFactor() {
@@ -485,6 +528,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetFactor() {
@@ -494,6 +538,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getK() {
@@ -503,6 +548,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setK(int newK) {
@@ -517,6 +563,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetK() {
@@ -531,6 +578,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetK() {
@@ -540,6 +588,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getKg() {
@@ -549,6 +598,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setKg(int newKg) {
@@ -563,6 +613,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetKg() {
@@ -577,6 +628,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetKg() {
@@ -586,6 +638,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getM() {
@@ -595,6 +648,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setM(int newM) {
@@ -609,6 +663,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetM() {
@@ -623,6 +678,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetM() {
@@ -632,6 +688,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getMol() {
@@ -641,6 +698,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMol(int newMol) {
@@ -655,6 +713,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMol() {
@@ -669,6 +728,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMol() {
@@ -678,6 +738,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getOffset() {
@@ -687,6 +748,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOffset(double newOffset) {
@@ -701,6 +763,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetOffset() {
@@ -715,6 +778,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetOffset() {
@@ -724,6 +788,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getRad() {
@@ -733,6 +798,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRad(int newRad) {
@@ -747,6 +813,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetRad() {
@@ -761,6 +828,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetRad() {
@@ -770,6 +838,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getS() {
@@ -779,6 +848,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setS(int newS) {
@@ -793,6 +863,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetS() {
@@ -807,6 +878,7 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetS() {
@@ -816,31 +888,32 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.BASE_UNIT_TYPE__A:
-				return getA();
-			case FmiPackage.BASE_UNIT_TYPE__CD:
-				return getCd();
-			case FmiPackage.BASE_UNIT_TYPE__FACTOR:
-				return getFactor();
-			case FmiPackage.BASE_UNIT_TYPE__K:
-				return getK();
-			case FmiPackage.BASE_UNIT_TYPE__KG:
-				return getKg();
-			case FmiPackage.BASE_UNIT_TYPE__M:
-				return getM();
-			case FmiPackage.BASE_UNIT_TYPE__MOL:
-				return getMol();
-			case FmiPackage.BASE_UNIT_TYPE__OFFSET:
-				return getOffset();
-			case FmiPackage.BASE_UNIT_TYPE__RAD:
-				return getRad();
-			case FmiPackage.BASE_UNIT_TYPE__S:
-				return getS();
+		case FmiPackage.BASE_UNIT_TYPE__A:
+			return getA();
+		case FmiPackage.BASE_UNIT_TYPE__CD:
+			return getCd();
+		case FmiPackage.BASE_UNIT_TYPE__FACTOR:
+			return getFactor();
+		case FmiPackage.BASE_UNIT_TYPE__K:
+			return getK();
+		case FmiPackage.BASE_UNIT_TYPE__KG:
+			return getKg();
+		case FmiPackage.BASE_UNIT_TYPE__M:
+			return getM();
+		case FmiPackage.BASE_UNIT_TYPE__MOL:
+			return getMol();
+		case FmiPackage.BASE_UNIT_TYPE__OFFSET:
+			return getOffset();
+		case FmiPackage.BASE_UNIT_TYPE__RAD:
+			return getRad();
+		case FmiPackage.BASE_UNIT_TYPE__S:
+			return getS();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -848,41 +921,42 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.BASE_UNIT_TYPE__A:
-				setA((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__CD:
-				setCd((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__FACTOR:
-				setFactor((Double)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__K:
-				setK((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__KG:
-				setKg((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__M:
-				setM((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__MOL:
-				setMol((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__OFFSET:
-				setOffset((Double)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__RAD:
-				setRad((Integer)newValue);
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__S:
-				setS((Integer)newValue);
-				return;
+		case FmiPackage.BASE_UNIT_TYPE__A:
+			setA((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__CD:
+			setCd((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__FACTOR:
+			setFactor((Double) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__K:
+			setK((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__KG:
+			setKg((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__M:
+			setM((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__MOL:
+			setMol((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__OFFSET:
+			setOffset((Double) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__RAD:
+			setRad((Integer) newValue);
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__S:
+			setS((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -890,41 +964,42 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.BASE_UNIT_TYPE__A:
-				unsetA();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__CD:
-				unsetCd();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__FACTOR:
-				unsetFactor();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__K:
-				unsetK();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__KG:
-				unsetKg();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__M:
-				unsetM();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__MOL:
-				unsetMol();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__OFFSET:
-				unsetOffset();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__RAD:
-				unsetRad();
-				return;
-			case FmiPackage.BASE_UNIT_TYPE__S:
-				unsetS();
-				return;
+		case FmiPackage.BASE_UNIT_TYPE__A:
+			unsetA();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__CD:
+			unsetCd();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__FACTOR:
+			unsetFactor();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__K:
+			unsetK();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__KG:
+			unsetKg();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__M:
+			unsetM();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__MOL:
+			unsetMol();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__OFFSET:
+			unsetOffset();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__RAD:
+			unsetRad();
+			return;
+		case FmiPackage.BASE_UNIT_TYPE__S:
+			unsetS();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -932,31 +1007,32 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.BASE_UNIT_TYPE__A:
-				return isSetA();
-			case FmiPackage.BASE_UNIT_TYPE__CD:
-				return isSetCd();
-			case FmiPackage.BASE_UNIT_TYPE__FACTOR:
-				return isSetFactor();
-			case FmiPackage.BASE_UNIT_TYPE__K:
-				return isSetK();
-			case FmiPackage.BASE_UNIT_TYPE__KG:
-				return isSetKg();
-			case FmiPackage.BASE_UNIT_TYPE__M:
-				return isSetM();
-			case FmiPackage.BASE_UNIT_TYPE__MOL:
-				return isSetMol();
-			case FmiPackage.BASE_UNIT_TYPE__OFFSET:
-				return isSetOffset();
-			case FmiPackage.BASE_UNIT_TYPE__RAD:
-				return isSetRad();
-			case FmiPackage.BASE_UNIT_TYPE__S:
-				return isSetS();
+		case FmiPackage.BASE_UNIT_TYPE__A:
+			return isSetA();
+		case FmiPackage.BASE_UNIT_TYPE__CD:
+			return isSetCd();
+		case FmiPackage.BASE_UNIT_TYPE__FACTOR:
+			return isSetFactor();
+		case FmiPackage.BASE_UNIT_TYPE__K:
+			return isSetK();
+		case FmiPackage.BASE_UNIT_TYPE__KG:
+			return isSetKg();
+		case FmiPackage.BASE_UNIT_TYPE__M:
+			return isSetM();
+		case FmiPackage.BASE_UNIT_TYPE__MOL:
+			return isSetMol();
+		case FmiPackage.BASE_UNIT_TYPE__OFFSET:
+			return isSetOffset();
+		case FmiPackage.BASE_UNIT_TYPE__RAD:
+			return isSetRad();
+		case FmiPackage.BASE_UNIT_TYPE__S:
+			return isSetS();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -964,35 +1040,67 @@ public class BaseUnitTypeImpl extends MinimalEObjectImpl.Container implements Ba
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (a: ");
-		if (aESet) result.append(a); else result.append("<unset>");
+		if (aESet)
+			result.append(a);
+		else
+			result.append("<unset>");
 		result.append(", cd: ");
-		if (cdESet) result.append(cd); else result.append("<unset>");
+		if (cdESet)
+			result.append(cd);
+		else
+			result.append("<unset>");
 		result.append(", factor: ");
-		if (factorESet) result.append(factor); else result.append("<unset>");
+		if (factorESet)
+			result.append(factor);
+		else
+			result.append("<unset>");
 		result.append(", k: ");
-		if (kESet) result.append(k); else result.append("<unset>");
+		if (kESet)
+			result.append(k);
+		else
+			result.append("<unset>");
 		result.append(", kg: ");
-		if (kgESet) result.append(kg); else result.append("<unset>");
+		if (kgESet)
+			result.append(kg);
+		else
+			result.append("<unset>");
 		result.append(", m: ");
-		if (mESet) result.append(m); else result.append("<unset>");
+		if (mESet)
+			result.append(m);
+		else
+			result.append("<unset>");
 		result.append(", mol: ");
-		if (molESet) result.append(mol); else result.append("<unset>");
+		if (molESet)
+			result.append(mol);
+		else
+			result.append("<unset>");
 		result.append(", offset: ");
-		if (offsetESet) result.append(offset); else result.append("<unset>");
+		if (offsetESet)
+			result.append(offset);
+		else
+			result.append("<unset>");
 		result.append(", rad: ");
-		if (radESet) result.append(rad); else result.append("<unset>");
+		if (radESet)
+			result.append(rad);
+		else
+			result.append("<unset>");
 		result.append(", s: ");
-		if (sESet) result.append(s); else result.append("<unset>");
+		if (sESet)
+			result.append(s);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //BaseUnitTypeImpl
+} // BaseUnitTypeImpl

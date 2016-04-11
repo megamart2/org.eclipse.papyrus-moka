@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.fmi.master.masterlibrary;
 
 
@@ -5,7 +16,7 @@ package org.eclipse.papyrus.moka.fmi.master.masterlibrary;
 public class Edge {
 	private Node source, target;
 	private boolean visited = false;
-	
+
 	public Edge(Node sourceNode, Node targetNode) {
 		// TODO Auto-generated constructor stub
 		this.source = sourceNode;
@@ -35,5 +46,5 @@ public class Edge {
 	public void setVisited(boolean visited) {
 		this.visited = visited;
 	}
-	
+
 }

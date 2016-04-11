@@ -19,18 +19,18 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.ValueSpecification;
 
 public interface IDecisionNodeActivation extends IControlNodeActivation {
-	
+
 	public List<IValue> getDecisionValues(List<IToken> incomingTokens);
-	
+
 	public IValue executeDecisionInputBehavior(IValue inputValue, IValue decisionInputValue);
-	
+
 	public IValue getDecisionInputFlowValue();
-	
+
 	public IActivityEdgeInstance getDecisionInputFlowInstance();
-	
+
 	public Boolean test(ValueSpecification guard, IValue value);
-	
+
 	public List<IToken> removeJoinedControlTokens(List<IToken> incomingTokens);
-	
+
 	public Boolean hasObjectFlowInput();
 }

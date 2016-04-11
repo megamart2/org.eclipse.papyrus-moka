@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getSimpleType <em>Simple Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getSimpleType <em>Simple Type</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getTypeDefinitionsType()
@@ -44,6 +44,7 @@ public interface TypeDefinitionsType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getTypeDefinitionsType_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -61,6 +62,7 @@ public interface TypeDefinitionsType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Simple Type</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getTypeDefinitionsType_SimpleType()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"

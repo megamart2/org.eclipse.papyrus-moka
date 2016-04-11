@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.InstanceValue;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class EnumerationValue extends Value implements IEnumerationValue{
+public class EnumerationValue extends Value implements IEnumerationValue {
 
 	/*
 	 * The literal value of this enumeration value.
@@ -85,18 +85,22 @@ public class EnumerationValue extends Value implements IEnumerationValue{
 	public String toString() {
 		return literal.getName();
 	}
+
 	@Override
 	public EnumerationLiteral getLiteral() {
 		return literal;
 	}
+
 	@Override
 	public void setLiteral(EnumerationLiteral literal) {
 		this.literal = literal;
 	}
+
 	@Override
 	public Enumeration getType() {
 		return type;
 	}
+
 	@Override
 	public void setType(Enumeration type) {
 		this.type = type;

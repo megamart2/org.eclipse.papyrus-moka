@@ -33,7 +33,7 @@ public final class MokaExecutionEngineSelectionComponent extends MokaGroupCompon
 		this.eligibleExecutionEngineCombo.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, false));
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] configs = registry.getConfigurationElementsFor(MokaConstants.MOKA_ENGINE_EXTENSION_POINT_ID);
-		for (int i = 0 ; i < configs.length ; i++) {
+		for (int i = 0; i < configs.length; i++) {
 			this.eligibleExecutionEngineCombo.add(configs[i].getNamespaceIdentifier());
 		}
 	}

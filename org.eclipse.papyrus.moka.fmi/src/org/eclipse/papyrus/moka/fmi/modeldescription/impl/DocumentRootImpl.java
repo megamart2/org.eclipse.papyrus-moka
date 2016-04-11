@@ -40,10 +40,10 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getMixed <em>Mixed</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getFmiModelDescription <em>Fmi Model Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getMixed <em>Mixed</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getXSISchemaLocation <em>XSI Schema Location</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl#getFmiModelDescription <em>Fmi Model Description</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +53,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * The cached value of the '{@link #getMixed() <em>Mixed</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMixed()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * The cached value of the '{@link #getXMLNSPrefixMap() <em>XMLNS Prefix Map</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getXMLNSPrefixMap()
 	 * @generated
 	 * @ordered
@@ -73,6 +75,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	 * The cached value of the '{@link #getXSISchemaLocation() <em>XSI Schema Location</em>}' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getXSISchemaLocation()
 	 * @generated
 	 * @ordered
@@ -82,6 +85,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DocumentRootImpl() {
@@ -91,6 +95,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -101,6 +106,7 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureMap getMixed() {
@@ -113,11 +119,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EMap<String, String> getXMLNSPrefixMap() {
 		if (xMLNSPrefixMap == null) {
-			xMLNSPrefixMap = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
+			xMLNSPrefixMap = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP);
 		}
 		return xMLNSPrefixMap;
 	}
@@ -125,11 +132,12 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EMap<String, String> getXSISchemaLocation() {
 		if (xSISchemaLocation == null) {
-			xSISchemaLocation = new EcoreEMap<String,String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
+			xSISchemaLocation = new EcoreEMap<String, String>(EcorePackage.Literals.ESTRING_TO_STRING_MAP_ENTRY, EStringToStringMapEntryImpl.class, this, FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION);
 		}
 		return xSISchemaLocation;
 	}
@@ -137,46 +145,50 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiModelDescriptionType getFmiModelDescription() {
-		return (FmiModelDescriptionType)getMixed().get(FmiPackage.Literals.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION, true);
+		return (FmiModelDescriptionType) getMixed().get(FmiPackage.Literals.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION, true);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetFmiModelDescription(FmiModelDescriptionType newFmiModelDescription, NotificationChain msgs) {
-		return ((FeatureMap.Internal)getMixed()).basicAdd(FmiPackage.Literals.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION, newFmiModelDescription, msgs);
+		return ((FeatureMap.Internal) getMixed()).basicAdd(FmiPackage.Literals.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION, newFmiModelDescription, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFmiModelDescription(FmiModelDescriptionType newFmiModelDescription) {
-		((FeatureMap.Internal)getMixed()).set(FmiPackage.Literals.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION, newFmiModelDescription);
+		((FeatureMap.Internal) getMixed()).set(FmiPackage.Literals.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION, newFmiModelDescription);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.DOCUMENT_ROOT__MIXED:
-				return ((InternalEList<?>)getMixed()).basicRemove(otherEnd, msgs);
-			case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return ((InternalEList<?>)getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
-			case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return ((InternalEList<?>)getXSISchemaLocation()).basicRemove(otherEnd, msgs);
-			case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
-				return basicSetFmiModelDescription(null, msgs);
+		case FmiPackage.DOCUMENT_ROOT__MIXED:
+			return ((InternalEList<?>) getMixed()).basicRemove(otherEnd, msgs);
+		case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return ((InternalEList<?>) getXMLNSPrefixMap()).basicRemove(otherEnd, msgs);
+		case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return ((InternalEList<?>) getXSISchemaLocation()).basicRemove(otherEnd, msgs);
+		case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
+			return basicSetFmiModelDescription(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -184,22 +196,28 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.DOCUMENT_ROOT__MIXED:
-				if (coreType) return getMixed();
-				return ((FeatureMap.Internal)getMixed()).getWrapper();
-			case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				if (coreType) return getXMLNSPrefixMap();
-				else return getXMLNSPrefixMap().map();
-			case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				if (coreType) return getXSISchemaLocation();
-				else return getXSISchemaLocation().map();
-			case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
-				return getFmiModelDescription();
+		case FmiPackage.DOCUMENT_ROOT__MIXED:
+			if (coreType)
+				return getMixed();
+			return ((FeatureMap.Internal) getMixed()).getWrapper();
+		case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			if (coreType)
+				return getXMLNSPrefixMap();
+			else
+				return getXMLNSPrefixMap().map();
+		case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			if (coreType)
+				return getXSISchemaLocation();
+			else
+				return getXSISchemaLocation().map();
+		case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
+			return getFmiModelDescription();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,23 +225,24 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.DOCUMENT_ROOT__MIXED:
-				((FeatureMap.Internal)getMixed()).set(newValue);
-				return;
-			case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				((EStructuralFeature.Setting)getXMLNSPrefixMap()).set(newValue);
-				return;
-			case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				((EStructuralFeature.Setting)getXSISchemaLocation()).set(newValue);
-				return;
-			case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
-				setFmiModelDescription((FmiModelDescriptionType)newValue);
-				return;
+		case FmiPackage.DOCUMENT_ROOT__MIXED:
+			((FeatureMap.Internal) getMixed()).set(newValue);
+			return;
+		case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			((EStructuralFeature.Setting) getXMLNSPrefixMap()).set(newValue);
+			return;
+		case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			((EStructuralFeature.Setting) getXSISchemaLocation()).set(newValue);
+			return;
+		case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
+			setFmiModelDescription((FmiModelDescriptionType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -231,23 +250,24 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.DOCUMENT_ROOT__MIXED:
-				getMixed().clear();
-				return;
-			case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				getXMLNSPrefixMap().clear();
-				return;
-			case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				getXSISchemaLocation().clear();
-				return;
-			case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
-				setFmiModelDescription((FmiModelDescriptionType)null);
-				return;
+		case FmiPackage.DOCUMENT_ROOT__MIXED:
+			getMixed().clear();
+			return;
+		case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			getXMLNSPrefixMap().clear();
+			return;
+		case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			getXSISchemaLocation().clear();
+			return;
+		case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
+			setFmiModelDescription((FmiModelDescriptionType) null);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -255,19 +275,20 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.DOCUMENT_ROOT__MIXED:
-				return mixed != null && !mixed.isEmpty();
-			case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
-				return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
-			case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
-				return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
-			case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
-				return getFmiModelDescription() != null;
+		case FmiPackage.DOCUMENT_ROOT__MIXED:
+			return mixed != null && !mixed.isEmpty();
+		case FmiPackage.DOCUMENT_ROOT__XMLNS_PREFIX_MAP:
+			return xMLNSPrefixMap != null && !xMLNSPrefixMap.isEmpty();
+		case FmiPackage.DOCUMENT_ROOT__XSI_SCHEMA_LOCATION:
+			return xSISchemaLocation != null && !xSISchemaLocation.isEmpty();
+		case FmiPackage.DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION:
+			return getFmiModelDescription() != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -275,11 +296,13 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (mixed: ");
@@ -288,4 +311,4 @@ public class DocumentRootImpl extends MinimalEObjectImpl.Container implements Do
 		return result.toString();
 	}
 
-} //DocumentRootImpl
+} // DocumentRootImpl

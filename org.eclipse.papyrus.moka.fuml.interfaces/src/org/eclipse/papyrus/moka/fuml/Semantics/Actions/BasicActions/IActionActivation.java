@@ -25,27 +25,27 @@ import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Pin;
 
 public interface IActionActivation extends IActivityNodeActivation {
-	
+
 	public void doAction();
-	
+
 	public void sendOffers();
-	
+
 	public void addPinActivation(IPinActivation pinActivation);
-	
+
 	public IPinActivation getPinActivation(Pin pin);
-	
+
 	public void putToken(OutputPin pin, IValue value);
-	
+
 	public void putTokens(OutputPin pin, List<IValue> values);
-	
+
 	public List<IValue> getTokens(InputPin pin);
-	
+
 	public List<IValue> takeTokens(InputPin pin);
-	
+
 	public Boolean valueParticipatesInLink(IValue value, ILink link);
-	
+
 	public IBooleanValue makeBooleanValue(Boolean value);
-	
+
 	public boolean checkAllParents(Classifier type, Classifier classifier);
-	
+
 }

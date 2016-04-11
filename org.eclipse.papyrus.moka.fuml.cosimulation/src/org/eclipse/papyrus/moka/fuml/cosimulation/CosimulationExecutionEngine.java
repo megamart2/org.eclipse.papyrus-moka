@@ -26,25 +26,25 @@ import org.eclipse.papyrus.moka.timedfuml.TimedUmlExecutionEngine;
  */
 public class CosimulationExecutionEngine extends TimedUmlExecutionEngine {
 
-	
+
 
 	@Override
 	public ILocus initializeLocus() {
 		this.locus = new CosimulationLocus();
 		this.locus.setFactory(new CosimulationFactory());
 		this.locus.setExecutor(new CS_Executor());
-		return  this.locus;
-	}	
+		return this.locus;
+	}
 
-	
+
 	@Override
 	protected void registerSemanticStrategies(ILocus locus) {
 		// TODO Auto-generated method stub
 		super.registerSemanticStrategies(locus);
 		locus.getFactory().setStrategy(new CosimulationDefaultConstructStrategy());
-	
+
 	}
-	
-	
-	
+
+
+
 }

@@ -21,7 +21,7 @@ Export-Package: org.eclipse.papyrus.moka,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 2.0.0.qualifier
-Bundle-Name: Moka (Incubation)
+Bundle-Name: Moka Execution Engine Core
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.moka.Activator
 Bundle-Description: %pluginDescription

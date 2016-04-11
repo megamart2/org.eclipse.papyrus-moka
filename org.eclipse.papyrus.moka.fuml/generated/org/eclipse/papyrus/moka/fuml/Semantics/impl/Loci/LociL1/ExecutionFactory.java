@@ -33,7 +33,7 @@ import org.eclipse.uml2.uml.OpaqueBehavior;
 import org.eclipse.uml2.uml.Type;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public abstract class ExecutionFactory implements IExecutionFactory{
+public abstract class ExecutionFactory implements IExecutionFactory {
 
 	/*
 	 * The locus at which this factory resides.
@@ -184,7 +184,7 @@ public abstract class ExecutionFactory implements IExecutionFactory{
 		}
 		return i;
 	}
-	
+
 	public ILocus getLocus() {
 		return locus;
 	}

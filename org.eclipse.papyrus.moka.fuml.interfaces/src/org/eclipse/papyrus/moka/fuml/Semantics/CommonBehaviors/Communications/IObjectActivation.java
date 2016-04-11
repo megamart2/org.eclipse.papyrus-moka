@@ -23,28 +23,28 @@ import org.eclipse.uml2.uml.Class;
 public interface IObjectActivation {
 
 	public void stop();
-	
+
 	public void register(IEventAccepter accepter);
-	
+
 	public void unregister(IEventAccepter accepter);
-	
+
 	public void dispatchNextEvent();
-	
+
 	public IEventOccurrence getNextEvent();
-	
+
 	public void send(ISignalInstance signalInstance);
-	
+
 	public void startBehavior(Class classifier, List<IParameterValue> inputs);
-	
+
 	public void setObject(IObject_ context);
-	
+
 	public IObject_ getObject();
-	
+
 	public List<IClassifierBehaviorInvocationEventAccepter> getClassifierBehaviorInvocations();
-	
+
 	public List<IEventOccurrence> getEvents();
-	
+
 	public void _startObjectBehavior();
-	
+
 	public List<IEventAccepter> getWaitingEventAccepters();
 }

@@ -25,6 +25,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.*;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage
  * @generated
  */
@@ -33,6 +34,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected static FmiPackage modelPackage;
@@ -41,6 +43,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * Creates an instance of the adapter factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiAdapterFactory() {
@@ -54,6 +57,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This implementation returns <code>true</code> if the object is either the model's package or is an instance object of the model.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
@@ -63,7 +67,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 			return true;
 		}
 		if (object instanceof EObject) {
-			return ((EObject)object).eClass().getEPackage() == modelPackage;
+			return ((EObject) object).eClass().getEPackage() == modelPackage;
 		}
 		return false;
 	}
@@ -72,167 +76,204 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * The switch that delegates to the <code>createXXX</code> methods.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	protected FmiSwitch<Adapter> modelSwitch =
-		new FmiSwitch<Adapter>() {
-			@Override
-			public Adapter caseBaseUnitType(BaseUnitType object) {
-				return createBaseUnitTypeAdapter();
-			}
-			@Override
-			public Adapter caseBooleanType(BooleanType object) {
-				return createBooleanTypeAdapter();
-			}
-			@Override
-			public Adapter caseCategoryType(CategoryType object) {
-				return createCategoryTypeAdapter();
-			}
-			@Override
-			public Adapter caseCoSimulationType(CoSimulationType object) {
-				return createCoSimulationTypeAdapter();
-			}
-			@Override
-			public Adapter caseDefaultExperimentType(DefaultExperimentType object) {
-				return createDefaultExperimentTypeAdapter();
-			}
-			@Override
-			public Adapter caseDisplayUnitType(DisplayUnitType object) {
-				return createDisplayUnitTypeAdapter();
-			}
-			@Override
-			public Adapter caseDocumentRoot(DocumentRoot object) {
-				return createDocumentRootAdapter();
-			}
-			@Override
-			public Adapter caseEnumerationType(EnumerationType object) {
-				return createEnumerationTypeAdapter();
-			}
-			@Override
-			public Adapter caseEnumerationType1(EnumerationType1 object) {
-				return createEnumerationType1Adapter();
-			}
-			@Override
-			public Adapter caseFileType(FileType object) {
-				return createFileTypeAdapter();
-			}
-			@Override
-			public Adapter caseFileType1(FileType1 object) {
-				return createFileType1Adapter();
-			}
-			@Override
-			public Adapter caseFmi2Annotation(Fmi2Annotation object) {
-				return createFmi2AnnotationAdapter();
-			}
-			@Override
-			public Adapter caseFmi2ScalarVariable(Fmi2ScalarVariable object) {
-				return createFmi2ScalarVariableAdapter();
-			}
-			@Override
-			public Adapter caseFmi2SimpleType(Fmi2SimpleType object) {
-				return createFmi2SimpleTypeAdapter();
-			}
-			@Override
-			public Adapter caseFmi2Unit(Fmi2Unit object) {
-				return createFmi2UnitAdapter();
-			}
-			@Override
-			public Adapter caseFmi2VariableDependency(Fmi2VariableDependency object) {
-				return createFmi2VariableDependencyAdapter();
-			}
-			@Override
-			public Adapter caseFmiModelDescriptionType(FmiModelDescriptionType object) {
-				return createFmiModelDescriptionTypeAdapter();
-			}
-			@Override
-			public Adapter caseInitialUnknownsType(InitialUnknownsType object) {
-				return createInitialUnknownsTypeAdapter();
-			}
-			@Override
-			public Adapter caseIntegerType(IntegerType object) {
-				return createIntegerTypeAdapter();
-			}
-			@Override
-			public Adapter caseIntegerType1(IntegerType1 object) {
-				return createIntegerType1Adapter();
-			}
-			@Override
-			public Adapter caseItemType(ItemType object) {
-				return createItemTypeAdapter();
-			}
-			@Override
-			public Adapter caseLogCategoriesType(LogCategoriesType object) {
-				return createLogCategoriesTypeAdapter();
-			}
-			@Override
-			public Adapter caseModelExchangeType(ModelExchangeType object) {
-				return createModelExchangeTypeAdapter();
-			}
-			@Override
-			public Adapter caseModelStructureType(ModelStructureType object) {
-				return createModelStructureTypeAdapter();
-			}
-			@Override
-			public Adapter caseModelVariablesType(ModelVariablesType object) {
-				return createModelVariablesTypeAdapter();
-			}
-			@Override
-			public Adapter caseRealType(RealType object) {
-				return createRealTypeAdapter();
-			}
-			@Override
-			public Adapter caseRealType1(RealType1 object) {
-				return createRealType1Adapter();
-			}
-			@Override
-			public Adapter caseSourceFilesType(SourceFilesType object) {
-				return createSourceFilesTypeAdapter();
-			}
-			@Override
-			public Adapter caseSourceFilesType1(SourceFilesType1 object) {
-				return createSourceFilesType1Adapter();
-			}
-			@Override
-			public Adapter caseStringType(StringType object) {
-				return createStringTypeAdapter();
-			}
-			@Override
-			public Adapter caseToolType(ToolType object) {
-				return createToolTypeAdapter();
-			}
-			@Override
-			public Adapter caseTypeDefinitionsType(TypeDefinitionsType object) {
-				return createTypeDefinitionsTypeAdapter();
-			}
-			@Override
-			public Adapter caseUnitDefinitionsType(UnitDefinitionsType object) {
-				return createUnitDefinitionsTypeAdapter();
-			}
-			@Override
-			public Adapter caseUnknownType(UnknownType object) {
-				return createUnknownTypeAdapter();
-			}
-			@Override
-			public Adapter caseUnknownType1(UnknownType1 object) {
-				return createUnknownType1Adapter();
-			}
-			@Override
-			public Adapter defaultCase(EObject object) {
-				return createEObjectAdapter();
-			}
-		};
+	protected FmiSwitch<Adapter> modelSwitch = new FmiSwitch<Adapter>() {
+		@Override
+		public Adapter caseBaseUnitType(BaseUnitType object) {
+			return createBaseUnitTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseBooleanType(BooleanType object) {
+			return createBooleanTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseCategoryType(CategoryType object) {
+			return createCategoryTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseCoSimulationType(CoSimulationType object) {
+			return createCoSimulationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseDefaultExperimentType(DefaultExperimentType object) {
+			return createDefaultExperimentTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseDisplayUnitType(DisplayUnitType object) {
+			return createDisplayUnitTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseDocumentRoot(DocumentRoot object) {
+			return createDocumentRootAdapter();
+		}
+
+		@Override
+		public Adapter caseEnumerationType(EnumerationType object) {
+			return createEnumerationTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseEnumerationType1(EnumerationType1 object) {
+			return createEnumerationType1Adapter();
+		}
+
+		@Override
+		public Adapter caseFileType(FileType object) {
+			return createFileTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseFileType1(FileType1 object) {
+			return createFileType1Adapter();
+		}
+
+		@Override
+		public Adapter caseFmi2Annotation(Fmi2Annotation object) {
+			return createFmi2AnnotationAdapter();
+		}
+
+		@Override
+		public Adapter caseFmi2ScalarVariable(Fmi2ScalarVariable object) {
+			return createFmi2ScalarVariableAdapter();
+		}
+
+		@Override
+		public Adapter caseFmi2SimpleType(Fmi2SimpleType object) {
+			return createFmi2SimpleTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseFmi2Unit(Fmi2Unit object) {
+			return createFmi2UnitAdapter();
+		}
+
+		@Override
+		public Adapter caseFmi2VariableDependency(Fmi2VariableDependency object) {
+			return createFmi2VariableDependencyAdapter();
+		}
+
+		@Override
+		public Adapter caseFmiModelDescriptionType(FmiModelDescriptionType object) {
+			return createFmiModelDescriptionTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseInitialUnknownsType(InitialUnknownsType object) {
+			return createInitialUnknownsTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseIntegerType(IntegerType object) {
+			return createIntegerTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseIntegerType1(IntegerType1 object) {
+			return createIntegerType1Adapter();
+		}
+
+		@Override
+		public Adapter caseItemType(ItemType object) {
+			return createItemTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseLogCategoriesType(LogCategoriesType object) {
+			return createLogCategoriesTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseModelExchangeType(ModelExchangeType object) {
+			return createModelExchangeTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseModelStructureType(ModelStructureType object) {
+			return createModelStructureTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseModelVariablesType(ModelVariablesType object) {
+			return createModelVariablesTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseRealType(RealType object) {
+			return createRealTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseRealType1(RealType1 object) {
+			return createRealType1Adapter();
+		}
+
+		@Override
+		public Adapter caseSourceFilesType(SourceFilesType object) {
+			return createSourceFilesTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseSourceFilesType1(SourceFilesType1 object) {
+			return createSourceFilesType1Adapter();
+		}
+
+		@Override
+		public Adapter caseStringType(StringType object) {
+			return createStringTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseToolType(ToolType object) {
+			return createToolTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseTypeDefinitionsType(TypeDefinitionsType object) {
+			return createTypeDefinitionsTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseUnitDefinitionsType(UnitDefinitionsType object) {
+			return createUnitDefinitionsTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseUnknownType(UnknownType object) {
+			return createUnknownTypeAdapter();
+		}
+
+		@Override
+		public Adapter caseUnknownType1(UnknownType1 object) {
+			return createUnknownType1Adapter();
+		}
+
+		@Override
+		public Adapter defaultCase(EObject object) {
+			return createEObjectAdapter();
+		}
+	};
 
 	/**
 	 * Creates an adapter for the <code>target</code>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param target the object to adapt.
+	 * 
+	 * @param target
+	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
 	public Adapter createAdapter(Notifier target) {
-		return modelSwitch.doSwitch((EObject)target);
+		return modelSwitch.doSwitch((EObject) target);
 	}
 
 
@@ -242,6 +283,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType
 	 * @generated
@@ -256,6 +298,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType
 	 * @generated
@@ -270,6 +313,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType
 	 * @generated
@@ -284,6 +328,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType
 	 * @generated
@@ -298,6 +343,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType
 	 * @generated
@@ -312,6 +358,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType
 	 * @generated
@@ -326,6 +373,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot
 	 * @generated
@@ -340,6 +388,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType
 	 * @generated
@@ -354,6 +403,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1
 	 * @generated
@@ -368,6 +418,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FileType
 	 * @generated
@@ -382,6 +433,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FileType1
 	 * @generated
@@ -396,6 +448,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation
 	 * @generated
@@ -410,6 +463,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable
 	 * @generated
@@ -424,6 +478,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType
 	 * @generated
@@ -438,6 +493,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit
 	 * @generated
@@ -452,6 +508,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency
 	 * @generated
@@ -466,6 +523,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType
 	 * @generated
@@ -480,6 +538,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType
 	 * @generated
@@ -494,6 +553,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType
 	 * @generated
@@ -508,6 +568,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1
 	 * @generated
@@ -522,6 +583,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ItemType
 	 * @generated
@@ -536,6 +598,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType
 	 * @generated
@@ -550,6 +613,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType
 	 * @generated
@@ -564,6 +628,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType
 	 * @generated
@@ -578,6 +643,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType
 	 * @generated
@@ -592,6 +658,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType
 	 * @generated
@@ -606,6 +673,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1
 	 * @generated
@@ -620,6 +688,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType
 	 * @generated
@@ -634,6 +703,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1
 	 * @generated
@@ -648,6 +718,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.StringType
 	 * @generated
@@ -662,6 +733,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ToolType
 	 * @generated
@@ -676,6 +748,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType
 	 * @generated
@@ -690,6 +763,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType
 	 * @generated
@@ -704,6 +778,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType
 	 * @generated
@@ -718,6 +793,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1
 	 * @generated
@@ -731,6 +807,7 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null.
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the new adapter.
 	 * @generated
 	 */
@@ -738,4 +815,4 @@ public class FmiAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //FmiAdapterFactory
+} // FmiAdapterFactory

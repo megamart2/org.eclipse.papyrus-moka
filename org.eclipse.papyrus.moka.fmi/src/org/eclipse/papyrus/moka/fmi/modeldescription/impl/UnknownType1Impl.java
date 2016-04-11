@@ -32,9 +32,9 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl#getDependencies <em>Dependencies</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl#getDependenciesKind <em>Dependencies Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl#getIndex <em>Index</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl#getDependencies <em>Dependencies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl#getDependenciesKind <em>Dependencies Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl#getIndex <em>Index</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +44,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * The default value of the '{@link #getDependencies() <em>Dependencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependencies()
 	 * @generated
 	 * @ordered
@@ -54,6 +55,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * The cached value of the '{@link #getDependencies() <em>Dependencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependencies()
 	 * @generated
 	 * @ordered
@@ -64,6 +66,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * The default value of the '{@link #getDependenciesKind() <em>Dependencies Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependenciesKind()
 	 * @generated
 	 * @ordered
@@ -74,6 +77,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * The cached value of the '{@link #getDependenciesKind() <em>Dependencies Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDependenciesKind()
 	 * @generated
 	 * @ordered
@@ -84,6 +88,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * The default value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -94,6 +99,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * The cached value of the '{@link #getIndex() <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getIndex()
 	 * @generated
 	 * @ordered
@@ -104,6 +110,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	 * This is true if the Index attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -112,6 +119,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected UnknownType1Impl() {
@@ -121,6 +129,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -131,6 +140,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public List<Long> getDependencies() {
@@ -140,6 +150,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDependencies(List<Long> newDependencies) {
@@ -152,6 +163,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public List<DependenciesKindTypeItem1> getDependenciesKind() {
@@ -161,6 +173,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDependenciesKind(List<DependenciesKindTypeItem1> newDependenciesKind) {
@@ -173,6 +186,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getIndex() {
@@ -182,6 +196,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setIndex(long newIndex) {
@@ -196,6 +211,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetIndex() {
@@ -210,6 +226,7 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetIndex() {
@@ -219,17 +236,18 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
-				return getDependencies();
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
-				return getDependenciesKind();
-			case FmiPackage.UNKNOWN_TYPE1__INDEX:
-				return getIndex();
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
+			return getDependencies();
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
+			return getDependenciesKind();
+		case FmiPackage.UNKNOWN_TYPE1__INDEX:
+			return getIndex();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -237,21 +255,22 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
-				setDependencies((List<Long>)newValue);
-				return;
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
-				setDependenciesKind((List<DependenciesKindTypeItem1>)newValue);
-				return;
-			case FmiPackage.UNKNOWN_TYPE1__INDEX:
-				setIndex((Long)newValue);
-				return;
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
+			setDependencies((List<Long>) newValue);
+			return;
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
+			setDependenciesKind((List<DependenciesKindTypeItem1>) newValue);
+			return;
+		case FmiPackage.UNKNOWN_TYPE1__INDEX:
+			setIndex((Long) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -259,20 +278,21 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
-				setDependencies(DEPENDENCIES_EDEFAULT);
-				return;
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
-				setDependenciesKind(DEPENDENCIES_KIND_EDEFAULT);
-				return;
-			case FmiPackage.UNKNOWN_TYPE1__INDEX:
-				unsetIndex();
-				return;
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
+			setDependencies(DEPENDENCIES_EDEFAULT);
+			return;
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
+			setDependenciesKind(DEPENDENCIES_KIND_EDEFAULT);
+			return;
+		case FmiPackage.UNKNOWN_TYPE1__INDEX:
+			unsetIndex();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -280,17 +300,18 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
-				return DEPENDENCIES_EDEFAULT == null ? dependencies != null : !DEPENDENCIES_EDEFAULT.equals(dependencies);
-			case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
-				return DEPENDENCIES_KIND_EDEFAULT == null ? dependenciesKind != null : !DEPENDENCIES_KIND_EDEFAULT.equals(dependenciesKind);
-			case FmiPackage.UNKNOWN_TYPE1__INDEX:
-				return isSetIndex();
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES:
+			return DEPENDENCIES_EDEFAULT == null ? dependencies != null : !DEPENDENCIES_EDEFAULT.equals(dependencies);
+		case FmiPackage.UNKNOWN_TYPE1__DEPENDENCIES_KIND:
+			return DEPENDENCIES_KIND_EDEFAULT == null ? dependenciesKind != null : !DEPENDENCIES_KIND_EDEFAULT.equals(dependenciesKind);
+		case FmiPackage.UNKNOWN_TYPE1__INDEX:
+			return isSetIndex();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -298,11 +319,13 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (dependencies: ");
@@ -310,9 +333,12 @@ public class UnknownType1Impl extends MinimalEObjectImpl.Container implements Un
 		result.append(", dependenciesKind: ");
 		result.append(dependenciesKind);
 		result.append(", index: ");
-		if (indexESet) result.append(index); else result.append("<unset>");
+		if (indexESet)
+			result.append(index);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //UnknownType1Impl
+} // UnknownType1Impl

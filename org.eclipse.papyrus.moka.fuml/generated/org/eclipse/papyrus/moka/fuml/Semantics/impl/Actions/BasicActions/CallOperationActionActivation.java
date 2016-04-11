@@ -18,7 +18,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.uml2.uml.CallOperationAction;
 
-public class CallOperationActionActivation extends CallActionActivation{
+public class CallOperationActionActivation extends CallActionActivation {
 
 	@Override
 	public IExecution getCallExecution() {

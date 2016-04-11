@@ -29,18 +29,18 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.RealType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getDerivative <em>Derivative</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getDisplayUnit <em>Display Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getNominal <em>Nominal</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#isReinit <em>Reinit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#isRelativeQuantity <em>Relative Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getStart <em>Start</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#isUnbounded <em>Unbounded</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getUnit <em>Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getDerivative <em>Derivative</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getDisplayUnit <em>Display Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getNominal <em>Nominal</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#isReinit <em>Reinit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#isRelativeQuantity <em>Relative Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#isUnbounded <em>Unbounded</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl#getUnit <em>Unit</em>}</li>
  * </ul>
  *
  * @generated
@@ -50,6 +50,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -60,6 +61,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -70,6 +72,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getDerivative() <em>Derivative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDerivative()
 	 * @generated
 	 * @ordered
@@ -80,6 +83,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getDerivative() <em>Derivative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDerivative()
 	 * @generated
 	 * @ordered
@@ -90,6 +94,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Derivative attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -99,6 +104,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getDisplayUnit() <em>Display Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDisplayUnit()
 	 * @generated
 	 * @ordered
@@ -109,6 +115,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getDisplayUnit() <em>Display Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDisplayUnit()
 	 * @generated
 	 * @ordered
@@ -119,6 +126,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -129,6 +137,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -139,6 +148,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Max attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -148,6 +158,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -158,6 +169,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -168,6 +180,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Min attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -177,6 +190,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getNominal() <em>Nominal</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNominal()
 	 * @generated
 	 * @ordered
@@ -187,6 +201,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getNominal() <em>Nominal</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNominal()
 	 * @generated
 	 * @ordered
@@ -197,6 +212,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Nominal attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -206,6 +222,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -216,6 +233,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -226,6 +244,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #isReinit() <em>Reinit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isReinit()
 	 * @generated
 	 * @ordered
@@ -236,6 +255,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #isReinit() <em>Reinit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isReinit()
 	 * @generated
 	 * @ordered
@@ -246,6 +266,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Reinit attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -255,6 +276,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #isRelativeQuantity() <em>Relative Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isRelativeQuantity()
 	 * @generated
 	 * @ordered
@@ -265,6 +287,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #isRelativeQuantity() <em>Relative Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isRelativeQuantity()
 	 * @generated
 	 * @ordered
@@ -275,6 +298,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Relative Quantity attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -284,6 +308,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -294,6 +319,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -304,6 +330,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Start attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -313,6 +340,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #isUnbounded() <em>Unbounded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isUnbounded()
 	 * @generated
 	 * @ordered
@@ -323,6 +351,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #isUnbounded() <em>Unbounded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isUnbounded()
 	 * @generated
 	 * @ordered
@@ -333,6 +362,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * This is true if the Unbounded attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -342,6 +372,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUnit()
 	 * @generated
 	 * @ordered
@@ -352,6 +383,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUnit()
 	 * @generated
 	 * @ordered
@@ -361,6 +393,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected RealTypeImpl() {
@@ -370,6 +403,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -380,6 +414,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDeclaredType() {
@@ -389,6 +424,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDeclaredType(String newDeclaredType) {
@@ -401,6 +437,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getDerivative() {
@@ -410,6 +447,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDerivative(long newDerivative) {
@@ -424,6 +462,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetDerivative() {
@@ -438,6 +477,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetDerivative() {
@@ -447,6 +487,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDisplayUnit() {
@@ -456,6 +497,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDisplayUnit(String newDisplayUnit) {
@@ -468,6 +510,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getMax() {
@@ -477,6 +520,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMax(double newMax) {
@@ -491,6 +535,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMax() {
@@ -505,6 +550,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMax() {
@@ -514,6 +560,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getMin() {
@@ -523,6 +570,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMin(double newMin) {
@@ -537,6 +585,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMin() {
@@ -551,6 +600,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMin() {
@@ -560,6 +610,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getNominal() {
@@ -569,6 +620,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setNominal(double newNominal) {
@@ -583,6 +635,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetNominal() {
@@ -597,6 +650,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetNominal() {
@@ -606,6 +660,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getQuantity() {
@@ -615,6 +670,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setQuantity(String newQuantity) {
@@ -627,6 +683,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isReinit() {
@@ -636,6 +693,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setReinit(boolean newReinit) {
@@ -650,6 +708,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetReinit() {
@@ -664,6 +723,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetReinit() {
@@ -673,6 +733,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isRelativeQuantity() {
@@ -682,6 +743,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setRelativeQuantity(boolean newRelativeQuantity) {
@@ -696,6 +758,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetRelativeQuantity() {
@@ -710,6 +773,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetRelativeQuantity() {
@@ -719,6 +783,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getStart() {
@@ -728,6 +793,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStart(double newStart) {
@@ -742,6 +808,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetStart() {
@@ -756,6 +823,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetStart() {
@@ -765,6 +833,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isUnbounded() {
@@ -774,6 +843,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setUnbounded(boolean newUnbounded) {
@@ -788,6 +858,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetUnbounded() {
@@ -802,6 +873,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetUnbounded() {
@@ -811,6 +883,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getUnit() {
@@ -820,6 +893,7 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setUnit(String newUnit) {
@@ -832,35 +906,36 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.REAL_TYPE__DECLARED_TYPE:
-				return getDeclaredType();
-			case FmiPackage.REAL_TYPE__DERIVATIVE:
-				return getDerivative();
-			case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
-				return getDisplayUnit();
-			case FmiPackage.REAL_TYPE__MAX:
-				return getMax();
-			case FmiPackage.REAL_TYPE__MIN:
-				return getMin();
-			case FmiPackage.REAL_TYPE__NOMINAL:
-				return getNominal();
-			case FmiPackage.REAL_TYPE__QUANTITY:
-				return getQuantity();
-			case FmiPackage.REAL_TYPE__REINIT:
-				return isReinit();
-			case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
-				return isRelativeQuantity();
-			case FmiPackage.REAL_TYPE__START:
-				return getStart();
-			case FmiPackage.REAL_TYPE__UNBOUNDED:
-				return isUnbounded();
-			case FmiPackage.REAL_TYPE__UNIT:
-				return getUnit();
+		case FmiPackage.REAL_TYPE__DECLARED_TYPE:
+			return getDeclaredType();
+		case FmiPackage.REAL_TYPE__DERIVATIVE:
+			return getDerivative();
+		case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
+			return getDisplayUnit();
+		case FmiPackage.REAL_TYPE__MAX:
+			return getMax();
+		case FmiPackage.REAL_TYPE__MIN:
+			return getMin();
+		case FmiPackage.REAL_TYPE__NOMINAL:
+			return getNominal();
+		case FmiPackage.REAL_TYPE__QUANTITY:
+			return getQuantity();
+		case FmiPackage.REAL_TYPE__REINIT:
+			return isReinit();
+		case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
+			return isRelativeQuantity();
+		case FmiPackage.REAL_TYPE__START:
+			return getStart();
+		case FmiPackage.REAL_TYPE__UNBOUNDED:
+			return isUnbounded();
+		case FmiPackage.REAL_TYPE__UNIT:
+			return getUnit();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -868,47 +943,48 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.REAL_TYPE__DECLARED_TYPE:
-				setDeclaredType((String)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__DERIVATIVE:
-				setDerivative((Long)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
-				setDisplayUnit((String)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__MAX:
-				setMax((Double)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__MIN:
-				setMin((Double)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__NOMINAL:
-				setNominal((Double)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__QUANTITY:
-				setQuantity((String)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__REINIT:
-				setReinit((Boolean)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
-				setRelativeQuantity((Boolean)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__START:
-				setStart((Double)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__UNBOUNDED:
-				setUnbounded((Boolean)newValue);
-				return;
-			case FmiPackage.REAL_TYPE__UNIT:
-				setUnit((String)newValue);
-				return;
+		case FmiPackage.REAL_TYPE__DECLARED_TYPE:
+			setDeclaredType((String) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__DERIVATIVE:
+			setDerivative((Long) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
+			setDisplayUnit((String) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__MAX:
+			setMax((Double) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__MIN:
+			setMin((Double) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__NOMINAL:
+			setNominal((Double) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__QUANTITY:
+			setQuantity((String) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__REINIT:
+			setReinit((Boolean) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
+			setRelativeQuantity((Boolean) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__START:
+			setStart((Double) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__UNBOUNDED:
+			setUnbounded((Boolean) newValue);
+			return;
+		case FmiPackage.REAL_TYPE__UNIT:
+			setUnit((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -916,47 +992,48 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.REAL_TYPE__DECLARED_TYPE:
-				setDeclaredType(DECLARED_TYPE_EDEFAULT);
-				return;
-			case FmiPackage.REAL_TYPE__DERIVATIVE:
-				unsetDerivative();
-				return;
-			case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
-				setDisplayUnit(DISPLAY_UNIT_EDEFAULT);
-				return;
-			case FmiPackage.REAL_TYPE__MAX:
-				unsetMax();
-				return;
-			case FmiPackage.REAL_TYPE__MIN:
-				unsetMin();
-				return;
-			case FmiPackage.REAL_TYPE__NOMINAL:
-				unsetNominal();
-				return;
-			case FmiPackage.REAL_TYPE__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case FmiPackage.REAL_TYPE__REINIT:
-				unsetReinit();
-				return;
-			case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
-				unsetRelativeQuantity();
-				return;
-			case FmiPackage.REAL_TYPE__START:
-				unsetStart();
-				return;
-			case FmiPackage.REAL_TYPE__UNBOUNDED:
-				unsetUnbounded();
-				return;
-			case FmiPackage.REAL_TYPE__UNIT:
-				setUnit(UNIT_EDEFAULT);
-				return;
+		case FmiPackage.REAL_TYPE__DECLARED_TYPE:
+			setDeclaredType(DECLARED_TYPE_EDEFAULT);
+			return;
+		case FmiPackage.REAL_TYPE__DERIVATIVE:
+			unsetDerivative();
+			return;
+		case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
+			setDisplayUnit(DISPLAY_UNIT_EDEFAULT);
+			return;
+		case FmiPackage.REAL_TYPE__MAX:
+			unsetMax();
+			return;
+		case FmiPackage.REAL_TYPE__MIN:
+			unsetMin();
+			return;
+		case FmiPackage.REAL_TYPE__NOMINAL:
+			unsetNominal();
+			return;
+		case FmiPackage.REAL_TYPE__QUANTITY:
+			setQuantity(QUANTITY_EDEFAULT);
+			return;
+		case FmiPackage.REAL_TYPE__REINIT:
+			unsetReinit();
+			return;
+		case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
+			unsetRelativeQuantity();
+			return;
+		case FmiPackage.REAL_TYPE__START:
+			unsetStart();
+			return;
+		case FmiPackage.REAL_TYPE__UNBOUNDED:
+			unsetUnbounded();
+			return;
+		case FmiPackage.REAL_TYPE__UNIT:
+			setUnit(UNIT_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -964,35 +1041,36 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.REAL_TYPE__DECLARED_TYPE:
-				return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
-			case FmiPackage.REAL_TYPE__DERIVATIVE:
-				return isSetDerivative();
-			case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
-				return DISPLAY_UNIT_EDEFAULT == null ? displayUnit != null : !DISPLAY_UNIT_EDEFAULT.equals(displayUnit);
-			case FmiPackage.REAL_TYPE__MAX:
-				return isSetMax();
-			case FmiPackage.REAL_TYPE__MIN:
-				return isSetMin();
-			case FmiPackage.REAL_TYPE__NOMINAL:
-				return isSetNominal();
-			case FmiPackage.REAL_TYPE__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case FmiPackage.REAL_TYPE__REINIT:
-				return isSetReinit();
-			case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
-				return isSetRelativeQuantity();
-			case FmiPackage.REAL_TYPE__START:
-				return isSetStart();
-			case FmiPackage.REAL_TYPE__UNBOUNDED:
-				return isSetUnbounded();
-			case FmiPackage.REAL_TYPE__UNIT:
-				return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
+		case FmiPackage.REAL_TYPE__DECLARED_TYPE:
+			return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
+		case FmiPackage.REAL_TYPE__DERIVATIVE:
+			return isSetDerivative();
+		case FmiPackage.REAL_TYPE__DISPLAY_UNIT:
+			return DISPLAY_UNIT_EDEFAULT == null ? displayUnit != null : !DISPLAY_UNIT_EDEFAULT.equals(displayUnit);
+		case FmiPackage.REAL_TYPE__MAX:
+			return isSetMax();
+		case FmiPackage.REAL_TYPE__MIN:
+			return isSetMin();
+		case FmiPackage.REAL_TYPE__NOMINAL:
+			return isSetNominal();
+		case FmiPackage.REAL_TYPE__QUANTITY:
+			return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+		case FmiPackage.REAL_TYPE__REINIT:
+			return isSetReinit();
+		case FmiPackage.REAL_TYPE__RELATIVE_QUANTITY:
+			return isSetRelativeQuantity();
+		case FmiPackage.REAL_TYPE__START:
+			return isSetStart();
+		case FmiPackage.REAL_TYPE__UNBOUNDED:
+			return isSetUnbounded();
+		case FmiPackage.REAL_TYPE__UNIT:
+			return UNIT_EDEFAULT == null ? unit != null : !UNIT_EDEFAULT.equals(unit);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1000,39 +1078,65 @@ public class RealTypeImpl extends MinimalEObjectImpl.Container implements RealTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (declaredType: ");
 		result.append(declaredType);
 		result.append(", derivative: ");
-		if (derivativeESet) result.append(derivative); else result.append("<unset>");
+		if (derivativeESet)
+			result.append(derivative);
+		else
+			result.append("<unset>");
 		result.append(", displayUnit: ");
 		result.append(displayUnit);
 		result.append(", max: ");
-		if (maxESet) result.append(max); else result.append("<unset>");
+		if (maxESet)
+			result.append(max);
+		else
+			result.append("<unset>");
 		result.append(", min: ");
-		if (minESet) result.append(min); else result.append("<unset>");
+		if (minESet)
+			result.append(min);
+		else
+			result.append("<unset>");
 		result.append(", nominal: ");
-		if (nominalESet) result.append(nominal); else result.append("<unset>");
+		if (nominalESet)
+			result.append(nominal);
+		else
+			result.append("<unset>");
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", reinit: ");
-		if (reinitESet) result.append(reinit); else result.append("<unset>");
+		if (reinitESet)
+			result.append(reinit);
+		else
+			result.append("<unset>");
 		result.append(", relativeQuantity: ");
-		if (relativeQuantityESet) result.append(relativeQuantity); else result.append("<unset>");
+		if (relativeQuantityESet)
+			result.append(relativeQuantity);
+		else
+			result.append("<unset>");
 		result.append(", start: ");
-		if (startESet) result.append(start); else result.append("<unset>");
+		if (startESet)
+			result.append(start);
+		else
+			result.append("<unset>");
 		result.append(", unbounded: ");
-		if (unboundedESet) result.append(unbounded); else result.append("<unset>");
+		if (unboundedESet)
+			result.append(unbounded);
+		else
+			result.append("<unset>");
 		result.append(", unit: ");
 		result.append(unit);
 		result.append(')');
 		return result.toString();
 	}
 
-} //RealTypeImpl
+} // RealTypeImpl

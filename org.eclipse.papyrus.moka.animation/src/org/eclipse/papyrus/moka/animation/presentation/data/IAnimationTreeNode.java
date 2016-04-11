@@ -16,17 +16,17 @@ package org.eclipse.papyrus.moka.animation.presentation.data;
 import java.util.List;
 
 public interface IAnimationTreeNode extends IContentProviderListener {
-	
+
 	public IAnimationTreeNode getParent();
-	
+
 	public void setParent(IAnimationTreeNode node);
-	
+
 	public IAnimationTreeNode getRoot();
-	
+
 	public List<IAnimationTreeNode> getChildren();
-	
+
 	public boolean addChild(IAnimationTreeNode node);
-	
+
 	public boolean removeChild(IAnimationTreeNode node);
-	
+
 }

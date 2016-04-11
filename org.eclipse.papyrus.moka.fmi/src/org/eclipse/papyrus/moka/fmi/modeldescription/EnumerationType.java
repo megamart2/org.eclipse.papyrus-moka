@@ -22,11 +22,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart <em>Start</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType()
@@ -39,8 +39,9 @@ public interface EnumerationType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Name of type defined with TypeDefinitions / SimpleType 
+	 * Name of type defined with TypeDefinitions / SimpleType
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Declared Type</em>' attribute.
 	 * @see #setDeclaredType(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType_DeclaredType()
@@ -54,7 +55,9 @@ public interface EnumerationType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getDeclaredType <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Declared Type</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Declared Type</em>' attribute.
 	 * @see #getDeclaredType()
 	 * @generated
 	 */
@@ -67,6 +70,7 @@ public interface EnumerationType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * max >= min required
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Max</em>' attribute.
 	 * @see #isSetMax()
 	 * @see #unsetMax()
@@ -82,7 +86,9 @@ public interface EnumerationType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Max</em>' attribute.
 	 * @see #isSetMax()
 	 * @see #unsetMax()
 	 * @see #getMax()
@@ -94,6 +100,7 @@ public interface EnumerationType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMax()
 	 * @see #getMax()
 	 * @see #setMax(int)
@@ -105,6 +112,7 @@ public interface EnumerationType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax <em>Max</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Max</em>' attribute is set.
 	 * @see #unsetMax()
 	 * @see #getMax()
@@ -121,6 +129,7 @@ public interface EnumerationType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Min</em>' attribute.
 	 * @see #isSetMin()
 	 * @see #unsetMin()
@@ -136,7 +145,9 @@ public interface EnumerationType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Min</em>' attribute.
 	 * @see #isSetMin()
 	 * @see #unsetMin()
 	 * @see #getMin()
@@ -148,6 +159,7 @@ public interface EnumerationType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMin()
 	 * @see #getMin()
 	 * @see #setMin(int)
@@ -159,6 +171,7 @@ public interface EnumerationType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin <em>Min</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Min</em>' attribute is set.
 	 * @see #unsetMin()
 	 * @see #getMin()
@@ -175,6 +188,7 @@ public interface EnumerationType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType_Quantity()
@@ -188,7 +202,9 @@ public interface EnumerationType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getQuantity <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Quantity</em>' attribute.
 	 * @see #getQuantity()
 	 * @generated
 	 */
@@ -202,6 +218,7 @@ public interface EnumerationType extends EObject {
 	 * Value before initialization, if initial=exact or approx.
 	 * max >= start >= min required
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Start</em>' attribute.
 	 * @see #isSetStart()
 	 * @see #unsetStart()
@@ -217,7 +234,9 @@ public interface EnumerationType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Start</em>' attribute.
 	 * @see #isSetStart()
 	 * @see #unsetStart()
 	 * @see #getStart()
@@ -229,6 +248,7 @@ public interface EnumerationType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetStart()
 	 * @see #getStart()
 	 * @see #setStart(int)
@@ -240,6 +260,7 @@ public interface EnumerationType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart <em>Start</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Start</em>' attribute is set.
 	 * @see #unsetStart()
 	 * @see #getStart()

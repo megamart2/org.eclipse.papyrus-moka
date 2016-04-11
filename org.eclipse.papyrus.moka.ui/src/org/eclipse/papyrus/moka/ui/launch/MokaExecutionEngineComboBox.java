@@ -19,10 +19,10 @@ public class MokaExecutionEngineComboBox extends Combo {
 	public MokaExecutionEngineComboBox(Composite parent, int style) {
 		super(parent, style);
 	}
-	
+
 	@Override
 	protected void checkSubclass() {
 		// Do nothing, but ensure that we are allowed to extend basic widget provided by SWT
 	}
-	
+
 }

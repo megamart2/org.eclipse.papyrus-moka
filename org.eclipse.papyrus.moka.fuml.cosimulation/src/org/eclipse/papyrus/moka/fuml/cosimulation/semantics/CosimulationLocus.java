@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.cosimulation.semantics;
 
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
@@ -12,9 +23,9 @@ public class CosimulationLocus extends Timed_Locus {
 	@Override
 	public IObject_ instantiate(Class type) {
 		// Instantiate the given class at this locus.
-		
+
 		IObject_ object = null;
-		
+
 		if (type instanceof Behavior) {
 			object = super.instantiate(type);
 		} else {

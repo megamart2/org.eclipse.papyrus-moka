@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Dependencies Kind Type Item</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getDependenciesKindTypeItem()
  * @model extendedMetaData="name='dependenciesKind_._type_._item'"
  * @generated
@@ -31,6 +32,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * The '<em><b>Dependent</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DEPENDENT_VALUE
 	 * @generated
 	 * @ordered
@@ -41,6 +43,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * The '<em><b>Constant</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CONSTANT_VALUE
 	 * @generated
 	 * @ordered
@@ -51,6 +54,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * The '<em><b>Fixed</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FIXED_VALUE
 	 * @generated
 	 * @ordered
@@ -61,6 +65,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * The '<em><b>Tunable</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TUNABLE_VALUE
 	 * @generated
 	 * @ordered
@@ -71,6 +76,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * The '<em><b>Discrete</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DISCRETE_VALUE
 	 * @generated
 	 * @ordered
@@ -85,6 +91,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DEPENDENT
 	 * @model name="dependent"
 	 * @generated
@@ -100,6 +107,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CONSTANT
 	 * @model name="constant"
 	 * @generated
@@ -115,6 +123,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FIXED
 	 * @model name="fixed"
 	 * @generated
@@ -130,6 +139,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #TUNABLE
 	 * @model name="tunable"
 	 * @generated
@@ -145,6 +155,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #DISCRETE
 	 * @model name="discrete"
 	 * @generated
@@ -156,21 +167,22 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * An array of all the '<em><b>Dependencies Kind Type Item</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final DependenciesKindTypeItem[] VALUES_ARRAY =
-		new DependenciesKindTypeItem[] {
+	private static final DependenciesKindTypeItem[] VALUES_ARRAY = new DependenciesKindTypeItem[] {
 			DEPENDENT,
 			CONSTANT,
 			FIXED,
 			TUNABLE,
 			DISCRETE,
-		};
+	};
 
 	/**
 	 * A public read-only list of all the '<em><b>Dependencies Kind Type Item</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<DependenciesKindTypeItem> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -179,7 +191,9 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * Returns the '<em><b>Dependencies Kind Type Item</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 * 
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -197,7 +211,9 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * Returns the '<em><b>Dependencies Kind Type Item</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 * 
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -215,17 +231,24 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * Returns the '<em><b>Dependencies Kind Type Item</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 * 
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static DependenciesKindTypeItem get(int value) {
 		switch (value) {
-			case DEPENDENT_VALUE: return DEPENDENT;
-			case CONSTANT_VALUE: return CONSTANT;
-			case FIXED_VALUE: return FIXED;
-			case TUNABLE_VALUE: return TUNABLE;
-			case DISCRETE_VALUE: return DISCRETE;
+		case DEPENDENT_VALUE:
+			return DEPENDENT;
+		case CONSTANT_VALUE:
+			return CONSTANT;
+		case FIXED_VALUE:
+			return FIXED;
+		case TUNABLE_VALUE:
+			return TUNABLE;
+		case DISCRETE_VALUE:
+			return DISCRETE;
 		}
 		return null;
 	}
@@ -233,6 +256,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -240,6 +264,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -247,6 +272,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -255,6 +281,7 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private DependenciesKindTypeItem(int value, String name, String literal) {
@@ -266,39 +293,43 @@ public enum DependenciesKindTypeItem implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //DependenciesKindTypeItem
+
+} // DependenciesKindTypeItem

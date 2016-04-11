@@ -23,11 +23,11 @@ import org.eclipse.emf.ecore.EReference;
  * The <b>Package</b> for the model.
  * It contains accessors for the meta objects to represent
  * <ul>
- *   <li>each class,</li>
- *   <li>each feature of each class,</li>
- *   <li>each operation of each class,</li>
- *   <li>each enum,</li>
- *   <li>and each data type</li>
+ * <li>each class,</li>
+ * <li>each feature of each class,</li>
+ * <li>each operation of each class,</li>
+ * <li>each enum,</li>
+ * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
  * <!-- begin-model-doc -->
@@ -40,13 +40,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -67,11 +67,11 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * 
  * Copyright(c) 2008-2011 MODELISAR consortium,
- *              2012-2013 Modelica Association Project "FMI".
- *              All rights reserved.
+ * 2012-2013 Modelica Association Project "FMI".
+ * All rights reserved.
  * This file is licensed by the copyright holders under the BSD 2-Clause License
  * (http://www.opensource.org/licenses/bsd-license.html):
  * ----------------------------------------------------------------------------
@@ -79,13 +79,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -106,11 +106,11 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * 
  * Copyright(c) 2008-2011 MODELISAR consortium,
- *              2012-2013 Modelica Association Project "FMI".
- *              All rights reserved.
+ * 2012-2013 Modelica Association Project "FMI".
+ * All rights reserved.
  * This file is licensed by the copyright holders under the BSD 2-Clause Licensee
  * (http://www.opensource.org/licenses/bsd-license.html):
  * ----------------------------------------------------------------------------
@@ -118,13 +118,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -145,10 +145,10 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * 
  * Copyright(c) 2012-2013 Modelica Association Project "FMI".
- *              All rights reserved.
+ * All rights reserved.
  * This file is licensed by the copyright holders under the BSD 2-Clause License
  * (http://www.opensource.org/licenses/bsd-license.html):
  * ----------------------------------------------------------------------------
@@ -156,13 +156,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -183,11 +183,11 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * 
  * Copyright(c) 2008-2011 MODELISAR consortium,
- *              2012-2013 Modelica Association Project "FMI".
- *              All rights reserved.
+ * 2012-2013 Modelica Association Project "FMI".
+ * All rights reserved.
  * This file is licensed by the copyright holders under the BSD 2-Clause License
  * (http://www.opensource.org/licenses/bsd-license.html):
  * ----------------------------------------------------------------------------
@@ -195,13 +195,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -222,11 +222,11 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * 
  * Copyright(c) 2008-2011 MODELISAR consortium,
- *              2012-2013 Modelica Association Project "FMI".
- *              All rights reserved.
+ * 2012-2013 Modelica Association Project "FMI".
+ * All rights reserved.
  * This file is licensed by the copyright holders under the BSD 2-Clause License
  * (http://www.opensource.org/licenses/bsd-license.html):
  * ----------------------------------------------------------------------------
@@ -234,13 +234,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -261,11 +261,11 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * 
  * Copyright(c) 2008-2011 MODELISAR consortium,
- *              2012-2013 Modelica Association Project "FMI".
- *              All rights reserved.
+ * 2012-2013 Modelica Association Project "FMI".
+ * All rights reserved.
  * This file is licensed by the copyright holders under the BSD 2-Clause License
  * (http://www.opensource.org/licenses/bsd-license.html):
  * ----------------------------------------------------------------------------
@@ -273,13 +273,13 @@ import org.eclipse.emf.ecore.EReference;
  * modification, are permitted provided that the following conditions are met:
  * 
  * - Redistributions of source code must retain the above copyright notice,
- *   this list of conditions and the following disclaimer.
+ * this list of conditions and the following disclaimer.
  * - Redistributions in binary form must reproduce the above copyright notice,
- *   this list of conditions and the following disclaimer in the documentation
- *   and/or other materials provided with the distribution.
+ * this list of conditions and the following disclaimer in the documentation
+ * and/or other materials provided with the distribution.
  * - Neither the name of the copyright holders nor the names of its
- *   contributors may be used to endorse or promote products derived
- *   from this software without specific prior written permission.
+ * contributors may be used to endorse or promote products derived
+ * from this software without specific prior written permission.
  * 
  * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
  * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
@@ -300,8 +300,9 @@ import org.eclipse.emf.ecore.EReference;
  * terms of this license.
  * (Note, this means that if you distribute a modified file,
  * the modified file must also be provided under this license).
- *     
+ * 
  * <!-- end-model-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiFactory
  * @model kind="package"
  *        extendedMetaData="qualified='false'"
@@ -312,6 +313,7 @@ public interface FmiPackage extends EPackage {
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNAME = "modeldescription";
@@ -320,6 +322,7 @@ public interface FmiPackage extends EPackage {
 	 * The package namespace URI.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_URI = "platform:/plugin/org.eclipse.papyrus.moka.fmi/schema/fmi2ModelDescription.xsd";
@@ -328,6 +331,7 @@ public interface FmiPackage extends EPackage {
 	 * The package namespace name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	String eNS_PREFIX = "modeldescription";
@@ -336,6 +340,7 @@ public interface FmiPackage extends EPackage {
 	 * The singleton instance of the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	FmiPackage eINSTANCE = org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl.init();
@@ -344,6 +349,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl <em>Base Unit Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getBaseUnitType()
 	 * @generated
@@ -354,6 +360,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>A</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -363,6 +370,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Cd</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -372,6 +380,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -381,6 +390,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>K</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -390,6 +400,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Kg</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -399,6 +410,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>M</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -408,6 +420,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Mol</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -417,6 +430,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -426,6 +440,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Rad</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -435,6 +450,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>S</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -444,6 +460,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Base Unit Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -453,6 +470,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Base Unit Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -462,6 +480,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getBooleanType()
 	 * @generated
@@ -472,6 +491,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Declared Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -481,6 +501,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -490,6 +511,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Boolean Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -499,6 +521,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Boolean Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -508,6 +531,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl <em>Category Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCategoryType()
 	 * @generated
@@ -518,6 +542,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -527,6 +552,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -536,6 +562,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Category Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -545,6 +572,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Category Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -554,6 +582,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl <em>Co Simulation Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCoSimulationType()
 	 * @generated
@@ -564,6 +593,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Files</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -573,6 +603,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -582,6 +613,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -591,6 +623,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -600,6 +633,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Interpolate Inputs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -609,6 +643,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -618,6 +653,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Run Asynchronuously</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -627,6 +663,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Serialize FM Ustate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -636,6 +673,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Max Output Derivative Order</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -645,6 +683,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -654,6 +693,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Needs Execution Tool</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -663,6 +703,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Provides Directional Derivative</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -672,6 +713,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Co Simulation Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -681,6 +723,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Co Simulation Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -690,6 +733,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl <em>Default Experiment Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDefaultExperimentType()
 	 * @generated
@@ -700,6 +744,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Start Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -709,6 +754,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Step Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -718,6 +764,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Stop Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -727,6 +774,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Tolerance</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -736,6 +784,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Default Experiment Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -745,6 +794,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Default Experiment Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -754,6 +804,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl <em>Display Unit Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDisplayUnitType()
 	 * @generated
@@ -764,6 +815,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Factor</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -773,6 +825,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -782,6 +835,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Offset</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -791,6 +845,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Display Unit Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -800,6 +855,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Display Unit Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -809,6 +865,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl <em>Document Root</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDocumentRoot()
 	 * @generated
@@ -819,6 +876,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -828,6 +886,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>XMLNS Prefix Map</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -837,6 +896,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>XSI Schema Location</b></em>' map.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -846,6 +906,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Fmi Model Description</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -855,6 +916,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Document Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -864,6 +926,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Document Root</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -873,6 +936,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getEnumerationType()
 	 * @generated
@@ -883,6 +947,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Declared Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -892,6 +957,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -901,6 +967,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -910,6 +977,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -919,6 +987,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -928,6 +997,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Enumeration Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -937,6 +1007,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Enumeration Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -946,6 +1017,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl <em>Enumeration Type1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getEnumerationType1()
 	 * @generated
@@ -956,6 +1028,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -965,6 +1038,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Item</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -974,6 +1048,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -983,6 +1058,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Enumeration Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -992,6 +1068,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Enumeration Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1001,6 +1078,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileTypeImpl <em>File Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFileType()
 	 * @generated
@@ -1011,6 +1089,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1020,6 +1099,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>File Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1029,6 +1109,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>File Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1038,6 +1119,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileType1Impl <em>File Type1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileType1Impl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFileType1()
 	 * @generated
@@ -1048,6 +1130,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1057,6 +1140,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>File Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1066,6 +1150,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>File Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1075,6 +1160,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2AnnotationImpl <em>Fmi2 Annotation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2AnnotationImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2Annotation()
 	 * @generated
@@ -1085,6 +1171,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1094,6 +1181,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Tool</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1103,6 +1191,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Fmi2 Annotation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1112,6 +1201,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Fmi2 Annotation</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1121,6 +1211,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl <em>Fmi2 Scalar Variable</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2ScalarVariable()
 	 * @generated
@@ -1131,6 +1222,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Real</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1140,6 +1232,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Integer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1149,6 +1242,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Boolean</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1158,6 +1252,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>String</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1167,6 +1262,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Enumeration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1176,6 +1272,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Annotations</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1185,6 +1282,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Handle Multiple Set Per Time Instant</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1194,6 +1292,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Causality</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1203,6 +1302,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1212,6 +1312,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Initial</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1221,6 +1322,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1230,6 +1332,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Value Reference</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1239,6 +1342,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Variability</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1248,6 +1352,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Fmi2 Scalar Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1257,6 +1362,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Fmi2 Scalar Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1266,6 +1372,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2SimpleTypeImpl <em>Fmi2 Simple Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2SimpleTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2SimpleType()
 	 * @generated
@@ -1276,6 +1383,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Real</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1285,6 +1393,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Integer</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1294,6 +1403,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Boolean</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1303,6 +1413,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>String</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1312,6 +1423,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Enumeration</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1321,6 +1433,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1330,6 +1443,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1339,6 +1453,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Fmi2 Simple Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1348,6 +1463,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Fmi2 Simple Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1357,6 +1473,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl <em>Fmi2 Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2Unit()
 	 * @generated
@@ -1367,6 +1484,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Base Unit</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1376,6 +1494,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1385,6 +1504,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Unit</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1394,6 +1514,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1403,6 +1524,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Fmi2 Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1412,6 +1534,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Fmi2 Unit</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1421,6 +1544,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2VariableDependencyImpl <em>Fmi2 Variable Dependency</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2VariableDependencyImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2VariableDependency()
 	 * @generated
@@ -1431,6 +1555,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1440,6 +1565,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unknown</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1449,6 +1575,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Fmi2 Variable Dependency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1458,6 +1585,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Fmi2 Variable Dependency</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1467,6 +1595,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl <em>Model Description Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmiModelDescriptionType()
 	 * @generated
@@ -1477,6 +1606,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1486,6 +1616,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Exchange</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1495,6 +1626,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Co Simulation</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1504,6 +1636,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unit Definitions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1513,6 +1646,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Type Definitions</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1522,6 +1656,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Log Categories</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1531,6 +1666,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Default Experiment</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1540,6 +1676,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Vendor Annotations</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1549,6 +1686,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Variables</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1558,6 +1696,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Structure</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1567,6 +1706,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Author</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1576,6 +1716,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Copyright</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1585,6 +1726,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1594,6 +1736,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Fmi Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1603,6 +1746,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Generation Date And Time</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1612,6 +1756,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Generation Tool</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1621,6 +1766,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Guid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1630,6 +1776,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>License</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1639,6 +1786,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1648,6 +1796,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Number Of Event Indicators</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1657,6 +1806,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Variable Naming Convention</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1666,6 +1816,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Version</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1675,6 +1826,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Description Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1684,6 +1836,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Model Description Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1693,6 +1846,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.InitialUnknownsTypeImpl <em>Initial Unknowns Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.InitialUnknownsTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getInitialUnknownsType()
 	 * @generated
@@ -1703,6 +1857,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1712,6 +1867,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unknown</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1721,6 +1877,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Initial Unknowns Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1730,6 +1887,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Initial Unknowns Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1739,6 +1897,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getIntegerType()
 	 * @generated
@@ -1749,6 +1908,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Declared Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1758,6 +1918,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1767,6 +1928,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1776,6 +1938,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1785,6 +1948,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1794,6 +1958,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Integer Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1803,6 +1968,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Integer Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1812,6 +1978,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl <em>Integer Type1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getIntegerType1()
 	 * @generated
@@ -1822,6 +1989,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1831,6 +1999,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1840,6 +2009,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1849,6 +2019,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Integer Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1858,6 +2029,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Integer Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1867,6 +2039,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ItemTypeImpl <em>Item Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ItemTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getItemType()
 	 * @generated
@@ -1877,6 +2050,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Description</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1886,6 +2060,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1895,6 +2070,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1904,6 +2080,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Item Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1913,6 +2090,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Item Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1922,6 +2100,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.LogCategoriesTypeImpl <em>Log Categories Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.LogCategoriesTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getLogCategoriesType()
 	 * @generated
@@ -1932,6 +2111,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1941,6 +2121,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Category</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1950,6 +2131,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Log Categories Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1959,6 +2141,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Log Categories Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1968,6 +2151,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelExchangeTypeImpl <em>Model Exchange Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelExchangeTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getModelExchangeType()
 	 * @generated
@@ -1978,6 +2162,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Source Files</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1987,6 +2172,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -1996,6 +2182,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2005,6 +2192,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2014,6 +2202,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Can Serialize FM Ustate</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2023,6 +2212,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Completed Integrator Step Not Needed</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2032,6 +2222,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Model Identifier</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2041,6 +2232,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Needs Execution Tool</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2050,6 +2242,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Provides Directional Derivative</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2059,6 +2252,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Exchange Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2068,6 +2262,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Model Exchange Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2077,6 +2272,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelStructureTypeImpl <em>Model Structure Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelStructureTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getModelStructureType()
 	 * @generated
@@ -2087,6 +2283,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Outputs</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2096,6 +2293,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Derivatives</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2105,6 +2303,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Initial Unknowns</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2114,6 +2313,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Structure Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2123,6 +2323,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Model Structure Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2132,6 +2333,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelVariablesTypeImpl <em>Model Variables Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelVariablesTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getModelVariablesType()
 	 * @generated
@@ -2142,6 +2344,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2151,6 +2354,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Scalar Variable</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2160,6 +2364,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Model Variables Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2169,6 +2374,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Model Variables Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2178,6 +2384,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl <em>Real Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getRealType()
 	 * @generated
@@ -2188,6 +2395,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Declared Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2197,6 +2405,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Derivative</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2206,6 +2415,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2215,6 +2425,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2224,6 +2435,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2233,6 +2445,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Nominal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2242,6 +2455,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2251,6 +2465,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Reinit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2260,6 +2475,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Relative Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2269,6 +2485,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2278,6 +2495,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unbounded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2287,6 +2505,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2296,6 +2515,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Real Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2305,6 +2525,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Real Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2314,6 +2535,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealType1Impl <em>Real Type1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealType1Impl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getRealType1()
 	 * @generated
@@ -2324,6 +2546,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Display Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2333,6 +2556,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Max</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2342,6 +2566,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Min</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2351,6 +2576,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Nominal</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2360,6 +2586,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2369,6 +2596,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Relative Quantity</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2378,6 +2606,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unbounded</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2387,6 +2616,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unit</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2396,6 +2626,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Real Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2405,6 +2636,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Real Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2414,6 +2646,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesTypeImpl <em>Source Files Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getSourceFilesType()
 	 * @generated
@@ -2424,6 +2657,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2433,6 +2667,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>File</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2442,6 +2677,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Source Files Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2451,6 +2687,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Source Files Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2460,6 +2697,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesType1Impl <em>Source Files Type1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesType1Impl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getSourceFilesType1()
 	 * @generated
@@ -2470,6 +2708,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2479,6 +2718,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>File</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2488,6 +2728,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Source Files Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2497,6 +2738,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Source Files Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2506,6 +2748,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl <em>String Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getStringType()
 	 * @generated
@@ -2516,6 +2759,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Declared Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2525,6 +2769,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Start</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2534,6 +2779,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>String Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2543,6 +2789,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>String Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2552,6 +2799,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl <em>Tool Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getToolType()
 	 * @generated
@@ -2562,6 +2810,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Any</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2571,6 +2820,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2580,6 +2830,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Tool Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2589,6 +2840,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Tool Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2598,6 +2850,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl <em>Type Definitions Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getTypeDefinitionsType()
 	 * @generated
@@ -2608,6 +2861,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2617,6 +2871,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Simple Type</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2626,6 +2881,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Type Definitions Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2635,6 +2891,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Type Definitions Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2644,6 +2901,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnitDefinitionsTypeImpl <em>Unit Definitions Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnitDefinitionsTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getUnitDefinitionsType()
 	 * @generated
@@ -2654,6 +2912,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Group</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2663,6 +2922,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Unit</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2672,6 +2932,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Unit Definitions Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2681,6 +2942,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Unit Definitions Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2690,6 +2952,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownTypeImpl <em>Unknown Type</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownTypeImpl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getUnknownType()
 	 * @generated
@@ -2700,6 +2963,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Dependencies</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2709,6 +2973,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Dependencies Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2718,6 +2983,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2727,6 +2993,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Unknown Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2736,6 +3003,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Unknown Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2745,6 +3013,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl <em>Unknown Type1</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getUnknownType1()
 	 * @generated
@@ -2755,6 +3024,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Dependencies</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2764,6 +3034,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Dependencies Kind</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2773,6 +3044,7 @@ public interface FmiPackage extends EPackage {
 	 * The feature id for the '<em><b>Index</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2782,6 +3054,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of structural features of the '<em>Unknown Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2791,6 +3064,7 @@ public interface FmiPackage extends EPackage {
 	 * The number of operations of the '<em>Unknown Type1</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -2800,6 +3074,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType <em>Causality Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCausalityType()
 	 * @generated
@@ -2810,6 +3085,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem <em>Dependencies Kind Type Item</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItem()
 	 * @generated
@@ -2820,6 +3096,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1 <em>Dependencies Kind Type Item1</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItem1()
 	 * @generated
@@ -2830,6 +3107,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialType <em>Initial Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getInitialType()
 	 * @generated
@@ -2840,6 +3118,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType <em>Variability Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariabilityType()
 	 * @generated
@@ -2850,6 +3129,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType <em>Variable Naming Convention Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariableNamingConventionType()
 	 * @generated
@@ -2860,6 +3140,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Causality Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCausalityTypeObject()
 	 * @generated
@@ -2870,6 +3151,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Dependencies Kind Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.util.List
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindType()
 	 * @generated
@@ -2880,6 +3162,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Dependencies Kind Type1</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.util.List
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindType1()
 	 * @generated
@@ -2890,6 +3173,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Dependencies Kind Type Item Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItemObject()
 	 * @generated
@@ -2900,6 +3184,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Dependencies Kind Type Item Object1</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItemObject1()
 	 * @generated
@@ -2910,6 +3195,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Dependencies Type</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.util.List
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesType()
 	 * @generated
@@ -2920,6 +3206,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Dependencies Type1</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see java.util.List
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesType1()
 	 * @generated
@@ -2930,6 +3217,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Initial Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getInitialTypeObject()
 	 * @generated
@@ -2940,6 +3228,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Variability Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariabilityTypeObject()
 	 * @generated
@@ -2950,6 +3239,7 @@ public interface FmiPackage extends EPackage {
 	 * The meta object id for the '<em>Variable Naming Convention Type Object</em>' data type.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariableNamingConventionTypeObject()
 	 * @generated
@@ -2961,6 +3251,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType <em>Base Unit Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Base Unit Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType
 	 * @generated
@@ -2971,6 +3262,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA <em>A</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>A</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA()
 	 * @see #getBaseUnitType()
@@ -2982,6 +3274,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd <em>Cd</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Cd</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd()
 	 * @see #getBaseUnitType()
@@ -2993,6 +3286,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor <em>Factor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Factor</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor()
 	 * @see #getBaseUnitType()
@@ -3004,6 +3298,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK <em>K</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>K</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK()
 	 * @see #getBaseUnitType()
@@ -3015,6 +3310,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg <em>Kg</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Kg</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg()
 	 * @see #getBaseUnitType()
@@ -3026,6 +3322,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM <em>M</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>M</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM()
 	 * @see #getBaseUnitType()
@@ -3037,6 +3334,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol <em>Mol</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Mol</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol()
 	 * @see #getBaseUnitType()
@@ -3048,6 +3346,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset <em>Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Offset</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset()
 	 * @see #getBaseUnitType()
@@ -3059,6 +3358,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad <em>Rad</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Rad</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad()
 	 * @see #getBaseUnitType()
@@ -3070,6 +3370,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS <em>S</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>S</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS()
 	 * @see #getBaseUnitType()
@@ -3081,6 +3382,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType <em>Boolean Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Boolean Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType
 	 * @generated
@@ -3091,6 +3393,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#getDeclaredType <em>Declared Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declared Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#getDeclaredType()
 	 * @see #getBooleanType()
@@ -3102,6 +3405,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart()
 	 * @see #getBooleanType()
@@ -3113,6 +3417,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType <em>Category Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Category Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType
 	 * @generated
@@ -3123,6 +3428,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getDescription()
 	 * @see #getCategoryType()
@@ -3134,6 +3440,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CategoryType#getName()
 	 * @see #getCategoryType()
@@ -3145,6 +3452,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType <em>Co Simulation Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Co Simulation Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType
 	 * @generated
@@ -3155,6 +3463,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#getSourceFiles <em>Source Files</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Source Files</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#getSourceFiles()
 	 * @see #getCoSimulationType()
@@ -3166,6 +3475,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Be Instantiated Only Once Per Process</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #getCoSimulationType()
@@ -3177,6 +3487,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Get And Set FM Ustate</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanGetAndSetFMUstate()
 	 * @see #getCoSimulationType()
@@ -3188,6 +3499,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Handle Variable Communication Step Size</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanHandleVariableCommunicationStepSize()
 	 * @see #getCoSimulationType()
@@ -3199,6 +3511,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Interpolate Inputs</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanInterpolateInputs()
 	 * @see #getCoSimulationType()
@@ -3210,6 +3523,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Not Use Memory Management Functions</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanNotUseMemoryManagementFunctions()
 	 * @see #getCoSimulationType()
@@ -3221,6 +3535,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Run Asynchronuously</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanRunAsynchronuously()
 	 * @see #getCoSimulationType()
@@ -3232,6 +3547,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Serialize FM Ustate</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isCanSerializeFMUstate()
 	 * @see #getCoSimulationType()
@@ -3243,6 +3559,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max Output Derivative Order</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#getMaxOutputDerivativeOrder()
 	 * @see #getCoSimulationType()
@@ -3254,6 +3571,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#getModelIdentifier <em>Model Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Model Identifier</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#getModelIdentifier()
 	 * @see #getCoSimulationType()
@@ -3265,6 +3583,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isNeedsExecutionTool <em>Needs Execution Tool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Needs Execution Tool</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isNeedsExecutionTool()
 	 * @see #getCoSimulationType()
@@ -3276,6 +3595,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Provides Directional Derivative</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType#isProvidesDirectionalDerivative()
 	 * @see #getCoSimulationType()
@@ -3287,6 +3607,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType <em>Default Experiment Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Default Experiment Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType
 	 * @generated
@@ -3297,6 +3618,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getStartTime <em>Start Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Start Time</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getStartTime()
 	 * @see #getDefaultExperimentType()
@@ -3308,6 +3630,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getStepSize <em>Step Size</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Step Size</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getStepSize()
 	 * @see #getDefaultExperimentType()
@@ -3319,6 +3642,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getStopTime <em>Stop Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Stop Time</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getStopTime()
 	 * @see #getDefaultExperimentType()
@@ -3330,6 +3654,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getTolerance <em>Tolerance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Tolerance</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DefaultExperimentType#getTolerance()
 	 * @see #getDefaultExperimentType()
@@ -3341,6 +3666,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType <em>Display Unit Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Display Unit Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType
 	 * @generated
@@ -3351,6 +3677,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor <em>Factor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Factor</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor()
 	 * @see #getDisplayUnitType()
@@ -3362,6 +3689,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getName()
 	 * @see #getDisplayUnitType()
@@ -3373,6 +3701,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset <em>Offset</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Offset</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset()
 	 * @see #getDisplayUnitType()
@@ -3384,6 +3713,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot <em>Document Root</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Document Root</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot
 	 * @generated
@@ -3394,6 +3724,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getMixed <em>Mixed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Mixed</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getMixed()
 	 * @see #getDocumentRoot()
@@ -3405,6 +3736,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the map '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getXMLNSPrefixMap <em>XMLNS Prefix Map</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the map '<em>XMLNS Prefix Map</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getXMLNSPrefixMap()
 	 * @see #getDocumentRoot()
@@ -3416,6 +3748,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the map '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getXSISchemaLocation <em>XSI Schema Location</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the map '<em>XSI Schema Location</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getXSISchemaLocation()
 	 * @see #getDocumentRoot()
@@ -3427,6 +3760,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getFmiModelDescription <em>Fmi Model Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Fmi Model Description</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DocumentRoot#getFmiModelDescription()
 	 * @see #getDocumentRoot()
@@ -3438,6 +3772,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType <em>Enumeration Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Enumeration Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType
 	 * @generated
@@ -3448,6 +3783,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getDeclaredType <em>Declared Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declared Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getDeclaredType()
 	 * @see #getEnumerationType()
@@ -3459,6 +3795,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMax()
 	 * @see #getEnumerationType()
@@ -3470,6 +3807,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Min</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getMin()
 	 * @see #getEnumerationType()
@@ -3481,6 +3819,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getQuantity()
 	 * @see #getEnumerationType()
@@ -3492,6 +3831,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType#getStart()
 	 * @see #getEnumerationType()
@@ -3503,6 +3843,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1 <em>Enumeration Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Enumeration Type1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1
 	 * @generated
@@ -3513,6 +3854,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getGroup()
 	 * @see #getEnumerationType1()
@@ -3524,6 +3866,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getItem <em>Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Item</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getItem()
 	 * @see #getEnumerationType1()
@@ -3535,6 +3878,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getQuantity()
 	 * @see #getEnumerationType1()
@@ -3546,6 +3890,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType <em>File Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>File Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FileType
 	 * @generated
@@ -3556,6 +3901,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FileType#getName()
 	 * @see #getFileType()
@@ -3567,6 +3913,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType1 <em>File Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>File Type1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FileType1
 	 * @generated
@@ -3577,6 +3924,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType1#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FileType1#getName()
 	 * @see #getFileType1()
@@ -3588,6 +3936,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation <em>Fmi2 Annotation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fmi2 Annotation</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation
 	 * @generated
@@ -3598,6 +3947,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getGroup()
 	 * @see #getFmi2Annotation()
@@ -3609,6 +3959,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getTool <em>Tool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Tool</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getTool()
 	 * @see #getFmi2Annotation()
@@ -3620,6 +3971,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable <em>Fmi2 Scalar Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fmi2 Scalar Variable</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable
 	 * @generated
@@ -3630,6 +3982,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getReal <em>Real</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Real</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getReal()
 	 * @see #getFmi2ScalarVariable()
@@ -3641,6 +3994,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInteger <em>Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Integer</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInteger()
 	 * @see #getFmi2ScalarVariable()
@@ -3652,6 +4006,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getBoolean <em>Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Boolean</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getBoolean()
 	 * @see #getFmi2ScalarVariable()
@@ -3663,6 +4018,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getString <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>String</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getString()
 	 * @see #getFmi2ScalarVariable()
@@ -3674,6 +4030,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getEnumeration <em>Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Enumeration</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getEnumeration()
 	 * @see #getFmi2ScalarVariable()
@@ -3685,6 +4042,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getAnnotations <em>Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Annotations</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getAnnotations()
 	 * @see #getFmi2ScalarVariable()
@@ -3696,6 +4054,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Handle Multiple Set Per Time Instant</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant()
 	 * @see #getFmi2ScalarVariable()
@@ -3707,6 +4066,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality <em>Causality</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Causality</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality()
 	 * @see #getFmi2ScalarVariable()
@@ -3718,6 +4078,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getDescription()
 	 * @see #getFmi2ScalarVariable()
@@ -3729,6 +4090,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial <em>Initial</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Initial</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial()
 	 * @see #getFmi2ScalarVariable()
@@ -3740,6 +4102,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getName()
 	 * @see #getFmi2ScalarVariable()
@@ -3751,6 +4114,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference <em>Value Reference</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Value Reference</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference()
 	 * @see #getFmi2ScalarVariable()
@@ -3762,6 +4126,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability <em>Variability</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Variability</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability()
 	 * @see #getFmi2ScalarVariable()
@@ -3773,6 +4138,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType <em>Fmi2 Simple Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fmi2 Simple Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType
 	 * @generated
@@ -3783,6 +4149,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getReal <em>Real</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Real</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getReal()
 	 * @see #getFmi2SimpleType()
@@ -3794,6 +4161,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getInteger <em>Integer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Integer</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getInteger()
 	 * @see #getFmi2SimpleType()
@@ -3805,6 +4173,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getBoolean <em>Boolean</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Boolean</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getBoolean()
 	 * @see #getFmi2SimpleType()
@@ -3816,6 +4185,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getString <em>String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>String</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getString()
 	 * @see #getFmi2SimpleType()
@@ -3827,6 +4197,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getEnumeration <em>Enumeration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Enumeration</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getEnumeration()
 	 * @see #getFmi2SimpleType()
@@ -3838,6 +4209,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getDescription()
 	 * @see #getFmi2SimpleType()
@@ -3849,6 +4221,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2SimpleType#getName()
 	 * @see #getFmi2SimpleType()
@@ -3860,6 +4233,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit <em>Fmi2 Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fmi2 Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit
 	 * @generated
@@ -3870,6 +4244,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getBaseUnit <em>Base Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Base Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getBaseUnit()
 	 * @see #getFmi2Unit()
@@ -3881,6 +4256,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getGroup()
 	 * @see #getFmi2Unit()
@@ -3892,6 +4268,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getDisplayUnit <em>Display Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Display Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getDisplayUnit()
 	 * @see #getFmi2Unit()
@@ -3903,6 +4280,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getName()
 	 * @see #getFmi2Unit()
@@ -3914,6 +4292,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency <em>Fmi2 Variable Dependency</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Fmi2 Variable Dependency</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency
 	 * @generated
@@ -3924,6 +4303,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency#getGroup()
 	 * @see #getFmi2VariableDependency()
@@ -3935,6 +4315,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency#getUnknown <em>Unknown</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Unknown</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2VariableDependency#getUnknown()
 	 * @see #getFmi2VariableDependency()
@@ -3946,6 +4327,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType <em>Model Description Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Model Description Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType
 	 * @generated
@@ -3956,6 +4338,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGroup()
 	 * @see #getFmiModelDescriptionType()
@@ -3967,6 +4350,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelExchange <em>Model Exchange</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Model Exchange</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelExchange()
 	 * @see #getFmiModelDescriptionType()
@@ -3978,6 +4362,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getCoSimulation <em>Co Simulation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Co Simulation</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getCoSimulation()
 	 * @see #getFmiModelDescriptionType()
@@ -3989,6 +4374,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getUnitDefinitions <em>Unit Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Unit Definitions</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getUnitDefinitions()
 	 * @see #getFmiModelDescriptionType()
@@ -4000,6 +4386,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getTypeDefinitions <em>Type Definitions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Type Definitions</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getTypeDefinitions()
 	 * @see #getFmiModelDescriptionType()
@@ -4011,6 +4398,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getLogCategories <em>Log Categories</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Log Categories</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getLogCategories()
 	 * @see #getFmiModelDescriptionType()
@@ -4022,6 +4410,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getDefaultExperiment <em>Default Experiment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Default Experiment</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getDefaultExperiment()
 	 * @see #getFmiModelDescriptionType()
@@ -4033,6 +4422,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getVendorAnnotations <em>Vendor Annotations</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Vendor Annotations</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getVendorAnnotations()
 	 * @see #getFmiModelDescriptionType()
@@ -4044,6 +4434,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelVariables <em>Model Variables</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Model Variables</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelVariables()
 	 * @see #getFmiModelDescriptionType()
@@ -4055,6 +4446,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelStructure <em>Model Structure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Model Structure</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelStructure()
 	 * @see #getFmiModelDescriptionType()
@@ -4066,6 +4458,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getAuthor <em>Author</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Author</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getAuthor()
 	 * @see #getFmiModelDescriptionType()
@@ -4077,6 +4470,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getCopyright <em>Copyright</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Copyright</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getCopyright()
 	 * @see #getFmiModelDescriptionType()
@@ -4088,6 +4482,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getDescription()
 	 * @see #getFmiModelDescriptionType()
@@ -4099,6 +4494,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getFmiVersion <em>Fmi Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Fmi Version</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getFmiVersion()
 	 * @see #getFmiModelDescriptionType()
@@ -4110,6 +4506,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGenerationDateAndTime <em>Generation Date And Time</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Generation Date And Time</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGenerationDateAndTime()
 	 * @see #getFmiModelDescriptionType()
@@ -4121,6 +4518,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGenerationTool <em>Generation Tool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Generation Tool</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGenerationTool()
 	 * @see #getFmiModelDescriptionType()
@@ -4132,6 +4530,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGuid <em>Guid</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Guid</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getGuid()
 	 * @see #getFmiModelDescriptionType()
@@ -4143,6 +4542,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getLicense <em>License</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>License</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getLicense()
 	 * @see #getFmiModelDescriptionType()
@@ -4154,6 +4554,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelName <em>Model Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Model Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getModelName()
 	 * @see #getFmiModelDescriptionType()
@@ -4165,6 +4566,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getNumberOfEventIndicators <em>Number Of Event Indicators</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Number Of Event Indicators</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getNumberOfEventIndicators()
 	 * @see #getFmiModelDescriptionType()
@@ -4176,6 +4578,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getVariableNamingConvention <em>Variable Naming Convention</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Variable Naming Convention</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getVariableNamingConvention()
 	 * @see #getFmiModelDescriptionType()
@@ -4187,6 +4590,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getVersion <em>Version</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Version</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType#getVersion()
 	 * @see #getFmiModelDescriptionType()
@@ -4198,6 +4602,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType <em>Initial Unknowns Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Initial Unknowns Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType
 	 * @generated
@@ -4208,6 +4613,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getGroup()
 	 * @see #getInitialUnknownsType()
@@ -4219,6 +4625,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getUnknown <em>Unknown</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Unknown</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getUnknown()
 	 * @see #getInitialUnknownsType()
@@ -4230,6 +4637,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType <em>Integer Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Integer Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType
 	 * @generated
@@ -4240,6 +4648,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getDeclaredType <em>Declared Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declared Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getDeclaredType()
 	 * @see #getIntegerType()
@@ -4251,6 +4660,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getMax()
 	 * @see #getIntegerType()
@@ -4262,6 +4672,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Min</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getMin()
 	 * @see #getIntegerType()
@@ -4273,6 +4684,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getQuantity()
 	 * @see #getIntegerType()
@@ -4284,6 +4696,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType#getStart()
 	 * @see #getIntegerType()
@@ -4295,6 +4708,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1 <em>Integer Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Integer Type1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1
 	 * @generated
@@ -4305,6 +4719,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax()
 	 * @see #getIntegerType1()
@@ -4316,6 +4731,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Min</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin()
 	 * @see #getIntegerType1()
@@ -4327,6 +4743,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getQuantity()
 	 * @see #getIntegerType1()
@@ -4338,6 +4755,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType <em>Item Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Item Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ItemType
 	 * @generated
@@ -4348,6 +4766,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getDescription <em>Description</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Description</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getDescription()
 	 * @see #getItemType()
@@ -4359,6 +4778,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getName()
 	 * @see #getItemType()
@@ -4370,6 +4790,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue()
 	 * @see #getItemType()
@@ -4381,6 +4802,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType <em>Log Categories Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Log Categories Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType
 	 * @generated
@@ -4391,6 +4813,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType#getGroup()
 	 * @see #getLogCategoriesType()
@@ -4402,6 +4825,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType#getCategory <em>Category</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Category</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.LogCategoriesType#getCategory()
 	 * @see #getLogCategoriesType()
@@ -4413,6 +4837,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType <em>Model Exchange Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Model Exchange Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType
 	 * @generated
@@ -4423,6 +4848,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getSourceFiles <em>Source Files</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Source Files</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getSourceFiles()
 	 * @see #getModelExchangeType()
@@ -4434,6 +4860,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Be Instantiated Only Once Per Process</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #getModelExchangeType()
@@ -4445,6 +4872,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Get And Set FM Ustate</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate()
 	 * @see #getModelExchangeType()
@@ -4456,6 +4884,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Not Use Memory Management Functions</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions()
 	 * @see #getModelExchangeType()
@@ -4467,6 +4896,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Can Serialize FM Ustate</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate()
 	 * @see #getModelExchangeType()
@@ -4478,6 +4908,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded <em>Completed Integrator Step Not Needed</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Completed Integrator Step Not Needed</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded()
 	 * @see #getModelExchangeType()
@@ -4489,6 +4920,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getModelIdentifier <em>Model Identifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Model Identifier</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getModelIdentifier()
 	 * @see #getModelExchangeType()
@@ -4500,6 +4932,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool <em>Needs Execution Tool</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Needs Execution Tool</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool()
 	 * @see #getModelExchangeType()
@@ -4511,6 +4944,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Provides Directional Derivative</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative()
 	 * @see #getModelExchangeType()
@@ -4522,6 +4956,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType <em>Model Structure Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Model Structure Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType
 	 * @generated
@@ -4532,6 +4967,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType#getOutputs <em>Outputs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Outputs</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType#getOutputs()
 	 * @see #getModelStructureType()
@@ -4543,6 +4979,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType#getDerivatives <em>Derivatives</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Derivatives</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType#getDerivatives()
 	 * @see #getModelStructureType()
@@ -4554,6 +4991,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType#getInitialUnknowns <em>Initial Unknowns</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference '<em>Initial Unknowns</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelStructureType#getInitialUnknowns()
 	 * @see #getModelStructureType()
@@ -4565,6 +5003,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType <em>Model Variables Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Model Variables Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType
 	 * @generated
@@ -4575,6 +5014,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getGroup()
 	 * @see #getModelVariablesType()
@@ -4586,6 +5026,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getScalarVariable <em>Scalar Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Scalar Variable</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getScalarVariable()
 	 * @see #getModelVariablesType()
@@ -4597,6 +5038,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType <em>Real Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Real Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType
 	 * @generated
@@ -4607,6 +5049,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getDeclaredType <em>Declared Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declared Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getDeclaredType()
 	 * @see #getRealType()
@@ -4618,6 +5061,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getDerivative <em>Derivative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Derivative</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getDerivative()
 	 * @see #getRealType()
@@ -4629,6 +5073,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getDisplayUnit <em>Display Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Display Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getDisplayUnit()
 	 * @see #getRealType()
@@ -4640,6 +5085,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getMax()
 	 * @see #getRealType()
@@ -4651,6 +5097,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Min</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getMin()
 	 * @see #getRealType()
@@ -4662,6 +5109,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getNominal <em>Nominal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Nominal</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getNominal()
 	 * @see #getRealType()
@@ -4673,6 +5121,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getQuantity()
 	 * @see #getRealType()
@@ -4684,6 +5133,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#isReinit <em>Reinit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Reinit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#isReinit()
 	 * @see #getRealType()
@@ -4695,6 +5145,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#isRelativeQuantity <em>Relative Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Relative Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#isRelativeQuantity()
 	 * @see #getRealType()
@@ -4706,6 +5157,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getStart()
 	 * @see #getRealType()
@@ -4717,6 +5169,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#isUnbounded <em>Unbounded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Unbounded</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#isUnbounded()
 	 * @see #getRealType()
@@ -4728,6 +5181,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType#getUnit()
 	 * @see #getRealType()
@@ -4739,6 +5193,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1 <em>Real Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Real Type1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1
 	 * @generated
@@ -4749,6 +5204,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getDisplayUnit <em>Display Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Display Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getDisplayUnit()
 	 * @see #getRealType1()
@@ -4760,6 +5216,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax <em>Max</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Max</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax()
 	 * @see #getRealType1()
@@ -4771,6 +5228,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin <em>Min</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Min</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin()
 	 * @see #getRealType1()
@@ -4782,6 +5240,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal <em>Nominal</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Nominal</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal()
 	 * @see #getRealType1()
@@ -4793,6 +5252,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getQuantity()
 	 * @see #getRealType1()
@@ -4804,6 +5264,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity <em>Relative Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Relative Quantity</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity()
 	 * @see #getRealType1()
@@ -4815,6 +5276,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded <em>Unbounded</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Unbounded</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded()
 	 * @see #getRealType1()
@@ -4826,6 +5288,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getUnit()
 	 * @see #getRealType1()
@@ -4837,6 +5300,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType <em>Source Files Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Source Files Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType
 	 * @generated
@@ -4847,6 +5311,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType#getGroup()
 	 * @see #getSourceFilesType()
@@ -4858,6 +5323,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType#getFile <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>File</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType#getFile()
 	 * @see #getSourceFilesType()
@@ -4869,6 +5335,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1 <em>Source Files Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Source Files Type1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1
 	 * @generated
@@ -4879,6 +5346,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1#getGroup()
 	 * @see #getSourceFilesType1()
@@ -4890,6 +5358,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1#getFile <em>File</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>File</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType1#getFile()
 	 * @see #getSourceFilesType1()
@@ -4901,6 +5370,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType <em>String Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>String Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.StringType
 	 * @generated
@@ -4911,6 +5381,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getDeclaredType <em>Declared Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Declared Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getDeclaredType()
 	 * @see #getStringType()
@@ -4922,6 +5393,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getStart <em>Start</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Start</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getStart()
 	 * @see #getStringType()
@@ -4933,6 +5405,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType <em>Tool Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Tool Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ToolType
 	 * @generated
@@ -4943,6 +5416,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getAny <em>Any</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Any</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getAny()
 	 * @see #getToolType()
@@ -4954,6 +5428,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Name</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getName()
 	 * @see #getToolType()
@@ -4965,6 +5440,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType <em>Type Definitions Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Type Definitions Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType
 	 * @generated
@@ -4975,6 +5451,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getGroup()
 	 * @see #getTypeDefinitionsType()
@@ -4986,6 +5463,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getSimpleType <em>Simple Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Simple Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType#getSimpleType()
 	 * @see #getTypeDefinitionsType()
@@ -4997,6 +5475,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType <em>Unit Definitions Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Unit Definitions Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType
 	 * @generated
@@ -5007,6 +5486,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getGroup <em>Group</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute list '<em>Group</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getGroup()
 	 * @see #getUnitDefinitionsType()
@@ -5018,6 +5498,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getUnit <em>Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the containment reference list '<em>Unit</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getUnit()
 	 * @see #getUnitDefinitionsType()
@@ -5029,6 +5510,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType <em>Unknown Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Unknown Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType
 	 * @generated
@@ -5039,6 +5521,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependencies <em>Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Dependencies</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependencies()
 	 * @see #getUnknownType()
@@ -5050,6 +5533,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependenciesKind <em>Dependencies Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Dependencies Kind</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependenciesKind()
 	 * @see #getUnknownType()
@@ -5061,6 +5545,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex <em>Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Index</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex()
 	 * @see #getUnknownType()
@@ -5072,6 +5557,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1 <em>Unknown Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for class '<em>Unknown Type1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1
 	 * @generated
@@ -5082,6 +5568,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1#getDependencies <em>Dependencies</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Dependencies</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1#getDependencies()
 	 * @see #getUnknownType1()
@@ -5093,6 +5580,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1#getDependenciesKind <em>Dependencies Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Dependencies Kind</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1#getDependenciesKind()
 	 * @see #getUnknownType1()
@@ -5104,6 +5592,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1#getIndex <em>Index</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for the attribute '<em>Index</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType1#getIndex()
 	 * @see #getUnknownType1()
@@ -5115,6 +5604,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType <em>Causality Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Causality Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 	 * @generated
@@ -5125,6 +5615,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem <em>Dependencies Kind Type Item</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Dependencies Kind Type Item</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem
 	 * @generated
@@ -5135,6 +5626,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1 <em>Dependencies Kind Type Item1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Dependencies Kind Type Item1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1
 	 * @generated
@@ -5145,6 +5637,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialType <em>Initial Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Initial Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 	 * @generated
@@ -5155,6 +5648,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType <em>Variability Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Variability Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 	 * @generated
@@ -5165,6 +5659,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for enum '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType <em>Variable Naming Convention Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for enum '<em>Variable Naming Convention Type</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType
 	 * @generated
@@ -5175,6 +5670,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType <em>Causality Type Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Causality Type Object</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 	 * @model instanceClass="org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType"
@@ -5187,6 +5683,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.util.List <em>Dependencies Kind Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Dependencies Kind Type</em>'.
 	 * @see java.util.List
 	 * @model instanceClass="java.util.List"
@@ -5199,6 +5696,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.util.List <em>Dependencies Kind Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Dependencies Kind Type1</em>'.
 	 * @see java.util.List
 	 * @model instanceClass="java.util.List"
@@ -5211,6 +5709,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem <em>Dependencies Kind Type Item Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Dependencies Kind Type Item Object</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem
 	 * @model instanceClass="org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem"
@@ -5223,6 +5722,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1 <em>Dependencies Kind Type Item Object1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Dependencies Kind Type Item Object1</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1
 	 * @model instanceClass="org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1"
@@ -5235,6 +5735,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.util.List <em>Dependencies Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Dependencies Type</em>'.
 	 * @see java.util.List
 	 * @model instanceClass="java.util.List"
@@ -5247,6 +5748,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link java.util.List <em>Dependencies Type1</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Dependencies Type1</em>'.
 	 * @see java.util.List
 	 * @model instanceClass="java.util.List"
@@ -5259,6 +5761,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialType <em>Initial Type Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Initial Type Object</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 	 * @model instanceClass="org.eclipse.papyrus.moka.fmi.modeldescription.InitialType"
@@ -5271,6 +5774,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType <em>Variability Type Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Variability Type Object</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 	 * @model instanceClass="org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType"
@@ -5283,6 +5787,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the meta object for data type '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType <em>Variable Naming Convention Type Object</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the meta object for data type '<em>Variable Naming Convention Type Object</em>'.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType
 	 * @model instanceClass="org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType"
@@ -5295,6 +5800,7 @@ public interface FmiPackage extends EPackage {
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -5304,13 +5810,14 @@ public interface FmiPackage extends EPackage {
 	 * <!-- begin-user-doc -->
 	 * Defines literals for the meta objects that represent
 	 * <ul>
-	 *   <li>each class,</li>
-	 *   <li>each feature of each class,</li>
-	 *   <li>each operation of each class,</li>
-	 *   <li>each enum,</li>
-	 *   <li>and each data type</li>
+	 * <li>each class,</li>
+	 * <li>each feature of each class,</li>
+	 * <li>each operation of each class,</li>
+	 * <li>each enum,</li>
+	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	interface Literals {
@@ -5318,6 +5825,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl <em>Base Unit Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.BaseUnitTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getBaseUnitType()
 		 * @generated
@@ -5328,6 +5836,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>A</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__A = eINSTANCE.getBaseUnitType_A();
@@ -5336,6 +5845,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Cd</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__CD = eINSTANCE.getBaseUnitType_Cd();
@@ -5344,6 +5854,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Factor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__FACTOR = eINSTANCE.getBaseUnitType_Factor();
@@ -5352,6 +5863,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>K</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__K = eINSTANCE.getBaseUnitType_K();
@@ -5360,6 +5872,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Kg</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__KG = eINSTANCE.getBaseUnitType_Kg();
@@ -5368,6 +5881,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>M</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__M = eINSTANCE.getBaseUnitType_M();
@@ -5376,6 +5890,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mol</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__MOL = eINSTANCE.getBaseUnitType_Mol();
@@ -5384,6 +5899,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__OFFSET = eINSTANCE.getBaseUnitType_Offset();
@@ -5392,6 +5908,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Rad</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__RAD = eINSTANCE.getBaseUnitType_Rad();
@@ -5400,6 +5917,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>S</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BASE_UNIT_TYPE__S = eINSTANCE.getBaseUnitType_S();
@@ -5408,6 +5926,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl <em>Boolean Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getBooleanType()
 		 * @generated
@@ -5418,6 +5937,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declared Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BOOLEAN_TYPE__DECLARED_TYPE = eINSTANCE.getBooleanType_DeclaredType();
@@ -5426,6 +5946,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute BOOLEAN_TYPE__START = eINSTANCE.getBooleanType_Start();
@@ -5434,6 +5955,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl <em>Category Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCategoryType()
 		 * @generated
@@ -5444,6 +5966,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CATEGORY_TYPE__DESCRIPTION = eINSTANCE.getCategoryType_Description();
@@ -5452,6 +5975,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CATEGORY_TYPE__NAME = eINSTANCE.getCategoryType_Name();
@@ -5460,6 +5984,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl <em>Co Simulation Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCoSimulationType()
 		 * @generated
@@ -5470,6 +5995,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source Files</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference CO_SIMULATION_TYPE__SOURCE_FILES = eINSTANCE.getCoSimulationType_SourceFiles();
@@ -5478,6 +6004,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = eINSTANCE.getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess();
@@ -5486,6 +6013,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE = eINSTANCE.getCoSimulationType_CanGetAndSetFMUstate();
@@ -5494,6 +6022,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE = eINSTANCE.getCoSimulationType_CanHandleVariableCommunicationStepSize();
@@ -5502,6 +6031,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Interpolate Inputs</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS = eINSTANCE.getCoSimulationType_CanInterpolateInputs();
@@ -5510,6 +6040,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = eINSTANCE.getCoSimulationType_CanNotUseMemoryManagementFunctions();
@@ -5518,6 +6049,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Run Asynchronuously</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY = eINSTANCE.getCoSimulationType_CanRunAsynchronuously();
@@ -5526,6 +6058,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Serialize FM Ustate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE = eINSTANCE.getCoSimulationType_CanSerializeFMUstate();
@@ -5534,6 +6067,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max Output Derivative Order</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER = eINSTANCE.getCoSimulationType_MaxOutputDerivativeOrder();
@@ -5542,6 +6076,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__MODEL_IDENTIFIER = eINSTANCE.getCoSimulationType_ModelIdentifier();
@@ -5550,6 +6085,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Needs Execution Tool</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL = eINSTANCE.getCoSimulationType_NeedsExecutionTool();
@@ -5558,6 +6094,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Provides Directional Derivative</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE = eINSTANCE.getCoSimulationType_ProvidesDirectionalDerivative();
@@ -5566,6 +6103,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl <em>Default Experiment Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDefaultExperimentType()
 		 * @generated
@@ -5576,6 +6114,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DEFAULT_EXPERIMENT_TYPE__START_TIME = eINSTANCE.getDefaultExperimentType_StartTime();
@@ -5584,6 +6123,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Step Size</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DEFAULT_EXPERIMENT_TYPE__STEP_SIZE = eINSTANCE.getDefaultExperimentType_StepSize();
@@ -5592,6 +6132,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Stop Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DEFAULT_EXPERIMENT_TYPE__STOP_TIME = eINSTANCE.getDefaultExperimentType_StopTime();
@@ -5600,6 +6141,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Tolerance</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DEFAULT_EXPERIMENT_TYPE__TOLERANCE = eINSTANCE.getDefaultExperimentType_Tolerance();
@@ -5608,6 +6150,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl <em>Display Unit Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDisplayUnitType()
 		 * @generated
@@ -5618,6 +6161,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Factor</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISPLAY_UNIT_TYPE__FACTOR = eINSTANCE.getDisplayUnitType_Factor();
@@ -5626,6 +6170,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISPLAY_UNIT_TYPE__NAME = eINSTANCE.getDisplayUnitType_Name();
@@ -5634,6 +6179,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Offset</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DISPLAY_UNIT_TYPE__OFFSET = eINSTANCE.getDisplayUnitType_Offset();
@@ -5642,6 +6188,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl <em>Document Root</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.DocumentRootImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDocumentRoot()
 		 * @generated
@@ -5652,6 +6199,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Mixed</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute DOCUMENT_ROOT__MIXED = eINSTANCE.getDocumentRoot_Mixed();
@@ -5660,6 +6208,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>XMLNS Prefix Map</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DOCUMENT_ROOT__XMLNS_PREFIX_MAP = eINSTANCE.getDocumentRoot_XMLNSPrefixMap();
@@ -5668,6 +6217,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>XSI Schema Location</b></em>' map feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DOCUMENT_ROOT__XSI_SCHEMA_LOCATION = eINSTANCE.getDocumentRoot_XSISchemaLocation();
@@ -5676,6 +6226,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fmi Model Description</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference DOCUMENT_ROOT__FMI_MODEL_DESCRIPTION = eINSTANCE.getDocumentRoot_FmiModelDescription();
@@ -5684,6 +6235,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl <em>Enumeration Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getEnumerationType()
 		 * @generated
@@ -5694,6 +6246,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declared Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE__DECLARED_TYPE = eINSTANCE.getEnumerationType_DeclaredType();
@@ -5702,6 +6255,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE__MAX = eINSTANCE.getEnumerationType_Max();
@@ -5710,6 +6264,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE__MIN = eINSTANCE.getEnumerationType_Min();
@@ -5718,6 +6273,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE__QUANTITY = eINSTANCE.getEnumerationType_Quantity();
@@ -5726,6 +6282,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE__START = eINSTANCE.getEnumerationType_Start();
@@ -5734,6 +6291,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl <em>Enumeration Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationType1Impl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getEnumerationType1()
 		 * @generated
@@ -5744,6 +6302,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE1__GROUP = eINSTANCE.getEnumerationType1_Group();
@@ -5752,6 +6311,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Item</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference ENUMERATION_TYPE1__ITEM = eINSTANCE.getEnumerationType1_Item();
@@ -5760,6 +6320,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ENUMERATION_TYPE1__QUANTITY = eINSTANCE.getEnumerationType1_Quantity();
@@ -5768,6 +6329,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileTypeImpl <em>File Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFileType()
 		 * @generated
@@ -5778,6 +6340,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FILE_TYPE__NAME = eINSTANCE.getFileType_Name();
@@ -5786,6 +6349,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileType1Impl <em>File Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileType1Impl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFileType1()
 		 * @generated
@@ -5796,6 +6360,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FILE_TYPE1__NAME = eINSTANCE.getFileType1_Name();
@@ -5804,6 +6369,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2AnnotationImpl <em>Fmi2 Annotation</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2AnnotationImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2Annotation()
 		 * @generated
@@ -5814,6 +6380,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_ANNOTATION__GROUP = eINSTANCE.getFmi2Annotation_Group();
@@ -5822,6 +6389,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Tool</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_ANNOTATION__TOOL = eINSTANCE.getFmi2Annotation_Tool();
@@ -5830,6 +6398,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl <em>Fmi2 Scalar Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2ScalarVariable()
 		 * @generated
@@ -5840,6 +6409,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Real</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SCALAR_VARIABLE__REAL = eINSTANCE.getFmi2ScalarVariable_Real();
@@ -5848,6 +6418,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Integer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SCALAR_VARIABLE__INTEGER = eINSTANCE.getFmi2ScalarVariable_Integer();
@@ -5856,6 +6427,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Boolean</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SCALAR_VARIABLE__BOOLEAN = eINSTANCE.getFmi2ScalarVariable_Boolean();
@@ -5864,6 +6436,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>String</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SCALAR_VARIABLE__STRING = eINSTANCE.getFmi2ScalarVariable_String();
@@ -5872,6 +6445,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Enumeration</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SCALAR_VARIABLE__ENUMERATION = eINSTANCE.getFmi2ScalarVariable_Enumeration();
@@ -5880,6 +6454,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Annotations</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SCALAR_VARIABLE__ANNOTATIONS = eINSTANCE.getFmi2ScalarVariable_Annotations();
@@ -5888,6 +6463,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Handle Multiple Set Per Time Instant</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT = eINSTANCE.getFmi2ScalarVariable_CanHandleMultipleSetPerTimeInstant();
@@ -5896,6 +6472,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Causality</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__CAUSALITY = eINSTANCE.getFmi2ScalarVariable_Causality();
@@ -5904,6 +6481,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__DESCRIPTION = eINSTANCE.getFmi2ScalarVariable_Description();
@@ -5912,6 +6490,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Initial</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__INITIAL = eINSTANCE.getFmi2ScalarVariable_Initial();
@@ -5920,6 +6499,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__NAME = eINSTANCE.getFmi2ScalarVariable_Name();
@@ -5928,6 +6508,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value Reference</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__VALUE_REFERENCE = eINSTANCE.getFmi2ScalarVariable_ValueReference();
@@ -5936,6 +6517,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Variability</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SCALAR_VARIABLE__VARIABILITY = eINSTANCE.getFmi2ScalarVariable_Variability();
@@ -5944,6 +6526,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2SimpleTypeImpl <em>Fmi2 Simple Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2SimpleTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2SimpleType()
 		 * @generated
@@ -5954,6 +6537,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Real</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SIMPLE_TYPE__REAL = eINSTANCE.getFmi2SimpleType_Real();
@@ -5962,6 +6546,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Integer</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SIMPLE_TYPE__INTEGER = eINSTANCE.getFmi2SimpleType_Integer();
@@ -5970,6 +6555,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Boolean</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SIMPLE_TYPE__BOOLEAN = eINSTANCE.getFmi2SimpleType_Boolean();
@@ -5978,6 +6564,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>String</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SIMPLE_TYPE__STRING = eINSTANCE.getFmi2SimpleType_String();
@@ -5986,6 +6573,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Enumeration</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_SIMPLE_TYPE__ENUMERATION = eINSTANCE.getFmi2SimpleType_Enumeration();
@@ -5994,6 +6582,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SIMPLE_TYPE__DESCRIPTION = eINSTANCE.getFmi2SimpleType_Description();
@@ -6002,6 +6591,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_SIMPLE_TYPE__NAME = eINSTANCE.getFmi2SimpleType_Name();
@@ -6010,6 +6600,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl <em>Fmi2 Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2Unit()
 		 * @generated
@@ -6020,6 +6611,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Base Unit</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_UNIT__BASE_UNIT = eINSTANCE.getFmi2Unit_BaseUnit();
@@ -6028,6 +6620,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_UNIT__GROUP = eINSTANCE.getFmi2Unit_Group();
@@ -6036,6 +6629,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Unit</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_UNIT__DISPLAY_UNIT = eINSTANCE.getFmi2Unit_DisplayUnit();
@@ -6044,6 +6638,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_UNIT__NAME = eINSTANCE.getFmi2Unit_Name();
@@ -6052,6 +6647,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2VariableDependencyImpl <em>Fmi2 Variable Dependency</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2VariableDependencyImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmi2VariableDependency()
 		 * @generated
@@ -6062,6 +6658,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI2_VARIABLE_DEPENDENCY__GROUP = eINSTANCE.getFmi2VariableDependency_Group();
@@ -6070,6 +6667,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unknown</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI2_VARIABLE_DEPENDENCY__UNKNOWN = eINSTANCE.getFmi2VariableDependency_Unknown();
@@ -6078,6 +6676,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl <em>Model Description Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getFmiModelDescriptionType()
 		 * @generated
@@ -6088,6 +6687,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__GROUP = eINSTANCE.getFmiModelDescriptionType_Group();
@@ -6096,6 +6696,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Exchange</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE = eINSTANCE.getFmiModelDescriptionType_ModelExchange();
@@ -6104,6 +6705,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Co Simulation</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION = eINSTANCE.getFmiModelDescriptionType_CoSimulation();
@@ -6112,6 +6714,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit Definitions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS = eINSTANCE.getFmiModelDescriptionType_UnitDefinitions();
@@ -6120,6 +6723,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Type Definitions</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS = eINSTANCE.getFmiModelDescriptionType_TypeDefinitions();
@@ -6128,6 +6732,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Log Categories</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES = eINSTANCE.getFmiModelDescriptionType_LogCategories();
@@ -6136,6 +6741,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Default Experiment</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT = eINSTANCE.getFmiModelDescriptionType_DefaultExperiment();
@@ -6144,6 +6750,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vendor Annotations</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS = eINSTANCE.getFmiModelDescriptionType_VendorAnnotations();
@@ -6152,6 +6759,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Variables</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES = eINSTANCE.getFmiModelDescriptionType_ModelVariables();
@@ -6160,6 +6768,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Structure</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE = eINSTANCE.getFmiModelDescriptionType_ModelStructure();
@@ -6168,6 +6777,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Author</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__AUTHOR = eINSTANCE.getFmiModelDescriptionType_Author();
@@ -6176,6 +6786,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Copyright</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT = eINSTANCE.getFmiModelDescriptionType_Copyright();
@@ -6184,6 +6795,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION = eINSTANCE.getFmiModelDescriptionType_Description();
@@ -6192,6 +6804,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Fmi Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION = eINSTANCE.getFmiModelDescriptionType_FmiVersion();
@@ -6200,6 +6813,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generation Date And Time</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME = eINSTANCE.getFmiModelDescriptionType_GenerationDateAndTime();
@@ -6208,6 +6822,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Generation Tool</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL = eINSTANCE.getFmiModelDescriptionType_GenerationTool();
@@ -6216,6 +6831,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Guid</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__GUID = eINSTANCE.getFmiModelDescriptionType_Guid();
@@ -6224,6 +6840,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>License</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__LICENSE = eINSTANCE.getFmiModelDescriptionType_License();
@@ -6232,6 +6849,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME = eINSTANCE.getFmiModelDescriptionType_ModelName();
@@ -6240,6 +6858,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Number Of Event Indicators</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS = eINSTANCE.getFmiModelDescriptionType_NumberOfEventIndicators();
@@ -6248,6 +6867,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Variable Naming Convention</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION = eINSTANCE.getFmiModelDescriptionType_VariableNamingConvention();
@@ -6256,6 +6876,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Version</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute FMI_MODEL_DESCRIPTION_TYPE__VERSION = eINSTANCE.getFmiModelDescriptionType_Version();
@@ -6264,6 +6885,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.InitialUnknownsTypeImpl <em>Initial Unknowns Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.InitialUnknownsTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getInitialUnknownsType()
 		 * @generated
@@ -6274,6 +6896,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INITIAL_UNKNOWNS_TYPE__GROUP = eINSTANCE.getInitialUnknownsType_Group();
@@ -6282,6 +6905,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unknown</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference INITIAL_UNKNOWNS_TYPE__UNKNOWN = eINSTANCE.getInitialUnknownsType_Unknown();
@@ -6290,6 +6914,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerTypeImpl <em>Integer Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getIntegerType()
 		 * @generated
@@ -6300,6 +6925,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declared Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE__DECLARED_TYPE = eINSTANCE.getIntegerType_DeclaredType();
@@ -6308,6 +6934,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE__MAX = eINSTANCE.getIntegerType_Max();
@@ -6316,6 +6943,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE__MIN = eINSTANCE.getIntegerType_Min();
@@ -6324,6 +6952,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE__QUANTITY = eINSTANCE.getIntegerType_Quantity();
@@ -6332,6 +6961,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE__START = eINSTANCE.getIntegerType_Start();
@@ -6340,6 +6970,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl <em>Integer Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.IntegerType1Impl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getIntegerType1()
 		 * @generated
@@ -6350,6 +6981,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE1__MAX = eINSTANCE.getIntegerType1_Max();
@@ -6358,6 +6990,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE1__MIN = eINSTANCE.getIntegerType1_Min();
@@ -6366,6 +6999,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute INTEGER_TYPE1__QUANTITY = eINSTANCE.getIntegerType1_Quantity();
@@ -6374,6 +7008,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ItemTypeImpl <em>Item Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ItemTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getItemType()
 		 * @generated
@@ -6384,6 +7019,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ITEM_TYPE__DESCRIPTION = eINSTANCE.getItemType_Description();
@@ -6392,6 +7028,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ITEM_TYPE__NAME = eINSTANCE.getItemType_Name();
@@ -6400,6 +7037,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute ITEM_TYPE__VALUE = eINSTANCE.getItemType_Value();
@@ -6408,6 +7046,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.LogCategoriesTypeImpl <em>Log Categories Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.LogCategoriesTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getLogCategoriesType()
 		 * @generated
@@ -6418,6 +7057,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute LOG_CATEGORIES_TYPE__GROUP = eINSTANCE.getLogCategoriesType_Group();
@@ -6426,6 +7066,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Category</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference LOG_CATEGORIES_TYPE__CATEGORY = eINSTANCE.getLogCategoriesType_Category();
@@ -6434,6 +7075,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelExchangeTypeImpl <em>Model Exchange Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelExchangeTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getModelExchangeType()
 		 * @generated
@@ -6444,6 +7086,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Source Files</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MODEL_EXCHANGE_TYPE__SOURCE_FILES = eINSTANCE.getModelExchangeType_SourceFiles();
@@ -6452,6 +7095,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Be Instantiated Only Once Per Process</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS = eINSTANCE.getModelExchangeType_CanBeInstantiatedOnlyOncePerProcess();
@@ -6460,6 +7104,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Get And Set FM Ustate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__CAN_GET_AND_SET_FM_USTATE = eINSTANCE.getModelExchangeType_CanGetAndSetFMUstate();
@@ -6468,6 +7113,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Not Use Memory Management Functions</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS = eINSTANCE.getModelExchangeType_CanNotUseMemoryManagementFunctions();
@@ -6476,6 +7122,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Can Serialize FM Ustate</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__CAN_SERIALIZE_FM_USTATE = eINSTANCE.getModelExchangeType_CanSerializeFMUstate();
@@ -6484,6 +7131,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Completed Integrator Step Not Needed</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__COMPLETED_INTEGRATOR_STEP_NOT_NEEDED = eINSTANCE.getModelExchangeType_CompletedIntegratorStepNotNeeded();
@@ -6492,6 +7140,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Model Identifier</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__MODEL_IDENTIFIER = eINSTANCE.getModelExchangeType_ModelIdentifier();
@@ -6500,6 +7149,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Needs Execution Tool</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__NEEDS_EXECUTION_TOOL = eINSTANCE.getModelExchangeType_NeedsExecutionTool();
@@ -6508,6 +7158,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Provides Directional Derivative</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_EXCHANGE_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE = eINSTANCE.getModelExchangeType_ProvidesDirectionalDerivative();
@@ -6516,6 +7167,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelStructureTypeImpl <em>Model Structure Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelStructureTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getModelStructureType()
 		 * @generated
@@ -6526,6 +7178,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Outputs</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MODEL_STRUCTURE_TYPE__OUTPUTS = eINSTANCE.getModelStructureType_Outputs();
@@ -6534,6 +7187,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Derivatives</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MODEL_STRUCTURE_TYPE__DERIVATIVES = eINSTANCE.getModelStructureType_Derivatives();
@@ -6542,6 +7196,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Initial Unknowns</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MODEL_STRUCTURE_TYPE__INITIAL_UNKNOWNS = eINSTANCE.getModelStructureType_InitialUnknowns();
@@ -6550,6 +7205,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelVariablesTypeImpl <em>Model Variables Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ModelVariablesTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getModelVariablesType()
 		 * @generated
@@ -6560,6 +7216,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute MODEL_VARIABLES_TYPE__GROUP = eINSTANCE.getModelVariablesType_Group();
@@ -6568,6 +7225,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Scalar Variable</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference MODEL_VARIABLES_TYPE__SCALAR_VARIABLE = eINSTANCE.getModelVariablesType_ScalarVariable();
@@ -6576,6 +7234,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl <em>Real Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getRealType()
 		 * @generated
@@ -6586,6 +7245,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declared Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__DECLARED_TYPE = eINSTANCE.getRealType_DeclaredType();
@@ -6594,6 +7254,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Derivative</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__DERIVATIVE = eINSTANCE.getRealType_Derivative();
@@ -6602,6 +7263,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__DISPLAY_UNIT = eINSTANCE.getRealType_DisplayUnit();
@@ -6610,6 +7272,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__MAX = eINSTANCE.getRealType_Max();
@@ -6618,6 +7281,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__MIN = eINSTANCE.getRealType_Min();
@@ -6626,6 +7290,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Nominal</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__NOMINAL = eINSTANCE.getRealType_Nominal();
@@ -6634,6 +7299,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__QUANTITY = eINSTANCE.getRealType_Quantity();
@@ -6642,6 +7308,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Reinit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__REINIT = eINSTANCE.getRealType_Reinit();
@@ -6650,6 +7317,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Relative Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__RELATIVE_QUANTITY = eINSTANCE.getRealType_RelativeQuantity();
@@ -6658,6 +7326,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__START = eINSTANCE.getRealType_Start();
@@ -6666,6 +7335,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unbounded</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__UNBOUNDED = eINSTANCE.getRealType_Unbounded();
@@ -6674,6 +7344,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE__UNIT = eINSTANCE.getRealType_Unit();
@@ -6682,6 +7353,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealType1Impl <em>Real Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.RealType1Impl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getRealType1()
 		 * @generated
@@ -6692,6 +7364,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Display Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__DISPLAY_UNIT = eINSTANCE.getRealType1_DisplayUnit();
@@ -6700,6 +7373,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Max</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__MAX = eINSTANCE.getRealType1_Max();
@@ -6708,6 +7382,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Min</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__MIN = eINSTANCE.getRealType1_Min();
@@ -6716,6 +7391,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Nominal</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__NOMINAL = eINSTANCE.getRealType1_Nominal();
@@ -6724,6 +7400,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__QUANTITY = eINSTANCE.getRealType1_Quantity();
@@ -6732,6 +7409,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Relative Quantity</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__RELATIVE_QUANTITY = eINSTANCE.getRealType1_RelativeQuantity();
@@ -6740,6 +7418,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unbounded</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__UNBOUNDED = eINSTANCE.getRealType1_Unbounded();
@@ -6748,6 +7427,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute REAL_TYPE1__UNIT = eINSTANCE.getRealType1_Unit();
@@ -6756,6 +7436,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesTypeImpl <em>Source Files Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getSourceFilesType()
 		 * @generated
@@ -6766,6 +7447,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute SOURCE_FILES_TYPE__GROUP = eINSTANCE.getSourceFilesType_Group();
@@ -6774,6 +7456,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>File</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference SOURCE_FILES_TYPE__FILE = eINSTANCE.getSourceFilesType_File();
@@ -6782,6 +7465,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesType1Impl <em>Source Files Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.SourceFilesType1Impl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getSourceFilesType1()
 		 * @generated
@@ -6792,6 +7476,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute SOURCE_FILES_TYPE1__GROUP = eINSTANCE.getSourceFilesType1_Group();
@@ -6800,6 +7485,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>File</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference SOURCE_FILES_TYPE1__FILE = eINSTANCE.getSourceFilesType1_File();
@@ -6808,6 +7494,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl <em>String Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getStringType()
 		 * @generated
@@ -6818,6 +7505,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Declared Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STRING_TYPE__DECLARED_TYPE = eINSTANCE.getStringType_DeclaredType();
@@ -6826,6 +7514,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Start</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute STRING_TYPE__START = eINSTANCE.getStringType_Start();
@@ -6834,6 +7523,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl <em>Tool Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getToolType()
 		 * @generated
@@ -6844,6 +7534,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Any</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TOOL_TYPE__ANY = eINSTANCE.getToolType_Any();
@@ -6852,6 +7543,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TOOL_TYPE__NAME = eINSTANCE.getToolType_Name();
@@ -6860,6 +7552,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl <em>Type Definitions Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getTypeDefinitionsType()
 		 * @generated
@@ -6870,6 +7563,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute TYPE_DEFINITIONS_TYPE__GROUP = eINSTANCE.getTypeDefinitionsType_Group();
@@ -6878,6 +7572,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Simple Type</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE = eINSTANCE.getTypeDefinitionsType_SimpleType();
@@ -6886,6 +7581,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnitDefinitionsTypeImpl <em>Unit Definitions Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnitDefinitionsTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getUnitDefinitionsType()
 		 * @generated
@@ -6896,6 +7592,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Group</b></em>' attribute list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNIT_DEFINITIONS_TYPE__GROUP = eINSTANCE.getUnitDefinitionsType_Group();
@@ -6904,6 +7601,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Unit</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EReference UNIT_DEFINITIONS_TYPE__UNIT = eINSTANCE.getUnitDefinitionsType_Unit();
@@ -6912,6 +7610,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownTypeImpl <em>Unknown Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownTypeImpl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getUnknownType()
 		 * @generated
@@ -6922,6 +7621,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dependencies</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNKNOWN_TYPE__DEPENDENCIES = eINSTANCE.getUnknownType_Dependencies();
@@ -6930,6 +7630,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dependencies Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNKNOWN_TYPE__DEPENDENCIES_KIND = eINSTANCE.getUnknownType_DependenciesKind();
@@ -6938,6 +7639,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNKNOWN_TYPE__INDEX = eINSTANCE.getUnknownType_Index();
@@ -6946,6 +7648,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl <em>Unknown Type1</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.UnknownType1Impl
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getUnknownType1()
 		 * @generated
@@ -6956,6 +7659,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dependencies</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNKNOWN_TYPE1__DEPENDENCIES = eINSTANCE.getUnknownType1_Dependencies();
@@ -6964,6 +7668,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Dependencies Kind</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNKNOWN_TYPE1__DEPENDENCIES_KIND = eINSTANCE.getUnknownType1_DependenciesKind();
@@ -6972,6 +7677,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Index</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @generated
 		 */
 		EAttribute UNKNOWN_TYPE1__INDEX = eINSTANCE.getUnknownType1_Index();
@@ -6980,6 +7686,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType <em>Causality Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCausalityType()
 		 * @generated
@@ -6990,6 +7697,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem <em>Dependencies Kind Type Item</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItem()
 		 * @generated
@@ -7000,6 +7708,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1 <em>Dependencies Kind Type Item1</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItem1()
 		 * @generated
@@ -7010,6 +7719,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialType <em>Initial Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getInitialType()
 		 * @generated
@@ -7020,6 +7730,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType <em>Variability Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariabilityType()
 		 * @generated
@@ -7030,6 +7741,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType <em>Variable Naming Convention Type</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariableNamingConventionType()
 		 * @generated
@@ -7040,6 +7752,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Causality Type Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getCausalityTypeObject()
 		 * @generated
@@ -7050,6 +7763,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Dependencies Kind Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.util.List
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindType()
 		 * @generated
@@ -7060,6 +7774,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Dependencies Kind Type1</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.util.List
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindType1()
 		 * @generated
@@ -7070,6 +7785,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Dependencies Kind Type Item Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItemObject()
 		 * @generated
@@ -7080,6 +7796,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Dependencies Kind Type Item Object1</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.DependenciesKindTypeItem1
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesKindTypeItemObject1()
 		 * @generated
@@ -7090,6 +7807,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Dependencies Type</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.util.List
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesType()
 		 * @generated
@@ -7100,6 +7818,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Dependencies Type1</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see java.util.List
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getDependenciesType1()
 		 * @generated
@@ -7110,6 +7829,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Initial Type Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getInitialTypeObject()
 		 * @generated
@@ -7120,6 +7840,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Variability Type Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariabilityTypeObject()
 		 * @generated
@@ -7130,6 +7851,7 @@ public interface FmiPackage extends EPackage {
 		 * The meta object literal for the '<em>Variable Naming Convention Type Object</em>' data type.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
+		 * 
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType
 		 * @see org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiPackageImpl#getVariableNamingConventionTypeObject()
 		 * @generated
@@ -7138,4 +7860,4 @@ public interface FmiPackage extends EPackage {
 
 	}
 
-} //FmiPackage
+} // FmiPackage

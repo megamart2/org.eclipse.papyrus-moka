@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.engine;
 
 import java.util.Set;
@@ -15,33 +26,33 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.AbstractMokaService;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
-public class AnimationService extends AbstractMokaService implements IAnimation{
+public class AnimationService extends AbstractMokaService implements IAnimation {
 
 	// The handler responsible for markers application
 	protected AnimationEngine engine;
-	
-	public AnimationService(){
+
+	public AnimationService() {
 		this.engine = new AnimationEngine();
 	}
-	
-	public void init(ILaunch launcher, EObject modelElement){
+
+	public void init(ILaunch launcher, EObject modelElement) {
 		this.engine.init(modelElement);
 	}
 
 	@Override
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {
-		if(nodeVisitor instanceof IActivityNodeActivation){
+		if (nodeVisitor instanceof IActivityNodeActivation) {
 			IActivityNodeActivation activation = (IActivityNodeActivation) nodeVisitor;
-			if(activation.getNode()!=null){
-				if(activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation){
-					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED); 
-				}else{
+			if (activation.getNode() != null) {
+				if (activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation) {
+					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED);
+				} else {
 					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED, AnimationKind.VISITED, MokaConstants.MOKA_ANIMATION_DELAY);
 				}
 			}
-		}else if(nodeVisitor instanceof IActivityEdgeInstance){
+		} else if (nodeVisitor instanceof IActivityEdgeInstance) {
 			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) nodeVisitor;
-			if(edgeInstance.getEdge()!=null){
+			if (edgeInstance.getEdge() != null) {
 				this.engine.startRendering(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.ANIMATED);
 			}
 		}
@@ -49,14 +60,14 @@ public class AnimationService extends AbstractMokaService implements IAnimation{
 
 	@Override
 	public void nodeLeft(ISemanticVisitor nodeVisitor) {
-		if(nodeVisitor instanceof IActivityNodeActivation){
+		if (nodeVisitor instanceof IActivityNodeActivation) {
 			IActivityNodeActivation activation = (IActivityNodeActivation) nodeVisitor;
-			if(activation.getNode()!=null && (activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation)){
-				this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.VISITED); 
+			if (activation.getNode() != null && (activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation)) {
+				this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.VISITED);
 			}
-		}else if(nodeVisitor instanceof IActivityEdgeInstance){
+		} else if (nodeVisitor instanceof IActivityEdgeInstance) {
 			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) nodeVisitor;
-			if(edgeInstance.getEdge() != null){
+			if (edgeInstance.getEdge() != null) {
 				this.renderAs(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.VISITED);
 			}
 		}
@@ -64,25 +75,25 @@ public class AnimationService extends AbstractMokaService implements IAnimation{
 
 	@Override
 	public void valueCreated(IValue value) {
-		if(value instanceof IObject_){
+		if (value instanceof IObject_) {
 			DiagramHandler diagramHandler = this.engine.getDiagramHandler();
-			if(!diagramHandler.isRegistered((IObject_)value)){
-				Set<Diagram> relatedDiagrams = diagramHandler.findDiagramsInvolved((IObject_)value);
-				for(Diagram diagram : relatedDiagrams){
-					diagramHandler.addRenderable((IObject_)value, diagram);
+			if (!diagramHandler.isRegistered((IObject_) value)) {
+				Set<Diagram> relatedDiagrams = diagramHandler.findDiagramsInvolved((IObject_) value);
+				for (Diagram diagram : relatedDiagrams) {
+					diagramHandler.addRenderable((IObject_) value, diagram);
 				}
 			}
-		}	
+		}
 	}
 
 	@Override
 	public void valueDestroyed(IValue value) {
-		if(value instanceof IObject_){
-			this.engine.getDiagramHandler().deleteRenderable((IObject_)value);
+		if (value instanceof IObject_) {
+			this.engine.getDiagramHandler().deleteRenderable((IObject_) value);
 		}
 	}
-	
-	public void dispose(){
+
+	public void dispose() {
 		this.engine.clean();
 	}
 

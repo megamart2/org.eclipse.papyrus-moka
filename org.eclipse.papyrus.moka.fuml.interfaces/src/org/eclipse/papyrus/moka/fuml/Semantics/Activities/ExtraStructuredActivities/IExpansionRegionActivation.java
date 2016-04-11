@@ -21,25 +21,25 @@ import org.eclipse.uml2.uml.ExpansionNode;
 public interface IExpansionRegionActivation extends IActionActivation {
 
 	public void doStructuredActivity();
-	
+
 	public void runIterative();
-	
+
 	public void runParallel();
-	
+
 	public void doOutput();
-	
+
 	public void runGroup(IExpansionActivationGroup activationGroup);
-	
+
 	public void terminateGroup(IExpansionActivationGroup activationGroup);
-	
+
 	public IExpansionNodeActivation getExpansionNodeActivation(ExpansionNode node);
-	
+
 	public Integer numberOfValues();
-	
+
 	public Boolean isSuspended();
-	
+
 	public void resume(IExpansionActivationGroup activationGroup);
-	
+
 	public List<IExpansionActivationGroup> getExpansionActivationGroups();
-	
+
 }

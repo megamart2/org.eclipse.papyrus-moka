@@ -25,10 +25,10 @@ import org.eclipse.uml2.uml.StructuralFeature;
 public interface IStructuralFeatureActionActivation extends IActionActivation {
 
 	public Association getAssociation(StructuralFeature feature);
-	
+
 	public List<ILink> getMatchingLinks(Association association, StructuralFeature end, IValue oppositeValue);
-	
+
 	public List<ILink> getMatchingLinksForEndValue(Association association, StructuralFeature end, IValue oppositeValue, IValue endValue);
-	
+
 	public Property getOppositeEnd(Association association, StructuralFeature end);
 }

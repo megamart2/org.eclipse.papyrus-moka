@@ -23,8 +23,8 @@ public abstract class AbstractMokaService implements IMokaService, IMokaExecutio
 		// By default do nothing - convenience for services which do not need to know
 		// the model that is currently related to this instance of the execution
 	}
-	
-	public void dispose(){
+
+	public void dispose() {
 		// By default do nothing - convenience for services which do not need to dispose
 		// any resource.
 	}

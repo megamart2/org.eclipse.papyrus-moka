@@ -22,9 +22,9 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public interface ICS_ClearStructuralFeatureValueActionActivation extends IStructuralFeatureActionActivation{
+public interface ICS_ClearStructuralFeatureValueActionActivation extends IStructuralFeatureActionActivation {
 
 	public List<ICS_Link> getLinksToDestroy(IStructuredValue value, StructuralFeature feature);
-	
+
 	public List<IValue> getPotentialLinkEnds(ICS_Reference context, StructuralFeature feature);
 }

@@ -21,7 +21,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.PrimitiveType;
 
-public abstract class PrimitiveValue extends Value implements IPrimitiveValue{
+public abstract class PrimitiveValue extends Value implements IPrimitiveValue {
 
 	public PrimitiveType type;
 
@@ -40,8 +40,8 @@ public abstract class PrimitiveValue extends Value implements IPrimitiveValue{
 		types.add(this.type);
 		return types;
 	}
-	
-	public void setType(PrimitiveType type){
+
+	public void setType(PrimitiveType type) {
 		this.type = type;
 	}
 }

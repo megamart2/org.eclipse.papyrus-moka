@@ -28,7 +28,7 @@ import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Port;
 
 
-public class CS_InteractionPoint extends Reference implements ICS_InteractionPoint{
+public class CS_InteractionPoint extends Reference implements ICS_InteractionPoint {
 
 	/*
 	 * Represents the Reference to the CompositeObject owning this InteractionPort. NOTE: This is introduced to address requirement R3 (It represents

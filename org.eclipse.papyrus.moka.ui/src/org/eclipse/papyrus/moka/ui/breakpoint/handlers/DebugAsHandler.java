@@ -39,14 +39,14 @@ public class DebugAsHandler extends MokaAbstractHandler implements IHandler {
 	public Object execute(ExecutionEvent event) throws ExecutionException {
 		EObject selectedElement = this.getSelectedElement();
 		if (selectedElement != null) {
-			String resourceURI = selectedElement.eResource().getURI().toString() ;
+			String resourceURI = selectedElement.eResource().getURI().toString();
 			try {
-				ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager() ;
-				ILaunchConfigurationType type = manager.getLaunchConfigurationType("org.eclipse.papyrus.moka.launchConfiguration") ;
-				ILaunchConfigurationWorkingCopy configuration = type.newInstance(null, "New Moka Debug Configuration") ;
+				ILaunchManager manager = DebugPlugin.getDefault().getLaunchManager();
+				ILaunchConfigurationType type = manager.getLaunchConfigurationType("org.eclipse.papyrus.moka.launchConfiguration");
+				ILaunchConfigurationWorkingCopy configuration = type.newInstance(null, "New Moka Debug Configuration");
 				configuration.setAttribute(MokaConstants.URI_ATTRIBUTE_NAME, resourceURI);
 				configuration.setAttribute(MokaConstants.FRAGMENT_ATTRIBUTE_NAME, selectedElement.eResource().getURIFragment(selectedElement));
-				configuration.doSave() ;
+				configuration.doSave();
 				DebugUITools.launch(configuration, "debug");
 			} catch (CoreException e) {
 				e.printStackTrace();

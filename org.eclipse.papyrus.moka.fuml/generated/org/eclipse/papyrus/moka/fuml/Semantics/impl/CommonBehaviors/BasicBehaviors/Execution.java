@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
 
-public abstract class Execution extends Object_ implements IExecution{
+public abstract class Execution extends Object_ implements IExecution {
 
 	/*
 	 * The object that provides the context for this execution. The type of the
@@ -129,16 +129,16 @@ public abstract class Execution extends Object_ implements IExecution{
 		// Get the behavior that is the type of this execution.
 		return (Behavior) (this.getTypes().get(0));
 	}
-	
-	public void setContext(IObject_ context){
+
+	public void setContext(IObject_ context) {
 		this.context = context;
 	}
-	
-	public IObject_ getContext(){
+
+	public IObject_ getContext() {
 		return this.context;
 	}
-	
-	public List<IParameterValue> getParameterValues(){
+
+	public List<IParameterValue> getParameterValues() {
 		return this.parameterValues;
 	}
 }

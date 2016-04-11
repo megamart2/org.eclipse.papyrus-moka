@@ -22,16 +22,16 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA <em>A</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd <em>Cd</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor <em>Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK <em>K</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg <em>Kg</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM <em>M</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol <em>Mol</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset <em>Offset</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad <em>Rad</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS <em>S</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA <em>A</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd <em>Cd</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor <em>Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK <em>K</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg <em>Kg</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM <em>M</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol <em>Mol</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad <em>Rad</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS <em>S</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getBaseUnitType()
@@ -47,6 +47,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "A"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>A</em>' attribute.
 	 * @see #isSetA()
 	 * @see #unsetA()
@@ -62,7 +63,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>A</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>A</em>' attribute.
 	 * @see #isSetA()
 	 * @see #unsetA()
 	 * @see #getA()
@@ -74,6 +77,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA <em>A</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetA()
 	 * @see #getA()
 	 * @see #setA(int)
@@ -85,6 +89,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getA <em>A</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>A</em>' attribute is set.
 	 * @see #unsetA()
 	 * @see #getA()
@@ -101,6 +106,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "cd"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Cd</em>' attribute.
 	 * @see #isSetCd()
 	 * @see #unsetCd()
@@ -116,7 +122,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd <em>Cd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Cd</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Cd</em>' attribute.
 	 * @see #isSetCd()
 	 * @see #unsetCd()
 	 * @see #getCd()
@@ -128,6 +136,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd <em>Cd</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCd()
 	 * @see #getCd()
 	 * @see #setCd(int)
@@ -139,6 +148,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getCd <em>Cd</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Cd</em>' attribute is set.
 	 * @see #unsetCd()
 	 * @see #getCd()
@@ -156,6 +166,7 @@ public interface BaseUnitType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Factor</em>' attribute.
 	 * @see #isSetFactor()
 	 * @see #unsetFactor()
@@ -171,7 +182,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Factor</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Factor</em>' attribute.
 	 * @see #isSetFactor()
 	 * @see #unsetFactor()
 	 * @see #getFactor()
@@ -183,6 +196,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetFactor()
 	 * @see #getFactor()
 	 * @see #setFactor(double)
@@ -194,6 +208,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getFactor <em>Factor</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Factor</em>' attribute is set.
 	 * @see #unsetFactor()
 	 * @see #getFactor()
@@ -210,6 +225,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "K"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>K</em>' attribute.
 	 * @see #isSetK()
 	 * @see #unsetK()
@@ -225,7 +241,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK <em>K</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>K</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>K</em>' attribute.
 	 * @see #isSetK()
 	 * @see #unsetK()
 	 * @see #getK()
@@ -237,6 +255,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK <em>K</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetK()
 	 * @see #getK()
 	 * @see #setK(int)
@@ -248,6 +267,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getK <em>K</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>K</em>' attribute is set.
 	 * @see #unsetK()
 	 * @see #getK()
@@ -264,6 +284,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "kg"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Kg</em>' attribute.
 	 * @see #isSetKg()
 	 * @see #unsetKg()
@@ -279,7 +300,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg <em>Kg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Kg</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Kg</em>' attribute.
 	 * @see #isSetKg()
 	 * @see #unsetKg()
 	 * @see #getKg()
@@ -291,6 +314,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg <em>Kg</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetKg()
 	 * @see #getKg()
 	 * @see #setKg(int)
@@ -302,6 +326,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getKg <em>Kg</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Kg</em>' attribute is set.
 	 * @see #unsetKg()
 	 * @see #getKg()
@@ -318,6 +343,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "m"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>M</em>' attribute.
 	 * @see #isSetM()
 	 * @see #unsetM()
@@ -333,7 +359,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM <em>M</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>M</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>M</em>' attribute.
 	 * @see #isSetM()
 	 * @see #unsetM()
 	 * @see #getM()
@@ -345,6 +373,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM <em>M</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetM()
 	 * @see #getM()
 	 * @see #setM(int)
@@ -356,6 +385,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getM <em>M</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>M</em>' attribute is set.
 	 * @see #unsetM()
 	 * @see #getM()
@@ -372,6 +402,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "mol"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Mol</em>' attribute.
 	 * @see #isSetMol()
 	 * @see #unsetMol()
@@ -387,7 +418,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol <em>Mol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Mol</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Mol</em>' attribute.
 	 * @see #isSetMol()
 	 * @see #unsetMol()
 	 * @see #getMol()
@@ -399,6 +432,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol <em>Mol</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMol()
 	 * @see #getMol()
 	 * @see #setMol(int)
@@ -410,6 +444,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getMol <em>Mol</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Mol</em>' attribute is set.
 	 * @see #unsetMol()
 	 * @see #getMol()
@@ -427,6 +462,7 @@ public interface BaseUnitType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Offset</em>' attribute.
 	 * @see #isSetOffset()
 	 * @see #unsetOffset()
@@ -442,7 +478,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Offset</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Offset</em>' attribute.
 	 * @see #isSetOffset()
 	 * @see #unsetOffset()
 	 * @see #getOffset()
@@ -454,6 +492,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetOffset()
 	 * @see #getOffset()
 	 * @see #setOffset(double)
@@ -465,6 +504,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getOffset <em>Offset</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Offset</em>' attribute is set.
 	 * @see #unsetOffset()
 	 * @see #getOffset()
@@ -481,6 +521,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI derived unit "rad"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Rad</em>' attribute.
 	 * @see #isSetRad()
 	 * @see #unsetRad()
@@ -496,7 +537,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad <em>Rad</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rad</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Rad</em>' attribute.
 	 * @see #isSetRad()
 	 * @see #unsetRad()
 	 * @see #getRad()
@@ -508,6 +551,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad <em>Rad</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetRad()
 	 * @see #getRad()
 	 * @see #setRad(int)
@@ -519,6 +563,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getRad <em>Rad</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Rad</em>' attribute is set.
 	 * @see #unsetRad()
 	 * @see #getRad()
@@ -535,6 +580,7 @@ public interface BaseUnitType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Exponent of SI base unit "s"
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>S</em>' attribute.
 	 * @see #isSetS()
 	 * @see #unsetS()
@@ -550,7 +596,9 @@ public interface BaseUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS <em>S</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>S</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>S</em>' attribute.
 	 * @see #isSetS()
 	 * @see #unsetS()
 	 * @see #getS()
@@ -562,6 +610,7 @@ public interface BaseUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS <em>S</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetS()
 	 * @see #getS()
 	 * @see #setS(int)
@@ -573,6 +622,7 @@ public interface BaseUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BaseUnitType#getS <em>S</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>S</em>' attribute is set.
 	 * @see #unsetS()
 	 * @see #getS()

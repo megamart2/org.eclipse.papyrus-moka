@@ -19,7 +19,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IOffer;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 
-public class Offer implements IOffer{
+public class Offer implements IOffer {
 
 	public List<IToken> offeredTokens = new ArrayList<IToken>();
 
@@ -84,8 +84,8 @@ public class Offer implements IOffer{
 		this.removeWithdrawnTokens();
 		return this.offeredTokens.size() > 0;
 	}
-	
-	public List<IToken> getTokens(){
+
+	public List<IToken> getTokens() {
 		// Convenience operation to access the list of offered tokens
 		return this.offeredTokens;
 	}

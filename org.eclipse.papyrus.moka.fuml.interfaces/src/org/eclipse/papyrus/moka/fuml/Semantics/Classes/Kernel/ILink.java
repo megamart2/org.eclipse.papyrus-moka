@@ -20,14 +20,14 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 
 public interface ILink extends IExtensionalValue {
-	
+
 	public Boolean isMatchingLink(IExtensionalValue link, Property end);
-	
+
 	public List<IFeatureValue> getOtherFeatureValues(List<IExtensionalValue> extent, Property end);
-	
+
 	public void addTo(ILocus locus);
-	
+
 	public void setType(Association association);
-	
+
 	public Association getType();
 }

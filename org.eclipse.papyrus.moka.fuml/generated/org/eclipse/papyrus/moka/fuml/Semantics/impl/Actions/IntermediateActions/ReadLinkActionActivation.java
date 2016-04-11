@@ -22,7 +22,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
 import org.eclipse.uml2.uml.LinkEndData;
 import org.eclipse.uml2.uml.ReadLinkAction;
 
-public class ReadLinkActionActivation extends LinkActionActivation{
+public class ReadLinkActionActivation extends LinkActionActivation {
 
 	@Override
 	public void doAction() {

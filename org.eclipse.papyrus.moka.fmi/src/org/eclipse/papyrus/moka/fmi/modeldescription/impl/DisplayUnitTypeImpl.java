@@ -29,9 +29,9 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl#getFactor <em>Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl#getFactor <em>Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DisplayUnitTypeImpl#getOffset <em>Offset</em>}</li>
  * </ul>
  *
  * @generated
@@ -41,6 +41,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getFactor() <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFactor()
 	 * @generated
 	 * @ordered
@@ -51,6 +52,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getFactor() <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFactor()
 	 * @generated
 	 * @ordered
@@ -61,6 +63,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * This is true if the Factor attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -70,6 +73,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -80,6 +84,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -90,6 +95,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -100,6 +106,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getOffset() <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getOffset()
 	 * @generated
 	 * @ordered
@@ -110,6 +117,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	 * This is true if the Offset attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -118,6 +126,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DisplayUnitTypeImpl() {
@@ -127,6 +136,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -137,6 +147,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getFactor() {
@@ -146,6 +157,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFactor(double newFactor) {
@@ -160,6 +172,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetFactor() {
@@ -174,6 +187,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetFactor() {
@@ -183,6 +197,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -192,6 +207,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -204,6 +220,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getOffset() {
@@ -213,6 +230,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setOffset(double newOffset) {
@@ -227,6 +245,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetOffset() {
@@ -241,6 +260,7 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetOffset() {
@@ -250,17 +270,18 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
-				return getFactor();
-			case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
-				return getName();
-			case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
-				return getOffset();
+		case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
+			return getFactor();
+		case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
+			return getName();
+		case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
+			return getOffset();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -268,20 +289,21 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
-				setFactor((Double)newValue);
-				return;
-			case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
-				setName((String)newValue);
-				return;
-			case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
-				setOffset((Double)newValue);
-				return;
+		case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
+			setFactor((Double) newValue);
+			return;
+		case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
+			setName((String) newValue);
+			return;
+		case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
+			setOffset((Double) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -289,20 +311,21 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
-				unsetFactor();
-				return;
-			case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
-				unsetOffset();
-				return;
+		case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
+			unsetFactor();
+			return;
+		case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
+			unsetOffset();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -310,17 +333,18 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
-				return isSetFactor();
-			case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
-				return isSetOffset();
+		case FmiPackage.DISPLAY_UNIT_TYPE__FACTOR:
+			return isSetFactor();
+		case FmiPackage.DISPLAY_UNIT_TYPE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FmiPackage.DISPLAY_UNIT_TYPE__OFFSET:
+			return isSetOffset();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,21 +352,29 @@ public class DisplayUnitTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (factor: ");
-		if (factorESet) result.append(factor); else result.append("<unset>");
+		if (factorESet)
+			result.append(factor);
+		else
+			result.append("<unset>");
 		result.append(", name: ");
 		result.append(name);
 		result.append(", offset: ");
-		if (offsetESet) result.append(offset); else result.append("<unset>");
+		if (offsetESet)
+			result.append(offset);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //DisplayUnitTypeImpl
+} // DisplayUnitTypeImpl

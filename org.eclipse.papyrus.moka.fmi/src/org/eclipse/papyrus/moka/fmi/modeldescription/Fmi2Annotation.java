@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getTool <em>Tool</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Annotation#getTool <em>Tool</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Annotation()
@@ -44,6 +44,7 @@ public interface Fmi2Annotation extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Annotation_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -60,6 +61,7 @@ public interface Fmi2Annotation extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Tool specific annotation (ignored by other tools).
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Tool</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Annotation_Tool()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"

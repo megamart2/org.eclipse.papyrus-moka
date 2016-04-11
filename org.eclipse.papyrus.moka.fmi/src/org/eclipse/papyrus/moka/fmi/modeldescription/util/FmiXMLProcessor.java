@@ -27,6 +27,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FmiXMLProcessor extends XMLProcessor {
@@ -35,17 +36,19 @@ public class FmiXMLProcessor extends XMLProcessor {
 	 * Public constructor to instantiate the helper.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiXMLProcessor() {
 		super(new EPackageRegistryImpl(EPackage.Registry.INSTANCE));
 		extendedMetaData.putPackage(null, FmiPackage.eINSTANCE);
 	}
-	
+
 	/**
 	 * Register for "*" and "xml" file extensions the FmiResourceFactoryImpl factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -58,4 +61,4 @@ public class FmiXMLProcessor extends XMLProcessor {
 		return registrations;
 	}
 
-} //FmiXMLProcessor
+} // FmiXMLProcessor

@@ -61,9 +61,9 @@ public class ObjectActivation implements IObjectActivation {
 	public void stop() {
 		// Stop this object activation by terminating all classifier behavior
 		// executions.
-		
-		//fUML12-35 Initial execution of an activity is not run to completion
-		
+
+		// fUML12-35 Initial execution of an activity is not run to completion
+
 		List<IClassifierBehaviorInvocationEventAccepter> classifierBehaviorExecutions = this.classifierBehaviorInvocations;
 		for (int i = 0; i < classifierBehaviorExecutions.size(); i++) {
 			IClassifierBehaviorInvocationEventAccepter classifierBehaviorExecution = classifierBehaviorExecutions.get(i);
@@ -96,7 +96,7 @@ public class ObjectActivation implements IObjectActivation {
 	}
 
 	public void dispatchNextEvent() {
-		//fUML12-35 Initial execution of an activity is not run to completion
+		// fUML12-35 Initial execution of an activity is not run to completion
 		if (this.eventPool.size() > 0) {
 			IEventOccurrence eventOccurrence = this.getNextEvent();
 			Debug.println("[dispatchNextEvent] eventOccurrence = " + eventOccurrence);
@@ -123,18 +123,18 @@ public class ObjectActivation implements IObjectActivation {
 	public IEventOccurrence getNextEvent() {
 		// Get the next event from the event pool, using a get next event
 		// strategy.
-		
-		//fUML12-35 Initial execution of an activity is not run to completion
-		
+
+		// fUML12-35 Initial execution of an activity is not run to completion
+
 		return ((GetNextEventStrategy) this.object.getLocus().getFactory().getStrategy("getNextEvent")).getNextEvent(this);
 	}
 
 	public void send(ISignalInstance signalInstance) {
 		// Add a signal event occurrence for the given signal instance to the event pool
 		// and signal that a new event occurrence has arrived.
-		
-		//fUML12-35 Initial execution of an activity is not run to completion
-		
+
+		// fUML12-35 Initial execution of an activity is not run to completion
+
 		SignalEventOccurrence eventOccurrence = new SignalEventOccurrence();
 		eventOccurrence.signalInstance = (SignalInstance) signalInstance.copy();
 		this.eventPool.add(eventOccurrence);
@@ -153,14 +153,14 @@ public class ObjectActivation implements IObjectActivation {
 		// behavior or which is a behavior itself
 		// and for which there is not currently a classifier behavior invocation.
 		// Start EventDispatchLoop
-		
-		//fUML12-35 Initial execution of an activity is not run to completion
-		
+
+		// fUML12-35 Initial execution of an activity is not run to completion
+
 		_startObjectBehavior();
 		if (classifier == null) {
 			Debug.println("[startBehavior] Starting behavior for all classifiers...");
 			// *** Start all classifier behaviors concurrently. ***
-			List<Class> types = ((Object_)this.object).types;
+			List<Class> types = ((Object_) this.object).types;
 			for (Iterator<Class> i = types.iterator(); i.hasNext();) {
 				Class type = i.next();
 				if (type instanceof Behavior | type.getClassifierBehavior() != null) {
@@ -181,7 +181,7 @@ public class ObjectActivation implements IObjectActivation {
 				 * 2. Place in the event pool an InvocationEventOccurrence. When consumed it will triggers the execution of the classifier behavior in an RTC step
 				 * 3. Force the starting of the dispatch loop using the usual pattern of the ArrivalSignal
 				 */
-				//FIXME: This should be done in a Factory
+				// FIXME: This should be done in a Factory
 				IClassifierBehaviorInvocationEventAccepter newInvocation = new ClassifierBehaviorInvocationEventAccepter();
 				newInvocation.setObjectActivation(this);
 				this.classifierBehaviorInvocations.add(newInvocation);

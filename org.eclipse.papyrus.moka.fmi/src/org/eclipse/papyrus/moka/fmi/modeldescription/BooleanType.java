@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart <em>Start</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getBooleanType()
@@ -38,6 +38,7 @@ public interface BooleanType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * If present, name of type defined with TypeDefinitions / SimpleType providing defaults.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Declared Type</em>' attribute.
 	 * @see #setDeclaredType(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getBooleanType_DeclaredType()
@@ -51,7 +52,9 @@ public interface BooleanType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#getDeclaredType <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Declared Type</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Declared Type</em>' attribute.
 	 * @see #getDeclaredType()
 	 * @generated
 	 */
@@ -64,6 +67,7 @@ public interface BooleanType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Value before initialization, if initial=exact or approx
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Start</em>' attribute.
 	 * @see #isSetStart()
 	 * @see #unsetStart()
@@ -79,7 +83,9 @@ public interface BooleanType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Start</em>' attribute.
 	 * @see #isSetStart()
 	 * @see #unsetStart()
 	 * @see #isStart()
@@ -91,6 +97,7 @@ public interface BooleanType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetStart()
 	 * @see #isStart()
 	 * @see #setStart(boolean)
@@ -102,6 +109,7 @@ public interface BooleanType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.BooleanType#isStart <em>Start</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Start</em>' attribute is set.
 	 * @see #unsetStart()
 	 * @see #isStart()

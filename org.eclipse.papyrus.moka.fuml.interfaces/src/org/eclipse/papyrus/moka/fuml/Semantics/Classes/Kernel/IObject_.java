@@ -26,20 +26,20 @@ import org.eclipse.uml2.uml.Operation;
 public interface IObject_ extends IExtensionalValue {
 
 	public void addType(Class type);
-	
+
 	public void removeType(Class type);
-	
+
 	public void startBehavior(Class classifier, List<IParameterValue> inputs);
-	
+
 	public IExecution dispatch(Operation operation);
-	
+
 	public void send(ISignalInstance signalInstance);
-	
+
 	public void register(IEventAccepter accepter);
-	
+
 	public void unregister(IEventAccepter accepter);
-	
+
 	public IObjectActivation getObjectActivation();
-	
+
 	public void setObjectActivation(IObjectActivation objectActivation);
 }

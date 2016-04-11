@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue <em>Value</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getItemType()
@@ -40,6 +40,7 @@ public interface ItemType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getItemType_Description()
@@ -53,7 +54,9 @@ public interface ItemType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -67,6 +70,7 @@ public interface ItemType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getItemType_Name()
@@ -80,7 +84,9 @@ public interface ItemType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -93,6 +99,7 @@ public interface ItemType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Must be a unique number in the same enumeration
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #isSetValue()
 	 * @see #unsetValue()
@@ -108,7 +115,9 @@ public interface ItemType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #isSetValue()
 	 * @see #unsetValue()
 	 * @see #getValue()
@@ -120,6 +129,7 @@ public interface ItemType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetValue()
 	 * @see #getValue()
 	 * @see #setValue(int)
@@ -131,6 +141,7 @@ public interface ItemType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ItemType#getValue <em>Value</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Value</em>' attribute is set.
 	 * @see #unsetValue()
 	 * @see #getValue()

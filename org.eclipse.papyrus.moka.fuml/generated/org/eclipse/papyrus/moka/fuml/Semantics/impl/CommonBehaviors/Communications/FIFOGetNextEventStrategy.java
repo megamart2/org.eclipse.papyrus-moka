@@ -21,9 +21,9 @@ public class FIFOGetNextEventStrategy extends GetNextEventStrategy {
 	public IEventOccurrence getNextEvent(ObjectActivation objectActivation) {
 		// Get the first event from the given event pool. The event is removed
 		// from the pool.
-		
+
 		// fUML12-35 Initial execution of an activity is not run to completion
-		
+
 		IEventOccurrence eventOccurrence = objectActivation.eventPool.get(0);
 		objectActivation.eventPool.remove(0);
 		return eventOccurrence;

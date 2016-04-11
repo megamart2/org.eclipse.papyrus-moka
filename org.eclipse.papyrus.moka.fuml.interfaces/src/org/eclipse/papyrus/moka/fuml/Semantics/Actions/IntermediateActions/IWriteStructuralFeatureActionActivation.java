@@ -20,5 +20,5 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 public interface IWriteStructuralFeatureActionActivation extends IStructuralFeatureActionActivation {
 
 	public Integer position(IValue value, List<IValue> list, Integer startAt);
-	
+
 }

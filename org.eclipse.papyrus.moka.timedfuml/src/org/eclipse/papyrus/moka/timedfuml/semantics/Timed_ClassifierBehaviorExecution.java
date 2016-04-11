@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.timedfuml.semantics;
 
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
@@ -14,7 +25,7 @@ public class Timed_ClassifierBehaviorExecution extends ClassifierBehaviorExecuti
 	@Override
 	public void _startObjectBehavior() {
 		// FIXME delegate control here: this.execution.execute();
-		_startObjectBehavior_Action deAction = new _startObjectBehavior_Action(this) ;
+		_startObjectBehavior_Action deAction = new _startObjectBehavior_Action(this);
 		DEScheduler.getInstance().pushEvent(new Event(0.0, deAction));
 	}
 }

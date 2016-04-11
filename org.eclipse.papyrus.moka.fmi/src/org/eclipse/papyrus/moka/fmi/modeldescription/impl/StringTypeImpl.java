@@ -29,8 +29,8 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.StringType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.StringTypeImpl#getStart <em>Start</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +40,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	 * The default value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	 * The cached value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected StringTypeImpl() {
@@ -88,6 +93,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,6 +104,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDeclaredType() {
@@ -107,6 +114,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDeclaredType(String newDeclaredType) {
@@ -119,6 +127,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getStart() {
@@ -128,6 +137,7 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStart(String newStart) {
@@ -140,15 +150,16 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.STRING_TYPE__DECLARED_TYPE:
-				return getDeclaredType();
-			case FmiPackage.STRING_TYPE__START:
-				return getStart();
+		case FmiPackage.STRING_TYPE__DECLARED_TYPE:
+			return getDeclaredType();
+		case FmiPackage.STRING_TYPE__START:
+			return getStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,17 +167,18 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.STRING_TYPE__DECLARED_TYPE:
-				setDeclaredType((String)newValue);
-				return;
-			case FmiPackage.STRING_TYPE__START:
-				setStart((String)newValue);
-				return;
+		case FmiPackage.STRING_TYPE__DECLARED_TYPE:
+			setDeclaredType((String) newValue);
+			return;
+		case FmiPackage.STRING_TYPE__START:
+			setStart((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,17 +186,18 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.STRING_TYPE__DECLARED_TYPE:
-				setDeclaredType(DECLARED_TYPE_EDEFAULT);
-				return;
-			case FmiPackage.STRING_TYPE__START:
-				setStart(START_EDEFAULT);
-				return;
+		case FmiPackage.STRING_TYPE__DECLARED_TYPE:
+			setDeclaredType(DECLARED_TYPE_EDEFAULT);
+			return;
+		case FmiPackage.STRING_TYPE__START:
+			setStart(START_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,15 +205,16 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.STRING_TYPE__DECLARED_TYPE:
-				return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
-			case FmiPackage.STRING_TYPE__START:
-				return START_EDEFAULT == null ? start != null : !START_EDEFAULT.equals(start);
+		case FmiPackage.STRING_TYPE__DECLARED_TYPE:
+			return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
+		case FmiPackage.STRING_TYPE__START:
+			return START_EDEFAULT == null ? start != null : !START_EDEFAULT.equals(start);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,11 +222,13 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (declaredType: ");
@@ -223,4 +239,4 @@ public class StringTypeImpl extends MinimalEObjectImpl.Container implements Stri
 		return result.toString();
 	}
 
-} //StringTypeImpl
+} // StringTypeImpl

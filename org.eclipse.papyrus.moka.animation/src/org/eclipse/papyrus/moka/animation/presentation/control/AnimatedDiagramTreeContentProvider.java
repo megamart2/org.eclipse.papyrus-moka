@@ -22,80 +22,80 @@ import org.eclipse.papyrus.moka.animation.presentation.data.AnimatedDiagramTree;
 import org.eclipse.papyrus.moka.animation.presentation.data.IAnimationTreeNode;
 import org.eclipse.swt.widgets.Display;
 
-public class AnimatedDiagramTreeContentProvider implements ITreeContentProvider{
+public class AnimatedDiagramTreeContentProvider implements ITreeContentProvider {
 
 	// Does a refresh has already been requested but it is still not realized.
 	protected boolean pendingRefresh;
-	
+
 	// The viewer that is in charge of displaying the data model
 	protected TreeViewer viewer;
-	
+
 	public AnimatedDiagramTreeContentProvider() {
-		this.pendingRefresh = false; 
+		this.pendingRefresh = false;
 	}
 
 	@Override
 	public void inputChanged(Viewer viewer, Object oldInput, Object newInput) {
-		this.viewer = (TreeViewer)viewer;
-		if(oldInput!=null){
+		this.viewer = (TreeViewer) viewer;
+		if (oldInput != null) {
 			IAnimationTreeNode node = null;
-			if(oldInput instanceof AnimatedDiagramTree){
-				node = ((AnimatedDiagramTree)oldInput).getRoot();
-			}else{
+			if (oldInput instanceof AnimatedDiagramTree) {
+				node = ((AnimatedDiagramTree) oldInput).getRoot();
+			} else {
 				node = (IAnimationTreeNode) oldInput;
 			}
 			this.removeListenerTo(node);
 		}
-		if(newInput!=null){
+		if (newInput != null) {
 			IAnimationTreeNode node = null;
-			if(newInput instanceof AnimatedDiagramTree){
-				node = ((AnimatedDiagramTree)newInput).getRoot();
-			}else{
+			if (newInput instanceof AnimatedDiagramTree) {
+				node = ((AnimatedDiagramTree) newInput).getRoot();
+			} else {
 				node = (IAnimationTreeNode) newInput;
 			}
 			this.addListenerTo(node);
 		}
 		this.pendingRefresh = false;
 	}
-	
-	protected void addListenerTo(IAnimationTreeNode node){
+
+	protected void addListenerTo(IAnimationTreeNode node) {
 		node.addListener(this);
 		Iterator<IAnimationTreeNode> nodeIterator = node.getChildren().iterator();
-		while(nodeIterator.hasNext()){
+		while (nodeIterator.hasNext()) {
 			this.addListenerTo(nodeIterator.next());
 		}
 	}
-	
-	protected void removeListenerTo(IAnimationTreeNode node){
+
+	protected void removeListenerTo(IAnimationTreeNode node) {
 		node.removeListener(this);
 		Iterator<IAnimationTreeNode> nodeIterator = node.getChildren().iterator();
-		while(nodeIterator.hasNext()){
+		while (nodeIterator.hasNext()) {
 			this.removeListenerTo(nodeIterator.next());
 		}
 	}
-	
+
 
 	@Override
 	public Object[] getElements(Object inputElement) {
-		if(inputElement instanceof AnimatedDiagramTree){
-			return new Object[]{((AnimatedDiagramTree)inputElement).getRoot()};
+		if (inputElement instanceof AnimatedDiagramTree) {
+			return new Object[] { ((AnimatedDiagramTree) inputElement).getRoot() };
 		}
-		return new Object[]{};
+		return new Object[] {};
 	}
 
 	@Override
 	public Object[] getChildren(Object parentElement) {
 		Object[] children = null;
-		if(parentElement instanceof IAnimationTreeNode){
-			children = ((IAnimationTreeNode)parentElement).getChildren().toArray();
+		if (parentElement instanceof IAnimationTreeNode) {
+			children = ((IAnimationTreeNode) parentElement).getChildren().toArray();
 		}
 		return children;
 	}
 
 	@Override
 	public Object getParent(Object element) {
-		if(element instanceof IAnimationTreeNode){
-			return ((IAnimationTreeNode)element).getParent();
+		if (element instanceof IAnimationTreeNode) {
+			return ((IAnimationTreeNode) element).getParent();
 		}
 		return null;
 	}
@@ -103,14 +103,14 @@ public class AnimatedDiagramTreeContentProvider implements ITreeContentProvider{
 	@Override
 	public boolean hasChildren(Object element) {
 		boolean hasChildren = true;
-		if(element instanceof IAnimationTreeNode){
-			hasChildren = !((IAnimationTreeNode)element).getChildren().isEmpty();
+		if (element instanceof IAnimationTreeNode) {
+			hasChildren = !((IAnimationTreeNode) element).getChildren().isEmpty();
 		}
 		return hasChildren;
 	}
-	
-	public void requestRefresh(){
-		if(!this.pendingRefresh){
+
+	public void requestRefresh() {
+		if (!this.pendingRefresh) {
 			Display.getDefault().asyncExec(new Runnable() {
 				@Override
 				public void run() {
@@ -124,6 +124,6 @@ public class AnimatedDiagramTreeContentProvider implements ITreeContentProvider{
 
 	@Override
 	public void dispose() {
-		
+
 	}
 }

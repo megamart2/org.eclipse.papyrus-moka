@@ -26,26 +26,26 @@ import org.eclipse.uml2.uml.ValueSpecification;
 public interface IExecutionFactory {
 
 	public IExecution createExecution(Behavior behavior, IObject_ context);
-	
+
 	public IEvaluation createEvaluation(ValueSpecification specification);
-	
+
 	public ISemanticVisitor instantiateVisitor(Element element);
-	
+
 	public IOpaqueBehaviorExecution instantiateOpaqueBehaviorExecution(OpaqueBehavior behavior);
-	
+
 	public void addPrimitiveBehaviorPrototype(IOpaqueBehaviorExecution execution);
-	
+
 	public void setStrategy(ISemanticStrategy strategy);
-	
+
 	public ISemanticStrategy getStrategy(String name);
-	
+
 	public Integer getStrategyIndex(String name);
-	
+
 	public void setLocus(ILocus locus);
-	
+
 	public ILocus getLocus();
-	
+
 	public Type getBuiltInType(String name);
-	
+
 	public void addBuiltInType(Type type);
 }

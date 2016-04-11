@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.model.data.mapping.variables;
 
 import java.util.Iterator;
@@ -13,11 +24,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 public class TokensVariableAdapter extends MokaVariableAdapter {
 
 	protected List<IToken> heldTokens;
-	
+
 	private final String NAME = "tokens";
-	
+
 	private final String REFERENCE_TYPE_NAME = "List<IToken>";
-	
+
 	public TokensVariableAdapter(MokaDebugTarget debugTarget, List<IToken> tokens) {
 		super(debugTarget);
 		this.heldTokens = tokens;
@@ -25,10 +36,10 @@ public class TokensVariableAdapter extends MokaVariableAdapter {
 
 	@Override
 	public IValue getValue() throws DebugException {
-		if(this.value == null){
+		if (this.value == null) {
 			MokaValueList tokensList = new MokaValueList(debugTarget);
 			Iterator<IToken> tokensIterator = this.heldTokens.iterator();
-			while(tokensIterator.hasNext()){
+			while (tokensIterator.hasNext()) {
 				tokensList.add(MokaValueAdapterFactory.getInstance().instantiate(tokensIterator.next(), this.debugTarget));
 			}
 			this.value = tokensList;

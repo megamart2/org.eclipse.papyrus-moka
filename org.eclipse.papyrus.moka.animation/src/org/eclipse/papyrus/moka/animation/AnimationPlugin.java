@@ -32,7 +32,7 @@ public class AnimationPlugin extends AbstractUIPlugin {
 
 	// The shared instance
 	private static AnimationPlugin plugin;
-	
+
 	/**
 	 * The constructor
 	 */
@@ -41,6 +41,7 @@ public class AnimationPlugin extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#start(org.osgi.framework.BundleContext)
 	 */
 	public void start(BundleContext context) throws Exception {
@@ -51,6 +52,7 @@ public class AnimationPlugin extends AbstractUIPlugin {
 
 	/*
 	 * (non-Javadoc)
+	 * 
 	 * @see org.eclipse.ui.plugin.AbstractUIPlugin#stop(org.osgi.framework.BundleContext)
 	 */
 	public void stop(BundleContext context) throws Exception {
@@ -66,17 +68,17 @@ public class AnimationPlugin extends AbstractUIPlugin {
 	public static AnimationPlugin getDefault() {
 		return plugin;
 	}
-	
-	protected void initImageRegistry(){
+
+	protected void initImageRegistry() {
 		ImageRegistry registry = this.getImageRegistry();
 		registry.put(AnimatingInstanceLabelProvider.THREAD_ICON, this.getDescriptor(AnimatingInstanceLabelProvider.THREAD_ICON));
 		registry.put(RootLabelProvider.ROOT_ICON, this.getDescriptor(RootLabelProvider.ROOT_ICON));
 	}
-	
-	public ImageDescriptor getDescriptor(final String path){
-		ImageDescriptor descriptor = null; 
+
+	public ImageDescriptor getDescriptor(final String path) {
+		ImageDescriptor descriptor = null;
 		URL url = getDefault().getBundle().getResource(path);
-		if(url != null){
+		if (url != null) {
 			descriptor = ImageDescriptor.createFromURL(url);
 		}
 		return descriptor;

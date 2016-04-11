@@ -22,15 +22,15 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 
 public interface ILocus {
-	
+
 	public void setExecutor(IExecutor executor);
 
 	public IExecutor getExecutor();
-	
+
 	public void setFactory(IExecutionFactory factory);
 
 	public IExecutionFactory getFactory();
-	
+
 	public List<IExtensionalValue> getExtent(Classifier classifier);
 
 	public void add(IExtensionalValue value);
@@ -42,10 +42,10 @@ public interface ILocus {
 	public Boolean conforms(Classifier type, Classifier classifier);
 
 	public String makeIdentifier(IExtensionalValue value);
-	
+
 	public String getIdentifier();
-	
+
 	public void setExecutedTarget(Behavior behavior);
-	
+
 	public List<IExtensionalValue> getExtensionalValues();
 }

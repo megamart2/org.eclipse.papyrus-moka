@@ -35,20 +35,20 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 
 	// The launcher from which this debug target was created
 	protected ILaunch launcher;
-	
+
 	// The process from which execution events come from
 	protected MokaProcess executionEngineProcess;
-	
+
 	// Set of logical threads currently executing the model
 	protected Set<IMokaThread> executionThreads;
-	
-	// Ensure mutual exclusive access to this object for execution 
+
+	// Ensure mutual exclusive access to this object for execution
 	// engine threads and debug target thread
 	protected ReentrantLock targetLock;
-	
+
 	// The current status of the debug target
 	protected MokaDebugTargetState status;
-	
+
 	public MokaDebugTarget(ILaunch launcher) {
 		super(null);
 		this.launcher = launcher;
@@ -58,8 +58,8 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 		this.status = MokaDebugTargetState.RUNNING;
 		fireCreationEvent();
 	}
-	
-	public void setProcess(MokaProcess process){
+
+	public void setProcess(MokaProcess process) {
 		this.executionEngineProcess = process;
 	}
 
@@ -67,7 +67,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 	public ILaunch getLaunch() {
 		return this.launcher;
 	}
-	
+
 	@Override
 	public IDebugTarget getDebugTarget() {
 		return this;
@@ -85,8 +85,8 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 
 	@Override
 	public void terminate() throws DebugException {
-		for(IMokaThread thread : this.executionThreads){
-			if(thread.isSuspended()){
+		for (IMokaThread thread : this.executionThreads) {
+			if (thread.isSuspended()) {
 				thread.resume();
 			}
 			thread.terminate();
@@ -118,15 +118,15 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 	public void resume() throws DebugException {
 		// Resume all thread that are currently suspended
 		this.targetLock.lock();
-		try{
-			for(IMokaThread logicalThread : this.executionThreads){
-				if(logicalThread.isSuspended()){
+		try {
+			for (IMokaThread logicalThread : this.executionThreads) {
+				if (logicalThread.isSuspended()) {
 					logicalThread.resume();
 				}
 			}
 			this.status = MokaDebugTargetState.RUNNING;
 			this.fireResumeEvent(DebugEvent.RESUME);
-		}finally{
+		} finally {
 			this.targetLock.unlock();
 		}
 	}
@@ -135,57 +135,57 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 	public void suspend() throws DebugException {
 		// Request suspension for all thread that are known by this debug target
 		this.targetLock.lock();
-		try{
-			for(IMokaThread logicalThread : this.executionThreads){
-				if(!logicalThread.isSuspended()){
+		try {
+			for (IMokaThread logicalThread : this.executionThreads) {
+				if (!logicalThread.isSuspended()) {
 					logicalThread.suspend();
 				}
 			}
 			this.status = MokaDebugTargetState.SUSPENDED;
 			this.fireChangeEvent(DebugEvent.SUSPEND);
-		}finally{
+		} finally {
 			this.targetLock.unlock();
 		}
 	}
-	
+
 	@Override
 	public void registerThread(IObject_ object) {
 		this.executionThreads.add(new MokaThread(this, object));
 	}
 
-	public boolean isNewThread(IObject_ object){
+	public boolean isNewThread(IObject_ object) {
 		// Determine if the active class instance is already associated with a logical thread.
 		// If this is the case the it returns true, false otherwise
 		IMokaThread existingThread = null;
 		Iterator<IMokaThread> threadIterator = this.executionThreads.iterator();
-		while(existingThread==null && threadIterator.hasNext()){
+		while (existingThread == null && threadIterator.hasNext()) {
 			existingThread = threadIterator.next();
-			if(existingThread.getLogicalThread()!=object){
+			if (existingThread.getLogicalThread() != object) {
 				existingThread = null;
 			}
 		}
 		return existingThread == null;
 	}
-	
+
 	@Override
 	public void unregisterThread(IObject_ object) {
 		// Remove the thread corresponding this active class instance
 		IMokaThread targetThread = null;
 		Iterator<IMokaThread> threadIterator = this.executionThreads.iterator();
-		while(targetThread==null && threadIterator.hasNext()){
+		while (targetThread == null && threadIterator.hasNext()) {
 			targetThread = threadIterator.next();
-			if(targetThread.getLogicalThread()==object){
+			if (targetThread.getLogicalThread() == object) {
 				threadIterator.remove();
 			}
 		}
 	}
-	
-	protected IMokaThread getLogicalThread(IObject_ object){
+
+	protected IMokaThread getLogicalThread(IObject_ object) {
 		IMokaThread targetThread = null;
 		Iterator<IMokaThread> threadIterator = this.executionThreads.iterator();
-		while(targetThread==null && threadIterator.hasNext()){
+		while (targetThread == null && threadIterator.hasNext()) {
 			IMokaThread currentThread = threadIterator.next();
-			if(currentThread.getLogicalThread()==object){
+			if (currentThread.getLogicalThread() == object) {
 				targetThread = currentThread;
 			}
 		}
@@ -199,19 +199,19 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 		// 2 - The suspension is implied by the presence of a breakpoint on the node that is visited
 		// 3 - The logical thread is currently in stepping mode
 		IMokaThread thread = this.getLogicalThread(object);
-		if(thread != null){	
-			if(thread.getSuspensionFlag()){
+		if (thread != null) {
+			if (thread.getSuspensionFlag()) {
 				return true;
-			}else if(DebugServiceHelper.INSTANCE.hasBreakpoint(nodeVisitor)){
+			} else if (DebugServiceHelper.INSTANCE.hasBreakpoint(nodeVisitor)) {
 				try {
 					thread.suspend(); // Request a suspension for that thread
 				} catch (DebugException e) {
 					e.printStackTrace();
 				}
 				return true;
-			}else if(thread.isStepping()){
+			} else if (thread.isStepping()) {
 				try {
-					thread.suspend(); // Request a suspension for that  thread
+					thread.suspend(); // Request a suspension for that thread
 				} catch (DebugException e) {
 					e.printStackTrace();
 				}
@@ -220,15 +220,15 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 		}
 		return false;
 	}
-	
+
 	@Override
 	public void suspend(IObject_ object, ISemanticVisitor nodeVisitor) {
 		IMokaThread logicalThread = this.getLogicalThread(object);
-		if(logicalThread!=null){
+		if (logicalThread != null) {
 			logicalThread.suspend(nodeVisitor);
 		}
 	}
-	
+
 	@Override
 	public void breakpointAdded(IBreakpoint breakpoint) {
 	}
@@ -254,16 +254,16 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 		// 1 - Threads are removed
 		// 2 - The process is not watched anymore
 		this.targetLock.lock();
-		try{
-			for(IMokaThread thread : this.executionThreads){
-				if(thread.isSuspended()){
+		try {
+			for (IMokaThread thread : this.executionThreads) {
+				if (thread.isSuspended()) {
 					thread.resume();
 				}
 			}
 			this.executionThreads.clear();
 			this.status = MokaDebugTargetState.DISCONNECTED;
 			this.fireTerminateEvent();
-		}finally{
+		} finally {
 			this.targetLock.unlock();
 		}
 	}
@@ -311,7 +311,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 	@Override
 	public void update(IObject_ object, ISemanticVisitor visitor) {
 		IMokaThread thread = this.getLogicalThread(object);
-		if(thread!=null){
+		if (thread != null) {
 			thread.setSuspensionPoint(visitor);
 		}
 	}
@@ -320,12 +320,12 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 	public boolean hasSuspendedThread() {
 		boolean hasSuspendedThread = false;
 		this.targetLock.lock();
-		try{
+		try {
 			Iterator<IMokaThread> threadIterator = this.executionThreads.iterator();
-			while(!hasSuspendedThread && threadIterator.hasNext()){
+			while (!hasSuspendedThread && threadIterator.hasNext()) {
 				hasSuspendedThread = threadIterator.next().isSuspended();
 			}
-		}finally{
+		} finally {
 			this.targetLock.unlock();
 		}
 		return hasSuspendedThread;

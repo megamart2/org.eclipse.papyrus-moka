@@ -33,7 +33,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 	protected MokaProjectSelectionComponent projectSelectionComp;
 
 	protected MokaExecutableSelectionComponent executableSelectionComp;
-	
+
 	protected MokaExecutionEngineSelectionComponent executionEngineSelectionComp;
 
 	protected Image image;
@@ -46,10 +46,10 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 				String init_fragment = configuration.getAttribute(MokaConstants.FRAGMENT_ATTRIBUTE_NAME, "");
 				this.executableSelectionComp.eligibleExecutableElement.selectByURIFragment(init_fragment);
 			}
-			String selectedExecutionEngine = configuration.getAttribute(MokaConstants.EXECUTION_ENGINE_ATTRIBUTE_NAME, "") ;
+			String selectedExecutionEngine = configuration.getAttribute(MokaConstants.EXECUTION_ENGINE_ATTRIBUTE_NAME, "");
 			if (selectedExecutionEngine != null) {
 				this.executionEngineSelectionComp.eligibleExecutionEngineCombo.setText(selectedExecutionEngine);
-			} 
+			}
 		} catch (CoreException e) {
 			Activator.log.error(e);
 		}
@@ -63,7 +63,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 		}
 		String executionEngine = this.executionEngineSelectionComp.eligibleExecutionEngineCombo.getText();
 		if (executionEngine != null) {
-			configuration.setAttribute(MokaConstants.EXECUTION_ENGINE_ATTRIBUTE_NAME, executionEngine) ; 
+			configuration.setAttribute(MokaConstants.EXECUTION_ENGINE_ATTRIBUTE_NAME, executionEngine);
 		}
 	}
 
@@ -73,7 +73,7 @@ public class MokaRunConfigurationTab extends AbstractLaunchConfigurationTab {
 		this.mainContainer.setLayout(new GridLayout());
 		this.projectSelectionComp = new MokaProjectSelectionComponent(this.mainContainer, SWT.FILL, "UML Model", 2);
 		this.executableSelectionComp = new MokaExecutableSelectionComponent(this.mainContainer, SWT.FILL, "Element to be executed", 2);
-		this.executionEngineSelectionComp = new MokaExecutionEngineSelectionComponent(this.mainContainer, SWT.FILL, "Execution Engine (if no selection, the default engine is used)", 2) ;
+		this.executionEngineSelectionComp = new MokaExecutionEngineSelectionComponent(this.mainContainer, SWT.FILL, "Execution Engine (if no selection, the default engine is used)", 2);
 		/* 2. Register Listeners */
 		MokaProjectSelection listener = new MokaProjectSelection(this.projectSelectionComp.projectSelectionText, this);
 		MokaTriggerComboPopulation comboPopulationTrigger = new MokaTriggerComboPopulation(this.executableSelectionComp.eligibleExecutableElement);

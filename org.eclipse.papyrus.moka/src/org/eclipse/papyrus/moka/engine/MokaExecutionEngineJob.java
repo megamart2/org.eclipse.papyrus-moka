@@ -28,30 +28,30 @@ public class MokaExecutionEngineJob extends Job {
 
 	// The execution engine started in the context of this job
 	protected IExecutionEngine engine;
-	
+
 	// Model element used as entry point of the execution
 	protected EObject executionEntryPoint;
-	
+
 	// Arguments of the execution engine
 	protected String[] executionArgs;
-	
+
 	protected IProgressMonitor monitor;
-	
+
 	protected ILaunch launch;
-	
+
 	public static MokaExecutionEngineJob ENGINE_MAIN_JOB;
 
-	private MokaExecutionEngineJob(){
+	private MokaExecutionEngineJob() {
 		super(MokaConstants.EXECUTION_ENGINE_JOB_NAME);
 	}
-	
-	public static MokaExecutionEngineJob getInstance(){
-		if(ENGINE_MAIN_JOB==null){
+
+	public static MokaExecutionEngineJob getInstance() {
+		if (ENGINE_MAIN_JOB == null) {
 			ENGINE_MAIN_JOB = new MokaExecutionEngineJob();
 		}
 		return ENGINE_MAIN_JOB;
 	}
-	
+
 	public void initialize(ILaunch launch, IExecutionEngine engine, EObject executionEntryPoint, String[] executionArgs) {
 		this.launch = launch;
 		this.engine = engine;
@@ -65,29 +65,29 @@ public class MokaExecutionEngineJob extends Job {
 		IStatus jobStatus = new Status(IStatus.OK, "org.eclipse.papyrus.moka", "Execution was successfull");
 		this.monitor = monitor;
 		this.engine.init(this.launch, this.executionEntryPoint, this.executionArgs);
-		try{
+		try {
 			this.engine.start(monitor);
-		}catch(OperationCanceledException cancellationException){
+		} catch (OperationCanceledException cancellationException) {
 			jobStatus = new Status(IStatus.CANCEL, "org.eclipse.papyrus.moka", "Execution stopped by user request");
-		}catch(Exception e){
-			if(monitor.isCanceled()){
+		} catch (Exception e) {
+			if (monitor.isCanceled()) {
 				jobStatus = new Status(IStatus.CANCEL, "org.eclipse.papyrus.moka", "Execution stopped by user request");
-			}else{
+			} else {
 				jobStatus = new Status(IStatus.ERROR, "org.eclipse.papyrus.moka", "Execution stopped: unexpected exception");
 			}
 		}
 		return jobStatus;
 	}
-	
-	public IProgressMonitor getMonitor(){
+
+	public IProgressMonitor getMonitor() {
 		return this.monitor;
 	}
-	
-	public IExecutionEngine getEngine(){
+
+	public IExecutionEngine getEngine() {
 		return this.engine;
 	}
-	
-	class MokaExecutionEngineSpy implements IJobChangeListener{
+
+	class MokaExecutionEngineSpy implements IJobChangeListener {
 
 		public void done(IJobChangeEvent event) {
 			// Whatever is the kind of the job termination; each time the
@@ -100,7 +100,7 @@ public class MokaExecutionEngineJob extends Job {
 			stop.setUser(true);
 			stop.schedule(Job.SHORT);
 		}
-		
+
 		@Override
 		public void aboutToRun(IJobChangeEvent event) {
 			// Do nothing
@@ -109,35 +109,35 @@ public class MokaExecutionEngineJob extends Job {
 		@Override
 		public void awake(IJobChangeEvent event) {
 			// Do nothing
-			
+
 		}
 
 		@Override
 		public void running(IJobChangeEvent event) {
 			// Do nothing
-			
+
 		}
 
 		@Override
 		public void scheduled(IJobChangeEvent event) {
 			// Do nothing
-			
+
 		}
 
 		@Override
 		public void sleeping(IJobChangeEvent event) {
 			// Do nothing
 		}
-	
+
 	}
-	
+
 	// This job is executed to release the resources that are currently used
 	// by the execution engine. The action of releasing the resources consist
 	// in the call of the stop operation provided by an IExecutionEngine.
-	class StopJob extends Job{
+	class StopJob extends Job {
 
 		protected IExecutionEngine engine;
-		
+
 		public StopJob(IExecutionEngine engine) {
 			super("Release execution engine resources");
 			this.engine = engine;
@@ -146,15 +146,15 @@ public class MokaExecutionEngineJob extends Job {
 		@Override
 		protected IStatus run(IProgressMonitor monitor) {
 			monitor.beginTask("Dispose execution engine resources...", IProgressMonitor.UNKNOWN);
-			try{
+			try {
 				this.engine.stop(monitor);
-			}catch(Exception e){
+			} catch (Exception e) {
 				// TODO: register an error within the error log
-			}finally{
+			} finally {
 				monitor.done();
 			}
 			return new Status(IStatus.OK, "org.eclipse.papyrus.moka", "Resources release with success");
-		}	
+		}
 	}
-	
+
 }

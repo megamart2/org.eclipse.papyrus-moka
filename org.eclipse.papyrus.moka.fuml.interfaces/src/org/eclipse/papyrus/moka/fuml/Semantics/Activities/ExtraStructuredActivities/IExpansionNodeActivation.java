@@ -15,8 +15,8 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivi
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectNodeActivation;
 
-public interface IExpansionNodeActivation extends IObjectNodeActivation{
-	
+public interface IExpansionNodeActivation extends IObjectNodeActivation {
+
 	public IExpansionRegionActivation getExpansionRegionActivation();
-	
+
 }

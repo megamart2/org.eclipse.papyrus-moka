@@ -23,16 +23,16 @@ import org.eclipse.papyrus.moka.animation.presentation.control.AnimatedDiagramTr
 public class AnimationTreeNode implements IAnimationTreeNode {
 
 	public IAnimationTreeNode parent;
-	
+
 	public List<IAnimationTreeNode> children;
-	
+
 	public List<IContentProvider> listeners;
-	
+
 	public AnimationTreeNode() {
 		this.children = new ArrayList<IAnimationTreeNode>();
-		this.listeners = new ArrayList<IContentProvider>(); 
+		this.listeners = new ArrayList<IContentProvider>();
 	}
-	
+
 	@Override
 	public IAnimationTreeNode getParent() {
 		return this.parent;
@@ -40,7 +40,7 @@ public class AnimationTreeNode implements IAnimationTreeNode {
 
 	@Override
 	public IAnimationTreeNode getRoot() {
-		if(this.parent!=null){
+		if (this.parent != null) {
 			return this.getParent();
 		}
 		return this;
@@ -49,9 +49,9 @@ public class AnimationTreeNode implements IAnimationTreeNode {
 	@Override
 	public boolean addChild(IAnimationTreeNode node) {
 		boolean added = false;
-		if(node!=null){
+		if (node != null) {
 			added = this.children.add(node);
-			if(added){
+			if (added) {
 				node.setParent(this);
 				this.fireChildAdded();
 			}
@@ -62,9 +62,9 @@ public class AnimationTreeNode implements IAnimationTreeNode {
 	@Override
 	public boolean removeChild(IAnimationTreeNode node) {
 		boolean removed = false;
-		if(node!=null){
+		if (node != null) {
 			removed = this.children.remove(node);
-			if(removed){
+			if (removed) {
 				this.fireChildRemoved();
 			}
 		}
@@ -74,7 +74,7 @@ public class AnimationTreeNode implements IAnimationTreeNode {
 	@Override
 	public boolean addListener(IContentProvider contentProvider) {
 		boolean added = false;
-		if(contentProvider!=null){
+		if (contentProvider != null) {
 			added = this.listeners.add(contentProvider);
 		}
 		return added;
@@ -83,7 +83,7 @@ public class AnimationTreeNode implements IAnimationTreeNode {
 	@Override
 	public boolean removeListener(IContentProvider contentProvider) {
 		boolean removed = false;
-		if(contentProvider!=null){
+		if (contentProvider != null) {
 			removed = this.listeners.remove(contentProvider);
 		}
 		return removed;
@@ -99,17 +99,17 @@ public class AnimationTreeNode implements IAnimationTreeNode {
 		this.parent = node;
 	}
 
-	protected void fireChildAdded(){
-		for(IContentProvider contentProvider : this.listeners){
-			if(contentProvider instanceof AnimatedDiagramTreeContentProvider){
+	protected void fireChildAdded() {
+		for (IContentProvider contentProvider : this.listeners) {
+			if (contentProvider instanceof AnimatedDiagramTreeContentProvider) {
 				((AnimatedDiagramTreeContentProvider) contentProvider).requestRefresh();
 			}
 		}
 	}
-	
-	protected void fireChildRemoved(){
-		for(IContentProvider contentProvider : this.listeners){
-			if(contentProvider instanceof AnimatedDiagramTreeContentProvider){
+
+	protected void fireChildRemoved() {
+		for (IContentProvider contentProvider : this.listeners) {
+			if (contentProvider instanceof AnimatedDiagramTreeContentProvider) {
 				((AnimatedDiagramTreeContentProvider) contentProvider).requestRefresh();
 			}
 		}

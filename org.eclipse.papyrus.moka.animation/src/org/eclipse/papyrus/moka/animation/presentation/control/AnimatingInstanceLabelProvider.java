@@ -19,20 +19,20 @@ import org.eclipse.papyrus.moka.animation.presentation.data.AnimatingInstanceNod
 import org.eclipse.swt.graphics.Image;
 
 public class AnimatingInstanceLabelProvider extends LabelProvider {
-	
+
 	public static final String THREAD_ICON = "icons/thread_icon.png";
-	
+
 	@Override
 	public String getText(Object element) {
-		if(element instanceof AnimatingInstanceNode){
-			return ((AnimatingInstanceNode)element).instance.getIdentifier();
+		if (element instanceof AnimatingInstanceNode) {
+			return ((AnimatingInstanceNode) element).instance.getIdentifier();
 		}
 		return null;
 	}
-	
+
 	@Override
 	public Image getImage(Object element) {
-		if(element instanceof AnimatingInstanceNode){
+		if (element instanceof AnimatingInstanceNode) {
 			return AnimationPlugin.getDefault().getImageRegistry().get(THREAD_ICON);
 		}
 		return null;

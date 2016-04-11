@@ -18,7 +18,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IE
 public interface ICallActionActivation extends IInvocationActionActivation {
 
 	public IExecution getCallExecution();
-	
+
 	public void removeCallExecution(IExecution execution);
-	
+
 }

@@ -51,8 +51,8 @@ public class ObjectToken extends Token implements IObjectToken {
 		// Return the value of this object token.
 		return this.value;
 	}
-	
-	public void setValue(IValue value){
+
+	public void setValue(IValue value) {
 		this.value = value;
 	}
 }

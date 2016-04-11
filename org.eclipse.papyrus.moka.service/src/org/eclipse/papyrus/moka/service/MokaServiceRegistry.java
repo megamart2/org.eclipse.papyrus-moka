@@ -24,69 +24,69 @@ import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
 
-public class MokaServiceRegistry{
+public class MokaServiceRegistry {
 
 	protected static String MOKA_SERVICE_EXTENSION_POIN_ID = "org.eclipse.papyrus.moka.service.service";
-	
+
 	// The registry map associates the actual type of the service to the
 	// service instance
-	protected HashMap<java.lang.Class<?>, IMokaService> registry; 
-	
+	protected HashMap<java.lang.Class<?>, IMokaService> registry;
+
 	// The service registry is a singleton
 	private static MokaServiceRegistry INSTANCE;
-	
-	private MokaServiceRegistry(){
+
+	private MokaServiceRegistry() {
 		this.registry = new HashMap<java.lang.Class<?>, IMokaService>();
 	}
-	
-	public static MokaServiceRegistry getInstance(){
-		if(INSTANCE==null){
+
+	public static MokaServiceRegistry getInstance() {
+		if (INSTANCE == null) {
 			INSTANCE = new MokaServiceRegistry();
 			INSTANCE.loadServices();
 		}
 		return INSTANCE;
 	}
-	
-	protected void loadServices(){
+
+	protected void loadServices() {
 		// Instantiate registered services
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] configurations = registry.getConfigurationElementsFor(MOKA_SERVICE_EXTENSION_POIN_ID);
-		for(int i=0; i < configurations.length; i++){
+		for (int i = 0; i < configurations.length; i++) {
 			Object instantiatedContribution = null;
 			try {
 				instantiatedContribution = configurations[i].createExecutableExtension("class");
 			} catch (CoreException e) {
 				e.printStackTrace();
 			}
-			if(instantiatedContribution!=null && instantiatedContribution instanceof IMokaService){
-				this.register((IMokaService)instantiatedContribution);
+			if (instantiatedContribution != null && instantiatedContribution instanceof IMokaService) {
+				this.register((IMokaService) instantiatedContribution);
 			}
 		}
 	}
-	
-	protected void register(IMokaService service){
+
+	protected void register(IMokaService service) {
 		// Register service within the registry
-		if(service!=null){
+		if (service != null) {
 			this.registry.put(service.getClass(), service);
 		}
 	}
-	
-	public List<IMokaService> getService(java.lang.Class<?> clazz){
+
+	public List<IMokaService> getService(java.lang.Class<?> clazz) {
 		// Return the list of service that are compatible with the given type
 		List<IMokaService> services = new ArrayList<>();
 		Iterator<Class<?>> iterator = this.registry.keySet().iterator();
-		while(iterator.hasNext()){
+		while (iterator.hasNext()) {
 			Class<?> type = iterator.next();
-			if(clazz.isAssignableFrom(type)){
+			if (clazz.isAssignableFrom(type)) {
 				services.add(this.registry.get(type));
 			}
 		}
 		return services;
 	}
-	
-	public Collection<IMokaService> getAllServices(){
+
+	public Collection<IMokaService> getAllServices() {
 		// Provide the list of all registered services
 		return this.registry.values();
 	}
-	
+
 }

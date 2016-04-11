@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFileType()
@@ -35,8 +35,9 @@ public interface FileType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Name of the file including the path relative to the sources directory, using the forward slash as separator (for example: name = "myFMU.c"; name = "coSimulation/solve.c") 
+	 * Name of the file including the path relative to the sources directory, using the forward slash as separator (for example: name = "myFMU.c"; name = "coSimulation/solve.c")
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFileType_Name()
@@ -50,7 +51,9 @@ public interface FileType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.FileType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

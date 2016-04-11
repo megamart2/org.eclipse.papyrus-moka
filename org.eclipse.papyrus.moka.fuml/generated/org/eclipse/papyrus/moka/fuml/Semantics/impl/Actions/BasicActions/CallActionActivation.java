@@ -111,25 +111,27 @@ public abstract class CallActionActivation extends InvocationActionActivation im
 			i = i + 1; // FUML12-36 Problem with CallActionActivation: possible infinite loop in removeCallExecution()
 		}
 	}
-	
-	/*public void animate(IRender animationManager){
-		// If a call is not synchronous then the node is animated as usual following the period of
-		// time specified by Moka constant. If it is synchronous then the node is animated until
-		// the animation is notified of the termination of the call
-		if(animationManager!=null){
-			this.animationManager = animationManager;	
-			if(((CallAction)this.node).isSynchronous()){
-				animationManager.startRendering(this.node, AnimationKind.ANIMATED);
-			}else{
-				super.animate(animationManager);
-			}
-		}
-	}
-	
-	public void notifyAnimationEnd(){
-		// Notify the termination of the animation period of the call action
-		if(this.animationManager!=null){
-			this.animationManager.stopRendering(this.node, AnimationKind.ANIMATED);
-		}
-	}*/
+
+	/*
+	 * public void animate(IRender animationManager){
+	 * // If a call is not synchronous then the node is animated as usual following the period of
+	 * // time specified by Moka constant. If it is synchronous then the node is animated until
+	 * // the animation is notified of the termination of the call
+	 * if(animationManager!=null){
+	 * this.animationManager = animationManager;
+	 * if(((CallAction)this.node).isSynchronous()){
+	 * animationManager.startRendering(this.node, AnimationKind.ANIMATED);
+	 * }else{
+	 * super.animate(animationManager);
+	 * }
+	 * }
+	 * }
+	 * 
+	 * public void notifyAnimationEnd(){
+	 * // Notify the termination of the animation period of the call action
+	 * if(this.animationManager!=null){
+	 * this.animationManager.stopRendering(this.node, AnimationKind.ANIMATED);
+	 * }
+	 * }
+	 */
 }

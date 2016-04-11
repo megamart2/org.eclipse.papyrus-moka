@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.LiteralUnlimitedNatural;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class UnlimitedNaturalValue extends PrimitiveValue implements IUnlimitedNaturalValue{
+public class UnlimitedNaturalValue extends PrimitiveValue implements IUnlimitedNaturalValue {
 
 	/*
 	 * The actual unlimited natural value.
@@ -77,11 +77,11 @@ public class UnlimitedNaturalValue extends PrimitiveValue implements IUnlimitedN
 		}
 		return stringValue;
 	}
-	
-	
+
+
 	@Override
 	public void setValue(Integer value) {
-		this.value= value;
+		this.value = value;
 	}
 
 	@Override

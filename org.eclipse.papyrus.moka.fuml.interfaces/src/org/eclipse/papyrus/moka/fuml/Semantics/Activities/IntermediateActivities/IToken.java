@@ -16,22 +16,22 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 
 public interface IToken {
-	
+
 	public IToken transfer(IActivityNodeActivation holder);
-	
+
 	public void withdraw();
-	
+
 	public abstract Boolean equals(IToken other);
-	
+
 	public abstract IToken copy();
-	
+
 	public Boolean isWithdrawn();
-	
+
 	public Boolean isControl();
-	
+
 	public abstract IValue getValue();
-	
+
 	public void setHolder(IActivityNodeActivation holder);
-	
+
 	public IActivityNodeActivation getHolder();
 }

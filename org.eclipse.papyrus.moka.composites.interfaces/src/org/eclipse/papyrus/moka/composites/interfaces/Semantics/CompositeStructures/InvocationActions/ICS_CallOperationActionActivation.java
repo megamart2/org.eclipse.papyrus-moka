@@ -20,9 +20,9 @@ import org.eclipse.uml2.uml.Port;
 public interface ICS_CallOperationActionActivation extends ICallActionActivation {
 
 	public boolean isOperationProvided(Port port, Operation operation);
-	
+
 	public boolean isOperationRequired(Port port, Operation operation);
-	
+
 	public boolean isCreate(Operation o);
-	
+
 }

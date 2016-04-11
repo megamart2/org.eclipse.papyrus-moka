@@ -22,15 +22,15 @@ import org.eclipse.swt.widgets.Display;
 public class AnimatorRightLabelProvider extends ColumnLabelProvider {
 
 	@Override
-	public void update(ViewerCell cell) { 
-		if(cell.getElement() instanceof AnimatingInstanceNode){
+	public void update(ViewerCell cell) {
+		if (cell.getElement() instanceof AnimatingInstanceNode) {
 			AnimatingInstanceNode animator = (AnimatingInstanceNode) cell.getElement();
-			if(animator.isAllowed()){
+			if (animator.isAllowed()) {
 				cell.setText(AnimationEditingSupport.YES);
-				cell.setBackground(new Color(Display.getDefault(), 91, 196 , 21));
-			}else{
+				cell.setBackground(new Color(Display.getDefault(), 91, 196, 21));
+			} else {
 				cell.setText(AnimationEditingSupport.NO);
-				cell.setBackground(new Color(Display.getDefault(), 255, 0 , 0));
+				cell.setBackground(new Color(Display.getDefault(), 255, 0, 0));
 			}
 		}
 	}

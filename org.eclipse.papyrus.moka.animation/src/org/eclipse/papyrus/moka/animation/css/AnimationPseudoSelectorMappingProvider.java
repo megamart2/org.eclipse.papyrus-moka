@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.css;
 
 import java.util.HashMap;
@@ -7,7 +18,7 @@ import org.eclipse.papyrus.infra.gmfdiag.css.service.IMarkerToPseudoSelectorMapp
 import org.eclipse.papyrus.moka.animation.utils.AnimationUtils;
 
 public class AnimationPseudoSelectorMappingProvider implements IMarkerToPseudoSelectorMappingProvider {
-	
+
 	protected Map<String, String> mappings;
 
 	public final static String BREAKPOINT_MARKER_PSEUDO_SELECTOR = "breakpoint";
@@ -17,9 +28,10 @@ public class AnimationPseudoSelectorMappingProvider implements IMarkerToPseudoSe
 	public final static String ANIMATION_MARKER_PSEUDO_SELECTOR = "animated";
 
 	public final static String VISITED_MARKER_PSEUDO_SELECTOR = "visited";
-	
-	public AnimationPseudoSelectorMappingProvider() {}
-	
+
+	public AnimationPseudoSelectorMappingProvider() {
+	}
+
 	public Map<String, String> getMappings() {
 		if (this.mappings == null) {
 			this.mappings = new HashMap<String, String>();

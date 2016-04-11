@@ -24,8 +24,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getAny <em>Any</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getAny <em>Any</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getToolType()
@@ -42,6 +42,7 @@ public interface ToolType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Any</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getToolType_Any()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="false"
@@ -57,6 +58,7 @@ public interface ToolType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Name of tool that can interpret the annotation. "name" must be unique with respect to all other elements of the VendorAnnotation list.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getToolType_Name()
@@ -70,7 +72,9 @@ public interface ToolType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ToolType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

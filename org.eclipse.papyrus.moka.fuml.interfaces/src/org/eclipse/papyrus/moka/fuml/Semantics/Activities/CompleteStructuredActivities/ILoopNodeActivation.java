@@ -18,18 +18,18 @@ import java.util.List;
 import org.eclipse.uml2.uml.ActivityNode;
 
 public interface ILoopNodeActivation extends IStructuredActivityNodeActivation {
-	
+
 	public void doLoop(Boolean continuing);
-	
+
 	public Boolean runTest();
-	
+
 	public void runBody();
-	
+
 	public void saveBodyOutputs();
-	
+
 	public void runLoopVariables();
-	
+
 	public List<ActivityNode> makeLoopVariableList();
-	
+
 	public void continueLoop();
 }

@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor <em>Factor</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset <em>Offset</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor <em>Factor</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset <em>Offset</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getDisplayUnitType()
@@ -41,6 +41,7 @@ public interface DisplayUnitType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Factor</em>' attribute.
 	 * @see #isSetFactor()
 	 * @see #unsetFactor()
@@ -56,7 +57,9 @@ public interface DisplayUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Factor</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Factor</em>' attribute.
 	 * @see #isSetFactor()
 	 * @see #unsetFactor()
 	 * @see #getFactor()
@@ -68,6 +71,7 @@ public interface DisplayUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor <em>Factor</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetFactor()
 	 * @see #getFactor()
 	 * @see #setFactor(double)
@@ -79,6 +83,7 @@ public interface DisplayUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getFactor <em>Factor</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Factor</em>' attribute is set.
 	 * @see #unsetFactor()
 	 * @see #getFactor()
@@ -92,8 +97,10 @@ public interface DisplayUnitType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Name of DisplayUnit element, e.g. <Unit name="rad"/>, <DisplayUnit factor="57.29..." name="deg"/>. "name" must be unique with respect to all other "names" of the DisplayUnit definitions of the same Unit (different Unit elements may have the same DisplayUnit names).
+	 * Name of DisplayUnit element, e.g. <Unit name="rad"/>, <DisplayUnit factor="57.29..." name="deg"/>. "name" must be unique with respect to all other "names" of the DisplayUnit definitions of the same Unit (different Unit elements may have the same
+	 * DisplayUnit names).
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getDisplayUnitType_Name()
@@ -107,7 +114,9 @@ public interface DisplayUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -122,6 +131,7 @@ public interface DisplayUnitType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Offset</em>' attribute.
 	 * @see #isSetOffset()
 	 * @see #unsetOffset()
@@ -137,7 +147,9 @@ public interface DisplayUnitType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Offset</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Offset</em>' attribute.
 	 * @see #isSetOffset()
 	 * @see #unsetOffset()
 	 * @see #getOffset()
@@ -149,6 +161,7 @@ public interface DisplayUnitType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset <em>Offset</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetOffset()
 	 * @see #getOffset()
 	 * @see #setOffset(double)
@@ -160,6 +173,7 @@ public interface DisplayUnitType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.DisplayUnitType#getOffset <em>Offset</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Offset</em>' attribute is set.
 	 * @see #unsetOffset()
 	 * @see #getOffset()

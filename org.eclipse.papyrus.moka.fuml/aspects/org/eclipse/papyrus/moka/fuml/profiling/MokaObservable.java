@@ -20,30 +20,30 @@ import org.eclipse.papyrus.moka.service.IMokaService;
 import org.eclipse.papyrus.moka.service.MokaServiceRegistry;
 
 public abstract class MokaObservable {
-	
+
 	protected List<IMokaService> listeners;
-	
-	public MokaObservable(){
+
+	public MokaObservable() {
 		this.listeners = new ArrayList<IMokaService>();
 		this.initialize();
 	}
-	
+
 	public void initialize() {
 		// An observable is by default listened by any registered service
-		for(IMokaService service : MokaServiceRegistry.getInstance().getAllServices()){
+		for (IMokaService service : MokaServiceRegistry.getInstance().getAllServices()) {
 			this.addListener(service);
 		}
 	}
-	
-	public void addListener(IMokaService service){
+
+	public void addListener(IMokaService service) {
 		this.listeners.add(service);
 	}
-	
-	public void removeListener(IMokaService service){
+
+	public void removeListener(IMokaService service) {
 		this.listeners.remove(service);
 	}
-	
-	public void finalize(){
+
+	public void finalize() {
 		this.listeners.clear();
 	}
 }

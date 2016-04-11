@@ -31,7 +31,7 @@ import org.eclipse.uml2.uml.ExpansionRegion;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.StructuredActivityNode;
 
-public class ExpansionRegionActivation extends ActionActivation implements IExpansionRegionActivation{
+public class ExpansionRegionActivation extends ActionActivation implements IExpansionRegionActivation {
 
 	/*
 	 * The set of expansion activation groups for this expansion region
@@ -141,7 +141,7 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 			while (j <= outputElements.size()) {
 				OutputPinActivation groupOutput = new OutputPinActivation();
 				groupOutput.run();
-				activationGroup.getGroupOutputs().add(groupOutput); // fUML12-10 certain boolean flags are not properly initialized in come cases 
+				activationGroup.getGroupOutputs().add(groupOutput); // fUML12-10 certain boolean flags are not properly initialized in come cases
 				j = j + 1;
 			}
 			activationGroup.createNodeActivations(region.getNodes());
@@ -330,8 +330,8 @@ public class ExpansionRegionActivation extends ActionActivation implements IExpa
 		}
 		this.doOutput();
 	}
-	
-	public List<IExpansionActivationGroup> getExpansionActivationGroups(){
+
+	public List<IExpansionActivationGroup> getExpansionActivationGroups() {
 		return this.activationGroups;
 	}
 }

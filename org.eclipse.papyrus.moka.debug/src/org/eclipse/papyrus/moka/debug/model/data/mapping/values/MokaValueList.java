@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import java.util.ArrayList;
@@ -13,12 +24,12 @@ import org.eclipse.papyrus.moka.debug.engine.MokaDebugElement;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.ItemVariableAdapter;
 
-public class MokaValueList extends MokaDebugElement implements IValue, List<IValue>{
+public class MokaValueList extends MokaDebugElement implements IValue, List<IValue> {
 
 	protected List<IValue> values;
-	
+
 	protected List<IVariable> variables;
-	
+
 	public MokaValueList(MokaDebugTarget debugTarget) {
 		super(debugTarget);
 		this.values = new ArrayList<IValue>();
@@ -32,7 +43,7 @@ public class MokaValueList extends MokaDebugElement implements IValue, List<IVal
 
 	@Override
 	public String getValueString() throws DebugException {
-		return "(size = "+this.values.size()+")";
+		return "(size = " + this.values.size() + ")";
 	}
 
 	@Override
@@ -42,10 +53,10 @@ public class MokaValueList extends MokaDebugElement implements IValue, List<IVal
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		if(this.variables.isEmpty()){
+		if (this.variables.isEmpty()) {
 			int index = 1;
 			Iterator<IValue> valuesIterator = this.values.iterator();
-			while(valuesIterator.hasNext()){
+			while (valuesIterator.hasNext()) {
 				this.variables.add(new ItemVariableAdapter(this.debugTarget, index, valuesIterator.next()));
 				index++;
 			}

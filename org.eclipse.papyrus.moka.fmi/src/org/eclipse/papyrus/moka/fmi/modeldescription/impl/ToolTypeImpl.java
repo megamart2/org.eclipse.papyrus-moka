@@ -35,8 +35,8 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.ToolType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl#getAny <em>Any</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl#getAny <em>Any</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.ToolTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,6 +46,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	 * The cached value of the '{@link #getAny() <em>Any</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAny()
 	 * @generated
 	 * @ordered
@@ -56,6 +57,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -66,6 +68,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -75,6 +78,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected ToolTypeImpl() {
@@ -84,6 +88,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -94,6 +99,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureMap getAny() {
@@ -106,6 +112,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -115,6 +122,7 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -127,13 +135,14 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.TOOL_TYPE__ANY:
-				return ((InternalEList<?>)getAny()).basicRemove(otherEnd, msgs);
+		case FmiPackage.TOOL_TYPE__ANY:
+			return ((InternalEList<?>) getAny()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -141,16 +150,18 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.TOOL_TYPE__ANY:
-				if (coreType) return getAny();
-				return ((FeatureMap.Internal)getAny()).getWrapper();
-			case FmiPackage.TOOL_TYPE__NAME:
-				return getName();
+		case FmiPackage.TOOL_TYPE__ANY:
+			if (coreType)
+				return getAny();
+			return ((FeatureMap.Internal) getAny()).getWrapper();
+		case FmiPackage.TOOL_TYPE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -158,17 +169,18 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.TOOL_TYPE__ANY:
-				((FeatureMap.Internal)getAny()).set(newValue);
-				return;
-			case FmiPackage.TOOL_TYPE__NAME:
-				setName((String)newValue);
-				return;
+		case FmiPackage.TOOL_TYPE__ANY:
+			((FeatureMap.Internal) getAny()).set(newValue);
+			return;
+		case FmiPackage.TOOL_TYPE__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -176,17 +188,18 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.TOOL_TYPE__ANY:
-				getAny().clear();
-				return;
-			case FmiPackage.TOOL_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case FmiPackage.TOOL_TYPE__ANY:
+			getAny().clear();
+			return;
+		case FmiPackage.TOOL_TYPE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -194,15 +207,16 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.TOOL_TYPE__ANY:
-				return any != null && !any.isEmpty();
-			case FmiPackage.TOOL_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FmiPackage.TOOL_TYPE__ANY:
+			return any != null && !any.isEmpty();
+		case FmiPackage.TOOL_TYPE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -210,11 +224,13 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (any: ");
@@ -225,4 +241,4 @@ public class ToolTypeImpl extends MinimalEObjectImpl.Container implements ToolTy
 		return result.toString();
 	}
 
-} //ToolTypeImpl
+} // ToolTypeImpl

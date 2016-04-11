@@ -32,18 +32,18 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.SourceFilesType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#getSourceFiles <em>Source Files</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#getModelIdentifier <em>Model Identifier</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#getSourceFiles <em>Source Files</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanHandleVariableCommunicationStepSize <em>Can Handle Variable Communication Step Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanInterpolateInputs <em>Can Interpolate Inputs</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanRunAsynchronuously <em>Can Run Asynchronuously</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#getMaxOutputDerivativeOrder <em>Max Output Derivative Order</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#getModelIdentifier <em>Model Identifier</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CoSimulationTypeImpl#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}</li>
  * </ul>
  *
  * @generated
@@ -53,6 +53,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getSourceFiles() <em>Source Files</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getSourceFiles()
 	 * @generated
 	 * @ordered
@@ -63,6 +64,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanBeInstantiatedOnlyOncePerProcess() <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
 	 * @generated
 	 * @ordered
@@ -73,6 +75,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanBeInstantiatedOnlyOncePerProcess() <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
 	 * @generated
 	 * @ordered
@@ -83,6 +86,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Be Instantiated Only Once Per Process attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -92,6 +96,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanGetAndSetFMUstate() <em>Can Get And Set FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanGetAndSetFMUstate()
 	 * @generated
 	 * @ordered
@@ -102,6 +107,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanGetAndSetFMUstate() <em>Can Get And Set FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanGetAndSetFMUstate()
 	 * @generated
 	 * @ordered
@@ -112,6 +118,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Get And Set FM Ustate attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -121,6 +128,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanHandleVariableCommunicationStepSize()
 	 * @generated
 	 * @ordered
@@ -131,6 +139,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanHandleVariableCommunicationStepSize() <em>Can Handle Variable Communication Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanHandleVariableCommunicationStepSize()
 	 * @generated
 	 * @ordered
@@ -141,6 +150,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Handle Variable Communication Step Size attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -150,6 +160,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanInterpolateInputs() <em>Can Interpolate Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanInterpolateInputs()
 	 * @generated
 	 * @ordered
@@ -160,6 +171,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanInterpolateInputs() <em>Can Interpolate Inputs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanInterpolateInputs()
 	 * @generated
 	 * @ordered
@@ -170,6 +182,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Interpolate Inputs attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -179,6 +192,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanNotUseMemoryManagementFunctions() <em>Can Not Use Memory Management Functions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanNotUseMemoryManagementFunctions()
 	 * @generated
 	 * @ordered
@@ -189,6 +203,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanNotUseMemoryManagementFunctions() <em>Can Not Use Memory Management Functions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanNotUseMemoryManagementFunctions()
 	 * @generated
 	 * @ordered
@@ -199,6 +214,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Not Use Memory Management Functions attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -208,6 +224,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanRunAsynchronuously() <em>Can Run Asynchronuously</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanRunAsynchronuously()
 	 * @generated
 	 * @ordered
@@ -218,6 +235,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanRunAsynchronuously() <em>Can Run Asynchronuously</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanRunAsynchronuously()
 	 * @generated
 	 * @ordered
@@ -228,6 +246,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Run Asynchronuously attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -237,6 +256,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isCanSerializeFMUstate() <em>Can Serialize FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanSerializeFMUstate()
 	 * @generated
 	 * @ordered
@@ -247,6 +267,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isCanSerializeFMUstate() <em>Can Serialize FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanSerializeFMUstate()
 	 * @generated
 	 * @ordered
@@ -257,6 +278,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Can Serialize FM Ustate attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -266,6 +288,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getMaxOutputDerivativeOrder() <em>Max Output Derivative Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaxOutputDerivativeOrder()
 	 * @generated
 	 * @ordered
@@ -276,6 +299,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getMaxOutputDerivativeOrder() <em>Max Output Derivative Order</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMaxOutputDerivativeOrder()
 	 * @generated
 	 * @ordered
@@ -286,6 +310,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Max Output Derivative Order attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -295,6 +320,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #getModelIdentifier() <em>Model Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelIdentifier()
 	 * @generated
 	 * @ordered
@@ -305,6 +331,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #getModelIdentifier() <em>Model Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelIdentifier()
 	 * @generated
 	 * @ordered
@@ -315,6 +342,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isNeedsExecutionTool() <em>Needs Execution Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isNeedsExecutionTool()
 	 * @generated
 	 * @ordered
@@ -325,6 +353,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isNeedsExecutionTool() <em>Needs Execution Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isNeedsExecutionTool()
 	 * @generated
 	 * @ordered
@@ -335,6 +364,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Needs Execution Tool attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -344,6 +374,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The default value of the '{@link #isProvidesDirectionalDerivative() <em>Provides Directional Derivative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isProvidesDirectionalDerivative()
 	 * @generated
 	 * @ordered
@@ -354,6 +385,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * The cached value of the '{@link #isProvidesDirectionalDerivative() <em>Provides Directional Derivative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isProvidesDirectionalDerivative()
 	 * @generated
 	 * @ordered
@@ -364,6 +396,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	 * This is true if the Provides Directional Derivative attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -372,6 +405,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CoSimulationTypeImpl() {
@@ -381,6 +415,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -391,6 +426,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SourceFilesType getSourceFiles() {
@@ -400,6 +436,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetSourceFiles(SourceFilesType newSourceFiles, NotificationChain msgs) {
@@ -407,7 +444,10 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 		sourceFiles = newSourceFiles;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES, oldSourceFiles, newSourceFiles);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -415,25 +455,27 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setSourceFiles(SourceFilesType newSourceFiles) {
 		if (newSourceFiles != sourceFiles) {
 			NotificationChain msgs = null;
 			if (sourceFiles != null)
-				msgs = ((InternalEObject)sourceFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES, null, msgs);
+				msgs = ((InternalEObject) sourceFiles).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES, null, msgs);
 			if (newSourceFiles != null)
-				msgs = ((InternalEObject)newSourceFiles).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES, null, msgs);
+				msgs = ((InternalEObject) newSourceFiles).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES, null, msgs);
 			msgs = basicSetSourceFiles(newSourceFiles, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES, newSourceFiles, newSourceFiles));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanBeInstantiatedOnlyOncePerProcess() {
@@ -443,6 +485,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanBeInstantiatedOnlyOncePerProcess(boolean newCanBeInstantiatedOnlyOncePerProcess) {
@@ -451,12 +494,14 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 		boolean oldCanBeInstantiatedOnlyOncePerProcessESet = canBeInstantiatedOnlyOncePerProcessESet;
 		canBeInstantiatedOnlyOncePerProcessESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, canBeInstantiatedOnlyOncePerProcess, !oldCanBeInstantiatedOnlyOncePerProcessESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, canBeInstantiatedOnlyOncePerProcess,
+					!oldCanBeInstantiatedOnlyOncePerProcessESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanBeInstantiatedOnlyOncePerProcess() {
@@ -465,12 +510,14 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 		canBeInstantiatedOnlyOncePerProcess = CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT;
 		canBeInstantiatedOnlyOncePerProcessESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT, oldCanBeInstantiatedOnlyOncePerProcessESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS, oldCanBeInstantiatedOnlyOncePerProcess, CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS_EDEFAULT,
+					oldCanBeInstantiatedOnlyOncePerProcessESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanBeInstantiatedOnlyOncePerProcess() {
@@ -480,6 +527,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanGetAndSetFMUstate() {
@@ -489,6 +537,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanGetAndSetFMUstate(boolean newCanGetAndSetFMUstate) {
@@ -503,6 +552,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanGetAndSetFMUstate() {
@@ -517,6 +567,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanGetAndSetFMUstate() {
@@ -526,6 +577,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanHandleVariableCommunicationStepSize() {
@@ -535,6 +587,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanHandleVariableCommunicationStepSize(boolean newCanHandleVariableCommunicationStepSize) {
@@ -543,12 +596,14 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 		boolean oldCanHandleVariableCommunicationStepSizeESet = canHandleVariableCommunicationStepSizeESet;
 		canHandleVariableCommunicationStepSizeESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, canHandleVariableCommunicationStepSize, !oldCanHandleVariableCommunicationStepSizeESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, canHandleVariableCommunicationStepSize,
+					!oldCanHandleVariableCommunicationStepSizeESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanHandleVariableCommunicationStepSize() {
@@ -557,12 +612,14 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 		canHandleVariableCommunicationStepSize = CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT;
 		canHandleVariableCommunicationStepSizeESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT, oldCanHandleVariableCommunicationStepSizeESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE, oldCanHandleVariableCommunicationStepSize, CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE_EDEFAULT,
+					oldCanHandleVariableCommunicationStepSizeESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanHandleVariableCommunicationStepSize() {
@@ -572,6 +629,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanInterpolateInputs() {
@@ -581,6 +639,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanInterpolateInputs(boolean newCanInterpolateInputs) {
@@ -595,6 +654,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanInterpolateInputs() {
@@ -609,6 +669,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanInterpolateInputs() {
@@ -618,6 +679,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanNotUseMemoryManagementFunctions() {
@@ -627,6 +689,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanNotUseMemoryManagementFunctions(boolean newCanNotUseMemoryManagementFunctions) {
@@ -641,6 +704,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanNotUseMemoryManagementFunctions() {
@@ -649,12 +713,14 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 		canNotUseMemoryManagementFunctions = CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT;
 		canNotUseMemoryManagementFunctionsESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS, oldCanNotUseMemoryManagementFunctions, CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT, oldCanNotUseMemoryManagementFunctionsESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS, oldCanNotUseMemoryManagementFunctions, CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS_EDEFAULT,
+					oldCanNotUseMemoryManagementFunctionsESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanNotUseMemoryManagementFunctions() {
@@ -664,6 +730,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanRunAsynchronuously() {
@@ -673,6 +740,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanRunAsynchronuously(boolean newCanRunAsynchronuously) {
@@ -687,6 +755,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanRunAsynchronuously() {
@@ -701,6 +770,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanRunAsynchronuously() {
@@ -710,6 +780,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanSerializeFMUstate() {
@@ -719,6 +790,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanSerializeFMUstate(boolean newCanSerializeFMUstate) {
@@ -733,6 +805,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanSerializeFMUstate() {
@@ -747,6 +820,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanSerializeFMUstate() {
@@ -756,6 +830,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getMaxOutputDerivativeOrder() {
@@ -765,6 +840,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMaxOutputDerivativeOrder(long newMaxOutputDerivativeOrder) {
@@ -779,6 +855,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMaxOutputDerivativeOrder() {
@@ -793,6 +870,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMaxOutputDerivativeOrder() {
@@ -802,6 +880,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getModelIdentifier() {
@@ -811,6 +890,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setModelIdentifier(String newModelIdentifier) {
@@ -823,6 +903,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isNeedsExecutionTool() {
@@ -832,6 +913,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setNeedsExecutionTool(boolean newNeedsExecutionTool) {
@@ -846,6 +928,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetNeedsExecutionTool() {
@@ -860,6 +943,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetNeedsExecutionTool() {
@@ -869,6 +953,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isProvidesDirectionalDerivative() {
@@ -878,6 +963,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setProvidesDirectionalDerivative(boolean newProvidesDirectionalDerivative) {
@@ -892,6 +978,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetProvidesDirectionalDerivative() {
@@ -906,6 +993,7 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetProvidesDirectionalDerivative() {
@@ -915,13 +1003,14 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
-				return basicSetSourceFiles(null, msgs);
+		case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
+			return basicSetSourceFiles(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -929,35 +1018,36 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
-				return getSourceFiles();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				return isCanBeInstantiatedOnlyOncePerProcess();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				return isCanGetAndSetFMUstate();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-				return isCanHandleVariableCommunicationStepSize();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
-				return isCanInterpolateInputs();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				return isCanNotUseMemoryManagementFunctions();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-				return isCanRunAsynchronuously();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				return isCanSerializeFMUstate();
-			case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
-				return getMaxOutputDerivativeOrder();
-			case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
-				return getModelIdentifier();
-			case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
-				return isNeedsExecutionTool();
-			case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
-				return isProvidesDirectionalDerivative();
+		case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
+			return getSourceFiles();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			return isCanBeInstantiatedOnlyOncePerProcess();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+			return isCanGetAndSetFMUstate();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			return isCanHandleVariableCommunicationStepSize();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
+			return isCanInterpolateInputs();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			return isCanNotUseMemoryManagementFunctions();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+			return isCanRunAsynchronuously();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+			return isCanSerializeFMUstate();
+		case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+			return getMaxOutputDerivativeOrder();
+		case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
+			return getModelIdentifier();
+		case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
+			return isNeedsExecutionTool();
+		case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
+			return isProvidesDirectionalDerivative();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -965,47 +1055,48 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
-				setSourceFiles((SourceFilesType)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				setCanBeInstantiatedOnlyOncePerProcess((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				setCanGetAndSetFMUstate((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-				setCanHandleVariableCommunicationStepSize((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
-				setCanInterpolateInputs((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				setCanNotUseMemoryManagementFunctions((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-				setCanRunAsynchronuously((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				setCanSerializeFMUstate((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
-				setMaxOutputDerivativeOrder((Long)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
-				setModelIdentifier((String)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
-				setNeedsExecutionTool((Boolean)newValue);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
-				setProvidesDirectionalDerivative((Boolean)newValue);
-				return;
+		case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
+			setSourceFiles((SourceFilesType) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			setCanBeInstantiatedOnlyOncePerProcess((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+			setCanGetAndSetFMUstate((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			setCanHandleVariableCommunicationStepSize((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
+			setCanInterpolateInputs((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			setCanNotUseMemoryManagementFunctions((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+			setCanRunAsynchronuously((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+			setCanSerializeFMUstate((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+			setMaxOutputDerivativeOrder((Long) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
+			setModelIdentifier((String) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
+			setNeedsExecutionTool((Boolean) newValue);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
+			setProvidesDirectionalDerivative((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1013,47 +1104,48 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
-				setSourceFiles((SourceFilesType)null);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				unsetCanBeInstantiatedOnlyOncePerProcess();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				unsetCanGetAndSetFMUstate();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-				unsetCanHandleVariableCommunicationStepSize();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
-				unsetCanInterpolateInputs();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				unsetCanNotUseMemoryManagementFunctions();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-				unsetCanRunAsynchronuously();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				unsetCanSerializeFMUstate();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
-				unsetMaxOutputDerivativeOrder();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
-				setModelIdentifier(MODEL_IDENTIFIER_EDEFAULT);
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
-				unsetNeedsExecutionTool();
-				return;
-			case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
-				unsetProvidesDirectionalDerivative();
-				return;
+		case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
+			setSourceFiles((SourceFilesType) null);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			unsetCanBeInstantiatedOnlyOncePerProcess();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+			unsetCanGetAndSetFMUstate();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			unsetCanHandleVariableCommunicationStepSize();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
+			unsetCanInterpolateInputs();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			unsetCanNotUseMemoryManagementFunctions();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+			unsetCanRunAsynchronuously();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+			unsetCanSerializeFMUstate();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+			unsetMaxOutputDerivativeOrder();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
+			setModelIdentifier(MODEL_IDENTIFIER_EDEFAULT);
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
+			unsetNeedsExecutionTool();
+			return;
+		case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
+			unsetProvidesDirectionalDerivative();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1061,35 +1153,36 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
-				return sourceFiles != null;
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
-				return isSetCanBeInstantiatedOnlyOncePerProcess();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
-				return isSetCanGetAndSetFMUstate();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
-				return isSetCanHandleVariableCommunicationStepSize();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
-				return isSetCanInterpolateInputs();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
-				return isSetCanNotUseMemoryManagementFunctions();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
-				return isSetCanRunAsynchronuously();
-			case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
-				return isSetCanSerializeFMUstate();
-			case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
-				return isSetMaxOutputDerivativeOrder();
-			case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
-				return MODEL_IDENTIFIER_EDEFAULT == null ? modelIdentifier != null : !MODEL_IDENTIFIER_EDEFAULT.equals(modelIdentifier);
-			case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
-				return isSetNeedsExecutionTool();
-			case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
-				return isSetProvidesDirectionalDerivative();
+		case FmiPackage.CO_SIMULATION_TYPE__SOURCE_FILES:
+			return sourceFiles != null;
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_BE_INSTANTIATED_ONLY_ONCE_PER_PROCESS:
+			return isSetCanBeInstantiatedOnlyOncePerProcess();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_GET_AND_SET_FM_USTATE:
+			return isSetCanGetAndSetFMUstate();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_HANDLE_VARIABLE_COMMUNICATION_STEP_SIZE:
+			return isSetCanHandleVariableCommunicationStepSize();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_INTERPOLATE_INPUTS:
+			return isSetCanInterpolateInputs();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_NOT_USE_MEMORY_MANAGEMENT_FUNCTIONS:
+			return isSetCanNotUseMemoryManagementFunctions();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_RUN_ASYNCHRONUOUSLY:
+			return isSetCanRunAsynchronuously();
+		case FmiPackage.CO_SIMULATION_TYPE__CAN_SERIALIZE_FM_USTATE:
+			return isSetCanSerializeFMUstate();
+		case FmiPackage.CO_SIMULATION_TYPE__MAX_OUTPUT_DERIVATIVE_ORDER:
+			return isSetMaxOutputDerivativeOrder();
+		case FmiPackage.CO_SIMULATION_TYPE__MODEL_IDENTIFIER:
+			return MODEL_IDENTIFIER_EDEFAULT == null ? modelIdentifier != null : !MODEL_IDENTIFIER_EDEFAULT.equals(modelIdentifier);
+		case FmiPackage.CO_SIMULATION_TYPE__NEEDS_EXECUTION_TOOL:
+			return isSetNeedsExecutionTool();
+		case FmiPackage.CO_SIMULATION_TYPE__PROVIDES_DIRECTIONAL_DERIVATIVE:
+			return isSetProvidesDirectionalDerivative();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1097,37 +1190,69 @@ public class CoSimulationTypeImpl extends MinimalEObjectImpl.Container implement
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (canBeInstantiatedOnlyOncePerProcess: ");
-		if (canBeInstantiatedOnlyOncePerProcessESet) result.append(canBeInstantiatedOnlyOncePerProcess); else result.append("<unset>");
+		if (canBeInstantiatedOnlyOncePerProcessESet)
+			result.append(canBeInstantiatedOnlyOncePerProcess);
+		else
+			result.append("<unset>");
 		result.append(", canGetAndSetFMUstate: ");
-		if (canGetAndSetFMUstateESet) result.append(canGetAndSetFMUstate); else result.append("<unset>");
+		if (canGetAndSetFMUstateESet)
+			result.append(canGetAndSetFMUstate);
+		else
+			result.append("<unset>");
 		result.append(", canHandleVariableCommunicationStepSize: ");
-		if (canHandleVariableCommunicationStepSizeESet) result.append(canHandleVariableCommunicationStepSize); else result.append("<unset>");
+		if (canHandleVariableCommunicationStepSizeESet)
+			result.append(canHandleVariableCommunicationStepSize);
+		else
+			result.append("<unset>");
 		result.append(", canInterpolateInputs: ");
-		if (canInterpolateInputsESet) result.append(canInterpolateInputs); else result.append("<unset>");
+		if (canInterpolateInputsESet)
+			result.append(canInterpolateInputs);
+		else
+			result.append("<unset>");
 		result.append(", canNotUseMemoryManagementFunctions: ");
-		if (canNotUseMemoryManagementFunctionsESet) result.append(canNotUseMemoryManagementFunctions); else result.append("<unset>");
+		if (canNotUseMemoryManagementFunctionsESet)
+			result.append(canNotUseMemoryManagementFunctions);
+		else
+			result.append("<unset>");
 		result.append(", canRunAsynchronuously: ");
-		if (canRunAsynchronuouslyESet) result.append(canRunAsynchronuously); else result.append("<unset>");
+		if (canRunAsynchronuouslyESet)
+			result.append(canRunAsynchronuously);
+		else
+			result.append("<unset>");
 		result.append(", canSerializeFMUstate: ");
-		if (canSerializeFMUstateESet) result.append(canSerializeFMUstate); else result.append("<unset>");
+		if (canSerializeFMUstateESet)
+			result.append(canSerializeFMUstate);
+		else
+			result.append("<unset>");
 		result.append(", maxOutputDerivativeOrder: ");
-		if (maxOutputDerivativeOrderESet) result.append(maxOutputDerivativeOrder); else result.append("<unset>");
+		if (maxOutputDerivativeOrderESet)
+			result.append(maxOutputDerivativeOrder);
+		else
+			result.append("<unset>");
 		result.append(", modelIdentifier: ");
 		result.append(modelIdentifier);
 		result.append(", needsExecutionTool: ");
-		if (needsExecutionToolESet) result.append(needsExecutionTool); else result.append("<unset>");
+		if (needsExecutionToolESet)
+			result.append(needsExecutionTool);
+		else
+			result.append("<unset>");
 		result.append(", providesDirectionalDerivative: ");
-		if (providesDirectionalDerivativeESet) result.append(providesDirectionalDerivative); else result.append("<unset>");
+		if (providesDirectionalDerivativeESet)
+			result.append(providesDirectionalDerivative);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //CoSimulationTypeImpl
+} // CoSimulationTypeImpl

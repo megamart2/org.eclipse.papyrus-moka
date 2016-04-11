@@ -18,19 +18,19 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IOutputPinActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 
-public interface IExpansionActivationGroup extends IActivityNodeActivationGroup{
+public interface IExpansionActivationGroup extends IActivityNodeActivationGroup {
 
 	public List<IOutputPinActivation> getRegionInputs();
-	
+
 	public List<IOutputPinActivation> getGroupInputs();
-	
+
 	public List<IOutputPinActivation> getGroupOutputs();
-	
+
 	public void setRegionActivation(IExpansionRegionActivation regionActivation);
-	
+
 	public IExpansionRegionActivation getRegionActivation();
-	
+
 	public void setIndex(Integer index);
-	
+
 	public Integer getIndex();
 }

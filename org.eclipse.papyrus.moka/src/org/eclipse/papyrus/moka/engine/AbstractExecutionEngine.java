@@ -26,31 +26,31 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	// Arguments provided to the execution engine
 	protected String[] executionArgs;
-	
+
 	// Debug session in which is executed the execution engine.
 	protected ILaunch launch;
-	
+
 	@Override
 	public void init(ILaunch launch, EObject executionEntryPoint, String[] executionArgs) {
 		this.launch = launch;
 		this.executionEntryPoint = executionEntryPoint;
 		this.executionArgs = executionArgs;
 	}
-	
-	public void start(IProgressMonitor monitor){
+
+	public void start(IProgressMonitor monitor) {
 		// Initialize every service with the parameters of this particular run
 		MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
-		for(IMokaService service : registry.getAllServices()){
+		for (IMokaService service : registry.getAllServices()) {
 			service.init(this.launch, executionEntryPoint);
 		}
 	}
-	
+
 	@Override
-	public void stop(IProgressMonitor monitor){
+	public void stop(IProgressMonitor monitor) {
 		// Enable all services to dispose the resources they use.
 		MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
 		monitor.subTask("Dispose Moka services");
-		for(IMokaService service : registry.getAllServices()){
+		for (IMokaService service : registry.getAllServices()) {
 			service.dispose();
 		}
 	}

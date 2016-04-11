@@ -244,7 +244,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		IActivityNodeActivation forkNodeActivation;
 		if (this.outgoingEdges.size() == 0) {
 			forkNodeActivation = new ForkNodeActivation();
-			forkNodeActivation.setRunning(false); // fUML12-10 certain boolean flags are not properly initialized in come cases 
+			forkNodeActivation.setRunning(false); // fUML12-10 certain boolean flags are not properly initialized in come cases
 			IActivityEdgeInstance newEdge = new ActivityEdgeInstance();
 			super.addOutgoingEdge(newEdge);
 			forkNodeActivation.addIncomingEdge(newEdge);
@@ -371,18 +371,18 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		return (BooleanValue) (this.getExecutionLocus().getExecutor().evaluate(booleanLiteral));
 	}
 
-	public void initialize(ActivityNode node, IActivityNodeActivationGroup group){
-		// fUML12-10 certain boolean flags are not properly initialized in come cases 
+	public void initialize(ActivityNode node, IActivityNodeActivationGroup group) {
+		// fUML12-10 certain boolean flags are not properly initialized in come cases
 		super.initialize(node, group);
 		this.firing = false;
 	}
-	
-	public boolean checkAllParents(Classifier type, Classifier classifier){
+
+	public boolean checkAllParents(Classifier type, Classifier classifier) {
 		// Check if the given classifier matches any of the direct or indirect
 		// ancestors of a given type.
-		
+
 		// fUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
-		
+
 		List<Classifier> directParents = type.getGenerals();
 		boolean matched = false;
 		int i = 1;
@@ -397,7 +397,7 @@ public abstract class ActionActivation extends ActivityNodeActivation implements
 		}
 		return matched;
 	}
-	
+
 	// ADDED:
 	protected static List<InputPin> getInputs(Action action) {
 		return action instanceof LoopNode ? ((LoopNode) action).getLoopVariableInputs() : action.getInputs();

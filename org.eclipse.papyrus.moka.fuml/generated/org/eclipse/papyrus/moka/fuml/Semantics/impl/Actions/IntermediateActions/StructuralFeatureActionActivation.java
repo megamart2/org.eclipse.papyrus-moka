@@ -26,7 +26,7 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public abstract class StructuralFeatureActionActivation extends ActionActivation implements IStructuralFeatureActionActivation{
+public abstract class StructuralFeatureActionActivation extends ActionActivation implements IStructuralFeatureActionActivation {
 
 	public Association getAssociation(StructuralFeature feature) {
 		return ((GetAssociationStrategy) this.getExecutionLocus().getFactory().getStrategy("GetAssociationStrategy")).getAssociation(feature);
@@ -35,9 +35,9 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 	public List<ILink> getMatchingLinks(Association association, StructuralFeature end, IValue oppositeValue) {
 		// Get the links of the given binary association whose end opposite
 		// to the given end has the given value
-		
+
 		// FUML12-23 RemoveStructuralFeatureValueAction: Removal of links does not consider provided input value
-		
+
 		return this.getMatchingLinksForEndValue(association, end, oppositeValue, null);
 	}
 
@@ -45,13 +45,13 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 		// Get the links of the given binary association whose end opposite
 		// to the given end has the given opposite value and, optionally, that
 		// has a given end value for the given end.
-		
+
 		// FUML12-23 RemoveStructuralFeatureValueAction: Removal of links does not consider provided input value
-		
+
 		Property oppositeEnd = this.getOppositeEnd(association, end);
 		List<IExtensionalValue> extent = this.getExecutionLocus().getExtent(association);
 		List<ILink> links = new ArrayList<ILink>();
-		for (int i = 0; i<extent.size(); i++) {
+		for (int i = 0; i < extent.size(); i++) {
 			IExtensionalValue link = extent.get(i);
 			if (link.getFeatureValue(oppositeEnd).getValues().get(0).equals(oppositeValue)) {
 				boolean matches = true;
@@ -60,19 +60,19 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 				}
 				if (matches) {
 					if (!end.isOrdered() | links.size() == 0) {
-						links.add((ILink)link);
+						links.add((ILink) link);
 					} else {
 						int n = link.getFeatureValue(end).getPosition();
 						boolean continueSearching = true;
 						int j = 0;
 						while (continueSearching & j < links.size()) {
 							j = j + 1;
-							continueSearching = links.get(j-1).getFeatureValue(end).getPosition() < n;
+							continueSearching = links.get(j - 1).getFeatureValue(end).getPosition() < n;
 						}
 						if (continueSearching) {
-							links.add((ILink)link);
+							links.add((ILink) link);
 						} else {
-							links.add(j-1, (ILink)link);
+							links.add(j - 1, (ILink) link);
 						}
 					}
 				}
@@ -80,7 +80,7 @@ public abstract class StructuralFeatureActionActivation extends ActionActivation
 		}
 		return links;
 	}
-	
+
 	public Property getOppositeEnd(Association association, StructuralFeature end) {
 		// Get the end of a binary association opposite to the given end.
 		Property oppositeEnd = association.getMemberEnds().get(0);

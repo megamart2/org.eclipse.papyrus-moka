@@ -26,15 +26,15 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getSourceFiles <em>Source Files</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded <em>Completed Integrator Step Not Needed</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getModelIdentifier <em>Model Identifier</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getSourceFiles <em>Source Files</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded <em>Completed Integrator Step Not Needed</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getModelIdentifier <em>Model Identifier</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getModelExchangeType()
@@ -49,6 +49,7 @@ public interface ModelExchangeType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * List of source file names that are present in the "sources" directory of the FMU and need to be compiled in order to generate the binary of the FMU (only meaningful for source code FMUs).
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Source Files</em>' containment reference.
 	 * @see #setSourceFiles(SourceFilesType1)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getModelExchangeType_SourceFiles()
@@ -62,7 +63,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getSourceFiles <em>Source Files</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Files</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Source Files</em>' containment reference.
 	 * @see #getSourceFiles()
 	 * @generated
 	 */
@@ -77,6 +80,7 @@ public interface ModelExchangeType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Can Be Instantiated Only Once Per Process</em>' attribute.
 	 * @see #isSetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #unsetCanBeInstantiatedOnlyOncePerProcess()
@@ -92,7 +96,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Can Be Instantiated Only Once Per Process</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Can Be Instantiated Only Once Per Process</em>' attribute.
 	 * @see #isSetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #unsetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
@@ -104,6 +110,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #setCanBeInstantiatedOnlyOncePerProcess(boolean)
@@ -115,6 +122,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanBeInstantiatedOnlyOncePerProcess <em>Can Be Instantiated Only Once Per Process</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Can Be Instantiated Only Once Per Process</em>' attribute is set.
 	 * @see #unsetCanBeInstantiatedOnlyOncePerProcess()
 	 * @see #isCanBeInstantiatedOnlyOncePerProcess()
@@ -132,6 +140,7 @@ public interface ModelExchangeType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Can Get And Set FM Ustate</em>' attribute.
 	 * @see #isSetCanGetAndSetFMUstate()
 	 * @see #unsetCanGetAndSetFMUstate()
@@ -147,7 +156,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Can Get And Set FM Ustate</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Can Get And Set FM Ustate</em>' attribute.
 	 * @see #isSetCanGetAndSetFMUstate()
 	 * @see #unsetCanGetAndSetFMUstate()
 	 * @see #isCanGetAndSetFMUstate()
@@ -159,6 +170,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCanGetAndSetFMUstate()
 	 * @see #isCanGetAndSetFMUstate()
 	 * @see #setCanGetAndSetFMUstate(boolean)
@@ -170,6 +182,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanGetAndSetFMUstate <em>Can Get And Set FM Ustate</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Can Get And Set FM Ustate</em>' attribute is set.
 	 * @see #unsetCanGetAndSetFMUstate()
 	 * @see #isCanGetAndSetFMUstate()
@@ -187,6 +200,7 @@ public interface ModelExchangeType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Can Not Use Memory Management Functions</em>' attribute.
 	 * @see #isSetCanNotUseMemoryManagementFunctions()
 	 * @see #unsetCanNotUseMemoryManagementFunctions()
@@ -202,7 +216,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Can Not Use Memory Management Functions</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Can Not Use Memory Management Functions</em>' attribute.
 	 * @see #isSetCanNotUseMemoryManagementFunctions()
 	 * @see #unsetCanNotUseMemoryManagementFunctions()
 	 * @see #isCanNotUseMemoryManagementFunctions()
@@ -214,6 +230,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCanNotUseMemoryManagementFunctions()
 	 * @see #isCanNotUseMemoryManagementFunctions()
 	 * @see #setCanNotUseMemoryManagementFunctions(boolean)
@@ -225,6 +242,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanNotUseMemoryManagementFunctions <em>Can Not Use Memory Management Functions</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Can Not Use Memory Management Functions</em>' attribute is set.
 	 * @see #unsetCanNotUseMemoryManagementFunctions()
 	 * @see #isCanNotUseMemoryManagementFunctions()
@@ -242,6 +260,7 @@ public interface ModelExchangeType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Can Serialize FM Ustate</em>' attribute.
 	 * @see #isSetCanSerializeFMUstate()
 	 * @see #unsetCanSerializeFMUstate()
@@ -257,7 +276,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Can Serialize FM Ustate</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Can Serialize FM Ustate</em>' attribute.
 	 * @see #isSetCanSerializeFMUstate()
 	 * @see #unsetCanSerializeFMUstate()
 	 * @see #isCanSerializeFMUstate()
@@ -269,6 +290,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCanSerializeFMUstate()
 	 * @see #isCanSerializeFMUstate()
 	 * @see #setCanSerializeFMUstate(boolean)
@@ -280,6 +302,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCanSerializeFMUstate <em>Can Serialize FM Ustate</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Can Serialize FM Ustate</em>' attribute is set.
 	 * @see #unsetCanSerializeFMUstate()
 	 * @see #isCanSerializeFMUstate()
@@ -297,6 +320,7 @@ public interface ModelExchangeType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Completed Integrator Step Not Needed</em>' attribute.
 	 * @see #isSetCompletedIntegratorStepNotNeeded()
 	 * @see #unsetCompletedIntegratorStepNotNeeded()
@@ -312,7 +336,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded <em>Completed Integrator Step Not Needed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Completed Integrator Step Not Needed</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Completed Integrator Step Not Needed</em>' attribute.
 	 * @see #isSetCompletedIntegratorStepNotNeeded()
 	 * @see #unsetCompletedIntegratorStepNotNeeded()
 	 * @see #isCompletedIntegratorStepNotNeeded()
@@ -324,6 +350,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded <em>Completed Integrator Step Not Needed</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCompletedIntegratorStepNotNeeded()
 	 * @see #isCompletedIntegratorStepNotNeeded()
 	 * @see #setCompletedIntegratorStepNotNeeded(boolean)
@@ -335,6 +362,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isCompletedIntegratorStepNotNeeded <em>Completed Integrator Step Not Needed</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Completed Integrator Step Not Needed</em>' attribute is set.
 	 * @see #unsetCompletedIntegratorStepNotNeeded()
 	 * @see #isCompletedIntegratorStepNotNeeded()
@@ -348,8 +376,10 @@ public interface ModelExchangeType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Short class name according to C-syntax, e.g. "A_B_C". Used as prefix for FMI2 functions if the functions are provided in C source code or in static libraries, but not if the functions are provided by a DLL/SharedObject. modelIdentifier is also used as name of the static library or DLL/SharedObject.
+	 * Short class name according to C-syntax, e.g. "A_B_C". Used as prefix for FMI2 functions if the functions are provided in C source code or in static libraries, but not if the functions are provided by a DLL/SharedObject. modelIdentifier is also used as
+	 * name of the static library or DLL/SharedObject.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Model Identifier</em>' attribute.
 	 * @see #setModelIdentifier(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getModelExchangeType_ModelIdentifier()
@@ -363,7 +393,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#getModelIdentifier <em>Model Identifier</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model Identifier</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Model Identifier</em>' attribute.
 	 * @see #getModelIdentifier()
 	 * @generated
 	 */
@@ -377,6 +409,7 @@ public interface ModelExchangeType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * If true, a tool is needed to execute the model and the FMU just contains the communication to this tool.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Needs Execution Tool</em>' attribute.
 	 * @see #isSetNeedsExecutionTool()
 	 * @see #unsetNeedsExecutionTool()
@@ -392,7 +425,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Needs Execution Tool</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Needs Execution Tool</em>' attribute.
 	 * @see #isSetNeedsExecutionTool()
 	 * @see #unsetNeedsExecutionTool()
 	 * @see #isNeedsExecutionTool()
@@ -404,6 +439,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetNeedsExecutionTool()
 	 * @see #isNeedsExecutionTool()
 	 * @see #setNeedsExecutionTool(boolean)
@@ -415,6 +451,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isNeedsExecutionTool <em>Needs Execution Tool</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Needs Execution Tool</em>' attribute is set.
 	 * @see #unsetNeedsExecutionTool()
 	 * @see #isNeedsExecutionTool()
@@ -432,6 +469,7 @@ public interface ModelExchangeType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Provides Directional Derivative</em>' attribute.
 	 * @see #isSetProvidesDirectionalDerivative()
 	 * @see #unsetProvidesDirectionalDerivative()
@@ -447,7 +485,9 @@ public interface ModelExchangeType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Provides Directional Derivative</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Provides Directional Derivative</em>' attribute.
 	 * @see #isSetProvidesDirectionalDerivative()
 	 * @see #unsetProvidesDirectionalDerivative()
 	 * @see #isProvidesDirectionalDerivative()
@@ -459,6 +499,7 @@ public interface ModelExchangeType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetProvidesDirectionalDerivative()
 	 * @see #isProvidesDirectionalDerivative()
 	 * @see #setProvidesDirectionalDerivative(boolean)
@@ -470,6 +511,7 @@ public interface ModelExchangeType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType#isProvidesDirectionalDerivative <em>Provides Directional Derivative</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Provides Directional Derivative</em>' attribute is set.
 	 * @see #unsetProvidesDirectionalDerivative()
 	 * @see #isProvidesDirectionalDerivative()

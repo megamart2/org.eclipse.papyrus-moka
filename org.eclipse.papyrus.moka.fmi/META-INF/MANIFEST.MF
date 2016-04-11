@@ -6,9 +6,9 @@ Require-Bundle: org.eclipse.ui,
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 2.0.0.qualifier
 Bundle-ClassPath: .
-Bundle-Vendor: %providerName
+Bundle-Vendor: Eclipse Modeling Project
 Bundle-Localization: plugin
-Bundle-Name: %pluginName
+Bundle-Name: FMI 2 Model Description
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fmi;singleton:=true
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8

@@ -18,12 +18,12 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 public interface IExtensionalValue extends ICompoundValue {
 
 	public void destroy();
-	
+
 	public void setLocus(ILocus locus);
-	
+
 	public ILocus getLocus();
-	
+
 	public void setIdentifier(String identifier);
-	
+
 	public String getIdentifier();
 }

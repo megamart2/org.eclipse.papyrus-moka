@@ -29,11 +29,11 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.EnumerationTypeImpl#getStart <em>Start</em>}</li>
  * </ul>
  *
  * @generated
@@ -43,6 +43,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -53,6 +54,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -63,6 +65,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -73,6 +76,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getMax() <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMax()
 	 * @generated
 	 * @ordered
@@ -83,6 +87,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * This is true if the Max attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -92,6 +97,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -102,6 +108,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getMin() <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getMin()
 	 * @generated
 	 * @ordered
@@ -112,6 +119,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * This is true if the Min attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -121,6 +129,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -131,6 +140,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
@@ -141,6 +151,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The default value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -151,6 +162,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * The cached value of the '{@link #getStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStart()
 	 * @generated
 	 * @ordered
@@ -161,6 +173,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	 * This is true if the Start attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -169,6 +182,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected EnumerationTypeImpl() {
@@ -178,6 +192,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -188,6 +203,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDeclaredType() {
@@ -197,6 +213,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDeclaredType(String newDeclaredType) {
@@ -209,6 +226,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getMax() {
@@ -218,6 +236,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMax(int newMax) {
@@ -232,6 +251,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMax() {
@@ -246,6 +266,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMax() {
@@ -255,6 +276,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getMin() {
@@ -264,6 +286,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setMin(int newMin) {
@@ -278,6 +301,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetMin() {
@@ -292,6 +316,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetMin() {
@@ -301,6 +326,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getQuantity() {
@@ -310,6 +336,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setQuantity(String newQuantity) {
@@ -322,6 +349,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getStart() {
@@ -331,6 +359,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStart(int newStart) {
@@ -345,6 +374,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetStart() {
@@ -359,6 +389,7 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetStart() {
@@ -368,21 +399,22 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
-				return getDeclaredType();
-			case FmiPackage.ENUMERATION_TYPE__MAX:
-				return getMax();
-			case FmiPackage.ENUMERATION_TYPE__MIN:
-				return getMin();
-			case FmiPackage.ENUMERATION_TYPE__QUANTITY:
-				return getQuantity();
-			case FmiPackage.ENUMERATION_TYPE__START:
-				return getStart();
+		case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
+			return getDeclaredType();
+		case FmiPackage.ENUMERATION_TYPE__MAX:
+			return getMax();
+		case FmiPackage.ENUMERATION_TYPE__MIN:
+			return getMin();
+		case FmiPackage.ENUMERATION_TYPE__QUANTITY:
+			return getQuantity();
+		case FmiPackage.ENUMERATION_TYPE__START:
+			return getStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -390,26 +422,27 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
-				setDeclaredType((String)newValue);
-				return;
-			case FmiPackage.ENUMERATION_TYPE__MAX:
-				setMax((Integer)newValue);
-				return;
-			case FmiPackage.ENUMERATION_TYPE__MIN:
-				setMin((Integer)newValue);
-				return;
-			case FmiPackage.ENUMERATION_TYPE__QUANTITY:
-				setQuantity((String)newValue);
-				return;
-			case FmiPackage.ENUMERATION_TYPE__START:
-				setStart((Integer)newValue);
-				return;
+		case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
+			setDeclaredType((String) newValue);
+			return;
+		case FmiPackage.ENUMERATION_TYPE__MAX:
+			setMax((Integer) newValue);
+			return;
+		case FmiPackage.ENUMERATION_TYPE__MIN:
+			setMin((Integer) newValue);
+			return;
+		case FmiPackage.ENUMERATION_TYPE__QUANTITY:
+			setQuantity((String) newValue);
+			return;
+		case FmiPackage.ENUMERATION_TYPE__START:
+			setStart((Integer) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -417,26 +450,27 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
-				setDeclaredType(DECLARED_TYPE_EDEFAULT);
-				return;
-			case FmiPackage.ENUMERATION_TYPE__MAX:
-				unsetMax();
-				return;
-			case FmiPackage.ENUMERATION_TYPE__MIN:
-				unsetMin();
-				return;
-			case FmiPackage.ENUMERATION_TYPE__QUANTITY:
-				setQuantity(QUANTITY_EDEFAULT);
-				return;
-			case FmiPackage.ENUMERATION_TYPE__START:
-				unsetStart();
-				return;
+		case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
+			setDeclaredType(DECLARED_TYPE_EDEFAULT);
+			return;
+		case FmiPackage.ENUMERATION_TYPE__MAX:
+			unsetMax();
+			return;
+		case FmiPackage.ENUMERATION_TYPE__MIN:
+			unsetMin();
+			return;
+		case FmiPackage.ENUMERATION_TYPE__QUANTITY:
+			setQuantity(QUANTITY_EDEFAULT);
+			return;
+		case FmiPackage.ENUMERATION_TYPE__START:
+			unsetStart();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -444,21 +478,22 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
-				return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
-			case FmiPackage.ENUMERATION_TYPE__MAX:
-				return isSetMax();
-			case FmiPackage.ENUMERATION_TYPE__MIN:
-				return isSetMin();
-			case FmiPackage.ENUMERATION_TYPE__QUANTITY:
-				return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
-			case FmiPackage.ENUMERATION_TYPE__START:
-				return isSetStart();
+		case FmiPackage.ENUMERATION_TYPE__DECLARED_TYPE:
+			return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
+		case FmiPackage.ENUMERATION_TYPE__MAX:
+			return isSetMax();
+		case FmiPackage.ENUMERATION_TYPE__MIN:
+			return isSetMin();
+		case FmiPackage.ENUMERATION_TYPE__QUANTITY:
+			return QUANTITY_EDEFAULT == null ? quantity != null : !QUANTITY_EDEFAULT.equals(quantity);
+		case FmiPackage.ENUMERATION_TYPE__START:
+			return isSetStart();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -466,25 +501,36 @@ public class EnumerationTypeImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (declaredType: ");
 		result.append(declaredType);
 		result.append(", max: ");
-		if (maxESet) result.append(max); else result.append("<unset>");
+		if (maxESet)
+			result.append(max);
+		else
+			result.append("<unset>");
 		result.append(", min: ");
-		if (minESet) result.append(min); else result.append("<unset>");
+		if (minESet)
+			result.append(min);
+		else
+			result.append("<unset>");
 		result.append(", quantity: ");
 		result.append(quantity);
 		result.append(", start: ");
-		if (startESet) result.append(start); else result.append("<unset>");
+		if (startESet)
+			result.append(start);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //EnumerationTypeImpl
+} // EnumerationTypeImpl

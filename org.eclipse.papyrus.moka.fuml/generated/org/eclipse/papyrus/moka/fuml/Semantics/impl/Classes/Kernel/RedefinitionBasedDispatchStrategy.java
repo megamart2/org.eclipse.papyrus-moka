@@ -32,7 +32,7 @@ public class RedefinitionBasedDispatchStrategy extends DispatchStrategy {
 		Behavior method = null;
 		int i = 1;
 		while (method == null & i <= object.getTypes().size()) {
-			Class type = (Class)object.getTypes().get(i - 1);
+			Class type = (Class) object.getTypes().get(i - 1);
 			List<NamedElement> members = type.getMembers();
 			int j = 1;
 			while (method == null & j <= members.size()) {

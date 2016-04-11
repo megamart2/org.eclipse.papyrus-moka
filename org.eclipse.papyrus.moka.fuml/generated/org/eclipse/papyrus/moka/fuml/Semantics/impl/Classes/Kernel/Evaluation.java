@@ -32,21 +32,21 @@ public abstract class Evaluation extends SemanticVisitor implements IEvaluation 
 	public ILocus locus;
 
 	public abstract IValue evaluate();
-	
-	
-	public void setSpecification(ValueSpecification specification){
+
+
+	public void setSpecification(ValueSpecification specification) {
 		this.specification = specification;
 	}
-	
-	public ValueSpecification getSpecification(){
+
+	public ValueSpecification getSpecification() {
 		return this.specification;
 	}
-	
-	public void setLocus(ILocus locus){
+
+	public void setLocus(ILocus locus) {
 		this.locus = locus;
 	}
-	
-	public ILocus getLocus(){
+
+	public ILocus getLocus() {
 		return this.locus;
 	}
 }

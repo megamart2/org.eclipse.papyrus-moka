@@ -118,6 +118,6 @@ public class Reference extends StructuredValue implements IReference {
 	}
 
 	public void setFeatureValues(List<IFeatureValue> featureValues) {
-		this.referent.setFeatureValues(featureValues);		
+		this.referent.setFeatureValues(featureValues);
 	}
 }

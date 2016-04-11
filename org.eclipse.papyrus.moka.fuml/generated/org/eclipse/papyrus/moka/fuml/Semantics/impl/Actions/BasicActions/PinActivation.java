@@ -72,12 +72,12 @@ public abstract class PinActivation extends ObjectNodeActivation implements IPin
 		}
 		return tokens;
 	}
-	
-	public IActionActivation getActionActivation(){
+
+	public IActionActivation getActionActivation() {
 		return this.actionActivation;
 	}
-	
-	public void setActionActivation(IActionActivation actionActivation){
+
+	public void setActionActivation(IActionActivation actionActivation) {
 		this.actionActivation = actionActivation;
 	}
 }

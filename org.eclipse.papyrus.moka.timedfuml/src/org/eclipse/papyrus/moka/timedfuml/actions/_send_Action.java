@@ -22,8 +22,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IO
  */
 public class _send_Action extends Action {
 
-	protected IObjectActivation objectActivation ;
-	
+	protected IObjectActivation objectActivation;
+
 	public _send_Action(IObjectActivation objectActivation) {
 		super();
 		this.objectActivation = objectActivation;
@@ -35,7 +35,7 @@ public class _send_Action extends Action {
 	 */
 	@Override
 	public void execute() {
-		if (! objectActivation.getWaitingEventAccepters().isEmpty()) {
+		if (!objectActivation.getWaitingEventAccepters().isEmpty()) {
 			objectActivation._startObjectBehavior();
 		}
 	}

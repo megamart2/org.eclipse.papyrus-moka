@@ -16,13 +16,13 @@ package org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStruct
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.uml2.uml.Port;
 
-public interface ICS_InteractionPoint extends IReference{
-	
+public interface ICS_InteractionPoint extends IReference {
+
 	public ICS_Reference getOwner();
-	
+
 	public void setOwner(ICS_Reference owner);
-	
+
 	public Port getDefiningPort();
-	
+
 	public void setDefiningPort(Port definingPort);
 }

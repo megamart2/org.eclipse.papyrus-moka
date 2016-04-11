@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getUnknown <em>Unknown</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.InitialUnknownsType#getUnknown <em>Unknown</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getInitialUnknownsType()
@@ -44,6 +44,7 @@ public interface InitialUnknownsType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getInitialUnknownsType_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -59,11 +60,12 @@ public interface InitialUnknownsType extends EObject {
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
 	 * Dependency of scalar Unknown from Knowns:
-	 *     Unknown=f(Known_1, Known_2, ...).
+	 * Unknown=f(Known_1, Known_2, ...).
 	 * The Knowns are "inputs",
 	 * "variables with initial=exact", and
 	 * "independent variable".
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Unknown</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getInitialUnknownsType_Unknown()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"

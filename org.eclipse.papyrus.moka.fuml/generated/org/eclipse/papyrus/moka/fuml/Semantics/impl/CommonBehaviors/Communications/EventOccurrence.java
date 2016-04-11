@@ -19,6 +19,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IE
 /**
  * An event occurrence represents a single occurrence of a specific kind of event.
  */
-public class EventOccurrence implements IEventOccurrence{
+public class EventOccurrence implements IEventOccurrence {
 
 }

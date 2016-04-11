@@ -22,8 +22,8 @@ import org.eclipse.uml2.uml.Class;
 public interface IClassifierBehaviorExecution {
 
 	public void execute(Class classifier, List<IParameterValue> inputs);
-	
+
 	public void terminate();
-	
+
 	public IExecution getExecution();
 }

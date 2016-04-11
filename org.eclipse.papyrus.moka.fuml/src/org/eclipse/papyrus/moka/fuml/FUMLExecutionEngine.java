@@ -66,22 +66,22 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 
 	// Locus at which the execution occurs
 	protected ILocus locus;
-	
+
 	// fUML parameter values passed in the execution
 	protected List<IParameterValue> executionArguments;
-	
-	public FUMLExecutionEngine(){
+
+	public FUMLExecutionEngine() {
 		this.executionArguments = new ArrayList<IParameterValue>();
 	}
 
-	public ILocus initializeLocus(){
+	public ILocus initializeLocus() {
 		// creates the locus, executor and execution factory
 		ILocus locus = new Locus();
 		locus.setExecutor(new Executor());
 		locus.setFactory(new ExecutionFactoryL3());
 		return locus;
 	}
-	
+
 	public void start(IProgressMonitor monitor) {
 		super.start(monitor);
 		this.locus = this.initializeLocus();
@@ -98,29 +98,29 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 			// Initializes arguments
 			this.initializeArguments(this.executionArgs);
 			// Finally launches the execution$
-			this.locus.getExecutor().execute((Behavior)this.executionEntryPoint, null, this.executionArguments);
+			this.locus.getExecutor().execute((Behavior) this.executionEntryPoint, null, this.executionArguments);
 		}
 	}
-	
+
 	public void stop(IProgressMonitor monitor) {
 		super.stop(monitor);
-		if(this.locus!=null){
+		if (this.locus != null) {
 			monitor.subTask("Cleanup execution locus");
-			
+
 			Iterator<IExtensionalValue> extents = this.locus.getExtensionalValues().listIterator();
-			while(extents.hasNext()){
-				IExtensionalValue value = extents.next(); 
-				if(value instanceof IObject_ && ((IObject_)value).getObjectActivation()!=null){
-					((IObject_)value).getObjectActivation().stop();
-					((IObject_)value).getObjectActivation().setObject((IObject_)value);
-					((IObject_)value).setObjectActivation(null);
+			while (extents.hasNext()) {
+				IExtensionalValue value = extents.next();
+				if (value instanceof IObject_ && ((IObject_) value).getObjectActivation() != null) {
+					((IObject_) value).getObjectActivation().stop();
+					((IObject_) value).getObjectActivation().setObject((IObject_) value);
+					((IObject_) value).setObjectActivation(null);
 				}
 				value.getTypes().clear();
 			}
 			this.locus.getExtensionalValues().clear();
 		}
 	}
-	
+
 	protected void registerSemanticStrategies(ILocus locus) {
 		locus.getFactory().setStrategy(new FirstChoiceStrategy());
 		locus.getFactory().setStrategy(new FIFOGetNextEventStrategy());
@@ -208,7 +208,7 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 		};
 		SafeRunner.run(runnable);
 	}
-	
+
 	public void initializeArguments(String[] args) {
 		if (this.locus == null) {
 			return;
@@ -219,7 +219,7 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 		}
 		List<IValue> tmpArgs = new ArrayList<IValue>();
 		// analyzes arguments versus parameters of the main behavior
-		List<Parameter> parameters = ((Behavior)this.executionEntryPoint).getOwnedParameters();
+		List<Parameter> parameters = ((Behavior) this.executionEntryPoint).getOwnedParameters();
 		if (parameters == null) {
 			return;
 		}
@@ -291,6 +291,6 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 
 	public void write(String input) throws IOException {
 		// TODO Auto-generated method stub
-		
+
 	}
 }

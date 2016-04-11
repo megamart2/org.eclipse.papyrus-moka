@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public class AddStructuralFeatureValueActionActivation extends WriteStructuralFeatureActionActivation{
+public class AddStructuralFeatureValueActionActivation extends WriteStructuralFeatureActionActivation {
 
 	@Override
 	public void doAction() {

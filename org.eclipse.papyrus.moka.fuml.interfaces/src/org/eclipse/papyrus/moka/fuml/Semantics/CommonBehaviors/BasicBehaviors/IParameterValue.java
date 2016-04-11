@@ -19,14 +19,14 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.Parameter;
 
 public interface IParameterValue {
-	
+
 	public IParameterValue copy();
-	
+
 	public void setParameter(Parameter parameter);
-	
+
 	public Parameter getParameter();
-	
-	public  List<IValue> getValues();
-	
+
+	public List<IValue> getValues();
+
 	public void setValues(List<IValue> values);
 }

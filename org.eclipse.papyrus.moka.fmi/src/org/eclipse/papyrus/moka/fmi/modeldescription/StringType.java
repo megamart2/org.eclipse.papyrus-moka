@@ -22,8 +22,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getStart <em>Start</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getStringType()
@@ -38,6 +38,7 @@ public interface StringType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * If present, name of type defined with TypeDefinitions / SimpleType providing defaults.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Declared Type</em>' attribute.
 	 * @see #setDeclaredType(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getStringType_DeclaredType()
@@ -51,7 +52,9 @@ public interface StringType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getDeclaredType <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Declared Type</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Declared Type</em>' attribute.
 	 * @see #getDeclaredType()
 	 * @generated
 	 */
@@ -64,6 +67,7 @@ public interface StringType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Value before initialization, if initial=exact or approx
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Start</em>' attribute.
 	 * @see #setStart(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getStringType_Start()
@@ -77,7 +81,9 @@ public interface StringType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.StringType#getStart <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Start</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Start</em>' attribute.
 	 * @see #getStart()
 	 * @generated
 	 */

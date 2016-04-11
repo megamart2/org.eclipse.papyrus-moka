@@ -40,19 +40,19 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getReal <em>Real</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getInteger <em>Integer</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getString <em>String</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getEnumeration <em>Enumeration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getCausality <em>Causality</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getInitial <em>Initial</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getValueReference <em>Value Reference</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getVariability <em>Variability</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getReal <em>Real</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getInteger <em>Integer</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getBoolean <em>Boolean</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getString <em>String</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getEnumeration <em>Enumeration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getAnnotations <em>Annotations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getCausality <em>Causality</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getInitial <em>Initial</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getValueReference <em>Value Reference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2ScalarVariableImpl#getVariability <em>Variability</em>}</li>
  * </ul>
  *
  * @generated
@@ -62,6 +62,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getReal() <em>Real</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getReal()
 	 * @generated
 	 * @ordered
@@ -72,6 +73,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getInteger() <em>Integer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInteger()
 	 * @generated
 	 * @ordered
@@ -82,6 +84,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getBoolean() <em>Boolean</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBoolean()
 	 * @generated
 	 * @ordered
@@ -92,6 +95,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getString() <em>String</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getString()
 	 * @generated
 	 * @ordered
@@ -102,6 +106,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getEnumeration() <em>Enumeration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getEnumeration()
 	 * @generated
 	 * @ordered
@@ -112,6 +117,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getAnnotations() <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAnnotations()
 	 * @generated
 	 * @ordered
@@ -122,6 +128,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #isCanHandleMultipleSetPerTimeInstant() <em>Can Handle Multiple Set Per Time Instant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanHandleMultipleSetPerTimeInstant()
 	 * @generated
 	 * @ordered
@@ -132,6 +139,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #isCanHandleMultipleSetPerTimeInstant() <em>Can Handle Multiple Set Per Time Instant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isCanHandleMultipleSetPerTimeInstant()
 	 * @generated
 	 * @ordered
@@ -142,6 +150,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * This is true if the Can Handle Multiple Set Per Time Instant attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -151,6 +160,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #getCausality() <em>Causality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCausality()
 	 * @generated
 	 * @ordered
@@ -161,6 +171,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getCausality() <em>Causality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCausality()
 	 * @generated
 	 * @ordered
@@ -171,6 +182,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * This is true if the Causality attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -180,6 +192,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -190,6 +203,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -200,6 +214,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #getInitial() <em>Initial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInitial()
 	 * @generated
 	 * @ordered
@@ -210,6 +225,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getInitial() <em>Initial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getInitial()
 	 * @generated
 	 * @ordered
@@ -220,6 +236,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * This is true if the Initial attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -229,6 +246,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -239,6 +257,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -249,6 +268,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #getValueReference() <em>Value Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValueReference()
 	 * @generated
 	 * @ordered
@@ -259,6 +279,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getValueReference() <em>Value Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getValueReference()
 	 * @generated
 	 * @ordered
@@ -269,6 +290,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * This is true if the Value Reference attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -278,6 +300,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The default value of the '{@link #getVariability() <em>Variability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVariability()
 	 * @generated
 	 * @ordered
@@ -288,6 +311,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * The cached value of the '{@link #getVariability() <em>Variability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVariability()
 	 * @generated
 	 * @ordered
@@ -298,6 +322,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	 * This is true if the Variability attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -306,6 +331,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Fmi2ScalarVariableImpl() {
@@ -315,6 +341,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -325,6 +352,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RealType getReal() {
@@ -334,6 +362,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetReal(RealType newReal, NotificationChain msgs) {
@@ -341,7 +370,10 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		real = newReal;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__REAL, oldReal, newReal);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -349,25 +381,27 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setReal(RealType newReal) {
 		if (newReal != real) {
 			NotificationChain msgs = null;
 			if (real != null)
-				msgs = ((InternalEObject)real).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__REAL, null, msgs);
+				msgs = ((InternalEObject) real).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__REAL, null, msgs);
 			if (newReal != null)
-				msgs = ((InternalEObject)newReal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__REAL, null, msgs);
+				msgs = ((InternalEObject) newReal).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__REAL, null, msgs);
 			msgs = basicSetReal(newReal, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__REAL, newReal, newReal));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IntegerType getInteger() {
@@ -377,6 +411,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetInteger(IntegerType newInteger, NotificationChain msgs) {
@@ -384,7 +419,10 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		integer = newInteger;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER, oldInteger, newInteger);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -392,25 +430,27 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setInteger(IntegerType newInteger) {
 		if (newInteger != integer) {
 			NotificationChain msgs = null;
 			if (integer != null)
-				msgs = ((InternalEObject)integer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER, null, msgs);
+				msgs = ((InternalEObject) integer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER, null, msgs);
 			if (newInteger != null)
-				msgs = ((InternalEObject)newInteger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER, null, msgs);
+				msgs = ((InternalEObject) newInteger).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER, null, msgs);
 			msgs = basicSetInteger(newInteger, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER, newInteger, newInteger));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BooleanType getBoolean() {
@@ -420,6 +460,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBoolean(BooleanType newBoolean, NotificationChain msgs) {
@@ -427,7 +468,10 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		boolean_ = newBoolean;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN, oldBoolean, newBoolean);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -435,25 +479,27 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBoolean(BooleanType newBoolean) {
 		if (newBoolean != boolean_) {
 			NotificationChain msgs = null;
 			if (boolean_ != null)
-				msgs = ((InternalEObject)boolean_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN, null, msgs);
+				msgs = ((InternalEObject) boolean_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN, null, msgs);
 			if (newBoolean != null)
-				msgs = ((InternalEObject)newBoolean).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN, null, msgs);
+				msgs = ((InternalEObject) newBoolean).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN, null, msgs);
 			msgs = basicSetBoolean(newBoolean, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN, newBoolean, newBoolean));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StringType getString() {
@@ -463,6 +509,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetString(StringType newString, NotificationChain msgs) {
@@ -470,7 +517,10 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		string = newString;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__STRING, oldString, newString);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -478,25 +528,27 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setString(StringType newString) {
 		if (newString != string) {
 			NotificationChain msgs = null;
 			if (string != null)
-				msgs = ((InternalEObject)string).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__STRING, null, msgs);
+				msgs = ((InternalEObject) string).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__STRING, null, msgs);
 			if (newString != null)
-				msgs = ((InternalEObject)newString).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__STRING, null, msgs);
+				msgs = ((InternalEObject) newString).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__STRING, null, msgs);
 			msgs = basicSetString(newString, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__STRING, newString, newString));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnumerationType getEnumeration() {
@@ -506,6 +558,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetEnumeration(EnumerationType newEnumeration, NotificationChain msgs) {
@@ -513,7 +566,10 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		enumeration = newEnumeration;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION, oldEnumeration, newEnumeration);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -521,25 +577,27 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setEnumeration(EnumerationType newEnumeration) {
 		if (newEnumeration != enumeration) {
 			NotificationChain msgs = null;
 			if (enumeration != null)
-				msgs = ((InternalEObject)enumeration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION, null, msgs);
+				msgs = ((InternalEObject) enumeration).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION, null, msgs);
 			if (newEnumeration != null)
-				msgs = ((InternalEObject)newEnumeration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION, null, msgs);
+				msgs = ((InternalEObject) newEnumeration).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION, null, msgs);
 			msgs = basicSetEnumeration(newEnumeration, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION, newEnumeration, newEnumeration));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2Annotation getAnnotations() {
@@ -549,6 +607,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetAnnotations(Fmi2Annotation newAnnotations, NotificationChain msgs) {
@@ -556,7 +615,10 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		annotations = newAnnotations;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS, oldAnnotations, newAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -564,25 +626,27 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAnnotations(Fmi2Annotation newAnnotations) {
 		if (newAnnotations != annotations) {
 			NotificationChain msgs = null;
 			if (annotations != null)
-				msgs = ((InternalEObject)annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS, null, msgs);
+				msgs = ((InternalEObject) annotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS, null, msgs);
 			if (newAnnotations != null)
-				msgs = ((InternalEObject)newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS, null, msgs);
+				msgs = ((InternalEObject) newAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS, null, msgs);
 			msgs = basicSetAnnotations(newAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS, newAnnotations, newAnnotations));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isCanHandleMultipleSetPerTimeInstant() {
@@ -592,6 +656,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCanHandleMultipleSetPerTimeInstant(boolean newCanHandleMultipleSetPerTimeInstant) {
@@ -600,12 +665,14 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		boolean oldCanHandleMultipleSetPerTimeInstantESet = canHandleMultipleSetPerTimeInstantESet;
 		canHandleMultipleSetPerTimeInstantESet = true;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT, oldCanHandleMultipleSetPerTimeInstant, canHandleMultipleSetPerTimeInstant, !oldCanHandleMultipleSetPerTimeInstantESet));
+			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT, oldCanHandleMultipleSetPerTimeInstant, canHandleMultipleSetPerTimeInstant,
+					!oldCanHandleMultipleSetPerTimeInstantESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCanHandleMultipleSetPerTimeInstant() {
@@ -614,12 +681,14 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 		canHandleMultipleSetPerTimeInstant = CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT_EDEFAULT;
 		canHandleMultipleSetPerTimeInstantESet = false;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT, oldCanHandleMultipleSetPerTimeInstant, CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT_EDEFAULT, oldCanHandleMultipleSetPerTimeInstantESet));
+			eNotify(new ENotificationImpl(this, Notification.UNSET, FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT, oldCanHandleMultipleSetPerTimeInstant, CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT_EDEFAULT,
+					oldCanHandleMultipleSetPerTimeInstantESet));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCanHandleMultipleSetPerTimeInstant() {
@@ -629,6 +698,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CausalityType getCausality() {
@@ -638,6 +708,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCausality(CausalityType newCausality) {
@@ -652,6 +723,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetCausality() {
@@ -666,6 +738,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetCausality() {
@@ -675,6 +748,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDescription() {
@@ -684,6 +758,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -696,6 +771,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InitialType getInitial() {
@@ -705,6 +781,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setInitial(InitialType newInitial) {
@@ -719,6 +796,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetInitial() {
@@ -733,6 +811,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetInitial() {
@@ -742,6 +821,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -751,6 +831,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -763,6 +844,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getValueReference() {
@@ -772,6 +854,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setValueReference(long newValueReference) {
@@ -786,6 +869,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetValueReference() {
@@ -800,6 +884,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetValueReference() {
@@ -809,6 +894,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariabilityType getVariability() {
@@ -818,6 +904,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVariability(VariabilityType newVariability) {
@@ -832,6 +919,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetVariability() {
@@ -846,6 +934,7 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetVariability() {
@@ -855,23 +944,24 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
-				return basicSetReal(null, msgs);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
-				return basicSetInteger(null, msgs);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
-				return basicSetBoolean(null, msgs);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
-				return basicSetString(null, msgs);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
-				return basicSetEnumeration(null, msgs);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
-				return basicSetAnnotations(null, msgs);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
+			return basicSetReal(null, msgs);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
+			return basicSetInteger(null, msgs);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
+			return basicSetBoolean(null, msgs);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
+			return basicSetString(null, msgs);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
+			return basicSetEnumeration(null, msgs);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
+			return basicSetAnnotations(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -879,37 +969,38 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
-				return getReal();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
-				return getInteger();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
-				return getBoolean();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
-				return getString();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
-				return getEnumeration();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
-				return getAnnotations();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
-				return isCanHandleMultipleSetPerTimeInstant();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
-				return getCausality();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
-				return getDescription();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
-				return getInitial();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
-				return getName();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
-				return getValueReference();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
-				return getVariability();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
+			return getReal();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
+			return getInteger();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
+			return getBoolean();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
+			return getString();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
+			return getEnumeration();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
+			return getAnnotations();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
+			return isCanHandleMultipleSetPerTimeInstant();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
+			return getCausality();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
+			return getDescription();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
+			return getInitial();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
+			return getName();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
+			return getValueReference();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
+			return getVariability();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -917,50 +1008,51 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
-				setReal((RealType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
-				setInteger((IntegerType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
-				setBoolean((BooleanType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
-				setString((StringType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
-				setEnumeration((EnumerationType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
-				setAnnotations((Fmi2Annotation)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
-				setCanHandleMultipleSetPerTimeInstant((Boolean)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
-				setCausality((CausalityType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
-				setInitial((InitialType)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
-				setName((String)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
-				setValueReference((Long)newValue);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
-				setVariability((VariabilityType)newValue);
-				return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
+			setReal((RealType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
+			setInteger((IntegerType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
+			setBoolean((BooleanType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
+			setString((StringType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
+			setEnumeration((EnumerationType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
+			setAnnotations((Fmi2Annotation) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
+			setCanHandleMultipleSetPerTimeInstant((Boolean) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
+			setCausality((CausalityType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
+			setInitial((InitialType) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
+			setName((String) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
+			setValueReference((Long) newValue);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
+			setVariability((VariabilityType) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -968,50 +1060,51 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
-				setReal((RealType)null);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
-				setInteger((IntegerType)null);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
-				setBoolean((BooleanType)null);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
-				setString((StringType)null);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
-				setEnumeration((EnumerationType)null);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
-				setAnnotations((Fmi2Annotation)null);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
-				unsetCanHandleMultipleSetPerTimeInstant();
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
-				unsetCausality();
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
-				unsetInitial();
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
-				unsetValueReference();
-				return;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
-				unsetVariability();
-				return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
+			setReal((RealType) null);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
+			setInteger((IntegerType) null);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
+			setBoolean((BooleanType) null);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
+			setString((StringType) null);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
+			setEnumeration((EnumerationType) null);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
+			setAnnotations((Fmi2Annotation) null);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
+			unsetCanHandleMultipleSetPerTimeInstant();
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
+			unsetCausality();
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
+			unsetInitial();
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
+			unsetValueReference();
+			return;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
+			unsetVariability();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1019,37 +1112,38 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
-				return real != null;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
-				return integer != null;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
-				return boolean_ != null;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
-				return string != null;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
-				return enumeration != null;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
-				return annotations != null;
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
-				return isSetCanHandleMultipleSetPerTimeInstant();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
-				return isSetCausality();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
-				return isSetInitial();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
-				return isSetValueReference();
-			case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
-				return isSetVariability();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__REAL:
+			return real != null;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INTEGER:
+			return integer != null;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__BOOLEAN:
+			return boolean_ != null;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__STRING:
+			return string != null;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ENUMERATION:
+			return enumeration != null;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__ANNOTATIONS:
+			return annotations != null;
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAN_HANDLE_MULTIPLE_SET_PER_TIME_INSTANT:
+			return isSetCanHandleMultipleSetPerTimeInstant();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__CAUSALITY:
+			return isSetCausality();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__INITIAL:
+			return isSetInitial();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VALUE_REFERENCE:
+			return isSetValueReference();
+		case FmiPackage.FMI2_SCALAR_VARIABLE__VARIABILITY:
+			return isSetVariability();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1057,29 +1151,46 @@ public class Fmi2ScalarVariableImpl extends MinimalEObjectImpl.Container impleme
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (canHandleMultipleSetPerTimeInstant: ");
-		if (canHandleMultipleSetPerTimeInstantESet) result.append(canHandleMultipleSetPerTimeInstant); else result.append("<unset>");
+		if (canHandleMultipleSetPerTimeInstantESet)
+			result.append(canHandleMultipleSetPerTimeInstant);
+		else
+			result.append("<unset>");
 		result.append(", causality: ");
-		if (causalityESet) result.append(causality); else result.append("<unset>");
+		if (causalityESet)
+			result.append(causality);
+		else
+			result.append("<unset>");
 		result.append(", description: ");
 		result.append(description);
 		result.append(", initial: ");
-		if (initialESet) result.append(initial); else result.append("<unset>");
+		if (initialESet)
+			result.append(initial);
+		else
+			result.append("<unset>");
 		result.append(", name: ");
 		result.append(name);
 		result.append(", valueReference: ");
-		if (valueReferenceESet) result.append(valueReference); else result.append("<unset>");
+		if (valueReferenceESet)
+			result.append(valueReference);
+		else
+			result.append("<unset>");
 		result.append(", variability: ");
-		if (variabilityESet) result.append(variability); else result.append("<unset>");
+		if (variabilityESet)
+			result.append(variability);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //Fmi2ScalarVariableImpl
+} // Fmi2ScalarVariableImpl

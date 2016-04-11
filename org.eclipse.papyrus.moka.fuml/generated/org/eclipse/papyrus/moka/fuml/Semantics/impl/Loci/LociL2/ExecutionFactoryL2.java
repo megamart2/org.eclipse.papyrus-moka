@@ -138,9 +138,9 @@ public class ExecutionFactoryL2 extends ExecutionFactoryL1 {
 			visitor = new CreateLinkActionActivation();
 		} else if (element instanceof DestroyLinkAction) {
 			visitor = new DestroyLinkActionActivation();
-		} else if (element instanceof ActivityEdge){
+		} else if (element instanceof ActivityEdge) {
 			visitor = new ActivityEdgeInstance();
-		}else {
+		} else {
 			visitor = super.instantiateVisitor(element);
 		}
 		return visitor;

@@ -18,7 +18,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.IntermediateActions.IWriteStructuralFeatureActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 
-public abstract class WriteStructuralFeatureActionActivation extends StructuralFeatureActionActivation implements IWriteStructuralFeatureActionActivation{
+public abstract class WriteStructuralFeatureActionActivation extends StructuralFeatureActionActivation implements IWriteStructuralFeatureActionActivation {
 
 	public Integer position(IValue value, List<IValue> list, Integer startAt) {
 		// Return the position (counting from 1) of the first occurance of the

@@ -25,14 +25,14 @@ import org.eclipse.uml2.uml.Operation;
 public interface IReference extends IStructuredValue {
 
 	public void startBehavior(Class classifier, List<IParameterValue> inputs);
-	
+
 	public IExecution dispatch(Operation operation);
-	
+
 	public void send(ISignalInstance signalInstance);
-	
+
 	public void destroy();
-	
+
 	public void setReferent(IObject_ referent);
-	
+
 	public IObject_ getReferent();
 }

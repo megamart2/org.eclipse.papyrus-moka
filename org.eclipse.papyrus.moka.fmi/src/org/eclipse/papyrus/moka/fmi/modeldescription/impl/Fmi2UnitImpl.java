@@ -41,10 +41,10 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getBaseUnit <em>Base Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getDisplayUnit <em>Display Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getBaseUnit <em>Base Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getDisplayUnit <em>Display Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.Fmi2UnitImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -54,6 +54,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	 * The cached value of the '{@link #getBaseUnit() <em>Base Unit</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getBaseUnit()
 	 * @generated
 	 * @ordered
@@ -64,6 +65,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
@@ -74,6 +76,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -84,6 +87,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -93,6 +97,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected Fmi2UnitImpl() {
@@ -102,6 +107,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -112,6 +118,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BaseUnitType getBaseUnit() {
@@ -121,6 +128,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetBaseUnit(BaseUnitType newBaseUnit, NotificationChain msgs) {
@@ -128,7 +136,10 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 		baseUnit = newBaseUnit;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_UNIT__BASE_UNIT, oldBaseUnit, newBaseUnit);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -136,25 +147,27 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setBaseUnit(BaseUnitType newBaseUnit) {
 		if (newBaseUnit != baseUnit) {
 			NotificationChain msgs = null;
 			if (baseUnit != null)
-				msgs = ((InternalEObject)baseUnit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_UNIT__BASE_UNIT, null, msgs);
+				msgs = ((InternalEObject) baseUnit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_UNIT__BASE_UNIT, null, msgs);
 			if (newBaseUnit != null)
-				msgs = ((InternalEObject)newBaseUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_UNIT__BASE_UNIT, null, msgs);
+				msgs = ((InternalEObject) newBaseUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI2_UNIT__BASE_UNIT, null, msgs);
 			msgs = basicSetBaseUnit(newBaseUnit, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI2_UNIT__BASE_UNIT, newBaseUnit, newBaseUnit));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
@@ -167,6 +180,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<DisplayUnitType> getDisplayUnit() {
@@ -176,6 +190,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -185,6 +200,7 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -197,17 +213,18 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.FMI2_UNIT__BASE_UNIT:
-				return basicSetBaseUnit(null, msgs);
-			case FmiPackage.FMI2_UNIT__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-			case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
-				return ((InternalEList<?>)getDisplayUnit()).basicRemove(otherEnd, msgs);
+		case FmiPackage.FMI2_UNIT__BASE_UNIT:
+			return basicSetBaseUnit(null, msgs);
+		case FmiPackage.FMI2_UNIT__GROUP:
+			return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
+		case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
+			return ((InternalEList<?>) getDisplayUnit()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -215,20 +232,22 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.FMI2_UNIT__BASE_UNIT:
-				return getBaseUnit();
-			case FmiPackage.FMI2_UNIT__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
-			case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
-				return getDisplayUnit();
-			case FmiPackage.FMI2_UNIT__NAME:
-				return getName();
+		case FmiPackage.FMI2_UNIT__BASE_UNIT:
+			return getBaseUnit();
+		case FmiPackage.FMI2_UNIT__GROUP:
+			if (coreType)
+				return getGroup();
+			return ((FeatureMap.Internal) getGroup()).getWrapper();
+		case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
+			return getDisplayUnit();
+		case FmiPackage.FMI2_UNIT__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -236,25 +255,26 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.FMI2_UNIT__BASE_UNIT:
-				setBaseUnit((BaseUnitType)newValue);
-				return;
-			case FmiPackage.FMI2_UNIT__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
-				return;
-			case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
-				getDisplayUnit().clear();
-				getDisplayUnit().addAll((Collection<? extends DisplayUnitType>)newValue);
-				return;
-			case FmiPackage.FMI2_UNIT__NAME:
-				setName((String)newValue);
-				return;
+		case FmiPackage.FMI2_UNIT__BASE_UNIT:
+			setBaseUnit((BaseUnitType) newValue);
+			return;
+		case FmiPackage.FMI2_UNIT__GROUP:
+			((FeatureMap.Internal) getGroup()).set(newValue);
+			return;
+		case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
+			getDisplayUnit().clear();
+			getDisplayUnit().addAll((Collection<? extends DisplayUnitType>) newValue);
+			return;
+		case FmiPackage.FMI2_UNIT__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -262,23 +282,24 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FMI2_UNIT__BASE_UNIT:
-				setBaseUnit((BaseUnitType)null);
-				return;
-			case FmiPackage.FMI2_UNIT__GROUP:
-				getGroup().clear();
-				return;
-			case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
-				getDisplayUnit().clear();
-				return;
-			case FmiPackage.FMI2_UNIT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case FmiPackage.FMI2_UNIT__BASE_UNIT:
+			setBaseUnit((BaseUnitType) null);
+			return;
+		case FmiPackage.FMI2_UNIT__GROUP:
+			getGroup().clear();
+			return;
+		case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
+			getDisplayUnit().clear();
+			return;
+		case FmiPackage.FMI2_UNIT__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -286,19 +307,20 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FMI2_UNIT__BASE_UNIT:
-				return baseUnit != null;
-			case FmiPackage.FMI2_UNIT__GROUP:
-				return group != null && !group.isEmpty();
-			case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
-				return !getDisplayUnit().isEmpty();
-			case FmiPackage.FMI2_UNIT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FmiPackage.FMI2_UNIT__BASE_UNIT:
+			return baseUnit != null;
+		case FmiPackage.FMI2_UNIT__GROUP:
+			return group != null && !group.isEmpty();
+		case FmiPackage.FMI2_UNIT__DISPLAY_UNIT:
+			return !getDisplayUnit().isEmpty();
+		case FmiPackage.FMI2_UNIT__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -306,11 +328,13 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -321,4 +345,4 @@ public class Fmi2UnitImpl extends MinimalEObjectImpl.Container implements Fmi2Un
 		return result.toString();
 	}
 
-} //Fmi2UnitImpl
+} // Fmi2UnitImpl

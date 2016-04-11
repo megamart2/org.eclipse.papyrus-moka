@@ -125,32 +125,32 @@ public class ExpansionActivationGroup extends ActivityNodeActivationGroup implem
 			this.regionActivation.resume(this);
 		}
 	}
-	
-	public List<IOutputPinActivation> getRegionInputs(){
+
+	public List<IOutputPinActivation> getRegionInputs() {
 		return this.regionInputs;
 	}
-	
-	public List<IOutputPinActivation> getGroupInputs(){
+
+	public List<IOutputPinActivation> getGroupInputs() {
 		return this.groupInputs;
 	}
-	
-	public List<IOutputPinActivation> getGroupOutputs(){
+
+	public List<IOutputPinActivation> getGroupOutputs() {
 		return this.groupOutputs;
 	}
-	
-	public void setRegionActivation(IExpansionRegionActivation regionActivation){
+
+	public void setRegionActivation(IExpansionRegionActivation regionActivation) {
 		this.regionActivation = regionActivation;
 	}
-	
-	public IExpansionRegionActivation getRegionActivation(){
+
+	public IExpansionRegionActivation getRegionActivation() {
 		return this.regionActivation;
 	}
-	
-	public void setIndex(Integer index){
+
+	public void setIndex(Integer index) {
 		this.index = index;
 	}
-	
-	public Integer getIndex(){
+
+	public Integer getIndex() {
 		return this.index;
 	}
 }

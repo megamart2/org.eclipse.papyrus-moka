@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getScalarVariable <em>Scalar Variable</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.ModelVariablesType#getScalarVariable <em>Scalar Variable</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getModelVariablesType()
@@ -44,6 +44,7 @@ public interface ModelVariablesType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getModelVariablesType_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -61,6 +62,7 @@ public interface ModelVariablesType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Scalar Variable</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getModelVariablesType_ScalarVariable()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"

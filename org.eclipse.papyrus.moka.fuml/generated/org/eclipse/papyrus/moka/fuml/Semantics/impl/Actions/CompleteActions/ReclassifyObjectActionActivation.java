@@ -49,7 +49,7 @@ public class ReclassifyObjectActionActivation extends ActionActivation {
 			IObject_ object = ((IReference) input).getReferent();
 			int i = 1;
 			while (i <= object.getTypes().size()) {
-				Class type = (Class)object.getTypes().get(i - 1);
+				Class type = (Class) object.getTypes().get(i - 1);
 				boolean toBeRemoved = true;
 				int j = 1;
 				while (toBeRemoved & j <= newClassifiers.size()) {

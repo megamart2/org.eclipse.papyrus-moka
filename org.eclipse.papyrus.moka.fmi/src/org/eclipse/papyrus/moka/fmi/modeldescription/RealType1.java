@@ -22,14 +22,14 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getDisplayUnit <em>Display Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal <em>Nominal</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getQuantity <em>Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity <em>Relative Quantity</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded <em>Unbounded</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getUnit <em>Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getDisplayUnit <em>Display Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal <em>Nominal</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity <em>Relative Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded <em>Unbounded</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getUnit <em>Unit</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getRealType1()
@@ -44,6 +44,7 @@ public interface RealType1 extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Default display unit, provided the conversion of values in "unit" to values in "displayUnit" is defined in UnitDefinitions / Unit / DisplayUnit.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Display Unit</em>' attribute.
 	 * @see #setDisplayUnit(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getRealType1_DisplayUnit()
@@ -57,7 +58,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getDisplayUnit <em>Display Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Display Unit</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Display Unit</em>' attribute.
 	 * @see #getDisplayUnit()
 	 * @generated
 	 */
@@ -70,6 +73,7 @@ public interface RealType1 extends EObject {
 	 * <!-- begin-model-doc -->
 	 * max >= min required
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Max</em>' attribute.
 	 * @see #isSetMax()
 	 * @see #unsetMax()
@@ -85,7 +89,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Max</em>' attribute.
 	 * @see #isSetMax()
 	 * @see #unsetMax()
 	 * @see #getMax()
@@ -97,6 +103,7 @@ public interface RealType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMax()
 	 * @see #getMax()
 	 * @see #setMax(double)
@@ -108,6 +115,7 @@ public interface RealType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMax <em>Max</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Max</em>' attribute is set.
 	 * @see #unsetMax()
 	 * @see #getMax()
@@ -124,6 +132,7 @@ public interface RealType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Min</em>' attribute.
 	 * @see #isSetMin()
 	 * @see #unsetMin()
@@ -139,7 +148,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Min</em>' attribute.
 	 * @see #isSetMin()
 	 * @see #unsetMin()
 	 * @see #getMin()
@@ -151,6 +162,7 @@ public interface RealType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMin()
 	 * @see #getMin()
 	 * @see #setMin(double)
@@ -162,6 +174,7 @@ public interface RealType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getMin <em>Min</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Min</em>' attribute is set.
 	 * @see #unsetMin()
 	 * @see #getMin()
@@ -177,6 +190,7 @@ public interface RealType1 extends EObject {
 	 * <!-- begin-model-doc -->
 	 * nominal > 0.0 required
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Nominal</em>' attribute.
 	 * @see #isSetNominal()
 	 * @see #unsetNominal()
@@ -192,7 +206,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal <em>Nominal</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Nominal</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Nominal</em>' attribute.
 	 * @see #isSetNominal()
 	 * @see #unsetNominal()
 	 * @see #getNominal()
@@ -204,6 +220,7 @@ public interface RealType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal <em>Nominal</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetNominal()
 	 * @see #getNominal()
 	 * @see #setNominal(double)
@@ -215,6 +232,7 @@ public interface RealType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getNominal <em>Nominal</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Nominal</em>' attribute is set.
 	 * @see #unsetNominal()
 	 * @see #getNominal()
@@ -231,6 +249,7 @@ public interface RealType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getRealType1_Quantity()
@@ -244,7 +263,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getQuantity <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Quantity</em>' attribute.
 	 * @see #getQuantity()
 	 * @generated
 	 */
@@ -258,6 +279,7 @@ public interface RealType1 extends EObject {
 	 * <!-- begin-model-doc -->
 	 * If relativeQuantity=true, offset for displayUnit must be ignored.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Relative Quantity</em>' attribute.
 	 * @see #isSetRelativeQuantity()
 	 * @see #unsetRelativeQuantity()
@@ -273,7 +295,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity <em>Relative Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Relative Quantity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Relative Quantity</em>' attribute.
 	 * @see #isSetRelativeQuantity()
 	 * @see #unsetRelativeQuantity()
 	 * @see #isRelativeQuantity()
@@ -285,6 +309,7 @@ public interface RealType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity <em>Relative Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetRelativeQuantity()
 	 * @see #isRelativeQuantity()
 	 * @see #setRelativeQuantity(boolean)
@@ -296,6 +321,7 @@ public interface RealType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isRelativeQuantity <em>Relative Quantity</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Relative Quantity</em>' attribute is set.
 	 * @see #unsetRelativeQuantity()
 	 * @see #isRelativeQuantity()
@@ -312,6 +338,7 @@ public interface RealType1 extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Set to true, e.g., for crank angle. If true and variable is a state, relative tolerance should be zero on this variable.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Unbounded</em>' attribute.
 	 * @see #isSetUnbounded()
 	 * @see #unsetUnbounded()
@@ -327,7 +354,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded <em>Unbounded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Unbounded</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Unbounded</em>' attribute.
 	 * @see #isSetUnbounded()
 	 * @see #unsetUnbounded()
 	 * @see #isUnbounded()
@@ -339,6 +368,7 @@ public interface RealType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded <em>Unbounded</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetUnbounded()
 	 * @see #isUnbounded()
 	 * @see #setUnbounded(boolean)
@@ -350,6 +380,7 @@ public interface RealType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#isUnbounded <em>Unbounded</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Unbounded</em>' attribute is set.
 	 * @see #unsetUnbounded()
 	 * @see #isUnbounded()
@@ -366,6 +397,7 @@ public interface RealType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see #setUnit(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getRealType1_Unit()
@@ -379,7 +411,9 @@ public interface RealType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.RealType1#getUnit <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Unit</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Unit</em>' attribute.
 	 * @see #getUnit()
 	 * @generated
 	 */

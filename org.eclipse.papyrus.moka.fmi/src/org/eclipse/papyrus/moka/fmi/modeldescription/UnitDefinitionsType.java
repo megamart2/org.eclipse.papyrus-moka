@@ -26,8 +26,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getUnit <em>Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnitDefinitionsType#getUnit <em>Unit</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getUnitDefinitionsType()
@@ -44,6 +44,7 @@ public interface UnitDefinitionsType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getUnitDefinitionsType_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -61,6 +62,7 @@ public interface UnitDefinitionsType extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Unit</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getUnitDefinitionsType_Unit()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"

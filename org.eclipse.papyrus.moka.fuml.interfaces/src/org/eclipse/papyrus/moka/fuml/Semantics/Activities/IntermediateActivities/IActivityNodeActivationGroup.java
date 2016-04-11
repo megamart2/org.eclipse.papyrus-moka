@@ -22,41 +22,41 @@ import org.eclipse.uml2.uml.ActivityNode;
 public interface IActivityNodeActivationGroup {
 
 	public void run(List<IActivityNodeActivation> activations);
-	
+
 	public Boolean checkIncomingEdges(List<IActivityEdgeInstance> incomingEdges, List<IActivityNodeActivation> activations);
-	
+
 	public void runNodes(List<ActivityNode> nodes);
-	
+
 	public void activate(List<ActivityNode> nodes, List<ActivityEdge> edges);
-	
+
 	public void terminateAll();
-	
+
 	public void createNodeActivations(List<ActivityNode> nodes);
-	
+
 	public IActivityNodeActivation createNodeActivation(ActivityNode node);
-	
+
 	public IActivityNodeActivation getNodeActivation(ActivityNode node);
-	
+
 	public void createEdgeInstances(List<ActivityEdge> edges);
-	
+
 	public IActivityExecution getActivityExecution();
-	
+
 	public void setActivityExecution(IActivityExecution execution);
-	
+
 	public List<IActivityParameterNodeActivation> getOutputParameterNodeActivations();
-	
+
 	public Boolean hasSourceFor(IActivityEdgeInstance edgeInstance);
-	
+
 	public Boolean isSuspended();
-	
+
 	public void suspend(IActivityNodeActivation activation);
-	
+
 	public void resume(IActivityNodeActivation activation);
-	
+
 	public void setContainingActivation(IStructuredActivityNodeActivation activation);
-	
+
 	public IStructuredActivityNodeActivation getContainingActivation();
-	
+
 	public List<IActivityNodeActivation> getActivityNodeActivations();
 
 }

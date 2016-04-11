@@ -22,21 +22,21 @@ import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_OpaqueActionActivation
  */
 public class _sendOfferAction extends Action {
 
-	protected Timed_OpaqueActionActivation actionActivation ;
-	
+	protected Timed_OpaqueActionActivation actionActivation;
+
 	public _sendOfferAction(Timed_OpaqueActionActivation actionActivation) {
 		super();
 		this.actionActivation = actionActivation;
 	}
-		
+
 	/**
 	 * @see org.eclipse.papyrus.moka.discreteevent.actions.Action#execute()
 	 *
 	 */
 	@Override
 	public void execute() {
-		//System.out.println(DEScheduler.getInstance().getCurrentTime() + " : sending offer - " + this.actionActivation);
-		this.actionActivation.sendOffersDefault() ;
+		// System.out.println(DEScheduler.getInstance().getCurrentTime() + " : sending offer - " + this.actionActivation);
+		this.actionActivation.sendOffersDefault();
 	}
 
 }

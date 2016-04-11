@@ -26,10 +26,10 @@ import org.eclipse.ui.console.IOConsoleOutputStream;
  */
 public class _displayCurrentTimeAction extends Action {
 
-	protected int step = 0 ;
+	protected int step = 0;
 
 	protected IOConsoleOutputStream out = null;
-	
+
 	/**
 	 * @see org.eclipse.papyrus.moka.discreteevent.actions.Action#execute()
 	 *
@@ -37,15 +37,15 @@ public class _displayCurrentTimeAction extends Action {
 	@Override
 	public void execute() {
 		if (out == null) {
-			this.out = StandardOutputChannelImpl.getConsole().newOutputStream() ;
+			this.out = StandardOutputChannelImpl.getConsole().newOutputStream();
 		}
 		String message = "Step: " + this.step + ", Current time: " + DEScheduler.getInstance().getCurrentTime() + "\n";
 		try {
 			out.write(message);
 		} catch (IOException e) {
-			
+
 		}
-		this.step ++ ;
+		this.step++;
 	}
 
 }

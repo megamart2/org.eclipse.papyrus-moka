@@ -26,9 +26,9 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getItem <em>Item</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getItem <em>Item</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType1()
@@ -45,6 +45,7 @@ public interface EnumerationType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType1_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -62,6 +63,7 @@ public interface EnumerationType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Item</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType1_Item()
 	 * @model containment="true" required="true" transient="true" volatile="true" derived="true"
@@ -78,6 +80,7 @@ public interface EnumerationType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getEnumerationType1_Quantity()
@@ -91,7 +94,9 @@ public interface EnumerationType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.EnumerationType1#getQuantity <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Quantity</em>' attribute.
 	 * @see #getQuantity()
 	 * @generated
 	 */

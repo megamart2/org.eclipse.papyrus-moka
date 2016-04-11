@@ -32,6 +32,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.*;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Factory</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
@@ -39,16 +40,16 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static FmiFactory init() {
 		try {
-			FmiFactory theFmiFactory = (FmiFactory)EPackage.Registry.INSTANCE.getEFactory(FmiPackage.eNS_URI);
+			FmiFactory theFmiFactory = (FmiFactory) EPackage.Registry.INSTANCE.getEFactory(FmiPackage.eNS_URI);
 			if (theFmiFactory != null) {
 				return theFmiFactory;
 			}
-		}
-		catch (Exception exception) {
+		} catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new FmiFactoryImpl();
@@ -58,6 +59,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	 * Creates an instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiFactoryImpl() {
@@ -67,144 +69,183 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case FmiPackage.BASE_UNIT_TYPE: return createBaseUnitType();
-			case FmiPackage.BOOLEAN_TYPE: return createBooleanType();
-			case FmiPackage.CATEGORY_TYPE: return createCategoryType();
-			case FmiPackage.CO_SIMULATION_TYPE: return createCoSimulationType();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE: return createDefaultExperimentType();
-			case FmiPackage.DISPLAY_UNIT_TYPE: return createDisplayUnitType();
-			case FmiPackage.DOCUMENT_ROOT: return createDocumentRoot();
-			case FmiPackage.ENUMERATION_TYPE: return createEnumerationType();
-			case FmiPackage.ENUMERATION_TYPE1: return createEnumerationType1();
-			case FmiPackage.FILE_TYPE: return createFileType();
-			case FmiPackage.FILE_TYPE1: return createFileType1();
-			case FmiPackage.FMI2_ANNOTATION: return createFmi2Annotation();
-			case FmiPackage.FMI2_SCALAR_VARIABLE: return createFmi2ScalarVariable();
-			case FmiPackage.FMI2_SIMPLE_TYPE: return createFmi2SimpleType();
-			case FmiPackage.FMI2_UNIT: return createFmi2Unit();
-			case FmiPackage.FMI2_VARIABLE_DEPENDENCY: return createFmi2VariableDependency();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE: return createFmiModelDescriptionType();
-			case FmiPackage.INITIAL_UNKNOWNS_TYPE: return createInitialUnknownsType();
-			case FmiPackage.INTEGER_TYPE: return createIntegerType();
-			case FmiPackage.INTEGER_TYPE1: return createIntegerType1();
-			case FmiPackage.ITEM_TYPE: return createItemType();
-			case FmiPackage.LOG_CATEGORIES_TYPE: return createLogCategoriesType();
-			case FmiPackage.MODEL_EXCHANGE_TYPE: return createModelExchangeType();
-			case FmiPackage.MODEL_STRUCTURE_TYPE: return createModelStructureType();
-			case FmiPackage.MODEL_VARIABLES_TYPE: return createModelVariablesType();
-			case FmiPackage.REAL_TYPE: return createRealType();
-			case FmiPackage.REAL_TYPE1: return createRealType1();
-			case FmiPackage.SOURCE_FILES_TYPE: return createSourceFilesType();
-			case FmiPackage.SOURCE_FILES_TYPE1: return createSourceFilesType1();
-			case FmiPackage.STRING_TYPE: return createStringType();
-			case FmiPackage.TOOL_TYPE: return createToolType();
-			case FmiPackage.TYPE_DEFINITIONS_TYPE: return createTypeDefinitionsType();
-			case FmiPackage.UNIT_DEFINITIONS_TYPE: return createUnitDefinitionsType();
-			case FmiPackage.UNKNOWN_TYPE: return createUnknownType();
-			case FmiPackage.UNKNOWN_TYPE1: return createUnknownType1();
-			default:
-				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		case FmiPackage.BASE_UNIT_TYPE:
+			return createBaseUnitType();
+		case FmiPackage.BOOLEAN_TYPE:
+			return createBooleanType();
+		case FmiPackage.CATEGORY_TYPE:
+			return createCategoryType();
+		case FmiPackage.CO_SIMULATION_TYPE:
+			return createCoSimulationType();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE:
+			return createDefaultExperimentType();
+		case FmiPackage.DISPLAY_UNIT_TYPE:
+			return createDisplayUnitType();
+		case FmiPackage.DOCUMENT_ROOT:
+			return createDocumentRoot();
+		case FmiPackage.ENUMERATION_TYPE:
+			return createEnumerationType();
+		case FmiPackage.ENUMERATION_TYPE1:
+			return createEnumerationType1();
+		case FmiPackage.FILE_TYPE:
+			return createFileType();
+		case FmiPackage.FILE_TYPE1:
+			return createFileType1();
+		case FmiPackage.FMI2_ANNOTATION:
+			return createFmi2Annotation();
+		case FmiPackage.FMI2_SCALAR_VARIABLE:
+			return createFmi2ScalarVariable();
+		case FmiPackage.FMI2_SIMPLE_TYPE:
+			return createFmi2SimpleType();
+		case FmiPackage.FMI2_UNIT:
+			return createFmi2Unit();
+		case FmiPackage.FMI2_VARIABLE_DEPENDENCY:
+			return createFmi2VariableDependency();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE:
+			return createFmiModelDescriptionType();
+		case FmiPackage.INITIAL_UNKNOWNS_TYPE:
+			return createInitialUnknownsType();
+		case FmiPackage.INTEGER_TYPE:
+			return createIntegerType();
+		case FmiPackage.INTEGER_TYPE1:
+			return createIntegerType1();
+		case FmiPackage.ITEM_TYPE:
+			return createItemType();
+		case FmiPackage.LOG_CATEGORIES_TYPE:
+			return createLogCategoriesType();
+		case FmiPackage.MODEL_EXCHANGE_TYPE:
+			return createModelExchangeType();
+		case FmiPackage.MODEL_STRUCTURE_TYPE:
+			return createModelStructureType();
+		case FmiPackage.MODEL_VARIABLES_TYPE:
+			return createModelVariablesType();
+		case FmiPackage.REAL_TYPE:
+			return createRealType();
+		case FmiPackage.REAL_TYPE1:
+			return createRealType1();
+		case FmiPackage.SOURCE_FILES_TYPE:
+			return createSourceFilesType();
+		case FmiPackage.SOURCE_FILES_TYPE1:
+			return createSourceFilesType1();
+		case FmiPackage.STRING_TYPE:
+			return createStringType();
+		case FmiPackage.TOOL_TYPE:
+			return createToolType();
+		case FmiPackage.TYPE_DEFINITIONS_TYPE:
+			return createTypeDefinitionsType();
+		case FmiPackage.UNIT_DEFINITIONS_TYPE:
+			return createUnitDefinitionsType();
+		case FmiPackage.UNKNOWN_TYPE:
+			return createUnknownType();
+		case FmiPackage.UNKNOWN_TYPE1:
+			return createUnknownType1();
+		default:
+			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case FmiPackage.CAUSALITY_TYPE:
-				return createCausalityTypeFromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM:
-				return createDependenciesKindTypeItemFromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM1:
-				return createDependenciesKindTypeItem1FromString(eDataType, initialValue);
-			case FmiPackage.INITIAL_TYPE:
-				return createInitialTypeFromString(eDataType, initialValue);
-			case FmiPackage.VARIABILITY_TYPE:
-				return createVariabilityTypeFromString(eDataType, initialValue);
-			case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE:
-				return createVariableNamingConventionTypeFromString(eDataType, initialValue);
-			case FmiPackage.CAUSALITY_TYPE_OBJECT:
-				return createCausalityTypeObjectFromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE:
-				return createDependenciesKindTypeFromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE1:
-				return createDependenciesKindType1FromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT:
-				return createDependenciesKindTypeItemObjectFromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT1:
-				return createDependenciesKindTypeItemObject1FromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_TYPE:
-				return createDependenciesTypeFromString(eDataType, initialValue);
-			case FmiPackage.DEPENDENCIES_TYPE1:
-				return createDependenciesType1FromString(eDataType, initialValue);
-			case FmiPackage.INITIAL_TYPE_OBJECT:
-				return createInitialTypeObjectFromString(eDataType, initialValue);
-			case FmiPackage.VARIABILITY_TYPE_OBJECT:
-				return createVariabilityTypeObjectFromString(eDataType, initialValue);
-			case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE_OBJECT:
-				return createVariableNamingConventionTypeObjectFromString(eDataType, initialValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case FmiPackage.CAUSALITY_TYPE:
+			return createCausalityTypeFromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM:
+			return createDependenciesKindTypeItemFromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM1:
+			return createDependenciesKindTypeItem1FromString(eDataType, initialValue);
+		case FmiPackage.INITIAL_TYPE:
+			return createInitialTypeFromString(eDataType, initialValue);
+		case FmiPackage.VARIABILITY_TYPE:
+			return createVariabilityTypeFromString(eDataType, initialValue);
+		case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE:
+			return createVariableNamingConventionTypeFromString(eDataType, initialValue);
+		case FmiPackage.CAUSALITY_TYPE_OBJECT:
+			return createCausalityTypeObjectFromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE:
+			return createDependenciesKindTypeFromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE1:
+			return createDependenciesKindType1FromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT:
+			return createDependenciesKindTypeItemObjectFromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT1:
+			return createDependenciesKindTypeItemObject1FromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_TYPE:
+			return createDependenciesTypeFromString(eDataType, initialValue);
+		case FmiPackage.DEPENDENCIES_TYPE1:
+			return createDependenciesType1FromString(eDataType, initialValue);
+		case FmiPackage.INITIAL_TYPE_OBJECT:
+			return createInitialTypeObjectFromString(eDataType, initialValue);
+		case FmiPackage.VARIABILITY_TYPE_OBJECT:
+			return createVariabilityTypeObjectFromString(eDataType, initialValue);
+		case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE_OBJECT:
+			return createVariableNamingConventionTypeObjectFromString(eDataType, initialValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case FmiPackage.CAUSALITY_TYPE:
-				return convertCausalityTypeToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM:
-				return convertDependenciesKindTypeItemToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM1:
-				return convertDependenciesKindTypeItem1ToString(eDataType, instanceValue);
-			case FmiPackage.INITIAL_TYPE:
-				return convertInitialTypeToString(eDataType, instanceValue);
-			case FmiPackage.VARIABILITY_TYPE:
-				return convertVariabilityTypeToString(eDataType, instanceValue);
-			case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE:
-				return convertVariableNamingConventionTypeToString(eDataType, instanceValue);
-			case FmiPackage.CAUSALITY_TYPE_OBJECT:
-				return convertCausalityTypeObjectToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE:
-				return convertDependenciesKindTypeToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE1:
-				return convertDependenciesKindType1ToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT:
-				return convertDependenciesKindTypeItemObjectToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT1:
-				return convertDependenciesKindTypeItemObject1ToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_TYPE:
-				return convertDependenciesTypeToString(eDataType, instanceValue);
-			case FmiPackage.DEPENDENCIES_TYPE1:
-				return convertDependenciesType1ToString(eDataType, instanceValue);
-			case FmiPackage.INITIAL_TYPE_OBJECT:
-				return convertInitialTypeObjectToString(eDataType, instanceValue);
-			case FmiPackage.VARIABILITY_TYPE_OBJECT:
-				return convertVariabilityTypeObjectToString(eDataType, instanceValue);
-			case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE_OBJECT:
-				return convertVariableNamingConventionTypeObjectToString(eDataType, instanceValue);
-			default:
-				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		case FmiPackage.CAUSALITY_TYPE:
+			return convertCausalityTypeToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM:
+			return convertDependenciesKindTypeItemToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM1:
+			return convertDependenciesKindTypeItem1ToString(eDataType, instanceValue);
+		case FmiPackage.INITIAL_TYPE:
+			return convertInitialTypeToString(eDataType, instanceValue);
+		case FmiPackage.VARIABILITY_TYPE:
+			return convertVariabilityTypeToString(eDataType, instanceValue);
+		case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE:
+			return convertVariableNamingConventionTypeToString(eDataType, instanceValue);
+		case FmiPackage.CAUSALITY_TYPE_OBJECT:
+			return convertCausalityTypeObjectToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE:
+			return convertDependenciesKindTypeToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE1:
+			return convertDependenciesKindType1ToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT:
+			return convertDependenciesKindTypeItemObjectToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_KIND_TYPE_ITEM_OBJECT1:
+			return convertDependenciesKindTypeItemObject1ToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_TYPE:
+			return convertDependenciesTypeToString(eDataType, instanceValue);
+		case FmiPackage.DEPENDENCIES_TYPE1:
+			return convertDependenciesType1ToString(eDataType, instanceValue);
+		case FmiPackage.INITIAL_TYPE_OBJECT:
+			return convertInitialTypeObjectToString(eDataType, instanceValue);
+		case FmiPackage.VARIABILITY_TYPE_OBJECT:
+			return convertVariabilityTypeObjectToString(eDataType, instanceValue);
+		case FmiPackage.VARIABLE_NAMING_CONVENTION_TYPE_OBJECT:
+			return convertVariableNamingConventionTypeObjectToString(eDataType, instanceValue);
+		default:
+			throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BaseUnitType createBaseUnitType() {
@@ -215,6 +256,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public BooleanType createBooleanType() {
@@ -225,6 +267,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CategoryType createCategoryType() {
@@ -235,6 +278,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CoSimulationType createCoSimulationType() {
@@ -245,6 +289,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DefaultExperimentType createDefaultExperimentType() {
@@ -255,6 +300,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DisplayUnitType createDisplayUnitType() {
@@ -265,6 +311,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DocumentRoot createDocumentRoot() {
@@ -275,6 +322,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnumerationType createEnumerationType() {
@@ -285,6 +333,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EnumerationType1 createEnumerationType1() {
@@ -295,6 +344,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FileType createFileType() {
@@ -305,6 +355,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FileType1 createFileType1() {
@@ -315,6 +366,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2Annotation createFmi2Annotation() {
@@ -325,6 +377,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2ScalarVariable createFmi2ScalarVariable() {
@@ -335,6 +388,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2SimpleType createFmi2SimpleType() {
@@ -345,6 +399,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2Unit createFmi2Unit() {
@@ -355,6 +410,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2VariableDependency createFmi2VariableDependency() {
@@ -365,6 +421,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiModelDescriptionType createFmiModelDescriptionType() {
@@ -375,6 +432,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InitialUnknownsType createInitialUnknownsType() {
@@ -385,6 +443,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IntegerType createIntegerType() {
@@ -395,6 +454,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public IntegerType1 createIntegerType1() {
@@ -405,6 +465,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ItemType createItemType() {
@@ -415,6 +476,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LogCategoriesType createLogCategoriesType() {
@@ -425,6 +487,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelExchangeType createModelExchangeType() {
@@ -435,6 +498,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelStructureType createModelStructureType() {
@@ -445,6 +509,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelVariablesType createModelVariablesType() {
@@ -455,6 +520,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RealType createRealType() {
@@ -465,6 +531,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public RealType1 createRealType1() {
@@ -475,6 +542,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SourceFilesType createSourceFilesType() {
@@ -485,6 +553,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public SourceFilesType1 createSourceFilesType1() {
@@ -495,6 +564,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public StringType createStringType() {
@@ -505,6 +575,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ToolType createToolType() {
@@ -515,6 +586,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TypeDefinitionsType createTypeDefinitionsType() {
@@ -525,6 +597,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UnitDefinitionsType createUnitDefinitionsType() {
@@ -535,6 +608,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UnknownType createUnknownType() {
@@ -545,6 +619,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UnknownType1 createUnknownType1() {
@@ -555,17 +630,20 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CausalityType createCausalityTypeFromString(EDataType eDataType, String initialValue) {
 		CausalityType result = CausalityType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertCausalityTypeToString(EDataType eDataType, Object instanceValue) {
@@ -575,17 +653,20 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DependenciesKindTypeItem createDependenciesKindTypeItemFromString(EDataType eDataType, String initialValue) {
 		DependenciesKindTypeItem result = DependenciesKindTypeItem.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesKindTypeItemToString(EDataType eDataType, Object instanceValue) {
@@ -595,17 +676,20 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DependenciesKindTypeItem1 createDependenciesKindTypeItem1FromString(EDataType eDataType, String initialValue) {
 		DependenciesKindTypeItem1 result = DependenciesKindTypeItem1.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesKindTypeItem1ToString(EDataType eDataType, Object instanceValue) {
@@ -615,17 +699,20 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InitialType createInitialTypeFromString(EDataType eDataType, String initialValue) {
 		InitialType result = InitialType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertInitialTypeToString(EDataType eDataType, Object instanceValue) {
@@ -635,17 +722,20 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariabilityType createVariabilityTypeFromString(EDataType eDataType, String initialValue) {
 		VariabilityType result = VariabilityType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertVariabilityTypeToString(EDataType eDataType, Object instanceValue) {
@@ -655,17 +745,20 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariableNamingConventionType createVariableNamingConventionTypeFromString(EDataType eDataType, String initialValue) {
 		VariableNamingConventionType result = VariableNamingConventionType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		if (result == null)
+			throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertVariableNamingConventionTypeToString(EDataType eDataType, Object instanceValue) {
@@ -675,6 +768,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public CausalityType createCausalityTypeObjectFromString(EDataType eDataType, String initialValue) {
@@ -684,6 +778,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertCausalityTypeObjectToString(EDataType eDataType, Object instanceValue) {
@@ -693,10 +788,12 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public List<DependenciesKindTypeItem> createDependenciesKindTypeFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null)
+			return null;
 		List<DependenciesKindTypeItem> result = new ArrayList<DependenciesKindTypeItem>();
 		for (String item : split(initialValue)) {
 			result.add(createDependenciesKindTypeItemFromString(FmiPackage.Literals.DEPENDENCIES_KIND_TYPE_ITEM, item));
@@ -707,12 +804,15 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesKindTypeToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
-		List<?> list = (List<?>)instanceValue;
-		if (list.isEmpty()) return "";
+		if (instanceValue == null)
+			return null;
+		List<?> list = (List<?>) instanceValue;
+		if (list.isEmpty())
+			return "";
 		StringBuffer result = new StringBuffer();
 		for (Object item : list) {
 			result.append(convertDependenciesKindTypeItemToString(FmiPackage.Literals.DEPENDENCIES_KIND_TYPE_ITEM, item));
@@ -724,10 +824,12 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public List<DependenciesKindTypeItem1> createDependenciesKindType1FromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null)
+			return null;
 		List<DependenciesKindTypeItem1> result = new ArrayList<DependenciesKindTypeItem1>();
 		for (String item : split(initialValue)) {
 			result.add(createDependenciesKindTypeItem1FromString(FmiPackage.Literals.DEPENDENCIES_KIND_TYPE_ITEM1, item));
@@ -738,12 +840,15 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesKindType1ToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
-		List<?> list = (List<?>)instanceValue;
-		if (list.isEmpty()) return "";
+		if (instanceValue == null)
+			return null;
+		List<?> list = (List<?>) instanceValue;
+		if (list.isEmpty())
+			return "";
 		StringBuffer result = new StringBuffer();
 		for (Object item : list) {
 			result.append(convertDependenciesKindTypeItem1ToString(FmiPackage.Literals.DEPENDENCIES_KIND_TYPE_ITEM1, item));
@@ -755,6 +860,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DependenciesKindTypeItem createDependenciesKindTypeItemObjectFromString(EDataType eDataType, String initialValue) {
@@ -764,6 +870,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesKindTypeItemObjectToString(EDataType eDataType, Object instanceValue) {
@@ -773,6 +880,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DependenciesKindTypeItem1 createDependenciesKindTypeItemObject1FromString(EDataType eDataType, String initialValue) {
@@ -782,6 +890,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesKindTypeItemObject1ToString(EDataType eDataType, Object instanceValue) {
@@ -791,13 +900,15 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public List<Long> createDependenciesTypeFromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null)
+			return null;
 		List<Long> result = new ArrayList<Long>();
 		for (String item : split(initialValue)) {
-			result.add((Long)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.UNSIGNED_INT, item));
+			result.add((Long) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.UNSIGNED_INT, item));
 		}
 		return result;
 	}
@@ -805,12 +916,15 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesTypeToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
-		List<?> list = (List<?>)instanceValue;
-		if (list.isEmpty()) return "";
+		if (instanceValue == null)
+			return null;
+		List<?> list = (List<?>) instanceValue;
+		if (list.isEmpty())
+			return "";
 		StringBuffer result = new StringBuffer();
 		for (Object item : list) {
 			result.append(XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.UNSIGNED_INT, item));
@@ -822,13 +936,15 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public List<Long> createDependenciesType1FromString(EDataType eDataType, String initialValue) {
-		if (initialValue == null) return null;
+		if (initialValue == null)
+			return null;
 		List<Long> result = new ArrayList<Long>();
 		for (String item : split(initialValue)) {
-			result.add((Long)XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.UNSIGNED_INT, item));
+			result.add((Long) XMLTypeFactory.eINSTANCE.createFromString(XMLTypePackage.Literals.UNSIGNED_INT, item));
 		}
 		return result;
 	}
@@ -836,12 +952,15 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertDependenciesType1ToString(EDataType eDataType, Object instanceValue) {
-		if (instanceValue == null) return null;
-		List<?> list = (List<?>)instanceValue;
-		if (list.isEmpty()) return "";
+		if (instanceValue == null)
+			return null;
+		List<?> list = (List<?>) instanceValue;
+		if (list.isEmpty())
+			return "";
 		StringBuffer result = new StringBuffer();
 		for (Object item : list) {
 			result.append(XMLTypeFactory.eINSTANCE.convertToString(XMLTypePackage.Literals.UNSIGNED_INT, item));
@@ -853,6 +972,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public InitialType createInitialTypeObjectFromString(EDataType eDataType, String initialValue) {
@@ -862,6 +982,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertInitialTypeObjectToString(EDataType eDataType, Object instanceValue) {
@@ -871,6 +992,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariabilityType createVariabilityTypeObjectFromString(EDataType eDataType, String initialValue) {
@@ -880,6 +1002,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertVariabilityTypeObjectToString(EDataType eDataType, Object instanceValue) {
@@ -889,6 +1012,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariableNamingConventionType createVariableNamingConventionTypeObjectFromString(EDataType eDataType, String initialValue) {
@@ -898,6 +1022,7 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String convertVariableNamingConventionTypeObjectToString(EDataType eDataType, Object instanceValue) {
@@ -907,15 +1032,17 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiPackage getFmiPackage() {
-		return (FmiPackage)getEPackage();
+		return (FmiPackage) getEPackage();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @deprecated
 	 * @generated
 	 */
@@ -924,4 +1051,4 @@ public class FmiFactoryImpl extends EFactoryImpl implements FmiFactory {
 		return FmiPackage.eINSTANCE;
 	}
 
-} //FmiFactoryImpl
+} // FmiFactoryImpl

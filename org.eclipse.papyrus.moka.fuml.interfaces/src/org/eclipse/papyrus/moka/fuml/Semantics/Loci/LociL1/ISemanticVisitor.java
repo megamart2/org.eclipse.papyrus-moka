@@ -14,9 +14,9 @@
 package org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1;
 
 public interface ISemanticVisitor {
-	
+
 	public void _endIsolation();
-	
+
 	public void _beginIsolation();
-	
+
 }

@@ -75,12 +75,14 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.util.FmiValidator;
  * <!-- begin-user-doc -->
  * An implementation of the model <b>Package</b>.
  * <!-- end-user-doc -->
+ * 
  * @generated
  */
 public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass baseUnitTypeEClass = null;
@@ -88,6 +90,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass booleanTypeEClass = null;
@@ -95,6 +98,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass categoryTypeEClass = null;
@@ -102,6 +106,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass coSimulationTypeEClass = null;
@@ -109,6 +114,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass defaultExperimentTypeEClass = null;
@@ -116,6 +122,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass displayUnitTypeEClass = null;
@@ -123,6 +130,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass documentRootEClass = null;
@@ -130,6 +138,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass enumerationTypeEClass = null;
@@ -137,6 +146,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass enumerationType1EClass = null;
@@ -144,6 +154,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fileTypeEClass = null;
@@ -151,6 +162,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fileType1EClass = null;
@@ -158,6 +170,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fmi2AnnotationEClass = null;
@@ -165,6 +178,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fmi2ScalarVariableEClass = null;
@@ -172,6 +186,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fmi2SimpleTypeEClass = null;
@@ -179,6 +194,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fmi2UnitEClass = null;
@@ -186,6 +202,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fmi2VariableDependencyEClass = null;
@@ -193,6 +210,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass fmiModelDescriptionTypeEClass = null;
@@ -200,6 +218,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass initialUnknownsTypeEClass = null;
@@ -207,6 +226,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass integerTypeEClass = null;
@@ -214,6 +234,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass integerType1EClass = null;
@@ -221,6 +242,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass itemTypeEClass = null;
@@ -228,6 +250,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass logCategoriesTypeEClass = null;
@@ -235,6 +258,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass modelExchangeTypeEClass = null;
@@ -242,6 +266,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass modelStructureTypeEClass = null;
@@ -249,6 +274,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass modelVariablesTypeEClass = null;
@@ -256,6 +282,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass realTypeEClass = null;
@@ -263,6 +290,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass realType1EClass = null;
@@ -270,6 +298,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass sourceFilesTypeEClass = null;
@@ -277,6 +306,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass sourceFilesType1EClass = null;
@@ -284,6 +314,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass stringTypeEClass = null;
@@ -291,6 +322,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass toolTypeEClass = null;
@@ -298,6 +330,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass typeDefinitionsTypeEClass = null;
@@ -305,6 +338,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass unitDefinitionsTypeEClass = null;
@@ -312,6 +346,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass unknownTypeEClass = null;
@@ -319,6 +354,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EClass unknownType1EClass = null;
@@ -326,6 +362,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum causalityTypeEEnum = null;
@@ -333,6 +370,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum dependenciesKindTypeItemEEnum = null;
@@ -340,6 +378,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum dependenciesKindTypeItem1EEnum = null;
@@ -347,6 +386,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum initialTypeEEnum = null;
@@ -354,6 +394,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum variabilityTypeEEnum = null;
@@ -361,6 +402,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EEnum variableNamingConventionTypeEEnum = null;
@@ -368,6 +410,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType causalityTypeObjectEDataType = null;
@@ -375,6 +418,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType dependenciesKindTypeEDataType = null;
@@ -382,6 +426,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType dependenciesKindType1EDataType = null;
@@ -389,6 +434,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType dependenciesKindTypeItemObjectEDataType = null;
@@ -396,6 +442,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType dependenciesKindTypeItemObject1EDataType = null;
@@ -403,6 +450,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType dependenciesTypeEDataType = null;
@@ -410,6 +458,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType dependenciesType1EDataType = null;
@@ -417,6 +466,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType initialTypeObjectEDataType = null;
@@ -424,6 +474,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType variabilityTypeObjectEDataType = null;
@@ -431,6 +482,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private EDataType variableNamingConventionTypeObjectEDataType = null;
@@ -439,12 +491,14 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	 * Creates an instance of the model <b>Package</b>, registered with
 	 * {@link org.eclipse.emf.ecore.EPackage.Registry EPackage.Registry} by the package
 	 * package URI value.
-	 * <p>Note: the correct way to create the package is via the static
+	 * <p>
+	 * Note: the correct way to create the package is via the static
 	 * factory method {@link #init init()}, which also performs
 	 * initialization of the package, or returns the registered package,
 	 * if one already exists.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#eNS_URI
 	 * @see #init()
@@ -457,6 +511,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -464,20 +519,23 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 * 
-	 * <p>This method is used to initialize {@link FmiPackage#eINSTANCE} when that field is accessed.
+	 * <p>
+	 * This method is used to initialize {@link FmiPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static FmiPackage init() {
-		if (isInited) return (FmiPackage)EPackage.Registry.INSTANCE.getEPackage(FmiPackage.eNS_URI);
+		if (isInited)
+			return (FmiPackage) EPackage.Registry.INSTANCE.getEPackage(FmiPackage.eNS_URI);
 
 		// Obtain or create and register package
-		FmiPackageImpl theFmiPackage = (FmiPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof FmiPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new FmiPackageImpl());
+		FmiPackageImpl theFmiPackage = (FmiPackageImpl) (EPackage.Registry.INSTANCE.get(eNS_URI) instanceof FmiPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new FmiPackageImpl());
 
 		isInited = true;
 
@@ -491,18 +549,17 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 		theFmiPackage.initializePackageContents();
 
 		// Register package validator
-		EValidator.Registry.INSTANCE.put
-			(theFmiPackage, 
-			 new EValidator.Descriptor() {
-				 public EValidator getEValidator() {
-					 return FmiValidator.INSTANCE;
-				 }
-			 });
+		EValidator.Registry.INSTANCE.put(theFmiPackage,
+				new EValidator.Descriptor() {
+					public EValidator getEValidator() {
+						return FmiValidator.INSTANCE;
+					}
+				});
 
 		// Mark meta-data to indicate it can't be changed
 		theFmiPackage.freeze();
 
-  
+
 		// Update the registry and return the package
 		EPackage.Registry.INSTANCE.put(FmiPackage.eNS_URI, theFmiPackage);
 		return theFmiPackage;
@@ -511,6 +568,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getBaseUnitType() {
@@ -520,96 +578,107 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_A() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_Cd() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_Factor() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_K() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_Kg() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_M() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_Mol() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_Offset() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_Rad() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBaseUnitType_S() {
-		return (EAttribute)baseUnitTypeEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) baseUnitTypeEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getBooleanType() {
@@ -619,24 +688,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBooleanType_DeclaredType() {
-		return (EAttribute)booleanTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) booleanTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getBooleanType_Start() {
-		return (EAttribute)booleanTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) booleanTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getCategoryType() {
@@ -646,24 +718,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCategoryType_Description() {
-		return (EAttribute)categoryTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) categoryTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCategoryType_Name() {
-		return (EAttribute)categoryTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) categoryTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getCoSimulationType() {
@@ -673,114 +748,127 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getCoSimulationType_SourceFiles() {
-		return (EReference)coSimulationTypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) coSimulationTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanGetAndSetFMUstate() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanHandleVariableCommunicationStepSize() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanInterpolateInputs() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanNotUseMemoryManagementFunctions() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanRunAsynchronuously() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_CanSerializeFMUstate() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_MaxOutputDerivativeOrder() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_ModelIdentifier() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_NeedsExecutionTool() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(10);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getCoSimulationType_ProvidesDirectionalDerivative() {
-		return (EAttribute)coSimulationTypeEClass.getEStructuralFeatures().get(11);
+		return (EAttribute) coSimulationTypeEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDefaultExperimentType() {
@@ -790,42 +878,47 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDefaultExperimentType_StartTime() {
-		return (EAttribute)defaultExperimentTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) defaultExperimentTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDefaultExperimentType_StepSize() {
-		return (EAttribute)defaultExperimentTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) defaultExperimentTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDefaultExperimentType_StopTime() {
-		return (EAttribute)defaultExperimentTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) defaultExperimentTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDefaultExperimentType_Tolerance() {
-		return (EAttribute)defaultExperimentTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) defaultExperimentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDisplayUnitType() {
@@ -835,33 +928,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDisplayUnitType_Factor() {
-		return (EAttribute)displayUnitTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) displayUnitTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDisplayUnitType_Name() {
-		return (EAttribute)displayUnitTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) displayUnitTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDisplayUnitType_Offset() {
-		return (EAttribute)displayUnitTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) displayUnitTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getDocumentRoot() {
@@ -871,42 +968,47 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getDocumentRoot_Mixed() {
-		return (EAttribute)documentRootEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) documentRootEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDocumentRoot_XMLNSPrefixMap() {
-		return (EReference)documentRootEClass.getEStructuralFeatures().get(1);
+		return (EReference) documentRootEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDocumentRoot_XSISchemaLocation() {
-		return (EReference)documentRootEClass.getEStructuralFeatures().get(2);
+		return (EReference) documentRootEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getDocumentRoot_FmiModelDescription() {
-		return (EReference)documentRootEClass.getEStructuralFeatures().get(3);
+		return (EReference) documentRootEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getEnumerationType() {
@@ -916,51 +1018,57 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType_DeclaredType() {
-		return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) enumerationTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType_Max() {
-		return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) enumerationTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType_Min() {
-		return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) enumerationTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType_Quantity() {
-		return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) enumerationTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType_Start() {
-		return (EAttribute)enumerationTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) enumerationTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getEnumerationType1() {
@@ -970,33 +1078,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType1_Group() {
-		return (EAttribute)enumerationType1EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) enumerationType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getEnumerationType1_Item() {
-		return (EReference)enumerationType1EClass.getEStructuralFeatures().get(1);
+		return (EReference) enumerationType1EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getEnumerationType1_Quantity() {
-		return (EAttribute)enumerationType1EClass.getEStructuralFeatures().get(2);
+		return (EAttribute) enumerationType1EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFileType() {
@@ -1006,15 +1118,17 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFileType_Name() {
-		return (EAttribute)fileTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fileTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFileType1() {
@@ -1024,15 +1138,17 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFileType1_Name() {
-		return (EAttribute)fileType1EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fileType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFmi2Annotation() {
@@ -1042,24 +1158,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2Annotation_Group() {
-		return (EAttribute)fmi2AnnotationEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fmi2AnnotationEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2Annotation_Tool() {
-		return (EReference)fmi2AnnotationEClass.getEStructuralFeatures().get(1);
+		return (EReference) fmi2AnnotationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFmi2ScalarVariable() {
@@ -1069,123 +1188,137 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2ScalarVariable_Real() {
-		return (EReference)fmi2ScalarVariableEClass.getEStructuralFeatures().get(0);
+		return (EReference) fmi2ScalarVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2ScalarVariable_Integer() {
-		return (EReference)fmi2ScalarVariableEClass.getEStructuralFeatures().get(1);
+		return (EReference) fmi2ScalarVariableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2ScalarVariable_Boolean() {
-		return (EReference)fmi2ScalarVariableEClass.getEStructuralFeatures().get(2);
+		return (EReference) fmi2ScalarVariableEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2ScalarVariable_String() {
-		return (EReference)fmi2ScalarVariableEClass.getEStructuralFeatures().get(3);
+		return (EReference) fmi2ScalarVariableEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2ScalarVariable_Enumeration() {
-		return (EReference)fmi2ScalarVariableEClass.getEStructuralFeatures().get(4);
+		return (EReference) fmi2ScalarVariableEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2ScalarVariable_Annotations() {
-		return (EReference)fmi2ScalarVariableEClass.getEStructuralFeatures().get(5);
+		return (EReference) fmi2ScalarVariableEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_CanHandleMultipleSetPerTimeInstant() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_Causality() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_Description() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_Initial() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_Name() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(10);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_ValueReference() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(11);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2ScalarVariable_Variability() {
-		return (EAttribute)fmi2ScalarVariableEClass.getEStructuralFeatures().get(12);
+		return (EAttribute) fmi2ScalarVariableEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFmi2SimpleType() {
@@ -1195,69 +1328,77 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2SimpleType_Real() {
-		return (EReference)fmi2SimpleTypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) fmi2SimpleTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2SimpleType_Integer() {
-		return (EReference)fmi2SimpleTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) fmi2SimpleTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2SimpleType_Boolean() {
-		return (EReference)fmi2SimpleTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) fmi2SimpleTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2SimpleType_String() {
-		return (EReference)fmi2SimpleTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference) fmi2SimpleTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2SimpleType_Enumeration() {
-		return (EReference)fmi2SimpleTypeEClass.getEStructuralFeatures().get(4);
+		return (EReference) fmi2SimpleTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2SimpleType_Description() {
-		return (EAttribute)fmi2SimpleTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) fmi2SimpleTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2SimpleType_Name() {
-		return (EAttribute)fmi2SimpleTypeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) fmi2SimpleTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFmi2Unit() {
@@ -1267,42 +1408,47 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2Unit_BaseUnit() {
-		return (EReference)fmi2UnitEClass.getEStructuralFeatures().get(0);
+		return (EReference) fmi2UnitEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2Unit_Group() {
-		return (EAttribute)fmi2UnitEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) fmi2UnitEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2Unit_DisplayUnit() {
-		return (EReference)fmi2UnitEClass.getEStructuralFeatures().get(2);
+		return (EReference) fmi2UnitEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2Unit_Name() {
-		return (EAttribute)fmi2UnitEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) fmi2UnitEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFmi2VariableDependency() {
@@ -1312,24 +1458,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmi2VariableDependency_Group() {
-		return (EAttribute)fmi2VariableDependencyEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fmi2VariableDependencyEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmi2VariableDependency_Unknown() {
-		return (EReference)fmi2VariableDependencyEClass.getEStructuralFeatures().get(1);
+		return (EReference) fmi2VariableDependencyEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getFmiModelDescriptionType() {
@@ -1339,204 +1488,227 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_Group() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_ModelExchange() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_CoSimulation() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_UnitDefinitions() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(3);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_TypeDefinitions() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(4);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_LogCategories() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(5);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_DefaultExperiment() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(6);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_VendorAnnotations() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(7);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_ModelVariables() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(8);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getFmiModelDescriptionType_ModelStructure() {
-		return (EReference)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(9);
+		return (EReference) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_Author() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(10);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_Copyright() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(11);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_Description() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(12);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(12);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_FmiVersion() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(13);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_GenerationDateAndTime() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(14);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(14);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_GenerationTool() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(15);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(15);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_Guid() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(16);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(16);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_License() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(17);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(17);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_ModelName() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(18);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(18);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_NumberOfEventIndicators() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(19);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(19);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_VariableNamingConvention() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(20);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(20);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getFmiModelDescriptionType_Version() {
-		return (EAttribute)fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(21);
+		return (EAttribute) fmiModelDescriptionTypeEClass.getEStructuralFeatures().get(21);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getInitialUnknownsType() {
@@ -1546,24 +1718,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getInitialUnknownsType_Group() {
-		return (EAttribute)initialUnknownsTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) initialUnknownsTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getInitialUnknownsType_Unknown() {
-		return (EReference)initialUnknownsTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) initialUnknownsTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getIntegerType() {
@@ -1573,51 +1748,57 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType_DeclaredType() {
-		return (EAttribute)integerTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) integerTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType_Max() {
-		return (EAttribute)integerTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) integerTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType_Min() {
-		return (EAttribute)integerTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) integerTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType_Quantity() {
-		return (EAttribute)integerTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) integerTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType_Start() {
-		return (EAttribute)integerTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) integerTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getIntegerType1() {
@@ -1627,33 +1808,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType1_Max() {
-		return (EAttribute)integerType1EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) integerType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType1_Min() {
-		return (EAttribute)integerType1EClass.getEStructuralFeatures().get(1);
+		return (EAttribute) integerType1EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getIntegerType1_Quantity() {
-		return (EAttribute)integerType1EClass.getEStructuralFeatures().get(2);
+		return (EAttribute) integerType1EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getItemType() {
@@ -1663,33 +1848,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getItemType_Description() {
-		return (EAttribute)itemTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) itemTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getItemType_Name() {
-		return (EAttribute)itemTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) itemTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getItemType_Value() {
-		return (EAttribute)itemTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) itemTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getLogCategoriesType() {
@@ -1699,24 +1888,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getLogCategoriesType_Group() {
-		return (EAttribute)logCategoriesTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) logCategoriesTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getLogCategoriesType_Category() {
-		return (EReference)logCategoriesTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) logCategoriesTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getModelExchangeType() {
@@ -1726,87 +1918,97 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelExchangeType_SourceFiles() {
-		return (EReference)modelExchangeTypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) modelExchangeTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_CanBeInstantiatedOnlyOncePerProcess() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_CanGetAndSetFMUstate() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_CanNotUseMemoryManagementFunctions() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_CanSerializeFMUstate() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_CompletedIntegratorStepNotNeeded() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_ModelIdentifier() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_NeedsExecutionTool() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelExchangeType_ProvidesDirectionalDerivative() {
-		return (EAttribute)modelExchangeTypeEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) modelExchangeTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getModelStructureType() {
@@ -1816,33 +2018,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelStructureType_Outputs() {
-		return (EReference)modelStructureTypeEClass.getEStructuralFeatures().get(0);
+		return (EReference) modelStructureTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelStructureType_Derivatives() {
-		return (EReference)modelStructureTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) modelStructureTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelStructureType_InitialUnknowns() {
-		return (EReference)modelStructureTypeEClass.getEStructuralFeatures().get(2);
+		return (EReference) modelStructureTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getModelVariablesType() {
@@ -1852,24 +2058,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getModelVariablesType_Group() {
-		return (EAttribute)modelVariablesTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) modelVariablesTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getModelVariablesType_ScalarVariable() {
-		return (EReference)modelVariablesTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) modelVariablesTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRealType() {
@@ -1879,114 +2088,127 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_DeclaredType() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Derivative() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_DisplayUnit() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Max() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(3);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Min() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Nominal() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(5);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Quantity() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(6);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Reinit() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(7);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_RelativeQuantity() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(8);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Start() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(9);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Unbounded() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(10);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(10);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType_Unit() {
-		return (EAttribute)realTypeEClass.getEStructuralFeatures().get(11);
+		return (EAttribute) realTypeEClass.getEStructuralFeatures().get(11);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getRealType1() {
@@ -1996,78 +2218,87 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_DisplayUnit() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_Max() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(1);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_Min() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(2);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_Nominal() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(3);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_Quantity() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(4);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_RelativeQuantity() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(5);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_Unbounded() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(6);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getRealType1_Unit() {
-		return (EAttribute)realType1EClass.getEStructuralFeatures().get(7);
+		return (EAttribute) realType1EClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getSourceFilesType() {
@@ -2077,24 +2308,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getSourceFilesType_Group() {
-		return (EAttribute)sourceFilesTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) sourceFilesTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getSourceFilesType_File() {
-		return (EReference)sourceFilesTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) sourceFilesTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getSourceFilesType1() {
@@ -2104,24 +2338,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getSourceFilesType1_Group() {
-		return (EAttribute)sourceFilesType1EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) sourceFilesType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getSourceFilesType1_File() {
-		return (EReference)sourceFilesType1EClass.getEStructuralFeatures().get(1);
+		return (EReference) sourceFilesType1EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getStringType() {
@@ -2131,24 +2368,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getStringType_DeclaredType() {
-		return (EAttribute)stringTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) stringTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getStringType_Start() {
-		return (EAttribute)stringTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) stringTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getToolType() {
@@ -2158,24 +2398,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getToolType_Any() {
-		return (EAttribute)toolTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) toolTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getToolType_Name() {
-		return (EAttribute)toolTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) toolTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getTypeDefinitionsType() {
@@ -2185,24 +2428,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getTypeDefinitionsType_Group() {
-		return (EAttribute)typeDefinitionsTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) typeDefinitionsTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getTypeDefinitionsType_SimpleType() {
-		return (EReference)typeDefinitionsTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) typeDefinitionsTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getUnitDefinitionsType() {
@@ -2212,24 +2458,27 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnitDefinitionsType_Group() {
-		return (EAttribute)unitDefinitionsTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) unitDefinitionsTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EReference getUnitDefinitionsType_Unit() {
-		return (EReference)unitDefinitionsTypeEClass.getEStructuralFeatures().get(1);
+		return (EReference) unitDefinitionsTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getUnknownType() {
@@ -2239,33 +2488,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnknownType_Dependencies() {
-		return (EAttribute)unknownTypeEClass.getEStructuralFeatures().get(0);
+		return (EAttribute) unknownTypeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnknownType_DependenciesKind() {
-		return (EAttribute)unknownTypeEClass.getEStructuralFeatures().get(1);
+		return (EAttribute) unknownTypeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnknownType_Index() {
-		return (EAttribute)unknownTypeEClass.getEStructuralFeatures().get(2);
+		return (EAttribute) unknownTypeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EClass getUnknownType1() {
@@ -2275,33 +2528,37 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnknownType1_Dependencies() {
-		return (EAttribute)unknownType1EClass.getEStructuralFeatures().get(0);
+		return (EAttribute) unknownType1EClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnknownType1_DependenciesKind() {
-		return (EAttribute)unknownType1EClass.getEStructuralFeatures().get(1);
+		return (EAttribute) unknownType1EClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EAttribute getUnknownType1_Index() {
-		return (EAttribute)unknownType1EClass.getEStructuralFeatures().get(2);
+		return (EAttribute) unknownType1EClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getCausalityType() {
@@ -2311,6 +2568,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getDependenciesKindTypeItem() {
@@ -2320,6 +2578,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getDependenciesKindTypeItem1() {
@@ -2329,6 +2588,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getInitialType() {
@@ -2338,6 +2598,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getVariabilityType() {
@@ -2347,6 +2608,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EEnum getVariableNamingConventionType() {
@@ -2356,6 +2618,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getCausalityTypeObject() {
@@ -2365,6 +2628,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getDependenciesKindType() {
@@ -2374,6 +2638,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getDependenciesKindType1() {
@@ -2383,6 +2648,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getDependenciesKindTypeItemObject() {
@@ -2392,6 +2658,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getDependenciesKindTypeItemObject1() {
@@ -2401,6 +2668,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getDependenciesType() {
@@ -2410,6 +2678,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getDependenciesType1() {
@@ -2419,6 +2688,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getInitialTypeObject() {
@@ -2428,6 +2698,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getVariabilityTypeObject() {
@@ -2437,6 +2708,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EDataType getVariableNamingConventionTypeObject() {
@@ -2446,28 +2718,32 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FmiFactory getFmiFactory() {
-		return (FmiFactory)getEFactoryInstance();
+		return (FmiFactory) getEFactoryInstance();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isCreated = false;
 
 	/**
-	 * Creates the meta-model objects for the package.  This method is
+	 * Creates the meta-model objects for the package. This method is
 	 * guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated) return;
+		if (isCreated)
+			return;
 		isCreated = true;
 
 		// Create classes and their features
@@ -2729,19 +3005,22 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private boolean isInitialized = false;
 
 	/**
-	 * Complete the initialization of the package and its meta-model.  This
+	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized) return;
+		if (isInitialized)
+			return;
 		isInitialized = true;
 
 		// Initialize package
@@ -2750,7 +3029,7 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage)EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
+		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
 
@@ -2780,18 +3059,30 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 		initEAttribute(getCategoryType_Name(), theXMLTypePackage.getNormalizedString(), "name", null, 1, 1, CategoryType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(coSimulationTypeEClass, CoSimulationType.class, "CoSimulationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCoSimulationType_SourceFiles(), this.getSourceFilesType(), null, "sourceFiles", null, 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanHandleVariableCommunicationStepSize(), theXMLTypePackage.getBoolean(), "canHandleVariableCommunicationStepSize", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanInterpolateInputs(), theXMLTypePackage.getBoolean(), "canInterpolateInputs", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanRunAsynchronuously(), theXMLTypePackage.getBoolean(), "canRunAsynchronuously", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_MaxOutputDerivativeOrder(), theXMLTypePackage.getUnsignedInt(), "maxOutputDerivativeOrder", "0", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCoSimulationType_ProvidesDirectionalDerivative(), theXMLTypePackage.getBoolean(), "providesDirectionalDerivative", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getCoSimulationType_SourceFiles(), this.getSourceFilesType(), null, "sourceFiles", null, 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanHandleVariableCommunicationStepSize(), theXMLTypePackage.getBoolean(), "canHandleVariableCommunicationStepSize", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE,
+				!IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanInterpolateInputs(), theXMLTypePackage.getBoolean(), "canInterpolateInputs", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanRunAsynchronuously(), theXMLTypePackage.getBoolean(), "canRunAsynchronuously", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_MaxOutputDerivativeOrder(), theXMLTypePackage.getUnsignedInt(), "maxOutputDerivativeOrder", "0", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getCoSimulationType_ProvidesDirectionalDerivative(), theXMLTypePackage.getBoolean(), "providesDirectionalDerivative", "false", 0, 1, CoSimulationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(defaultExperimentTypeEClass, DefaultExperimentType.class, "DefaultExperimentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDefaultExperimentType_StartTime(), theXMLTypePackage.getDouble(), "startTime", null, 0, 1, DefaultExperimentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2806,9 +3097,12 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 
 		initEClass(documentRootEClass, DocumentRoot.class, "DocumentRoot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDocumentRoot_Mixed(), ecorePackage.getEFeatureMapEntry(), "mixed", null, 0, -1, null, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getDocumentRoot_FmiModelDescription(), this.getFmiModelDescriptionType(), null, "fmiModelDescription", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_XMLNSPrefixMap(), ecorePackage.getEStringToStringMapEntry(), null, "xMLNSPrefixMap", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getDocumentRoot_XSISchemaLocation(), ecorePackage.getEStringToStringMapEntry(), null, "xSISchemaLocation", null, 0, -1, null, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getDocumentRoot_FmiModelDescription(), this.getFmiModelDescriptionType(), null, "fmiModelDescription", null, 0, -2, null, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(enumerationTypeEClass, EnumerationType.class, "EnumerationType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEnumerationType_DeclaredType(), theXMLTypePackage.getNormalizedString(), "declaredType", null, 1, 1, EnumerationType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2834,12 +3128,18 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 
 		initEClass(fmi2ScalarVariableEClass, Fmi2ScalarVariable.class, "Fmi2ScalarVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFmi2ScalarVariable_Real(), this.getRealType(), null, "real", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2ScalarVariable_Integer(), this.getIntegerType(), null, "integer", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2ScalarVariable_Boolean(), this.getBooleanType(), null, "boolean", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2ScalarVariable_String(), this.getStringType(), null, "string", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2ScalarVariable_Enumeration(), this.getEnumerationType(), null, "enumeration", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2ScalarVariable_Annotations(), this.getFmi2Annotation(), null, "annotations", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmi2ScalarVariable_CanHandleMultipleSetPerTimeInstant(), theXMLTypePackage.getBoolean(), "canHandleMultipleSetPerTimeInstant", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmi2ScalarVariable_Integer(), this.getIntegerType(), null, "integer", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getFmi2ScalarVariable_Boolean(), this.getBooleanType(), null, "boolean", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getFmi2ScalarVariable_String(), this.getStringType(), null, "string", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getFmi2ScalarVariable_Enumeration(), this.getEnumerationType(), null, "enumeration", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getFmi2ScalarVariable_Annotations(), this.getFmi2Annotation(), null, "annotations", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmi2ScalarVariable_CanHandleMultipleSetPerTimeInstant(), theXMLTypePackage.getBoolean(), "canHandleMultipleSetPerTimeInstant", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmi2ScalarVariable_Causality(), this.getCausalityType(), "causality", "local", 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmi2ScalarVariable_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmi2ScalarVariable_Initial(), this.getInitialType(), "initial", null, 0, 1, Fmi2ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2850,9 +3150,11 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 		initEClass(fmi2SimpleTypeEClass, Fmi2SimpleType.class, "Fmi2SimpleType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getFmi2SimpleType_Real(), this.getRealType1(), null, "real", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getFmi2SimpleType_Integer(), this.getIntegerType1(), null, "integer", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2SimpleType_Boolean(), ecorePackage.getEObject(), null, "boolean", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmi2SimpleType_Boolean(), ecorePackage.getEObject(), null, "boolean", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEReference(getFmi2SimpleType_String(), ecorePackage.getEObject(), null, "string", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2SimpleType_Enumeration(), this.getEnumerationType1(), null, "enumeration", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmi2SimpleType_Enumeration(), this.getEnumerationType1(), null, "enumeration", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 		initEAttribute(getFmi2SimpleType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmi2SimpleType_Name(), theXMLTypePackage.getNormalizedString(), "name", null, 1, 1, Fmi2SimpleType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2864,35 +3166,51 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 
 		initEClass(fmi2VariableDependencyEClass, Fmi2VariableDependency.class, "Fmi2VariableDependency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFmi2VariableDependency_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, Fmi2VariableDependency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmi2VariableDependency_Unknown(), this.getUnknownType1(), null, "unknown", null, 1, -1, Fmi2VariableDependency.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFmi2VariableDependency_Unknown(), this.getUnknownType1(), null, "unknown", null, 1, -1, Fmi2VariableDependency.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(fmiModelDescriptionTypeEClass, FmiModelDescriptionType.class, "FmiModelDescriptionType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFmiModelDescriptionType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_ModelExchange(), this.getModelExchangeType(), null, "modelExchange", null, 0, 2, FmiModelDescriptionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_CoSimulation(), this.getCoSimulationType(), null, "coSimulation", null, 0, 2, FmiModelDescriptionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_UnitDefinitions(), this.getUnitDefinitionsType(), null, "unitDefinitions", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_TypeDefinitions(), this.getTypeDefinitionsType(), null, "typeDefinitions", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_LogCategories(), this.getLogCategoriesType(), null, "logCategories", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_DefaultExperiment(), this.getDefaultExperimentType(), null, "defaultExperiment", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_VendorAnnotations(), this.getFmi2Annotation(), null, "vendorAnnotations", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_ModelVariables(), this.getModelVariablesType(), null, "modelVariables", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getFmiModelDescriptionType_ModelStructure(), this.getModelStructureType(), null, "modelStructure", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_ModelExchange(), this.getModelExchangeType(), null, "modelExchange", null, 0, 2, FmiModelDescriptionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_CoSimulation(), this.getCoSimulationType(), null, "coSimulation", null, 0, 2, FmiModelDescriptionType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_UnitDefinitions(), this.getUnitDefinitionsType(), null, "unitDefinitions", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_TypeDefinitions(), this.getTypeDefinitionsType(), null, "typeDefinitions", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_LogCategories(), this.getLogCategoriesType(), null, "logCategories", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_DefaultExperiment(), this.getDefaultExperimentType(), null, "defaultExperiment", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_VendorAnnotations(), this.getFmi2Annotation(), null, "vendorAnnotations", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_ModelVariables(), this.getModelVariablesType(), null, "modelVariables", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFmiModelDescriptionType_ModelStructure(), this.getModelStructureType(), null, "modelStructure", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Author(), theXMLTypePackage.getString(), "author", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Copyright(), theXMLTypePackage.getString(), "copyright", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Description(), theXMLTypePackage.getString(), "description", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmiModelDescriptionType_FmiVersion(), theXMLTypePackage.getNormalizedString(), "fmiVersion", "2.0", 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmiModelDescriptionType_GenerationDateAndTime(), theXMLTypePackage.getDateTime(), "generationDateAndTime", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmiModelDescriptionType_GenerationTool(), theXMLTypePackage.getNormalizedString(), "generationTool", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_FmiVersion(), theXMLTypePackage.getNormalizedString(), "fmiVersion", "2.0", 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_GenerationDateAndTime(), theXMLTypePackage.getDateTime(), "generationDateAndTime", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_GenerationTool(), theXMLTypePackage.getNormalizedString(), "generationTool", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Guid(), theXMLTypePackage.getNormalizedString(), "guid", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_License(), theXMLTypePackage.getString(), "license", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_ModelName(), theXMLTypePackage.getString(), "modelName", null, 1, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmiModelDescriptionType_NumberOfEventIndicators(), theXMLTypePackage.getUnsignedInt(), "numberOfEventIndicators", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFmiModelDescriptionType_VariableNamingConvention(), this.getVariableNamingConventionType(), "variableNamingConvention", "flat", 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_NumberOfEventIndicators(), theXMLTypePackage.getUnsignedInt(), "numberOfEventIndicators", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFmiModelDescriptionType_VariableNamingConvention(), this.getVariableNamingConventionType(), "variableNamingConvention", "flat", 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFmiModelDescriptionType_Version(), theXMLTypePackage.getNormalizedString(), "version", null, 0, 1, FmiModelDescriptionType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(initialUnknownsTypeEClass, InitialUnknownsType.class, "InitialUnknownsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getInitialUnknownsType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, InitialUnknownsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getInitialUnknownsType_Unknown(), this.getUnknownType(), null, "unknown", null, 1, -1, InitialUnknownsType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getInitialUnknownsType_Unknown(), this.getUnknownType(), null, "unknown", null, 1, -1, InitialUnknownsType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(integerTypeEClass, IntegerType.class, "IntegerType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getIntegerType_DeclaredType(), theXMLTypePackage.getNormalizedString(), "declaredType", null, 0, 1, IntegerType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2913,27 +3231,41 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 
 		initEClass(logCategoriesTypeEClass, LogCategoriesType.class, "LogCategoriesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLogCategoriesType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, LogCategoriesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLogCategoriesType_Category(), this.getCategoryType(), null, "category", null, 1, -1, LogCategoriesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getLogCategoriesType_Category(), this.getCategoryType(), null, "category", null, 1, -1, LogCategoriesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(modelExchangeTypeEClass, ModelExchangeType.class, "ModelExchangeType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelExchangeType_SourceFiles(), this.getSourceFilesType1(), null, "sourceFiles", null, 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_CompletedIntegratorStepNotNeeded(), theXMLTypePackage.getBoolean(), "completedIntegratorStepNotNeeded", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getModelExchangeType_ProvidesDirectionalDerivative(), theXMLTypePackage.getBoolean(), "providesDirectionalDerivative", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelExchangeType_SourceFiles(), this.getSourceFilesType1(), null, "sourceFiles", null, 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelExchangeType_CanBeInstantiatedOnlyOncePerProcess(), theXMLTypePackage.getBoolean(), "canBeInstantiatedOnlyOncePerProcess", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelExchangeType_CanGetAndSetFMUstate(), theXMLTypePackage.getBoolean(), "canGetAndSetFMUstate", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getModelExchangeType_CanNotUseMemoryManagementFunctions(), theXMLTypePackage.getBoolean(), "canNotUseMemoryManagementFunctions", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelExchangeType_CanSerializeFMUstate(), theXMLTypePackage.getBoolean(), "canSerializeFMUstate", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getModelExchangeType_CompletedIntegratorStepNotNeeded(), theXMLTypePackage.getBoolean(), "completedIntegratorStepNotNeeded", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getModelExchangeType_ModelIdentifier(), theXMLTypePackage.getNormalizedString(), "modelIdentifier", null, 1, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getModelExchangeType_NeedsExecutionTool(), theXMLTypePackage.getBoolean(), "needsExecutionTool", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getModelExchangeType_ProvidesDirectionalDerivative(), theXMLTypePackage.getBoolean(), "providesDirectionalDerivative", "false", 0, 1, ModelExchangeType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelStructureTypeEClass, ModelStructureType.class, "ModelStructureType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getModelStructureType_Outputs(), this.getFmi2VariableDependency(), null, "outputs", null, 0, 1, ModelStructureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelStructureType_Derivatives(), this.getFmi2VariableDependency(), null, "derivatives", null, 0, 1, ModelStructureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelStructureType_InitialUnknowns(), this.getInitialUnknownsType(), null, "initialUnknowns", null, 0, 1, ModelStructureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getModelStructureType_Outputs(), this.getFmi2VariableDependency(), null, "outputs", null, 0, 1, ModelStructureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getModelStructureType_Derivatives(), this.getFmi2VariableDependency(), null, "derivatives", null, 0, 1, ModelStructureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getModelStructureType_InitialUnknowns(), this.getInitialUnknownsType(), null, "initialUnknowns", null, 0, 1, ModelStructureType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
+				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(modelVariablesTypeEClass, ModelVariablesType.class, "ModelVariablesType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getModelVariablesType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, ModelVariablesType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getModelVariablesType_ScalarVariable(), this.getFmi2ScalarVariable(), null, "scalarVariable", null, 1, -1, ModelVariablesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getModelVariablesType_ScalarVariable(), this.getFmi2ScalarVariable(), null, "scalarVariable", null, 1, -1, ModelVariablesType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				IS_DERIVED, IS_ORDERED);
 
 		initEClass(realTypeEClass, RealType.class, "RealType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRealType_DeclaredType(), theXMLTypePackage.getNormalizedString(), "declaredType", null, 0, 1, RealType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -2977,7 +3309,8 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 
 		initEClass(typeDefinitionsTypeEClass, TypeDefinitionsType.class, "TypeDefinitionsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTypeDefinitionsType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, TypeDefinitionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTypeDefinitionsType_SimpleType(), this.getFmi2SimpleType(), null, "simpleType", null, 1, -1, TypeDefinitionsType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getTypeDefinitionsType_SimpleType(), this.getFmi2SimpleType(), null, "simpleType", null, 1, -1, TypeDefinitionsType.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				IS_DERIVED, IS_ORDERED);
 
 		initEClass(unitDefinitionsTypeEClass, UnitDefinitionsType.class, "UnitDefinitionsType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getUnitDefinitionsType_Group(), ecorePackage.getEFeatureMapEntry(), "group", null, 0, -1, UnitDefinitionsType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -3056,1678 +3389,1463 @@ public class FmiPackageImpl extends EPackageImpl implements FmiPackage {
 	 * Initializes the annotations for <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";	
-		addAnnotation
-		  (this, 
-		   source, 
-		   new String[] {
-			 "qualified", "false"
-		   });	
-		addAnnotation
-		  (baseUnitTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "BaseUnit_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_A(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "A",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_Cd(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "cd",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_Factor(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "factor",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_K(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "K",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_Kg(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "kg",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_M(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "m",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_Mol(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "mol",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_Offset(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "offset",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_Rad(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "rad",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBaseUnitType_S(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "s",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (booleanTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Boolean_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getBooleanType_DeclaredType(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "declaredType",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getBooleanType_Start(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "start",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (categoryTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Category_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getCategoryType_Description(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "description",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCategoryType_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (causalityTypeEEnum, 
-		   source, 
-		   new String[] {
-			 "name", "causality_._type"
-		   });	
-		addAnnotation
-		  (causalityTypeObjectEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "causality_._type:Object",
-			 "baseType", "causality_._type"
-		   });	
-		addAnnotation
-		  (coSimulationTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "CoSimulation_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_SourceFiles(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "SourceFiles",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canBeInstantiatedOnlyOncePerProcess",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanGetAndSetFMUstate(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canGetAndSetFMUstate",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanHandleVariableCommunicationStepSize(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canHandleVariableCommunicationStepSize",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanInterpolateInputs(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canInterpolateInputs",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanNotUseMemoryManagementFunctions(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canNotUseMemoryManagementFunctions",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanRunAsynchronuously(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canRunAsynchronuously",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_CanSerializeFMUstate(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canSerializeFMUstate",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_MaxOutputDerivativeOrder(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "maxOutputDerivativeOrder",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_ModelIdentifier(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "modelIdentifier",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_NeedsExecutionTool(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "needsExecutionTool",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getCoSimulationType_ProvidesDirectionalDerivative(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "providesDirectionalDerivative",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (defaultExperimentTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "DefaultExperiment_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getDefaultExperimentType_StartTime(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "startTime",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getDefaultExperimentType_StepSize(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "stepSize",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getDefaultExperimentType_StopTime(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "stopTime",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getDefaultExperimentType_Tolerance(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "tolerance",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (dependenciesKindTypeEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "dependenciesKind_._type",
-			 "itemType", "dependenciesKind_._type_._item"
-		   });	
-		addAnnotation
-		  (dependenciesKindType1EDataType, 
-		   source, 
-		   new String[] {
-			 "name", "dependenciesKind_._1_._type",
-			 "itemType", "dependenciesKind_._1_._type_._item"
-		   });	
-		addAnnotation
-		  (dependenciesKindTypeItemEEnum, 
-		   source, 
-		   new String[] {
-			 "name", "dependenciesKind_._type_._item"
-		   });	
-		addAnnotation
-		  (dependenciesKindTypeItem1EEnum, 
-		   source, 
-		   new String[] {
-			 "name", "dependenciesKind_._1_._type_._item"
-		   });	
-		addAnnotation
-		  (dependenciesKindTypeItemObjectEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "dependenciesKind_._type_._item:Object",
-			 "baseType", "dependenciesKind_._type_._item"
-		   });	
-		addAnnotation
-		  (dependenciesKindTypeItemObject1EDataType, 
-		   source, 
-		   new String[] {
-			 "name", "dependenciesKind_._1_._type_._item:Object",
-			 "baseType", "dependenciesKind_._1_._type_._item"
-		   });	
-		addAnnotation
-		  (dependenciesTypeEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "dependencies_._type",
-			 "itemType", "http://www.eclipse.org/emf/2003/XMLType#unsignedInt"
-		   });	
-		addAnnotation
-		  (dependenciesType1EDataType, 
-		   source, 
-		   new String[] {
-			 "name", "dependencies_._1_._type",
-			 "itemType", "http://www.eclipse.org/emf/2003/XMLType#unsignedInt"
-		   });	
-		addAnnotation
-		  (displayUnitTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "DisplayUnit_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getDisplayUnitType_Factor(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "factor",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getDisplayUnitType_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getDisplayUnitType_Offset(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "offset",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (documentRootEClass, 
-		   source, 
-		   new String[] {
-			 "name", "",
-			 "kind", "mixed"
-		   });	
-		addAnnotation
-		  (getDocumentRoot_Mixed(), 
-		   source, 
-		   new String[] {
-			 "kind", "elementWildcard",
-			 "name", ":mixed"
-		   });	
-		addAnnotation
-		  (getDocumentRoot_XMLNSPrefixMap(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "xmlns:prefix"
-		   });	
-		addAnnotation
-		  (getDocumentRoot_XSISchemaLocation(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "xsi:schemaLocation"
-		   });	
-		addAnnotation
-		  (getDocumentRoot_FmiModelDescription(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "fmiModelDescription",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (enumerationTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Enumeration_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getEnumerationType_DeclaredType(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "declaredType",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getEnumerationType_Max(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "max",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getEnumerationType_Min(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "min",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getEnumerationType_Quantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "quantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getEnumerationType_Start(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "start",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (enumerationType1EClass, 
-		   source, 
-		   new String[] {
-			 "name", "Enumeration_._1_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getEnumerationType1_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getEnumerationType1_Item(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Item",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (getEnumerationType1_Quantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "quantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (fileTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "File_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getFileType_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (fileType1EClass, 
-		   source, 
-		   new String[] {
-			 "name", "File_._1_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getFileType1_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (fmi2AnnotationEClass, 
-		   source, 
-		   new String[] {
-			 "name", "fmi2Annotation",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getFmi2Annotation_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getFmi2Annotation_Tool(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Tool",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (fmi2ScalarVariableEClass, 
-		   source, 
-		   new String[] {
-			 "name", "fmi2ScalarVariable",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Real(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Real",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Integer(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Integer",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Boolean(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Boolean",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_String(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "String",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Enumeration(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Enumeration",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Annotations(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Annotations",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_CanHandleMultipleSetPerTimeInstant(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canHandleMultipleSetPerTimeInstant",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Causality(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "causality",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Description(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "description",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Initial(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "initial",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_ValueReference(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "valueReference",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2ScalarVariable_Variability(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "variability",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (fmi2SimpleTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "fmi2SimpleType",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_Real(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Real",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_Integer(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Integer",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_Boolean(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Boolean",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_String(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "String",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_Enumeration(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Enumeration",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_Description(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "description",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2SimpleType_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (fmi2UnitEClass, 
-		   source, 
-		   new String[] {
-			 "name", "fmi2Unit",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getFmi2Unit_BaseUnit(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "BaseUnit",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmi2Unit_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:1"
-		   });	
-		addAnnotation
-		  (getFmi2Unit_DisplayUnit(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "DisplayUnit",
-			 "namespace", "##targetNamespace",
-			 "group", "group:1"
-		   });	
-		addAnnotation
-		  (getFmi2Unit_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (fmi2VariableDependencyEClass, 
-		   source, 
-		   new String[] {
-			 "name", "fmi2VariableDependency",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getFmi2VariableDependency_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getFmi2VariableDependency_Unknown(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Unknown",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (fmiModelDescriptionTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "fmiModelDescription_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_ModelExchange(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "ModelExchange",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_CoSimulation(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "CoSimulation",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_UnitDefinitions(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "UnitDefinitions",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_TypeDefinitions(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "TypeDefinitions",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_LogCategories(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "LogCategories",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_DefaultExperiment(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "DefaultExperiment",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_VendorAnnotations(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "VendorAnnotations",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_ModelVariables(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "ModelVariables",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_ModelStructure(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "ModelStructure",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_Author(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "author",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_Copyright(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "copyright",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_Description(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "description",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_FmiVersion(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "fmiVersion",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_GenerationDateAndTime(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "generationDateAndTime",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_GenerationTool(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "generationTool",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_Guid(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "guid",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_License(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "license",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_ModelName(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "modelName",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_NumberOfEventIndicators(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "numberOfEventIndicators",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_VariableNamingConvention(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "variableNamingConvention",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getFmiModelDescriptionType_Version(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "version",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (initialTypeEEnum, 
-		   source, 
-		   new String[] {
-			 "name", "initial_._type"
-		   });	
-		addAnnotation
-		  (initialTypeObjectEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "initial_._type:Object",
-			 "baseType", "initial_._type"
-		   });	
-		addAnnotation
-		  (initialUnknownsTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "InitialUnknowns_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getInitialUnknownsType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getInitialUnknownsType_Unknown(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Unknown",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (integerTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Integer_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getIntegerType_DeclaredType(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "declaredType",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getIntegerType_Max(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "max",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getIntegerType_Min(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "min",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getIntegerType_Quantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "quantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getIntegerType_Start(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "start",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (integerType1EClass, 
-		   source, 
-		   new String[] {
-			 "name", "Integer_._1_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getIntegerType1_Max(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "max",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getIntegerType1_Min(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "min",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getIntegerType1_Quantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "quantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (itemTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Item_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getItemType_Description(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "description",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getItemType_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getItemType_Value(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "value",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (logCategoriesTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "LogCategories_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getLogCategoriesType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getLogCategoriesType_Category(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Category",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (modelExchangeTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ModelExchange_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_SourceFiles(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "SourceFiles",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_CanBeInstantiatedOnlyOncePerProcess(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canBeInstantiatedOnlyOncePerProcess",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_CanGetAndSetFMUstate(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canGetAndSetFMUstate",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_CanNotUseMemoryManagementFunctions(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canNotUseMemoryManagementFunctions",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_CanSerializeFMUstate(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "canSerializeFMUstate",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_CompletedIntegratorStepNotNeeded(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "completedIntegratorStepNotNeeded",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_ModelIdentifier(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "modelIdentifier",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_NeedsExecutionTool(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "needsExecutionTool",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelExchangeType_ProvidesDirectionalDerivative(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "providesDirectionalDerivative",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (modelStructureTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ModelStructure_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getModelStructureType_Outputs(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Outputs",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelStructureType_Derivatives(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Derivatives",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getModelStructureType_InitialUnknowns(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "InitialUnknowns",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (modelVariablesTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "ModelVariables_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getModelVariablesType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getModelVariablesType_ScalarVariable(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "ScalarVariable",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (realTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Real_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getRealType_DeclaredType(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "declaredType",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Derivative(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "derivative",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_DisplayUnit(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "displayUnit",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Max(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "max",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Min(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "min",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Nominal(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "nominal",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Quantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "quantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Reinit(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "reinit",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_RelativeQuantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "relativeQuantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Start(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "start",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Unbounded(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "unbounded",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType_Unit(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "unit",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (realType1EClass, 
-		   source, 
-		   new String[] {
-			 "name", "Real_._1_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getRealType1_DisplayUnit(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "displayUnit",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_Max(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "max",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_Min(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "min",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_Nominal(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "nominal",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_Quantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "quantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_RelativeQuantity(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "relativeQuantity",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_Unbounded(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "unbounded",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getRealType1_Unit(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "unit",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (sourceFilesTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "SourceFiles_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getSourceFilesType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getSourceFilesType_File(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "File",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (sourceFilesType1EClass, 
-		   source, 
-		   new String[] {
-			 "name", "SourceFiles_._1_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getSourceFilesType1_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getSourceFilesType1_File(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "File",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (stringTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "String_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getStringType_DeclaredType(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "declaredType",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getStringType_Start(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "start",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (toolTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Tool_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getToolType_Any(), 
-		   source, 
-		   new String[] {
-			 "kind", "elementWildcard",
-			 "wildcards", "##any",
-			 "name", ":0",
-			 "processing", "lax"
-		   });	
-		addAnnotation
-		  (getToolType_Name(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "name",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (typeDefinitionsTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "TypeDefinitions_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getTypeDefinitionsType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getTypeDefinitionsType_SimpleType(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "SimpleType",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (unitDefinitionsTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "UnitDefinitions_._type",
-			 "kind", "elementOnly"
-		   });	
-		addAnnotation
-		  (getUnitDefinitionsType_Group(), 
-		   source, 
-		   new String[] {
-			 "kind", "group",
-			 "name", "group:0"
-		   });	
-		addAnnotation
-		  (getUnitDefinitionsType_Unit(), 
-		   source, 
-		   new String[] {
-			 "kind", "element",
-			 "name", "Unit",
-			 "namespace", "##targetNamespace",
-			 "group", "group:0"
-		   });	
-		addAnnotation
-		  (unknownTypeEClass, 
-		   source, 
-		   new String[] {
-			 "name", "Unknown_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getUnknownType_Dependencies(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "dependencies",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getUnknownType_DependenciesKind(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "dependenciesKind",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getUnknownType_Index(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "index",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (unknownType1EClass, 
-		   source, 
-		   new String[] {
-			 "name", "Unknown_._1_._type",
-			 "kind", "empty"
-		   });	
-		addAnnotation
-		  (getUnknownType1_Dependencies(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "dependencies",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getUnknownType1_DependenciesKind(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "dependenciesKind",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (getUnknownType1_Index(), 
-		   source, 
-		   new String[] {
-			 "kind", "attribute",
-			 "name", "index",
-			 "namespace", "##targetNamespace"
-		   });	
-		addAnnotation
-		  (variabilityTypeEEnum, 
-		   source, 
-		   new String[] {
-			 "name", "variability_._type"
-		   });	
-		addAnnotation
-		  (variabilityTypeObjectEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "variability_._type:Object",
-			 "baseType", "variability_._type"
-		   });	
-		addAnnotation
-		  (variableNamingConventionTypeEEnum, 
-		   source, 
-		   new String[] {
-			 "name", "variableNamingConvention_._type"
-		   });	
-		addAnnotation
-		  (variableNamingConventionTypeObjectEDataType, 
-		   source, 
-		   new String[] {
-			 "name", "variableNamingConvention_._type:Object",
-			 "baseType", "variableNamingConvention_._type"
-		   });
+		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		addAnnotation(this,
+				source,
+				new String[] {
+						"qualified", "false"
+				});
+		addAnnotation(baseUnitTypeEClass,
+				source,
+				new String[] {
+						"name", "BaseUnit_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getBaseUnitType_A(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "A",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_Cd(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "cd",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_Factor(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "factor",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_K(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "K",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_Kg(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "kg",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_M(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "m",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_Mol(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "mol",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_Offset(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "offset",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_Rad(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "rad",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBaseUnitType_S(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "s",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(booleanTypeEClass,
+				source,
+				new String[] {
+						"name", "Boolean_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getBooleanType_DeclaredType(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "declaredType",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getBooleanType_Start(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "start",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(categoryTypeEClass,
+				source,
+				new String[] {
+						"name", "Category_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getCategoryType_Description(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "description",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCategoryType_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(causalityTypeEEnum,
+				source,
+				new String[] {
+						"name", "causality_._type"
+				});
+		addAnnotation(causalityTypeObjectEDataType,
+				source,
+				new String[] {
+						"name", "causality_._type:Object",
+						"baseType", "causality_._type"
+				});
+		addAnnotation(coSimulationTypeEClass,
+				source,
+				new String[] {
+						"name", "CoSimulation_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getCoSimulationType_SourceFiles(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "SourceFiles",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanBeInstantiatedOnlyOncePerProcess(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canBeInstantiatedOnlyOncePerProcess",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanGetAndSetFMUstate(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canGetAndSetFMUstate",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanHandleVariableCommunicationStepSize(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canHandleVariableCommunicationStepSize",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanInterpolateInputs(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canInterpolateInputs",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanNotUseMemoryManagementFunctions(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canNotUseMemoryManagementFunctions",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanRunAsynchronuously(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canRunAsynchronuously",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_CanSerializeFMUstate(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canSerializeFMUstate",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_MaxOutputDerivativeOrder(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "maxOutputDerivativeOrder",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_ModelIdentifier(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "modelIdentifier",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_NeedsExecutionTool(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "needsExecutionTool",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getCoSimulationType_ProvidesDirectionalDerivative(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "providesDirectionalDerivative",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(defaultExperimentTypeEClass,
+				source,
+				new String[] {
+						"name", "DefaultExperiment_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getDefaultExperimentType_StartTime(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "startTime",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getDefaultExperimentType_StepSize(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "stepSize",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getDefaultExperimentType_StopTime(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "stopTime",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getDefaultExperimentType_Tolerance(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "tolerance",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(dependenciesKindTypeEDataType,
+				source,
+				new String[] {
+						"name", "dependenciesKind_._type",
+						"itemType", "dependenciesKind_._type_._item"
+				});
+		addAnnotation(dependenciesKindType1EDataType,
+				source,
+				new String[] {
+						"name", "dependenciesKind_._1_._type",
+						"itemType", "dependenciesKind_._1_._type_._item"
+				});
+		addAnnotation(dependenciesKindTypeItemEEnum,
+				source,
+				new String[] {
+						"name", "dependenciesKind_._type_._item"
+				});
+		addAnnotation(dependenciesKindTypeItem1EEnum,
+				source,
+				new String[] {
+						"name", "dependenciesKind_._1_._type_._item"
+				});
+		addAnnotation(dependenciesKindTypeItemObjectEDataType,
+				source,
+				new String[] {
+						"name", "dependenciesKind_._type_._item:Object",
+						"baseType", "dependenciesKind_._type_._item"
+				});
+		addAnnotation(dependenciesKindTypeItemObject1EDataType,
+				source,
+				new String[] {
+						"name", "dependenciesKind_._1_._type_._item:Object",
+						"baseType", "dependenciesKind_._1_._type_._item"
+				});
+		addAnnotation(dependenciesTypeEDataType,
+				source,
+				new String[] {
+						"name", "dependencies_._type",
+						"itemType", "http://www.eclipse.org/emf/2003/XMLType#unsignedInt"
+				});
+		addAnnotation(dependenciesType1EDataType,
+				source,
+				new String[] {
+						"name", "dependencies_._1_._type",
+						"itemType", "http://www.eclipse.org/emf/2003/XMLType#unsignedInt"
+				});
+		addAnnotation(displayUnitTypeEClass,
+				source,
+				new String[] {
+						"name", "DisplayUnit_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getDisplayUnitType_Factor(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "factor",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getDisplayUnitType_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getDisplayUnitType_Offset(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "offset",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(documentRootEClass,
+				source,
+				new String[] {
+						"name", "",
+						"kind", "mixed"
+				});
+		addAnnotation(getDocumentRoot_Mixed(),
+				source,
+				new String[] {
+						"kind", "elementWildcard",
+						"name", ":mixed"
+				});
+		addAnnotation(getDocumentRoot_XMLNSPrefixMap(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "xmlns:prefix"
+				});
+		addAnnotation(getDocumentRoot_XSISchemaLocation(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "xsi:schemaLocation"
+				});
+		addAnnotation(getDocumentRoot_FmiModelDescription(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "fmiModelDescription",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(enumerationTypeEClass,
+				source,
+				new String[] {
+						"name", "Enumeration_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getEnumerationType_DeclaredType(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "declaredType",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getEnumerationType_Max(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "max",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getEnumerationType_Min(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "min",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getEnumerationType_Quantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "quantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getEnumerationType_Start(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "start",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(enumerationType1EClass,
+				source,
+				new String[] {
+						"name", "Enumeration_._1_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getEnumerationType1_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getEnumerationType1_Item(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Item",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(getEnumerationType1_Quantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "quantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(fileTypeEClass,
+				source,
+				new String[] {
+						"name", "File_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getFileType_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(fileType1EClass,
+				source,
+				new String[] {
+						"name", "File_._1_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getFileType1_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(fmi2AnnotationEClass,
+				source,
+				new String[] {
+						"name", "fmi2Annotation",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getFmi2Annotation_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getFmi2Annotation_Tool(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Tool",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(fmi2ScalarVariableEClass,
+				source,
+				new String[] {
+						"name", "fmi2ScalarVariable",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getFmi2ScalarVariable_Real(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Real",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Integer(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Integer",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Boolean(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Boolean",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_String(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "String",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Enumeration(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Enumeration",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Annotations(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Annotations",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_CanHandleMultipleSetPerTimeInstant(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canHandleMultipleSetPerTimeInstant",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Causality(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "causality",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Description(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "description",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Initial(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "initial",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_ValueReference(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "valueReference",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2ScalarVariable_Variability(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "variability",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(fmi2SimpleTypeEClass,
+				source,
+				new String[] {
+						"name", "fmi2SimpleType",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getFmi2SimpleType_Real(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Real",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2SimpleType_Integer(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Integer",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2SimpleType_Boolean(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Boolean",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2SimpleType_String(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "String",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2SimpleType_Enumeration(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Enumeration",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2SimpleType_Description(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "description",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2SimpleType_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(fmi2UnitEClass,
+				source,
+				new String[] {
+						"name", "fmi2Unit",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getFmi2Unit_BaseUnit(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "BaseUnit",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmi2Unit_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:1"
+				});
+		addAnnotation(getFmi2Unit_DisplayUnit(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "DisplayUnit",
+						"namespace", "##targetNamespace",
+						"group", "group:1"
+				});
+		addAnnotation(getFmi2Unit_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(fmi2VariableDependencyEClass,
+				source,
+				new String[] {
+						"name", "fmi2VariableDependency",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getFmi2VariableDependency_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getFmi2VariableDependency_Unknown(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Unknown",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(fmiModelDescriptionTypeEClass,
+				source,
+				new String[] {
+						"name", "fmiModelDescription_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getFmiModelDescriptionType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getFmiModelDescriptionType_ModelExchange(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "ModelExchange",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(getFmiModelDescriptionType_CoSimulation(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "CoSimulation",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(getFmiModelDescriptionType_UnitDefinitions(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "UnitDefinitions",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_TypeDefinitions(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "TypeDefinitions",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_LogCategories(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "LogCategories",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_DefaultExperiment(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "DefaultExperiment",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_VendorAnnotations(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "VendorAnnotations",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_ModelVariables(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "ModelVariables",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_ModelStructure(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "ModelStructure",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_Author(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "author",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_Copyright(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "copyright",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_Description(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "description",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_FmiVersion(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "fmiVersion",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_GenerationDateAndTime(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "generationDateAndTime",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_GenerationTool(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "generationTool",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_Guid(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "guid",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_License(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "license",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_ModelName(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "modelName",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_NumberOfEventIndicators(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "numberOfEventIndicators",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_VariableNamingConvention(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "variableNamingConvention",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getFmiModelDescriptionType_Version(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "version",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(initialTypeEEnum,
+				source,
+				new String[] {
+						"name", "initial_._type"
+				});
+		addAnnotation(initialTypeObjectEDataType,
+				source,
+				new String[] {
+						"name", "initial_._type:Object",
+						"baseType", "initial_._type"
+				});
+		addAnnotation(initialUnknownsTypeEClass,
+				source,
+				new String[] {
+						"name", "InitialUnknowns_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getInitialUnknownsType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getInitialUnknownsType_Unknown(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Unknown",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(integerTypeEClass,
+				source,
+				new String[] {
+						"name", "Integer_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getIntegerType_DeclaredType(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "declaredType",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getIntegerType_Max(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "max",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getIntegerType_Min(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "min",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getIntegerType_Quantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "quantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getIntegerType_Start(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "start",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(integerType1EClass,
+				source,
+				new String[] {
+						"name", "Integer_._1_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getIntegerType1_Max(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "max",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getIntegerType1_Min(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "min",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getIntegerType1_Quantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "quantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(itemTypeEClass,
+				source,
+				new String[] {
+						"name", "Item_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getItemType_Description(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "description",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getItemType_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getItemType_Value(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "value",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(logCategoriesTypeEClass,
+				source,
+				new String[] {
+						"name", "LogCategories_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getLogCategoriesType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getLogCategoriesType_Category(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Category",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(modelExchangeTypeEClass,
+				source,
+				new String[] {
+						"name", "ModelExchange_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getModelExchangeType_SourceFiles(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "SourceFiles",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_CanBeInstantiatedOnlyOncePerProcess(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canBeInstantiatedOnlyOncePerProcess",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_CanGetAndSetFMUstate(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canGetAndSetFMUstate",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_CanNotUseMemoryManagementFunctions(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canNotUseMemoryManagementFunctions",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_CanSerializeFMUstate(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "canSerializeFMUstate",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_CompletedIntegratorStepNotNeeded(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "completedIntegratorStepNotNeeded",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_ModelIdentifier(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "modelIdentifier",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_NeedsExecutionTool(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "needsExecutionTool",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelExchangeType_ProvidesDirectionalDerivative(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "providesDirectionalDerivative",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(modelStructureTypeEClass,
+				source,
+				new String[] {
+						"name", "ModelStructure_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getModelStructureType_Outputs(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Outputs",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelStructureType_Derivatives(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Derivatives",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getModelStructureType_InitialUnknowns(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "InitialUnknowns",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(modelVariablesTypeEClass,
+				source,
+				new String[] {
+						"name", "ModelVariables_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getModelVariablesType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getModelVariablesType_ScalarVariable(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "ScalarVariable",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(realTypeEClass,
+				source,
+				new String[] {
+						"name", "Real_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getRealType_DeclaredType(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "declaredType",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Derivative(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "derivative",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_DisplayUnit(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "displayUnit",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Max(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "max",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Min(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "min",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Nominal(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "nominal",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Quantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "quantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Reinit(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "reinit",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_RelativeQuantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "relativeQuantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Start(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "start",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Unbounded(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "unbounded",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType_Unit(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "unit",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(realType1EClass,
+				source,
+				new String[] {
+						"name", "Real_._1_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getRealType1_DisplayUnit(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "displayUnit",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_Max(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "max",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_Min(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "min",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_Nominal(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "nominal",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_Quantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "quantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_RelativeQuantity(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "relativeQuantity",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_Unbounded(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "unbounded",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getRealType1_Unit(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "unit",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(sourceFilesTypeEClass,
+				source,
+				new String[] {
+						"name", "SourceFiles_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getSourceFilesType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getSourceFilesType_File(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "File",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(sourceFilesType1EClass,
+				source,
+				new String[] {
+						"name", "SourceFiles_._1_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getSourceFilesType1_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getSourceFilesType1_File(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "File",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(stringTypeEClass,
+				source,
+				new String[] {
+						"name", "String_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getStringType_DeclaredType(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "declaredType",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getStringType_Start(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "start",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(toolTypeEClass,
+				source,
+				new String[] {
+						"name", "Tool_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getToolType_Any(),
+				source,
+				new String[] {
+						"kind", "elementWildcard",
+						"wildcards", "##any",
+						"name", ":0",
+						"processing", "lax"
+				});
+		addAnnotation(getToolType_Name(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "name",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(typeDefinitionsTypeEClass,
+				source,
+				new String[] {
+						"name", "TypeDefinitions_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getTypeDefinitionsType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getTypeDefinitionsType_SimpleType(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "SimpleType",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(unitDefinitionsTypeEClass,
+				source,
+				new String[] {
+						"name", "UnitDefinitions_._type",
+						"kind", "elementOnly"
+				});
+		addAnnotation(getUnitDefinitionsType_Group(),
+				source,
+				new String[] {
+						"kind", "group",
+						"name", "group:0"
+				});
+		addAnnotation(getUnitDefinitionsType_Unit(),
+				source,
+				new String[] {
+						"kind", "element",
+						"name", "Unit",
+						"namespace", "##targetNamespace",
+						"group", "group:0"
+				});
+		addAnnotation(unknownTypeEClass,
+				source,
+				new String[] {
+						"name", "Unknown_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getUnknownType_Dependencies(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "dependencies",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getUnknownType_DependenciesKind(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "dependenciesKind",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getUnknownType_Index(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "index",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(unknownType1EClass,
+				source,
+				new String[] {
+						"name", "Unknown_._1_._type",
+						"kind", "empty"
+				});
+		addAnnotation(getUnknownType1_Dependencies(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "dependencies",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getUnknownType1_DependenciesKind(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "dependenciesKind",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(getUnknownType1_Index(),
+				source,
+				new String[] {
+						"kind", "attribute",
+						"name", "index",
+						"namespace", "##targetNamespace"
+				});
+		addAnnotation(variabilityTypeEEnum,
+				source,
+				new String[] {
+						"name", "variability_._type"
+				});
+		addAnnotation(variabilityTypeObjectEDataType,
+				source,
+				new String[] {
+						"name", "variability_._type:Object",
+						"baseType", "variability_._type"
+				});
+		addAnnotation(variableNamingConventionTypeEEnum,
+				source,
+				new String[] {
+						"name", "variableNamingConvention_._type"
+				});
+		addAnnotation(variableNamingConventionTypeObjectEDataType,
+				source,
+				new String[] {
+						"name", "variableNamingConvention_._type:Object",
+						"baseType", "variableNamingConvention_._type"
+				});
 	}
 
-} //FmiPackageImpl
+} // FmiPackageImpl

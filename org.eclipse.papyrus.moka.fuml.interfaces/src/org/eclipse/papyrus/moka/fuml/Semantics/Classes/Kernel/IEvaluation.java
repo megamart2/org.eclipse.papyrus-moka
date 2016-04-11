@@ -20,12 +20,12 @@ import org.eclipse.uml2.uml.ValueSpecification;
 public interface IEvaluation extends ISemanticVisitor {
 
 	public abstract IValue evaluate();
-	
+
 	public void setSpecification(ValueSpecification specification);
-	
+
 	public ValueSpecification getSpecification();
-	
+
 	public void setLocus(ILocus locus);
-	
+
 	public ILocus getLocus();
 }

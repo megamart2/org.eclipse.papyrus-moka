@@ -122,8 +122,8 @@ public class CosimulationAddStructuralFeatureValueActionActivation extends CS_Ad
 			}
 		}
 	}
-	
-	protected boolean isCosimulationPort(StructuralFeature property){
+
+	protected boolean isCosimulationPort(StructuralFeature property) {
 		return property.getAppliedStereotype("FmiMLProfile::UML_port") != null;
 	}
 
@@ -190,7 +190,7 @@ public class CosimulationAddStructuralFeatureValueActionActivation extends CS_Ad
 
 			// This necessary when setting a feature value with an insertAt
 			// position
-			newLink.setLocus( this.getExecutionLocus());
+			newLink.setLocus(this.getExecutionLocus());
 
 			newLink.setFeatureValue(feature, inputValues, insertAt);
 

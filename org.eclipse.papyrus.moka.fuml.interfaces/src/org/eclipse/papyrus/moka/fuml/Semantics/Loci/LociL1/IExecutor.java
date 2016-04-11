@@ -26,12 +26,12 @@ import org.eclipse.uml2.uml.ValueSpecification;
 public interface IExecutor {
 
 	public List<IParameterValue> execute(Behavior behavior, IObject_ context, List<IParameterValue> inputs);
-	
+
 	public IValue evaluate(ValueSpecification specification);
-	
+
 	public IReference start(Class type, List<IParameterValue> inputs);
-	
+
 	public void setLocus(ILocus locus);
-	
+
 	public ILocus getLocus();
 }

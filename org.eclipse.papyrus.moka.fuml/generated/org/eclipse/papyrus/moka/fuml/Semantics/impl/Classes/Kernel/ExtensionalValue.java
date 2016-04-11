@@ -22,10 +22,10 @@ public abstract class ExtensionalValue extends CompoundValue implements IExtensi
 
 	/*
 	 * Issue FUML12-33 Extensional values should have an unique identifier
-	 * identifier (unique IF) of an extensional value 
+	 * identifier (unique IF) of an extensional value
 	 */
 	public String identifier;
-	
+
 	/*
 	 * The locus of the extent of which this value is a member. (If the value
 	 * has been destroyed, it has no locus.)
@@ -50,26 +50,26 @@ public abstract class ExtensionalValue extends CompoundValue implements IExtensi
 		}
 		return newValue;
 	}
-	
+
 	@Override
 	public String toString() {
 		// Issue FUML12-33 Extensional values should have an unique identifier
 		return this.identifier + super.toString();
 	}
-	
-	public void setLocus(ILocus locus){
+
+	public void setLocus(ILocus locus) {
 		this.locus = locus;
 	}
-	
-	public ILocus getLocus(){
+
+	public ILocus getLocus() {
 		return this.locus;
 	}
-	
-	public void setIdentifier(String identifier){
+
+	public void setIdentifier(String identifier) {
 		this.identifier = identifier;
 	}
-	
-	public String getIdentifier(){
+
+	public String getIdentifier() {
 		return this.identifier;
 	}
 }

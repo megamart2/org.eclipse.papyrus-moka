@@ -51,28 +51,28 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionTyp
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelExchange <em>Model Exchange</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getCoSimulation <em>Co Simulation</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getUnitDefinitions <em>Unit Definitions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getTypeDefinitions <em>Type Definitions</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getLogCategories <em>Log Categories</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getDefaultExperiment <em>Default Experiment</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getVendorAnnotations <em>Vendor Annotations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelVariables <em>Model Variables</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelStructure <em>Model Structure</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getAuthor <em>Author</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getCopyright <em>Copyright</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getFmiVersion <em>Fmi Version</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGenerationDateAndTime <em>Generation Date And Time</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGenerationTool <em>Generation Tool</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGuid <em>Guid</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getLicense <em>License</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelName <em>Model Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getNumberOfEventIndicators <em>Number Of Event Indicators</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getVariableNamingConvention <em>Variable Naming Convention</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getVersion <em>Version</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelExchange <em>Model Exchange</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getCoSimulation <em>Co Simulation</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getUnitDefinitions <em>Unit Definitions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getTypeDefinitions <em>Type Definitions</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getLogCategories <em>Log Categories</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getDefaultExperiment <em>Default Experiment</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getVendorAnnotations <em>Vendor Annotations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelVariables <em>Model Variables</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelStructure <em>Model Structure</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getAuthor <em>Author</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getCopyright <em>Copyright</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getFmiVersion <em>Fmi Version</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGenerationDateAndTime <em>Generation Date And Time</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGenerationTool <em>Generation Tool</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getGuid <em>Guid</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getLicense <em>License</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getModelName <em>Model Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getNumberOfEventIndicators <em>Number Of Event Indicators</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getVariableNamingConvention <em>Variable Naming Convention</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FmiModelDescriptionTypeImpl#getVersion <em>Version</em>}</li>
  * </ul>
  *
  * @generated
@@ -82,6 +82,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
@@ -92,6 +93,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getUnitDefinitions() <em>Unit Definitions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getUnitDefinitions()
 	 * @generated
 	 * @ordered
@@ -102,6 +104,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getTypeDefinitions() <em>Type Definitions</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTypeDefinitions()
 	 * @generated
 	 * @ordered
@@ -112,6 +115,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getLogCategories() <em>Log Categories</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLogCategories()
 	 * @generated
 	 * @ordered
@@ -122,6 +126,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getDefaultExperiment() <em>Default Experiment</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDefaultExperiment()
 	 * @generated
 	 * @ordered
@@ -132,6 +137,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getVendorAnnotations() <em>Vendor Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVendorAnnotations()
 	 * @generated
 	 * @ordered
@@ -142,6 +148,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getModelVariables() <em>Model Variables</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelVariables()
 	 * @generated
 	 * @ordered
@@ -152,6 +159,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getModelStructure() <em>Model Structure</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelStructure()
 	 * @generated
 	 * @ordered
@@ -162,6 +170,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getAuthor() <em>Author</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAuthor()
 	 * @generated
 	 * @ordered
@@ -172,6 +181,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getAuthor() <em>Author</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getAuthor()
 	 * @generated
 	 * @ordered
@@ -182,6 +192,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getCopyright() <em>Copyright</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCopyright()
 	 * @generated
 	 * @ordered
@@ -192,6 +203,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getCopyright() <em>Copyright</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getCopyright()
 	 * @generated
 	 * @ordered
@@ -202,6 +214,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -212,6 +225,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -222,6 +236,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getFmiVersion() <em>Fmi Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFmiVersion()
 	 * @generated
 	 * @ordered
@@ -232,6 +247,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getFmiVersion() <em>Fmi Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getFmiVersion()
 	 * @generated
 	 * @ordered
@@ -242,6 +258,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * This is true if the Fmi Version attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -251,6 +268,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getGenerationDateAndTime() <em>Generation Date And Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerationDateAndTime()
 	 * @generated
 	 * @ordered
@@ -261,6 +279,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getGenerationDateAndTime() <em>Generation Date And Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerationDateAndTime()
 	 * @generated
 	 * @ordered
@@ -271,6 +290,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getGenerationTool() <em>Generation Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerationTool()
 	 * @generated
 	 * @ordered
@@ -281,6 +301,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getGenerationTool() <em>Generation Tool</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGenerationTool()
 	 * @generated
 	 * @ordered
@@ -291,6 +312,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getGuid() <em>Guid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGuid()
 	 * @generated
 	 * @ordered
@@ -301,6 +323,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getGuid() <em>Guid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGuid()
 	 * @generated
 	 * @ordered
@@ -311,6 +334,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getLicense() <em>License</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLicense()
 	 * @generated
 	 * @ordered
@@ -321,6 +345,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getLicense() <em>License</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getLicense()
 	 * @generated
 	 * @ordered
@@ -331,6 +356,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelName()
 	 * @generated
 	 * @ordered
@@ -341,6 +367,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getModelName() <em>Model Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getModelName()
 	 * @generated
 	 * @ordered
@@ -351,6 +378,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getNumberOfEventIndicators() <em>Number Of Event Indicators</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNumberOfEventIndicators()
 	 * @generated
 	 * @ordered
@@ -361,6 +389,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getNumberOfEventIndicators() <em>Number Of Event Indicators</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getNumberOfEventIndicators()
 	 * @generated
 	 * @ordered
@@ -371,6 +400,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * This is true if the Number Of Event Indicators attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -380,6 +410,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getVariableNamingConvention() <em>Variable Naming Convention</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVariableNamingConvention()
 	 * @generated
 	 * @ordered
@@ -390,6 +421,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getVariableNamingConvention() <em>Variable Naming Convention</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVariableNamingConvention()
 	 * @generated
 	 * @ordered
@@ -400,6 +432,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * This is true if the Variable Naming Convention attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -409,6 +442,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The default value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -419,6 +453,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	 * The cached value of the '{@link #getVersion() <em>Version</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getVersion()
 	 * @generated
 	 * @ordered
@@ -428,6 +463,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FmiModelDescriptionTypeImpl() {
@@ -437,6 +473,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -447,6 +484,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
@@ -459,6 +497,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<ModelExchangeType> getModelExchange() {
@@ -468,6 +507,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<CoSimulationType> getCoSimulation() {
@@ -477,6 +517,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public UnitDefinitionsType getUnitDefinitions() {
@@ -486,6 +527,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetUnitDefinitions(UnitDefinitionsType newUnitDefinitions, NotificationChain msgs) {
@@ -493,7 +535,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		unitDefinitions = newUnitDefinitions;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS, oldUnitDefinitions, newUnitDefinitions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -501,25 +546,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setUnitDefinitions(UnitDefinitionsType newUnitDefinitions) {
 		if (newUnitDefinitions != unitDefinitions) {
 			NotificationChain msgs = null;
 			if (unitDefinitions != null)
-				msgs = ((InternalEObject)unitDefinitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS, null, msgs);
+				msgs = ((InternalEObject) unitDefinitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS, null, msgs);
 			if (newUnitDefinitions != null)
-				msgs = ((InternalEObject)newUnitDefinitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS, null, msgs);
+				msgs = ((InternalEObject) newUnitDefinitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS, null, msgs);
 			msgs = basicSetUnitDefinitions(newUnitDefinitions, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS, newUnitDefinitions, newUnitDefinitions));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public TypeDefinitionsType getTypeDefinitions() {
@@ -529,6 +576,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetTypeDefinitions(TypeDefinitionsType newTypeDefinitions, NotificationChain msgs) {
@@ -536,7 +584,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		typeDefinitions = newTypeDefinitions;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS, oldTypeDefinitions, newTypeDefinitions);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -544,25 +595,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTypeDefinitions(TypeDefinitionsType newTypeDefinitions) {
 		if (newTypeDefinitions != typeDefinitions) {
 			NotificationChain msgs = null;
 			if (typeDefinitions != null)
-				msgs = ((InternalEObject)typeDefinitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS, null, msgs);
+				msgs = ((InternalEObject) typeDefinitions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS, null, msgs);
 			if (newTypeDefinitions != null)
-				msgs = ((InternalEObject)newTypeDefinitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS, null, msgs);
+				msgs = ((InternalEObject) newTypeDefinitions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS, null, msgs);
 			msgs = basicSetTypeDefinitions(newTypeDefinitions, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS, newTypeDefinitions, newTypeDefinitions));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public LogCategoriesType getLogCategories() {
@@ -572,6 +625,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetLogCategories(LogCategoriesType newLogCategories, NotificationChain msgs) {
@@ -579,7 +633,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		logCategories = newLogCategories;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES, oldLogCategories, newLogCategories);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -587,25 +644,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLogCategories(LogCategoriesType newLogCategories) {
 		if (newLogCategories != logCategories) {
 			NotificationChain msgs = null;
 			if (logCategories != null)
-				msgs = ((InternalEObject)logCategories).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES, null, msgs);
+				msgs = ((InternalEObject) logCategories).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES, null, msgs);
 			if (newLogCategories != null)
-				msgs = ((InternalEObject)newLogCategories).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES, null, msgs);
+				msgs = ((InternalEObject) newLogCategories).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES, null, msgs);
 			msgs = basicSetLogCategories(newLogCategories, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES, newLogCategories, newLogCategories));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public DefaultExperimentType getDefaultExperiment() {
@@ -615,6 +674,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetDefaultExperiment(DefaultExperimentType newDefaultExperiment, NotificationChain msgs) {
@@ -622,7 +682,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		defaultExperiment = newDefaultExperiment;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT, oldDefaultExperiment, newDefaultExperiment);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -630,25 +693,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDefaultExperiment(DefaultExperimentType newDefaultExperiment) {
 		if (newDefaultExperiment != defaultExperiment) {
 			NotificationChain msgs = null;
 			if (defaultExperiment != null)
-				msgs = ((InternalEObject)defaultExperiment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT, null, msgs);
+				msgs = ((InternalEObject) defaultExperiment).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT, null, msgs);
 			if (newDefaultExperiment != null)
-				msgs = ((InternalEObject)newDefaultExperiment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT, null, msgs);
+				msgs = ((InternalEObject) newDefaultExperiment).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT, null, msgs);
 			msgs = basicSetDefaultExperiment(newDefaultExperiment, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT, newDefaultExperiment, newDefaultExperiment));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public Fmi2Annotation getVendorAnnotations() {
@@ -658,6 +723,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetVendorAnnotations(Fmi2Annotation newVendorAnnotations, NotificationChain msgs) {
@@ -665,7 +731,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		vendorAnnotations = newVendorAnnotations;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS, oldVendorAnnotations, newVendorAnnotations);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -673,25 +742,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVendorAnnotations(Fmi2Annotation newVendorAnnotations) {
 		if (newVendorAnnotations != vendorAnnotations) {
 			NotificationChain msgs = null;
 			if (vendorAnnotations != null)
-				msgs = ((InternalEObject)vendorAnnotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS, null, msgs);
+				msgs = ((InternalEObject) vendorAnnotations).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS, null, msgs);
 			if (newVendorAnnotations != null)
-				msgs = ((InternalEObject)newVendorAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS, null, msgs);
+				msgs = ((InternalEObject) newVendorAnnotations).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS, null, msgs);
 			msgs = basicSetVendorAnnotations(newVendorAnnotations, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS, newVendorAnnotations, newVendorAnnotations));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelVariablesType getModelVariables() {
@@ -701,6 +772,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetModelVariables(ModelVariablesType newModelVariables, NotificationChain msgs) {
@@ -708,7 +780,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		modelVariables = newModelVariables;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES, oldModelVariables, newModelVariables);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -716,25 +791,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setModelVariables(ModelVariablesType newModelVariables) {
 		if (newModelVariables != modelVariables) {
 			NotificationChain msgs = null;
 			if (modelVariables != null)
-				msgs = ((InternalEObject)modelVariables).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES, null, msgs);
+				msgs = ((InternalEObject) modelVariables).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES, null, msgs);
 			if (newModelVariables != null)
-				msgs = ((InternalEObject)newModelVariables).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES, null, msgs);
+				msgs = ((InternalEObject) newModelVariables).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES, null, msgs);
 			msgs = basicSetModelVariables(newModelVariables, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES, newModelVariables, newModelVariables));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public ModelStructureType getModelStructure() {
@@ -744,6 +821,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetModelStructure(ModelStructureType newModelStructure, NotificationChain msgs) {
@@ -751,7 +829,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		modelStructure = newModelStructure;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE, oldModelStructure, newModelStructure);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
 		}
 		return msgs;
 	}
@@ -759,25 +840,27 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setModelStructure(ModelStructureType newModelStructure) {
 		if (newModelStructure != modelStructure) {
 			NotificationChain msgs = null;
 			if (modelStructure != null)
-				msgs = ((InternalEObject)modelStructure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE, null, msgs);
+				msgs = ((InternalEObject) modelStructure).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE, null, msgs);
 			if (newModelStructure != null)
-				msgs = ((InternalEObject)newModelStructure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE, null, msgs);
+				msgs = ((InternalEObject) newModelStructure).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE, null, msgs);
 			msgs = basicSetModelStructure(newModelStructure, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE, newModelStructure, newModelStructure));
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getAuthor() {
@@ -787,6 +870,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setAuthor(String newAuthor) {
@@ -799,6 +883,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getCopyright() {
@@ -808,6 +893,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setCopyright(String newCopyright) {
@@ -820,6 +906,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDescription() {
@@ -829,6 +916,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -841,6 +929,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getFmiVersion() {
@@ -850,6 +939,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setFmiVersion(String newFmiVersion) {
@@ -864,6 +954,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetFmiVersion() {
@@ -878,6 +969,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetFmiVersion() {
@@ -887,6 +979,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public XMLGregorianCalendar getGenerationDateAndTime() {
@@ -896,6 +989,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setGenerationDateAndTime(XMLGregorianCalendar newGenerationDateAndTime) {
@@ -908,6 +1002,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getGenerationTool() {
@@ -917,6 +1012,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setGenerationTool(String newGenerationTool) {
@@ -929,6 +1025,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getGuid() {
@@ -938,6 +1035,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setGuid(String newGuid) {
@@ -950,6 +1048,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLicense() {
@@ -959,6 +1058,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setLicense(String newLicense) {
@@ -971,6 +1071,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getModelName() {
@@ -980,6 +1081,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setModelName(String newModelName) {
@@ -992,6 +1094,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public long getNumberOfEventIndicators() {
@@ -1001,6 +1104,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setNumberOfEventIndicators(long newNumberOfEventIndicators) {
@@ -1015,6 +1119,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetNumberOfEventIndicators() {
@@ -1029,6 +1134,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetNumberOfEventIndicators() {
@@ -1038,6 +1144,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public VariableNamingConventionType getVariableNamingConvention() {
@@ -1047,6 +1154,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVariableNamingConvention(VariableNamingConventionType newVariableNamingConvention) {
@@ -1061,6 +1169,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetVariableNamingConvention() {
@@ -1075,6 +1184,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetVariableNamingConvention() {
@@ -1084,6 +1194,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getVersion() {
@@ -1093,6 +1204,7 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setVersion(String newVersion) {
@@ -1105,31 +1217,32 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
-				return ((InternalEList<?>)getModelExchange()).basicRemove(otherEnd, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
-				return ((InternalEList<?>)getCoSimulation()).basicRemove(otherEnd, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
-				return basicSetUnitDefinitions(null, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
-				return basicSetTypeDefinitions(null, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
-				return basicSetLogCategories(null, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
-				return basicSetDefaultExperiment(null, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
-				return basicSetVendorAnnotations(null, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
-				return basicSetModelVariables(null, msgs);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
-				return basicSetModelStructure(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
+			return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
+			return ((InternalEList<?>) getModelExchange()).basicRemove(otherEnd, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
+			return ((InternalEList<?>) getCoSimulation()).basicRemove(otherEnd, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
+			return basicSetUnitDefinitions(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
+			return basicSetTypeDefinitions(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
+			return basicSetLogCategories(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
+			return basicSetDefaultExperiment(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
+			return basicSetVendorAnnotations(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
+			return basicSetModelVariables(null, msgs);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
+			return basicSetModelStructure(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -1137,56 +1250,58 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
-				return getModelExchange();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
-				return getCoSimulation();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
-				return getUnitDefinitions();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
-				return getTypeDefinitions();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
-				return getLogCategories();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
-				return getDefaultExperiment();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
-				return getVendorAnnotations();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
-				return getModelVariables();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
-				return getModelStructure();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
-				return getAuthor();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
-				return getCopyright();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
-				return getDescription();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
-				return getFmiVersion();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
-				return getGenerationDateAndTime();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
-				return getGenerationTool();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
-				return getGuid();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
-				return getLicense();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
-				return getModelName();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
-				return getNumberOfEventIndicators();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
-				return getVariableNamingConvention();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
-				return getVersion();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
+			if (coreType)
+				return getGroup();
+			return ((FeatureMap.Internal) getGroup()).getWrapper();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
+			return getModelExchange();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
+			return getCoSimulation();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
+			return getUnitDefinitions();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
+			return getTypeDefinitions();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
+			return getLogCategories();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
+			return getDefaultExperiment();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
+			return getVendorAnnotations();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
+			return getModelVariables();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
+			return getModelStructure();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
+			return getAuthor();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
+			return getCopyright();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
+			return getDescription();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
+			return getFmiVersion();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
+			return getGenerationDateAndTime();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
+			return getGenerationTool();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
+			return getGuid();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
+			return getLicense();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
+			return getModelName();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
+			return getNumberOfEventIndicators();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
+			return getVariableNamingConvention();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
+			return getVersion();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1194,80 +1309,81 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
-				getModelExchange().clear();
-				getModelExchange().addAll((Collection<? extends ModelExchangeType>)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
-				getCoSimulation().clear();
-				getCoSimulation().addAll((Collection<? extends CoSimulationType>)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
-				setUnitDefinitions((UnitDefinitionsType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
-				setTypeDefinitions((TypeDefinitionsType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
-				setLogCategories((LogCategoriesType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
-				setDefaultExperiment((DefaultExperimentType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
-				setVendorAnnotations((Fmi2Annotation)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
-				setModelVariables((ModelVariablesType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
-				setModelStructure((ModelStructureType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
-				setAuthor((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
-				setCopyright((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
-				setFmiVersion((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
-				setGenerationDateAndTime((XMLGregorianCalendar)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
-				setGenerationTool((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
-				setGuid((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
-				setLicense((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
-				setModelName((String)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
-				setNumberOfEventIndicators((Long)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
-				setVariableNamingConvention((VariableNamingConventionType)newValue);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
-				setVersion((String)newValue);
-				return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
+			((FeatureMap.Internal) getGroup()).set(newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
+			getModelExchange().clear();
+			getModelExchange().addAll((Collection<? extends ModelExchangeType>) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
+			getCoSimulation().clear();
+			getCoSimulation().addAll((Collection<? extends CoSimulationType>) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
+			setUnitDefinitions((UnitDefinitionsType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
+			setTypeDefinitions((TypeDefinitionsType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
+			setLogCategories((LogCategoriesType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
+			setDefaultExperiment((DefaultExperimentType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
+			setVendorAnnotations((Fmi2Annotation) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
+			setModelVariables((ModelVariablesType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
+			setModelStructure((ModelStructureType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
+			setAuthor((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
+			setCopyright((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
+			setFmiVersion((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
+			setGenerationDateAndTime((XMLGregorianCalendar) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
+			setGenerationTool((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
+			setGuid((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
+			setLicense((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
+			setModelName((String) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
+			setNumberOfEventIndicators((Long) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
+			setVariableNamingConvention((VariableNamingConventionType) newValue);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
+			setVersion((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -1275,77 +1391,78 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
-				getGroup().clear();
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
-				getModelExchange().clear();
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
-				getCoSimulation().clear();
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
-				setUnitDefinitions((UnitDefinitionsType)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
-				setTypeDefinitions((TypeDefinitionsType)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
-				setLogCategories((LogCategoriesType)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
-				setDefaultExperiment((DefaultExperimentType)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
-				setVendorAnnotations((Fmi2Annotation)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
-				setModelVariables((ModelVariablesType)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
-				setModelStructure((ModelStructureType)null);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
-				setAuthor(AUTHOR_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
-				setCopyright(COPYRIGHT_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
-				unsetFmiVersion();
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
-				setGenerationDateAndTime(GENERATION_DATE_AND_TIME_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
-				setGenerationTool(GENERATION_TOOL_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
-				setGuid(GUID_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
-				setLicense(LICENSE_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
-				setModelName(MODEL_NAME_EDEFAULT);
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
-				unsetNumberOfEventIndicators();
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
-				unsetVariableNamingConvention();
-				return;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
-				setVersion(VERSION_EDEFAULT);
-				return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
+			getGroup().clear();
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
+			getModelExchange().clear();
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
+			getCoSimulation().clear();
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
+			setUnitDefinitions((UnitDefinitionsType) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
+			setTypeDefinitions((TypeDefinitionsType) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
+			setLogCategories((LogCategoriesType) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
+			setDefaultExperiment((DefaultExperimentType) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
+			setVendorAnnotations((Fmi2Annotation) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
+			setModelVariables((ModelVariablesType) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
+			setModelStructure((ModelStructureType) null);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
+			setAuthor(AUTHOR_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
+			setCopyright(COPYRIGHT_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
+			unsetFmiVersion();
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
+			setGenerationDateAndTime(GENERATION_DATE_AND_TIME_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
+			setGenerationTool(GENERATION_TOOL_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
+			setGuid(GUID_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
+			setLicense(LICENSE_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
+			setModelName(MODEL_NAME_EDEFAULT);
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
+			unsetNumberOfEventIndicators();
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
+			unsetVariableNamingConvention();
+			return;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
+			setVersion(VERSION_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1353,55 +1470,56 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
-				return group != null && !group.isEmpty();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
-				return !getModelExchange().isEmpty();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
-				return !getCoSimulation().isEmpty();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
-				return unitDefinitions != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
-				return typeDefinitions != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
-				return logCategories != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
-				return defaultExperiment != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
-				return vendorAnnotations != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
-				return modelVariables != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
-				return modelStructure != null;
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
-				return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
-				return COPYRIGHT_EDEFAULT == null ? copyright != null : !COPYRIGHT_EDEFAULT.equals(copyright);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
-				return isSetFmiVersion();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
-				return GENERATION_DATE_AND_TIME_EDEFAULT == null ? generationDateAndTime != null : !GENERATION_DATE_AND_TIME_EDEFAULT.equals(generationDateAndTime);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
-				return GENERATION_TOOL_EDEFAULT == null ? generationTool != null : !GENERATION_TOOL_EDEFAULT.equals(generationTool);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
-				return GUID_EDEFAULT == null ? guid != null : !GUID_EDEFAULT.equals(guid);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
-				return LICENSE_EDEFAULT == null ? license != null : !LICENSE_EDEFAULT.equals(license);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
-				return MODEL_NAME_EDEFAULT == null ? modelName != null : !MODEL_NAME_EDEFAULT.equals(modelName);
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
-				return isSetNumberOfEventIndicators();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
-				return isSetVariableNamingConvention();
-			case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
-				return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GROUP:
+			return group != null && !group.isEmpty();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_EXCHANGE:
+			return !getModelExchange().isEmpty();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__CO_SIMULATION:
+			return !getCoSimulation().isEmpty();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__UNIT_DEFINITIONS:
+			return unitDefinitions != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__TYPE_DEFINITIONS:
+			return typeDefinitions != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LOG_CATEGORIES:
+			return logCategories != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DEFAULT_EXPERIMENT:
+			return defaultExperiment != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VENDOR_ANNOTATIONS:
+			return vendorAnnotations != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_VARIABLES:
+			return modelVariables != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_STRUCTURE:
+			return modelStructure != null;
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__AUTHOR:
+			return AUTHOR_EDEFAULT == null ? author != null : !AUTHOR_EDEFAULT.equals(author);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__COPYRIGHT:
+			return COPYRIGHT_EDEFAULT == null ? copyright != null : !COPYRIGHT_EDEFAULT.equals(copyright);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__FMI_VERSION:
+			return isSetFmiVersion();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_DATE_AND_TIME:
+			return GENERATION_DATE_AND_TIME_EDEFAULT == null ? generationDateAndTime != null : !GENERATION_DATE_AND_TIME_EDEFAULT.equals(generationDateAndTime);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GENERATION_TOOL:
+			return GENERATION_TOOL_EDEFAULT == null ? generationTool != null : !GENERATION_TOOL_EDEFAULT.equals(generationTool);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__GUID:
+			return GUID_EDEFAULT == null ? guid != null : !GUID_EDEFAULT.equals(guid);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__LICENSE:
+			return LICENSE_EDEFAULT == null ? license != null : !LICENSE_EDEFAULT.equals(license);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__MODEL_NAME:
+			return MODEL_NAME_EDEFAULT == null ? modelName != null : !MODEL_NAME_EDEFAULT.equals(modelName);
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__NUMBER_OF_EVENT_INDICATORS:
+			return isSetNumberOfEventIndicators();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VARIABLE_NAMING_CONVENTION:
+			return isSetVariableNamingConvention();
+		case FmiPackage.FMI_MODEL_DESCRIPTION_TYPE__VERSION:
+			return VERSION_EDEFAULT == null ? version != null : !VERSION_EDEFAULT.equals(version);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -1409,11 +1527,13 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -1425,7 +1545,10 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		result.append(", description: ");
 		result.append(description);
 		result.append(", fmiVersion: ");
-		if (fmiVersionESet) result.append(fmiVersion); else result.append("<unset>");
+		if (fmiVersionESet)
+			result.append(fmiVersion);
+		else
+			result.append("<unset>");
 		result.append(", generationDateAndTime: ");
 		result.append(generationDateAndTime);
 		result.append(", generationTool: ");
@@ -1437,13 +1560,19 @@ public class FmiModelDescriptionTypeImpl extends MinimalEObjectImpl.Container im
 		result.append(", modelName: ");
 		result.append(modelName);
 		result.append(", numberOfEventIndicators: ");
-		if (numberOfEventIndicatorsESet) result.append(numberOfEventIndicators); else result.append("<unset>");
+		if (numberOfEventIndicatorsESet)
+			result.append(numberOfEventIndicators);
+		else
+			result.append("<unset>");
 		result.append(", variableNamingConvention: ");
-		if (variableNamingConventionESet) result.append(variableNamingConvention); else result.append("<unset>");
+		if (variableNamingConventionESet)
+			result.append(variableNamingConvention);
+		else
+			result.append("<unset>");
 		result.append(", version: ");
 		result.append(version);
 		result.append(')');
 		return result.toString();
 	}
 
-} //FmiModelDescriptionTypeImpl
+} // FmiModelDescriptionTypeImpl

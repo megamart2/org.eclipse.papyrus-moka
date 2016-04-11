@@ -19,42 +19,43 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 public final class AnimationTreeNodeFactory {
 
 	public static AnimationTreeNodeFactory INSTANCE;
-	
-	private AnimationTreeNodeFactory(){}
-	
-	public static AnimationTreeNodeFactory getInstance(){
-		if(INSTANCE==null){
+
+	private AnimationTreeNodeFactory() {
+	}
+
+	public static AnimationTreeNodeFactory getInstance() {
+		if (INSTANCE == null) {
 			INSTANCE = new AnimationTreeNodeFactory();
 		}
 		return INSTANCE;
 	}
-	
-	public IAnimationTreeNode createNode(Object input){
-		IAnimationTreeNode node = null; 
-		if(input == null){
+
+	public IAnimationTreeNode createNode(Object input) {
+		IAnimationTreeNode node = null;
+		if (input == null) {
 			node = this.createAnimationTreeNode();
-		}else if(input instanceof Diagram){
-			node = this.createDiagramAnimationNode((Diagram)input);
-		}else if(input instanceof IObject_){
-			node = this.createAnimatingInstanceNode((IObject_)input);
+		} else if (input instanceof Diagram) {
+			node = this.createDiagramAnimationNode((Diagram) input);
+		} else if (input instanceof IObject_) {
+			node = this.createAnimatingInstanceNode((IObject_) input);
 		}
 		return node;
 	}
-	
-	public IAnimationTreeNode createAnimationTreeNode(){
+
+	public IAnimationTreeNode createAnimationTreeNode() {
 		return new AnimationTreeNode();
 	}
-	
-	public IAnimationTreeNode createAnimatingInstanceNode(IObject_ value){
+
+	public IAnimationTreeNode createAnimatingInstanceNode(IObject_ value) {
 		AnimatingInstanceNode node = new AnimatingInstanceNode();
 		node.setInstance(value);
 		return node;
 	}
-	
-	public IAnimationTreeNode createDiagramAnimationNode(Diagram diagram){
+
+	public IAnimationTreeNode createDiagramAnimationNode(Diagram diagram) {
 		DiagramAnimationNode node = new DiagramAnimationNode();
 		node.setAnimatedDiagram(diagram);
 		return node;
 	}
-	
+
 }

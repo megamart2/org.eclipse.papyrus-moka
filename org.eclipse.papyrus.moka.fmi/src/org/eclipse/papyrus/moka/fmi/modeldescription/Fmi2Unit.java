@@ -30,10 +30,10 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getBaseUnit <em>Base Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getDisplayUnit <em>Display Unit</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getBaseUnit <em>Base Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getDisplayUnit <em>Display Unit</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getName <em>Name</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Unit()
@@ -48,6 +48,7 @@ public interface Fmi2Unit extends EObject {
 	 * <!-- begin-model-doc -->
 	 * BaseUnit_value = factor*Unit_value + offset
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Base Unit</em>' containment reference.
 	 * @see #setBaseUnit(BaseUnitType)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Unit_BaseUnit()
@@ -61,7 +62,9 @@ public interface Fmi2Unit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getBaseUnit <em>Base Unit</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Base Unit</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Base Unit</em>' containment reference.
 	 * @see #getBaseUnit()
 	 * @generated
 	 */
@@ -76,6 +79,7 @@ public interface Fmi2Unit extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Group</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Unit_Group()
 	 * @model unique="false" dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -92,6 +96,7 @@ public interface Fmi2Unit extends EObject {
 	 * <!-- begin-model-doc -->
 	 * DisplayUnit_value = factor*Unit_value + offset
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Display Unit</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Unit_DisplayUnit()
 	 * @model containment="true" transient="true" volatile="true" derived="true"
@@ -105,8 +110,9 @@ public interface Fmi2Unit extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Name of Unit element, e.g. "N.m", "Nm",  "%/s". "name" must be unique will respect to all other elements of the UnitDefinitions list. The variable values of fmi2SetXXX and fmi2GetXXX are with respect to this unit.
+	 * Name of Unit element, e.g. "N.m", "Nm", "%/s". "name" must be unique will respect to all other elements of the UnitDefinitions list. The variable values of fmi2SetXXX and fmi2GetXXX are with respect to this unit.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2Unit_Name()
@@ -120,7 +126,9 @@ public interface Fmi2Unit extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2Unit#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */

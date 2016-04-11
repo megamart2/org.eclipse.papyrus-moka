@@ -20,9 +20,9 @@ import org.eclipse.swt.graphics.Image;
 public class RootLabelProvider extends LabelProvider {
 
 	public static final String ROOT_ICON = "icons/observe_icon.png";
-	
+
 	protected static final String ROOT_NAME = "Animated Diagrams";
-	
+
 	@Override
 	public String getText(Object element) {
 		return ROOT_NAME;

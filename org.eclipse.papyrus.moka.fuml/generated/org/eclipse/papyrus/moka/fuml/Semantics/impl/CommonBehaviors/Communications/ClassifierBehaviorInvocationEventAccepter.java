@@ -29,9 +29,9 @@ import org.eclipse.uml2.uml.Classifier;
 
 /**
  * A classifier behavior accepts an invocation event occurrence for the invocation
- * of the execution of a classifier behavior from a specific active class. 
+ * of the execution of a classifier behavior from a specific active class.
  */
-public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter implements IClassifierBehaviorInvocationEventAccepter{
+public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter implements IClassifierBehaviorInvocationEventAccepter {
 
 	/*
 	 * The execution of the associated classifier behavior for a certain object.
@@ -48,7 +48,7 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 	 * The object activation that owns this classifier behavior execution.
 	 */
 	public IObjectActivation objectActivation;
-	
+
 	public void invokeBehavior(Class classifier, List<IParameterValue> inputs) {
 		// Set the classifier for this classifier behavior execution to the
 		// given class.
@@ -60,10 +60,10 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 		// Then register this event accepter with the object activation..
 		// Debug.println("[execute] Executing behavior for " + classifier.name +
 		// "...");
-		
+
 		// fUML12-35 Initial execution of an activity is not run to completion
-		
-		
+
+
 		this.classifier = classifier;
 		IObject_ object = this.objectActivation.getObject();
 		if (classifier instanceof Behavior) {
@@ -95,9 +95,9 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 	public void accept(IEventOccurrence eventOccurrence) {
 		// Accept an invocation event occurrence. Execute the execution of this
 		// classifier behavior invocation event accepter.
-		
+
 		// fUML12-35 Initial execution of an activity is not run to completion
-		
+
 		if (eventOccurrence instanceof InvocationEventOccurrence) {
 			this.execution.execute();
 		}
@@ -107,12 +107,12 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 		// Return true if the given event occurrence is an invocation event
 		// occurrence for the execution of this classifier behavior invocation
 		// event accepter.
-		
+
 		// fUML12-35 Initial execution of an activity is not run to completion
-		
+
 		boolean matches = false;
 		if (eventOccurrence instanceof InvocationEventOccurrence) {
-			matches = ((InvocationEventOccurrence)eventOccurrence).execution == this.execution;
+			matches = ((InvocationEventOccurrence) eventOccurrence).execution == this.execution;
 		}
 		return matches;
 	}
@@ -122,14 +122,14 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 	}
 
 	public void setExecution(IExecution execution) {
-		this.execution = execution;		
+		this.execution = execution;
 	}
 
-	public IExecution getExecution(){
+	public IExecution getExecution() {
 		return this.execution;
 	}
-	
-	public Classifier getExecutedClassifier(){
+
+	public Classifier getExecutedClassifier() {
 		return this.classifier;
 	}
 }

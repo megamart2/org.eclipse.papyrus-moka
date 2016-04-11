@@ -22,8 +22,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IC
  */
 public class _startObjectBehavior_Action extends Action {
 
-	protected IClassifierBehaviorExecution classifierBehaviorExecution ;
-	
+	protected IClassifierBehaviorExecution classifierBehaviorExecution;
+
 	public _startObjectBehavior_Action(IClassifierBehaviorExecution execution) {
 		super();
 		this.classifierBehaviorExecution = execution;
@@ -35,7 +35,7 @@ public class _startObjectBehavior_Action extends Action {
 	 */
 	@Override
 	public void execute() {
-		this.classifierBehaviorExecution.getExecution().execute() ;
+		this.classifierBehaviorExecution.getExecution().execute();
 	}
 
 }

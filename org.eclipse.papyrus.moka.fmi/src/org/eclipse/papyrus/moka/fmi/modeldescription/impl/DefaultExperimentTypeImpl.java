@@ -29,10 +29,10 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getStartTime <em>Start Time</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getStepSize <em>Step Size</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getStopTime <em>Stop Time</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getTolerance <em>Tolerance</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getStartTime <em>Start Time</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getStepSize <em>Step Size</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getStopTime <em>Stop Time</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.DefaultExperimentTypeImpl#getTolerance <em>Tolerance</em>}</li>
  * </ul>
  *
  * @generated
@@ -42,6 +42,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getStartTime() <em>Start Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStartTime()
 	 * @generated
 	 * @ordered
@@ -52,6 +53,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getStartTime() <em>Start Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStartTime()
 	 * @generated
 	 * @ordered
@@ -62,6 +64,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * This is true if the Start Time attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -71,6 +74,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStepSize()
 	 * @generated
 	 * @ordered
@@ -81,6 +85,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getStepSize() <em>Step Size</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStepSize()
 	 * @generated
 	 * @ordered
@@ -91,6 +96,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * This is true if the Step Size attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -100,6 +106,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getStopTime() <em>Stop Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStopTime()
 	 * @generated
 	 * @ordered
@@ -110,6 +117,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getStopTime() <em>Stop Time</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getStopTime()
 	 * @generated
 	 * @ordered
@@ -120,6 +128,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * This is true if the Stop Time attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -129,6 +138,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The default value of the '{@link #getTolerance() <em>Tolerance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTolerance()
 	 * @generated
 	 * @ordered
@@ -139,6 +149,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * The cached value of the '{@link #getTolerance() <em>Tolerance</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getTolerance()
 	 * @generated
 	 * @ordered
@@ -149,6 +160,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	 * This is true if the Tolerance attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -157,6 +169,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected DefaultExperimentTypeImpl() {
@@ -166,6 +179,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -176,6 +190,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getStartTime() {
@@ -185,6 +200,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStartTime(double newStartTime) {
@@ -199,6 +215,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetStartTime() {
@@ -213,6 +230,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetStartTime() {
@@ -222,6 +240,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getStepSize() {
@@ -231,6 +250,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStepSize(double newStepSize) {
@@ -245,6 +265,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetStepSize() {
@@ -259,6 +280,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetStepSize() {
@@ -268,6 +290,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getStopTime() {
@@ -277,6 +300,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStopTime(double newStopTime) {
@@ -291,6 +315,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetStopTime() {
@@ -305,6 +330,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetStopTime() {
@@ -314,6 +340,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public double getTolerance() {
@@ -323,6 +350,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setTolerance(double newTolerance) {
@@ -337,6 +365,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetTolerance() {
@@ -351,6 +380,7 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetTolerance() {
@@ -360,19 +390,20 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
-				return getStartTime();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
-				return getStepSize();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
-				return getStopTime();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
-				return getTolerance();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
+			return getStartTime();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+			return getStepSize();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
+			return getStopTime();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
+			return getTolerance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -380,23 +411,24 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
-				setStartTime((Double)newValue);
-				return;
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
-				setStepSize((Double)newValue);
-				return;
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
-				setStopTime((Double)newValue);
-				return;
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
-				setTolerance((Double)newValue);
-				return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
+			setStartTime((Double) newValue);
+			return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+			setStepSize((Double) newValue);
+			return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
+			setStopTime((Double) newValue);
+			return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
+			setTolerance((Double) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -404,23 +436,24 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
-				unsetStartTime();
-				return;
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
-				unsetStepSize();
-				return;
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
-				unsetStopTime();
-				return;
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
-				unsetTolerance();
-				return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
+			unsetStartTime();
+			return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+			unsetStepSize();
+			return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
+			unsetStopTime();
+			return;
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
+			unsetTolerance();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -428,19 +461,20 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
-				return isSetStartTime();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
-				return isSetStepSize();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
-				return isSetStopTime();
-			case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
-				return isSetTolerance();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__START_TIME:
+			return isSetStartTime();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STEP_SIZE:
+			return isSetStepSize();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__STOP_TIME:
+			return isSetStopTime();
+		case FmiPackage.DEFAULT_EXPERIMENT_TYPE__TOLERANCE:
+			return isSetTolerance();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -448,23 +482,37 @@ public class DefaultExperimentTypeImpl extends MinimalEObjectImpl.Container impl
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (startTime: ");
-		if (startTimeESet) result.append(startTime); else result.append("<unset>");
+		if (startTimeESet)
+			result.append(startTime);
+		else
+			result.append("<unset>");
 		result.append(", stepSize: ");
-		if (stepSizeESet) result.append(stepSize); else result.append("<unset>");
+		if (stepSizeESet)
+			result.append(stepSize);
+		else
+			result.append("<unset>");
 		result.append(", stopTime: ");
-		if (stopTimeESet) result.append(stopTime); else result.append("<unset>");
+		if (stopTimeESet)
+			result.append(stopTime);
+		else
+			result.append("<unset>");
 		result.append(", tolerance: ");
-		if (toleranceESet) result.append(tolerance); else result.append("<unset>");
+		if (toleranceESet)
+			result.append(tolerance);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //DefaultExperimentTypeImpl
+} // DefaultExperimentTypeImpl

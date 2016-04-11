@@ -288,16 +288,16 @@ public abstract class ActivityNodeActivation extends SemanticVisitor implements 
 		return tokens;
 	}
 
-	public void initialize(ActivityNode node, IActivityNodeActivationGroup group){
+	public void initialize(ActivityNode node, IActivityNodeActivationGroup group) {
 		// Initialize this node activation.
-				
-		//fUML12-10 certain boolean flags are not properly initialized in come cases 
-				
+
+		// fUML12-10 certain boolean flags are not properly initialized in come cases
+
 		this.setNode(node);
 		this.setGroup(group);
 		this.running = false;
 	}
-	
+
 	public void suspend() {
 		// Suspend this activation within the activation group that contains it.
 		this.getGroup().suspend(this);
@@ -307,40 +307,42 @@ public abstract class ActivityNodeActivation extends SemanticVisitor implements 
 		// Resume this activation within the activation group that contains it.
 		this.getGroup().resume(this);
 	}
-	
-	public void setNode(ActivityNode node){
+
+	public void setNode(ActivityNode node) {
 		this.node = node;
 	}
-	
-	public ActivityNode getNode(){
+
+	public ActivityNode getNode() {
 		return this.node;
 	}
-	
-	public void setGroup(IActivityNodeActivationGroup group){
+
+	public void setGroup(IActivityNodeActivationGroup group) {
 		this.group = group;
 	}
-	
-	public IActivityNodeActivationGroup getGroup(){
+
+	public IActivityNodeActivationGroup getGroup() {
 		return this.group;
 	}
-	
-	public List<IActivityEdgeInstance> getIncomingEdges(){
+
+	public List<IActivityEdgeInstance> getIncomingEdges() {
 		return this.incomingEdges;
 	}
-	
-	public List<IActivityEdgeInstance> getOutgoingEdges(){
+
+	public List<IActivityEdgeInstance> getOutgoingEdges() {
 		return this.outgoingEdges;
 	}
-	
-	public void setRunning(Boolean status){
+
+	public void setRunning(Boolean status) {
 		this.running = status;
 	}
-	
-	/*public void animate(IRender animationManager){
-		// An activity node is animated for the period indicated by the MOKA_ANIMATION_DELAY
-		if(animationManager!=null){
-			this.animationManager = animationManager;
-			animationManager.render(this.node, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
-		}
-	}*/
+
+	/*
+	 * public void animate(IRender animationManager){
+	 * // An activity node is animated for the period indicated by the MOKA_ANIMATION_DELAY
+	 * if(animationManager!=null){
+	 * this.animationManager = animationManager;
+	 * animationManager.render(this.node, AnimationKind.ANIMATED, MokaConstants.MOKA_ANIMATION_DELAY);
+	 * }
+	 * }
+	 */
 }

@@ -18,18 +18,18 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
 
 public interface IClauseActivation {
-	
+
 	public void receiveControl();
-	
+
 	public Boolean isReady();
-	
+
 	public void runTest();
-	
+
 	public void selectBody();
-	
+
 	public IBooleanValue getDecision();
-	
+
 	public List<IClauseActivation> getPredecessors();
-	
+
 	public List<IClauseActivation> getSuccessors();
 }

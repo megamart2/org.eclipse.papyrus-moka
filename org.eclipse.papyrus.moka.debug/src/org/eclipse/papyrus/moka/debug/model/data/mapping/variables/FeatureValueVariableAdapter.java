@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.model.data.mapping.variables;
 
 import java.util.ArrayList;
@@ -23,9 +34,9 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 
 	// Feature value that is adapted in the debug model context
 	protected IFeatureValue featureValue;
-	
+
 	protected IStructuredValue featureValueOwner;
-	
+
 	public FeatureValueVariableAdapter(MokaDebugTarget debugTarget, IStructuredValue owner, IFeatureValue featureValue) {
 		super(debugTarget);
 		this.featureValue = featureValue;
@@ -35,40 +46,40 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 
 	@Override
 	public org.eclipse.debug.core.model.IValue getValue() throws DebugException {
-		if(this.value == null){
+		if (this.value == null) {
 			int upperBound = this.featureValue.getFeature().getUpper();
-			if(upperBound == 1){
+			if (upperBound == 1) {
 				Association association = null;
-				if(this.featureValueOwner instanceof IExtensionalValue){
+				if (this.featureValueOwner instanceof IExtensionalValue) {
 					StructuralFeature feature = this.featureValue.getFeature();
-					if(feature instanceof Property){
-						association = ((Property)feature).getAssociation();
+					if (feature instanceof Property) {
+						association = ((Property) feature).getAssociation();
 					}
-				}	
+				}
 				IValue fumlValue = null;
-				if(association!=null){
-					List<ILink> links = this.getMatchingLinks(association, 
-							this.featureValue.getFeature(), 
-							this.featureValueOwner, 
-							((IExtensionalValue)this.featureValueOwner).getLocus());
+				if (association != null) {
+					List<ILink> links = this.getMatchingLinks(association,
+							this.featureValue.getFeature(),
+							this.featureValueOwner,
+							((IExtensionalValue) this.featureValueOwner).getLocus());
 					List<IValue> resultValues = new ArrayList<IValue>();
 					for (int i = 0; i < links.size(); i++) {
 						ILink link = links.get(i);
 						resultValues.add(link.getFeatureValue(this.featureValue.getFeature()).getValues().iterator().next());
 					}
 					Iterator<IValue> valuesIterator = resultValues.iterator();
-					if(valuesIterator.hasNext()){
+					if (valuesIterator.hasNext()) {
 						fumlValue = valuesIterator.next();
 					}
-				}else{
+				} else {
 					Iterator<IValue> valuesIterator = this.featureValue.getValues().iterator();
-					if(valuesIterator.hasNext()){
+					if (valuesIterator.hasNext()) {
 						fumlValue = valuesIterator.next();
 					}
 				}
 				this.value = MokaValueAdapterFactory.getInstance().instantiate(fumlValue, this.debugTarget);
-			}else{
-			
+			} else {
+
 			}
 		}
 		return this.value;
@@ -77,7 +88,7 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 	@Override
 	public String getName() throws DebugException {
 		Feature feature = this.featureValue.getFeature();
-		if(feature!=null){
+		if (feature != null) {
 			return feature.getName();
 		}
 		return "";
@@ -98,13 +109,13 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 	@Override
 	public void setValue(String expression) throws DebugException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void setValue(org.eclipse.debug.core.model.IValue value) throws DebugException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -124,7 +135,7 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 		// TODO Auto-generated method stub
 		return false;
 	}
-	
+
 	protected List<ILink> getMatchingLinks(Association association, StructuralFeature end, IValue oppositeValue, ILocus locus) {
 		return this.getMatchingLinksForEndValue(association, end, oppositeValue, null, locus);
 	}
@@ -133,11 +144,11 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 		Property oppositeEnd = this.getOppositeEnd(association, end);
 		List<IExtensionalValue> extent = locus.getExtent(association);
 		List<ILink> links = new ArrayList<ILink>();
-		for (int i = 0; i<extent.size(); i++) {
+		for (int i = 0; i < extent.size(); i++) {
 			IExtensionalValue link = extent.get(i);
 			IValue value = link.getFeatureValue(oppositeEnd).getValues().get(0);
-			if(value instanceof IReference){
-				value = ((IReference)value).getReferent();
+			if (value instanceof IReference) {
+				value = ((IReference) value).getReferent();
 			}
 			if (value.equals(oppositeValue)) {
 				boolean matches = true;
@@ -146,19 +157,19 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 				}
 				if (matches) {
 					if (!end.isOrdered() | links.size() == 0) {
-						links.add((ILink)link);
+						links.add((ILink) link);
 					} else {
 						int n = link.getFeatureValue(end).getPosition();
 						boolean continueSearching = true;
 						int j = 0;
 						while (continueSearching & j < links.size()) {
 							j = j + 1;
-							continueSearching = links.get(j-1).getFeatureValue(end).getPosition() < n;
+							continueSearching = links.get(j - 1).getFeatureValue(end).getPosition() < n;
 						}
 						if (continueSearching) {
-							links.add((ILink)link);
+							links.add((ILink) link);
 						} else {
-							links.add(j-1, (ILink)link);
+							links.add(j - 1, (ILink) link);
 						}
 					}
 				}
@@ -166,7 +177,7 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 		}
 		return links;
 	}
-	
+
 	private Property getOppositeEnd(Association association, StructuralFeature end) {
 		// Get the end of a binary association opposite to the given end.
 		Property oppositeEnd = association.getMemberEnds().get(0);

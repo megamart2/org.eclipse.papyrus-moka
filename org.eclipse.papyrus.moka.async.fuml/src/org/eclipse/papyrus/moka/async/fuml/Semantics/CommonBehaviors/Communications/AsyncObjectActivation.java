@@ -170,11 +170,11 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 		this.currentState = ObjectActivationState.RUNNING;
 
 		if (eventOccurrence != null) {
-			if(eventOccurrence instanceof SignalEventOccurrence){
-				AsyncDebug.println("[EVENT CONSUMED] occurrence for a signal:  " + ((SignalEventOccurrence)eventOccurrence).signalInstance);
+			if (eventOccurrence instanceof SignalEventOccurrence) {
+				AsyncDebug.println("[EVENT CONSUMED] occurrence for a signal:  " + ((SignalEventOccurrence) eventOccurrence).signalInstance);
 			}
-			if(eventOccurrence instanceof InvocationEventOccurrence){
-				AsyncDebug.println("[EVENT CONSUMED] occurrence to start a classifier behavior: " + ((InvocationEventOccurrence)eventOccurrence).execution);
+			if (eventOccurrence instanceof InvocationEventOccurrence) {
+				AsyncDebug.println("[EVENT CONSUMED] occurrence to start a classifier behavior: " + ((InvocationEventOccurrence) eventOccurrence).execution);
 			}
 		}
 		return eventOccurrence;
@@ -206,8 +206,8 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 			List<Classifier> types = this.object.getTypes();
 			for (Iterator<Classifier> i = types.iterator(); i.hasNext();) {
 				Classifier type = i.next();
-				if (type instanceof Behavior | ((Class)type).getClassifierBehavior() != null) {
-					this.startBehavior((Class)type, new ArrayList<IParameterValue>());
+				if (type instanceof Behavior | ((Class) type).getClassifierBehavior() != null) {
+					this.startBehavior((Class) type, new ArrayList<IParameterValue>());
 				}
 			}
 		} else {
@@ -280,8 +280,8 @@ public class AsyncObjectActivation extends ObjectActivation implements Runnable 
 				this.hasBeenWaiting = false;
 			}
 			selectedEventAccepter.accept(eventOccurrence);
-		}else{
+		} else {
 			AsyncDebug.printLostSignal(eventOccurrence, this, out);
 		}
-	}	
+	}
 }

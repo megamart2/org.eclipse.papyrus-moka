@@ -17,15 +17,15 @@ import java.util.List;
 
 
 public interface IObjectNodeActivation extends IActivityNodeActivation {
-	
+
 	public Integer countOfferedValues();
-	
+
 	public void sendUnofferedTokens();
-	
+
 	public Integer countUnofferedTokens();
-	
+
 	public List<IToken> getUnofferedTokens();
-	
+
 	public List<IToken> takeUnofferedTokens();
-	
+
 }

@@ -20,22 +20,22 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.StructuralFeature;
 
 public interface IStructuredValue extends IValue {
-	
+
 	public void addFeatureValues(List<IFeatureValue> oldFeatureValues);
-	
+
 	public void addFeatureValuesForType(Classifier type, List<IFeatureValue> oldFeatureValues);
-	
+
 	public void createFeatureValues();
-	
+
 	public List<IFeatureValue> getMemberValues();
-	
+
 	public List<IValue> getValues(NamedElement feature, List<IFeatureValue> featureValues);
-	
+
 	public IFeatureValue getFeatureValue(StructuralFeature feature);
-	
+
 	public void setFeatureValue(StructuralFeature feature, List<IValue> values, Integer position);
-	
+
 	public List<IFeatureValue> getFeatureValues();
-	
+
 	public void setFeatureValues(List<IFeatureValue> featureValues);
 }

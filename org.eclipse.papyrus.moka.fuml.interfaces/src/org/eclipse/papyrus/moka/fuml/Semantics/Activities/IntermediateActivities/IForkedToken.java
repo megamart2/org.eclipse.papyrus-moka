@@ -14,17 +14,17 @@
 package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities;
 
 public interface IForkedToken extends IToken {
-	
+
 	public void setBaseToken(IToken baseToken);
-	
+
 	public IToken getBaseToken();
-	
+
 	public void setRemainingOffersCount(Integer count);
-	
+
 	public Integer getRemainingOffersCount();
-	
+
 	public void setBaseTokenWithDrawn(Boolean status);
-	
+
 	public Boolean isBaseTokenWithdrawn();
-	
+
 }

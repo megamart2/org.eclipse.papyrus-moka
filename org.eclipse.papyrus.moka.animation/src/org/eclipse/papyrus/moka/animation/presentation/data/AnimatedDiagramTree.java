@@ -13,16 +13,16 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.presentation.data;
 
-public class AnimatedDiagramTree{
-	
+public class AnimatedDiagramTree {
+
 	protected IAnimationTreeNode root;
-	
-	public AnimatedDiagramTree(){
+
+	public AnimatedDiagramTree() {
 		this.root = AnimationTreeNodeFactory.getInstance().createAnimationTreeNode();
 	}
 
-	public IAnimationTreeNode getRoot(){
+	public IAnimationTreeNode getRoot() {
 		return this.root;
 	}
-	
+
 }

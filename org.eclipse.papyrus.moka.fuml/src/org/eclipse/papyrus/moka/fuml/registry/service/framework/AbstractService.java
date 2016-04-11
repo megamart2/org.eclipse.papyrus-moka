@@ -36,7 +36,7 @@ public abstract class AbstractService extends Object_ {
 		this.operationExecution = new HashMap<Operation, IExecution>();
 		this.doOperationExecutionMapping();
 	}
-	
+
 	@Override
 	public IExecution dispatch(Operation operation) {
 		if (this.operationExecution.containsKey(operation)) {
@@ -44,13 +44,13 @@ public abstract class AbstractService extends Object_ {
 		}
 		throw new NotImplementedException("Not any ServiceOperationExecution implemented/registered for this operation");
 	}
-	
+
 	public abstract void doOperationExecutionMapping();
 
 	public abstract class ServiceOperationExecution extends OpaqueBehaviorExecution {
 
 		protected Operation operation;
-		
+
 		protected Behavior behaviorSignature;
 
 		public ServiceOperationExecution(Operation operation) {
@@ -59,7 +59,7 @@ public abstract class AbstractService extends Object_ {
 
 		@Override
 		public Behavior getBehavior() {
-			if(behaviorSignature==null){
+			if (behaviorSignature == null) {
 				behaviorSignature = SystemServicesRegistryUtils.getInstance().generateOpaqueBehaviorSignature(operation);
 			}
 			return behaviorSignature;

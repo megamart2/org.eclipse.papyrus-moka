@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
 
 public interface IAcceptEventActionEventAccepter extends IEventAccepter {
-	
+
 	public IAcceptEventActionActivation getActionActivation();
-	
+
 	public void setAcceptEventActionActivation(IAcceptEventActionActivation actionActivation);
 
 }

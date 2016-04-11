@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.engine;
 
 import java.util.Iterator;
@@ -21,44 +32,45 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 
 public class DebugServiceHelper {
-	
-	private DebugServiceHelper(){}
-	
-	public static DebugServiceHelper INSTANCE = new DebugServiceHelper(); 
-	
-	public boolean isActive(IObject_ value){
+
+	private DebugServiceHelper() {
+	}
+
+	public static DebugServiceHelper INSTANCE = new DebugServiceHelper();
+
+	public boolean isActive(IObject_ value) {
 		boolean active = false;
-		Iterator<Classifier> typesIterator = value.getTypes().iterator(); 
-		while(!active){
+		Iterator<Classifier> typesIterator = value.getTypes().iterator();
+		while (!active) {
 			Classifier type = typesIterator.next();
-			if(type instanceof Class){
-				active = ((Class)type).isActive() && !((Class)type).isAbstract(); 
+			if (type instanceof Class) {
+				active = ((Class) type).isActive() && !((Class) type).isAbstract();
 			}
 		}
 		return active;
 	}
-	
-	public boolean hasBreakpoint(ISemanticVisitor visitor){
+
+	public boolean hasBreakpoint(ISemanticVisitor visitor) {
 		boolean breakpointExist = false;
 		IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager();
 		IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID);
 		EObject visitedModelElement = null;
-		if(visitor instanceof IActivityNodeActivation){
-			visitedModelElement = ((IActivityNodeActivation)visitor).getNode();
-		}else if(visitor instanceof IActivityEdgeInstance){
-			visitedModelElement = ((IActivityEdgeInstance)visitor).getEdge();
+		if (visitor instanceof IActivityNodeActivation) {
+			visitedModelElement = ((IActivityNodeActivation) visitor).getNode();
+		} else if (visitor instanceof IActivityEdgeInstance) {
+			visitedModelElement = ((IActivityEdgeInstance) visitor).getEdge();
 		}
-		if(visitedModelElement!=null){
+		if (visitedModelElement != null) {
 			int i = 0;
-			while(!breakpointExist && i < breakpoints.length){
-				MokaBreakpoint breakpoint = (MokaBreakpoint) breakpoints[i]; 
+			while (!breakpointExist && i < breakpoints.length) {
+				MokaBreakpoint breakpoint = (MokaBreakpoint) breakpoints[i];
 				boolean isEnabled = false;
 				try {
 					isEnabled = breakpoint.isEnabled();
 				} catch (CoreException e) {
 					e.printStackTrace();
 				}
-				if(isEnabled && visitedModelElement == breakpoint.getModelElement()){
+				if (isEnabled && visitedModelElement == breakpoint.getModelElement()) {
 					breakpointExist = true;
 				}
 				i++;
@@ -66,19 +78,19 @@ public class DebugServiceHelper {
 		}
 		return breakpointExist;
 	}
-	
-	
-	public IAnimation getAnimationService(){
+
+
+	public IAnimation getAnimationService() {
 		IAnimation animationService = null;
 		List<IMokaService> services = MokaServiceRegistry.getInstance().getService(IAnimation.class);
-		if(!services.isEmpty()){
-			if(services.size() == 1){
+		if (!services.isEmpty()) {
+			if (services.size() == 1) {
 				animationService = (IAnimation) services.iterator().next();
-			}else{
+			} else {
 				// TODO: handle via a strategy (e.g., the animation service with the highest priority)
 			}
 		}
 		return animationService;
 	}
-	
+
 }

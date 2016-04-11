@@ -27,7 +27,7 @@ Require-Bundle: org.eclipse.ui,
 Export-Package: org.eclipse.papyrus.moka.ui.launch
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-Version: 2.0.0.qualifier
-Bundle-Name: Moka UI (Incubation)
+Bundle-Name: Moka UI
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.moka.ui.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.moka.ui;singleton:=true

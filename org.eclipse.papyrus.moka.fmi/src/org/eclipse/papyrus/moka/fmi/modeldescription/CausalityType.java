@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Causality Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getCausalityType()
  * @model extendedMetaData="name='causality_._type'"
  * @generated
@@ -31,6 +32,7 @@ public enum CausalityType implements Enumerator {
 	 * The '<em><b>Parameter</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PARAMETER_VALUE
 	 * @generated
 	 * @ordered
@@ -41,6 +43,7 @@ public enum CausalityType implements Enumerator {
 	 * The '<em><b>Calculated Parameter</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CALCULATED_PARAMETER_VALUE
 	 * @generated
 	 * @ordered
@@ -51,6 +54,7 @@ public enum CausalityType implements Enumerator {
 	 * The '<em><b>Input</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #INPUT_VALUE
 	 * @generated
 	 * @ordered
@@ -61,6 +65,7 @@ public enum CausalityType implements Enumerator {
 	 * The '<em><b>Output</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OUTPUT_VALUE
 	 * @generated
 	 * @ordered
@@ -71,6 +76,7 @@ public enum CausalityType implements Enumerator {
 	 * The '<em><b>Local</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #LOCAL_VALUE
 	 * @generated
 	 * @ordered
@@ -81,6 +87,7 @@ public enum CausalityType implements Enumerator {
 	 * The '<em><b>Independent</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #INDEPENDENT_VALUE
 	 * @generated
 	 * @ordered
@@ -95,6 +102,7 @@ public enum CausalityType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #PARAMETER
 	 * @model name="parameter"
 	 * @generated
@@ -110,6 +118,7 @@ public enum CausalityType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #CALCULATED_PARAMETER
 	 * @model name="calculatedParameter"
 	 * @generated
@@ -125,6 +134,7 @@ public enum CausalityType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #INPUT
 	 * @model name="input"
 	 * @generated
@@ -140,6 +150,7 @@ public enum CausalityType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #OUTPUT
 	 * @model name="output"
 	 * @generated
@@ -155,6 +166,7 @@ public enum CausalityType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #LOCAL
 	 * @model name="local"
 	 * @generated
@@ -170,6 +182,7 @@ public enum CausalityType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #INDEPENDENT
 	 * @model name="independent"
 	 * @generated
@@ -181,22 +194,23 @@ public enum CausalityType implements Enumerator {
 	 * An array of all the '<em><b>Causality Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final CausalityType[] VALUES_ARRAY =
-		new CausalityType[] {
+	private static final CausalityType[] VALUES_ARRAY = new CausalityType[] {
 			PARAMETER,
 			CALCULATED_PARAMETER,
 			INPUT,
 			OUTPUT,
 			LOCAL,
 			INDEPENDENT,
-		};
+	};
 
 	/**
 	 * A public read-only list of all the '<em><b>Causality Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<CausalityType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -205,7 +219,9 @@ public enum CausalityType implements Enumerator {
 	 * Returns the '<em><b>Causality Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 * 
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -223,7 +239,9 @@ public enum CausalityType implements Enumerator {
 	 * Returns the '<em><b>Causality Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 * 
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -241,18 +259,26 @@ public enum CausalityType implements Enumerator {
 	 * Returns the '<em><b>Causality Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 * 
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static CausalityType get(int value) {
 		switch (value) {
-			case PARAMETER_VALUE: return PARAMETER;
-			case CALCULATED_PARAMETER_VALUE: return CALCULATED_PARAMETER;
-			case INPUT_VALUE: return INPUT;
-			case OUTPUT_VALUE: return OUTPUT;
-			case LOCAL_VALUE: return LOCAL;
-			case INDEPENDENT_VALUE: return INDEPENDENT;
+		case PARAMETER_VALUE:
+			return PARAMETER;
+		case CALCULATED_PARAMETER_VALUE:
+			return CALCULATED_PARAMETER;
+		case INPUT_VALUE:
+			return INPUT;
+		case OUTPUT_VALUE:
+			return OUTPUT;
+		case LOCAL_VALUE:
+			return LOCAL;
+		case INDEPENDENT_VALUE:
+			return INDEPENDENT;
 		}
 		return null;
 	}
@@ -260,6 +286,7 @@ public enum CausalityType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -267,6 +294,7 @@ public enum CausalityType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -274,6 +302,7 @@ public enum CausalityType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -282,6 +311,7 @@ public enum CausalityType implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private CausalityType(int value, String name, String literal) {
@@ -293,39 +323,43 @@ public enum CausalityType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //CausalityType
+
+} // CausalityType

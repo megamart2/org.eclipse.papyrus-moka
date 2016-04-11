@@ -22,9 +22,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax <em>Max</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin <em>Min</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getQuantity <em>Quantity</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax <em>Max</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin <em>Min</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getIntegerType1()
@@ -39,6 +39,7 @@ public interface IntegerType1 extends EObject {
 	 * <!-- begin-model-doc -->
 	 * max >= min required
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Max</em>' attribute.
 	 * @see #isSetMax()
 	 * @see #unsetMax()
@@ -54,7 +55,9 @@ public interface IntegerType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Max</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Max</em>' attribute.
 	 * @see #isSetMax()
 	 * @see #unsetMax()
 	 * @see #getMax()
@@ -66,6 +69,7 @@ public interface IntegerType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax <em>Max</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMax()
 	 * @see #getMax()
 	 * @see #setMax(int)
@@ -77,6 +81,7 @@ public interface IntegerType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMax <em>Max</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Max</em>' attribute is set.
 	 * @see #unsetMax()
 	 * @see #getMax()
@@ -93,6 +98,7 @@ public interface IntegerType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Min</em>' attribute.
 	 * @see #isSetMin()
 	 * @see #unsetMin()
@@ -108,7 +114,9 @@ public interface IntegerType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Min</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Min</em>' attribute.
 	 * @see #isSetMin()
 	 * @see #unsetMin()
 	 * @see #getMin()
@@ -120,6 +128,7 @@ public interface IntegerType1 extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin <em>Min</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetMin()
 	 * @see #getMin()
 	 * @see #setMin(int)
@@ -131,6 +140,7 @@ public interface IntegerType1 extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getMin <em>Min</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Min</em>' attribute is set.
 	 * @see #unsetMin()
 	 * @see #getMin()
@@ -147,6 +157,7 @@ public interface IntegerType1 extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Quantity</em>' attribute.
 	 * @see #setQuantity(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getIntegerType1_Quantity()
@@ -160,7 +171,9 @@ public interface IntegerType1 extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.IntegerType1#getQuantity <em>Quantity</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Quantity</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Quantity</em>' attribute.
 	 * @see #getQuantity()
 	 * @generated
 	 */

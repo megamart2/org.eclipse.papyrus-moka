@@ -24,34 +24,34 @@ import org.eclipse.papyrus.moka.utils.helper.presentation.LabelProviderHelper;
 public class MainColumnLableProvider extends ColumnLabelProvider {
 
 	protected RootLabelProvider rootLabelProvider;
-	
+
 	protected AnimatingInstanceLabelProvider animatorLabelProvider;
-	
+
 	public MainColumnLableProvider() {
 		this.rootLabelProvider = new RootLabelProvider();
-		this.animatorLabelProvider = new AnimatingInstanceLabelProvider(); 
+		this.animatorLabelProvider = new AnimatingInstanceLabelProvider();
 	}
-	
-	protected void initPapyrusLabelProviderService(){
-		
+
+	protected void initPapyrusLabelProviderService() {
+
 	}
-	
+
 	@Override
 	public void update(ViewerCell cell) {
 		Object element = cell.getElement();
-		if(element instanceof AnimatingInstanceNode){
-			  cell.setText(this.animatorLabelProvider.getText(element));
-			  cell.setImage(this.animatorLabelProvider.getImage(element));
-		  }else if(element instanceof DiagramAnimationNode){
-			  Diagram diagram = ((DiagramAnimationNode) element).getAnimatedDiagram();
-			  cell.setText(LabelProviderHelper.getInstance().getText(diagram));
-			  cell.setImage(LabelProviderHelper.getInstance().getImage(diagram));
-		  }else if(element instanceof AnimationTreeNode){
-			  cell.setText(this.rootLabelProvider.getText(element));
-			  cell.setImage(this.rootLabelProvider.getImage(element));
-		  }else{
-			  cell.setText("Unknown");
-		  }
+		if (element instanceof AnimatingInstanceNode) {
+			cell.setText(this.animatorLabelProvider.getText(element));
+			cell.setImage(this.animatorLabelProvider.getImage(element));
+		} else if (element instanceof DiagramAnimationNode) {
+			Diagram diagram = ((DiagramAnimationNode) element).getAnimatedDiagram();
+			cell.setText(LabelProviderHelper.getInstance().getText(diagram));
+			cell.setImage(LabelProviderHelper.getInstance().getImage(diagram));
+		} else if (element instanceof AnimationTreeNode) {
+			cell.setText(this.rootLabelProvider.getText(element));
+			cell.setImage(this.rootLabelProvider.getImage(element));
+		} else {
+			cell.setText("Unknown");
+		}
 	}
 
 }

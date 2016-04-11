@@ -6,7 +6,7 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 2.0.0.qualifier
-Bundle-Name: Moka Validation Rules for fUML/PSCS models (Incubation)
+Bundle-Name: Moka Validation Rules for fUML/PSCS models
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.moka.fuml.validation.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fuml.validation;singleton:=true

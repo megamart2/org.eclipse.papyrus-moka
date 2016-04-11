@@ -27,7 +27,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.StructuralFeature;
 
-public abstract class CompoundValue extends StructuredValue implements ICompoundValue{
+public abstract class CompoundValue extends StructuredValue implements ICompoundValue {
 
 	public List<IFeatureValue> featureValues = new ArrayList<IFeatureValue>();
 
@@ -155,8 +155,8 @@ public abstract class CompoundValue extends StructuredValue implements ICompound
 		}
 		return buffer + ")";
 	}
-	
-	public void setFeatureValues(List<IFeatureValue> featureValues){
+
+	public void setFeatureValues(List<IFeatureValue> featureValues) {
 		this.featureValues = featureValues;
 	}
 }

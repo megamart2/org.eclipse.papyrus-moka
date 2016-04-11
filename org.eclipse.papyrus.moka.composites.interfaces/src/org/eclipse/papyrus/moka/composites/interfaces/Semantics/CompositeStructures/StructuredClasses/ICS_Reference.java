@@ -19,25 +19,25 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IS
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Port;
 
-public interface ICS_Reference extends IReference{
+public interface ICS_Reference extends IReference {
 
 	public IExecution dispatchIn(Operation operation, ICS_InteractionPoint interactionPoint);
-	
+
 	public IExecution dispatchIn(Operation operation, Port onPort);
-	
+
 	public IExecution dispatchOut(Operation operation, Port onPort);
-	
+
 	public IExecution dispatchOut(Operation operation, ICS_InteractionPoint interactionPoint);
-	
+
 	public void sendIn(ISignalInstance signalInstance, ICS_InteractionPoint interactionPoint);
-	
+
 	public void sendIn(ISignalInstance signalInstance, Port onPort);
-	
+
 	public void sendOut(ISignalInstance signalInstance, Port onPort);
-	
+
 	public void sendOut(ISignalInstance signalInstance, ICS_InteractionPoint interactionPoint);
 
 	public ICS_Object getCompositeReferent();
-	
+
 	public void setCompositeReferent(ICS_Object compositeReferent);
 }

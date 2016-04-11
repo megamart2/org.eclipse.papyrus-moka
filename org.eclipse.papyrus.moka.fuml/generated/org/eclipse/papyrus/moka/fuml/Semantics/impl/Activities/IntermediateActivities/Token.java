@@ -17,7 +17,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 
-public abstract class Token implements IToken{
+public abstract class Token implements IToken {
 
 	public IActivityNodeActivation holder;
 
@@ -57,12 +57,12 @@ public abstract class Token implements IToken{
 	public abstract Boolean isControl();
 
 	public abstract IValue getValue();
-	
-	public void setHolder(IActivityNodeActivation holder){
+
+	public void setHolder(IActivityNodeActivation holder) {
 		this.holder = holder;
 	}
-	
-	public IActivityNodeActivation getHolder(){
+
+	public IActivityNodeActivation getHolder() {
 		return this.holder;
 	}
 }

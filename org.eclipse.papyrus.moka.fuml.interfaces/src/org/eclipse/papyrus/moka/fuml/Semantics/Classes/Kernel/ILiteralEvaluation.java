@@ -16,7 +16,7 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel;
 import org.eclipse.uml2.uml.PrimitiveType;
 
 public interface ILiteralEvaluation extends IEvaluation {
-	
+
 	public PrimitiveType getType(String builtInTypeName);
-	
+
 }

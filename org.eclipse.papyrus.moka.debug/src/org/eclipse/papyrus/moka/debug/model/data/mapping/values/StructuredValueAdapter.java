@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import java.util.Iterator;
@@ -14,7 +25,7 @@ public class StructuredValueAdapter extends MokaValueAdapter {
 
 	// Value that is adapted in the debug model context
 	protected IStructuredValue value;
-	
+
 	public StructuredValueAdapter(MokaDebugTarget debugTarget, IStructuredValue value) {
 		super(debugTarget);
 		this.value = value;
@@ -24,10 +35,10 @@ public class StructuredValueAdapter extends MokaValueAdapter {
 	public String getReferenceTypeName() throws DebugException {
 		String type = "[";
 		Iterator<Classifier> typeIterator = this.value.getTypes().iterator();
-		while(typeIterator.hasNext()){
+		while (typeIterator.hasNext()) {
 			Classifier classifier = typeIterator.next();
 			type += classifier.getName();
-			if(typeIterator.hasNext()){
+			if (typeIterator.hasNext()) {
 				type += ", ";
 			}
 		}
@@ -42,9 +53,9 @@ public class StructuredValueAdapter extends MokaValueAdapter {
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
-		if(this.variables.isEmpty()){
+		if (this.variables.isEmpty()) {
 			Iterator<IFeatureValue> featureValueIterator = this.value.getFeatureValues().iterator();
-			while(featureValueIterator.hasNext()){
+			while (featureValueIterator.hasNext()) {
 				this.variables.add(new FeatureValueVariableAdapter(this.debugTarget, value, featureValueIterator.next()));
 			}
 		}

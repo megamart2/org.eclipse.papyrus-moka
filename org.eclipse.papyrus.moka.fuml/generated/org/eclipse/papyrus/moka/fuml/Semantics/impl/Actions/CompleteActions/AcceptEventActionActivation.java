@@ -54,12 +54,12 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 		this.eventAccepter.setAcceptEventActionActivation(this);
 		this.waiting = false;
 	}
-	
-	public void initialize(ActivityNode node, IActivityNodeActivationGroup group){
+
+	public void initialize(ActivityNode node, IActivityNodeActivationGroup group) {
 		// Initialize this accept event action activation to be not waiting for an event.
-			
+
 		// FUML12-10 certain boolean flags are not properly initialized in come cases
-			
+
 		super.initialize(node, group);
 		this.waiting = false;
 	}
@@ -142,9 +142,9 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 	public Boolean match(ISignalInstance signalInstance) {
 		// Return true if the given signal instance matches a trigger of the
 		// accept action of this activation.
-		
+
 		// FUML12-34 AcceptEventActionActivation::match should match instances of descendants of a trigger's signal
-		
+
 		AcceptEventAction action = (AcceptEventAction) (this.node);
 		List<Trigger> triggers = action.getTriggers();
 		Signal signal = signalInstance.getType();
@@ -154,9 +154,10 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 			Signal triggerSignal = ((SignalEvent) (triggers.get(i - 1).getEvent())).getSignal();
 			if (triggerSignal == signal) {
 				matches = true;
-			}else{
+			} else {
 				matches = this.checkAllParents(signal, triggerSignal);
-			}			i = i + 1;
+			}
+			i = i + 1;
 		}
 		return matches;
 	}
@@ -174,5 +175,5 @@ public class AcceptEventActionActivation extends ActionActivation implements IAc
 	public IAcceptEventActionEventAccepter getEventAccepter() {
 		return this.eventAccepter;
 	}
-	
+
 }

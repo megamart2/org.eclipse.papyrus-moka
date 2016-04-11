@@ -29,7 +29,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileTypeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.FileTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -39,6 +39,7 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -49,6 +50,7 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -58,6 +60,7 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected FileTypeImpl() {
@@ -67,6 +70,7 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,6 +81,7 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -86,6 +91,7 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -98,13 +104,14 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.FILE_TYPE__NAME:
-				return getName();
+		case FmiPackage.FILE_TYPE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -112,14 +119,15 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.FILE_TYPE__NAME:
-				setName((String)newValue);
-				return;
+		case FmiPackage.FILE_TYPE__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -127,14 +135,15 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FILE_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case FmiPackage.FILE_TYPE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -142,13 +151,14 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.FILE_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FmiPackage.FILE_TYPE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,11 +166,13 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (name: ");
@@ -169,4 +181,4 @@ public class FileTypeImpl extends MinimalEObjectImpl.Container implements FileTy
 		return result.toString();
 	}
 
-} //FileTypeImpl
+} // FileTypeImpl

@@ -100,10 +100,10 @@ public class RealValue extends PrimitiveValue implements IRealValue {
 
 
 	@Override
-	public Double getValue(){
+	public Double getValue() {
 		return this.value;
 	}
-	
+
 	@Override
 	public void setValue(Double value) {
 		this.value = value;

@@ -21,17 +21,17 @@ import org.eclipse.uml2.uml.ActivityNode;
 import org.eclipse.uml2.uml.ExecutableNode;
 import org.eclipse.uml2.uml.OutputPin;
 
-public interface IStructuredActivityNodeActivation extends IActionActivation{
+public interface IStructuredActivityNodeActivation extends IActionActivation {
 
 	public void doStructuredActivity();
-	
+
 	public List<ActivityNode> makeActivityNodeList(List<ExecutableNode> nodes);
-	
+
 	public List<IValue> getPinValues(OutputPin pin);
-	
+
 	public void putPinValues(OutputPin pin, List<IValue> values);
-	
+
 	public void terminateAll();
-	
+
 	public Boolean isSuspended();
 }

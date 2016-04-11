@@ -22,6 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * A representation of the literals of the enumeration '<em><b>Variable Naming Convention Type</b></em>',
  * and utility methods for working with them.
  * <!-- end-user-doc -->
+ * 
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getVariableNamingConventionType()
  * @model extendedMetaData="name='variableNamingConvention_._type'"
  * @generated
@@ -31,6 +32,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * The '<em><b>Flat</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FLAT_VALUE
 	 * @generated
 	 * @ordered
@@ -41,6 +43,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * The '<em><b>Structured</b></em>' literal object.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #STRUCTURED_VALUE
 	 * @generated
 	 * @ordered
@@ -55,6 +58,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #FLAT
 	 * @model name="flat"
 	 * @generated
@@ -70,6 +74,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #STRUCTURED
 	 * @model name="structured"
 	 * @generated
@@ -81,18 +86,19 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * An array of all the '<em><b>Variable Naming Convention Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
-	private static final VariableNamingConventionType[] VALUES_ARRAY =
-		new VariableNamingConventionType[] {
+	private static final VariableNamingConventionType[] VALUES_ARRAY = new VariableNamingConventionType[] {
 			FLAT,
 			STRUCTURED,
-		};
+	};
 
 	/**
 	 * A public read-only list of all the '<em><b>Variable Naming Convention Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public static final List<VariableNamingConventionType> VALUES = Collections.unmodifiableList(Arrays.asList(VALUES_ARRAY));
@@ -101,7 +107,9 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * Returns the '<em><b>Variable Naming Convention Type</b></em>' literal with the specified literal value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param literal the literal.
+	 * 
+	 * @param literal
+	 *            the literal.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -119,7 +127,9 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * Returns the '<em><b>Variable Naming Convention Type</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param name the name.
+	 * 
+	 * @param name
+	 *            the name.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
@@ -137,14 +147,18 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * Returns the '<em><b>Variable Naming Convention Type</b></em>' literal with the specified integer value.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the integer value.
+	 * 
+	 * @param value
+	 *            the integer value.
 	 * @return the matching enumerator or <code>null</code>.
 	 * @generated
 	 */
 	public static VariableNamingConventionType get(int value) {
 		switch (value) {
-			case FLAT_VALUE: return FLAT;
-			case STRUCTURED_VALUE: return STRUCTURED;
+		case FLAT_VALUE:
+			return FLAT;
+		case STRUCTURED_VALUE:
+			return STRUCTURED;
 		}
 		return null;
 	}
@@ -152,6 +166,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final int value;
@@ -159,6 +174,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String name;
@@ -166,6 +182,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private final String literal;
@@ -174,6 +191,7 @@ public enum VariableNamingConventionType implements Enumerator {
 	 * Only this class can construct instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	private VariableNamingConventionType(int value, String name, String literal) {
@@ -185,39 +203,43 @@ public enum VariableNamingConventionType implements Enumerator {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public int getValue() {
-	  return value;
+		return value;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
-	  return name;
+		return name;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getLiteral() {
-	  return literal;
+		return literal;
 	}
 
 	/**
 	 * Returns the literal value of the enumerator, which is its string representation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
 		return literal;
 	}
-	
-} //VariableNamingConventionType
+
+} // VariableNamingConventionType

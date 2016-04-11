@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 
-public class Locus implements ILocus{
+public class Locus implements ILocus {
 
 	/* Locus identifier (Issue fUML12-33) */
 	public String identifier;
@@ -141,17 +141,17 @@ public class Locus implements ILocus{
 		// Implementation of this method is not normative
 		String prefix = "";
 		boolean multipleTypes = value.getTypes().size() > 1;
-		if(multipleTypes){
+		if (multipleTypes) {
 			prefix += "[";
 		}
 		Iterator<Classifier> typeIterator = value.getTypes().iterator();
-		while(typeIterator.hasNext()){
+		while (typeIterator.hasNext()) {
 			prefix += typeIterator.next().getName();
-			if(typeIterator.hasNext()){
+			if (typeIterator.hasNext()) {
 				prefix += ", ";
 			}
 		}
-		if(multipleTypes){
+		if (multipleTypes) {
 			prefix += "]";
 		}
 		return prefix + "@" + UUID.randomUUID().toString();
@@ -175,5 +175,5 @@ public class Locus implements ILocus{
 
 	public List<IExtensionalValue> getExtensionalValues() {
 		return this.extensionalValues;
-	}	
+	}
 }

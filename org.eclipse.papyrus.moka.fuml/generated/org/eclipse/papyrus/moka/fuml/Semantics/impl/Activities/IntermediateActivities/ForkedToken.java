@@ -17,7 +17,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 
-public class ForkedToken extends Token implements IForkedToken{
+public class ForkedToken extends Token implements IForkedToken {
 
 	public IToken baseToken;
 
@@ -87,17 +87,17 @@ public class ForkedToken extends Token implements IForkedToken{
 
 	public void setRemainingOffersCount(Integer count) {
 		this.remainingOffersCount = count;
-		
+
 	}
 
 	public Integer getRemainingOffersCount() {
 		return this.remainingOffersCount;
 	}
 
-	public void setBaseTokenWithDrawn(Boolean status){
+	public void setBaseTokenWithDrawn(Boolean status) {
 		this.baseTokenIsWithdrawn = status;
 	}
-	
+
 	public Boolean isBaseTokenWithdrawn() {
 		return this.baseTokenIsWithdrawn;
 	}

@@ -21,7 +21,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 public interface IDestroyObjectActivation extends IActionActivation {
 
 	public void destroyObject(IValue value, Boolean isDestroyLinks, Boolean isDestroyOwnedObjects);
-	
+
 	public Boolean objectIsComposite(IReference reference, ILink link);
-	
+
 }

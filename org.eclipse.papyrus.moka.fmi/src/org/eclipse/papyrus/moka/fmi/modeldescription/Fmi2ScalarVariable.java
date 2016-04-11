@@ -26,19 +26,19 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getReal <em>Real</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInteger <em>Integer</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getBoolean <em>Boolean</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getString <em>String</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getEnumeration <em>Enumeration</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getAnnotations <em>Annotations</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality <em>Causality</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial <em>Initial</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getName <em>Name</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference <em>Value Reference</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability <em>Variability</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getReal <em>Real</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInteger <em>Integer</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getBoolean <em>Boolean</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getString <em>String</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getEnumeration <em>Enumeration</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getAnnotations <em>Annotations</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality <em>Causality</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial <em>Initial</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference <em>Value Reference</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability <em>Variability</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable()
@@ -54,6 +54,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Real</em>' containment reference.
 	 * @see #setReal(RealType)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Real()
@@ -67,7 +68,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getReal <em>Real</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Real</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Real</em>' containment reference.
 	 * @see #getReal()
 	 * @generated
 	 */
@@ -81,6 +84,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Integer</em>' containment reference.
 	 * @see #setInteger(IntegerType)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Integer()
@@ -94,7 +98,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInteger <em>Integer</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Integer</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Integer</em>' containment reference.
 	 * @see #getInteger()
 	 * @generated
 	 */
@@ -108,6 +114,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Boolean</em>' containment reference.
 	 * @see #setBoolean(BooleanType)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Boolean()
@@ -121,7 +128,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getBoolean <em>Boolean</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Boolean</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Boolean</em>' containment reference.
 	 * @see #getBoolean()
 	 * @generated
 	 */
@@ -135,6 +144,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>String</em>' containment reference.
 	 * @see #setString(StringType)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_String()
@@ -148,7 +158,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getString <em>String</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>String</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>String</em>' containment reference.
 	 * @see #getString()
 	 * @generated
 	 */
@@ -162,6 +174,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Enumeration</em>' containment reference.
 	 * @see #setEnumeration(EnumerationType)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Enumeration()
@@ -175,7 +188,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getEnumeration <em>Enumeration</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Enumeration</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Enumeration</em>' containment reference.
 	 * @see #getEnumeration()
 	 * @generated
 	 */
@@ -188,6 +203,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Additional data of the scalar variable, e.g., for the dialog menu or the graphical layout
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Annotations</em>' containment reference.
 	 * @see #setAnnotations(Fmi2Annotation)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Annotations()
@@ -201,7 +217,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getAnnotations <em>Annotations</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Annotations</em>' containment reference.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Annotations</em>' containment reference.
 	 * @see #getAnnotations()
 	 * @generated
 	 */
@@ -215,6 +233,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Only for ModelExchange and only for variables with variability = "input":
 	 * If present with value = false, then only one fmi2SetXXX call is allowed at one super dense time instant. In other words, this input is not allowed to appear in an algebraic loop.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Can Handle Multiple Set Per Time Instant</em>' attribute.
 	 * @see #isSetCanHandleMultipleSetPerTimeInstant()
 	 * @see #unsetCanHandleMultipleSetPerTimeInstant()
@@ -230,7 +249,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Can Handle Multiple Set Per Time Instant</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Can Handle Multiple Set Per Time Instant</em>' attribute.
 	 * @see #isSetCanHandleMultipleSetPerTimeInstant()
 	 * @see #unsetCanHandleMultipleSetPerTimeInstant()
 	 * @see #isCanHandleMultipleSetPerTimeInstant()
@@ -242,6 +263,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCanHandleMultipleSetPerTimeInstant()
 	 * @see #isCanHandleMultipleSetPerTimeInstant()
 	 * @see #setCanHandleMultipleSetPerTimeInstant(boolean)
@@ -253,6 +275,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#isCanHandleMultipleSetPerTimeInstant <em>Can Handle Multiple Set Per Time Instant</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Can Handle Multiple Set Per Time Instant</em>' attribute is set.
 	 * @see #unsetCanHandleMultipleSetPerTimeInstant()
 	 * @see #isCanHandleMultipleSetPerTimeInstant()
@@ -274,6 +297,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * local: variable calculated from other variables
 	 * independent: independent variable (usually time)
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Causality</em>' attribute.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 	 * @see #isSetCausality()
@@ -290,7 +314,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality <em>Causality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Causality</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Causality</em>' attribute.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType
 	 * @see #isSetCausality()
 	 * @see #unsetCausality()
@@ -303,6 +329,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality <em>Causality</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetCausality()
 	 * @see #getCausality()
 	 * @see #setCausality(CausalityType)
@@ -314,6 +341,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getCausality <em>Causality</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Causality</em>' attribute is set.
 	 * @see #unsetCausality()
 	 * @see #getCausality()
@@ -330,6 +358,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return the value of the '<em>Description</em>' attribute.
 	 * @see #setDescription(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Description()
@@ -343,7 +372,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getDescription <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Description</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Description</em>' attribute.
 	 * @see #getDescription()
 	 * @generated
 	 */
@@ -360,6 +391,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * calculated: calculated from other variables.
 	 * If not provided, initial is deduced from causality and variability (details see specification)
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Initial</em>' attribute.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 	 * @see #isSetInitial()
@@ -376,7 +408,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial <em>Initial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Initial</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Initial</em>' attribute.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.InitialType
 	 * @see #isSetInitial()
 	 * @see #unsetInitial()
@@ -389,6 +423,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial <em>Initial</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetInitial()
 	 * @see #getInitial()
 	 * @see #setInitial(InitialType)
@@ -400,6 +435,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getInitial <em>Initial</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Initial</em>' attribute is set.
 	 * @see #unsetInitial()
 	 * @see #getInitial()
@@ -415,6 +451,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Identifier of variable, e.g. "a.b.mod[3,4].'#123'.c". "name" must be unique with respect to all other elements of the ModelVariables list
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getFmi2ScalarVariable_Name()
@@ -428,7 +465,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getName <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
 	 * @generated
 	 */
@@ -441,6 +480,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * <!-- begin-model-doc -->
 	 * Identifier for variable value in FMI2 function calls (not necessarily unique with respect to all variables)
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Value Reference</em>' attribute.
 	 * @see #isSetValueReference()
 	 * @see #unsetValueReference()
@@ -456,7 +496,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference <em>Value Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value Reference</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Value Reference</em>' attribute.
 	 * @see #isSetValueReference()
 	 * @see #unsetValueReference()
 	 * @see #getValueReference()
@@ -468,6 +510,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference <em>Value Reference</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetValueReference()
 	 * @see #getValueReference()
 	 * @see #setValueReference(long)
@@ -479,6 +522,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getValueReference <em>Value Reference</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Value Reference</em>' attribute is set.
 	 * @see #unsetValueReference()
 	 * @see #getValueReference()
@@ -500,6 +544,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * discrete: value constant between internal events
 	 * continuous: no restriction on value changes
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Variability</em>' attribute.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 	 * @see #isSetVariability()
@@ -516,7 +561,9 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability <em>Variability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Variability</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Variability</em>' attribute.
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.VariabilityType
 	 * @see #isSetVariability()
 	 * @see #unsetVariability()
@@ -529,6 +576,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability <em>Variability</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetVariability()
 	 * @see #getVariability()
 	 * @see #setVariability(VariabilityType)
@@ -540,6 +588,7 @@ public interface Fmi2ScalarVariable extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable#getVariability <em>Variability</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Variability</em>' attribute is set.
 	 * @see #unsetVariability()
 	 * @see #getVariability()

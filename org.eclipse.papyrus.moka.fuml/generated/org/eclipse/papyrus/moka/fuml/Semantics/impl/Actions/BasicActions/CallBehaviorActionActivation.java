@@ -19,7 +19,7 @@ import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.OpaqueBehavior;
 
-public class CallBehaviorActionActivation extends CallActionActivation{
+public class CallBehaviorActionActivation extends CallActionActivation {
 
 	@Override
 	public IExecution getCallExecution() {

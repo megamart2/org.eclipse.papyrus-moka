@@ -13,7 +13,7 @@
 
 package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities;
 
-public interface IControlNodeActivation extends IActivityNodeActivation{
-	
-	
+public interface IControlNodeActivation extends IActivityNodeActivation {
+
+
 }

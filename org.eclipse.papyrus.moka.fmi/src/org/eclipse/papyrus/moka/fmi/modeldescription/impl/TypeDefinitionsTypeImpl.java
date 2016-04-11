@@ -38,8 +38,8 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.TypeDefinitionsType;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl#getGroup <em>Group</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl#getSimpleType <em>Simple Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl#getGroup <em>Group</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.TypeDefinitionsTypeImpl#getSimpleType <em>Simple Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -49,6 +49,7 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	 * The cached value of the '{@link #getGroup() <em>Group</em>}' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getGroup()
 	 * @generated
 	 * @ordered
@@ -58,6 +59,7 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected TypeDefinitionsTypeImpl() {
@@ -67,6 +69,7 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -77,6 +80,7 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public FeatureMap getGroup() {
@@ -89,6 +93,7 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public EList<Fmi2SimpleType> getSimpleType() {
@@ -98,15 +103,16 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
-				return ((InternalEList<?>)getGroup()).basicRemove(otherEnd, msgs);
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
-				return ((InternalEList<?>)getSimpleType()).basicRemove(otherEnd, msgs);
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
+			return ((InternalEList<?>) getGroup()).basicRemove(otherEnd, msgs);
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
+			return ((InternalEList<?>) getSimpleType()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -114,16 +120,18 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
-				if (coreType) return getGroup();
-				return ((FeatureMap.Internal)getGroup()).getWrapper();
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
-				return getSimpleType();
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
+			if (coreType)
+				return getGroup();
+			return ((FeatureMap.Internal) getGroup()).getWrapper();
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
+			return getSimpleType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -131,19 +139,20 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
-				((FeatureMap.Internal)getGroup()).set(newValue);
-				return;
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
-				getSimpleType().clear();
-				getSimpleType().addAll((Collection<? extends Fmi2SimpleType>)newValue);
-				return;
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
+			((FeatureMap.Internal) getGroup()).set(newValue);
+			return;
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
+			getSimpleType().clear();
+			getSimpleType().addAll((Collection<? extends Fmi2SimpleType>) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -151,17 +160,18 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
-				getGroup().clear();
-				return;
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
-				getSimpleType().clear();
-				return;
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
+			getGroup().clear();
+			return;
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
+			getSimpleType().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -169,15 +179,16 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
-				return group != null && !group.isEmpty();
-			case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
-				return !getSimpleType().isEmpty();
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__GROUP:
+			return group != null && !group.isEmpty();
+		case FmiPackage.TYPE_DEFINITIONS_TYPE__SIMPLE_TYPE:
+			return !getSimpleType().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -185,11 +196,13 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (group: ");
@@ -198,4 +211,4 @@ public class TypeDefinitionsTypeImpl extends MinimalEObjectImpl.Container implem
 		return result.toString();
 	}
 
-} //TypeDefinitionsTypeImpl
+} // TypeDefinitionsTypeImpl

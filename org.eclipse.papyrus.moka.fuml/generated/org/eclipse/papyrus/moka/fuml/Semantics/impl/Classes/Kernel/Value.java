@@ -21,7 +21,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.SemanticVisitor;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public abstract class Value extends SemanticVisitor implements IValue{
+public abstract class Value extends SemanticVisitor implements IValue {
 
 	public abstract ValueSpecification specify();
 

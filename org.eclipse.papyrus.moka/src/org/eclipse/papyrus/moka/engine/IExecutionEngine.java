@@ -21,9 +21,9 @@ import org.eclipse.emf.ecore.EObject;
 public interface IExecutionEngine extends IStreamsProxy {
 
 	public void init(ILaunch launch, final EObject executionEntryPoint, String[] executionArgs);
-	
+
 	public void start(IProgressMonitor monitor);
-	
+
 	public void stop(IProgressMonitor monitor);
 
 }

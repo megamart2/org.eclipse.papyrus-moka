@@ -23,14 +23,14 @@ import org.eclipse.uml2.uml.Classifier;
 public interface IClassifierBehaviorInvocationEventAccepter extends IEventAccepter {
 
 	public void invokeBehavior(Class classifier, List<IParameterValue> inputs);
-	
+
 	public void terminate();
-	
+
 	public void setObjectActivation(IObjectActivation objectActivation);
-	
+
 	public void setExecution(IExecution execution);
-	
+
 	public IExecution getExecution();
-	
+
 	public Classifier getExecutedClassifier();
 }

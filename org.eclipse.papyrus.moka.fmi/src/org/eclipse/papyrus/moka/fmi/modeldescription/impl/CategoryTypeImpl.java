@@ -29,8 +29,8 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl#getName <em>Name</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl#getDescription <em>Description</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.CategoryTypeImpl#getName <em>Name</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +40,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	 * The default value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	 * The cached value of the '{@link #getDescription() <em>Description</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDescription()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -79,6 +83,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected CategoryTypeImpl() {
@@ -88,6 +93,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -98,6 +104,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDescription() {
@@ -107,6 +114,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDescription(String newDescription) {
@@ -119,6 +127,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -128,6 +137,7 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -140,15 +150,16 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
-				return getDescription();
-			case FmiPackage.CATEGORY_TYPE__NAME:
-				return getName();
+		case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
+			return getDescription();
+		case FmiPackage.CATEGORY_TYPE__NAME:
+			return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -156,17 +167,18 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
-				setDescription((String)newValue);
-				return;
-			case FmiPackage.CATEGORY_TYPE__NAME:
-				setName((String)newValue);
-				return;
+		case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
+			setDescription((String) newValue);
+			return;
+		case FmiPackage.CATEGORY_TYPE__NAME:
+			setName((String) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -174,17 +186,18 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
-				setDescription(DESCRIPTION_EDEFAULT);
-				return;
-			case FmiPackage.CATEGORY_TYPE__NAME:
-				setName(NAME_EDEFAULT);
-				return;
+		case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
+			setDescription(DESCRIPTION_EDEFAULT);
+			return;
+		case FmiPackage.CATEGORY_TYPE__NAME:
+			setName(NAME_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,15 +205,16 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
-				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
-			case FmiPackage.CATEGORY_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+		case FmiPackage.CATEGORY_TYPE__DESCRIPTION:
+			return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
+		case FmiPackage.CATEGORY_TYPE__NAME:
+			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -208,11 +222,13 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (description: ");
@@ -223,4 +239,4 @@ public class CategoryTypeImpl extends MinimalEObjectImpl.Container implements Ca
 		return result.toString();
 	}
 
-} //CategoryTypeImpl
+} // CategoryTypeImpl

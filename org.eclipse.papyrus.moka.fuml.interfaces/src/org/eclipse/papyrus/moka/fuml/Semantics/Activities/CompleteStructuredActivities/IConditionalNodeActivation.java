@@ -18,11 +18,11 @@ import org.eclipse.uml2.uml.Clause;
 public interface IConditionalNodeActivation extends IStructuredActivityNodeActivation {
 
 	public void completeBody();
-	
+
 	public IClauseActivation getClauseActivation(Clause clause);
-	
+
 	public void runTest(Clause clause);
-	
+
 	public void selectBody(Clause clause);
-	
+
 }

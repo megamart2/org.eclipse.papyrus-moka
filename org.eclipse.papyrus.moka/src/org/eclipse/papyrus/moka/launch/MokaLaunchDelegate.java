@@ -44,9 +44,9 @@ import org.eclipse.papyrus.moka.utils.helper.EditorUtils;
 public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements ILaunchConfigurationDelegate {
 
 	// The debug target to which created through the launcher
-	protected  MokaDebugTarget debugTarget; 
-	
-	protected final IExecutionEngine getExecutionEngine(ILaunchConfiguration configuration){
+	protected MokaDebugTarget debugTarget;
+
+	protected final IExecutionEngine getExecutionEngine(ILaunchConfiguration configuration) {
 		// Create the instance of the execution engine specified by the user in the launch configuration
 		String selectedExecutionEngine = null;
 		try {
@@ -59,10 +59,10 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		}
 		return this.instantiateExecutionEngine(selectedExecutionEngine);
 	}
-	
-	protected final EObject getExecutionEntryPoint(ILaunchConfiguration configuration){
+
+	protected final EObject getExecutionEntryPoint(ILaunchConfiguration configuration) {
 		// Load the selected model. Return the model element designated by the configuration
-		// as being the entry  point from which the execution shall start
+		// as being the entry point from which the execution shall start
 		EObject executionEntryPoint = null;
 		String modelURI = null;
 		try {
@@ -71,9 +71,8 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		if(modelURI!=null){
-			ServicesRegistry servicesRegistry = (ServicesRegistry) EditorUtils.
-					getEditorPart(modelURI).getAdapter(ServicesRegistry.class);
+		if (modelURI != null) {
+			ServicesRegistry servicesRegistry = (ServicesRegistry) EditorUtils.getEditorPart(modelURI).getAdapter(ServicesRegistry.class);
 			ResourceSet resourceSet = null;
 			try {
 				resourceSet = servicesRegistry.getService(ModelSet.class);
@@ -90,12 +89,12 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 			}
 			executionEntryPoint = resource.getEObject(uriFragment);
 		}
-		
+
 		return executionEntryPoint;
 	}
-	
+
 	protected IExecutionEngine instantiateExecutionEngine(String selectedExecutionEngine) {
-		// Read the extension point to find  the corresponding execution engine. Create an instance
+		// Read the extension point to find the corresponding execution engine. Create an instance
 		// of this latter and then return it.
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] config = registry.getConfigurationElementsFor(MokaConstants.MOKA_ENGINE_EXTENSION_POINT_ID);
@@ -121,24 +120,24 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		// If null is returned, the calling method (launch) fires a CoreException
 		return null;
 	}
-	
+
 	public void launch(ILaunchConfiguration configuration, String mode, ILaunch launch, IProgressMonitor monitor) throws CoreException {
 		monitor.beginTask("Start Moka Execution", 4);
-		/*1. Instantiate the execution engine*/
+		/* 1. Instantiate the execution engine */
 		monitor.subTask("Create execution engine");
 		IExecutionEngine engine = this.getExecutionEngine(configuration);
 		if (engine == null) {
 			this.abort("Could not instantiate execution engine", null);
 		}
 		monitor.worked(1);
-		/*2. Retrieve the modele element from which the execution will start*/
+		/* 2. Retrieve the modele element from which the execution will start */
 		monitor.subTask("Figure out execution entry point");
 		EObject executionEntryPoint = this.getExecutionEntryPoint(configuration);
 		if (executionEntryPoint == null) {
 			this.abort("The specified execution entry point is not valid or could not be found", null);
 		}
 		monitor.worked(1);
-		/*3. Starts the execution engine on a separated thread*/
+		/* 3. Starts the execution engine on a separated thread */
 		monitor.subTask("Start execution engine");
 		this.debugTarget = new MokaDebugTarget(launch);
 		launch.addDebugTarget(debugTarget);
@@ -153,7 +152,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 		monitor.done();
 	}
 
-	
+
 	protected void abort(String message, Throwable e) throws CoreException {
 		throw new CoreException(new Status(IStatus.ERROR, MokaConstants.MOKA_DEBUG_MODEL_ID, 0, message, e));
 	}

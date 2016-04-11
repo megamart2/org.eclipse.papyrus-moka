@@ -16,17 +16,17 @@ package org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivitie
 import java.util.List;
 
 public interface IOffer {
-	
+
 	public Integer countOfferedValues();
-	
+
 	public List<IToken> getOfferedTokens();
-	
+
 	public void removeOfferedValues(Integer count);
-	
+
 	public void removeWithdrawnTokens();
-	
+
 	public Boolean hasTokens();
-	
+
 	public List<IToken> getTokens();
-	
+
 }

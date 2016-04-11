@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.LoopNode;
 import org.eclipse.uml2.uml.OutputPin;
 import org.eclipse.uml2.uml.Pin;
 
-public class LoopNodeActivation extends StructuredActivityNodeActivation implements ILoopNodeActivation{
+public class LoopNodeActivation extends StructuredActivityNodeActivation implements ILoopNodeActivation {
 
 	public List<Values> bodyOutputLists = new ArrayList<Values>();
 

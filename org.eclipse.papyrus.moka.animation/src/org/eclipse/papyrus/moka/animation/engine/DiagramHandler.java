@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.engine;
 
 import java.util.ArrayList;
@@ -42,33 +53,33 @@ import org.eclipse.ui.IViewPart;
 import org.eclipse.ui.IViewReference;
 import org.eclipse.ui.PlatformUI;
 
-public class DiagramHandler{
+public class DiagramHandler {
 
 	// The set of diagrams identified for a given model
 	protected HashSet<Diagram> modelDiagrams;
-	
+
 	// The cache linking a model element to the of diagram in which it appears
 	protected HashMap<EObject, HashSet<Diagram>> modelDiagramMapping;
-	
+
 	protected AnimatedDiagramTree animatedDiagrams;
-	
-	public DiagramHandler(){
+
+	public DiagramHandler() {
 		this.modelDiagrams = new HashSet<Diagram>();
 		this.modelDiagramMapping = new HashMap<EObject, HashSet<Diagram>>();
 	}
-	
-	public DiagramHandler(Model model){
+
+	public DiagramHandler(Model model) {
 		this();
 		this.init(model);
 	}
-	
-	public void init(EObject modelElement){
+
+	public void init(EObject modelElement) {
 		// Initialize the animated diagrams manager. The initialize process consist in:
-		// 	 1 - Identifying diagrams located in a model
-		//   2 - Build a cache linking a model element to a list of diagrams in which it appears
-		if(modelElement instanceof Element){
+		// 1 - Identifying diagrams located in a model
+		// 2 - Build a cache linking a model element to a list of diagrams in which it appears
+		if (modelElement instanceof Element) {
 			// Find all diagrams available in this model
-			Job diagramsLoading = new InitiliazeDiagramManagerJob(((Element)modelElement).getModel());
+			Job diagramsLoading = new InitiliazeDiagramManagerJob(((Element) modelElement).getModel());
 			diagramsLoading.schedule();
 			try {
 				diagramsLoading.join();
@@ -78,53 +89,53 @@ public class DiagramHandler{
 			this.hookView();
 		}
 	}
-	
-	private void hookView(){
-		// Populate initial data model to be displayed. 
+
+	private void hookView() {
+		// Populate initial data model to be displayed.
 		this.animatedDiagrams = new AnimatedDiagramTree();
-		IAnimationTreeNode root = this.animatedDiagrams.getRoot(); 
-		for(Diagram diagram : this.modelDiagrams){
+		IAnimationTreeNode root = this.animatedDiagrams.getRoot();
+		for (Diagram diagram : this.modelDiagrams) {
 			root.addChild(AnimationTreeNodeFactory.getInstance().createDiagramAnimationNode(diagram));
 		}
 		// Locate view to populate
 		Display.getDefault().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				IViewPart animationControlView  = DiagramHandler.this.getView(AnimationControlView.VIEW_ID, false);
-				if(animationControlView!=null && animationControlView instanceof AnimationControlView){
-					((AnimationControlView)animationControlView).setInitialInput(DiagramHandler.this.animatedDiagrams);
+				IViewPart animationControlView = DiagramHandler.this.getView(AnimationControlView.VIEW_ID, false);
+				if (animationControlView != null && animationControlView instanceof AnimationControlView) {
+					((AnimationControlView) animationControlView).setInitialInput(DiagramHandler.this.animatedDiagrams);
 				}
 			}
 		});
 	}
-	
-	private IViewPart getView(final String ID, boolean restore){
+
+	private IViewPart getView(final String ID, boolean restore) {
 		// Find out a view using the specified ID
 		IViewPart view = null;
 		IViewReference viewReferences[] = PlatformUI.getWorkbench()
 				.getActiveWorkbenchWindow().getActivePage().getViewReferences();
 		int i = 0;
-		while(view==null && i < viewReferences.length){
-			if(viewReferences[i].getId().equals(ID)){
+		while (view == null && i < viewReferences.length) {
+			if (viewReferences[i].getId().equals(ID)) {
 				view = viewReferences[i].getView(restore);
 			}
 			i++;
 		}
 		return view;
 	}
-	
-	private List<Diagram> getAssociatedDiagrams(EObject modelElement, Resource notationResource){
-		// Find the set of diagrams in which the given model element appears 
+
+	private List<Diagram> getAssociatedDiagrams(EObject modelElement, Resource notationResource) {
+		// Find the set of diagrams in which the given model element appears
 		List<Diagram> associatedDiagrams = new ArrayList<Diagram>();
-		if(notationResource!=null && modelElement!=null){
-			 return DiagramUtils.getAssociatedDiagramsFromNotationResource(modelElement, notationResource);
+		if (notationResource != null && modelElement != null) {
+			return DiagramUtils.getAssociatedDiagramsFromNotationResource(modelElement, notationResource);
 		}
-		return associatedDiagrams;	
+		return associatedDiagrams;
 	}
-	
-	private void searchDiagrams(Model model, IProgressMonitor monitor){
-		// Identify all diagrams that are available in a model. The unique place from which 
-		// this operation is called  is the job in charge of executing the search.
+
+	private void searchDiagrams(Model model, IProgressMonitor monitor) {
+		// Identify all diagrams that are available in a model. The unique place from which
+		// this operation is called is the job in charge of executing the search.
 		Resource resource = model.eResource();
 		ResourceSet resourceSet = resource.getResourceSet();
 		// Load the resource corresponding to the notation
@@ -133,13 +144,13 @@ public class DiagramHandler{
 		// Discover all diagrams
 		monitor.subTask("Find all diagrams");
 		Iterator<EObject> modelContentIterator = model.eAllContents();
-		while(modelContentIterator.hasNext()){
+		while (modelContentIterator.hasNext()) {
 			EObject currentModelElement = modelContentIterator.next();
 			// Find the associated diagrams
 			List<Diagram> diagrams = this.getAssociatedDiagrams(currentModelElement, notationResource);
 			// Build the cache to relate the model element the set of diagrams where it is shown
-			if(!diagrams.isEmpty()){
-				// Add newly found diagrams to the set 
+			if (!diagrams.isEmpty()) {
+				// Add newly found diagrams to the set
 				this.modelDiagrams.addAll(diagrams);
 			}
 		}
@@ -147,19 +158,19 @@ public class DiagramHandler{
 		// Build the map to enable the possibility
 		monitor.subTask("Build mapping with model elements");
 		Iterator<Diagram> diagramIterator = this.modelDiagrams.iterator();
-		while(diagramIterator.hasNext()){
+		while (diagramIterator.hasNext()) {
 			Diagram currentDiagram = diagramIterator.next();
 			Iterator<EObject> diagramViews = currentDiagram.eAllContents();
-			while(diagramViews.hasNext()){
+			while (diagramViews.hasNext()) {
 				EObject potentialView = diagramViews.next();
-				if(potentialView instanceof View){
-					EObject modelElement = ((View)(potentialView)).getElement();
-					if(this.modelDiagramMapping.containsKey(modelElement)){
+				if (potentialView instanceof View) {
+					EObject modelElement = ((View) (potentialView)).getElement();
+					if (this.modelDiagramMapping.containsKey(modelElement)) {
 						HashSet<Diagram> diagrams = this.modelDiagramMapping.get(modelElement);
-						if(!diagrams.contains(currentDiagram)){
+						if (!diagrams.contains(currentDiagram)) {
 							diagrams.add(currentDiagram);
 						}
-					}else{
+					} else {
 						HashSet<Diagram> diagramSet = new HashSet<Diagram>();
 						diagramSet.add(currentDiagram);
 						this.modelDiagramMapping.put(modelElement, diagramSet);
@@ -169,14 +180,14 @@ public class DiagramHandler{
 		}
 		monitor.worked(1);
 	}
-	
+
 	/**
-	 * The diagrams search is executed in a separate job. 
+	 * The diagrams search is executed in a separate job.
 	 */
-	class InitiliazeDiagramManagerJob extends Job{
+	class InitiliazeDiagramManagerJob extends Job {
 
 		private Model model;
-		
+
 		public InitiliazeDiagramManagerJob(Model model) {
 			super("Diagrams lookup");
 			this.model = model;
@@ -190,16 +201,16 @@ public class DiagramHandler{
 			monitor.done();
 			return Status.OK_STATUS;
 		}
-		
+
 	}
-	
-	public boolean hasOpenedDiagram(EObject modelElement){
+
+	public boolean hasOpenedDiagram(EObject modelElement) {
 		// Determine if a model element has at least one of its diagrams opened (i.e., visible to the user)
 		boolean opened = false;
 		Set<Diagram> diagramSet = this.modelDiagramMapping.get(modelElement);
-		if(diagramSet!=null){
+		if (diagramSet != null) {
 			Iterator<Diagram> diagramIterator = diagramSet.iterator();
-			while(!opened && diagramIterator.hasNext()){
+			while (!opened && diagramIterator.hasNext()) {
 				Diagram diagram = diagramIterator.next();
 				IEditorPart editorPart = EditorUtils.getEditorPart(diagram);
 				ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
@@ -209,19 +220,19 @@ public class DiagramHandler{
 				} catch (ServiceException e) {
 					e.printStackTrace();
 				}
-				if(pageManager!=null){
+				if (pageManager != null) {
 					opened = pageManager.isOpen(diagram);
 				}
 			}
 		}
 		return opened;
 	}
-	
-	public void openDiagrams(EObject modelElement){
+
+	public void openDiagrams(EObject modelElement) {
 		// Open every diagrams on which the specify on which this model element appear
 		HashSet<Diagram> diagrams = this.modelDiagramMapping.get(modelElement);
-		if(!diagrams.isEmpty()){
-			for(Diagram diagram: diagrams){
+		if (!diagrams.isEmpty()) {
+			for (Diagram diagram : diagrams) {
 				IEditorPart editorPart = EditorUtils.getEditorPart(diagram);
 				ServicesRegistry servicesRegistry = (ServicesRegistry) editorPart.getAdapter(ServicesRegistry.class);
 				IPageManager pageManager = null;
@@ -230,92 +241,92 @@ public class DiagramHandler{
 				} catch (ServiceException e) {
 					e.printStackTrace();
 				}
-				if(pageManager!=null){
+				if (pageManager != null) {
 					pageManager.openPage(diagram);
 					pageManager.selectPage(diagram);
 				}
 			}
 		}
 	}
-	
-	public boolean isRenderable(EObject modelElement){
+
+	public boolean isRenderable(EObject modelElement) {
 		// A model element can be rendered as soon as it exists a diagram in which it
 		// appear in the model
 		Set<Diagram> diagramSet = this.modelDiagramMapping.get(modelElement);
-		return diagramSet!=null && !diagramSet.isEmpty();
+		return diagramSet != null && !diagramSet.isEmpty();
 	}
-	
-	public boolean isRegistered(IObject_ instance){
+
+	public boolean isRegistered(IObject_ instance) {
 		// Verifies if a particular instance is allowed to trigger animation
 		// An instance is allowed to trigger animation if it is part of the "AnimatedDiagramTree"
 		// Note that users may have decided to manually disallow a particular instance
 		// to trigger animation. In this case even if previously presented preconditions
-		// are full filled this operation returns false 
+		// are full filled this operation returns false
 		boolean isRenderable = false;
-		if(instance!=null){
+		if (instance != null) {
 			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
-			while(!isRenderable && nodesIterator.hasNext()){
+			while (!isRenderable && nodesIterator.hasNext()) {
 				DiagramAnimationNode node = (DiagramAnimationNode) nodesIterator.next();
-				if(node.hasAnimator(instance)){
+				if (node.hasAnimator(instance)) {
 					isRenderable = true;
 				}
 			}
 		}
 		return isRenderable;
 	}
-	
-	public Set<Diagram> getAnimatedDiagrams(IObject_ instance){
+
+	public Set<Diagram> getAnimatedDiagrams(IObject_ instance) {
 		// Provides the list of diagrams on which the given instance is allowed
-		// to trigger animation actions. 
+		// to trigger animation actions.
 		Set<Diagram> diagrams = new HashSet<Diagram>();
-		if(instance!=null && this.animatedDiagrams!=null){
+		if (instance != null && this.animatedDiagrams != null) {
 			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
-			while(nodesIterator.hasNext()){
+			while (nodesIterator.hasNext()) {
 				DiagramAnimationNode node = (DiagramAnimationNode) nodesIterator.next();
-				if(node.isAnimatorAllowed(instance)){
+				if (node.isAnimatorAllowed(instance)) {
 					diagrams.add(node.getAnimatedDiagram());
 				}
 			}
 		}
 		return diagrams;
 	}
-	
-	public Set<Diagram> findDiagramsInvolved(IObject_ instance){
+
+	public Set<Diagram> findDiagramsInvolved(IObject_ instance) {
 		// Find any diagram on which this particular instance may trigger
 		// animations. The research is based on the analysis of the classifier
 		// behavior (if any) and operation implementations
 		HashSet<Diagram> relatedDiagrams = new HashSet<Diagram>();
-		if(instance!=null){
+		if (instance != null) {
 			Iterator<Classifier> types = instance.getTypes().iterator();
-			while(types.hasNext()){
-				Class type = (Class)types.next();
-				if(type.isActive() || type instanceof Behavior){
+			while (types.hasNext()) {
+				Class type = (Class) types.next();
+				if (type.isActive() || type instanceof Behavior) {
 					Behavior behavior = null;
-					if(type instanceof Behavior){
+					if (type instanceof Behavior) {
 						behavior = (Behavior) type;
-					}else{
+					} else {
 						behavior = type.getClassifierBehavior();
-					}					
-					if(behavior!=null){
+					}
+					if (behavior != null) {
 						Iterator<Element> elementIterator = behavior.getOwnedElements().iterator();
-						while(elementIterator.hasNext()){
+						while (elementIterator.hasNext()) {
 							Element behaviorElement = elementIterator.next();
-							if(this.isRenderable(behaviorElement)){
+							if (this.isRenderable(behaviorElement)) {
 								relatedDiagrams.addAll(this.modelDiagramMapping.get(behaviorElement));
 							}
 						}
 					}
 				}
 				Iterator<Operation> operationsIterator = type.getOperations().iterator();
-				while(operationsIterator.hasNext()){
+				while (operationsIterator.hasNext()) {
 					Operation currentOperation = operationsIterator.next();
 					Iterator<Behavior> implementationIterator = currentOperation.getMethods().iterator();
-					while(implementationIterator.hasNext()){
+					while (implementationIterator.hasNext()) {
 						Behavior currentImplementation = implementationIterator.next();
 						Iterator<Element> elementIterator = currentImplementation.getOwnedElements().iterator();
-						while(elementIterator.hasNext()){
+						while (elementIterator.hasNext()) {
 							Element behaviorElement = elementIterator.next();
-							if(this.isRenderable(behaviorElement)){
+							if (this.isRenderable(behaviorElement)) {
 								relatedDiagrams.addAll(this.modelDiagramMapping.get(behaviorElement));
 							}
 						}
@@ -325,56 +336,56 @@ public class DiagramHandler{
 		}
 		return relatedDiagrams;
 	}
-	
-	public void addRenderable(IObject_ instance, Diagram  diagram){
+
+	public void addRenderable(IObject_ instance, Diagram diagram) {
 		// Add the relation between the diagram and the instance. This relation
 		// is formalized through the data model (see AnimatedDiagramExecutionTree).
-		if(instance!=null && diagram!=null){	
+		if (instance != null && diagram != null) {
 			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
-			while(nodesIterator.hasNext()){
+			while (nodesIterator.hasNext()) {
 				IAnimationTreeNode node = nodesIterator.next();
-				if(((DiagramAnimationNode)node).getAnimatedDiagram()==diagram){
+				if (((DiagramAnimationNode) node).getAnimatedDiagram() == diagram) {
 					node.addChild(AnimationTreeNodeFactory.getInstance().createAnimatingInstanceNode(instance));
 				}
 			}
 		}
 	}
-	
-	public void deleteRenderable(IObject_ instance){
+
+	public void deleteRenderable(IObject_ instance) {
 		// Removes the relation existing between this instance and any diagram. This relationship
 		// is formalized through the data model.
-		if(instance != null && this.animatedDiagrams!=null){
+		if (instance != null && this.animatedDiagrams != null) {
 			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
-			while(nodesIterator.hasNext()){
+			while (nodesIterator.hasNext()) {
 				IAnimationTreeNode node = nodesIterator.next();
 				Iterator<IAnimationTreeNode> childrenIterator = node.getChildren().iterator();
 				List<IAnimationTreeNode> unregisteredAnimators = new ArrayList<IAnimationTreeNode>();
-				while(childrenIterator.hasNext()){
+				while (childrenIterator.hasNext()) {
 					IAnimationTreeNode animator = childrenIterator.next();
-					if(((AnimatingInstanceNode)animator).instance==instance){
+					if (((AnimatingInstanceNode) animator).instance == instance) {
 						unregisteredAnimators.add(animator);
 					}
 				}
-				for(IAnimationTreeNode animator : unregisteredAnimators){
+				for (IAnimationTreeNode animator : unregisteredAnimators) {
 					node.removeChild(animator);
 				}
 			}
 		}
 	}
-	
-	public synchronized void clean(){
+
+	public synchronized void clean() {
 		// Release data and dispose view that is linked to these data
 		this.modelDiagrams.clear();
 		this.modelDiagramMapping.clear();
 		Display.getDefault().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				IViewPart animationControlView  = DiagramHandler.this.getView(AnimationControlView.VIEW_ID, false);
-				if(animationControlView!=null && animationControlView instanceof AnimationControlView){
-					((AnimationControlView)animationControlView).dispose();
+				IViewPart animationControlView = DiagramHandler.this.getView(AnimationControlView.VIEW_ID, false);
+				if (animationControlView != null && animationControlView instanceof AnimationControlView) {
+					((AnimationControlView) animationControlView).dispose();
 				}
 			}
 		});
-		this.animatedDiagrams=null;
+		this.animatedDiagrams = null;
 	}
 }

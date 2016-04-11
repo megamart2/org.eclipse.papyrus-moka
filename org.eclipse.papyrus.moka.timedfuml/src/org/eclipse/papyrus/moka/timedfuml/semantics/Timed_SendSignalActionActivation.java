@@ -1,3 +1,14 @@
+/*****************************************************************************
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *  CEA LIST Initial API and implementation
+ *****************************************************************************/
 package org.eclipse.papyrus.moka.timedfuml.semantics;
 
 import java.util.List;
@@ -11,24 +22,24 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.InputPin;
 import org.eclipse.uml2.uml.SendSignalAction;
 
-public class Timed_SendSignalActionActivation extends CS_SendSignalActionActivation{
+public class Timed_SendSignalActionActivation extends CS_SendSignalActionActivation {
 	@Override
 	public List<IValue> takeTokens(InputPin pin) {
 		// FIXME generalize this for the SIMEX profile
 		// Deals with "implicit this"
-		List<IValue> values = super.takeTokens(pin) ;
+		List<IValue> values = super.takeTokens(pin);
 		if (values.isEmpty()) {
-			// check if the pin is the target pin, 
+			// check if the pin is the target pin,
 			// and automatically adds a reference to the context object
-			SendSignalAction sendSignalAction = (SendSignalAction)this.node ;
+			SendSignalAction sendSignalAction = (SendSignalAction) this.node;
 			if (sendSignalAction.getTarget() == pin) {
-				ICS_Reference targetReference = new CS_Reference() ;
-				IValue target = this.getExecutionContext() ;
-				targetReference.setReferent((IObject_)target) ;
-				targetReference.setCompositeReferent((ICS_Object)target) ;
-				values.add(targetReference) ;
+				ICS_Reference targetReference = new CS_Reference();
+				IValue target = this.getExecutionContext();
+				targetReference.setReferent((IObject_) target);
+				targetReference.setCompositeReferent((ICS_Object) target);
+				values.add(targetReference);
 			}
 		}
-		return values ;
+		return values;
 	}
 }

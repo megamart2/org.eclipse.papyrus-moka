@@ -24,8 +24,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.uml2.uml.ActivityEdge;
 
-public class ActivityEdgeInstance implements IActivityEdgeInstance{
-	
+public class ActivityEdgeInstance implements IActivityEdgeInstance {
+
 	/*
 	 * The activity edge of which this is an instance. [This is optional to
 	 * allow for an implicit fork node execution to be connected to its action
@@ -146,9 +146,9 @@ public class ActivityEdgeInstance implements IActivityEdgeInstance{
 	}
 
 	public void setSource(IActivityNodeActivation source) {
-		this.source = source;	
+		this.source = source;
 	}
-	
+
 	public IActivityNodeActivation getSource() {
 		return this.source;
 	}
@@ -156,7 +156,7 @@ public class ActivityEdgeInstance implements IActivityEdgeInstance{
 	public void setTarget(IActivityNodeActivation target) {
 		this.target = target;
 	}
-	
+
 	public IActivityNodeActivation getTarget() {
 		return this.target;
 	}
@@ -170,7 +170,7 @@ public class ActivityEdgeInstance implements IActivityEdgeInstance{
 	}
 
 	public void setEdge(ActivityEdge edge) {
-		this.edge = edge;		
+		this.edge = edge;
 	}
 
 	public ActivityEdge getEdge() {

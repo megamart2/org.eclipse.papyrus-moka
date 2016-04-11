@@ -24,9 +24,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependencies <em>Dependencies</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependenciesKind <em>Dependencies Kind</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex <em>Index</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependencies <em>Dependencies</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependenciesKind <em>Dependencies Kind</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex <em>Index</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getUnknownType()
@@ -39,8 +39,10 @@ public interface UnknownType extends EObject {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * <!-- begin-model-doc -->
-	 * Defines the dependency of the Unknown (directly or indirectly via auxiliary variables) on the Knowns in the Initialization Mode. If not present, it must be assumed that the Unknown depends on all Knowns. If present as empty list, the Unknown depends on none of the Knowns. Otherwise the Unknown depends on the Knowns defined by the given ScalarVariable indices. The indices are ordered according to size, starting with the smallest index.
+	 * Defines the dependency of the Unknown (directly or indirectly via auxiliary variables) on the Knowns in the Initialization Mode. If not present, it must be assumed that the Unknown depends on all Knowns. If present as empty list, the Unknown depends on
+	 * none of the Knowns. Otherwise the Unknown depends on the Knowns defined by the given ScalarVariable indices. The indices are ordered according to size, starting with the smallest index.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Dependencies</em>' attribute.
 	 * @see #setDependencies(List)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getUnknownType_Dependencies()
@@ -54,7 +56,9 @@ public interface UnknownType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependencies <em>Dependencies</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dependencies</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Dependencies</em>' attribute.
 	 * @see #getDependencies()
 	 * @generated
 	 */
@@ -67,9 +71,10 @@ public interface UnknownType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * If not present, it must be assumed that the Unknown depends on the Knowns without a particular structure. Otherwise, the corresponding Known v enters the equation as:
 	 * = "dependent": no particular structure, f(v)
-	 * = "constant"   : constant factor, c*v (only for Real variables)
+	 * = "constant" : constant factor, c*v (only for Real variables)
 	 * If "dependenciesKind" is present, "dependencies" must be present and must have the same number of list elements.
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Dependencies Kind</em>' attribute.
 	 * @see #setDependenciesKind(List)
 	 * @see org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage#getUnknownType_DependenciesKind()
@@ -83,7 +88,9 @@ public interface UnknownType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getDependenciesKind <em>Dependencies Kind</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Dependencies Kind</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Dependencies Kind</em>' attribute.
 	 * @see #getDependenciesKind()
 	 * @generated
 	 */
@@ -96,6 +103,7 @@ public interface UnknownType extends EObject {
 	 * <!-- begin-model-doc -->
 	 * ScalarVariable index of Unknown
 	 * <!-- end-model-doc -->
+	 * 
 	 * @return the value of the '<em>Index</em>' attribute.
 	 * @see #isSetIndex()
 	 * @see #unsetIndex()
@@ -111,7 +119,9 @@ public interface UnknownType extends EObject {
 	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Index</em>' attribute.
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Index</em>' attribute.
 	 * @see #isSetIndex()
 	 * @see #unsetIndex()
 	 * @see #getIndex()
@@ -123,6 +133,7 @@ public interface UnknownType extends EObject {
 	 * Unsets the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex <em>Index</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isSetIndex()
 	 * @see #getIndex()
 	 * @see #setIndex(long)
@@ -134,6 +145,7 @@ public interface UnknownType extends EObject {
 	 * Returns whether the value of the '{@link org.eclipse.papyrus.moka.fmi.modeldescription.UnknownType#getIndex <em>Index</em>}' attribute is set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @return whether the value of the '<em>Index</em>' attribute is set.
 	 * @see #unsetIndex()
 	 * @see #getIndex()

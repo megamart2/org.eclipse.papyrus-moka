@@ -50,11 +50,11 @@ public class StandardOutputChannelImpl extends AbstractService {
 		super(service);
 		this.out = getConsole().newOutputStream();
 	}
-	
+
 	@Override
 	public void doOperationExecutionMapping() {
 		Class type = this.types.get(0);
-		for(Operation operation : type.getAllOperations()){
+		for (Operation operation : type.getAllOperations()) {
 			if (operation.getName().equals("writeLine")) {
 				this.operationExecution.put(operation, new WriteLineExecution(operation));
 			} else if (operation.getName().equals("write")) {

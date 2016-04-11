@@ -17,11 +17,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IActionActiv
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 
 public interface IAcceptEventActionActivation extends IActionActivation {
-	
+
 	public void accept(ISignalInstance signalInstance);
-	
+
 	public Boolean match(ISignalInstance signalInstance);
-	
+
 	public IAcceptEventActionEventAccepter getEventAccepter();
-	
+
 }

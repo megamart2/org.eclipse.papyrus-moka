@@ -19,7 +19,7 @@ Export-Package: org.eclipse.papyrus.moka.composites,
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 2.0.0.qualifier
-Bundle-Name: Moka Composites Extension (Incubation)
+Bundle-Name: Moka Composites Execution Engine
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.eclipse.papyrus.moka.composites.Activator
 Bundle-SymbolicName: org.eclipse.papyrus.moka.composites;singleton:=true

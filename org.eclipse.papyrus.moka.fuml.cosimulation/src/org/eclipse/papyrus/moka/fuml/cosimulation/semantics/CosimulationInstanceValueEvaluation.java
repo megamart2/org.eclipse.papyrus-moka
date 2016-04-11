@@ -90,17 +90,17 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 					object = this.locus.getFactory().createExecution((Behavior) myType, null);
 				} else {
 					// Debug.println("[evaluate] Type is a class.");
-					
-					
-					//Modified here to instanciate a Fmu2ProxyService from part default value instance
+
+
+					// Modified here to instanciate a Fmu2ProxyService from part default value instance
 					Class fmuClassifier = getFMUClassifier(instance);
-					
-					if (fmuClassifier != null){
+
+					if (fmuClassifier != null) {
 						object = new Fmu2ProxyService(fmuClassifier);
-					}else {
+					} else {
 						object = new CS_Object();
 					}
-					
+
 					for (int i = 0; i < types.size(); i++) {
 						Classifier type = types.get(i);
 						object.getTypes().add((Class) type);
@@ -148,14 +148,14 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 
 		return value;
 	}
-	
 
-	private Class getFMUClassifier(InstanceSpecification instance){
+
+	private Class getFMUClassifier(InstanceSpecification instance) {
 		List<Classifier> types = instance.getClassifiers();
 		for (int i = 0; i < types.size(); i++) {
 			Classifier type = types.get(i);
-			if (type.getAppliedStereotype("FmiMLProfile::CS_FMU") != null){
-				return (Class)type;
+			if (type.getAppliedStereotype("FmiMLProfile::CS_FMU") != null) {
+				return (Class) type;
 			}
 		}
 		return null;

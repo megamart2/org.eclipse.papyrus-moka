@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Operation;
 
-public class Object_ extends ExtensionalValue implements IObject_{
+public class Object_ extends ExtensionalValue implements IObject_ {
 
 	/*
 	 * The classes under which this object is currently classified. (A destroyed
@@ -45,8 +45,8 @@ public class Object_ extends ExtensionalValue implements IObject_{
 	public void addType(Class type) {
 		this.types.add(type);
 	}
-	
-	public void removeType(Class type){
+
+	public void removeType(Class type) {
 		this.types.remove(type);
 	}
 
@@ -140,8 +140,8 @@ public class Object_ extends ExtensionalValue implements IObject_{
 		}
 		return types;
 	}
-	
-	public IObjectActivation getObjectActivation(){
+
+	public IObjectActivation getObjectActivation() {
 		return this.objectActivation;
 	}
 

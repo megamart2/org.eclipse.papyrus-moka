@@ -61,7 +61,7 @@ public abstract class StructuredValue extends Value implements IStructuredValue 
 
 	public void addFeatureValues(List<IFeatureValue> oldFeatureValues) {
 		// Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
-		
+
 		// Add feature values for all structural features of the types
 		// of this structured value and all its supertypes (including private
 		// features that are not inherited). If a feature has an old feature
@@ -77,7 +77,7 @@ public abstract class StructuredValue extends Value implements IStructuredValue 
 
 	public void addFeatureValuesForType(Classifier type, List<IFeatureValue> oldFeatureValues) {
 		// Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
-		
+
 		// Add feature values for all structural features of the given type and
 		// all of its supertypes (including private features that are not
 		// inherited). If a feature has an old feature value in the given list,
@@ -106,7 +106,7 @@ public abstract class StructuredValue extends Value implements IStructuredValue 
 
 	public void createFeatureValues() {
 		// Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
-		
+
 		// Create empty feature values for all structural features of the types
 		// of this structured value and all its supertypes (including private
 		// features that are not inherited).
@@ -115,7 +115,7 @@ public abstract class StructuredValue extends Value implements IStructuredValue 
 
 	public List<IFeatureValue> getMemberValues() {
 		// Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
-		
+
 		// Return the feature values for this structured value that are for structural
 		// features that are members of one of the types of the structured value.
 		// (That is, they are owned are inherited, excluding private features of
@@ -147,7 +147,7 @@ public abstract class StructuredValue extends Value implements IStructuredValue 
 
 	public List<IValue> getValues(NamedElement feature, List<IFeatureValue> featureValues) {
 		// Issue FUML12-20 Feature values need to be created for private structural features of parent classifiers
-		
+
 		// Return the values from the feature value in the given list for the
 		// given feature. If there is no such feature value, return an empty
 		// list.

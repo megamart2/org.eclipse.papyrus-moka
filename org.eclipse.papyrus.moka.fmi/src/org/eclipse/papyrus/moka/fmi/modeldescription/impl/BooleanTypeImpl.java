@@ -29,8 +29,8 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl#isStart <em>Start</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl#getDeclaredType <em>Declared Type</em>}</li>
+ * <li>{@link org.eclipse.papyrus.moka.fmi.modeldescription.impl.BooleanTypeImpl#isStart <em>Start</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,6 +40,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	 * The default value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -50,6 +51,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	 * The cached value of the '{@link #getDeclaredType() <em>Declared Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #getDeclaredType()
 	 * @generated
 	 * @ordered
@@ -60,6 +62,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	 * The default value of the '{@link #isStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isStart()
 	 * @generated
 	 * @ordered
@@ -70,6 +73,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	 * The cached value of the '{@link #isStart() <em>Start</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @see #isStart()
 	 * @generated
 	 * @ordered
@@ -80,6 +84,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	 * This is true if the Start attribute has been set.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 * @ordered
 	 */
@@ -88,6 +93,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	protected BooleanTypeImpl() {
@@ -97,6 +103,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
@@ -107,6 +114,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public String getDeclaredType() {
@@ -116,6 +124,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setDeclaredType(String newDeclaredType) {
@@ -128,6 +137,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isStart() {
@@ -137,6 +147,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void setStart(boolean newStart) {
@@ -151,6 +162,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public void unsetStart() {
@@ -165,6 +177,7 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	public boolean isSetStart() {
@@ -174,15 +187,16 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
-				return getDeclaredType();
-			case FmiPackage.BOOLEAN_TYPE__START:
-				return isStart();
+		case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
+			return getDeclaredType();
+		case FmiPackage.BOOLEAN_TYPE__START:
+			return isStart();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,17 +204,18 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
-				setDeclaredType((String)newValue);
-				return;
-			case FmiPackage.BOOLEAN_TYPE__START:
-				setStart((Boolean)newValue);
-				return;
+		case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
+			setDeclaredType((String) newValue);
+			return;
+		case FmiPackage.BOOLEAN_TYPE__START:
+			setStart((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -208,17 +223,18 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
-				setDeclaredType(DECLARED_TYPE_EDEFAULT);
-				return;
-			case FmiPackage.BOOLEAN_TYPE__START:
-				unsetStart();
-				return;
+		case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
+			setDeclaredType(DECLARED_TYPE_EDEFAULT);
+			return;
+		case FmiPackage.BOOLEAN_TYPE__START:
+			unsetStart();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -226,15 +242,16 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
-				return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
-			case FmiPackage.BOOLEAN_TYPE__START:
-				return isSetStart();
+		case FmiPackage.BOOLEAN_TYPE__DECLARED_TYPE:
+			return DECLARED_TYPE_EDEFAULT == null ? declaredType != null : !DECLARED_TYPE_EDEFAULT.equals(declaredType);
+		case FmiPackage.BOOLEAN_TYPE__START:
+			return isSetStart();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -242,19 +259,24 @@ public class BooleanTypeImpl extends MinimalEObjectImpl.Container implements Boo
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * 
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (declaredType: ");
 		result.append(declaredType);
 		result.append(", start: ");
-		if (startESet) result.append(start); else result.append("<unset>");
+		if (startESet)
+			result.append(start);
+		else
+			result.append("<unset>");
 		result.append(')');
 		return result.toString();
 	}
 
-} //BooleanTypeImpl
+} // BooleanTypeImpl

@@ -30,26 +30,26 @@ import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
 public class MokaThread extends MokaDebugElement implements IMokaThread {
-	
+
 	// The active class instance representing the logical execution
 	// thread within the execution engine
 	protected IObject_ object;
-	
+
 	// Visitor on which the execution is currently suspended
 	protected ISemanticVisitor suspensionPoint;
-	
-	// Ensure mutual exclusive access to this object for execution 
+
+	// Ensure mutual exclusive access to this object for execution
 	// engine threads and debug target thread
 	protected ReentrantLock threadLock;
-	
+
 	private Condition resumeCondition;
-	
+
 	// Boolean flag materializing a request for this thread to be suspended
 	protected boolean suspensionRequired;
-	
+
 	// The current status of this logical thread
 	protected MokaThreadState status;
-	
+
 	public MokaThread(MokaDebugTarget debugTarget, IObject_ object) {
 		super(debugTarget);
 		this.object = object;
@@ -59,7 +59,7 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 		this.status = MokaThreadState.RUNNING;
 		fireCreationEvent();
 	}
-	
+
 	@Override
 	public boolean canResume() {
 		return this.isSuspended();
@@ -78,16 +78,16 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	@Override
 	public void resume() throws DebugException {
 		this.threadLock.lock();
-		try{
+		try {
 			this.setSuspensionFlag(false);
 			this.setSuspensionPoint(null);
 			this.status = MokaThreadState.RUNNING;
 			this.fireChangeEvent(DebugEvent.RESUME);
 			this.resumeCondition.signal();
-			if(!this.debugTarget.hasSuspendedThread()){
+			if (!this.debugTarget.hasSuspendedThread()) {
 				this.debugTarget.resume();
 			}
-		} finally{
+		} finally {
 			this.threadLock.unlock();
 		}
 	}
@@ -95,34 +95,35 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	@Override
 	public void suspend() throws DebugException {
 		this.threadLock.lock();
-		try{
+		try {
 			this.setSuspensionFlag(true);
 			this.status = MokaThreadState.SUSPENDED;
 			this.fireChangeEvent(DebugEvent.SUSPEND);
-		}finally{
+		} finally {
 			this.threadLock.unlock();
 		}
 	}
-	
+
 	@Override
 	public void suspend(ISemanticVisitor visitor) {
 		this.threadLock.lock();
-		try{
-			if(this.suspensionRequired){
+		try {
+			if (this.suspensionRequired) {
 				this.suspensionRequired = false;
 				try {
 					IAnimation animationService = DebugServiceHelper.INSTANCE.getAnimationService();
 					EObject visitedModelElement = SemanticHelper.getInstance().getModelElement(visitor);
-					if(animationService != null){
+					if (animationService != null) {
 						animationService.renderAs(visitedModelElement, this.object, AnimationKind.SUSPENDED);
 					}
 					this.resumeCondition.await();
-					if(animationService !=null){
+					if (animationService != null) {
 						animationService.renderAs(visitedModelElement, this.object, AnimationKind.VISITED);
 					}
-				} catch (InterruptedException e) {}
+				} catch (InterruptedException e) {
+				}
 			}
-		}finally{
+		} finally {
 			this.threadLock.unlock();
 		}
 	}
@@ -138,7 +139,7 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	public void stepOver() throws DebugException {
 		// TODO Auto-generated method stub
 	}
-	
+
 	@Override
 	public boolean canStepReturn() {
 		// TODO Auto-generated method stub
@@ -149,7 +150,7 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	public boolean isStepping() {
 		return this.status.equals(MokaThreadState.STEPPING);
 	}
-	
+
 	@Override
 	public boolean canStepInto() {
 		// Step into action is only available when the thread is suspended
@@ -162,10 +163,10 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 		// consists in releasing the lock on which the current thread
 		// is blocked.
 		this.threadLock.lock();
-		try{
+		try {
 			this.status = MokaThreadState.STEPPING;
 			this.resumeCondition.signal();
-		}finally{
+		} finally {
 			this.threadLock.unlock();
 		}
 	}
@@ -173,7 +174,7 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	@Override
 	public void stepReturn() throws DebugException {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -190,9 +191,9 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	public void terminate() throws DebugException {
 		this.status = MokaThreadState.TERMINATED;
 		this.fireTerminateEvent();
-		synchronized(this.object){
+		synchronized (this.object) {
 			IObjectActivation objectActivation = this.object.getObjectActivation();
-			if(objectActivation != null){
+			if (objectActivation != null) {
 				objectActivation.stop();
 				objectActivation.setObject(null);
 				this.object.setObjectActivation(null);
@@ -202,9 +203,9 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 
 	@Override
 	public IStackFrame[] getStackFrames() throws DebugException {
-		IStackFrame[] stackFrames = new IStackFrame[]{};
-		if(this.isSuspended()){
-			stackFrames = new IStackFrame[]{new MokaStackFrame(this.debugTarget, this)}; 
+		IStackFrame[] stackFrames = new IStackFrame[] {};
+		if (this.isSuspended()) {
+			stackFrames = new IStackFrame[] { new MokaStackFrame(this.debugTarget, this) };
 		}
 		return stackFrames;
 	}
@@ -248,14 +249,14 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	}
 
 	@Override
-	public boolean getSuspensionFlag() {	
+	public boolean getSuspensionFlag() {
 		return this.suspensionRequired;
 	}
 
-	public void setSuspensionFlag(boolean mustSuspend){
+	public void setSuspensionFlag(boolean mustSuspend) {
 		this.suspensionRequired = mustSuspend;
 	}
-	
+
 	@Override
 	public ISemanticVisitor getSuspensionPoint() {
 		return this.suspensionPoint;
@@ -265,5 +266,5 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	public void setSuspensionPoint(ISemanticVisitor visitor) {
 		this.suspensionPoint = visitor;
 	}
-	
+
 }

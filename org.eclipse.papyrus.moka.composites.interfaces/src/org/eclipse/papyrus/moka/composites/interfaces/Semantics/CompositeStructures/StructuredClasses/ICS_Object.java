@@ -28,39 +28,39 @@ import org.eclipse.uml2.uml.Signal;
 public interface ICS_Object extends IObject_ {
 
 	public IExecution dispatchIn(Operation operation, ICS_InteractionPoint interactionPoint);
-	
+
 	public IExecution dispatchIn(Operation operation, Port onPort);
-	
+
 	public IExecution dispatchOut(Operation operation, ICS_InteractionPoint interactionPoint);
-	
+
 	public IExecution dispatchOut(Operation operation, Port onPort);
-	
+
 	public void sendIn(ISignalInstance signalInstance, ICS_InteractionPoint interactionPoint);
-	
+
 	public void sendIn(ISignalInstance signalInstance, Port onPort);
-	
+
 	public void sendOut(ISignalInstance signalInstance, ICS_InteractionPoint interactionPoint);
-	
+
 	public void sendOut(ISignalInstance signalInstance, Port onPort);
-	
+
 	public List<IReference> selectTargetsForSending(ICS_Link link, ICS_InteractionPoint interactionPoint, ConnectorKind connectorKind, Signal signal, Boolean toInternal);
-	
+
 	public List<IReference> selectTargetsForDispatching(ICS_Link link, ICS_InteractionPoint interactionPoint, ConnectorKind connectorKind, Operation operation, Boolean toInternal);
-	
+
 	public Boolean contains(IObject_ object);
-	
+
 	public Boolean directlyContains(IObject_ object);
-	
+
 	public List<ICS_Object> getDirectContainers();
-	
+
 	public Boolean isOperationProvided(IReference reference, Operation operation);
-	
+
 	public Boolean isOperationRequired(IReference reference, Operation operation);
-	
+
 	public CS_LinkKind getLinkKind(ICS_Link link, ICS_InteractionPoint interactionPoint);
-	
+
 	public List<ICS_Link> getLinks(ICS_InteractionPoint interactionPoint);
-	
+
 	public Boolean hasValueForAFeature(IValue value);
-	
+
 }
