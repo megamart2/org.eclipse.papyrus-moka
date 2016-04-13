@@ -28,6 +28,12 @@
       %license
    </license>
 
+   <includes
+         id="org.eclipse.papyrus.moka.fmi.feature"
+         version="2.0.0.qualifier"
+         name="Moka FMI (Incubation)"
+         optional="true"/>
+
    <plugin
          id="org.eclipse.papyrus.moka"
          download-size="0"
