@@ -21,6 +21,7 @@
 	<!-- Modules to build -->
 	<modules>
 		<module>core</module>
+		<module>fmi</module>
 	</modules>
 	
 </project>

@@ -15,7 +15,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.moka.fuml.standardlibrary;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.ui;bundle-version="2.0.0",
  org.apache.commons.lang;bundle-version="2.6.0",
- com.sun.jna;bundle-version="1.0.0",
+ com.sun.jna;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.composites.interfaces;bundle-version="2.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
