@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?pde?>
+<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
+<target name="Tycho Tutorial" sequenceNumber="1460552838">
+  <locations>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160317-0200"/>
+      <unit id="org.eclipse.rcp.feature.group" version="4.6.0.v20160317-0200"/>
+      <unit id="org.eclipse.jdt.feature.group" version="3.12.0.v20160317-0200"/>
+      <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.0.400.v20160129-1529"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160316-1445"/>
+      <repository id="eclipse-neon" location="http://download.eclipse.org/releases/neon/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
+      <repository id="papyrus-neon-nightly" location="http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/"/>
+    </location>
+    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
+      <unit id="org.aspectj.feature.group" version="1.8.9.201604061446"/>
+      <repository id="aspectj-neon" location="http://download.eclipse.org/tools/ajdt/45/dev/update"/>
+    </location>
+  </locations>
+</target>
