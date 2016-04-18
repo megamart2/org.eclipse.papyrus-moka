@@ -26,7 +26,8 @@
 				<extensions>true</extensions>
 			</plugin>
 
-			<!-- Target platform plug-in configuration. The specified is used to resolve dependencies at build time -->
+			<!-- Target platform plug-in configuration. The specified is used to resolve 
+				dependencies at build time -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -69,7 +70,7 @@
 					</environments>
 				</configuration>
 			</plugin>
-			
+
 			<!-- Repository build -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
@@ -77,34 +78,51 @@
 				<version>${tycho-version}</version>
 			</plugin>
 
-			<!-- Static code analysis -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>findbugs-maven-plugin</artifactId>
-				<version>3.0.0</version>
-				<configuration>
-					<failOnError>false</failOnError>
-					<!-- Maximize memory allocated to bug detection analysis -->
-					<effort>Max</effort>
-					<!-- Reports all bugs (other values are medium and max) -->
-					<threshold>medium</threshold>
-					<!-- Produces XML report -->
-					<xmlOutput>true</xmlOutput>
-					<!-- Configures the directory in which the XML report is created -->
-					<findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
-				</configuration>
-				<executions>
-					<execution>
-						<!-- Analysis is triggered at compile time -->
-						<phase>compile</phase>
-						<goals>
-							<goal>check</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-
 		</plugins>
 	</build>
+
+	<!-- Moka custom builds -->
+	<profiles>
+
+		<!-- Release profile -->
+		<profile>
+			<id>moka-release-profile</id>
+		</profile>
+
+		<profile>
+			<id>quality</id>
+			<build>
+				<plugins>
+					<!-- Static code analysis -->
+					<plugin>
+						<groupId>org.codehaus.mojo</groupId>
+						<artifactId>findbugs-maven-plugin</artifactId>
+						<version>3.0.0</version>
+						<configuration>
+							<failOnError>false</failOnError>
+							<!-- Maximize memory allocated to bug detection analysis -->
+							<effort>Max</effort>
+							<!-- Reports all bugs (other values are medium and max) -->
+							<threshold>medium</threshold>
+							<!-- Produces XML report -->
+							<xmlOutput>true</xmlOutput>
+							<!-- Configures the directory in which the XML report is created -->
+							<findbugsXmlOutputDirectory>${project.build.directory}/findbugs</findbugsXmlOutputDirectory>
+						</configuration>
+						<executions>
+							<execution>
+								<!-- Analysis is triggered at compile time -->
+								<phase>compile</phase>
+								<goals>
+									<goal>check</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+
+	</profiles>
 
 </project>
