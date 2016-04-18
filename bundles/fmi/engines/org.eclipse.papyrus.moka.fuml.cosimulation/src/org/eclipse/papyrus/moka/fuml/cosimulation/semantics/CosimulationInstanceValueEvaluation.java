@@ -103,7 +103,7 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 
 					for (int i = 0; i < types.size(); i++) {
 						Classifier type = types.get(i);
-						object.getTypes().add((Class) type);
+						object.addType((Class) type);
 					}
 				}
 

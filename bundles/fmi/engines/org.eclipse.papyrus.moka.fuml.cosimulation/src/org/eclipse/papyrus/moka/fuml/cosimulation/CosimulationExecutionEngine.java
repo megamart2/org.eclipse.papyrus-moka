@@ -20,13 +20,7 @@ import org.eclipse.papyrus.moka.fuml.cosimulation.semantics.CosimulationDefaultC
 import org.eclipse.papyrus.moka.fuml.cosimulation.semantics.CosimulationLocus;
 import org.eclipse.papyrus.moka.timedfuml.TimedUmlExecutionEngine;
 
-/**
- * @author ac221913
- *
- */
 public class CosimulationExecutionEngine extends TimedUmlExecutionEngine {
-
-
 
 	@Override
 	public ILocus initializeLocus() {
@@ -44,7 +38,5 @@ public class CosimulationExecutionEngine extends TimedUmlExecutionEngine {
 		locus.getFactory().setStrategy(new CosimulationDefaultConstructStrategy());
 
 	}
-
-
 
 }

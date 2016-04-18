@@ -15,7 +15,6 @@ import java.nio.DoubleBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.util.ArrayList;
-import java.util.List;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
@@ -81,7 +80,7 @@ public class Fmu2ProxyService extends CS_Object {
 
 
 	public Fmu2ProxyService(Class service) {
-
+		this.addType(service);
 		fmuApi = new Fmu2Library();
 		initialize();
 	}

@@ -31,14 +31,13 @@ public class CosimulationLocus extends Timed_Locus {
 		} else {
 			if (type.getAppliedStereotype("FmiMLProfile::CS_FMU") != null) {
 				object = new Fmu2ProxyService(type);
-				object.createFeatureValues();
-				this.add(object);
+
 			} else {
 				object = new Timed_Object();
-				object.getTypes().add(type);
-				object.createFeatureValues();
-				this.add(object);
 			}
+			object.addType(type);
+			object.createFeatureValues();
+			this.add(object);
 		}
 		return object;
 	}
