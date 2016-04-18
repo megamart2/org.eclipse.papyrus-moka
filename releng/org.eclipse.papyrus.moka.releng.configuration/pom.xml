@@ -19,7 +19,6 @@
 		<!-- Declare plugins used -->
 		<plugins>
 
-			<!-- -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
@@ -27,8 +26,7 @@
 				<extensions>true</extensions>
 			</plugin>
 
-			<!-- Target platform plug-in configuration. The specified is used to resolve 
-				dependencies at build time -->
+			<!-- Target platform plug-in configuration. The specified is used to resolve dependencies at build time -->
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>target-platform-configuration</artifactId>
@@ -70,6 +68,13 @@
 						</environment>
 					</environments>
 				</configuration>
+			</plugin>
+			
+			<!-- Repository build -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-p2-repository-plugin</artifactId>
+				<version>${tycho-version}</version>
 			</plugin>
 
 			<!-- Static code analysis -->

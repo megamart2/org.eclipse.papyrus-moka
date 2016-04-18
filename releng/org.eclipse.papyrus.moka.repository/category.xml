@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.papyrus.moka.feature_2.0.0.qualifier.jar" id="org.eclipse.papyrus.moka.feature" version="2.0.0.qualifier">
+      <category name="org.eclipse.papyrus.moka"/>
+   </feature>
+   <category-def name="org.eclipse.papyrus.moka" label="Moka">
+      <description>
+         Papyrus model execution platform
+      </description>
+   </category-def>
+</site>
