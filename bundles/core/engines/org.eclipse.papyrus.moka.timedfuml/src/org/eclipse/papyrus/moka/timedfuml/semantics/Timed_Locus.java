@@ -33,7 +33,7 @@ public class Timed_Locus extends CS_Locus {
 			object = super.instantiate(type);
 		} else {
 			object = new Timed_Object();
-			object.getTypes().add(type);
+			object.addType(type);
 			object.createFeatureValues();
 			this.add(object);
 		}

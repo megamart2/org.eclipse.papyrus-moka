@@ -35,10 +35,10 @@ public class TimedUmlExecutionEngine extends CompositeStructuresExecutionEngine 
 	}
 
 	public void start(IProgressMonitor monitor) {
-		super.start(monitor);
 		_displayCurrentTimeAction displayAction = new _displayCurrentTimeAction();
 		DEScheduler.init(-1.0);
 		DEScheduler.getInstance().pushPreStepAction(displayAction);
+		super.start(monitor);
 		DEScheduler.getInstance().run();
 	}
 
