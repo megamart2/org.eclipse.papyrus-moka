@@ -86,7 +86,7 @@
 
 		<!-- Release profile -->
 		<profile>
-			<id>moka-release-profile</id>
+			<id>release</id>
 		</profile>
 
 		<profile>

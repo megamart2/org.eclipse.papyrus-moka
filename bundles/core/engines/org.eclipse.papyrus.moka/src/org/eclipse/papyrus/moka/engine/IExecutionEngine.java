@@ -20,10 +20,15 @@ import org.eclipse.emf.ecore.EObject;
 
 public interface IExecutionEngine extends IStreamsProxy {
 
-	public void init(ILaunch launch, final EObject executionEntryPoint, String[] executionArgs);
+	public void init(ILaunch launch, final EObject executionEntryPoint, String[] executionArgs, OperatingMode mode);
 
 	public void start(IProgressMonitor monitor);
 
 	public void stop(IProgressMonitor monitor);
-
+	
+	public enum OperatingMode{
+		NORMAL, // Services (animation, debug, etc) are notified by engine at runtime
+		QUIET,  // Services (animation, debug, etc) are NOT notified by engine at runtime
+	}
+	
 }

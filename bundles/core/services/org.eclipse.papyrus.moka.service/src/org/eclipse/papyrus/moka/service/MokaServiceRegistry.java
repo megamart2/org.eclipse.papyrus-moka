@@ -42,12 +42,11 @@ public class MokaServiceRegistry {
 	public static MokaServiceRegistry getInstance() {
 		if (INSTANCE == null) {
 			INSTANCE = new MokaServiceRegistry();
-			INSTANCE.loadServices();
 		}
 		return INSTANCE;
 	}
 
-	protected void loadServices() {
+	public void loadServices() {
 		// Instantiate registered services
 		IExtensionRegistry registry = Platform.getExtensionRegistry();
 		IConfigurationElement[] configurations = registry.getConfigurationElementsFor(MOKA_SERVICE_EXTENSION_POIN_ID);

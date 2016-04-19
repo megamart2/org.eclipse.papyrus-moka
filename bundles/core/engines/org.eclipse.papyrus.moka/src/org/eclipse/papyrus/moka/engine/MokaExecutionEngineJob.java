@@ -22,6 +22,7 @@ import org.eclipse.core.runtime.jobs.IJobChangeListener;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.moka.engine.IExecutionEngine.OperatingMode;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 public class MokaExecutionEngineJob extends Job {
@@ -39,7 +40,7 @@ public class MokaExecutionEngineJob extends Job {
 
 	protected ILaunch launch;
 
-	public static MokaExecutionEngineJob ENGINE_MAIN_JOB;
+	protected static MokaExecutionEngineJob ENGINE_MAIN_JOB;
 
 	private MokaExecutionEngineJob() {
 		super(MokaConstants.EXECUTION_ENGINE_JOB_NAME);
@@ -64,7 +65,7 @@ public class MokaExecutionEngineJob extends Job {
 	protected IStatus run(IProgressMonitor monitor) {
 		IStatus jobStatus = new Status(IStatus.OK, "org.eclipse.papyrus.moka", "Execution was successfull");
 		this.monitor = monitor;
-		this.engine.init(this.launch, this.executionEntryPoint, this.executionArgs);
+		this.engine.init(this.launch, this.executionEntryPoint, this.executionArgs, OperatingMode.NORMAL);
 		try {
 			this.engine.start(monitor);
 		} catch (OperationCanceledException cancellationException) {

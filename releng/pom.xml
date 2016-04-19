@@ -20,16 +20,5 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<modules>
 		<module>platforms</module>
 	</modules>
-
-	<profiles>
-		<!-- Update site is only provided during release time -->
-		<profile>
-			<id>moka-release-profile</id>
-			<modules>
-				<module>platforms</module>
-				<module>org.eclipse.papyrus.moka.repository</module>
-			</modules>
-		</profile>
-	</profiles>
 	
 </project>

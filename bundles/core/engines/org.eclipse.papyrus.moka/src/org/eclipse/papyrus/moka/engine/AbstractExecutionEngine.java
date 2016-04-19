@@ -29,29 +29,38 @@ public abstract class AbstractExecutionEngine implements IExecutionEngine {
 
 	// Debug session in which is executed the execution engine.
 	protected ILaunch launch;
+	
+	// Engine operating mode 
+	protected OperatingMode mode;
 
 	@Override
-	public void init(ILaunch launch, EObject executionEntryPoint, String[] executionArgs) {
+	public void init(ILaunch launch, EObject executionEntryPoint, String[] executionArgs, OperatingMode mode) {
 		this.launch = launch;
 		this.executionEntryPoint = executionEntryPoint;
 		this.executionArgs = executionArgs;
+		this.mode = mode;
 	}
 
 	public void start(IProgressMonitor monitor) {
-		// Initialize every service with the parameters of this particular run
-		MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
-		for (IMokaService service : registry.getAllServices()) {
-			service.init(this.launch, executionEntryPoint);
+		if(!mode.equals(OperatingMode.QUIET)){
+			// Initialize every service with the parameters of this particular run
+			MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
+			registry.loadServices();
+			for (IMokaService service : registry.getAllServices()) {
+				service.init(this.launch, executionEntryPoint);
+			}
 		}
 	}
 
 	@Override
 	public void stop(IProgressMonitor monitor) {
-		// Enable all services to dispose the resources they use.
-		MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
-		monitor.subTask("Dispose Moka services");
-		for (IMokaService service : registry.getAllServices()) {
-			service.dispose();
+		if(!mode.equals(OperatingMode.QUIET)){
+			// Enable all services to dispose the resources they use.
+			MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
+			monitor.subTask("Dispose Moka services");
+			for (IMokaService service : registry.getAllServices()) {
+				service.dispose();
+			}
 		}
 	}
 

@@ -18,11 +18,33 @@
 	<name>Moka</name>
 	<packaging>pom</packaging>
 
-	<!-- Children modules -->
+	<!-- Children modules to build -->
 	<modules>
 		<module>bundles</module>
-		<module>features</module>
+		<module>tests</module>
 		<module>releng</module>
 	</modules>
+	
+	<profiles>
+	
+		<!-- Tests are not considered when quality analysis is performed -->
+		<profile>
+			<id>quality</id>
+			<modules>
+				<module>bundles</module>
+			</modules>
+		</profile>
+		
+		<profile>
+			<id>release</id>
+			<modules>
+				<module>bundles</module>
+				<module>features</module>
+				<module>releng</module>
+				<module>tests</module>
+			</modules>
+		</profile>
+		
+	</profiles>
 
 </project>
