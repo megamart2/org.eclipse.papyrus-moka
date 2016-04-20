@@ -14,9 +14,22 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
+	<pluginRepositories>
+
+		<!-- Location to find out maven plugins -->
+		<pluginRepository>
+			<id>eclipse-maven-releases</id>
+			<url>https://repo.eclipse.org/content/repositories/releases/</url>
+			<snapshots>
+				<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</pluginRepository>
+
+	</pluginRepositories>
+
 	<!-- -->
 	<build>
-		<!-- Declare plugins used -->
+		<!-- Declare plugins used during the build -->
 		<plugins>
 
 			<plugin>
@@ -24,6 +37,17 @@
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
+			</plugin>
+
+			<!-- Tycho compiler -->
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-compiler-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
 			</plugin>
 
 			<!-- Target platform plug-in configuration. The specified is used to resolve 

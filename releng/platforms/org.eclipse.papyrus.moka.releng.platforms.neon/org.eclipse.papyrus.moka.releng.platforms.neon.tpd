@@ -16,6 +16,7 @@ location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSu
  org.eclipse.papyrus.dev.feature.feature.group lazy
 }
 
-location "http://download.eclipse.org/tools/ajdt/45/dev/update" aspectj-neon{
+location "http://download.eclipse.org/tools/ajdt/46/dev/update" aspectj-neon{
 	org.aspectj.feature.group
+	org.eclipse.ajdt.feature.group
 }
