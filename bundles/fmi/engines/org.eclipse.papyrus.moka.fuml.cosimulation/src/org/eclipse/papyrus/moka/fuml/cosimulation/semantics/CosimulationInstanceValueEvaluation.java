@@ -20,6 +20,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
@@ -154,7 +155,7 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 		List<Classifier> types = instance.getClassifiers();
 		for (int i = 0; i < types.size(); i++) {
 			Classifier type = types.get(i);
-			if (type.getAppliedStereotype("FmiMLProfile::CS_FMU") != null) {
+			if (type.getAppliedStereotype(FMIProfileUtil.CS_FMU_STEREO_QUALIFIED_NAME) != null) {
 				return (Class) type;
 			}
 		}

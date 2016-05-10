@@ -11,6 +11,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fmi.master.fmilibrary;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+
+import org.eclipse.papyrus.moka.fmi.fmiprofile.CS_FMU;
+import org.eclipse.papyrus.moka.fmi.fmu.FMUHandler;
+import org.eclipse.papyrus.moka.fmi.fmu.FMUResource;
+import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -38,89 +45,95 @@ public class Fmi2Parameters {
 	private String dllPath = "";
 	private String fmuLocation = "";
 
+	
+	//TODO : should directly handle FMI metamodel objects...
 	public Fmi2Parameters(Classifier type, Stereotype st) {
 		// this.fmu = fmu;
 
-		if (type.getValue(st, "modelName") != null) {
-			this.modelName = type.getValue(st, "modelName").toString();
+		
+		CS_FMU fmu = (CS_FMU) type.getStereotypeApplication(st);
+		
+		
+		if (fmu.getModelName() != null) {
+			this.modelName = fmu.getModelName() ;
 		}
 
-		if (type.getValue(st, "guid") != null) {
-			this.guid = type.getValue(st, "guid").toString();
+		if (fmu.getGuid() != null) {
+			this.guid = fmu.getGuid();
 		}
 
-		if (type.getValue(st, "sourceFiles") != null) {
-			this.sourceFiles = type.getValue(st, "sourceFiles").toString();
+		if (fmu.getSourceFiles() != null) {
+			this.sourceFiles = fmu.getSourceFiles();
 		}
 
-		if (type.getValue(st, "canBeInstantiatedOnlyOncePerProcess") != null) {
-			this.canBeInstantiatedOnlyOncePerProcess = Boolean.parseBoolean(type.getValue(st, "canBeInstantiatedOnlyOncePerProcess").toString());
+		
+		this.canBeInstantiatedOnlyOncePerProcess =fmu.isCanBeInstantiatedOnlyOncePerProcess();
+		
+		this.canGetAndSetFMUstate =fmu.isCanGetAndSetFMUstate();
+	
+		this.canHandleVariableCommunicationStepSize = fmu.isCanHandleVariableCommunicationStepSize();
+		
+		
+		this.canInterpolateInputs = fmu.isCanInterpolateInputs();
+		
+
+		this.canRunAsynchronuously = fmu.isCanRunAsynchronuously();
+		
+		
+		this.canNotUseMemoryManagementFunctions = fmu.isCanNotUseMemoryManagementFunctions();
+		
+		this.canSerializeFMUstate = fmu.isCanSerializeFMUstate();
+		
+
+		
+		this.maxOutputDerivativeOrder =fmu.getMaxOutputDerivativeOrder();
+		
+
+		if (fmu.getModelIdentifier() != null) {
+			this.modelIdentifier = fmu.getModelIdentifier();
 		}
 
-		if (type.getValue(st, "canGetAndSetFMUstate") != null) {
-			this.canGetAndSetFMUstate = Boolean.parseBoolean(type.getValue(st, "canGetAndSetFMUstate").toString());
-		}
+		this.needsExecutionTool = fmu.isNeedsExecutionTool();
+		
 
-		if (type.getValue(st, "canHandleVariableCommunicationStepSize") != null) {
-			this.canHandleVariableCommunicationStepSize = Boolean.parseBoolean(type.getValue(st, "canHandleVariableCommunicationStepSize").toString());
-		}
+		
+		this.providesDirectionalDerivative = fmu.isProvidesDirectionalDerivative();
+		
 
-		if (type.getValue(st, "canInterpolateInputs") != null) {
-			this.canInterpolateInputs = Boolean.parseBoolean(type.getValue(st, "canInterpolateInputs").toString());
-		}
+		
+		this.startTime =fmu.getStartTime();
+	
+		
+		this.stopTime = fmu.getStopTime();
+		
 
-		if (type.getValue(st, "canRunAsynchronuously") != null) {
-			this.canRunAsynchronuously = Boolean.parseBoolean(type.getValue(st, "canRunAsynchronuously").toString());
-		}
+		
+		this.stepSize = fmu.getStepSize();
+	
 
-		if (type.getValue(st, "canNotUseMemoryManagementFunctions") != null) {
-			this.canNotUseMemoryManagementFunctions = Boolean.parseBoolean(type.getValue(st, "canNotUseMemoryManagementFunctions").toString());
-		}
+		this.tolerance = fmu.getTolerance();
 
-		if (type.getValue(st, "canSerializeFMUstate") != null) {
-			this.canSerializeFMUstate = Boolean.parseBoolean(type.getValue(st, "canSerializeFMUstate").toString());
-		}
 
-		if (type.getValue(st, "maxOutputDerivativeOrder") != null) {
-			this.maxOutputDerivativeOrder = Integer.parseInt(type.getValue(st, "maxOutputDerivativeOrder").toString());
+		FmiModelDescriptionType modelDescription = fmu.getModelDescription();
+		if(modelDescription != null && modelDescription.eResource() instanceof FMUResource){
+			FMUResource fmuRes = (FMUResource) modelDescription.eResource();
+			FMUHandler handler = fmuRes.getFmuHandler();
+			try {
+				if (handler.getCosimulationDll() != null){
+					this.dllPath = handler.getCosimulationDll().getAbsolutePath();
+				}
+				if (handler.getFMUFolder() != null){
+					this.fmuLocation = handler.getFMUFolder().getAbsolutePath();
+				}
+			} catch ( IOException e) {
+				//TODO handle error message
+				e.printStackTrace();
+			}
+			
+			
 		}
-
-		if (type.getValue(st, "modelIdentifier") != null) {
-			this.modelIdentifier = type.getValue(st, "modelIdentifier").toString();
-		}
-
-		if (type.getValue(st, "needsExecutionTool") != null) {
-			this.needsExecutionTool = Boolean.parseBoolean(type.getValue(st, "needsExecutionTool").toString());
-		}
-
-		if (type.getValue(st, "providesDirectionalDerivative") != null) {
-			this.providesDirectionalDerivative = Boolean.parseBoolean(type.getValue(st, "providesDirectionalDerivative").toString());
-		}
-
-		if (type.getValue(st, "startTime") != null) {
-			this.startTime = Double.parseDouble(type.getValue(st, "startTime").toString());
-		}
-
-		if (type.getValue(st, "stopTime") != null) {
-			this.stopTime = Double.parseDouble(type.getValue(st, "stopTime").toString());
-		}
-
-		if (type.getValue(st, "stepSize") != null) {
-			this.stepSize = Double.parseDouble(type.getValue(st, "stepSize").toString());
-		}
-
-		if (type.getValue(st, "tolerance") != null) {
-			this.tolerance = Double.parseDouble(type.getValue(st, "tolerance").toString());
-		}
-
-		if (type.getValue(st, "dllPath") != null) {
-			this.dllPath = type.getValue(st, "dllPath").toString();
-		}
-
-		if (type.getValue(st, "fmuLocation") != null) {
-			this.fmuLocation = type.getValue(st, "fmuLocation").toString();
-		}
-
+		
+		
 		// this.modelName = fmu.types.get(0).getValue(type, "modelName").toString();
 		// this.guid = fmu.types.get(0).getValue(type, "guid").toString();
 		// this.sourceFiles = fmu.types.get(0).getValue(type, "sourceFiles").toString();

@@ -12,7 +12,10 @@
 package org.eclipse.papyrus.moka.fmi.master.fmilibrary;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.moka.fmi.fmiprofile.ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
+
+import org.eclipse.papyrus.moka.fmi.util.FMIUtil;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
@@ -29,18 +32,19 @@ public class Fmi2ScalarVariable {
 
 	public Fmi2ScalarVariable(Fmu2ProxyService fmu, Property p, Stereotype st) {
 		// TODO Auto-generated constructor stub
+		
+		ScalarVariable variable = (ScalarVariable) p.getStereotypeApplication(st);
+		org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable modelDescVariable = variable.getFmiVariable();
+		
 		this.fmu = fmu;
 		this.name = p.getName();
-		this.valueReference = (Long) p.getValue(st, "valueReference");
-		this.variability = ((EnumerationLiteral) p.getValue(st, "variability")).getName();
-		this.causality = p.getValue(st, "causality").toString();
+		this.valueReference = modelDescVariable.getValueReference();
+		this.variability = modelDescVariable.getVariability().getName();
+
+		this.causality = modelDescVariable.getCausality().toString();
 		System.out.println("P: " + p.getName());
-		EnumerationLiteral literalValue = ((EnumerationLiteral) p.getValue(st, "initial"));
-		if (literalValue == null) {
-			EObject stApp = p.getStereotypeApplication(st);
-			System.out.println("Stooooooooooooooooooop!");
-		}
-		this.initial = literalValue.getName();
+
+		this.initial = modelDescVariable.getInitial().getName();
 		this.setType(p.getType().getName());
 		this.setValue(p.getDefaultValue());
 	}

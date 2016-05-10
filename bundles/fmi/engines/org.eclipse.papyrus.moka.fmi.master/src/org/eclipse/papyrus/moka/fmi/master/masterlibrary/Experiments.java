@@ -12,6 +12,8 @@
 package org.eclipse.papyrus.moka.fmi.master.masterlibrary;
 
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.fmi.fmiprofile.CS_Graph;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.uml2.uml.Stereotype;
 
 public class Experiments {
@@ -27,11 +29,14 @@ public class Experiments {
 	public Experiments(ICS_Object container) {
 		// TODO Auto-generated method stub
 		this.current_time = 0;
-		Stereotype cs_graphStereoptype = container.getTypes().get(0).getAppliedStereotype("FmiMLProfile::CS_Graph");
-		this.startTime = (Double) container.getTypes().get(0).getValue(cs_graphStereoptype, "startTime");
-		this.stopTime = (Double) container.getTypes().get(0).getValue(cs_graphStereoptype, "stopTime");
-		this.stepSize = (Double) container.getTypes().get(0).getValue(cs_graphStereoptype, "stepSize");
-		this.tolerance = (Double) container.getTypes().get(0).getValue(cs_graphStereoptype, "tolerance");
+		
+		Stereotype cs_graphStereoptype = container.getTypes().get(0).getAppliedStereotype(FMIProfileUtil.CS_GRAPH_STEREO_QUALIFIED_NAME);
+		CS_Graph graph =  (CS_Graph) container.getTypes().get(0).getStereotypeApplication(cs_graphStereoptype);
+		
+		this.startTime = graph.getStartTime();
+		this.stopTime = graph.getStopTime();
+		this.stepSize = graph.getStepSize();
+		this.tolerance = graph.getTolerance();
 
 	}
 

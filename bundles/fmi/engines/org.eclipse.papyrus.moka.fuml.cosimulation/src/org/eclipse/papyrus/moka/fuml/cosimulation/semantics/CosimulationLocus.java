@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.moka.fuml.cosimulation.semantics;
 
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_Locus;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_Object;
@@ -29,7 +30,7 @@ public class CosimulationLocus extends Timed_Locus {
 		if (type instanceof Behavior) {
 			object = super.instantiate(type);
 		} else {
-			if (type.getAppliedStereotype("FmiMLProfile::CS_FMU") != null) {
+			if (type.getAppliedStereotype(FMIProfileUtil.CS_FMU_STEREO_QUALIFIED_NAME) != null) {
 				object = new Fmu2ProxyService(type);
 
 			} else {

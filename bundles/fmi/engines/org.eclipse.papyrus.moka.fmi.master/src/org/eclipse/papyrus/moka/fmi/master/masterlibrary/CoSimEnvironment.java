@@ -18,13 +18,16 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
+import org.eclipse.papyrus.moka.fmi.fmiprofile.FlowDirection;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Parameters;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Port;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 import org.eclipse.uml2.uml.Connector;
 import org.eclipse.uml2.uml.Dependency;
@@ -55,7 +58,7 @@ public class CoSimEnvironment {
 			for (Classifier type : e.getTypes()) {
 				// if CS_graph stereotype is applied then this extensional value represents the co-simulation graph
 
-				if (type.getAppliedStereotype("FmiMLProfile::CS_Graph") != null) {
+				if (type.getAppliedStereotype(FMIProfileUtil.CS_GRAPH_STEREO_QUALIFIED_NAME) != null) {
 					this.container = ((CS_Object) e);
 					for (Connector con : ((CS_Object) e).types.get(0).getOwnedConnectors()) {
 						this.connectors.add(con);
@@ -98,8 +101,8 @@ public class CoSimEnvironment {
 
 					break;
 				}
-				if (type.getAppliedStereotype("FmiMLProfile::CS_FMU") != null) {
-					Fmi2Parameters parameters = new Fmi2Parameters(type, type.getAppliedStereotype("FmiMLProfile::CS_FMU"));
+				if (type.getAppliedStereotype(FMIProfileUtil.CS_FMU_STEREO_QUALIFIED_NAME) != null) {
+					Fmi2Parameters parameters = new Fmi2Parameters(type, type.getAppliedStereotype(FMIProfileUtil.CS_FMU_STEREO_QUALIFIED_NAME));
 					((Fmu2ProxyService) e).setParameters(parameters);
 					fmusToAdd.add((Fmu2ProxyService) e);
 					break;
@@ -159,9 +162,10 @@ public class CoSimEnvironment {
 				Port sourcePort = null;
 				Port targetPort = null;
 				sourcePort = (Port) c.getEnds().get(0).getRole();
-				Stereotype st = sourcePort.getAppliedStereotype("FmiMLProfile::Port");
+				Stereotype st = sourcePort.getAppliedStereotype(FMIProfileUtil.PORT_STEREO_QUALIFIED_NAME);
 				if (st != null) {
-					if (sourcePort.getValue(st, "causality").toString().equals("out")) {
+					org.eclipse.papyrus.moka.fmi.fmiprofile.Port fmiPort = (org.eclipse.papyrus.moka.fmi.fmiprofile.Port) sourcePort.getStereotypeApplication(st);
+					if (fmiPort.getDirection() == FlowDirection.OUT) {
 						targetPort = (Port) c.getEnds().get(1).getRole();
 					} else {
 						sourcePort = (Port) c.getEnds().get(1).getRole();
@@ -184,8 +188,8 @@ public class CoSimEnvironment {
 						continue;
 				}
 
-				Fmi2Port key = new Fmi2Port(targetFmu, targetPort, targetPort.getAppliedStereotype("FmiMLProfile::Port"));
-				Fmi2Port value = new Fmi2Port(sourceFmu, sourcePort, sourcePort.getAppliedStereotype("FmiMLProfile::Port"));
+				Fmi2Port key = new Fmi2Port(targetFmu, targetPort, targetPort.getAppliedStereotype(FMIProfileUtil.PORT_STEREO_QUALIFIED_NAME));
+				Fmi2Port value = new Fmi2Port(sourceFmu, sourcePort, sourcePort.getAppliedStereotype(FMIProfileUtil.PORT_STEREO_QUALIFIED_NAME));
 				P.put(key, value);
 				targetFmu.inputPorts.add(key);
 				sourceFmu.outputPorts.add(value);
@@ -229,23 +233,16 @@ public class CoSimEnvironment {
 		EList<PackageImport> imports = nameSpace.getPackageImports();
 		boolean packageFound = false;
 		for (Fmu2ProxyService fmu : this.fmus) {
-			String fmuName = fmu.getParameters().getModelIdentifier();
-			// search for the package import of fmuName
-			// retieve all dependencies with <<outputDependency>> applied
-			for (PackageImport pi : imports) {
-				Package p = (Package) pi.getImportedPackage();
-				if (p.getName().equals(fmuName)) {
-					for (PackageableElement pe : p.getPackagedElements()) {
-						if (pe.getAppliedStereotype("FmiMLProfile::OutputDependency") != null) {
-							Dependency ioDep = (Dependency) pe;
-							this.ioDependencies.add(ioDep);
-						}
+			Class fmuClass = (Class) fmu.getTypes().get(0);
+			
+			for (Property fmuProp : fmuClass.getOwnedAttributes()){
+				for (Dependency dep : fmuProp.getClientDependencies()){
+					if (dep.getAppliedStereotype(FMIProfileUtil.OUTPUT_DEPENDENCY_STEREO_QUALIFIED_NAME) != null) {
+						this.ioDependencies.add(dep);
 					}
-					packageFound = true;
 				}
-				if (packageFound)
-					continue;
 			}
+			
 		}
 	}
 

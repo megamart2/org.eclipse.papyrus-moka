@@ -21,6 +21,7 @@ import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.St
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 
@@ -36,7 +37,7 @@ public class CosimulationDefaultConstructStrategy extends CS_DefaultConstructStr
 		IFeatureValue featureValue = context.getFeatureValue(feature);
 		if (featureValue != null) {
 			List<IValue> values = featureValue.getValues();
-			if ((feature instanceof Port) && (feature.getAppliedStereotype("FmiMLProfile::Port") == null) && (feature.getAppliedStereotype("FmiMLProfile::UML_port") == null)) {
+			if ((feature instanceof Port) && (feature.getAppliedStereotype(FMIProfileUtil.PORT_STEREO_QUALIFIED_NAME) == null) ) {
 				// insert an interaction point
 				ICS_InteractionPoint interactionPoint = new CS_InteractionPoint();
 				interactionPoint.setDefiningPort((Port) feature);

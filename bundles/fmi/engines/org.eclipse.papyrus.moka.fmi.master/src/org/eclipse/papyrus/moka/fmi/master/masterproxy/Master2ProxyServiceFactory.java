@@ -18,7 +18,7 @@ import org.eclipse.uml2.uml.Class;
 public class Master2ProxyServiceFactory extends AbstractServiceFactory {
 
 
-	protected static final String SERVICE_NAME = "Master2Service::Master2Proxy"; // qualified name of FmuProxy
+	protected static final String SERVICE_NAME = "FMIMasterService::Master2Proxy"; // qualified name of FmuProxy
 
 	public Master2ProxyServiceFactory() {
 	}
