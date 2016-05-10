@@ -16,12 +16,20 @@ public class DEScheduler {
 	protected List<Action> preStepActions = new ArrayList<Action>() ;
 	protected List<Action> postStepActions = new ArrayList<Action>() ;
 	protected static DEScheduler instance ;
+	protected DefaultPushPullStrategy pushPullStrategy ;
 	
 	public static void init(double stopTime) {
+		DefaultPushPullStrategy pushPullStrategy = new DefaultPushPullStrategy() ;
+		init(stopTime, pushPullStrategy) ;
+	}
+	
+	public static void init(double stopTime, DefaultPushPullStrategy pushPullStrategy) {
 		instance = new DEScheduler() ;
 		instance.stopTime = stopTime ;
 		instance.started = false ;
 		instance.finished = false ;
+		instance.pushPullStrategy = pushPullStrategy ;
+		instance.pushPullStrategy.setScheduler(instance);
 	}
 	
 	public static DEScheduler getInstance() {
@@ -36,8 +44,6 @@ public class DEScheduler {
 			this.step() ;
 		}
 	}
-	
-	
 	
 	public void step() {
 		this.updateTime();
@@ -68,37 +74,12 @@ public class DEScheduler {
 	}
 	
 	public List<Event> pullEvents(double date) {
-		List<Event> selectedEvents = new ArrayList<Event>() ;
-		int i = 0 ;
-		while (i < this.events.size() && this.events.get(i).getAbsoluteDate() == date) {
-			selectedEvents.add(this.events.get(i)) ;
-			i ++ ;
-		}
-		this.events.removeAll(selectedEvents) ;
+		List<Event> selectedEvents = this.pushPullStrategy.pullEvents(date) ;
 		return selectedEvents ;
 	}
 	
 	public void pushEvent(Event event) {
-		event.setAbsoluteDate(this.currentTime + event.getRelativeDate());
-		event.setScheduler(this) ;
-		int i = 0 ;
-		int insertAt = 0 ;
-		boolean foundInsertion = false ;
-		while (i < this.events.size() && !foundInsertion) {
-			if (this.events.get(i).getAbsoluteDate() < event.getAbsoluteDate()) {
-				insertAt = i + 1 ;
-				i++ ;
-			}
-			else {
-				foundInsertion = true ;
-			}
-		}
-		if (insertAt < this.events.size()) {
-			this.events.add(insertAt, event);
-		}
-		else {
-			this.events.add(event);
-		}
+		this.pushPullStrategy.pushEvent(event);
 	}
 	
 	public void pushPreRunAction(Action action) {
@@ -131,6 +112,22 @@ public class DEScheduler {
 
 	public void setStarted(boolean started) {
 		this.started = started;
+	}
+
+	public List<Event> getEvents() {
+		return this.events ;
+	}
+
+	public void removeAllEvents(List<Event> selectedEvents) {
+		this.events.removeAll(selectedEvents) ;
+	}
+
+	public void addEventAt(int insertAt, Event event) {
+		this.events.add(insertAt, event);
+	}
+
+	public void addEvent(Event event) {
+		this.events.add(event) ;
 	}
 
 }

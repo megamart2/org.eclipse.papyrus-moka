@@ -13,12 +13,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStringValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.LiteralString;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class StringValue extends PrimitiveValue {
+public class StringValue extends PrimitiveValue implements IStringValue{
 
 	public String value;
 
@@ -66,7 +67,13 @@ public class StringValue extends PrimitiveValue {
 		return value;
 	}
 
-	public Object getValue() {
+	@Override
+	public String getValue() {
 		return this.value;
+	}
+	
+	@Override
+	public void setValue(String value) {
+		this.value = value;
 	}
 }

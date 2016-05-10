@@ -13,12 +13,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel;
 
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IIntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.UMLFactory;
 import org.eclipse.uml2.uml.ValueSpecification;
 
-public class IntegerValue extends PrimitiveValue {
+public class IntegerValue extends PrimitiveValue implements IIntegerValue {
 
 	/*
 	 * The actual Integer value.
@@ -106,7 +107,13 @@ public class IntegerValue extends PrimitiveValue {
 		return stringValue;
 	}
 
-	public Object getValue() {
+	@Override
+	public Integer getValue() {
 		return this.value;
+	}
+	
+	@Override
+	public void setValue(Integer value) {
+		this.value = value;
 	}
 }
