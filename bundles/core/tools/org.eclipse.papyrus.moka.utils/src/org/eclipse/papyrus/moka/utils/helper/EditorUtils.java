@@ -79,7 +79,7 @@ public class EditorUtils {
 				IEditorReference[] editorReferences = pages[j].getEditorReferences();
 				for (int k = 0; k < editorReferences.length && part == null; k++) {
 					IEditorReference ref = editorReferences[k];
-					IEditorPart cdd = ref.getEditor(true);
+					IEditorPart cdd = ref.getEditor(false);
 					if (cdd instanceof IMultiDiagramEditor) {
 						String cddName = cdd.getEditorInput().getName();
 						if (cddName.equals(resourceName)) {
