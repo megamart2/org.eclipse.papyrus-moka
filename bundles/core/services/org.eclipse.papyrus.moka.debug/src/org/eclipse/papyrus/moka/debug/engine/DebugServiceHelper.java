@@ -41,7 +41,7 @@ public class DebugServiceHelper {
 	public boolean isActive(IObject_ value) {
 		boolean active = false;
 		Iterator<Classifier> typesIterator = value.getTypes().iterator();
-		while (!active) {
+		while (!active && typesIterator.hasNext()) {
 			Classifier type = typesIterator.next();
 			if (type instanceof Class) {
 				active = ((Class) type).isActive() && !((Class) type).isAbstract();
