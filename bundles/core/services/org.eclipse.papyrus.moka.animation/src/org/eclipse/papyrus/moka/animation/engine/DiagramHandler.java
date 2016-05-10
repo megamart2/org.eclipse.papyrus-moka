@@ -263,7 +263,7 @@ public class DiagramHandler {
 		// to trigger animation. In this case even if previously presented preconditions
 		// are full filled this operation returns false
 		boolean isRenderable = false;
-		if (instance != null) {
+		if (instance != null && this.animatedDiagrams != null) {
 			Iterator<IAnimationTreeNode> nodesIterator = this.animatedDiagrams.getRoot().getChildren().iterator();
 			while (!isRenderable && nodesIterator.hasNext()) {
 				DiagramAnimationNode node = (DiagramAnimationNode) nodesIterator.next();
