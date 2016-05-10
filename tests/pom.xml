@@ -20,6 +20,7 @@
 	<!-- Modules to build -->
 	<modules>
 		<module>semantics</module>
+		<module>fmi</module>
 		<module>org.eclipse.payrus.moka.tests.framework</module>
 	</modules>
 
