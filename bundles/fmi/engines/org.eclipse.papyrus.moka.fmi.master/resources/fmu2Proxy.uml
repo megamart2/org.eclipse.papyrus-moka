@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_gB_IQNk4EeSUUOmLQha_Bw" name="Fmu2Service">
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_gB_IQNk4EeSUUOmLQha_Bw" name="FMISlaveService">
   <packagedElement xmi:type="uml:Class" xmi:id="_r2ROoNk4EeSUUOmLQha_Bw" name="Fmu2Proxy">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qwIUcNnREeSSmteSNPGivw" name="fmi2Instantiate">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_2QoSoBmMEeWDpeaDCG9cNw" name="dllPath">

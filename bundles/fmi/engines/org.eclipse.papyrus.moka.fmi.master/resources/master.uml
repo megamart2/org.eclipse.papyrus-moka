@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:standard="http://www.eclipse.org/uml2/5.0.0/UML/Profile/Standard" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
-  <uml:Model xmi:id="_9D9TkBi7EeWm-u1J4YqcOg" name="RootElement">
+  <uml:Model xmi:id="_9D9TkBi7EeWm-u1J4YqcOg" name="SimpleFMIMaster">
     <packageImport xmi:type="uml:PackageImport" xmi:id="_awkGYBi8EeWm-u1J4YqcOg">
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
-    <packagedElement xmi:type="uml:Class" xmi:id="_YJZJQOz2EeWTYsQuYWmHRA" name="Master" classifierBehavior="_4i1LMOz1EeWTYsQuYWmHRA" isActive="true">
+    <packagedElement xmi:type="uml:Class" xmi:id="_YJZJQOz2EeWTYsQuYWmHRA" name="SimpleMaster" classifierBehavior="_4i1LMOz1EeWTYsQuYWmHRA" isActive="true">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_gBqtEOz2EeWTYsQuYWmHRA" name="masterProxy">
         <type xmi:type="uml:Class" href="pathmap://PAPYRUS_MOKA_EXTRAS_FMI2_MASTER/master2Proxy.uml#_Vqs90NlYEeSSmteSNPGivw"/>
       </ownedAttribute>
