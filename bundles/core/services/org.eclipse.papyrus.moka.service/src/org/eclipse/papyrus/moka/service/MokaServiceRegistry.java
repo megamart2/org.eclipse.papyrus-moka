@@ -28,6 +28,8 @@ public class MokaServiceRegistry {
 
 	protected static String MOKA_SERVICE_EXTENSION_POIN_ID = "org.eclipse.papyrus.moka.service.service";
 
+	private boolean loaded;
+	
 	// The registry map associates the actual type of the service to the
 	// service instance
 	protected HashMap<java.lang.Class<?>, IMokaService> registry;
@@ -37,6 +39,7 @@ public class MokaServiceRegistry {
 
 	private MokaServiceRegistry() {
 		this.registry = new HashMap<java.lang.Class<?>, IMokaService>();
+		this.loaded = false;
 	}
 
 	public static MokaServiceRegistry getInstance() {
@@ -48,18 +51,21 @@ public class MokaServiceRegistry {
 
 	public void loadServices() {
 		// Instantiate registered services
-		IExtensionRegistry registry = Platform.getExtensionRegistry();
-		IConfigurationElement[] configurations = registry.getConfigurationElementsFor(MOKA_SERVICE_EXTENSION_POIN_ID);
-		for (int i = 0; i < configurations.length; i++) {
-			Object instantiatedContribution = null;
-			try {
-				instantiatedContribution = configurations[i].createExecutableExtension("class");
-			} catch (CoreException e) {
-				e.printStackTrace();
+		if(!this.loaded){
+			IExtensionRegistry registry = Platform.getExtensionRegistry();
+			IConfigurationElement[] configurations = registry.getConfigurationElementsFor(MOKA_SERVICE_EXTENSION_POIN_ID);
+			for (int i = 0; i < configurations.length; i++) {
+				Object instantiatedContribution = null;
+				try {
+					instantiatedContribution = configurations[i].createExecutableExtension("class");
+				} catch (CoreException e) {
+					e.printStackTrace();
+				}
+				if (instantiatedContribution != null && instantiatedContribution instanceof IMokaService) {
+					this.register((IMokaService) instantiatedContribution);
+				}
 			}
-			if (instantiatedContribution != null && instantiatedContribution instanceof IMokaService) {
-				this.register((IMokaService) instantiatedContribution);
-			}
+			this.loaded = true;
 		}
 	}
 
