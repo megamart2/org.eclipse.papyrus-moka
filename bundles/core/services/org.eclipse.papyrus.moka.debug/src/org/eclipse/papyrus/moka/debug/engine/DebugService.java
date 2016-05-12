@@ -11,6 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.engine;
 
+import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
@@ -93,6 +94,21 @@ public class DebugService extends AbstractMokaService {
 					this.debugTarget.unregisterThread(object);
 				}
 			}
+		}
+	}
+	
+	@Override
+	public void dispose() {
+		// When disposed the debug service shall indicate to the debug target that
+		// it is terminated. Termination of the debug target makes sure that registered
+		// thread are destroyed.
+		if(this.debugTarget!=null && !this.debugTarget.isTerminated()){
+			try {
+				this.debugTarget.terminate();
+			} catch (DebugException e) {
+				e.printStackTrace();
+			}
+			this.debugTarget = null;
 		}
 	}
 }

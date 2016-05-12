@@ -82,7 +82,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 	public boolean isTerminated() {
 		return this.status.equals(MokaDebugTargetState.TERMINATED);
 	}
-
+	
 	@Override
 	public void terminate() throws DebugException {
 		for (IMokaThread thread : this.executionThreads) {
@@ -91,6 +91,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 			}
 			thread.terminate();
 		}
+		this.executionThreads.clear();
 		this.executionEngineProcess.terminate();
 		this.status = MokaDebugTargetState.TERMINATED;
 		this.fireTerminateEvent();
@@ -270,7 +271,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 
 	@Override
 	public boolean isDisconnected() {
-		return this.status.equals(MokaDebugTargetState.DISCONNECTED) || this.isTerminated();
+		return this.status.equals(MokaDebugTargetState.DISCONNECTED)|| this.isTerminated();
 	}
 
 	@Override

@@ -74,7 +74,7 @@ public class MokaExecutionEngineJob extends Job {
 			if (monitor.isCanceled()) {
 				jobStatus = new Status(IStatus.CANCEL, "org.eclipse.papyrus.moka", "Execution stopped by user request");
 			} else {
-				jobStatus = new Status(IStatus.ERROR, "org.eclipse.papyrus.moka", "Execution stopped: unexpected exception");
+				jobStatus = new Status(IStatus.ERROR, "org.eclipse.papyrus.moka", "Execution stopped: unexpected exception", e);
 			}
 		}
 		return jobStatus;
