@@ -1,28 +1,48 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?pde?>
-<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Tycho Tutorial" sequenceNumber="1461142235">
-  <locations>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160317-0200"/>
-      <unit id="org.eclipse.rcp.feature.group" version="4.6.0.v20160317-0200"/>
-      <unit id="org.eclipse.jdt.feature.group" version="3.12.0.v20160317-0200"/>
-      <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.0.400.v20160129-1529"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160316-1445"/>
-      <repository id="eclipse-neon" location="http://download.eclipse.org/releases/neon/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrus-neon-nightly" location="http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.papyrus.dev.feature.feature.group" version="0.0.0"/>
-      <repository id="papyrus-neon-developper-nightly" location="https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/"/>
-    </location>
-    <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.aspectj.feature.group" version="1.8.9.201604052120"/>
-      <unit id="org.eclipse.ajdt.feature.group" version="2.2.4.201604052120"/>
-      <repository id="aspectj-neon" location="http://download.eclipse.org/tools/ajdt/46/dev/update"/>
-    </location>
-  </locations>
+<?pde version="3.8"?><target name="Tycho Tutorial" sequenceNumber="1461142236">
+<locations>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160317-0200"/>
+<unit id="org.eclipse.rcp.feature.group" version="4.6.0.v20160317-0200"/>
+<unit id="org.eclipse.jdt.feature.group" version="3.12.0.v20160317-0200"/>
+<unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.0.400.v20160129-1529"/>
+<unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160316-1445"/>
+<repository location="http://download.eclipse.org/releases/neon/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
+<repository location="http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.eclipse.papyrus.dev.feature.feature.group" version="0.0.0"/>
+<repository location="https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="org.aspectj.feature.group" version="1.8.9.201604052120"/>
+<unit id="org.eclipse.ajdt.feature.group" version="2.2.4.201604052120"/>
+<repository location="http://download.eclipse.org/tools/ajdt/46/dev/update"/>
+</location>
+<location includeAllPlatforms="false" includeConfigurePhase="false" includeMode="planner" includeSource="true" type="InstallableUnit">
+<unit id="com.google.gwtjsonrpc" version="1.2.5.v201112241444"/>
+<unit id="org.glassfish.jersey.media.jersey-media-json-jackson" version="2.14.0.v201504171603"/>
+<unit id="org.codehaus.jackson.xc" version="1.6.0.v20101005-0925"/>
+<unit id="org.codehaus.jackson.xc.source" version="1.6.0.v20101005-0925"/>
+<unit id="org.codehaus.jackson.mapper.source" version="1.6.0.v20101005-0925"/>
+<unit id="org.apache.cassandra" version="0.7.0.v201503170330"/>
+<unit id="org.codehaus.jackson.mapper" version="1.6.0.v20101005-0925"/>
+<unit id="com.google.gwtjsonrpc.source" version="1.2.5.v201112241444"/>
+<unit id="org.json" version="1.0.0.v201011060100"/>
+<unit id="org.apache.cassandra.source" version="0.7.0.v201503170330"/>
+<unit id="org.codehaus.jackson.smile.source" version="1.6.0.v20101005-0925"/>
+<unit id="org.eclipse.orbit.mongodb.source" version="2.10.1.v20130422-1135"/>
+<unit id="org.codehaus.jackson.core" version="1.6.0.v20101005-0925"/>
+<unit id="com.fasterxml.jackson.jaxrs.jackson-jaxrs-json-provider" version="2.5.0.v201504171603"/>
+<unit id="org.codehaus.jackson.jaxrs.source" version="1.6.0.v20101005-1100"/>
+<unit id="org.eclipse.orbit.mongodb" version="2.10.1.v20130422-1135"/>
+<unit id="org.codehaus.jackson.core.source" version="1.6.0.v20101005-0925"/>
+<unit id="org.codehaus.jackson.smile" version="1.6.0.v20101005-0925"/>
+<unit id="org.codehaus.jackson.jaxrs" version="1.6.0.v20101005-1100"/>
+<repository location="http://download.eclipse.org/tools/orbit/downloads/drops/S20160501200945/repository/"/>
+</location>
+</locations>
 </target>
