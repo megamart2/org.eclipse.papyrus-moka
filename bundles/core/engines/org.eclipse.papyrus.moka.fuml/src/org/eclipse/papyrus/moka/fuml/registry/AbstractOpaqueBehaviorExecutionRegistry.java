@@ -15,7 +15,6 @@ package org.eclipse.papyrus.moka.fuml.registry;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.util.URI;
@@ -24,9 +23,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
-import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
+import org.eclipse.papyrus.moka.utils.ResourceSetUtils;
 import org.eclipse.uml2.uml.OpaqueBehavior;
 
 public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaqueBehaviorExecutionRegistry {
@@ -48,18 +45,14 @@ public abstract class AbstractOpaqueBehaviorExecutionRegistry implements IOpaque
 		this.locus = locus;
 	}
 
-	protected void buildOpaqueBehaviorsMap(final String LIBRARY_NAME) {
+	protected void buildOpaqueBehaviorsMap(String libraryURIString) {
 		opaqueBehaviorsMap = new HashMap<String, OpaqueBehavior>();
-		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
-		IRegisteredLibrary library = null;
-		for (IRegisteredLibrary l : libraries) {
-			if (l.getName().equals(LIBRARY_NAME)) {
-				library = l;
+		if (libraryURIString != null) {
+			URI libraryUri = URI.createURI(libraryURIString);
+			ResourceSet resourceSet = ResourceSetUtils.getResourceSet(contextEObject);
+			if (resourceSet == null){
+				resourceSet = ResourceSetUtils.getDefaultResourceSet();
 			}
-		}
-		if (library != null) {
-			URI libraryUri = library.getUri();
-			ResourceSet resourceSet = Util.getResourceSet(contextEObject);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
 			for (Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
 				EObject cddOpaqueBehavior = i.next();

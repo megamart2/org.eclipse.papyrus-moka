@@ -24,9 +24,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
-import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
+import org.eclipse.papyrus.moka.utils.ResourceSetUtils;
 import org.eclipse.uml2.uml.Class;
 
 /**
@@ -81,27 +79,24 @@ public abstract class AbstractSystemServicesRegistry implements ISystemServicesR
 	/**
 	 * Convenience method which calls the instantiate method on each service identified in the given serviceQualifiedNames list,
 	 * for the library identified by the given libraryName.
-	 * libraryName shall refer to the name of a registered library (registered using the oep.uml.extensionpoints.UMLLibrary)
+	 * libraryURIString shall refer to the URI used to register a library of a registered library (registered using org.eclipse.emf.ecore.uri_mapping extension point)
 	 * serviceQualifiedNames shall contain qualified names of classes defined in the library identified by libraryName
 	 *
-	 * @param libraryName
+	 * @param libraryURIString
 	 *            The name of the registered library containing the service classes to be instantiated
 	 * @param serviceQualifiedNames
 	 *            The list of qualified names of service classes to be instantiated
 	 * @return A List<Object_> containing instantiated services, to be added to a specific locus
 	 */
-	protected List<IObject_> instantiateServices(String libraryName, List<String> serviceQualifiedNames) {
+	protected List<IObject_> instantiateServices(String libraryURIString, List<String> serviceQualifiedNames) {
 		List<IObject_> serviceInstances = new ArrayList<IObject_>();
-		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
-		IRegisteredLibrary library = null;
-		for (IRegisteredLibrary l : libraries) {
-			if (l.getName().equals(libraryName)) {
-				library = l;
+		
+		if (libraryURIString != null) {
+			URI libraryUri = URI.createURI(libraryURIString);
+			ResourceSet resourceSet = ResourceSetUtils.getResourceSet(contextEObject);
+			if (resourceSet == null){
+				resourceSet = ResourceSetUtils.getDefaultResourceSet();
 			}
-		}
-		if (library != null) {
-			URI libraryUri = library.getUri();
-			ResourceSet resourceSet = Util.getResourceSet(contextEObject);
 			Resource libraryResource = resourceSet.getResource(libraryUri, true);
 			for (Iterator<EObject> i = libraryResource.getAllContents(); i.hasNext();) {
 				EObject cddService = i.next();

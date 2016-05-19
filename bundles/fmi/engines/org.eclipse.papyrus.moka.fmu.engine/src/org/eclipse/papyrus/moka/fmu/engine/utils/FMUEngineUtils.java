@@ -5,7 +5,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.FlowDirection;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.Port;
 import org.eclipse.papyrus.moka.fmu.engine.control.FMUControlService;
-import org.eclipse.papyrus.moka.fmu.json.JSONSocketServer;
+import org.eclipse.papyrus.moka.fmu.json.JSONSocketClient;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Property;
@@ -16,7 +16,7 @@ public class FMUEngineUtils {
 
 	protected static FMUControlService fmuControlService ;
 
-	private static JSONSocketServer jsonSocketServer;
+	private static JSONSocketClient jsonSocketClient;
 
 	protected static final String PORT_STEREOTYPE_NAME = "Port";
 	protected static final String CS_FMU_STEREOTYPE_NAME = "CS_FMU";
@@ -89,16 +89,16 @@ public class FMUEngineUtils {
 		fmuControlService = controlService ;
 	}
 	
-	public static void setJSONSocketServer(JSONSocketServer server){
-		jsonSocketServer = server;
+	public static void setJSONSocketClient(JSONSocketClient server){
+		jsonSocketClient = server;
 	}
 	
-	public static JSONSocketServer getJsonSocketServer() {
+	public static JSONSocketClient getJsonSocketClient() {
 		
 		//TODO improve the way to implement a socket server from the GUI...
-		if (jsonSocketServer== null){
-			jsonSocketServer = new JSONSocketServer(9090);
+		if (jsonSocketClient== null){
+			jsonSocketClient = new JSONSocketClient(9090);
 		}
-		return jsonSocketServer;
+		return jsonSocketClient;
 	}
 }

@@ -15,10 +15,9 @@ package org.eclipse.papyrus.moka.engine;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.debug.core.ILaunch;
-import org.eclipse.debug.core.model.IStreamsProxy;
 import org.eclipse.emf.ecore.EObject;
 
-public interface IExecutionEngine extends IStreamsProxy {
+public interface IExecutionEngine {
 
 	public void init(ILaunch launch, final EObject executionEntryPoint, String[] executionArgs, OperatingMode mode);
 

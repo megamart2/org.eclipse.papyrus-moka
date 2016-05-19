@@ -6,7 +6,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
-import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.Map;
 
@@ -17,14 +16,13 @@ import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.core.JsonToken;
-import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class JSONSocketServer extends Thread{
+public class JSONSocketClient extends Thread{
 
 
 	FMUInterface fmu;
 	int portNumber;
-	public JSONSocketServer(int portNumber){
+	public JSONSocketClient(int portNumber){
 	
 		this.portNumber= portNumber;
 	}
@@ -36,26 +34,20 @@ public class JSONSocketServer extends Thread{
 
 	@Override
 	public void run() {
-		ObjectMapper mapper = new ObjectMapper();
-		JsonFactory factory = mapper.getFactory();
+		
+		JsonFactory factory = new JsonFactory();
 
 		JsonParser parser= null;
 		JsonGenerator generator= null;
 		try (
-				ServerSocket serverSocket = new ServerSocket(9999);
-				Socket socket = serverSocket.accept();
-
+				Socket socket = new Socket("localhost", portNumber);
 				PrintWriter out =
 						new PrintWriter(socket.getOutputStream(), true);
 				DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
-
-
 				DataInputStream inputStream = new DataInputStream(socket.getInputStream());
-
 				BufferedReader in =
 						new BufferedReader(
 								new InputStreamReader(socket.getInputStream()));
-
 				){
 
 			parser = factory.createParser(in);
@@ -66,24 +58,9 @@ public class JSONSocketServer extends Thread{
 			while(parser.nextToken() == JsonToken.START_OBJECT){
 				JSONRequest request = new JSONRequest();
 				parseRequest(parser, request);
-				//JSONRequest request = mapper.readValue(parser, JSONRequest.class);
-
 
 				JSONResponse response = handleRequest(request);
-
-				//mapper.writeValue(generator, response);
 				sendResponse(generator, response);
-				
-
-				//we send the answer in two steps : first the length of the message
-				//and then the content as an array of bytes
-				//byte[] bytes = mapper.writeValueAsBytes( response);
-				//int length = bytes.length;
-				//String header =String.format("%1$10d", length);
-				//byte[] headerBytes = header.getBytes();
-				//int headerLength = headerBytes.length;
-				//dataOut.write(headerBytes);
-				//dataOut.write(bytes);
 
 
 			}
@@ -349,6 +326,7 @@ public class JSONSocketServer extends Thread{
 				resp.bools[index] = entry.getValue();
 				index++;
 			}
+			fmu.fmiGetBools().clear();
 		}
 
 		if (!fmu.fmiGetStrings().isEmpty()){
@@ -361,6 +339,7 @@ public class JSONSocketServer extends Thread{
 				resp.strings[index] = entry.getValue();
 				index++;
 			}
+			fmu.fmiGetStrings().clear();
 		}
 
 		if (!fmu.fmiGetReals().isEmpty()){
@@ -373,6 +352,7 @@ public class JSONSocketServer extends Thread{
 				resp.doubles[index] = entry.getValue();
 				index++;
 			}
+			fmu.fmiGetReals().clear();
 		}
 
 
@@ -385,27 +365,28 @@ public class JSONSocketServer extends Thread{
 				resp.ints[index] = entry.getValue();
 				index++;
 			}
+			fmu.fmiGetIntegers().clear();
 		}
 	}
 
 
 	private void updateValues(JSONRequest request) {
 		if (request.boolVRs != null){
-			Map<Integer, Boolean> boolMap = fmu.fmiGetBools();
+		
 			for(int i =0; i< request.boolVRs.length; i++){
-				boolMap.put(request.boolVRs[i], request.bools[i]);
+				fmu.fmiGetBools().put(request.boolVRs[i], request.bools[i]);
 			}
 		}
 		if (request.doubleVRs != null){
-			Map<Integer, Double> doubleMap = fmu.fmiGetReals();
+			
 			for(int i =0; i< request.doubleVRs.length; i++){
-				doubleMap.put(request.doubleVRs[i], request.doubles[i]);
+				fmu.fmiGetReals().put(request.doubleVRs[i], request.doubles[i]);
 			}
 		}
 		if (request.intVRs != null){
-			Map<Integer, Integer> intMap = fmu.fmiGetIntegers();
+			
 			for(int i =0; i< request.intVRs.length; i++){
-				intMap.put(request.intVRs[i], request.ints[i]);
+				fmu.fmiGetIntegers().put(request.intVRs[i], request.ints[i]);
 			}
 		}
 		if (request.stringVRs != null){

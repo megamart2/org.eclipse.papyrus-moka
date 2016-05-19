@@ -47,8 +47,8 @@ public class TestFMI {
 			//we the model description is reparsed after unzip in tmp folder we check it's ok
 			assertTrue(handler.getModelDescription() instanceof FmiModelDescriptionType);
 			
-			assertNotNull(handler.getCosimulationDll());
-			assertTrue(handler.getCosimulationDll().exists());
+			assertNotNull(handler.getCosimulationLibrary());
+			assertTrue(handler.getCosimulationLibrary().exists());
 			
 			
 			FMUHandler newHandler = new FMUHandler(fmuTmpFolder.getAbsolutePath());
@@ -76,8 +76,8 @@ public class TestFMI {
 			//we the model description is reparsed after unzip in tmp folder we check it's ok
 			assertTrue(handler.getModelDescription() instanceof FmiModelDescriptionType);
 			
-			assertNotNull(handler.getCosimulationDll());
-			assertTrue(handler.getCosimulationDll().exists());
+			assertNotNull(handler.getCosimulationLibrary());
+			assertTrue(handler.getCosimulationLibrary().exists());
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

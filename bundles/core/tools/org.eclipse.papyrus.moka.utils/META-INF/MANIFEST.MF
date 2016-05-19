@@ -5,18 +5,15 @@ Bundle-SymbolicName: org.eclipse.papyrus.moka.utils
 Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.utils.Activator
 Bundle-Vendor: Eclipse Modeling Project
-Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
- org.eclipse.core.runtime;bundle-version="3.12.0",
- org.eclipse.ui.workbench;bundle-version="3.108.0",
+Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0",
  org.eclipse.emf.ecore;bundle-version="2.12.0",
  org.eclipse.core.resources;bundle-version="3.11.0",
- org.eclipse.papyrus.infra.ui;bundle-version="1.2.0",
  org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="[2.0.0,3.0.0)",
- org.eclipse.uml2.uml;bundle-version="5.2.0",
- org.eclipse.papyrus.infra.emf;bundle-version="2.0.0"
+ org.eclipse.uml2.uml;bundle-version="5.2.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
-Export-Package: org.eclipse.papyrus.moka.utils.constants,
+Export-Package: org.eclipse.papyrus.moka.utils,
+ org.eclipse.papyrus.moka.utils.constants,
  org.eclipse.papyrus.moka.utils.helper,
  org.eclipse.papyrus.moka.utils.helper.presentation,
  org.eclipse.papyrus.moka.utils.helper.semantics

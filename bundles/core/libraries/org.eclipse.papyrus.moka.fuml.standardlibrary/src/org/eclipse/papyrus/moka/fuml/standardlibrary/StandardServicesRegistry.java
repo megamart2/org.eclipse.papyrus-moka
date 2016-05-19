@@ -32,6 +32,7 @@ import org.eclipse.uml2.uml.Class;
 public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 
 	protected final static String FUML_LIBRARY_NAME = "FoundationalModelLibrary";
+	protected final static String FUML_LIBRARY_URI = "pathmap://PAPYRUS_fUML_LIBRARY/fUML_Library.uml";
 
 	protected final static String STANDARD_INPUT_CHANNEL_SERVICE_NAME = "FoundationalModelLibrary::BasicInputOutput::StandardInputChannel";
 
@@ -47,7 +48,7 @@ public class StandardServicesRegistry extends AbstractSystemServicesRegistry {
 		List<String> serviceQualifiedNames = new ArrayList<String>();
 		serviceQualifiedNames.add(STANDARD_INPUT_CHANNEL_SERVICE_NAME);
 		serviceQualifiedNames.add(STANDARD_OUTPUT_CHANNEL_SERVICE_NAME);
-		return this.instantiateServices(FUML_LIBRARY_NAME, serviceQualifiedNames);
+		return this.instantiateServices(FUML_LIBRARY_URI, serviceQualifiedNames);
 	}
 
 	/*

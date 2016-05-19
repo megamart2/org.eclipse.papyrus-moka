@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Moka Discrete Event Clock (Incubation)
-Bundle-SymbolicName: org.eclipse.papyrus.moka.discreteevent
+Bundle-SymbolicName: org.eclipse.papyrus.moka.discreteevent;singleton:=true
 Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.discreteevent.Activator
 Require-Bundle: org.eclipse.core.runtime
@@ -10,3 +10,4 @@ Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.discreteevent,
  org.eclipse.papyrus.moka.discreteevent.actions
 Bundle-Vendor: Eclipse Modeling Project
+Bundle-ClassPath: .

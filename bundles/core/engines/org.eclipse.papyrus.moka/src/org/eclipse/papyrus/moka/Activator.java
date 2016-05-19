@@ -13,14 +13,14 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka;
 
-import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.core.runtime.Plugin;
 import org.osgi.framework.BundleContext;
 
 // TODO: Auto-generated Javadoc
 /**
  * The activator class controls the plug-in life cycle.
  */
-public class Activator extends AbstractUIPlugin {
+public class Activator extends 	Plugin {
 
 	// The plug-in ID
 	/** The Constant PLUGIN_ID. */

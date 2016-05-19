@@ -26,11 +26,6 @@ import org.eclipse.core.runtime.ISafeRunnable;
 import org.eclipse.core.runtime.Platform;
 import org.eclipse.core.runtime.SafeRunner;
 import org.eclipse.debug.core.model.IStreamMonitor;
-import org.eclipse.emf.common.util.URI;
-import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.ecore.resource.Resource;
-import org.eclipse.emf.ecore.resource.ResourceSet;
-import org.eclipse.papyrus.infra.core.Activator;
 import org.eclipse.papyrus.moka.engine.AbstractExecutionEngine;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
@@ -53,9 +48,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL3.ExecutionFactory
 import org.eclipse.papyrus.moka.fuml.registry.IOpaqueBehaviorExecutionRegistry;
 import org.eclipse.papyrus.moka.fuml.registry.ISystemServicesRegistry;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
-import org.eclipse.papyrus.uml.extensionpoints.library.IRegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.library.RegisteredLibrary;
-import org.eclipse.papyrus.uml.extensionpoints.utils.Util;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Parameter;
 import org.eclipse.uml2.uml.ParameterDirectionKind;
@@ -140,9 +132,12 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 				loadLibrary(o, locus, this.executionEntryPoint);
 			}
 		} catch (CoreException ex) {
-			Activator.log.error(ex);
+			
+			ex.printStackTrace();
+			
+			System.err.println(ex.getMessage());
 		} catch (Exception ex) {
-			Activator.log.error(ex);
+			//Activator.log.error(ex);
 		}
 	}
 
@@ -157,35 +152,27 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 				loadServices(o, locus, this.executionEntryPoint);
 			}
 		} catch (CoreException ex) {
-			Activator.log.error(ex);
+			//Activator.log.error(ex);
 		} catch (Exception ex) {
-			Activator.log.error(ex);
+			//Activator.log.error(ex);
 		}
 	}
 
 	protected void initializeBuiltInPrimitiveTypes(ILocus locus) {
-		List<IRegisteredLibrary> libraries = RegisteredLibrary.getRegisteredLibraries();
-		ResourceSet resourceSet = Util.createTemporaryResourceSet();
-		for (IRegisteredLibrary l : libraries) {
-			if (l.getName().equals("UMLPrimitiveTypes")) {
-				URI libraryUri = l.getUri();
-				Resource libraryResource = resourceSet.getResource(libraryUri, true);
-				Iterator<EObject> libElementIterator = libraryResource.getAllContents();
-				while (libElementIterator.hasNext()) {
-					EObject currentElement = libElementIterator.next();
-					if (currentElement instanceof PrimitiveType) {
-						locus.getFactory().addBuiltInType((Type) currentElement);
-					}
-				}
-			}
-		}
+		
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getReal(null));
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getInteger(null));
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getBoolean(null));
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getString(null));
+					
+		
 	}
 
 	protected static void loadLibrary(final Object o, final ILocus locus, final Object context) {
 		ISafeRunnable runnable = new ISafeRunnable() {
 
 			public void handleException(Throwable e) {
-				Activator.log.error(e);
+				//Activator.log.error(e);
 			}
 
 			public void run() throws Exception {
@@ -199,7 +186,7 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 		ISafeRunnable runnable = new ISafeRunnable() {
 
 			public void handleException(Throwable e) {
-				Activator.log.error(e);
+				//Activator.log.error(e);
 			}
 
 			public void run() throws Exception {

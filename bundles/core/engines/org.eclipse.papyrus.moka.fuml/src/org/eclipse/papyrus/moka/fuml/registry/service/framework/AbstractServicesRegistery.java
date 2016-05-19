@@ -24,16 +24,16 @@ public abstract class AbstractServicesRegistery extends AbstractSystemServicesRe
 
 	protected List<String> serviceQualifiedNames;
 
-	protected String libraryName;
+	protected String libraryURI;
 
 	public abstract void initServiceQualifiedNames();
 
 	public abstract void initServiceFactory();
 
-	public abstract void initLibraryName();
+	public abstract void initLibraryURI();
 
 	public AbstractServicesRegistery() {
-		this.initLibraryName();
+		this.initLibraryURI();
 		this.initServiceFactory();
 		this.serviceQualifiedNames = new ArrayList<String>();
 		this.initServiceQualifiedNames();
@@ -41,7 +41,7 @@ public abstract class AbstractServicesRegistery extends AbstractSystemServicesRe
 
 	@Override
 	public List<IObject_> instantiateServices() {
-		return this.instantiateServices(this.libraryName, this.serviceQualifiedNames);
+		return this.instantiateServices(this.libraryURI, this.serviceQualifiedNames);
 	}
 
 	@Override

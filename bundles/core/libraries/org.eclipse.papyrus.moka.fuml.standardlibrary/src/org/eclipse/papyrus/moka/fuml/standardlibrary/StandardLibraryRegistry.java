@@ -20,11 +20,12 @@ import org.eclipse.papyrus.moka.fuml.registry.AbstractOpaqueBehaviorExecutionReg
 public class StandardLibraryRegistry extends AbstractOpaqueBehaviorExecutionRegistry {
 
 	protected final static String FUML_LIBRARY_NAME = "FoundationalModelLibrary";
+	protected final static String FUML_LIBRARY_URI = "pathmap://PAPYRUS_fUML_LIBRARY/fUML_Library.uml";
 
 	@Override
 	public void registerOpaqueBehaviorExecutions(ILocus locus) {
 		this.locus = locus;
-		this.buildOpaqueBehaviorsMap(FUML_LIBRARY_NAME);
+		this.buildOpaqueBehaviorsMap(FUML_LIBRARY_URI);
 		try {
 			// ////////////////////
 			// Integer functions

@@ -6,7 +6,7 @@ import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMULocus;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUObject;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
-import org.eclipse.papyrus.moka.fmu.json.JSONSocketServer;
+import org.eclipse.papyrus.moka.fmu.json.JSONSocketClient;
 import org.eclipse.papyrus.moka.service.IMokaService;
 import org.eclipse.papyrus.moka.service.MokaServiceRegistry;
 import org.eclipse.papyrus.moka.timedfuml.TimedUmlExecutionEngine;
@@ -15,6 +15,8 @@ import org.eclipse.uml2.uml.Class;
 
 public class MokaEngineForFMUExport extends TimedUmlExecutionEngine {
 
+	Thread mainThread=null;
+	
 	@Override
 	public void start(IProgressMonitor monitor) {
 		if(!mode.equals(OperatingMode.QUIET)){
@@ -31,15 +33,21 @@ public class MokaEngineForFMUExport extends TimedUmlExecutionEngine {
 				if (fmuClass != null) {
 					startFMU(fmuClass);
 					DEScheduler.init(-1.0);
-					JSONSocketServer server = FMUEngineUtils.getJsonSocketServer();
-					server.setFmu(FMUEngineUtils.getFMUControlService());
-					server.start();
+					JSONSocketClient client = FMUEngineUtils.getJsonSocketClient();
+					client.setFmu(FMUEngineUtils.getFMUControlService());
+					client.start();
 					FMUEngineUtils.getFMUControlService().waitForTermination();
 				}
 			}
 		};
-		Thread mainThread = new Thread(execution, "Moka - Main thread");
+		mainThread = new Thread(execution, "Moka - Main thread");
 		mainThread.start();
+	}
+	
+	public void waitForTermination() throws InterruptedException{
+		if (mainThread != null){
+			mainThread.join();
+		}
 	}
 
 	public void startFMU(Class fmuClass) {

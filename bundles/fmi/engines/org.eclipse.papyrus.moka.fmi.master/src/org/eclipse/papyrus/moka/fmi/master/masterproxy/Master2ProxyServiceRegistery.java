@@ -31,8 +31,8 @@ public class Master2ProxyServiceRegistery extends AbstractServicesRegistery {
 	}
 
 	@Override
-	public void initLibraryName() {
-		this.libraryName = "Fmi2Master";
+	public void initLibraryURI() {
+		this.libraryURI = "pathmap://PAPYRUS_MOKA_EXTRAS_FMI2_MASTER/master2Proxy.uml";
 	}
 
 }

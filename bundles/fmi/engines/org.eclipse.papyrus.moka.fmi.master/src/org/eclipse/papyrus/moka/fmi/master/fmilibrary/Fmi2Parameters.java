@@ -119,8 +119,8 @@ public class Fmi2Parameters {
 			FMUResource fmuRes = (FMUResource) modelDescription.eResource();
 			FMUHandler handler = fmuRes.getFmuHandler();
 			try {
-				if (handler.getCosimulationDll() != null){
-					this.dllPath = handler.getCosimulationDll().getAbsolutePath();
+				if (handler.getCosimulationLibrary() != null){
+					this.dllPath = handler.getCosimulationLibrary().getAbsolutePath();
 				}
 				if (handler.getFMUFolder() != null){
 					this.fmuLocation = handler.getFMUFolder().getAbsolutePath();

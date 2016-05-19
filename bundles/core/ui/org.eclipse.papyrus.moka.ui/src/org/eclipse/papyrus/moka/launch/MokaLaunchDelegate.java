@@ -33,11 +33,11 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.infra.core.resource.ModelSet;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
-import org.eclipse.papyrus.moka.Activator;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.engine.MokaProcess;
 import org.eclipse.papyrus.moka.engine.IExecutionEngine;
 import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
+import org.eclipse.papyrus.moka.ui.Activator;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 import org.eclipse.papyrus.moka.utils.helper.EditorUtils;
 
@@ -78,7 +78,7 @@ public class MokaLaunchDelegate extends LaunchConfigurationDelegate implements I
 				resourceSet = servicesRegistry.getService(ModelSet.class);
 			} catch (ServiceException e) {
 				resourceSet = new ResourceSetImpl();
-				org.eclipse.papyrus.infra.core.Activator.log.error(e);
+				//org.eclipse.papyrus.infra.core.log.LogHelper.error(e);
 			}
 			Resource resource = resourceSet.getResource(URI.createURI(modelURI), true);
 			String uriFragment = null;

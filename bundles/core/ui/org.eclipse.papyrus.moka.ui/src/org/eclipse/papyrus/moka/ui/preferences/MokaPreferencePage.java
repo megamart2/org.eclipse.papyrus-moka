@@ -32,7 +32,7 @@ public class MokaPreferencePage extends FieldEditorPreferencePage implements IWo
 
 	public MokaPreferencePage() {
 		super(GRID);
-		setPreferenceStore(org.eclipse.papyrus.moka.Activator.getDefault().getPreferenceStore());
+		setPreferenceStore(org.eclipse.papyrus.moka.ui.Activator.getDefault().getPreferenceStore());
 		setDescription("");
 	}
 

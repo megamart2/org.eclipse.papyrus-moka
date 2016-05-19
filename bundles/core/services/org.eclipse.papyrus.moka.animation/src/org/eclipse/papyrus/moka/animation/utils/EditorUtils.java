@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.launch;
+package org.eclipse.papyrus.moka.animation.utils;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IWorkspace;

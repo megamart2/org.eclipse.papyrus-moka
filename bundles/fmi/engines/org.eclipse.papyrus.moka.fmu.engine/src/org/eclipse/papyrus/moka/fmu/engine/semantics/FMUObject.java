@@ -19,11 +19,12 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
-import org.eclipse.papyrus.moka.simex.utils.UMLPrimitiveTypesUtils;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_Object;
+import org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils;
 import org.eclipse.uml2.uml.PrimitiveType;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
+
 
 public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 

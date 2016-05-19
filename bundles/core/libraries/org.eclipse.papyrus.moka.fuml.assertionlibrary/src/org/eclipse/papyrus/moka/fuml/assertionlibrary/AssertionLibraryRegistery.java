@@ -25,6 +25,7 @@ public class AssertionLibraryRegistery extends AbstractOpaqueBehaviorExecutionRe
 	 * Declared Name of the registered library
 	 */
 	public final static String ASSERTION_LIBRARY = "AssertionLibrary";
+	public final static String ASSERTION_LIBRARY_URI = "pathmap://PAPYRUS_ASSERTION_LIBRARY/AssertionLibrary.uml";
 
 	/**
 	 * List of qualified names of model elements (OpaqueBehavior) representing assertions
@@ -49,7 +50,7 @@ public class AssertionLibraryRegistery extends AbstractOpaqueBehaviorExecutionRe
 	 */
 	public void registerOpaqueBehaviorExecutions(ILocus locus) {
 		this.locus = locus;
-		this.buildOpaqueBehaviorsMap(ASSERTION_LIBRARY);
+		this.buildOpaqueBehaviorsMap(ASSERTION_LIBRARY_URI);
 		this.registerOpaqueBehaviorExecution(new AssertEquals(), ASSERT_EQUALS);
 		this.registerOpaqueBehaviorExecution(new AssertFalse(), ASSERT_FALSE);
 		this.registerOpaqueBehaviorExecution(new AssertTrue(), ASSERT_TRUE);

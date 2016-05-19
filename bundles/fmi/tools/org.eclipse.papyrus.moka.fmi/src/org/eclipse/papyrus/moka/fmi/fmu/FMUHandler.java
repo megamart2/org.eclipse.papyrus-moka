@@ -38,6 +38,7 @@ public class FMUHandler{
 	public static final String DARWIN32= "darwin32";
 	public static final String DARWIN64= "darwin64";
 	private static final URI MODEL_DESCRIPTION_ZIP_URI = URI.createURI("fmi:/fmuTmp");
+	private static final String FMU_RESOURCE_FOLDER_NAME = "resources";
 
 
 	File resourceFolder;
@@ -72,9 +73,7 @@ public class FMUHandler{
 		if (!fmuFile.exists()){
 			throw new IllegalArgumentException("file "+ fmuPath+" doesn't exist");
 		}
-		if (autoclean){
-			setAutoClean();
-		}
+		
 		
 		
 		if (fmuFile.isFile()){
@@ -82,7 +81,9 @@ public class FMUHandler{
 			if (fmuName.contains(".fmu")){
 				fmuName = fmuName.substring(0, fmuFile.getName().lastIndexOf(".fmu"));
 			}
-
+			if (autoclean){
+				setAutoClean();
+			}
 			initModelDescriptionFromZip();
 
 		}else if (fmuFile.isDirectory()) {
@@ -90,6 +91,8 @@ public class FMUHandler{
 			fmuName = fmuFile.getName();
 			isUnzipped = true;
 			initModelDescriptionFromFolder();
+			//we don't set autoclean by default when an FMU is initialized from an unzipped folder.
+			//it is the responsability of the tool which has unzipped the FMU to clean the folder or not
 
 		}
 		
@@ -245,6 +248,7 @@ public class FMUHandler{
 	}
 
 
+
 	public File getFMUFolder() throws IOException{
 		if (! isUnzipped){
 			unzip(null, true);
@@ -252,7 +256,7 @@ public class FMUHandler{
 		return fmuFolder;
 	}
 
-	public File getCosimulationDll() throws FileNotFoundException{
+	public File getCosimulationLibrary() throws FileNotFoundException{
 		if (!isUnzipped){
 			try {
 				unzip(null, true);
@@ -261,7 +265,7 @@ public class FMUHandler{
 				return null;
 			}
 		}
-		String dllRelativePath = getCosimulationDllRelativePath();
+		String dllRelativePath = getCosimulationLibraryRelativePath();
 		if (dllRelativePath == null){
 			String message = "Could not get compute the dll relative path in FMU " +fmuName;
 			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(),message));
@@ -274,7 +278,7 @@ public class FMUHandler{
 		return dllFile;
 	}
 	
-	public String getCosimulationDllRelativePath(){
+	public String getCosimulationLibraryRelativePath(){
 		if (modelDescription != null && ! modelDescription.getCoSimulation().isEmpty()){
 			CoSimulationType cosimElem = modelDescription.getCoSimulation().get(0);
 			String identifier =cosimElem.getModelIdentifier();
@@ -290,6 +294,18 @@ public class FMUHandler{
 		return null;
 	}
 	
+	public File getResourceFolder() throws IOException{
+		File fmuFolderFile = getFMUFolder();
+		File resourceFile = new File(fmuFolderFile.getAbsolutePath() + File.separator + FMU_RESOURCE_FOLDER_NAME);
+		if (resourceFile.isFile()){
+			Activator.getDefault().getLog().log(new Status(IStatus.ERROR, Activator.getDefault().getBundle().getSymbolicName(), "FMU "+ fmuName + " resources should be a folder, not a file"));
+		}
+		
+		if( !resourceFile.exists()){
+			resourceFile.mkdir();
+		}
+		return resourceFile;
+	}
 
 
 }
