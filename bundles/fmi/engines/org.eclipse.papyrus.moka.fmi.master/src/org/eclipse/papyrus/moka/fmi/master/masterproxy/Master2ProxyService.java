@@ -404,13 +404,13 @@ public class Master2ProxyService extends AbstractService {
 
 		private void logValues() {
 
-			// StringBuilder lineBuiler = new StringBuilder(""+ current_time);
-			// for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
-			// for (Fmi2ScalarVariable output : fmu.variables){
-			// lineBuiler.append(";").append(fmu.fmi2Get(output));
-			// }
-			// }
-			// traceLines.add(lineBuiler.toString());
+			 StringBuilder lineBuiler = new StringBuilder(""+ current_time);
+			 for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
+			 for (Fmi2ScalarVariable output : fmu.variables){
+			 lineBuiler.append(";").append(fmu.fmi2Get(output));
+			 }
+			 }
+			 traceLines.add(lineBuiler.toString());
 
 		}
 

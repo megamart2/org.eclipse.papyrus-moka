@@ -1,5 +1,6 @@
 package org.eclipse.papyrus.moka.utils;
 
+
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;

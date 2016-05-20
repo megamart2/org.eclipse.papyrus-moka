@@ -4,6 +4,8 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
+
+
 public class ResourceSetUtils {
 
 	private static ResourceSet internalResSet;

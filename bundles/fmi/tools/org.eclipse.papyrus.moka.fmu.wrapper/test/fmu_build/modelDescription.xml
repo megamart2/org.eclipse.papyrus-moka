@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<fmiModelDescription
+  fmiVersion="2.0"
+  modelName="mokaC1"
+  guid="{81bebce6-7fa9-40e0-adf6-f1e2c440a09e}"
+ >
+
+<CoSimulation
+  modelIdentifier="mokaC1"
+  canHandleVariableCommunicationStepSize="true"/>
+
+
+<ModelVariables>
+
+  
+  <ScalarVariable name="openclose" valueReference="1" description="open/close output"
+                  causality="output" variability="discrete" initial="exact">
+    <Boolean start="false"/>
+  </ScalarVariable>
+  
+ 
+  
+</ModelVariables>
+
+<ModelStructure>
+<Outputs>
+	<Unknown index="1"/>
+
+</Outputs>
+  
+</ModelStructure>
+
+</fmiModelDescription>

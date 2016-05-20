@@ -201,7 +201,7 @@ public class Fmu2ProxyService extends CS_Object {
 				new Object[] { parameters.getModelIdentifier(), // instanceName
 						Fmi2Type.fmi2CoSimulation, // fmuType
 						parameters.getGuid(), // guid
-						parameters.getFmuLocation(), // fmulocation
+						parameters.getResourceFolder(), // fmulocation
 						Fmu2Library.cbf, // callback functions
 						false, // visible
 						false },

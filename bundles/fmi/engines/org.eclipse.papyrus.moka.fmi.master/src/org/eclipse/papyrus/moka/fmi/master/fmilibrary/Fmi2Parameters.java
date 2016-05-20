@@ -11,6 +11,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fmi.master.fmilibrary;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
@@ -322,6 +323,13 @@ public class Fmi2Parameters {
 
 	public void setFmuLocation(String fmuLocation) {
 		this.fmuLocation = fmuLocation;
+	}
+	
+	public String getResourceFolder(){
+		if (getFmuLocation() != null){
+			return getFmuLocation()+File.separator + "resources"; 
+		}
+		return null;
 	}
 
 
