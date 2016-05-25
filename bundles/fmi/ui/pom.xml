@@ -5,25 +5,22 @@
 	
 	<modelVersion>4.0.0</modelVersion>
 	
-	<!-- Parent POM (i.e., Bundles) -->
+	<!-- Parent POM (i.e., FMI) -->
 	<parent>
-		<groupId>org.eclipse.papyrus.moka.bundles</groupId>
-		<artifactId>org.eclipse.papyrus.moka.bundles</artifactId>
+		<groupId>org.eclipse.papyrus.moka.bundles.fmi</groupId>
+		<artifactId>org.eclipse.papyrus.moka.bundles.fmi</artifactId>
 		<version>2.0.0-SNAPSHOT</version>
 	</parent>
 	
 	<!-- POM Description -->
-	<groupId>org.eclipse.papyrus.moka.bundles.fmi</groupId>
-	<artifactId>org.eclipse.papyrus.moka.bundles.fmi</artifactId>
+	<groupId>org.eclipse.papyrus.moka.bundles.fmi.ui</groupId>
+	<artifactId>org.eclipse.papyrus.moka.bundles.fmi.ui</artifactId>
 	<packaging>pom</packaging>
-	<name>Moka FMI (FMI folder)</name>
+	<name>FMI UI (UI folder)</name>
 	
 	<!-- Modules to build -->
 	<modules>
-		<module>engines</module>
-		<module>language</module>
-		<module>tools</module>
-		<module>ui</module>
+		<module>org.eclipse.papyrus.moka.fmi.ui</module>
 	</modules>
 	
 </project>
