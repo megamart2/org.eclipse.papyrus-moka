@@ -115,38 +115,38 @@ public class CoSimEnvironment {
 		this.fmus.addAll(fmusToAdd);
 		// retrieve all dependencies from the UML model (from the generated package import)
 		this.setupIoDependencies();
-		this.setupFmus();
+		//this.setupFmus();
 	}
 
 	protected boolean isPartOrReference(IFeatureValue featureValue) {
 		return featureValue != null && featureValue.getFeature() != null && featureValue.getFeature() instanceof Property && featureValue.getFeature().getType() instanceof StructuredClassifier;
 	}
 
-	public void setupFmus() {
-		for (Fmu2ProxyService fmu : fmus) {
-			for (Property p : fmu.types.get(0).getOwnedAttributes()) {
-				Stereotype st = p.getAppliedStereotypes().get(0);
-				if (st != null) {
-					// String variableType = p.getType().getName();
-					Fmi2ScalarVariable variable = new Fmi2ScalarVariable(fmu, p, st);
-					fmu.variables.add(variable);
-
-					// if (variableType.equals(Fmi2VariableType.fmi2Real)){
-					//
-					// }else if (variableType.equals(Fmi2VariableType.fmi2Boolean)){
-					// Fmi2BooleanVariable variable = new Fmi2BooleanVariable(fmu, p, st);
-					// fmu.variables.booleanVariables.add(variable);
-					// }else if (variableType.equals(Fmi2VariableType.fmi2Integer)){
-					// Fmi2IntegerVariable variable = new Fmi2IntegerVariable(fmu, p, st);
-					// fmu.variables.integerVariables.add(variable);
-					// }else if (variableType.equals(Fmi2VariableType.fmi2String)){
-					// Fmi2StringVariable variable = new Fmi2StringVariable(fmu, p, st);
-					// fmu.variables.stringVariables.add(variable);
-					// }
-				}
-			}
-		}
-	}
+//	public void setupFmus() {
+//		for (Fmu2ProxyService fmu : fmus) {
+//			for (Property p : fmu.types.get(0).getOwnedAttributes()) {
+//				Stereotype st = p.getAppliedStereotypes().get(0);
+//				if (st != null) {
+//					// String variableType = p.getType().getName();
+//					Fmi2ScalarVariable variable = new Fmi2ScalarVariable(fmu, p, st);
+//					fmu.variables.add(variable);
+//
+//					// if (variableType.equals(Fmi2VariableType.fmi2Real)){
+//					//
+//					// }else if (variableType.equals(Fmi2VariableType.fmi2Boolean)){
+//					// Fmi2BooleanVariable variable = new Fmi2BooleanVariable(fmu, p, st);
+//					// fmu.variables.booleanVariables.add(variable);
+//					// }else if (variableType.equals(Fmi2VariableType.fmi2Integer)){
+//					// Fmi2IntegerVariable variable = new Fmi2IntegerVariable(fmu, p, st);
+//					// fmu.variables.integerVariables.add(variable);
+//					// }else if (variableType.equals(Fmi2VariableType.fmi2String)){
+//					// Fmi2StringVariable variable = new Fmi2StringVariable(fmu, p, st);
+//					// fmu.variables.stringVariables.add(variable);
+//					// }
+//				}
+//			}
+//		}
+//	}
 
 
 	/**

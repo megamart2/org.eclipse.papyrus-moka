@@ -11,10 +11,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fmi.master.fmuproxy;
 
+import java.lang.reflect.Array;
 import java.nio.DoubleBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
@@ -29,6 +32,7 @@ import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2VariableType;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.NativeSizeT;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Library;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Status;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.LiteralInteger;
@@ -45,8 +49,8 @@ import com.sun.jna.ptr.DoubleByReference;
 import com.sun.jna.ptr.PointerByReference;
 
 /**
- * A class implementing the proxy between the master model call and the FMI procedures
- * Contains calls to JNA invocations with corresponding arguments
+ * A class implementing the proxy between the master model call and the FMI
+ * procedures Contains calls to JNA invocations with corresponding arguments
  * arguments are retrieved from the co-simulation graph
  * 
  * @author sahar.guermazi@cea.fr
@@ -60,13 +64,17 @@ public class Fmu2ProxyService extends CS_Object {
 	public ArrayList<Fmi2Port> outputPorts = new ArrayList<Fmi2Port>();
 	public ArrayList<Fmi2ScalarVariable> variables = new ArrayList<Fmi2ScalarVariable>();
 
-	public NativeLibrary dll_lib; // has its location and dll path has its location and dll path
-	public Pointer component = Pointer.NULL; // has to be charged in memory and referenced buy a pointer
-	public Pointer fmuState = Pointer.NULL; // has a statuts --> used to register and restore an fmu status
-	Fmu2Library fmuApi; // uses an fmu2Library which contains the callback functions and JNA invocations
+	public NativeLibrary dll_lib; // has its location and dll path has its
+									// location and dll path
+	public Pointer component = Pointer.NULL; // has to be charged in memory and
+												// referenced buy a pointer
+	public Pointer fmuState = Pointer.NULL; // has a statuts --> used to
+											// register and restore an fmu
+											// status
+	Fmu2Library fmuApi; // uses an fmu2Library which contains the callback
+						// functions and JNA invocations
 	public int fmi2Status = Fmi2Status.fmi2OK;
 	public int fmu2Status = 0;
-
 
 	private ArrayList<Fmi2ScalarVariable> integerGetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 	private ArrayList<Fmi2ScalarVariable> integerSetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
@@ -77,16 +85,11 @@ public class Fmu2ProxyService extends CS_Object {
 	private ArrayList<Fmi2ScalarVariable> stringGetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 	private ArrayList<Fmi2ScalarVariable> stringSetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 
-
-
 	public Fmu2ProxyService(Class service) {
 		this.addType(service);
 		fmuApi = new Fmu2Library();
 		initialize();
 	}
-
-
-
 
 	private void initialize() {
 		for (Property p : types.get(0).getOwnedAttributes()) {
@@ -114,8 +117,9 @@ public class Fmu2ProxyService extends CS_Object {
 						break;
 					}
 
-				} else if (variable.getCausality().equals(Fmi2CausalityType.fmi2Output) ||
-						variable.getCausality().equals(Fmi2CausalityType.fmi2Parameter) && !variable.getVariability().equals(Fmi2VariabilityType.fmi2Constant)) {
+				} else if (variable.getCausality().equals(Fmi2CausalityType.fmi2Output)
+						|| variable.getCausality().equals(Fmi2CausalityType.fmi2Parameter)
+								&& !variable.getVariability().equals(Fmi2VariabilityType.fmi2Constant)) {
 
 					switch (variable.getType()) {
 					case Fmi2VariableType.fmi2Boolean:
@@ -134,31 +138,132 @@ public class Fmu2ProxyService extends CS_Object {
 					}
 				}
 
+			}
+		}
 
+	}
+
+	public void fetchGetCache() {
+
+		if (!realGetCachedVariables.isEmpty()) {
+			double[] valuesDouble = fmi2GetReal(realGetCachedVariables);
+			for (int i = 0; i < valuesDouble.length; i++) {
+				Fmi2ScalarVariable variable = realGetCachedVariables.get(i);
+				Double previousValue = (Double) variable.getValue();
+				double currentValue = valuesDouble[i];
+				if (previousValue != null && !previousValue.equals(currentValue)) {
+					variable.setValue(currentValue);
+					variable.setHasChanged(true);
+				}
 
 			}
 		}
 
+		if (!integerGetCachedVariables.isEmpty()) {
+			int[] valuesInteger = fmi2GetInteger(integerGetCachedVariables);
+			for (int i = 0; i < valuesInteger.length; i++) {
+				Fmi2ScalarVariable variable = integerGetCachedVariables.get(i);
+				Integer previousValue = (Integer) variable.getValue();
+				int currentValue = valuesInteger[i];
+				if (previousValue != null && !previousValue.equals(currentValue)) {
+					variable.setValue(currentValue);
+					variable.setHasChanged(true);
+				}
 
-	}
+			}
+		}
 
+		if (!booleanGetCachedVariables.isEmpty()) {
+			boolean[] valuesBool = fmi2GetBoolean(booleanGetCachedVariables);
+			for (int i = 0; i < valuesBool.length; i++) {
+				Fmi2ScalarVariable variable = booleanGetCachedVariables.get(i);
+				Boolean previousValue = (Boolean) variable.getValue();
+				boolean currentValue = valuesBool[i];
+				if (previousValue != null && !previousValue.equals(currentValue)) {
+					variable.setValue(currentValue);
+					variable.setHasChanged(true);
+				}
 
-	public void fetchGetCache() {
-		fmi2GetReal(realGetCachedVariables);
-		fmi2GetInteger(integerGetCachedVariables);
-		fmi2GetBoolean(booleanGetCachedVariables);
-		fmi2GetString(stringGetCachedVariables);
+			}
+		}
+
+		if (!stringGetCachedVariables.isEmpty()) {
+			String[] valuesSring = fmi2GetString(stringGetCachedVariables);
+			for (int i = 0; i < valuesSring.length; i++) {
+				Fmi2ScalarVariable variable = stringGetCachedVariables.get(i);
+				String previousValue = (String) variable.getValue();
+				String currentValue = valuesSring[i];
+				if (previousValue != null && !previousValue.equals(currentValue)) {
+					variable.setValue(currentValue);
+					variable.setHasChanged(true);
+				}
+			}
+		}
+
 	}
 
 	public void flushSetCache() {
-		ArrayList<Double> values = new ArrayList<Double>();
+		double[] valuesDouble = new double[realSetCachedVariables.size()];
+		ArrayList<Fmi2ScalarVariable> realVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
 
-		// fmi2SetReal(realSetCachedVariables );
-		// fmi2SetInteger(integerSetCachedVariables);
-		// fmi2SetBoolean(booleanSetCachedVariables);
-		// fmi2SetString(stringSetCachedVariables);
+		int index = 0;
+		for (Fmi2ScalarVariable realVariable : realSetCachedVariables) {
+
+			if (realVariable.hasChanged()) {
+				valuesDouble[index++] = ((Double) realVariable.getValue());
+				realVariableToUpdate.add(realVariable);
+				realVariable.setHasChanged(false);
+			}
+
+		}
+		fmi2SetReal(realVariableToUpdate, valuesDouble);
+
+		int[] valuesInteger = new int[integerSetCachedVariables.size()];
+		ArrayList<Fmi2ScalarVariable> integerVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+
+		index = 0;
+		for (Fmi2ScalarVariable integerVariable : integerSetCachedVariables) {
+
+			if (integerVariable.hasChanged()) {
+				valuesInteger[index++] = ((Integer) integerVariable.getValue());
+				integerVariableToUpdate.add(integerVariable);
+				integerVariable.setHasChanged(false);
+			}
+
+		}
+		fmi2SetInteger(integerVariableToUpdate, valuesInteger);
+
+		boolean[] valuesBool = new boolean[booleanSetCachedVariables.size()];
+		ArrayList<Fmi2ScalarVariable> booleanVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+
+		index = 0;
+		for (Fmi2ScalarVariable boolVariable : booleanSetCachedVariables) {
+
+			if (boolVariable.hasChanged()) {
+				valuesBool[index++] = ((Boolean) boolVariable.getValue());
+				booleanVariableToUpdate.add(boolVariable);
+				boolVariable.setHasChanged(false);
+			}
+
+		}
+		fmi2SetBoolean(booleanVariableToUpdate, valuesBool);
+
+		String[] valuesString = new String[stringSetCachedVariables.size()];
+		ArrayList<Fmi2ScalarVariable> stringVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+
+		index = 0;
+		for (Fmi2ScalarVariable stringVariable : stringSetCachedVariables) {
+
+			if (stringVariable.hasChanged()) {
+				valuesString[index++] = ((String) stringVariable.getValue());
+				stringVariableToUpdate.add(stringVariable);
+				stringVariable.setHasChanged(false);
+			}
+
+		}
+		fmi2SetString(stringVariableToUpdate, valuesString);
+
 	}
-
 
 	public Fmi2Parameters getParameters() {
 
@@ -166,15 +271,12 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
-
 	public void setParameters(Fmi2Parameters parameters) {
 
 		this.parameters = parameters;
 		this.dll_lib = NativeLibrary.getInstance(parameters.getDllPath());
 
 	}
-
 
 	/**
 	 * fmi2Instantiate
@@ -218,7 +320,6 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
 	 * fmi2SetupExperiment
 	 *
@@ -240,12 +341,9 @@ public class Fmu2ProxyService extends CS_Object {
 
 		// this operation receives 5 parameters from the master model
 		fmi2Status = fmuApi.invokeInteger("fmi2SetupExperiment", dll_lib,
-				new Object[] { component, true, tolerance,
-						startTime, true, stopTime },
-				"");
+				new Object[] { component, true, tolerance, startTime, true, stopTime }, "");
 		return fmi2Status;
 	}
-
 
 	/**
 	 * fmi2EnterInitializationMode
@@ -266,7 +364,6 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
 	 * fmi2ExitInitializationMode
 	 * 
@@ -286,7 +383,6 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
 	 * fmi2DoStep
 	 *
@@ -297,7 +393,8 @@ public class Fmu2ProxyService extends CS_Object {
 	 * @param fmi2Real
 	 *            communicationStepSize --> double// from fmu.parameters
 	 * @param fmi2Boolean
-	 *            noSetFMUStatePriorToCurrentPoint --> boolean //from master model
+	 *            noSetFMUStatePriorToCurrentPoint --> boolean //from master
+	 *            model
 	 * @return fmi2Status --> int//to the model
 	 */
 	public int fmi2DoStep(double currentTime, double stepSize, boolean noSetPrior) {
@@ -308,7 +405,6 @@ public class Fmu2ProxyService extends CS_Object {
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2Terminate
@@ -324,7 +420,6 @@ public class Fmu2ProxyService extends CS_Object {
 		return fmi2Status;
 
 	}
-
 
 	// get and set a list of variables
 	/**
@@ -351,11 +446,11 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) variables.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetReal", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetReal", dll_lib, new Object[] { component, vr, nvr, value },
+				"");
 		return value.array();
 
 	}
-
 
 	/**
 	 * fmi2GetInteger
@@ -380,11 +475,11 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) variables.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetInteger", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetInteger", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value.array();
 
 	}
-
 
 	/**
 	 * fmi2GetBoolean
@@ -409,11 +504,11 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) variables.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetBoolean", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetBoolean", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value;
 
 	}
-
 
 	/**
 	 * fmi2GetString
@@ -438,11 +533,11 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) variables.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetString", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetString", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value;
 
 	}
-
 
 	/**
 	 * fmi2SetReal
@@ -466,11 +561,11 @@ public class Fmu2ProxyService extends CS_Object {
 			value.put(i, values[i]);
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetReal", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetReal", dll_lib, new Object[] { component, vr, nvr, value },
+				"");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2SetInteger
@@ -494,11 +589,11 @@ public class Fmu2ProxyService extends CS_Object {
 			value.put(i, values[i]);
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetInteger", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetInteger", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2SetBoolean
@@ -520,11 +615,11 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) variables.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetBoolean", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetBoolean", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2SetString
@@ -546,11 +641,11 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) variables.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetString", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetString", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return fmi2Status;
 
 	}
-
 
 	// get and set a single variable
 	/**
@@ -573,11 +668,11 @@ public class Fmu2ProxyService extends CS_Object {
 		NativeSizeT nvr = new NativeSizeT(1);
 		DoubleBuffer value = DoubleBuffer.allocate(1);
 		vr.put(0, ((Long) variable.getValueReference()));
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetReal", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetReal", dll_lib, new Object[] { component, vr, nvr, value },
+				"");
 		return value.get(0);
 
 	}
-
 
 	/**
 	 * fmi2GetInteger
@@ -598,11 +693,11 @@ public class Fmu2ProxyService extends CS_Object {
 		NativeSizeT nvr = new NativeSizeT(1);
 		IntBuffer value = IntBuffer.allocate(1);
 		vr.put(0, ((Long) variable.getValueReference()));
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetInteger", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetInteger", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value.get(0);
 
 	}
-
 
 	/**
 	 * fmi2GetBoolean
@@ -623,11 +718,11 @@ public class Fmu2ProxyService extends CS_Object {
 		NativeSizeT nvr = new NativeSizeT(1);
 		boolean[] value = new boolean[1];
 		vr.put(0, ((Long) variable.getValueReference()));
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetBoolean", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetBoolean", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value[0];
 
 	}
-
 
 	/**
 	 * fmi2GetString
@@ -648,11 +743,11 @@ public class Fmu2ProxyService extends CS_Object {
 		NativeSizeT nvr = new NativeSizeT(1);
 		String[] value = new String[1];
 		vr.put(0, ((Long) variable.getValueReference()));
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetString", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetString", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value[0];
 
 	}
-
 
 	/**
 	 * fmi2SetReal
@@ -672,11 +767,11 @@ public class Fmu2ProxyService extends CS_Object {
 		DoubleBuffer value = DoubleBuffer.allocate(1);
 		vr.put(0, ((Long) variable.getValueReference()));
 		value.put(0, v);
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetReal", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetReal", dll_lib, new Object[] { component, vr, nvr, value },
+				"");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2SetInteger
@@ -696,11 +791,11 @@ public class Fmu2ProxyService extends CS_Object {
 		IntBuffer value = IntBuffer.allocate(1);
 		vr.put(0, ((Long) variable.getValueReference()));
 		value.put(0, v);
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetInteger", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetInteger", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2SetBoolean
@@ -720,11 +815,11 @@ public class Fmu2ProxyService extends CS_Object {
 		boolean[] value = new boolean[1];
 		vr.put(0, ((Long) variable.getValueReference()));
 		value[0] = v;
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetBoolean", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetBoolean", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2SetString
@@ -744,7 +839,8 @@ public class Fmu2ProxyService extends CS_Object {
 		String[] value = new String[1];
 		vr.put(0, ((Long) variable.getValueReference()));
 		value[0] = v;
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetString", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetString", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return fmi2Status;
 
 	}
@@ -758,16 +854,15 @@ public class Fmu2ProxyService extends CS_Object {
 	 *            --> Pointer
 	 * @param fmi2FMUstate*
 	 *            FMUstate --> Pointer FIXME pointer by reference
-	 * @return fmi2Status --> int
-	 *         FIXME check the fmuState argument type
+	 * @return fmi2Status --> int FIXME check the fmuState argument type
 	 */
 	public int fmi2GetFMUstate() {
 		PointerByReference fmuStateReference = new PointerByReference(fmuState);
-		fmi2Status = fmuApi.invokeInteger("fmi2GetFMUstate", dll_lib, new Object[] { component, fmuStateReference }, "");
+		fmi2Status = fmuApi.invokeInteger("fmi2GetFMUstate", dll_lib, new Object[] { component, fmuStateReference },
+				"");
 		fmuState = fmuStateReference.getValue();
 		return fmi2Status;
 	}
-
 
 	/**
 	 * fmi2SetFMUstate
@@ -776,8 +871,7 @@ public class Fmu2ProxyService extends CS_Object {
 	 * @param fmi2Component
 	 *            --> Pointer
 	 * @param fmi2FMUstate
-	 *            FMUstate --> Pointer
-	 *            FIXME check the fmustate argument type
+	 *            FMUstate --> Pointer FIXME check the fmustate argument type
 	 */
 	public int fmi2SetFMUstate(Pointer preFmuState) {
 
@@ -786,7 +880,6 @@ public class Fmu2ProxyService extends CS_Object {
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2FreeFMUstate
@@ -804,7 +897,6 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
 	 * fmi2SerializedFMUstateSize
 	 * 
@@ -818,7 +910,6 @@ public class Fmu2ProxyService extends CS_Object {
 		// TODO
 
 	}
-
 
 	/**
 	 * fmi2SerializeFMUstate
@@ -839,7 +930,6 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
 	 * fmi2DeSerializeFMUstate
 	 * 
@@ -858,7 +948,6 @@ public class Fmu2ProxyService extends CS_Object {
 		return 0;
 
 	}
-
 
 	/**
 	 * fmi2GetDirectionalDerivative
@@ -882,7 +971,6 @@ public class Fmu2ProxyService extends CS_Object {
 		// TODO
 	}
 
-
 	/**
 	 * fmi2SetRealInputDerivatives
 	 * 
@@ -898,7 +986,8 @@ public class Fmu2ProxyService extends CS_Object {
 	 *            fmi2Real value[] --> double[]
 	 * @return fmi2Status --> int
 	 */
-	public int fmi2SetRealInputDerivatives(ArrayList<Fmi2ScalarVariable> derivatives, ArrayList<Integer> orders, double[] values) {
+	public int fmi2SetRealInputDerivatives(ArrayList<Fmi2ScalarVariable> derivatives, ArrayList<Integer> orders,
+			double[] values) {
 
 		int bufferLength = derivatives.size();
 		LongBuffer vr = LongBuffer.allocate(bufferLength);
@@ -910,11 +999,11 @@ public class Fmu2ProxyService extends CS_Object {
 			order.put(i, orders.get(i));
 			value.put(i, values[i]);
 		}
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetRealInputDerivatives", dll_lib, new Object[] { component, vr, nvr, order, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetRealInputDerivatives", dll_lib,
+				new Object[] { component, vr, nvr, order, value }, "");
 		return fmi2Status;
 
 	}
-
 
 	/**
 	 * fmi2GetRealOutputDerivatives
@@ -939,17 +1028,18 @@ public class Fmu2ProxyService extends CS_Object {
 			vr.put(i, ((Long) derivatives.get(i).getValueReference()));
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetRealOutputDerivatives", dll_lib, new Object[] { component, vr, nvr, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetRealOutputDerivatives", dll_lib,
+				new Object[] { component, vr, nvr, value }, "");
 		return value.array();
 
 	}
 
-
 	/**
-	 * fmi2CancelStep
-	 * Can be called if fmi2DoStep returned fmi2Pending in order to stop the current asynchronous execution
-	 * The master calls this function if for example the co-simulation run is stopped by the user or one of the slaves
-	 * Afterwards it is only allowed to call fmi2Reset or fmi2FreeInstance
+	 * fmi2CancelStep Can be called if fmi2DoStep returned fmi2Pending in order
+	 * to stop the current asynchronous execution The master calls this function
+	 * if for example the co-simulation run is stopped by the user or one of the
+	 * slaves Afterwards it is only allowed to call fmi2Reset or
+	 * fmi2FreeInstance
 	 * 
 	 * @param component
 	 *            --> Pointer
@@ -962,13 +1052,12 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
-	 * fmi2GetStatus
-	 * Informs the master about the actual status of the simulation run
-	 * Can be called when the fmi2DoStep function returned fmi2Pending
-	 * The function delivers fmi2Pending if the computation is not finished
-	 * Otherwise the function returns the result of the asynchronously executed fmi2DoStep call
+	 * fmi2GetStatus Informs the master about the actual status of the
+	 * simulation run Can be called when the fmi2DoStep function returned
+	 * fmi2Pending The function delivers fmi2Pending if the computation is not
+	 * finished Otherwise the function returns the result of the asynchronously
+	 * executed fmi2DoStep call
 	 * 
 	 * @param fmi2Component
 	 *            -->Pointer
@@ -980,17 +1069,17 @@ public class Fmu2ProxyService extends CS_Object {
 
 		int statusKind = Fmi2StatusKind.fmi2DoStepStatus;
 		int value = 0;
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetStatus", dll_lib, new Object[] { component, statusKind, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetStatus", dll_lib,
+				new Object[] { component, statusKind, value }, "");
 		return value;
 
 	}
 
-
 	/**
-	 * fmi2GetRealStatus
-	 * Informs the master about the actual status of the simulation run
-	 * Returns the end time of the last successfully completed communication step
-	 * Can be called after fmi2DoStep(...) returned fmi2Discard
+	 * fmi2GetRealStatus Informs the master about the actual status of the
+	 * simulation run Returns the end time of the last successfully completed
+	 * communication step Can be called after fmi2DoStep(...) returned
+	 * fmi2Discard
 	 * 
 	 * @param fmi2Component
 	 *            --> Pointer
@@ -1002,39 +1091,39 @@ public class Fmu2ProxyService extends CS_Object {
 
 		// int statusKind = Fmi2StatusKind.fmi2LastSuccessfulTime;
 		DoubleByReference value = new DoubleByReference();
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetRealStatus", dll_lib, new Object[] { component, statusKind, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetRealStatus", dll_lib,
+				new Object[] { component, statusKind, value }, "");
 		return value.getValue();
 
 	}
 
-
 	/**
-	 * fmi2GetIntegerStatus
-	 * Informs the master about the actual status of the simulation run
+	 * fmi2GetIntegerStatus Informs the master about the actual status of the
+	 * simulation run
 	 * 
 	 * @param fmi2Component
 	 *            --> Pointer
 	 * @param const
 	 *            fmi2StatusKind --> int
-	 * @result fmi2Integer* value --> int FIXME byreference
-	 *         FIXME it is not defined in the spec when to use it
+	 * @result fmi2Integer* value --> int FIXME byreference FIXME it is not
+	 *         defined in the spec when to use it
 	 */
 	public int fmi2GetIntegerStatus() {
 
 		int statusKind = 0;
 		int value = 0;
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetIntegerStatus", dll_lib, new Object[] { component, statusKind, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetIntegerStatus", dll_lib,
+				new Object[] { component, statusKind, value }, "");
 		return value;
 
 	}
 
-
 	/**
-	 * fmi2GetBooleanStatus
-	 * Informs the master about the actual status of the simulation run
-	 * Returns true, if the slave wants to terminate the simulation
-	 * Can be called after fmi2DoStep(...) returned fmi2Discard
-	 * Use fmi2LastSuccessfulTime to determine the time instant at which the slave terminated.
+	 * fmi2GetBooleanStatus Informs the master about the actual status of the
+	 * simulation run Returns true, if the slave wants to terminate the
+	 * simulation Can be called after fmi2DoStep(...) returned fmi2Discard Use
+	 * fmi2LastSuccessfulTime to determine the time instant at which the slave
+	 * terminated.
 	 * 
 	 * @param fmi2Component
 	 *            --> Pointer
@@ -1046,18 +1135,17 @@ public class Fmu2ProxyService extends CS_Object {
 
 		int statusKind = Fmi2StatusKind.fmi2Terminated;
 		boolean value = false;
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetBooleanStatus", dll_lib, new Object[] { component, statusKind, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetBooleanStatus", dll_lib,
+				new Object[] { component, statusKind, value }, "");
 		return value;
 
 	}
 
-
 	/**
-	 * fmi2GetStringStatus
-	 * Informs the master about the actual status of the simulation run
-	 * Can be called when the fmi2DoStep function returned fmi2Pending
-	 * The function delivers a string which informs about
-	 * the status of the currently running asynchronous fmi2DoStep computation.
+	 * fmi2GetStringStatus Informs the master about the actual status of the
+	 * simulation run Can be called when the fmi2DoStep function returned
+	 * fmi2Pending The function delivers a string which informs about the status
+	 * of the currently running asynchronous fmi2DoStep computation.
 	 * 
 	 * @param fmi2Component
 	 *            --> Pointer
@@ -1069,11 +1157,11 @@ public class Fmu2ProxyService extends CS_Object {
 
 		int statusKind = Fmi2StatusKind.fmi2PendingStatus;
 		String value = "";
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetStringStatus", dll_lib, new Object[] { component, statusKind, value }, "");
+		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetStringStatus", dll_lib,
+				new Object[] { component, statusKind, value }, "");
 		return value;
 
 	}
-
 
 	/**
 	 * fmi2GetTypesPlatform
@@ -1088,7 +1176,6 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
 	 * fmi2GetVersion
 	 * 
@@ -1102,14 +1189,13 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
-	 * fmi2SetDebugLogging
-	 * If loggingOn=fmi2True, debug logging is enabled,
-	 * otherwise it is switched off.
-	 * The allowed values of “category” are defined by the modeling environment that generated the FMU.
-	 * Depending on the generating modeling environment, none, some or all allowed values for “categories”
-	 * for this FMU are defined in the modelDescription.xml file via element “fmiModelDescription
+	 * fmi2SetDebugLogging If loggingOn=fmi2True, debug logging is enabled,
+	 * otherwise it is switched off. The allowed values of “category” are
+	 * defined by the modeling environment that generated the FMU. Depending on
+	 * the generating modeling environment, none, some or all allowed values for
+	 * “categories” for this FMU are defined in the modelDescription.xml file
+	 * via element “fmiModelDescription
 	 * 
 	 * @param fmi2Component
 	 *            c --> Pointer
@@ -1122,17 +1208,17 @@ public class Fmu2ProxyService extends CS_Object {
 	 */
 	public int fmi2SetDebugLogging(boolean loggingOn, ArrayList<String> categories) {
 
-		fmi2Status = fmuApi.invokeInteger("fmi2SetDebugLogging", dll_lib, new Object[] { component, loggingOn, new NativeSizeT(categories.size()), (String[]) categories.toArray() }, "");
+		fmi2Status = fmuApi.invokeInteger("fmi2SetDebugLogging", dll_lib, new Object[] { component, loggingOn,
+				new NativeSizeT(categories.size()), (String[]) categories.toArray() }, "");
 		return fmi2Status;
 
 	}
 
-
 	/**
-	 * fmi2FreeInstance
-	 * Disposes the given instance, unloads the loaded model, and frees all the allocated memory
-	 * and other resources that have been allocated by the functions of the FMU interface.
-	 * If a null * pointer is provided for “c”, the function call is ignored
+	 * fmi2FreeInstance Disposes the given instance, unloads the loaded model,
+	 * and frees all the allocated memory and other resources that have been
+	 * allocated by the functions of the FMU interface. If a null * pointer is
+	 * provided for “c”, the function call is ignored
 	 * 
 	 * @param fmi2Component
 	 *            c --> Pointer
@@ -1144,13 +1230,12 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
 	/**
-	 * fmi2Reset
-	 * Is called by the environment to reset the FMU after a simulation run.
-	 * The FMU goes into the same state as if fmi2Instantiate would have been called.
-	 * All variables have their default values.
-	 * Before starting a new run, fmi2SetupExperiment and fmi2EnterInitializationMode have to be called
+	 * fmi2Reset Is called by the environment to reset the FMU after a
+	 * simulation run. The FMU goes into the same state as if fmi2Instantiate
+	 * would have been called. All variables have their default values. Before
+	 * starting a new run, fmi2SetupExperiment and fmi2EnterInitializationMode
+	 * have to be called
 	 * 
 	 * @param Pointer
 	 *            (fmi2Component)
@@ -1163,10 +1248,7 @@ public class Fmu2ProxyService extends CS_Object {
 
 	}
 
-
-
 	protected void registerServiceOperationImplementation() {
-
 
 	}
 
@@ -1232,8 +1314,6 @@ public class Fmu2ProxyService extends CS_Object {
 		return result;
 	}
 
-
-
 	// TODO
 	public int fmi2UpdateVariables() {
 
@@ -1241,23 +1321,21 @@ public class Fmu2ProxyService extends CS_Object {
 			// 1 for a variable with variability ≠ "constant"
 			// that has initial = "exact" or "approx"
 		} else if (fmu2Status == Fmu2Status.underInitializationMode) {
-			// 3 for a variable with variability≠"constant" that has initial="exact",
+			// 3 for a variable with variability≠"constant" that has
+			// initial="exact",
 			// or causality="input"
 			for (Fmi2Port input : inputPorts) {
 				fmi2Set(input, input.getValue());
 			}
 
-
 		} else if (fmu2Status == Fmu2Status.initialized) {
 
 		} else if (fmu2Status == Fmu2Status.stepComplete) {
-			// after a do step (causality = "parameter" and variability = "tunable")
+			// after a do step (causality = "parameter" and variability =
+			// "tunable")
 
 		}
 		return fmi2Status;
 	}
-
-
-
 
 }

@@ -11,12 +11,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fmi.master.fmilibrary;
 
-import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
-
-import org.eclipse.papyrus.moka.fmi.util.FMIUtil;
-import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 
@@ -29,6 +25,7 @@ public class Fmi2ScalarVariable {
 	private String initial;
 	private String type;
 	private Object value;
+	private boolean hasChanged;
 
 	public Fmi2ScalarVariable(Fmu2ProxyService fmu, Property p, Stereotype st) {
 		// TODO Auto-generated constructor stub
@@ -46,7 +43,26 @@ public class Fmi2ScalarVariable {
 
 		this.initial = modelDescVariable.getInitial().getName();
 		this.setType(p.getType().getName());
-		this.setValue(p.getDefaultValue());
+		if (p.getDefaultValue() != null){
+			switch (type){
+			case Fmi2VariableType.fmi2Boolean :
+				this.setValue(p.getDefaultValue().booleanValue());
+				break;
+			case Fmi2VariableType.fmi2Integer :
+				this.setValue(p.getDefaultValue().integerValue());
+				break;
+			case Fmi2VariableType.fmi2Real :
+				this.setValue(p.getDefaultValue().realValue());
+				break;
+			case Fmi2VariableType.fmi2String :
+				this.setValue(p.getDefaultValue().stringValue());
+				break;
+			}
+		}
+		
+			
+			
+		
 	}
 
 	public Fmu2ProxyService getFmu() {
@@ -111,6 +127,15 @@ public class Fmi2ScalarVariable {
 
 	public void setType(String type) {
 		this.type = type;
+	}
+
+	public void setHasChanged(boolean hasChanged) {
+		this.hasChanged =hasChanged; 
+		
+	}
+	
+	public boolean hasChanged(){
+		return hasChanged;
 	}
 
 
