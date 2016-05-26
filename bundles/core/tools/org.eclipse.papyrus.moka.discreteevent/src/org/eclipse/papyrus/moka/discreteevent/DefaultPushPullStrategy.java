@@ -3,17 +3,7 @@ package org.eclipse.papyrus.moka.discreteevent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DefaultPushPullStrategy {
-
-	protected DEScheduler scheduler ;
-	
-	public DEScheduler getScheduler() {
-		return scheduler;
-	}
-
-	public void setScheduler(DEScheduler scheduler) {
-		this.scheduler = scheduler;
-	}
+public class DefaultPushPullStrategy extends AbstractPushPullStrategy {
 
 	public List<Event> pullEvents(double date) {
 		List<Event> selectedEvents = new ArrayList<Event>() ;
@@ -27,7 +17,12 @@ public class DefaultPushPullStrategy {
 	}
 	
 	public void pushEvent(Event event) {
-		event.setAbsoluteDate(this.scheduler.getCurrentTime() + event.getRelativeDate());
+		double absoluteDate = this.scheduler.getCurrentTime() + event.getRelativeDate() ;
+		this.pushEvent(event, absoluteDate);
+	}
+	
+	public void pushEvent(Event event, double absoluteDate) {
+		event.setAbsoluteDate(absoluteDate);
 		event.setScheduler(this.scheduler) ;
 		int i = 0 ;
 		int insertAt = 0 ;
@@ -48,5 +43,4 @@ public class DefaultPushPullStrategy {
 			this.scheduler.addEvent(event);
 		}
 	}
-	
 }

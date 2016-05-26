@@ -105,7 +105,8 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 		// TODO Do something with currentCommunicationTime and stepSize, in the
 		// DEScheduler
 		FMUStepEnd stepEnd = new FMUStepEnd();
-		DEScheduler.getInstance().pushEvent(new Event(stepSize, stepEnd));
+		System.out.println("Current communication time: " + currentCommunicationTime + ", DE engine time: " + DEScheduler.getInstance().getCurrentTime());
+		DEScheduler.getInstance().pushEvent(new Event(stepSize, stepEnd), currentCommunicationTime + stepSize);
 		// unlocks the engine
 		engineLock.release();
 		// waits for completion of the step by the engine

@@ -24,6 +24,7 @@ public class FMUEngineUtils {
 	protected static final String PORT_INPUT_DIRECTION = "in";
 	protected static final String PORT_OUTPUT_DIRECTION = "out";
 	protected static final String PORT_CAUSILITY_ATTRIBUTE = "causality";
+	protected static final String PORT_DIRECTION_ATTRIBUTE = "direction" ;
 
 	protected static final String VALUE_REFERENCE_FIELD_NAME = "valueReference" ;
 
@@ -64,8 +65,8 @@ public class FMUEngineUtils {
 	public static boolean isOutputPort(Property p) {
 		Stereotype s = getStereotype(PORT_STEREOTYPE_NAME, p) ;
 		if (s != null) {
-			Object o = p.getValue(s, PORT_CAUSILITY_ATTRIBUTE) ;
-			FlowDirection fd = (FlowDirection)o; //FIXME Need to be changed if we change from FlowDirection to CausalityType in the profile
+			Object o = p.getValue(s, PORT_DIRECTION_ATTRIBUTE) ;
+			FlowDirection fd = (FlowDirection)o;
 			return PORT_OUTPUT_DIRECTION.equals(fd.getLiteral()) ;
 		}
 		return false ;
@@ -74,8 +75,8 @@ public class FMUEngineUtils {
 	public static boolean isInputPort(Property p) {
 		Stereotype s = getStereotype(PORT_STEREOTYPE_NAME, p) ;
 		if (s != null) {
-			Object o = p.getValue(s, PORT_CAUSILITY_ATTRIBUTE) ;
-			FlowDirection fd = (FlowDirection)o; //FIXME Need to be changed if we change from FlowDirection to CausalityType in the profile
+			Object o = p.getValue(s, PORT_DIRECTION_ATTRIBUTE) ;
+			FlowDirection fd = (FlowDirection)o;
 			return PORT_INPUT_DIRECTION.equals(fd.getLiteral()) ;
 		}
 		return false ;

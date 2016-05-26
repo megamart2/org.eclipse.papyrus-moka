@@ -3,6 +3,7 @@ package org.eclipse.papyrus.moka.fmu.engine;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
+import org.eclipse.papyrus.moka.fmu.engine.de.FMIPushPullStrategy;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMULocus;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUObject;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
@@ -32,7 +33,7 @@ public class MokaEngineForFMUExport extends TimedUmlExecutionEngine {
 				Class fmuClass = FMUEngineUtils.getFMUControlService().getFmuClass() ; 
 				if (fmuClass != null) {
 					startFMU(fmuClass);
-					DEScheduler.init(-1.0);
+					DEScheduler.init(-1.0, new FMIPushPullStrategy());
 					JSONSocketClient client = FMUEngineUtils.getJsonSocketClient();
 					client.setFmu(FMUEngineUtils.getFMUControlService());
 					client.start();

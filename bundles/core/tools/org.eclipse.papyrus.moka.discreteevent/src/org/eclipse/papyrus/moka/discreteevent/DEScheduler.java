@@ -16,14 +16,14 @@ public class DEScheduler {
 	protected List<Action> preStepActions = new ArrayList<Action>() ;
 	protected List<Action> postStepActions = new ArrayList<Action>() ;
 	protected static DEScheduler instance ;
-	protected DefaultPushPullStrategy pushPullStrategy ;
+	protected AbstractPushPullStrategy pushPullStrategy ;
 	
 	public static void init(double stopTime) {
 		DefaultPushPullStrategy pushPullStrategy = new DefaultPushPullStrategy() ;
 		init(stopTime, pushPullStrategy) ;
 	}
 	
-	public static void init(double stopTime, DefaultPushPullStrategy pushPullStrategy) {
+	public static void init(double stopTime, AbstractPushPullStrategy pushPullStrategy) {
 		instance = new DEScheduler() ;
 		instance.stopTime = stopTime ;
 		instance.started = false ;
@@ -80,6 +80,10 @@ public class DEScheduler {
 	
 	public void pushEvent(Event event) {
 		this.pushPullStrategy.pushEvent(event);
+	}
+	
+	public void pushEvent(Event event, double absoluteDate) {
+		this.pushPullStrategy.pushEvent(event, absoluteDate);
 	}
 	
 	public void pushPreRunAction(Action action) {

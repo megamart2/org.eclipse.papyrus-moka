@@ -39,7 +39,6 @@ public class ExportFMUDialog extends Dialog {
 	
 	@Override
 	protected Control createButtonBar(Composite parent) {
-		// TODO Auto-generated method stub
 		Control control = super.createButtonBar(parent);
 		this.getButton(IDialogConstants.OK_ID).setEnabled(false);
 		return control ;
@@ -175,7 +174,7 @@ public class ExportFMUDialog extends Dialog {
 
 	@Override
 	protected Point getInitialSize() {
-		return new Point(550, 250);
+		return new Point(550, 300);
 	}
 
 	protected void checkInformation() {

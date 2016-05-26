@@ -4,6 +4,7 @@ import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
 import org.eclipse.papyrus.moka.fmu.engine.MokaEngineForFMUExport;
 import org.eclipse.papyrus.moka.fmu.engine.control.FMUControlService;
+import org.eclipse.papyrus.moka.fmu.engine.de.FMIPushPullStrategy;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUObject;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.papyrus.moka.service.IMokaService;
@@ -46,31 +47,21 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 				if (fmuClass != null) {
 					startFMU(fmuClass);
 					_displayCurrentTimeAction action = new _displayCurrentTimeAction() ;
-					DEScheduler.init(-1.0);
+					DEScheduler.init(-1.0, new FMIPushPullStrategy());
 					DEScheduler.getInstance().pushPreStepAction(action);
-					//							 FIXME For testing purposes
-					//							 Launches a new thread that acts as a pseudo master
-					// TODO would be nice to have a simple "debugging" master
+					// Launches a new thread that acts as a pseudo master
+					// This a simple "debugging" master controlled by end user
 					Runnable master = new Runnable() {
-
 						@Override
 						public void run() {
 							launchMaster();
-							FMUControlService controlDelegate = FMUEngineUtils.getFMUControlService() ;
-							double DO_NOT_CARE = 0.0 ;
-							//controlDelegate.init();
-							//for (int i = 0 ; i < 100 ; i++) {
-							//	controlDelegate.doStep(DO_NOT_CARE, 0.2);
-							//}
-							controlDelegate.terminate();
+							FMUControlService controlService = FMUEngineUtils.getFMUControlService() ;
+							controlService.terminate();
 						}
 					};
 					Thread masterThread = new Thread(master, "Moka - Master Thread") ;
 					masterThread.start();
 
-					//							ThriftServer thriftServer = new ThriftServer("9090",(FMUControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate());
-					//							thriftServer.start();
-					///
 					FMUEngineUtils.getFMUControlService().getInstantiationLock().release();
 					FMUEngineUtils.getFMUControlService().waitForTermination();
 				}
@@ -78,85 +69,18 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		};
 		Thread mainThread = new Thread(execution, "Moka - Main thread");
 		mainThread.start();
+		try {
+			mainThread.join();
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
-	/* 
-	 * resume is overloaded to call method startFMU(Class) instead of start(Behavior)
-	 * 
-	 * (non-Javadoc)
-	 * @see org.eclipse.papyrus.moka.fuml.FUMLExecutionEngineForMoka#resume(org.eclipse.papyrus.moka.communication.request.isuspendresume.Resume_Request)
-	 */
-//	@Override
-//	public void resume(Resume_Request request) {
-//		if (!this.started) {
-//			Runnable execution = new Runnable() {
-//				public void run() {
-//					if (fmuClass != null) {
-//						try {
-//							startFMU(fmuClass);
-//							_displayCurrentTimeAction action = new _displayCurrentTimeAction() ;
-//							DEScheduler.init(-1.0);
-//							DEScheduler.getInstance().pushPreStepAction(action);
-//							//							 FIXME For testing purposes
-//							//							 Launches a new thread that acts as a pseudo master
-//							// TODO would be nice to have a simple "debugging" master
-//							Runnable master = new Runnable() {
-//
-//								@Override
-//								public void run() {
-//									launchMaster();
-//									FMUControlDelegate controlDelegate = ((FMUControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()) ;
-//									double DO_NOT_CARE = 0.0 ;
-//									//controlDelegate.init();
-//									//for (int i = 0 ; i < 100 ; i++) {
-//									//	controlDelegate.doStep(DO_NOT_CARE, 0.2);
-//									//}
-//									controlDelegate.terminate();
-//								}
-//							};
-//							Thread masterThread = new Thread(master, "Moka - Master Thread") ;
-//							masterThread.start();
-//
-//							//							ThriftServer thriftServer = new ThriftServer("9090",(FMUControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate());
-//							//							thriftServer.start();
-//							///
-//							((FMUControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).getInstantiationLock().release();
-//							FUMLExecutionEngine.eInstance.getControlDelegate().waitForTermination();
-//						}
-//						catch (Exception e) {
-//							Activator.log.error(e);
-//							if (!MokaConstants.SILENT_MODE) {
-//								Display.getDefault().syncExec(new Runnable() {
-//									public void run() {
-//										MessageDialog.openError(Display.getDefault().getActiveShell(), "Moka", "An unexpected error occurred during execution. See error log for details.");
-//									}
-//								});
-//							}
-//						}
-//						if (!isTerminated()) {
-//							try {
-//								getDebugTarget().terminate();
-//							} catch (DebugException e) {
-//								Activator.log.error(e);
-//							}
-//						}
-//					}
-//				}
-//			};
-//			Thread mainThread = new Thread(execution, "Moka - Main thread");
-//			mainThread.start();
-//			try {
-//				((FMUControlDelegate)FUMLExecutionEngine.eInstance.getControlDelegate()).getInstantiationLock().acquire();
-//			} catch (InterruptedException e) {
-//				Activator.log.error(e);
-//			}
-//		} else {
-//			this.getControlDelegate().resume(request);
-//		}
-//	}
 
 	protected void launchMaster() {
-		Display display = Display.getDefault() ;
+		//Display display = Display.getDefault() ;
+		Display display = new Display() ;
 		Shell shell = new Shell(display);
 		shell.setLayout(new RowLayout(SWT.VERTICAL));
 
@@ -227,9 +151,10 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 				if (canParseDouble(stepText.getText())) {
 					stepButton.setEnabled(true);
 				}
-				currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
 				updateInputOutputTableItems(inputTable, true) ;
 				updateInputOutputTableItems(outputTable, false) ;
+				currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
+				currentTimeText.redraw();
 			}
 		});
 
@@ -237,13 +162,13 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 			@Override
 			public void handleEvent(Event arg0) {
 				FMUControlService fmuControlService = FMUEngineUtils.getFMUControlService() ;
-				double DO_NOT_CARE = 0.0 ;
 				double stepSize = 0.0 ;
 				stepSize = new Double(stepText.getText()).doubleValue() ;
-				fmuControlService.doStep(DO_NOT_CARE, stepSize);
-				currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
+				fmuControlService.doStep(DEScheduler.getInstance().getCurrentTime(), stepSize);
 				updateInputOutputTableItems(inputTable, true);
-				updateInputOutputTableItems(outputTable, false);
+				updateInputOutputTableItems(outputTable, false) ;
+				currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
+				currentTimeText.redraw();
 			}
 		});
 
@@ -349,6 +274,7 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 				i = i + 1 ;
 			}
 		}
+		table.redraw();
 	}
 
 	protected boolean canParseDouble(String s) {
