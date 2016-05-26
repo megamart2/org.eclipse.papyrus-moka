@@ -1,13 +1,15 @@
 #!/bin/sh
 
+CONFIGURATION=$1 #should be Debug or Release
+
 FMU_NAME="mokaC1"
 
 
 rm fmu_build/binaries/linux64/*.so
 rm *.fmu
  
-#cp ../Debug/libfmuwrapper.so fmu_build/binaries/linux64/$FMU_NAME.so
-cp ../Release/libfmuwrapper.so fmu_build/binaries/linux64/$FMU_NAME.so
+cp ../$CONFIGURATION/libfmuwrapper.so fmu_build/binaries/linux64/$FMU_NAME.so
+
 cd fmu_build
 
 #32 bits

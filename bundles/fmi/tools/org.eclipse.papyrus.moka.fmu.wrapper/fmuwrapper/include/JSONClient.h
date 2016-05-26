@@ -25,7 +25,7 @@ private  :
 	asio::io_service io_service;
 	asio::ip::tcp::socket socket;
 
-	boost::array<char,1048576> hugeStaticBuff;
+	char  hugeStaticBuff[1048576];
 	std::string replaceAll(std::string str, const std::string& from, const std::string& to);
 
 public:
