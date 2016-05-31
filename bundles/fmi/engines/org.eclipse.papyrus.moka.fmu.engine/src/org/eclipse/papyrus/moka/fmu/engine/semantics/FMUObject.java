@@ -19,6 +19,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.StringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ArrivalSignal;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_Object;
 import org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils;
 import org.eclipse.uml2.uml.PrimitiveType;
@@ -34,8 +36,9 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 	protected Map<Integer, Boolean> booleanMap = new HashMap<Integer, Boolean>();
 	protected Map<Integer, String> stringMap = new HashMap<Integer, String>();
 
-	protected Map<Integer, Property> indexToUMLProperty ;
-	protected Map<Property, Integer> UMLPropertyToIndex ;
+	protected Map<Integer, Property> indexToUMLPropertyMap ;
+	protected Map<Property, Integer> UMLPropertyToIndexMap ;
+	protected Map<String, Integer> UMLPropertyNameToIndexMap ;
 
 	@Override
 	public void doStep(double currentCommunicationTime, double stepSize) {
@@ -85,21 +88,23 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 	}
 
 	protected void synchronizeFeatureValueWithValueMaps(StructuralFeature feature, List<IValue> values) {
-		if (this.indexToUMLProperty == null && this.UMLPropertyToIndex == null) {
-			this.indexToUMLProperty = new HashMap<Integer, Property>() ;
-			this.UMLPropertyToIndex = new HashMap<Property, Integer>() ;
+		if (this.indexToUMLPropertyMap == null && this.UMLPropertyToIndexMap == null && this.UMLPropertyNameToIndexMap == null) {
+			this.indexToUMLPropertyMap = new HashMap<Integer, Property>() ;
+			this.UMLPropertyToIndexMap = new HashMap<Property, Integer>() ;
+			this.UMLPropertyNameToIndexMap = new HashMap<String, Integer>() ;
 			for (Property p : this.types.get(0).allAttributes()) {
 				if (FMUEngineUtils.isFMUPort(p)) {
 					int index = FMUEngineUtils.getValueReference(p) ;
 					if (index != -1) {
-						this.indexToUMLProperty.put(index, p) ;
-						this.UMLPropertyToIndex.put(p, index) ;
+						this.indexToUMLPropertyMap.put(index, p) ;
+						this.UMLPropertyToIndexMap.put(p, index) ;
+						this.UMLPropertyNameToIndexMap.put(p.getName(), index) ;
 					}
 				}
 			}
 		}
 		if (FMUEngineUtils.isFMUPort(feature)) {
-			int key = UMLPropertyToIndex.get(feature) ;
+			int key = UMLPropertyToIndexMap.get(feature) ;
 			if (feature.getType() == UMLPrimitiveTypesUtils.getReal(feature)) {
 				IRealValue realValue = values.isEmpty() ? null : (IRealValue)values.get(0) ;
 				Double value = realValue == null ? null : realValue.getValue() ;
@@ -150,15 +155,27 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 	public void fmiSetReals(Map<Integer, Double> realsMap) {
 		this.realMap.putAll(realsMap);
 		// updates feature values
-		for (Iterator<Integer> i = realMap.keySet().iterator() ; i.hasNext() ; ) {
+		for (Iterator<Integer> i = realsMap.keySet().iterator() ; i.hasNext() ; ) {
 			Integer key = i.next() ;
-			Property p = indexToUMLProperty.get(key) ;
+			Property p = indexToUMLPropertyMap.get(key) ;
 			IFeatureValue fv = this.getFeatureValue(p) ;
 			IRealValue realValue = fv.getValues().isEmpty() ? null : (IRealValue)fv.getValues().get(0) ;
 			if (realValue == null) {
 				realValue = new RealValue() ;
 				realValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getReal(p)) ;
 				fv.getValues().add(realValue) ;
+			}
+			if (realValue.getValue() != null) {
+				Double old = realValue.getValue() ;
+				Double new_ = realMap.get(key) ;
+				if (! (old.equals(new_))) {
+					RealValue oldValue = new RealValue() ;
+					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getReal(p));
+					oldValue.setValue(new_);
+					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, realValue) ;
+					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				}
 			}
 			realValue.setValue(realsMap.get(key)) ;
 		}
@@ -169,15 +186,27 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 	public void fmiSetIntegers(Map<Integer, Integer> integersMap) {
 		this.integerMap.putAll(integersMap);
 		// updates feature values
-		for (Iterator<Integer> i = integerMap.keySet().iterator() ; i.hasNext() ; ) {
+		for (Iterator<Integer> i = integersMap.keySet().iterator() ; i.hasNext() ; ) {
 			Integer key = i.next() ;
-			Property p = indexToUMLProperty.get(key) ;
+			Property p = indexToUMLPropertyMap.get(key) ;
 			IFeatureValue fv = this.getFeatureValue(p) ;
 			IIntegerValue integerValue = fv.getValues().isEmpty() ? null : (IIntegerValue)fv.getValues().get(0) ;
 			if (integerValue == null) {
 				integerValue = new IntegerValue() ;
 				integerValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getInteger(p)) ;
 				fv.getValues().add(integerValue) ;
+			}
+			if (integerValue.getValue() != null) {
+				Integer old = integerValue.getValue() ;
+				Integer new_ = integerMap.get(key) ;
+				if (!(old.equals(new_))) {
+					IntegerValue oldValue = new IntegerValue() ;
+					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getInteger(p));
+					oldValue.setValue(new_);
+					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, integerValue) ;
+					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				}
 			}
 			integerValue.setValue(integerMap.get(key)) ;
 		}
@@ -188,15 +217,27 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 	public void fmiSetBools(Map<Integer, Boolean> boolsMap) {
 		this.booleanMap.putAll(boolsMap);
 		// updates feature values
-		for (Iterator<Integer> i = booleanMap.keySet().iterator() ; i.hasNext() ; ) {
+		for (Iterator<Integer> i = boolsMap.keySet().iterator() ; i.hasNext() ; ) {
 			Integer key = i.next() ;
-			Property p = indexToUMLProperty.get(key) ;
+			Property p = indexToUMLPropertyMap.get(key) ;
 			IFeatureValue fv = this.getFeatureValue(p) ;
 			IBooleanValue booleanValue = fv.getValues().isEmpty() ? null : (IBooleanValue)fv.getValues().get(0) ;
 			if (booleanValue == null) {
 				booleanValue = new BooleanValue() ;
 				booleanValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getBoolean(p)) ;
 				fv.getValues().add(booleanValue) ;
+			}
+			if (booleanValue.getValue() != null) {
+				Boolean old = booleanValue.getValue() ;
+				Boolean new_ = booleanMap.get(key) ;
+				if (!(old.equals(new_))) {
+					BooleanValue oldValue = new BooleanValue() ;
+					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getBoolean(p));
+					oldValue.setValue(new_);
+					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, booleanValue) ;
+					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				}
 			}
 			booleanValue.setValue(booleanMap.get(key)) ;
 		}
@@ -207,9 +248,9 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 	public void fmiSetStrings(Map<Integer, String> stringsMap) {
 		this.stringMap.putAll(stringsMap);
 		// updates feature values
-		for (Iterator<Integer> i = stringMap.keySet().iterator() ; i.hasNext() ; ) {
+		for (Iterator<Integer> i = stringsMap.keySet().iterator() ; i.hasNext() ; ) {
 			Integer key = i.next() ;
-			Property p = indexToUMLProperty.get(key) ;
+			Property p = indexToUMLPropertyMap.get(key) ;
 			IFeatureValue fv = this.getFeatureValue(p) ;
 			IStringValue stringValue = fv.getValues().isEmpty() ? null : (IStringValue)fv.getValues().get(0) ;
 			if (stringValue == null) {
@@ -217,12 +258,29 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				stringValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getString(p)) ;
 				fv.getValues().add(stringValue) ;
 			}
+			if (stringValue.getValue() != null) {
+				String old = stringValue.getValue() ;
+				String new_ = stringMap.get(key) ;
+				if (! (old.equals(new_))) {
+					StringValue oldValue = new StringValue() ;
+					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getString(p));
+					oldValue.setValue(new_);
+					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, stringValue) ;
+					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				}
+			}
 			stringValue.setValue(stringMap.get(key)) ;
 		}
 		// TODO Deal with change events once the initialization mode is terminated (i.e., after fmi2ExitInitialization() has been called)
 	}
 
-	public Map<Integer, Property> getIndexToUMLProperty() {
-		return indexToUMLProperty;
+	public Map<Integer, Property> getIndexToUMLPropertyMap() {
+		return indexToUMLPropertyMap;
 	}
+	
+	public Map<String, Integer> getPropertyNameToIndexMap() {
+		return UMLPropertyNameToIndexMap ;
+	}
+
 }
