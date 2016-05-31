@@ -37,6 +37,9 @@ public class UnzipUtility {
          // iterates over entries in the zip file
          while (entry != null) {
              String filePath = destDirectory + File.separator + entry.getName();
+             String replacement = File.separator.equals("\\")? "\\\\":"/";
+             filePath= filePath.replaceAll("/", replacement);
+             filePath= filePath.replaceAll("\\\\", replacement);
              if (!entry.isDirectory()) {
                  // if the entry is a file, extracts it
                  extractFile(zipIn, filePath);
@@ -58,7 +61,11 @@ public class UnzipUtility {
      * @throws IOException
      */
     private static void extractFile(ZipInputStream zipIn,  String filePath) throws IOException {
-        
+    	File outputFile = new File(filePath);
+    	File parent = new File(outputFile.getParent());
+    	if (!parent.exists()){
+    		parent.mkdirs();
+    	}
     	BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(filePath));
         byte[] bytesIn = new byte[BUFFER_SIZE];
         int read = 0;
@@ -66,7 +73,6 @@ public class UnzipUtility {
             bos.write(bytesIn, 0, read);
         }
         bos.close();
-        File outputFile = new File(filePath);
        	outputFile.setExecutable(true);
        
         
