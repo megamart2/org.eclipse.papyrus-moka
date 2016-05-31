@@ -39,6 +39,7 @@ import org.eclipse.uml2.uml.LiteralInteger;
 import org.eclipse.uml2.uml.LiteralReal;
 import org.eclipse.uml2.uml.LiteralSpecification;
 import org.eclipse.uml2.uml.LiteralString;
+import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
@@ -96,7 +97,18 @@ public class Fmu2ProxyService extends CS_Object {
 			Stereotype st = p.getAppliedStereotypes().get(0);
 			if (st != null) {
 				// String variableType = p.getType().getName();
-				Fmi2ScalarVariable variable = new Fmi2ScalarVariable(this, p, st);
+				Fmi2ScalarVariable variable;
+				if (p instanceof Port){
+					variable = new Fmi2Port(this, (Port) p, st);
+					if (variable.getCausality().equals(Fmi2CausalityType.fmi2Output)){
+						outputPorts.add((Fmi2Port) variable);
+					}else {
+						inputPorts.add((Fmi2Port) variable);
+					}
+				}else {
+					 variable = new Fmi2ScalarVariable(this, p, st);
+				}
+				
 				variables.add(variable);
 
 				if (variable.getCausality().equals(Fmi2CausalityType.fmi2Input)) {
@@ -118,8 +130,9 @@ public class Fmu2ProxyService extends CS_Object {
 					}
 
 				} else if (variable.getCausality().equals(Fmi2CausalityType.fmi2Output)
-						|| variable.getCausality().equals(Fmi2CausalityType.fmi2Parameter)
-								&& !variable.getVariability().equals(Fmi2VariabilityType.fmi2Constant)) {
+//						|| variable.getCausality().equals(Fmi2CausalityType.fmi2Parameter)
+//								&& !variable.getVariability().equals(Fmi2VariabilityType.fmi2Constant)
+								){
 
 					switch (variable.getType()) {
 					case Fmi2VariableType.fmi2Boolean:
@@ -151,11 +164,10 @@ public class Fmu2ProxyService extends CS_Object {
 				Fmi2ScalarVariable variable = realGetCachedVariables.get(i);
 				Double previousValue = (Double) variable.getValue();
 				double currentValue = valuesDouble[i];
-				if (previousValue != null && !previousValue.equals(currentValue)) {
+				//if (previousValue != null && !previousValue.equals(currentValue)) {
 					variable.setValue(currentValue);
-					variable.setHasChanged(true);
-				}
-
+				//	variable.setHasChanged(true);
+				//}
 			}
 		}
 
@@ -165,10 +177,10 @@ public class Fmu2ProxyService extends CS_Object {
 				Fmi2ScalarVariable variable = integerGetCachedVariables.get(i);
 				Integer previousValue = (Integer) variable.getValue();
 				int currentValue = valuesInteger[i];
-				if (previousValue != null && !previousValue.equals(currentValue)) {
+			//	if (previousValue != null && !previousValue.equals(currentValue)) {
 					variable.setValue(currentValue);
-					variable.setHasChanged(true);
-				}
+				//	variable.setHasChanged(true);
+				//}
 
 			}
 		}
@@ -179,10 +191,10 @@ public class Fmu2ProxyService extends CS_Object {
 				Fmi2ScalarVariable variable = booleanGetCachedVariables.get(i);
 				Boolean previousValue = (Boolean) variable.getValue();
 				boolean currentValue = valuesBool[i];
-				if (previousValue != null && !previousValue.equals(currentValue)) {
+			//	if (previousValue != null && !previousValue.equals(currentValue)) {
 					variable.setValue(currentValue);
-					variable.setHasChanged(true);
-				}
+			//		variable.setHasChanged(true);
+				//}
 
 			}
 		}
@@ -193,76 +205,88 @@ public class Fmu2ProxyService extends CS_Object {
 				Fmi2ScalarVariable variable = stringGetCachedVariables.get(i);
 				String previousValue = (String) variable.getValue();
 				String currentValue = valuesSring[i];
-				if (previousValue != null && !previousValue.equals(currentValue)) {
+			//	if (previousValue != null && !previousValue.equals(currentValue)) {
 					variable.setValue(currentValue);
-					variable.setHasChanged(true);
-				}
+				//	variable.setHasChanged(true);
+				//}
 			}
 		}
 
 	}
 
 	public void flushSetCache() {
-		double[] valuesDouble = new double[realSetCachedVariables.size()];
-		ArrayList<Fmi2ScalarVariable> realVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+		if(!realSetCachedVariables.isEmpty()){
+			double[] valuesDouble = new double[realSetCachedVariables.size()];
+			ArrayList<Fmi2ScalarVariable> realVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
 
-		int index = 0;
-		for (Fmi2ScalarVariable realVariable : realSetCachedVariables) {
+			int index = 0;
+			for (Fmi2ScalarVariable realVariable : realSetCachedVariables) {
 
-			if (realVariable.hasChanged()) {
-				valuesDouble[index++] = ((Double) realVariable.getValue());
-				realVariableToUpdate.add(realVariable);
-				realVariable.setHasChanged(false);
+				//if (realVariable.hasChanged()) {
+					valuesDouble[index++] = ((Double) realVariable.getValue());
+					realVariableToUpdate.add(realVariable);
+					//realVariable.setHasChanged(false);
+				//}
+
 			}
+			fmi2SetReal(realVariableToUpdate, valuesDouble);
+		}
+
+		if (!integerSetCachedVariables.isEmpty()){
+			int[] valuesInteger = new int[integerSetCachedVariables.size()];
+			ArrayList<Fmi2ScalarVariable> integerVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+
+			int index = 0;
+			for (Fmi2ScalarVariable integerVariable : integerSetCachedVariables) {
+
+				//if (integerVariable.hasChanged()) {
+					valuesInteger[index++] = ((Integer) integerVariable.getValue());
+					integerVariableToUpdate.add(integerVariable);
+					//integerVariable.setHasChanged(false);
+				//}
+
+			}
+			fmi2SetInteger(integerVariableToUpdate, valuesInteger);
+		}
+		
+		
+		if (!booleanSetCachedVariables.isEmpty()){
+			boolean[] valuesBool = new boolean[booleanSetCachedVariables.size()];
+			ArrayList<Fmi2ScalarVariable> booleanVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+
+			int index = 0;
+			for (Fmi2ScalarVariable boolVariable : booleanSetCachedVariables) {
+
+				//if (boolVariable.hasChanged()) {
+					valuesBool[index++] = ((Boolean) boolVariable.getValue());
+					booleanVariableToUpdate.add(boolVariable);
+					boolVariable.setHasChanged(false);
+				//}
+
+			}
+			fmi2SetBoolean(booleanVariableToUpdate, valuesBool);
 
 		}
-		fmi2SetReal(realVariableToUpdate, valuesDouble);
 
-		int[] valuesInteger = new int[integerSetCachedVariables.size()];
-		ArrayList<Fmi2ScalarVariable> integerVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
+		
+		if (!stringSetCachedVariables.isEmpty()){
+			String[] valuesString = new String[stringSetCachedVariables.size()];
+			ArrayList<Fmi2ScalarVariable> stringVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
 
-		index = 0;
-		for (Fmi2ScalarVariable integerVariable : integerSetCachedVariables) {
+			int index = 0;
+			for (Fmi2ScalarVariable stringVariable : stringSetCachedVariables) {
 
-			if (integerVariable.hasChanged()) {
-				valuesInteger[index++] = ((Integer) integerVariable.getValue());
-				integerVariableToUpdate.add(integerVariable);
-				integerVariable.setHasChanged(false);
+				//if (stringVariable.hasChanged()) {
+					valuesString[index++] = ((String) stringVariable.getValue());
+					stringVariableToUpdate.add(stringVariable);
+					stringVariable.setHasChanged(false);
+				//}
+
 			}
+			fmi2SetString(stringVariableToUpdate, valuesString);
 
 		}
-		fmi2SetInteger(integerVariableToUpdate, valuesInteger);
-
-		boolean[] valuesBool = new boolean[booleanSetCachedVariables.size()];
-		ArrayList<Fmi2ScalarVariable> booleanVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
-
-		index = 0;
-		for (Fmi2ScalarVariable boolVariable : booleanSetCachedVariables) {
-
-			if (boolVariable.hasChanged()) {
-				valuesBool[index++] = ((Boolean) boolVariable.getValue());
-				booleanVariableToUpdate.add(boolVariable);
-				boolVariable.setHasChanged(false);
-			}
-
-		}
-		fmi2SetBoolean(booleanVariableToUpdate, valuesBool);
-
-		String[] valuesString = new String[stringSetCachedVariables.size()];
-		ArrayList<Fmi2ScalarVariable> stringVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
-
-		index = 0;
-		for (Fmi2ScalarVariable stringVariable : stringSetCachedVariables) {
-
-			if (stringVariable.hasChanged()) {
-				valuesString[index++] = ((String) stringVariable.getValue());
-				stringVariableToUpdate.add(stringVariable);
-				stringVariable.setHasChanged(false);
-			}
-
-		}
-		fmi2SetString(stringVariableToUpdate, valuesString);
-
+	
 	}
 
 	public Fmi2Parameters getParameters() {
@@ -448,6 +472,10 @@ public class Fmu2ProxyService extends CS_Object {
 
 		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetReal", dll_lib, new Object[] { component, vr, nvr, value },
 				"");
+		
+		if (fmi2Status != Fmi2Status.fmi2OK){
+			System.out.println("Error");
+		}
 		return value.array();
 
 	}
@@ -563,6 +591,10 @@ public class Fmu2ProxyService extends CS_Object {
 
 		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetReal", dll_lib, new Object[] { component, vr, nvr, value },
 				"");
+		
+		if (fmi2Status != Fmi2Status.fmi2OK){
+			System.out.println("Error");
+		}
 		return fmi2Status;
 
 	}

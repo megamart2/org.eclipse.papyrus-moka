@@ -26,7 +26,7 @@ public class FMIProfileUtil {
 	public static final String PORT_STEREO_NAME = FMIProfilePackage.eINSTANCE.getPort().getName();
 	public static final String OUTPUT_DEPENDENCY_STEREO_NAME = FMIProfilePackage.eINSTANCE.getOutputDependency().getName();
 	public static final String DERIVATIVE_DEPENDENCY_STEREO_NAME = FMIProfilePackage.eINSTANCE.getDerivativeDependency().getName();
-	public static final String INITIAL_UNKNWOWN_STEREO_NAME = FMIProfilePackage.eINSTANCE.getInitialUnknown().getName();
+	public static final String INITIAL_UNKNWOWN_STEREO_NAME = FMIProfilePackage.eINSTANCE.getInitialUnknownDependency().getName();
 
 	public static final String CS_FMU_STEREO_QUALIFIED_NAME = FMI_PROFILE_NAME +"::"+CS_FMU_STEREO_NAME;
 	public static final String ME_FMU_STEREO_QUALIFIED_NAME =FMI_PROFILE_NAME +"::"+ME_FMU_STEREO_NAME;

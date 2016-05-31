@@ -58,6 +58,22 @@ public class Fmi2ScalarVariable {
 				this.setValue(p.getDefaultValue().stringValue());
 				break;
 			}
+		}else {
+			//TODO: should better handle default values?
+			switch (type){
+			case Fmi2VariableType.fmi2Boolean :
+				this.setValue(false);
+				break;
+			case Fmi2VariableType.fmi2Integer :
+				this.setValue(0);
+				break;
+			case Fmi2VariableType.fmi2Real :
+				this.setValue(0.0);
+				break;
+			case Fmi2VariableType.fmi2String :
+				this.setValue("MOKA_DEFAULT");
+				break;
+			}
 		}
 		
 			

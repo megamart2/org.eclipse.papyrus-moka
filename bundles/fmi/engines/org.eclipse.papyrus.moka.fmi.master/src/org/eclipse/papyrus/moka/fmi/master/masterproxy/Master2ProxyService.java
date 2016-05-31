@@ -29,9 +29,11 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CallbackFunctions;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
+import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2InitialType;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Port;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Status;
+import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2VariabilityType;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Library;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Status;
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
@@ -46,10 +48,7 @@ import org.eclipse.papyrus.moka.fuml.registry.service.framework.AbstractService;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Operation;
 
-import com.sun.jna.Pointer;
-
 public class Master2ProxyService extends AbstractService {
-
 
 	// status of the co-simulation
 	private int fmi2Status = 0;
@@ -58,18 +57,21 @@ public class Master2ProxyService extends AbstractService {
 	// Inputs to Master algorithm
 	private Experiments experiments;
 	private DependencyGraph depGraph;
-	private HashMap<Fmi2Port, Fmi2Port> P = new HashMap<Fmi2Port, Fmi2Port>(); // <input port, output port>
+	private HashMap<Fmi2Port, Fmi2Port> P = new HashMap<Fmi2Port, Fmi2Port>(); // <input
+																				// port,
+																				// output
+																				// port>
 	private ArrayList<Fmi2Port> variablesOrder = new ArrayList<Fmi2Port>();
 	private ArrayList<Fmi2Port> inputVariables = new ArrayList<Fmi2Port>();
-	private HashMap<Fmu2ProxyService, Pointer> m = new HashMap<Fmu2ProxyService, Pointer>();
-	private HashMap<Fmu2ProxyService, Pointer> r = new HashMap<Fmu2ProxyService, Pointer>();
-
+//	private HashMap<Fmu2ProxyService, Pointer> m = new HashMap<Fmu2ProxyService, Pointer>();
+//	private HashMap<Fmu2ProxyService, Pointer> r = new HashMap<Fmu2ProxyService, Pointer>();
 
 	private Path traceFile;
 	List<String> traceLines = new ArrayList<String>();
 	private long startTime;
 	private int stepNumber;
-
+	double current_time = 0;
+	
 	public Master2ProxyService(Class service) {
 		super(service);
 
@@ -77,10 +79,8 @@ public class Master2ProxyService extends AbstractService {
 
 	// prepare the simyulation environment
 	public void setupEnvironment() {
-		Fmu2Library.cbf = new Fmi2CallbackFunctions.ByValue(
-				new Fmu2Library.FMULogger(), new Fmu2Library.FMUAllocateMemory(),
-				new Fmu2Library.FMUFreeMemory(),
-				new Fmu2Library.FMUStepFinished(),
+		Fmu2Library.cbf = new Fmi2CallbackFunctions.ByValue(new Fmu2Library.FMULogger(),
+				new Fmu2Library.FMUAllocateMemory(), new Fmu2Library.FMUFreeMemory(), new Fmu2Library.FMUStepFinished(),
 				null);
 		this.coSimEnv = new CoSimEnvironment(getOuter().locus.getExtensionalValues());
 		this.P = coSimEnv.setupPortMapping();
@@ -93,9 +93,7 @@ public class Master2ProxyService extends AbstractService {
 			}
 		}
 
-
 		initializeTraceFile();
-
 
 	}
 
@@ -121,21 +119,14 @@ public class Master2ProxyService extends AbstractService {
 			}
 		}
 
-
-
 		traceLines.add(line);
 
 	}
-
-
 
 	// returns the master2proxyService instance if needed
 	public Master2ProxyService getOuter() {
 		return Master2ProxyService.this;
 	}
-
-
-
 
 	/**
 	 * instantiateAllFmus : call "fmi2Instantiate" for each fmu in the graph
@@ -160,8 +151,7 @@ public class Master2ProxyService extends AbstractService {
 		}
 
 		@Override
-		public void doBody(List<IParameterValue> inputParameters,
-				List<IParameterValue> outputParameters) {
+		public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 
 			startTime = System.currentTimeMillis();
 			setupEnvironment();
@@ -170,11 +160,14 @@ public class Master2ProxyService extends AbstractService {
 			for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
 				// instantiate
 				fmi2Status = fmu.fmi2Instantiate();
-				System.out.println("Fmu: " + fmu.types.get(0).getName() + " State: Instantiated... Status: " + fmi2Status);
+				System.out.println(
+						"Fmu: " + fmu.types.get(0).getName() + " State: Instantiated... Status: " + fmi2Status);
 
 				// setupExperiments
-				fmi2Status = fmu.fmi2SetupExperiments(experiments.getStartTime(), experiments.getStopTime(), experiments.getTolerance());
-				System.out.println("Fmu: " + fmu.types.get(0).getName() + " State: Experiments set up... Status: " + fmi2Status);
+				fmi2Status = fmu.fmi2SetupExperiments(experiments.getStartTime(), experiments.getStopTime(),
+						experiments.getTolerance());
+				System.out.println(
+						"Fmu: " + fmu.types.get(0).getName() + " State: Experiments set up... Status: " + fmi2Status);
 
 				fmu.fmu2Status = Fmu2Status.instantiated;
 				// set variables after instantiation
@@ -192,7 +185,6 @@ public class Master2ProxyService extends AbstractService {
 		}
 	}
 
-
 	/**
 	 * initialize fmus
 	 */
@@ -204,33 +196,57 @@ public class Master2ProxyService extends AbstractService {
 		}
 
 		@Override
-		public void doBody(List<IParameterValue> inputParameters,
-				List<IParameterValue> outputParameters) {
+		public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 			// TODO
-			// variable with variability ≠ "constant" that has initial = "exact" or "approx" can be set
+			// variable with variability ≠ "constant" that has initial = "exact"
+			// or "approx" can be set
 			// for each fmu call fmuSetINIVariables
 			for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
 				// enter initialization mode
 				fmi2Status = fmu.fmi2EnterInitializationMode();
-				System.out.println("Fmu: " + fmu.types.get(0).getName() + " State: Initialization mode... Status: " + fmi2Status);
+				System.out.println(
+						"Fmu: " + fmu.types.get(0).getName() + " State: Initialization mode... Status: " + fmi2Status);
 				fmu.fmu2Status = Fmu2Status.underInitializationMode;
-				// set variables at initialization mode
-				fmi2Status = fmu.fmi2UpdateVariables();
-				// exit initilization mode
-				fmi2Status = fmu.fmi2ExitInitializationMode();
-				System.out.println("Fmu: " + fmu.types.get(0).getName() + " State: Exit initialization mode... Status: " + fmi2Status);
-				fmu.fmu2Status = Fmu2Status.initialized;
 			}
+				
 
-			if (coSimEnv.getFmus().size() < 2) {
-				System.out.print("Step: " + experiments.getCurrent_time() + "\t");
-				for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
-					for (Fmi2ScalarVariable var : fmu.variables) {
-						System.out.print(var.getName() + "," + fmu.fmi2Get(var) + "\t");
+			//we set first parameters values
+			for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
+				for (Fmi2ScalarVariable variable : fmu.variables){
+					if (variable.getCausality().equals(Fmi2CausalityType.fmi2Parameter)  && !variable.getVariability().equals(Fmi2VariabilityType.fmi2Constant) 
+							&& variable.getInitial().equals(Fmi2InitialType.fmi2Exact)){
+						fmu.fmi2Set(variable, variable.getValue());
 					}
-					System.out.println();
 				}
 			}
+			
+			//then we propagate initial values according direct dependency graph
+			for (Fmi2Port targetPort: inputVariables){
+				Fmi2Port sourcePort = P.get(targetPort);
+				// get the value on port sourcePort
+				//set value on port u
+				Fmu2ProxyService sourceFmu = sourcePort.getFmu();
+				Object value = sourceFmu.fmi2Get(sourcePort);
+			
+
+				Fmu2ProxyService targetFmu = targetPort.getFmu();
+				fmi2Status = targetFmu.fmi2Set(targetPort,value);
+				
+				
+			}
+			
+			for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+				fmu.fetchGetCache();
+			}
+			
+			
+			for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+			fmi2Status = fmu.fmi2ExitInitializationMode();
+			System.out.println("Fmu: " + fmu.types.get(0).getName() + " State: Exit initialization mode... Status: "
+					+ fmi2Status);
+			fmu.fmu2Status = Fmu2Status.initialized;
+			}
+			
 		}
 
 		@Override
@@ -239,7 +255,6 @@ public class Master2ProxyService extends AbstractService {
 			return new InitializeFmusOperationExecution(operation);
 		}
 	}
-
 
 	/**
 	 * doStepForAllFmus calls fmi2DoStep for each fmu in the graph
@@ -256,11 +271,9 @@ public class Master2ProxyService extends AbstractService {
 	protected class DoStepOperationExecution extends ServiceOperationExecution {
 
 		IBooleanValue isFinished = new BooleanValue();
-		double h = 0, h1 = 0, hmax = 0;
-		double current_time = 0;
-		Object v;
-		Fmu2ProxyService c;
-		Pointer state = null;
+		double h = 0;
+		
+
 
 		public DoStepOperationExecution(Operation operation) {
 			super(operation);
@@ -268,154 +281,49 @@ public class Master2ProxyService extends AbstractService {
 		}
 
 		@Override
-		public void doBody(List<IParameterValue> inputParameters,
-				List<IParameterValue> outputParameters) {
+		public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 
-
-
-
+			h = experiments.getStepSize();
 			isFinished.setValue(false);
-			// ExecutorService executor = Executors.newFixedThreadPool(4);
-			// ExecutorService executor = Executors.newCachedThreadPool();
-			// CompletionService<String> pool = new ExecutorCompletionService<String>(executor);
+			
+			//we log values at t=0 after initialization
+		
+			
 			while (isFinished.getValue() == false) {
 
 				current_time = experiments.getCurrent_time();
-				stepNumber++;
-				
-				
-				
-				
-				for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
-					fmu.fetchGetCache();
-				}
 				logValues();
-				
-				for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
-					for(Fmi2Port port : fmu.outputPorts){
-						if( port.hasChanged()){
-							Fmi2Port input = P.get(port);
-							if (input !=null){
-								input.setValue(port.getValue());
-							}
-							port.setHasChanged(false);
-						}
-					}
-				}
-				
-				for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
-					fmu.flushSetCache();
-				}
-				
-//				for (Fmi2Port u : inputVariables) {
-//					Fmi2Port y = P.get(u);
-//					// get the value on port y
-//					// set value on port u
-//					c = y.getFmu();
-//					v = c.fmi2Get(y);
-//
-//					// System.out.println("t:"+ current_time + "\tFMU: "+ c.getParameters().getModelName()+ "\t output: " + y.getName() + "\t value: " + v.toString());
-//					// fmi2Status = c.fmi2GetFMUstate();
-//					m.put(c, c.fmuState);
-//
-//					c = u.getFmu();
-//					fmi2Status = c.fmi2Set(u, v);
-//					// fmi2Status = c.fmi2GetFMUstate();
-//					m.put(c, c.fmuState);
-//
-//				}
+				stepNumber++;
 
-				// for (Fmu2ProxyService c : coSimEnv.getFmus()){
-				// fmi2Status = c.fmi2UpdateVariables();
-				// }
-				// save all fmu states to enable rollback
-				r = m;
-				hmax = experiments.getStepSize();
-				h = hmax;
-				// find h acceptable by all FMUs
-				for (final Fmu2ProxyService c : coSimEnv.getFmus()) {
-					// pool.submit(new Callable<String>() {
-					//
-					// @Override
-					// public String call() throws Exception {
-					fmi2Status = c.fmi2DoStep(current_time, h, false);
-					// return null;
-					// }
-					// });
-
-
-
-					// fmi2Status = c.fmi2DoStep(current_time, h, false); //FIXME noSetPrior
-					// System.out.println(c.getParameters().getModelIdentifier() +"\t" + fmi2Status);
-					// if the slave computed successfully only a subinterval of the step
-					// if ((fmi2Status == Fmi2Status.fmi2Discard)||(fmi2Status==Fmi2Status.fmi2Error)){
-					// h1 = round(c.fmi2GetRealStatus(Fmi2StatusKind.fmi2LastSuccessfulTime)-current_time);
-					// h = Math.min(h, h1);
-					// }
-					// fmi2Status = c.fmi2GetFMUstate();
-					// m.put(c, c.fmuState);
+				//we do the step
+				for (final Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+					fmi2Status = fmu.fmi2DoStep(current_time, h, false);
 
 				}
-				// for(int i = 0; i < coSimEnv.getFmus().size(); i++){
-				// try {
-				// String result = pool.take().get();
-				// } catch (InterruptedException e) {
-				// // TODO Auto-generated catch block
-				// e.printStackTrace();
-				// } catch (ExecutionException e) {
-				// // TODO Auto-generated catch block
-				// e.printStackTrace();
-				// }
-				//
-				// //Compute the result
-				// }
-				// if (h<hmax){
-				// for (Fmu2ProxyService c : coSimEnv.getFmus()){
-				// fmi2Status = c.fmi2SetFMUstate(r.get(c));
-				// fmi2Status = c.fmi2DoStep(current_time, h, true);
-				// //if the slave computed successfully only a subinterval of the step
-				// //fmi2Status = c.fmi2GetFMUstate();
-				// //m.put(c, c.fmuState);
-				//
-				// }
-				// }
+			
+				updateAndPropagateValues();
+
+		
 
 				experiments.setCurrent_time(round(current_time + h));
-
-				if ((experiments.getCurrent_time() < experiments.getStopTime()) && (fmi2Status == Fmi2Status.fmi2OK)) {
-					isFinished.setValue(false);
-					// advance time and check if simulation is finished
-				} else {
+			
+				
+				if ((experiments.getCurrent_time() >= experiments.getStopTime()) || (fmi2Status != Fmi2Status.fmi2OK)) {
+					
 					isFinished.setValue(true);
 				}
-
-//				if (coSimEnv.getFmus().size() < 2) {
-//					System.out.print("Step: " + experiments.getCurrent_time() + "\t");
-//					for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
-//						for (Fmi2ScalarVariable var : fmu.variables) {
-//							// System.out.print(var.getName()+","+fmu.fmi2Get(var)+"\t");
-//						}
-//						// System.out.println();
-//					}
-//				}
-
+				
 			}
 
 
-			outputParameters.get(0).getValues().add(isFinished);
-		}
+	
+			
+			getOutputParameterValues().get(0).getValues().add(isFinished);
 
-		private void logValues() {
-
-			 StringBuilder lineBuiler = new StringBuilder(""+ current_time);
-			 for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
-			 for (Fmi2ScalarVariable variable : fmu.variables){
-			 lineBuiler.append(";").append(variable.getValue());
-			 }
-			 }
-			 traceLines.add(lineBuiler.toString());
 
 		}
+
+		
 
 		@Override
 		public IValue new_() {
@@ -427,8 +335,14 @@ public class Master2ProxyService extends AbstractService {
 
 	/** Round to tolerance */
 	public double round(double value) {
-		int pow = (int) Math.round(1 / experiments.getTolerance()); // If tolerance is 10^-6, pow is 1000000 (10^6)
-		int places = (int) Math.ceil(Math.log10(pow)); // If pow is 10^6, places is 6
+		int pow = (int) Math.round(1 / experiments.getTolerance()); // If
+																	// tolerance
+																	// is 10^-6,
+																	// pow is
+																	// 1000000
+																	// (10^6)
+		int places = (int) Math.ceil(Math.log10(pow)); // If pow is 10^6, places
+														// is 6
 
 		if (places < 0)
 			throw new IllegalArgumentException();
@@ -452,8 +366,7 @@ public class Master2ProxyService extends AbstractService {
 		}
 
 		@Override
-		public void doBody(List<IParameterValue> inputParameters,
-				List<IParameterValue> outputParameters) {
+		public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 			if ((fmi2Status != Fmi2Status.fmi2Error) && (fmi2Status != Fmi2Status.fmi2Fatal)) {
 				for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
 					fmi2Status = fmu.fmi2Terminate();
@@ -466,15 +379,19 @@ public class Master2ProxyService extends AbstractService {
 					System.out.println("Fmu" + fmu.types.get(0).getName() + " free memory...");
 				}
 			}
-			System.out.println("Simulated " + stepNumber + " steps in " + (System.currentTimeMillis() - startTime) + " ms");
+			System.out.println(
+					"Simulated " + stepNumber + " steps in " + (System.currentTimeMillis() - startTime) + " ms");
 			System.out.println("Saving simulation trace in file : " + traceFile.toString());
-
 
 			try {
 				Files.write(traceFile, traceLines, Charset.forName("UTF-8"));
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
+			}
+			
+			for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
+				fmu.dll_lib.dispose();
 			}
 		}
 
@@ -501,9 +418,47 @@ public class Master2ProxyService extends AbstractService {
 		}
 
 	}
+	
+	
+	private void updateAndPropagateValues() {
 
+		
+		//we get the new values
+		for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+			fmu.fetchGetCache();
+		}
+		
+		//we propagate locally the values
+		for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+			for (Fmi2Port input : fmu.inputPorts) {
+				//if (port.hasChanged()) {
+					Fmi2Port output = P.get(input);
+					if (output != null) {
+						input.setValue(output.getValue());
+					}
+					//port.setHasChanged(false);
+				//}
+			}
+		}
+
+		//we send the new values to FMU
+		for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+			fmu.flushSetCache();
+		}
+
+		
+	}
+
+	private void logValues() {
+
+		StringBuilder lineBuiler = new StringBuilder("" + current_time);
+		for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+			for (Fmi2ScalarVariable variable : fmu.variables) {
+				lineBuiler.append(";").append(variable.getValue());
+			}
+		}
+		traceLines.add(lineBuiler.toString());
+
+	}
 
 }
-
-
-
