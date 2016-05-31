@@ -11,7 +11,6 @@
 #include "asio.hpp"
 #include "rapidjson/rapidjson.h"
 #include "rapidjson/document.h"
-#include<boost/array.hpp>
 
 #include <memory>
 

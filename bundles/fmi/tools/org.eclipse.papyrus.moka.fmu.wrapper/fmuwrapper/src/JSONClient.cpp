@@ -48,13 +48,25 @@ int JSONClient::init(const char * fmuResourceLocation){
 		//asio::ip::tcp::endpoint endpoint(asio::ip::address::from_string("127.0.0.1"), portNumber);
 
 		std::string locationString(fmuResourceLocation);
-
+		locationString = replaceAll(locationString, "file:///","");
 		locationString = replaceAll(locationString, "file://","");
+
 		std::stringstream ss;
+
+#ifdef _WIN32
+
+		locationString = replaceAll(locationString, "/","\\");
+		ss <<"start " << locationString <<FILE_SEPARATOR <<"rcp" << FILE_SEPARATOR<<"fmu_rcp" <<EXE_EXTENSION;
+		ss <<" -data "<<  locationString << FILE_SEPARATOR<<"rcp" << FILE_SEPARATOR<< "tmpData$$" ;
+		ss <<" -fmu "<< locationString << FILE_SEPARATOR << ".. -port " << port<< " &";
+
+#else
+
 		ss << "chmod -R a+x " << locationString << "; ";
 		ss <<locationString <<FILE_SEPARATOR <<"rcp" << FILE_SEPARATOR<<"fmu_rcp" <<EXE_EXTENSION;
 		ss <<" -data "<<  locationString << FILE_SEPARATOR<<"rcp" << FILE_SEPARATOR<< "tmpData$$" ;
 		ss <<" -fmu "<< locationString << FILE_SEPARATOR << ".. -port " << port<< " &";
+#endif
 
 		std::cout << ss.str()<< std::endl;
 		int status = std::system(ss.str().c_str());
