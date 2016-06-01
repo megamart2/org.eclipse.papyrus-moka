@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Tycho Tutorial" sequenceNumber="1464179630">
+<target name="Tycho Tutorial" sequenceNumber="1464774029">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160512-1000"/>
-      <unit id="org.eclipse.rcp.feature.group" version="4.6.0.v20160512-1000"/>
-      <unit id="org.eclipse.jdt.feature.group" version="3.12.0.v20160512-1000"/>
+      <unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160519-2118"/>
+      <unit id="org.eclipse.rcp.feature.group" version="4.6.0.v20160519-2118"/>
+      <unit id="org.eclipse.jdt.feature.group" version="3.12.0.v20160519-1730"/>
       <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.0.400.v20160504-1450"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160505-1249"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160519-1731"/>
       <repository id="eclipse-neon" location="http://download.eclipse.org/releases/neon/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -26,7 +26,7 @@
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.orbit.category.json" version="1.0.0.7f_e7McLz57EEXeLAn2b0b7y_z-IG"/>
-      <repository id="orbit-fasterxml" location="http://download.eclipse.org/tools/orbit/downloads/drops/S20160518051658/repository/"/>
+      <repository id="orbit-fasterxml" location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"/>
     </location>
   </locations>
 </target>

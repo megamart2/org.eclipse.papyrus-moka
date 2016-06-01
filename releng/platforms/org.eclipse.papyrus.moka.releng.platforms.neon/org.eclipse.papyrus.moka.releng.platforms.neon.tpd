@@ -21,6 +21,6 @@ location "http://download.eclipse.org/tools/ajdt/46/dev/update" aspectj-neon{
 	org.eclipse.ajdt.feature.group
 }
 
-location "http://download.eclipse.org/tools/orbit/downloads/drops/S20160518051658/repository/" orbit-fasterxml{
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/" orbit-fasterxml{
 	org.eclipse.orbit.category.json
 }
