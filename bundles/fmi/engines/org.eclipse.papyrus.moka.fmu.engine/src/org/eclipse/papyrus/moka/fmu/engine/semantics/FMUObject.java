@@ -7,6 +7,7 @@ import java.util.Map;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
 import org.eclipse.papyrus.moka.fmu.communication.FMUInterface;
+import org.eclipse.papyrus.moka.fmu.engine.control.EngineStatus;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
@@ -56,13 +57,6 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 
 	@Override
 	public void init() {
-		// TODO
-		// Pour la phase d'initialisation, l'API FMI distingue :
-		// - fmi2SetupExperiment
-		// - fmi2EnterInitializationMode
-		// - fmi2ExitInitializationMode
-		// FIXME Est-ce qu'on doit distinguer aussi dans FMUInterface.java ?
-
 		// The hypothesis is that the this object has been instantiated by the FMU Execution Engine,
 		// but it is not constructed yet (in the sense of PSCS Construct Strategy),
 		// and its classifier behavior has not been started.
@@ -126,7 +120,7 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				stringMap.put(key, value) ;
 			}
 			else {
-				// FIXME unsupported type. What do we do?
+				// FIXME unsupported type. What do we do? Return a Fatal STATUS ?
 			}
 		}
 	}
@@ -166,20 +160,21 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				fv.getValues().add(realValue) ;
 			}
 			if (realValue.getValue() != null) {
-				Double old = realValue.getValue() ;
-				Double new_ = realMap.get(key) ;
-				if (! (old.equals(new_))) {
-					RealValue oldValue = new RealValue() ;
-					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getReal(p));
-					oldValue.setValue(new_);
-					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, realValue) ;
-					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
-					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				if (FMUEngineUtils.getFMUControlService().getEngineStatus() == EngineStatus.STEPPING) { // This is to avoid generation of change events at the end of the init phase
+					Double old = realValue.getValue() ;
+					Double new_ = realMap.get(key) ;
+					if (! (old.equals(new_))) {
+						RealValue oldValue = new RealValue() ;
+						oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getReal(p));
+						oldValue.setValue(new_);
+						FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, realValue) ;
+						this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+						((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+					}
 				}
+				realValue.setValue(realsMap.get(key)) ;
 			}
-			realValue.setValue(realsMap.get(key)) ;
 		}
-		// TODO Deal with change events once the initialization mode is terminated (i.e., after fmi2ExitInitialization() has been called)
 	}
 
 	@Override
@@ -197,20 +192,21 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				fv.getValues().add(integerValue) ;
 			}
 			if (integerValue.getValue() != null) {
-				Integer old = integerValue.getValue() ;
-				Integer new_ = integerMap.get(key) ;
-				if (!(old.equals(new_))) {
-					IntegerValue oldValue = new IntegerValue() ;
-					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getInteger(p));
-					oldValue.setValue(new_);
-					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, integerValue) ;
-					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
-					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				if (FMUEngineUtils.getFMUControlService().getEngineStatus() == EngineStatus.STEPPING) { // This is to avoid generation of change events at the end of the init phase
+					Integer old = integerValue.getValue() ;
+					Integer new_ = integerMap.get(key) ;
+					if (!(old.equals(new_))) {
+						IntegerValue oldValue = new IntegerValue() ;
+						oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getInteger(p));
+						oldValue.setValue(new_);
+						FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, integerValue) ;
+						this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+						((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+					}
 				}
+				integerValue.setValue(integerMap.get(key)) ;
 			}
-			integerValue.setValue(integerMap.get(key)) ;
 		}
-		// TODO Deal with change events once the initialization mode is terminated (i.e., after fmi2ExitInitialization() has been called)
 	}
 
 	@Override
@@ -228,20 +224,21 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				fv.getValues().add(booleanValue) ;
 			}
 			if (booleanValue.getValue() != null) {
-				Boolean old = booleanValue.getValue() ;
-				Boolean new_ = booleanMap.get(key) ;
-				if (!(old.equals(new_))) {
-					BooleanValue oldValue = new BooleanValue() ;
-					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getBoolean(p));
-					oldValue.setValue(new_);
-					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, booleanValue) ;
-					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
-					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				if (FMUEngineUtils.getFMUControlService().getEngineStatus() == EngineStatus.STEPPING) { // This is to avoid generation of change events at the end of the init phase
+					Boolean old = booleanValue.getValue() ;
+					Boolean new_ = booleanMap.get(key) ;
+					if (!(old.equals(new_))) {
+						BooleanValue oldValue = new BooleanValue() ;
+						oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getBoolean(p));
+						oldValue.setValue(new_);
+						FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, booleanValue) ;
+						this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+						((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+					}
+					booleanValue.setValue(booleanMap.get(key)) ;
 				}
 			}
-			booleanValue.setValue(booleanMap.get(key)) ;
 		}
-		// TODO Deal with change events once the initialization mode is terminated (i.e., after fmi2ExitInitialization() has been called)
 	}
 
 	@Override
@@ -259,26 +256,27 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				fv.getValues().add(stringValue) ;
 			}
 			if (stringValue.getValue() != null) {
-				String old = stringValue.getValue() ;
-				String new_ = stringMap.get(key) ;
-				if (! (old.equals(new_))) {
-					StringValue oldValue = new StringValue() ;
-					oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getString(p));
-					oldValue.setValue(new_);
-					FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, stringValue) ;
-					this.getObjectActivation().getEvents().add(changeEventOccurence) ;
-					((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+				if (FMUEngineUtils.getFMUControlService().getEngineStatus() == EngineStatus.STEPPING) { // This is to avoid generation of change events at the end of the init phase
+					String old = stringValue.getValue() ;
+					String new_ = stringMap.get(key) ;
+					if (! (old.equals(new_))) {
+						StringValue oldValue = new StringValue() ;
+						oldValue.setType((PrimitiveType)UMLPrimitiveTypesUtils.getString(p));
+						oldValue.setValue(new_);
+						FMUChangeEventOccurence changeEventOccurence = new FMUChangeEventOccurence(p, oldValue, stringValue) ;
+						this.getObjectActivation().getEvents().add(changeEventOccurence) ;
+						((ObjectActivation)this.getObjectActivation())._send(new ArrivalSignal()); 
+					}
 				}
+				stringValue.setValue(stringMap.get(key)) ;
 			}
-			stringValue.setValue(stringMap.get(key)) ;
 		}
-		// TODO Deal with change events once the initialization mode is terminated (i.e., after fmi2ExitInitialization() has been called)
 	}
 
 	public Map<Integer, Property> getIndexToUMLPropertyMap() {
 		return indexToUMLPropertyMap;
 	}
-	
+
 	public Map<String, Integer> getPropertyNameToIndexMap() {
 		return UMLPropertyNameToIndexMap ;
 	}

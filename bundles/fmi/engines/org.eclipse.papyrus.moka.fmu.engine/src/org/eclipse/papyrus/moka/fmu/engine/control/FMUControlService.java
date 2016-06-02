@@ -26,13 +26,15 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 	protected Semaphore stepLock = new Semaphore(0);
 	protected Semaphore engineLock = new Semaphore(0);
 	protected Semaphore terminationLock = new Semaphore(0);
+	protected EngineStatus engineStatus = EngineStatus.NOT_STARTED ;
+
+	public EngineStatus getEngineStatus() {
+		return engineStatus;
+	}
 
 	@Override
 	public void init(ILaunch launcher, EObject modelElement) {
-		// TODO : check that modelElement is instance of
-		// org.eclipse.uml2.uml.Class, and has stereotype CS_FMU applied
 		this.fmuClass = (Class) modelElement;
-
 		FMUEngineUtils.setFMUControlService(this);
 	}
 
@@ -70,6 +72,7 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 
 	@Override
 	public void init() {
+		this.engineStatus = EngineStatus.INIT ;
 		this.fmuObject.init();
 		this.fmuObject.startBehavior(this.fmuClass, new ArrayList<IParameterValue>());
 		// FIXME Need to determine if we actually start at the end of the
@@ -104,6 +107,7 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 	public void doStep(double currentCommunicationTime, double stepSize) {
 		// TODO Do something with currentCommunicationTime and stepSize, in the
 		// DEScheduler
+		this.engineStatus = EngineStatus.STEPPING ;
 		FMUStepEnd stepEnd = new FMUStepEnd();
 		System.out.println("Current communication time: " + currentCommunicationTime + ", DE engine time: " + DEScheduler.getInstance().getCurrentTime());
 		DEScheduler.getInstance().pushEvent(new Event(stepSize, stepEnd), currentCommunicationTime + stepSize);
