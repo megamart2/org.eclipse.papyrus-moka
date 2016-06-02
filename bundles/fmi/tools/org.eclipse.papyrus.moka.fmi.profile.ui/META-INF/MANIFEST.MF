@@ -11,3 +11,4 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.moka.fmi.profile;bundle-version="2.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrus.moka.fmi.profile.ui

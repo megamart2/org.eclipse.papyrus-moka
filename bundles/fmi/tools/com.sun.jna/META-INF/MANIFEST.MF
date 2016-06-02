@@ -9,6 +9,7 @@ Bundle-ClassPath: library/jna.jar,
  .,
  library/platform.jar
 Export-Package: com.sun.jna,
+ com.sun.jna.darwin,
  com.sun.jna.platform,
  com.sun.jna.platform.dnd,
  com.sun.jna.platform.mac,

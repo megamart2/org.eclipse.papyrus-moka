@@ -19,5 +19,9 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Eclipse Modeling Project
-Export-Package: org.eclipse.papyrus.moka.debug.breakpoint,
- org.eclipse.papyrus.moka.debug.engine
+Export-Package: org.eclipse.papyrus.moka.debug,
+ org.eclipse.papyrus.moka.debug.breakpoint;x-internal:=true,
+ org.eclipse.papyrus.moka.debug.engine,
+ org.eclipse.papyrus.moka.debug.model.data.mapping;x-internal:=true,
+ org.eclipse.papyrus.moka.debug.model.data.mapping.values;x-internal:=true,
+ org.eclipse.papyrus.moka.debug.model.data.mapping.variables;x-internal:=true

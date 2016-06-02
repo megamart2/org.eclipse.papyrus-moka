@@ -30,5 +30,9 @@ Require-Bundle: org.eclipse.ui;bundle-version="3.107.0",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.animation,
- org.eclipse.papyrus.moka.animation.engine
+ org.eclipse.papyrus.moka.animation.css;x-internal:=true,
+ org.eclipse.papyrus.moka.animation.engine,
+ org.eclipse.papyrus.moka.animation.presentation.control;x-internal:=true,
+ org.eclipse.papyrus.moka.animation.presentation.data;x-internal:=true,
+ org.eclipse.papyrus.moka.animation.utils
 Bundle-Vendor: Eclipse Modeling Project

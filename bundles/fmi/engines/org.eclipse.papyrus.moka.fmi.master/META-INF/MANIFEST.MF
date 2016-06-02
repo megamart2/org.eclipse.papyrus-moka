@@ -22,7 +22,6 @@ Export-Package: org.eclipse.papyrus.moka.fmi.master,
  org.eclipse.papyrus.moka.fmi.master.fmilibrary,
  org.eclipse.papyrus.moka.fmi.master.fmulibrary,
  org.eclipse.papyrus.moka.fmi.master.fmuproxy,
- org.eclipse.papyrus.moka.fmi.master.fmuutils,
  org.eclipse.papyrus.moka.fmi.master.masterlibrary,
  org.eclipse.papyrus.moka.fmi.master.masterproxy
 Bundle-ClassPath: .

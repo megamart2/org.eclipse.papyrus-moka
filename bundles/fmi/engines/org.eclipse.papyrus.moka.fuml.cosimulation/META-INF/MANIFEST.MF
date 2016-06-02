@@ -18,4 +18,5 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0",
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Eclipse Modeling Project
-Export-Package: org.eclipse.papyrus.moka.fuml.cosimulation
+Export-Package: org.eclipse.papyrus.moka.fuml.cosimulation,
+ org.eclipse.papyrus.moka.fuml.cosimulation.semantics

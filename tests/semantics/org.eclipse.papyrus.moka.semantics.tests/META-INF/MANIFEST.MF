@@ -29,7 +29,8 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.moka.utils;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.tests.framework;bundle-version="2.0.0",
  org.aspectj.runtime;bundle-version="1.8.9"
-Export-Package: org.eclipse.papyrus.moka.semantics.tests
+Export-Package: org.eclipse.papyrus.moka.semantics.tests,
+ org.eclipse.papyrus.moka.semantics.tests.composites
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 2.0.0.qualifier
