@@ -14,19 +14,13 @@ public class FMUStepEnd extends Action {
 		Semaphore stepLock = fmuControlService.getStepLock() ;
 		Semaphore engineLock = fmuControlService.getEngineLock() ;
 		// Unlocks the FMU wrapper thread (cf. FMUControlDelegate.doStep)
-		//synchronized (stepLock) {
-			stepLock.release();
-		//}
+		stepLock.release();
 		// Waits for the next step (cf. FMUControlDelegate.doStep)
-		//if (!fmuControlService.getDebugTarget().isTerminated()) {
-			//synchronized (engineLock) {
-				try {
-					engineLock.acquire();;
-				} catch (InterruptedException e) {
-					//Activator.log.error(e);
-				}
-			//}
-		//}
+		try {
+			engineLock.acquire();;
+		} catch (InterruptedException e) {
+			// Activator.log.error(e);
+		}
 	}
 
 }

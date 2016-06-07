@@ -33,6 +33,9 @@ public class MokaExecutionEngineJob extends Job {
 	// Model element used as entry point of the execution
 	protected EObject executionEntryPoint;
 
+	// True if cancel() has been called on this job
+	protected boolean isCanceling = false ;
+	
 	// Arguments of the execution engine
 	protected String[] executionArgs;
 
@@ -51,6 +54,16 @@ public class MokaExecutionEngineJob extends Job {
 			ENGINE_MAIN_JOB = new MokaExecutionEngineJob();
 		}
 		return ENGINE_MAIN_JOB;
+	}
+	
+	public boolean isCanceling() {
+		return this.isCanceling ;
+	}
+	
+	@Override
+	protected void canceling() {
+		this.isCanceling = true ;
+		super.canceling();
 	}
 
 	public void initialize(ILaunch launch, IExecutionEngine engine, EObject executionEntryPoint, String[] executionArgs) {

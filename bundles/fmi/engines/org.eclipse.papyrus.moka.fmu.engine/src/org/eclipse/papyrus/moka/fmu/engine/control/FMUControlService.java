@@ -35,6 +35,10 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 	@Override
 	public void init(ILaunch launcher, EObject modelElement) {
 		this.fmuClass = (Class) modelElement;
+		this.instantiationLock = new Semaphore(0);
+		this.stepLock = new Semaphore(0);
+		this.engineLock = new Semaphore(0);
+		this.terminationLock = new Semaphore(0);
 		FMUEngineUtils.setFMUControlService(this);
 	}
 
@@ -75,8 +79,6 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 		this.engineStatus = EngineStatus.INIT ;
 		this.fmuObject.init();
 		this.fmuObject.startBehavior(this.fmuClass, new ArrayList<IParameterValue>());
-		// FIXME Need to determine if we actually start at the end of the
-		// initialization phase, or on the first doStep
 		FMUStepEnd stepEnd = new FMUStepEnd();
 		DEScheduler.getInstance().pushEvent(new Event(0.0, stepEnd));
 		Runnable deSchedulerRunnable = new Runnable() {
@@ -105,11 +107,8 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 	 */
 	@Override
 	public void doStep(double currentCommunicationTime, double stepSize) {
-		// TODO Do something with currentCommunicationTime and stepSize, in the
-		// DEScheduler
 		this.engineStatus = EngineStatus.STEPPING ;
 		FMUStepEnd stepEnd = new FMUStepEnd();
-		System.out.println("Current communication time: " + currentCommunicationTime + ", DE engine time: " + DEScheduler.getInstance().getCurrentTime());
 		DEScheduler.getInstance().pushEvent(new Event(stepSize, stepEnd), currentCommunicationTime + stepSize);
 		// unlocks the engine
 		engineLock.release();
@@ -133,13 +132,9 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 	public void terminate() {
 		// Unlocks the thread that launched the execution engine to let it
 		// terminate
-
 		engineLock.release();
-
 		stepLock.release();
-
 		terminationLock.release();
-
 	}
 
 	/**
@@ -154,9 +149,7 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 	// @Override
 	public void waitForTermination() {
 		// Locks until actual termination by the master (cf.
-		// FMUControlDelegate.terminate() FIXME which should probably be
-		// freeInstance)
-		
+		// FMUControlDelegate.terminate() FIXME should if be freeInstance?)		
 		try {
 			terminationLock.acquire();
 		} catch (InterruptedException e) {
@@ -211,26 +204,22 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 
 	@Override
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {
-		// TODO Auto-generated method stub
-
+		// Do nothing
 	}
 
 	@Override
 	public void nodeLeft(ISemanticVisitor nodeVisitor) {
-		// TODO Auto-generated method stub
-
+		// Do nothing
 	}
 
 	@Override
 	public void valueCreated(IValue value) {
-		// TODO Auto-generated method stub
-
+		// Do nothing
 	}
 
 	@Override
 	public void valueDestroyed(IValue value) {
-		// TODO Auto-generated method stub
-
+		// Do nothing
 	}
 
 }

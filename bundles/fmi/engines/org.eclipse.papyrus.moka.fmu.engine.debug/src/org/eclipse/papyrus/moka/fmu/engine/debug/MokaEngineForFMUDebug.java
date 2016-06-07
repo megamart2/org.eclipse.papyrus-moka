@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
+import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
 import org.eclipse.papyrus.moka.fmu.engine.MokaEngineForFMUExport;
 import org.eclipse.papyrus.moka.fmu.engine.control.FMUControlService;
 import org.eclipse.papyrus.moka.fmu.engine.de.FMIPushPullStrategy;
@@ -20,10 +21,9 @@ import org.eclipse.swt.events.KeyEvent;
 import org.eclipse.swt.events.KeyListener;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
-import org.eclipse.swt.layout.FillLayout;
-import org.eclipse.swt.layout.RowLayout;
+import org.eclipse.swt.layout.GridData;
+import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
-import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Event;
@@ -39,8 +39,26 @@ import org.eclipse.uml2.uml.Property;
 
 public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 
+	protected boolean shellClosed = false ;
+	protected Shell pseudoMasterShell ;
+
+	@Override
+	public void stop(IProgressMonitor monitor) {
+		if (shellClosed == false) {
+			shellClosed = true ;
+			if (! pseudoMasterShell.isDisposed()) {
+				pseudoMasterShell.close();
+				pseudoMasterShell.dispose();
+			}
+		}
+		super.stop(monitor);
+	}
+
+	protected IProgressMonitor monitor ;
+
 	@Override
 	public void start(IProgressMonitor monitor) {
+		this.monitor = monitor ;
 		if(!mode.equals(OperatingMode.QUIET)){
 			// Initialize every service with the parameters of this particular run
 			MokaServiceRegistry registry = MokaServiceRegistry.getInstance();
@@ -49,72 +67,65 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 				service.init(this.launch, executionEntryPoint);
 			}
 		}
-		Runnable execution = new Runnable() {
-			public void run() {
-				Class fmuClass = FMUEngineUtils.getFMUControlService().getFmuClass() ; 
-				if (fmuClass != null) {
-					startFMU(fmuClass);
-					_displayCurrentTimeAction action = new _displayCurrentTimeAction() ;
-					DEScheduler.init(-1.0, new FMIPushPullStrategy());
-					DEScheduler.getInstance().pushPreStepAction(action);
+		Class fmuClass = FMUEngineUtils.getFMUControlService().getFmuClass() ; 
+		if (fmuClass != null) {
+			startFMU(fmuClass);
+			_displayCurrentTimeAction action = new _displayCurrentTimeAction() ;
+			DEScheduler.init(-1.0, new FMIPushPullStrategy());
+			DEScheduler.getInstance().pushPreStepAction(action);
+			Runnable execution = new Runnable() {
+				public void run() {
 					// Launches a new thread that acts as a pseudo master
-					// This a simple "debugging" master controlled by end user
+					// This a simple "debugging" master controlled by the end user
 					Runnable master = new Runnable() {
 						@Override
 						public void run() {
 							launchMaster();
+							shellClosed = true ;
 							FMUControlService controlService = FMUEngineUtils.getFMUControlService() ;
 							controlService.terminate();
 						}
 					};
 					Thread masterThread = new Thread(master, "Moka - Master Thread") ;
 					masterThread.start();
-
 					FMUEngineUtils.getFMUControlService().getInstantiationLock().release();
 					FMUEngineUtils.getFMUControlService().waitForTermination();
 				}
+			};
+			Thread pseudoMasterThread = new Thread(execution, "Moka - Main thread");
+			pseudoMasterThread.start();
+			try {
+				// Waits for the end of the pseudoMaster thread
+				pseudoMasterThread.join();
+			} catch (InterruptedException e) {
+				//
 			}
-		};
-		Thread mainThread = new Thread(execution, "Moka - Main thread");
-		mainThread.start();
-		try {
-			mainThread.join();
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
 		}
 	}
 
-
 	protected void launchMaster() {
-		//Display display = Display.getDefault() ;
 		Display display = new Display() ;
-		Shell shell = new Shell(display);
-		shell.setLayout(new RowLayout(SWT.VERTICAL));
+		pseudoMasterShell = new Shell(display);
+		pseudoMasterShell.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true, true));
+		GridLayout layout = new GridLayout(2, false);
+		pseudoMasterShell.setLayout(layout);
 
-		// Text and labels
-		Composite textComposite = new Composite(shell, SWT.NONE) ;
-		textComposite.setLayout(new FillLayout());
-
-		final Label stepSizeLabel = new Label(textComposite, SWT.NONE) ;
+		final Label stepSizeLabel = new Label(pseudoMasterShell, SWT.PUSH) ;
 		stepSizeLabel.setText("Step size:");
 
-		final Text stepText = new Text(textComposite, SWT.NONE) ;
+		final Text stepText = new Text(pseudoMasterShell, SWT.NONE | SWT.FILL) ;
 		stepText.setText("0.1");
 
-		final Label currentTimeLabel = new Label(textComposite, SWT.NONE) ;
+		final Label currentTimeLabel = new Label(pseudoMasterShell, SWT.PUSH) ;
 		currentTimeLabel.setText("Current time:");
 
-		final Text currentTimeText = new Text(textComposite, SWT.NONE) ;
+		final Text currentTimeText = new Text(pseudoMasterShell, SWT.FILL) ;
 		currentTimeText.setText("");
 		currentTimeText.setEditable(false);
 
-		// Tables
-		Composite tableComposite = new Composite(shell, SWT.NONE);
-		final Label inputsLabel = new Label(tableComposite, SWT.NONE) ;
+		final Label inputsLabel = new Label(pseudoMasterShell, SWT.PUSH) ;
 		inputsLabel.setText("inputs:");
-		tableComposite.setLayout(new FillLayout());
-		final Table inputTable = new Table(tableComposite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FILL);
+		final Table inputTable = new Table(pseudoMasterShell, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.PUSH);
 		TableColumn inputColumnName = new TableColumn(inputTable, SWT.BORDER | SWT.FILL);
 		inputColumnName.setWidth(100);
 		inputColumnName.setResizable(true);
@@ -131,14 +142,14 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		editor.minimumWidth = 100 ;
 		final int EDITABLECOLUMN = 1 ;
 
-		// Buttons
-		Composite buttonComposite = new Composite(shell, SWT.NONE) ;
-		buttonComposite.setLayout(new FillLayout());
+		final Label outputsLabel = new Label(pseudoMasterShell, SWT.PUSH) ;
+		outputsLabel.setText("outputs:");
+		final Table outputTable = new Table(pseudoMasterShell, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.PUSH);
 
-		final Button initButton = new Button(buttonComposite, SWT.NONE);
+		final Button initButton = new Button(pseudoMasterShell, SWT.NONE);
 		initButton.setText("Init") ;
 
-		final Button stepButton = new Button(buttonComposite, SWT.NONE);
+		final Button stepButton = new Button(pseudoMasterShell, SWT.NONE);
 		stepButton.setText("Step");
 		stepButton.setEnabled(false);
 
@@ -186,9 +197,6 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 
 
 
-		final Label outputsLabel = new Label(tableComposite, SWT.NONE) ;
-		outputsLabel.setText("outputs:");
-		final Table outputTable = new Table(tableComposite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.FILL);
 		TableColumn outputColumnName = new TableColumn(outputTable, SWT.BORDER | SWT.FILL);
 		outputColumnName.setWidth(100);
 		outputColumnName.setResizable(true);
@@ -215,21 +223,36 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 				updateInputOutputTableItems(inputTable, true) ;
 				updateInputOutputTableItems(outputTable, false) ;
 				currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
-				currentTimeText.redraw();
+				Display.getCurrent().syncExec(new Runnable() {
+					@Override
+					public void run() {
+						pseudoMasterShell.layout();
+						Display.getCurrent().update();
+					}
+				});
 			}
 		});
 
 		stepButton.addListener(SWT.MouseDown, new Listener() {
 			@Override
 			public void handleEvent(Event arg0) {
-				FMUControlService fmuControlService = FMUEngineUtils.getFMUControlService() ;
-				double stepSize = 0.0 ;
-				stepSize = new Double(stepText.getText()).doubleValue() ;
+				stepButton.setEnabled(false);
+				final double stepSize = new Double(stepText.getText()).doubleValue() ;
 				setInputValues(inputTable) ;
-				fmuControlService.doStep(DEScheduler.getInstance().getCurrentTime(), stepSize);
-				updateInputOutputTableItems(outputTable, false) ;
-				currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
-				currentTimeText.redraw();
+				new Thread( new Runnable() {
+					public void run() {
+						FMUControlService fmuControlService = FMUEngineUtils.getFMUControlService() ;
+						fmuControlService.doStep(DEScheduler.getInstance().getCurrentTime(), stepSize);
+						pseudoMasterShell.getDisplay().syncExec( new Runnable() {
+							public void run() {
+								updateInputOutputTableItems(outputTable, false) ;
+								currentTimeText.setText("" + DEScheduler.getInstance().getCurrentTime());
+								stepButton.setEnabled(true);
+								pseudoMasterShell.layout();
+							}
+						});
+					}
+				} ).start();
 			}
 		});
 
@@ -253,17 +276,13 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 			}
 		});
 
-		//stepButton.setSize(100,25);
+		pseudoMasterShell.pack();
+		pseudoMasterShell.open();
 
-		//composite.pack();
-		buttonComposite.pack();
-
-		shell.pack();
-		shell.open();
-
-		while (!shell.isDisposed()) {
-			if (!display.readAndDispatch())
+		while (!(pseudoMasterShell.isDisposed() || MokaExecutionEngineJob.getInstance().isCanceling())) {
+			if (!display.readAndDispatch()) {
 				display.sleep();
+			}
 		}
 		display.dispose();
 	}
@@ -398,7 +417,7 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		return false ;
 	}
 
-	private boolean isValidEntry(String propertyName, String value) {
+	protected boolean isValidEntry(String propertyName, String value) {
 		FMUObject fmuObject = FMUEngineUtils.getFMUControlService().getFmuObject() ;
 
 		Integer index = fmuObject.getPropertyNameToIndexMap().get(propertyName) ;

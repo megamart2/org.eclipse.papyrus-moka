@@ -9,6 +9,7 @@ import org.eclipse.papyrus.moka.fmu.engine.semantics.FMULocus;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUObject;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.papyrus.moka.fmu.json.JSONSocketClient;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.CreateObjectActionStrategy;
 import org.eclipse.papyrus.moka.service.IMokaService;
 import org.eclipse.papyrus.moka.service.MokaServiceRegistry;
 import org.eclipse.papyrus.moka.timedfuml.TimedUmlExecutionEngine;
@@ -72,7 +73,9 @@ public class MokaEngineForFMUExport extends TimedUmlExecutionEngine {
 			this.registerSystemServices(locus);
 
 			// Finally instantiate the fmu object
-			FMUObject fmuObject = (FMUObject)this.locus.instantiate(fmuClass) ;
+			CreateObjectActionStrategy strategy = (CreateObjectActionStrategy)this.locus.getFactory().getStrategy("CreateObjectActionStrategy") ;
+			//FMUObject fmuObject = (FMUObject)this.locus.instantiate(fmuClass) ;
+			FMUObject fmuObject = (FMUObject)strategy.instantiate(fmuClass, locus) ;
 			FMUEngineUtils.getFMUControlService().setFmuObject(fmuObject);
 		}
 	}
