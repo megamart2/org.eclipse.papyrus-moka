@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.CS_FMU;
+import org.eclipse.papyrus.moka.fmi.fmumetamodel.FMUBundle;
 import org.eclipse.papyrus.moka.fmi.modeldescription.CausalityType;
 import org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType;
 import org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable;
@@ -45,9 +46,11 @@ public class FMU2UMLTransformation {
 	FmiModelDescriptionType modelDescription;
 	Package dependencyPackage;
 	Class fmuClass ;
-	public FMU2UMLTransformation(FmiModelDescriptionType modelDescription, Package receivingPackage) {
+	private FMUBundle fmuBundle;
+	public FMU2UMLTransformation(FMUBundle fmuBundle, Package receivingPackage) {
 		this.receivingPackage = receivingPackage;
-		this.modelDescription  = modelDescription;
+		this.fmuBundle= fmuBundle;
+		this.modelDescription  =fmuBundle.getModelDescription();
 
 	}
 
@@ -63,7 +66,7 @@ public class FMU2UMLTransformation {
 
 				CS_FMU csFMU = (CS_FMU) fmuClass.applyStereotype(FMIProfileUtil.getStereotype(receivingPackage, FMIProfileUtil.CS_FMU_STEREO_NAME));
 
-				csFMU.setModelDescription(modelDescription);
+				csFMU.setFmuBundle(fmuBundle);
 
 				if (modelDescription.getModelVariables() != null){
 					for (Fmi2ScalarVariable variable : modelDescription.getModelVariables().getScalarVariable()){

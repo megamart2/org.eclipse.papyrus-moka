@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: FMU RCP
+Bundle-Name: Moka standalone RCP for FMU
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fmu.rcp;singleton:=true
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 2.0.0.qualifier
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.uml2.uml;bundle-version="5.2.0",
  org.eclipse.papyrus.moka.fmu.engine;bundle-version="1.0.0",

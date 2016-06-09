@@ -185,7 +185,7 @@ public interface ScalarVariable extends EObject {
 	 * @return the value of the '<em>Fmi Variable</em>' reference.
 	 * @see #setFmiVariable(Fmi2ScalarVariable)
 	 * @see org.eclipse.papyrus.moka.fmi.fmiprofile.FMIProfilePackage#getScalarVariable_FmiVariable()
-	 * @model ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Fmi2ScalarVariable getFmiVariable();

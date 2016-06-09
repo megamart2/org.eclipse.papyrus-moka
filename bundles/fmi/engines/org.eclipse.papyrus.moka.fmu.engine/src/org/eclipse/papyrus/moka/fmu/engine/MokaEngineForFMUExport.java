@@ -3,6 +3,7 @@ package org.eclipse.papyrus.moka.fmu.engine;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fmu.engine.de.FMIPushPullStrategy;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUExecutionFactory;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMULocus;
@@ -53,7 +54,7 @@ public class MokaEngineForFMUExport extends TimedUmlExecutionEngine {
 	}
 
 	public void startFMU(Class fmuClass) {
-		if (fmuClass != null && FMUEngineUtils.isFMU(fmuClass)) {
+		if (fmuClass != null && FMIProfileUtil.isCS_FMU(fmuClass)) {
 
 			// creates the locus, executor and execution factory
 			this.locus = new FMULocus();

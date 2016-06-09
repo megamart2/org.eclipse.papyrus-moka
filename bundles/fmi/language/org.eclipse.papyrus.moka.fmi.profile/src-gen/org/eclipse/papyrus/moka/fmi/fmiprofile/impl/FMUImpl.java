@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.papyrus.moka.fmi.fmiprofile.FMIProfilePackage;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.FMU;
+import org.eclipse.papyrus.moka.fmi.fmumetamodel.FMUBundle;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 
 /**
@@ -53,6 +54,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
  *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.impl.FMUImpl#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.impl.FMUImpl#getModelIdentifier <em>Model Identifier</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.impl.FMUImpl#getModelDescription <em>Model Description</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.impl.FMUImpl#getFmuBundle <em>Fmu Bundle</em>}</li>
  * </ul>
  *
  * @generated
@@ -469,14 +471,14 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 	protected String modelIdentifier = MODEL_IDENTIFIER_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getModelDescription() <em>Model Description</em>}' reference.
+	 * The cached value of the '{@link #getFmuBundle() <em>Fmu Bundle</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getModelDescription()
+	 * @see #getFmuBundle()
 	 * @generated
 	 * @ordered
 	 */
-	protected FmiModelDescriptionType modelDescription;
+	protected FMUBundle fmuBundle;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -961,15 +963,8 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 	 * @generated
 	 */
 	public FmiModelDescriptionType getModelDescription() {
-		if (modelDescription != null && modelDescription.eIsProxy()) {
-			InternalEObject oldModelDescription = (InternalEObject)modelDescription;
-			modelDescription = (FmiModelDescriptionType)eResolveProxy(oldModelDescription);
-			if (modelDescription != oldModelDescription) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FMIProfilePackage.FMU__MODEL_DESCRIPTION, oldModelDescription, modelDescription));
-			}
-		}
-		return modelDescription;
+		FmiModelDescriptionType modelDescription = basicGetModelDescription();
+		return modelDescription != null && modelDescription.eIsProxy() ? (FmiModelDescriptionType)eResolveProxy((InternalEObject)modelDescription) : modelDescription;
 	}
 
 	/**
@@ -978,7 +973,10 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 	 * @generated
 	 */
 	public FmiModelDescriptionType basicGetModelDescription() {
-		return modelDescription;
+		// TODO: implement this method to return the 'Model Description' reference
+		// -> do not perform proxy resolution
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -986,11 +984,37 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setModelDescription(FmiModelDescriptionType newModelDescription) {
-		FmiModelDescriptionType oldModelDescription = modelDescription;
-		modelDescription = newModelDescription;
+	public FMUBundle getFmuBundle() {
+		if (fmuBundle != null && fmuBundle.eIsProxy()) {
+			InternalEObject oldFmuBundle = (InternalEObject)fmuBundle;
+			fmuBundle = (FMUBundle)eResolveProxy(oldFmuBundle);
+			if (fmuBundle != oldFmuBundle) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FMIProfilePackage.FMU__FMU_BUNDLE, oldFmuBundle, fmuBundle));
+			}
+		}
+		return fmuBundle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public FMUBundle basicGetFmuBundle() {
+		return fmuBundle;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFmuBundle(FMUBundle newFmuBundle) {
+		FMUBundle oldFmuBundle = fmuBundle;
+		fmuBundle = newFmuBundle;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FMIProfilePackage.FMU__MODEL_DESCRIPTION, oldModelDescription, modelDescription));
+			eNotify(new ENotificationImpl(this, Notification.SET, FMIProfilePackage.FMU__FMU_BUNDLE, oldFmuBundle, fmuBundle));
 	}
 
 	/**
@@ -1047,6 +1071,9 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 			case FMIProfilePackage.FMU__MODEL_DESCRIPTION:
 				if (resolve) return getModelDescription();
 				return basicGetModelDescription();
+			case FMIProfilePackage.FMU__FMU_BUNDLE:
+				if (resolve) return getFmuBundle();
+				return basicGetFmuBundle();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -1122,8 +1149,8 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 			case FMIProfilePackage.FMU__MODEL_IDENTIFIER:
 				setModelIdentifier((String)newValue);
 				return;
-			case FMIProfilePackage.FMU__MODEL_DESCRIPTION:
-				setModelDescription((FmiModelDescriptionType)newValue);
+			case FMIProfilePackage.FMU__FMU_BUNDLE:
+				setFmuBundle((FMUBundle)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -1200,8 +1227,8 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 			case FMIProfilePackage.FMU__MODEL_IDENTIFIER:
 				setModelIdentifier(MODEL_IDENTIFIER_EDEFAULT);
 				return;
-			case FMIProfilePackage.FMU__MODEL_DESCRIPTION:
-				setModelDescription((FmiModelDescriptionType)null);
+			case FMIProfilePackage.FMU__FMU_BUNDLE:
+				setFmuBundle((FMUBundle)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -1258,7 +1285,9 @@ public class FMUImpl extends MinimalEObjectImpl.Container implements FMU {
 			case FMIProfilePackage.FMU__MODEL_IDENTIFIER:
 				return MODEL_IDENTIFIER_EDEFAULT == null ? modelIdentifier != null : !MODEL_IDENTIFIER_EDEFAULT.equals(modelIdentifier);
 			case FMIProfilePackage.FMU__MODEL_DESCRIPTION:
-				return modelDescription != null;
+				return basicGetModelDescription() != null;
+			case FMIProfilePackage.FMU__FMU_BUNDLE:
+				return fmuBundle != null;
 		}
 		return super.eIsSet(featureID);
 	}

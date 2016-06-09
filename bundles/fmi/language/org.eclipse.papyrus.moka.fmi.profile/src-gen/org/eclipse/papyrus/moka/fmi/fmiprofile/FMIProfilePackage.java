@@ -276,13 +276,22 @@ public interface FMIProfilePackage extends EPackage {
 	int FMU__MODEL_DESCRIPTION = 21;
 
 	/**
+	 * The feature id for the '<em><b>Fmu Bundle</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FMU__FMU_BUNDLE = 22;
+
+	/**
 	 * The number of structural features of the '<em>FMU</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FMU_FEATURE_COUNT = 22;
+	int FMU_FEATURE_COUNT = 23;
 
 	/**
 	 * The number of operations of the '<em>FMU</em>' class.
@@ -748,6 +757,15 @@ public interface FMIProfilePackage extends EPackage {
 	int CS_FMU__MODEL_DESCRIPTION = FMU__MODEL_DESCRIPTION;
 
 	/**
+	 * The feature id for the '<em><b>Fmu Bundle</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CS_FMU__FMU_BUNDLE = FMU__FMU_BUNDLE;
+
+	/**
 	 * The feature id for the '<em><b>Can Handle Variable Communication Step Size</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1044,6 +1062,15 @@ public interface FMIProfilePackage extends EPackage {
 	 * @ordered
 	 */
 	int ME_FMU__MODEL_DESCRIPTION = FMU__MODEL_DESCRIPTION;
+
+	/**
+	 * The feature id for the '<em><b>Fmu Bundle</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ME_FMU__FMU_BUNDLE = FMU__FMU_BUNDLE;
 
 	/**
 	 * The feature id for the '<em><b>Completed Integrator Step Not Needed</b></em>' attribute.
@@ -2100,6 +2127,17 @@ public interface FMIProfilePackage extends EPackage {
 	EReference getFMU_ModelDescription();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getFmuBundle <em>Fmu Bundle</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Fmu Bundle</em>'.
+	 * @see org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getFmuBundle()
+	 * @see #getFMU()
+	 * @generated
+	 */
+	EReference getFMU_FmuBundle();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.fmi.fmiprofile.Parameter <em>Parameter</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2889,6 +2927,14 @@ public interface FMIProfilePackage extends EPackage {
 		 * @generated
 		 */
 		EReference FMU__MODEL_DESCRIPTION = eINSTANCE.getFMU_ModelDescription();
+
+		/**
+		 * The meta object literal for the '<em><b>Fmu Bundle</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference FMU__FMU_BUNDLE = eINSTANCE.getFMU_FmuBundle();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.fmi.fmiprofile.impl.ParameterImpl <em>Parameter</em>}' class.

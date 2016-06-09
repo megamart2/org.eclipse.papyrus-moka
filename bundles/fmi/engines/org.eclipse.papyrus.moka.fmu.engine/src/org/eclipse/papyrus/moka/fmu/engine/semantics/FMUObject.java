@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Map;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fmu.communication.FMUInterface;
 import org.eclipse.papyrus.moka.fmu.engine.control.EngineStatus;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
@@ -87,8 +88,8 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 			this.UMLPropertyToIndexMap = new HashMap<Property, Integer>() ;
 			this.UMLPropertyNameToIndexMap = new HashMap<String, Integer>() ;
 			for (Property p : this.types.get(0).allAttributes()) {
-				if (FMUEngineUtils.isFMUPort(p)) {
-					int index = FMUEngineUtils.getValueReference(p) ;
+				if (FMIProfileUtil.isFMUPort(p)) {
+					int index = FMIProfileUtil.getValueReference(p) ;
 					if (index != -1) {
 						this.indexToUMLPropertyMap.put(index, p) ;
 						this.UMLPropertyToIndexMap.put(p, index) ;
@@ -97,7 +98,7 @@ public class FMUObject extends Timed_Object implements FMUInterface, IObject_ {
 				}
 			}
 		}
-		if (FMUEngineUtils.isFMUPort(feature)) {
+		if (FMIProfileUtil.isFMUPort(feature)) {
 			int key = UMLPropertyToIndexMap.get(feature) ;
 			if (feature.getType() == UMLPrimitiveTypesUtils.getReal(feature)) {
 				IRealValue realValue = values.isEmpty() ? null : (IRealValue)values.get(0) ;

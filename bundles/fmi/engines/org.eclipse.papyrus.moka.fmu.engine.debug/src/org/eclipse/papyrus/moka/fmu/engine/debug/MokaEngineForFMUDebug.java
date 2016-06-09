@@ -6,6 +6,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
 import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fmu.engine.MokaEngineForFMUExport;
 import org.eclipse.papyrus.moka.fmu.engine.control.FMUControlService;
 import org.eclipse.papyrus.moka.fmu.engine.de.FMIPushPullStrategy;
@@ -291,28 +292,28 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		FMUObject _object = FMUEngineUtils.getFMUControlService().getFmuObject() ;
 		for (Integer k : _object.fmiGetBools().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = new TableItem(table, SWT.NONE);
 				item.setText(new String[] {p.getName(), ""});
 			}
 		}
 		for (Integer k : _object.fmiGetIntegers().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = new TableItem(table, SWT.NONE);
 				item.setText(new String[] {p.getName(), ""});
 			}
 		}
 		for (Integer k : _object.fmiGetReals().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = new TableItem(table, SWT.NONE);
 				item.setText(new String[] {p.getName(), ""});
 			}
 		}
 		for (Integer k : _object.fmiGetStrings().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = new TableItem(table, SWT.NONE);
 				item.setText(new String[] {p.getName(), ""});
 			}
@@ -324,7 +325,7 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		int i = 0 ;
 		for (Integer k : _object.fmiGetBools().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = table.getItem(i);
 				item.setText(new String[] {p.getName(), ""+ _object.fmiGetBools().get(k)});
 				i = i + 1 ;
@@ -332,7 +333,7 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		}
 		for (Integer k : _object.fmiGetIntegers().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = table.getItem(i);
 				item.setText(new String[] {p.getName(), ""+ _object.fmiGetIntegers().get(k)});
 				i = i + 1 ;
@@ -340,7 +341,7 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		}
 		for (Integer k : _object.fmiGetReals().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = table.getItem(i);
 				item.setText(new String[] {p.getName(), ""+ _object.fmiGetReals().get(k)});
 				i = i + 1 ;
@@ -348,7 +349,7 @@ public class MokaEngineForFMUDebug extends MokaEngineForFMUExport {
 		}
 		for (Integer k : _object.fmiGetStrings().keySet()) {
 			Property p = _object.getIndexToUMLPropertyMap().get(k) ;
-			if ((!isInput && FMUEngineUtils.isOutputPort(p)) || (isInput && FMUEngineUtils.isInputPort(p))) {
+			if ((!isInput && FMIProfileUtil.isOutputPort(p)) || (isInput && FMIProfileUtil.isInputPort(p))) {
 				TableItem item = table.getItem(i);
 				item.setText(new String[] {p.getName(), ""+ _object.fmiGetStrings().get(k)});
 				i = i + 1 ;

@@ -43,6 +43,7 @@ public class CoSimEnvironment {
 	private ArrayList<Fmu2ProxyService> fmus = new ArrayList<Fmu2ProxyService>();
 	private ArrayList<Connector> connectors = new ArrayList<Connector>();
 	private ArrayList<Dependency> ioDependencies = new ArrayList<Dependency>();
+	private List<Fmi2Port> inputPorts= new ArrayList<Fmi2Port>();
 
 
 
@@ -80,14 +81,10 @@ public class CoSimEnvironment {
 	}
 
 
-	/**
-	 * creates the port mapping, to be used in doStep() procedure
-	 * to retrieve outputs that belong to a given input port
-	 * the mapping has the following structure <input port, output port>
-	 **/
-	public HashMap<Fmi2Port, Fmi2Port> setupPortMapping() {
+	
+	public void setupPortMapping() {
 		Boolean sourceFound = false, targetFound = false;
-		HashMap<Fmi2Port, Fmi2Port> P = new HashMap<Fmi2Port, Fmi2Port>();
+		
 		if (this.connectors.size() > 0) {
 			for (Connector c : this.connectors) {
 				Port sourcePort = null;
@@ -119,16 +116,18 @@ public class CoSimEnvironment {
 						continue;
 				}
 				
-				Fmi2Port key = findPort(targetFmu, targetPort);
+				Fmi2Port target = findPort(targetFmu, targetPort);
 				
 						
-				Fmi2Port value = findPort(sourceFmu, sourcePort);
-				P.put(key, value);
+				Fmi2Port source = findPort(sourceFmu, sourcePort);
+				
+				target.setDrivingPort(source);
+				inputPorts.add(target);
 			
 				
 			}
 		}
-		return P;
+		
 	}
 
 	private Fmi2Port findPort(Fmu2ProxyService targetFmu, Port targetPort) {
@@ -198,6 +197,11 @@ public class CoSimEnvironment {
 
 	public void setIoDependencies(ArrayList<Dependency> ioDependencies) {
 		this.ioDependencies = ioDependencies;
+	}
+
+	public List<Fmi2Port> getInputPorts() {
+		
+		return inputPorts;
 	}
 
 

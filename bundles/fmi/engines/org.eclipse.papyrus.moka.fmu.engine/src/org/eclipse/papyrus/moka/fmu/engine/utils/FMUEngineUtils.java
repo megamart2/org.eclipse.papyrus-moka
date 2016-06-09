@@ -28,59 +28,7 @@ public class FMUEngineUtils {
 
 	protected static final String VALUE_REFERENCE_FIELD_NAME = "valueReference" ;
 
-	public static Boolean isFMUPort(StructuralFeature p) {
-		return isStereotypeApplied(PORT_STEREOTYPE_NAME, p);
-	}
 
-	public static Boolean isFMU(Class c) {
-		return isStereotypeApplied(CS_FMU_STEREOTYPE_NAME, c) ;
-	}
-
-	protected static Boolean isStereotypeApplied(String stereotypeName, Element element) {
-		return getStereotype(stereotypeName, element) != null ;
-	}
-
-	public static int getValueReference(Property fmuPort) { // FIXME should return a long
-		Stereotype stereotype = getStereotype(PORT_STEREOTYPE_NAME, fmuPort) ;
-		if (stereotype != null) {
-			Port fmiPortObj = (Port) fmuPort.getStereotypeApplication(stereotype);
-			return fmiPortObj.getValueReference();
-		}
-
-		return -1 ;
-	}
-
-	protected static Stereotype getStereotype(String stereotypeName, Element element) {
-		List<Stereotype> appliedStereotypes = element.getAppliedStereotypes() ;
-		Stereotype stereotype = null ;
-		// FIXME to be consolidated...
-		for (int i = 0 ; i < appliedStereotypes.size() && stereotype == null ; i++) {
-			if (stereotypeName.equals(appliedStereotypes.get(i).getName())) {
-				stereotype = appliedStereotypes.get(i) ;
-			}
-		}
-		return stereotype ;
-	}
-
-	public static boolean isOutputPort(Property p) {
-		Stereotype s = getStereotype(PORT_STEREOTYPE_NAME, p) ;
-		if (s != null) {
-			Object o = p.getValue(s, PORT_DIRECTION_ATTRIBUTE) ;
-			FlowDirection fd = (FlowDirection)o;
-			return PORT_OUTPUT_DIRECTION.equals(fd.getLiteral()) ;
-		}
-		return false ;
-	}
-
-	public static boolean isInputPort(Property p) {
-		Stereotype s = getStereotype(PORT_STEREOTYPE_NAME, p) ;
-		if (s != null) {
-			Object o = p.getValue(s, PORT_DIRECTION_ATTRIBUTE) ;
-			FlowDirection fd = (FlowDirection)o;
-			return PORT_INPUT_DIRECTION.equals(fd.getLiteral()) ;
-		}
-		return false ;
-	}
 
 	public static FMUControlService getFMUControlService() {
 		return fmuControlService ;

@@ -39,6 +39,6 @@ public class NativeSizeT extends IntegerType {
 	}
 
 	public NativeSizeT(long value) {
-		super(Native.SIZE_T_SIZE, value);
+		super(Native.SIZE_T_SIZE, value, true);
 	}
 }

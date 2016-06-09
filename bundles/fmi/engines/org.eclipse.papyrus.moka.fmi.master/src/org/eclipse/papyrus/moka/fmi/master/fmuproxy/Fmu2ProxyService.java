@@ -11,13 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fmi.master.fmuproxy;
 
-import java.lang.reflect.Array;
 import java.nio.DoubleBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
@@ -27,12 +24,12 @@ import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Status;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2StatusKind;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Type;
-import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2VariabilityType;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2VariableType;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.NativeSizeT;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Library;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Status;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
+import org.eclipse.papyrus.moka.fmi.master.jna.FMIInterface;
+import org.eclipse.papyrus.moka.fmi.master.jna.FMINativeStub;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.LiteralInteger;
@@ -44,6 +41,7 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
 
+import com.sun.jna.Function;
 import com.sun.jna.NativeLibrary;
 import com.sun.jna.Pointer;
 import com.sun.jna.ptr.DoubleByReference;
@@ -67,7 +65,7 @@ public class Fmu2ProxyService extends CS_Object {
 
 	public NativeLibrary dll_lib; // has its location and dll path has its
 									// location and dll path
-	public Pointer component = Pointer.NULL; // has to be charged in memory and
+	private Pointer component = Pointer.NULL; // has to be charged in memory and
 												// referenced buy a pointer
 	public Pointer fmuState = Pointer.NULL; // has a statuts --> used to
 											// register and restore an fmu
@@ -77,6 +75,9 @@ public class Fmu2ProxyService extends CS_Object {
 	public int fmi2Status = Fmi2Status.fmi2OK;
 	public int fmu2Status = 0;
 
+	
+	
+
 	private ArrayList<Fmi2ScalarVariable> integerGetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 	private ArrayList<Fmi2ScalarVariable> integerSetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 	private ArrayList<Fmi2ScalarVariable> realGetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
@@ -85,7 +86,40 @@ public class Fmu2ProxyService extends CS_Object {
 	private ArrayList<Fmi2ScalarVariable> booleanSetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 	private ArrayList<Fmi2ScalarVariable> stringGetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
 	private ArrayList<Fmi2ScalarVariable> stringSetCachedVariables = new ArrayList<Fmi2ScalarVariable>();
+	
+	private IntBuffer getRealVR;// = IntBuffer.allocate(bufferLength);
+	private NativeSizeT getRealNVR;//= new NativeSizeT(bufferLength);
+    private DoubleBuffer getRealValues;// = DoubleBuffer.allocate(bufferLength);
 
+	private IntBuffer setRealVR;// = IntBuffer.allocate(bufferLength);
+	private NativeSizeT setRealNVR;//= new NativeSizeT(bufferLength);
+	private DoubleBuffer setRealValues;// = DoubleBuffer.allocate(bufferLength);
+
+	private Function nativeGetReal;
+	private Function nativeSetReal;
+
+//	private Object[] setRealArguments;
+
+	//private Object[] getRealArguments;
+
+	private FMIInterface fmi2Interface;
+
+	private int[] setRealPrimVR;
+
+	private double[] setRealPrimValues;
+
+	private int[] getRealPrimVR;
+
+	private double[] getRealPrimValues;
+
+	public void setComponent(Pointer component) {
+		this.component = component;
+	//	setRealArguments = new Object[] { component, setRealVR, setRealNVR, setRealValues };
+		//getRealArguments = new Object[] { component, getRealVR, getRealNVR, getRealValues };
+
+	}
+	
+	
 	public Fmu2ProxyService(Class service) {
 		this.addType(service);
 		fmuApi = new Fmu2Library();
@@ -153,32 +187,52 @@ public class Fmu2ProxyService extends CS_Object {
 
 			}
 		}
+		
 
+	
+		setRealPrimVR = new int [realSetCachedVariables.size()];	
+		for (int i=0; i< realSetCachedVariables.size(); i++ ){
+			setRealPrimVR[i] = (int)realSetCachedVariables.get(i).getValueReference();
+		}
+		
+		setRealNVR= new NativeSizeT(realSetCachedVariables.size());
+		setRealPrimValues = new double[realSetCachedVariables.size()];
+		
+		getRealPrimVR = new int [realGetCachedVariables.size()];
+		
+		for (int i=0; i< realGetCachedVariables.size(); i++ ){
+			getRealPrimVR[i] = (int)realGetCachedVariables.get(i).getValueReference();
+		
+		}
+
+		getRealNVR= new NativeSizeT(realGetCachedVariables.size());
+		getRealPrimValues = new double[realGetCachedVariables.size()];
+		
 	}
 
 	public void fetchGetCache() {
 
 		if (!realGetCachedVariables.isEmpty()) {
-			double[] valuesDouble = fmi2GetReal(realGetCachedVariables);
-			for (int i = 0; i < valuesDouble.length; i++) {
-				Fmi2ScalarVariable variable = realGetCachedVariables.get(i);
-				Double previousValue = (Double) variable.getValue();
-				double currentValue = valuesDouble[i];
-				//if (previousValue != null && !previousValue.equals(currentValue)) {
-					variable.setValue(currentValue);
-				//	variable.setHasChanged(true);
-				//}
-			}
+			fmi2GetReal();
+//			for (int i = 0; i < valuesDouble.length; i++) {
+//				Fmi2ScalarVariable variable = realGetCachedVariables.get(i);
+//				Double previousValue = (Double) variable.getRuntimeValue();
+//				double currentValue = valuesDouble[i];
+//				//if (previousValue != null && !previousValue.equals(currentValue)) {
+//					variable.setRuntimeValue(currentValue);
+//				//	variable.setHasChanged(true);
+//				//}
+//			}
 		}
 
 		if (!integerGetCachedVariables.isEmpty()) {
 			int[] valuesInteger = fmi2GetInteger(integerGetCachedVariables);
 			for (int i = 0; i < valuesInteger.length; i++) {
 				Fmi2ScalarVariable variable = integerGetCachedVariables.get(i);
-				Integer previousValue = (Integer) variable.getValue();
+				Integer previousValue = (Integer) variable.getRuntimeValue();
 				int currentValue = valuesInteger[i];
 			//	if (previousValue != null && !previousValue.equals(currentValue)) {
-					variable.setValue(currentValue);
+					variable.setRuntimeValue(currentValue);
 				//	variable.setHasChanged(true);
 				//}
 
@@ -189,10 +243,10 @@ public class Fmu2ProxyService extends CS_Object {
 			boolean[] valuesBool = fmi2GetBoolean(booleanGetCachedVariables);
 			for (int i = 0; i < valuesBool.length; i++) {
 				Fmi2ScalarVariable variable = booleanGetCachedVariables.get(i);
-				Boolean previousValue = (Boolean) variable.getValue();
+				Boolean previousValue = (Boolean) variable.getRuntimeValue();
 				boolean currentValue = valuesBool[i];
 			//	if (previousValue != null && !previousValue.equals(currentValue)) {
-					variable.setValue(currentValue);
+					variable.setRuntimeValue(currentValue);
 			//		variable.setHasChanged(true);
 				//}
 
@@ -203,10 +257,10 @@ public class Fmu2ProxyService extends CS_Object {
 			String[] valuesSring = fmi2GetString(stringGetCachedVariables);
 			for (int i = 0; i < valuesSring.length; i++) {
 				Fmi2ScalarVariable variable = stringGetCachedVariables.get(i);
-				String previousValue = (String) variable.getValue();
+				String previousValue = (String) variable.getRuntimeValue();
 				String currentValue = valuesSring[i];
 			//	if (previousValue != null && !previousValue.equals(currentValue)) {
-					variable.setValue(currentValue);
+					variable.setRuntimeValue(currentValue);
 				//	variable.setHasChanged(true);
 				//}
 			}
@@ -216,20 +270,8 @@ public class Fmu2ProxyService extends CS_Object {
 
 	public void flushSetCache() {
 		if(!realSetCachedVariables.isEmpty()){
-			double[] valuesDouble = new double[realSetCachedVariables.size()];
-			ArrayList<Fmi2ScalarVariable> realVariableToUpdate = new ArrayList<Fmi2ScalarVariable>();
-
-			int index = 0;
-			for (Fmi2ScalarVariable realVariable : realSetCachedVariables) {
-
-				//if (realVariable.hasChanged()) {
-					valuesDouble[index++] = ((Double) realVariable.getValue());
-					realVariableToUpdate.add(realVariable);
-					//realVariable.setHasChanged(false);
-				//}
-
-			}
-			fmi2SetReal(realVariableToUpdate, valuesDouble);
+			
+			fmi2SetReal();
 		}
 
 		if (!integerSetCachedVariables.isEmpty()){
@@ -240,7 +282,7 @@ public class Fmu2ProxyService extends CS_Object {
 			for (Fmi2ScalarVariable integerVariable : integerSetCachedVariables) {
 
 				//if (integerVariable.hasChanged()) {
-					valuesInteger[index++] = ((Integer) integerVariable.getValue());
+					valuesInteger[index++] = ((Integer) integerVariable.getRuntimeValue());
 					integerVariableToUpdate.add(integerVariable);
 					//integerVariable.setHasChanged(false);
 				//}
@@ -258,7 +300,7 @@ public class Fmu2ProxyService extends CS_Object {
 			for (Fmi2ScalarVariable boolVariable : booleanSetCachedVariables) {
 
 				//if (boolVariable.hasChanged()) {
-					valuesBool[index++] = ((Boolean) boolVariable.getValue());
+					valuesBool[index++] = ((Boolean) boolVariable.getRuntimeValue());
 					booleanVariableToUpdate.add(boolVariable);
 					boolVariable.setHasChanged(false);
 				//}
@@ -277,7 +319,7 @@ public class Fmu2ProxyService extends CS_Object {
 			for (Fmi2ScalarVariable stringVariable : stringSetCachedVariables) {
 
 				//if (stringVariable.hasChanged()) {
-					valuesString[index++] = ((String) stringVariable.getValue());
+					valuesString[index++] = ((String) stringVariable.getRuntimeValue());
 					stringVariableToUpdate.add(stringVariable);
 					stringVariable.setHasChanged(false);
 				//}
@@ -299,7 +341,9 @@ public class Fmu2ProxyService extends CS_Object {
 
 		this.parameters = parameters;
 		this.dll_lib = NativeLibrary.getInstance(parameters.getDllPath());
-
+		this.fmi2Interface = new FMINativeStub(parameters.getDllPath());
+		
+		
 	}
 
 	/**
@@ -323,7 +367,7 @@ public class Fmu2ProxyService extends CS_Object {
 	 */
 	public int fmi2Instantiate() {
 
-		component = fmuApi.invokePointer("fmi2Instantiate", dll_lib,
+		Pointer component = fmuApi.invokePointer("fmi2Instantiate", dll_lib,
 				new Object[] { parameters.getModelIdentifier(), // instanceName
 						Fmi2Type.fmi2CoSimulation, // fmuType
 						parameters.getGuid(), // guid
@@ -338,6 +382,7 @@ public class Fmu2ProxyService extends CS_Object {
 			throw new RuntimeException("Could not instantiate model.");
 		} else {
 			fmi2Status = Fmi2Status.fmi2OK;
+			setComponent(component);
 		}
 		fmu2Status = Fmu2Status.instantiated;
 		return fmi2Status;
@@ -423,8 +468,9 @@ public class Fmu2ProxyService extends CS_Object {
 	 */
 	public int fmi2DoStep(double currentTime, double stepSize, boolean noSetPrior) {
 
-		fmi2Status = fmuApi.invokeInteger("fmi2DoStep", dll_lib,
-				new Object[] { component, currentTime, stepSize, noSetPrior }, "");
+
+		
+		fmi2Status = fmi2Interface.doStep(component, currentTime, stepSize, false);
 		fmu2Status = Fmu2Status.stepComplete;
 		return fmi2Status;
 
@@ -442,6 +488,7 @@ public class Fmu2ProxyService extends CS_Object {
 		fmi2Status = fmuApi.invokeInteger("fmi2Terminate", dll_lib, new Object[] { component }, "");
 		fmu2Status = Fmu2Status.terminated;
 		return fmi2Status;
+		
 
 	}
 
@@ -460,23 +507,19 @@ public class Fmu2ProxyService extends CS_Object {
 	 * @return fmi2Status --> int
 	 *
 	 */
-	public double[] fmi2GetReal(ArrayList<Fmi2ScalarVariable> variables) {
-
-		int bufferLength = variables.size();
-		LongBuffer vr = LongBuffer.allocate(bufferLength);
-		NativeSizeT nvr = new NativeSizeT(bufferLength);
-		DoubleBuffer value = DoubleBuffer.allocate(bufferLength);
-		for (int i = 0; i < variables.size(); i++) {
-			vr.put(i, ((Long) variables.get(i).getValueReference()));
-		}
-
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2GetReal", dll_lib, new Object[] { component, vr, nvr, value },
-				"");
+	public void fmi2GetReal() {
 		
+		
+		fmi2Status = fmi2Interface.getReal(component, getRealPrimVR, getRealNVR, getRealPrimValues);
 		if (fmi2Status != Fmi2Status.fmi2OK){
 			System.out.println("Error");
 		}
-		return value.array();
+		
+		for (int i =0; i < realGetCachedVariables.size(); i++){
+			realGetCachedVariables.get(i).setRuntimeValue(getRealPrimValues[i]);
+		}
+		
+	
 
 	}
 
@@ -578,25 +621,20 @@ public class Fmu2ProxyService extends CS_Object {
 	 *            nvr --> NativeSizeT
 	 * @return fmi2Real value[] --> doubleBuffer FIXME(double[])
 	 */
-	public int fmi2SetReal(ArrayList<Fmi2ScalarVariable> inputs2, double[] values) {
-
-		int bufferLength = inputs2.size();
-		LongBuffer vr = LongBuffer.allocate(bufferLength);
-		NativeSizeT nvr = new NativeSizeT(bufferLength);
-		DoubleBuffer value = DoubleBuffer.allocate(bufferLength);
-		for (int i = 0; i < inputs2.size(); i++) {
-			vr.put(i, ((Long) inputs2.get(i).getValueReference()));
-			value.put(i, values[i]);
+	public void fmi2SetReal() {
+		
+		for (int i =0; i < realSetCachedVariables.size(); i++){
+			setRealPrimValues[i] = (double) realSetCachedVariables.get(i).getRuntimeValue();
 		}
 
-		fmi2Status = (Integer) fmuApi.invokeInteger("fmi2SetReal", dll_lib, new Object[] { component, vr, nvr, value },
-				"");
-		
+		fmi2Status = fmi2Interface.setReal(component, setRealPrimVR, setRealNVR, setRealPrimValues) ;
+	
 		if (fmi2Status != Fmi2Status.fmi2OK){
 			System.out.println("Error");
 		}
-		return fmi2Status;
-
+		
+		
+		
 	}
 
 	/**
@@ -1357,7 +1395,7 @@ public class Fmu2ProxyService extends CS_Object {
 			// initial="exact",
 			// or causality="input"
 			for (Fmi2Port input : inputPorts) {
-				fmi2Set(input, input.getValue());
+				fmi2Set(input, input.getRuntimeValue());
 			}
 
 		} else if (fmu2Status == Fmu2Status.initialized) {

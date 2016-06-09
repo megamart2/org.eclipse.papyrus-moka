@@ -5,10 +5,20 @@ import javax.xml.datatype.XMLGregorianCalendar;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.impl.CS_FMUImpl;
 import org.eclipse.papyrus.moka.fmi.modeldescription.CoSimulationType;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FileType;
+import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 import org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType;
 
 public class CustomCS_FMU extends  CS_FMUImpl{
 
+	@Override
+	public FmiModelDescriptionType basicGetModelDescription() {
+		if (getFmuBundle() != null){
+			return getFmuBundle().getModelDescription();
+		}
+		return null;
+	}
+	
+	
 	@Override
 	public String getFmiVersion() {
 		if (getModelDescription() != null){

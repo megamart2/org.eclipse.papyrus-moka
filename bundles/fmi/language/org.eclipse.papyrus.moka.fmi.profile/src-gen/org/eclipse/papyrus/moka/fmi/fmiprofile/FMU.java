@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.moka.fmi.fmiprofile;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.moka.fmi.fmumetamodel.FMUBundle;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 
 /**
@@ -45,6 +46,7 @@ import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
  *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#isNeedsExecutionTool <em>Needs Execution Tool</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getModelIdentifier <em>Model Identifier</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getModelDescription <em>Model Description</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getFmuBundle <em>Fmu Bundle</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.fmi.fmiprofile.FMIProfilePackage#getFMU()
@@ -607,21 +609,36 @@ public interface FMU extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Model Description</em>' reference.
-	 * @see #setModelDescription(FmiModelDescriptionType)
 	 * @see org.eclipse.papyrus.moka.fmi.fmiprofile.FMIProfilePackage#getFMU_ModelDescription()
-	 * @model ordered="false"
+	 * @model required="true" transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
 	FmiModelDescriptionType getModelDescription();
 
 	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getModelDescription <em>Model Description</em>}' reference.
+	 * Returns the value of the '<em><b>Fmu Bundle</b></em>' reference.
 	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fmu Bundle</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Model Description</em>' reference.
-	 * @see #getModelDescription()
+	 * @return the value of the '<em>Fmu Bundle</em>' reference.
+	 * @see #setFmuBundle(FMUBundle)
+	 * @see org.eclipse.papyrus.moka.fmi.fmiprofile.FMIProfilePackage#getFMU_FmuBundle()
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	void setModelDescription(FmiModelDescriptionType value);
+	FMUBundle getFmuBundle();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.moka.fmi.fmiprofile.FMU#getFmuBundle <em>Fmu Bundle</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fmu Bundle</em>' reference.
+	 * @see #getFmuBundle()
+	 * @generated
+	 */
+	void setFmuBundle(FMUBundle value);
 
 } // FMU

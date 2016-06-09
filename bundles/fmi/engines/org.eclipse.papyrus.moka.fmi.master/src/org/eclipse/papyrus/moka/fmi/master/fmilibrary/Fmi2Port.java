@@ -18,6 +18,8 @@ import org.eclipse.uml2.uml.Stereotype;
 public class Fmi2Port extends Fmi2ScalarVariable {
 	private Port port;
 
+	private Fmi2Port drivingPort = null;
+	
 	public Fmi2Port(Fmu2ProxyService fmu, Port p, Stereotype st) {
 		// TODO Auto-generated constructor stub
 		super(fmu, p, st);
@@ -32,4 +34,15 @@ public class Fmi2Port extends Fmi2ScalarVariable {
 		this.port = port;
 	}
 
+	public void setDrivingPort(Fmi2Port drivingPort) {
+		this.drivingPort = drivingPort;
+	}
+	
+	public Fmi2Port getDrivingPort() {
+		return drivingPort;
+	}
+	
+	public void updateRuntimeValue(){
+		setRuntimeValue(drivingPort.getRuntimeValue());
+	}
 }

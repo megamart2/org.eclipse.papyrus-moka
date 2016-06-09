@@ -1,6 +1,6 @@
 package org.eclipse.papyrus.moka.fmi.util;
 
-import org.eclipse.papyrus.moka.fmi.fmu.FMUHandler;
+import org.eclipse.papyrus.moka.fmi.fmu.FMUParser;
 
 public class FMIOSDetector {
 		private static final String WIN_DLL_EXTENSION = ".dll";
@@ -16,21 +16,21 @@ public class FMIOSDetector {
 		
 			if (isWindows()) {
 				if (is64Bits()) {
-					return FMUHandler.WIN64;
+					return FMUResourceUtil.BINARIES_WIN64;
 				}else {
-					return FMUHandler.WIN32;
+					return FMUResourceUtil.BINARIES_WIN32;
 				}
 			} else if (isMac()) {
 				if (is64Bits()) {
-					return FMUHandler.DARWIN64;
+					return FMUResourceUtil.BINARIES_DARWIN64;
 				}else {
-					return FMUHandler.DARWIN32;
+					return FMUResourceUtil.BINARIES_DARWIN32;
 				}
 			} else if (isUnix()) {
 				if (is64Bits()) {
-					return FMUHandler.LINUX64;
+					return FMUResourceUtil.BINARIES_LINUX64;
 				}else {
-					return FMUHandler.LINUX32;
+					return FMUResourceUtil.BINARIES_LINUX32;
 				}
 			}else {
 				return null;

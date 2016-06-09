@@ -152,7 +152,6 @@ public class Fmu2Library implements Fmi2Library {
 	 * @return
 	 */
 	public int invokeInteger(String name, NativeLibrary dll, Object[] arguments, String message) {
-		// Function f = Fmu2Library.JNA_NATIVE_LIB.getFunction(name);
 		Function f = dll.getFunction(name);
 		return (Integer) f.invoke(Integer.class, arguments);
 	}

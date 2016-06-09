@@ -4,11 +4,19 @@ import javax.xml.datatype.XMLGregorianCalendar;
 
 import org.eclipse.papyrus.moka.fmi.fmiprofile.impl.ME_FMUImpl;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FileType1;
+import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 import org.eclipse.papyrus.moka.fmi.modeldescription.ModelExchangeType;
 import org.eclipse.papyrus.moka.fmi.modeldescription.VariableNamingConventionType;
 
 public class CustomME_FMU extends ME_FMUImpl {
 	
+	@Override
+	public FmiModelDescriptionType basicGetModelDescription() {
+		if (getFmuBundle() != null){
+			return getFmuBundle().getModelDescription();
+		}
+		return null;
+	}
 	
 	@Override
 	public String getFmiVersion() {

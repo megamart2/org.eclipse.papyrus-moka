@@ -16,7 +16,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.eclipse.papyrus.moka.fmi.fmiprofile.CS_FMU;
-import org.eclipse.papyrus.moka.fmi.fmu.FMUHandler;
+import org.eclipse.papyrus.moka.fmi.fmu.FMUParser;
 import org.eclipse.papyrus.moka.fmi.fmu.FMUResource;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 import org.eclipse.uml2.uml.Classifier;
@@ -118,7 +118,7 @@ public class Fmi2Parameters {
 		FmiModelDescriptionType modelDescription = fmu.getModelDescription();
 		if(modelDescription != null && modelDescription.eResource() instanceof FMUResource){
 			FMUResource fmuRes = (FMUResource) modelDescription.eResource();
-			FMUHandler handler = fmuRes.getFmuHandler();
+			FMUParser handler = fmuRes.getFmuParser();
 			try {
 				if (handler.getCosimulationLibrary() != null){
 					this.dllPath = handler.getCosimulationLibrary().getAbsolutePath();

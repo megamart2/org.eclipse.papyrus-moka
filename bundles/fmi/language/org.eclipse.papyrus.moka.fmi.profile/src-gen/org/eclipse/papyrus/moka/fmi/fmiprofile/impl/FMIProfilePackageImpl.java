@@ -43,6 +43,7 @@ import org.eclipse.papyrus.moka.fmi.fmiprofile.Unknown;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.VariabilityKind;
 import org.eclipse.papyrus.moka.fmi.fmiprofile.VariabilityNamingConvention;
 
+import org.eclipse.papyrus.moka.fmi.fmumetamodel.FmumetamodelPackage;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FmiPackage;
 import org.eclipse.uml2.types.TypesPackage;
 
@@ -270,7 +271,7 @@ public class FMIProfilePackageImpl extends EPackageImpl implements FMIProfilePac
 		isInited = true;
 
 		// Initialize simple dependencies
-		FmiPackage.eINSTANCE.eClass();
+		FmumetamodelPackage.eINSTANCE.eClass();
 		UMLPackage.eINSTANCE.eClass();
 
 		// Create package meta-data objects
@@ -493,6 +494,15 @@ public class FMIProfilePackageImpl extends EPackageImpl implements FMIProfilePac
 	 */
 	public EReference getFMU_ModelDescription() {
 		return (EReference)fmuEClass.getEStructuralFeatures().get(21);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getFMU_FmuBundle() {
+		return (EReference)fmuEClass.getEStructuralFeatures().get(22);
 	}
 
 	/**
@@ -1041,6 +1051,7 @@ public class FMIProfilePackageImpl extends EPackageImpl implements FMIProfilePac
 		createEAttribute(fmuEClass, FMU__NEEDS_EXECUTION_TOOL);
 		createEAttribute(fmuEClass, FMU__MODEL_IDENTIFIER);
 		createEReference(fmuEClass, FMU__MODEL_DESCRIPTION);
+		createEReference(fmuEClass, FMU__FMU_BUNDLE);
 
 		parameterEClass = createEClass(PARAMETER);
 
@@ -1143,6 +1154,7 @@ public class FMIProfilePackageImpl extends EPackageImpl implements FMIProfilePac
 		TypesPackage theTypesPackage = (TypesPackage)EPackage.Registry.INSTANCE.getEPackage(TypesPackage.eNS_URI);
 		UMLPackage theUMLPackage = (UMLPackage)EPackage.Registry.INSTANCE.getEPackage(UMLPackage.eNS_URI);
 		FmiPackage theFmiPackage = (FmiPackage)EPackage.Registry.INSTANCE.getEPackage(FmiPackage.eNS_URI);
+		FmumetamodelPackage theFmumetamodelPackage = (FmumetamodelPackage)EPackage.Registry.INSTANCE.getEPackage(FmumetamodelPackage.eNS_URI);
 
 		// Create type parameters
 
@@ -1183,7 +1195,8 @@ public class FMIProfilePackageImpl extends EPackageImpl implements FMIProfilePac
 		initEAttribute(getFMU_ProvidesDirectionalDerivative(), theTypesPackage.getBoolean(), "providesDirectionalDerivative", null, 1, 1, org.eclipse.papyrus.moka.fmi.fmiprofile.FMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFMU_NeedsExecutionTool(), theTypesPackage.getBoolean(), "needsExecutionTool", null, 1, 1, org.eclipse.papyrus.moka.fmi.fmiprofile.FMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getFMU_ModelIdentifier(), theTypesPackage.getString(), "modelIdentifier", null, 1, 1, org.eclipse.papyrus.moka.fmi.fmiprofile.FMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getFMU_ModelDescription(), theFmiPackage.getFmiModelDescriptionType(), null, "modelDescription", null, 0, 1, org.eclipse.papyrus.moka.fmi.fmiprofile.FMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getFMU_ModelDescription(), theFmiPackage.getFmiModelDescriptionType(), null, "modelDescription", null, 1, 1, org.eclipse.papyrus.moka.fmi.fmiprofile.FMU.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
+		initEReference(getFMU_FmuBundle(), theFmumetamodelPackage.getFMUBundle(), null, "fmuBundle", null, 1, 1, org.eclipse.papyrus.moka.fmi.fmiprofile.FMU.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(parameterEClass, Parameter.class, "Parameter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1193,7 +1206,7 @@ public class FMIProfilePackageImpl extends EPackageImpl implements FMIProfilePac
 		initEAttribute(getScalarVariable_Variability(), this.getVariabilityKind(), "variability", null, 1, 1, ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getScalarVariable_Initial(), this.getInitialKind(), "initial", null, 1, 1, ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getScalarVariable_ValueReference(), ecorePackage.getEInt(), "valueReference", null, 1, 1, ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getScalarVariable_FmiVariable(), theFmiPackage.getFmi2ScalarVariable(), null, "fmiVariable", null, 0, 1, ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getScalarVariable_FmiVariable(), theFmiPackage.getFmi2ScalarVariable(), null, "fmiVariable", null, 1, 1, ScalarVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(localEClass, Local.class, "Local", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

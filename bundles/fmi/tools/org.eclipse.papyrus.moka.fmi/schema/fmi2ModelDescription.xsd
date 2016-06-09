@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- edited with XMLSpy v2014 rel. 2 sp1 (http://www.altova.com) by Lieferanten Buchhaltung (Deutsches Zentrum für Luft- und Raumfahrt e. V.) -->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified" >
 	<xs:include schemaLocation="fmi2ScalarVariable.xsd"/>
 	<xs:include schemaLocation="fmi2VariableDependency.xsd"/>
 	<xs:include schemaLocation="fmi2Unit.xsd"/>

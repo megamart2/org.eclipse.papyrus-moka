@@ -22,7 +22,7 @@ import org.eclipse.equinox.app.IApplicationContext;
 import org.eclipse.papyrus.moka.engine.IExecutionEngine;
 //import org.eclipse.papyrus.moka.composites.CompositeStructuresExecutionEngine;
 import org.eclipse.papyrus.moka.engine.IExecutionEngine.OperatingMode;
-import org.eclipse.papyrus.moka.fmi.fmu.FMUHandler;
+import org.eclipse.papyrus.moka.fmi.fmu.FMUParser;
 import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fmu.engine.MokaEngineForFMUExport;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
@@ -37,9 +37,9 @@ public class FMURCPApplication implements IApplication {
 
 	private static final String FMU_PATH = "fmu";
 	private static final String PORT_NUMBER = "port";
-	private static final String MOKA_PROP_FILE_NAME = "moka.properties";
-	private static final String MODEL_PATH_PROP = "model.path";
-	private static final String FMU_QN = "fmu.qualifiedname";
+	public static final String MOKA_PROP_FILE_NAME = "moka.properties";
+	public static final String MODEL_PATH_PROP = "model.path";
+	public static final String FMU_QN = "fmu.qualifiedname";
 
 
 
@@ -66,7 +66,7 @@ public class FMURCPApplication implements IApplication {
 				throw new Exception("The argument "+ FMU_PATH +" should be specified");
 			}
 
-			FMUHandler handler = new FMUHandler(unzippedFmuPath, false);
+			FMUParser handler = new FMUParser(unzippedFmuPath, false);
 
 			File resourceFolder = handler.getResourceFolder();
 			if (resourceFolder != null){

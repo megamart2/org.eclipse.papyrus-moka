@@ -15,6 +15,8 @@ import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.papyrus.moka.composites.utils.handlers.AbstractCompositeUtilsHandler;
 import org.eclipse.papyrus.moka.composites.utils.handlers.Utils;
+import org.eclipse.papyrus.moka.fmi.exporter.FMUExporter;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fmi.ui.dialogs.ExportFMUDialog;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.swt.SWT;
@@ -37,7 +39,7 @@ public class ExportFMUHandler extends AbstractCompositeUtilsHandler {
 		Element selectedElement = Utils.getSelection();
 		if (selectedElement != null) {
 			if (selectedElement instanceof Class && !(selectedElement instanceof Behavior)) {
-				return FMUEngineUtils.isFMU((Class)selectedElement) ;
+				return FMIProfileUtil.isCS_FMU((Class)selectedElement) ;
 			}
 		}
 		return false;
@@ -72,10 +74,10 @@ public class ExportFMUHandler extends AbstractCompositeUtilsHandler {
 				@Override
 				public void run() {
 					Shell parentShell = new Shell(display) ;
-					ExportFMUDialog dialog = new ExportFMUDialog(parentShell) ;
+					ExportFMUDialog dialog = new ExportFMUDialog(parentShell, context.getName()) ;
 					int status = dialog.open() ;
-					if (status == SWT.OK) {
-						// TODO: Implement Export Here
+					if (status != SWT.ABORT) {
+						FMUExporter.generateFMU(context, dialog.getFmuName(),dialog.getSelectedDir(),dialog.getSelectedPlatform(),dialog.getSelectedJrePath());
 					}
 				}
 			});

@@ -8,7 +8,7 @@ public class FMUResourceFactory implements Factory {
 
 	@Override
 	public Resource createResource(URI uri) {
-		Resource res = new FMUResource();
+		FMUResource res = new FMUResource();
 		res.setURI(uri);
 		return res;
 	}

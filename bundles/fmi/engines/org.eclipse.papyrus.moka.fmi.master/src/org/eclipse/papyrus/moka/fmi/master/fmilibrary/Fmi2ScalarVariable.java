@@ -24,9 +24,20 @@ public class Fmi2ScalarVariable {
 	private String causality;
 	private String initial;
 	private String type;
-	private Object value;
+	
 	private boolean hasChanged;
 
+	
+private Object runtimeValue;
+	
+	public Object getRuntimeValue() {
+		return runtimeValue;
+	}
+
+	public void setRuntimeValue(Object runtimeValue) {
+		this.runtimeValue = runtimeValue;
+	}
+	
 	public Fmi2ScalarVariable(Fmu2ProxyService fmu, Property p, Stereotype st) {
 		// TODO Auto-generated constructor stub
 		
@@ -46,32 +57,32 @@ public class Fmi2ScalarVariable {
 		if (p.getDefaultValue() != null){
 			switch (type){
 			case Fmi2VariableType.fmi2Boolean :
-				this.setValue(p.getDefaultValue().booleanValue());
+				this.setRuntimeValue(p.getDefaultValue().booleanValue());
 				break;
 			case Fmi2VariableType.fmi2Integer :
-				this.setValue(p.getDefaultValue().integerValue());
+				this.setRuntimeValue(p.getDefaultValue().integerValue());
 				break;
 			case Fmi2VariableType.fmi2Real :
-				this.setValue(p.getDefaultValue().realValue());
+				this.setRuntimeValue(p.getDefaultValue().realValue());
 				break;
 			case Fmi2VariableType.fmi2String :
-				this.setValue(p.getDefaultValue().stringValue());
+				this.setRuntimeValue(p.getDefaultValue().stringValue());
 				break;
 			}
 		}else {
 			//TODO: should better handle default values?
 			switch (type){
 			case Fmi2VariableType.fmi2Boolean :
-				this.setValue(false);
+				this.setRuntimeValue(false);
 				break;
 			case Fmi2VariableType.fmi2Integer :
-				this.setValue(0);
+				this.setRuntimeValue(0);
 				break;
 			case Fmi2VariableType.fmi2Real :
-				this.setValue(0.0);
+				this.setRuntimeValue(0.0);
 				break;
 			case Fmi2VariableType.fmi2String :
-				this.setValue("MOKA_DEFAULT");
+				this.setRuntimeValue("MOKA_DEFAULT");
 				break;
 			}
 		}
@@ -129,14 +140,7 @@ public class Fmi2ScalarVariable {
 		this.initial = initial;
 	}
 
-	public Object getValue() {
-		return value;
-	}
-
-	public void setValue(Object value) {
-		this.value = value;
-	}
-
+	
 	public String getType() {
 		return type;
 	}

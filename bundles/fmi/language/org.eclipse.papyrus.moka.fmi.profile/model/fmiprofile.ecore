@@ -49,7 +49,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelIdentifier" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="modelDescription" ordered="false"
-        eType="ecore:EClass ../../org.eclipse.papyrus.moka.fmi/model/Fmi2ModelDescription.ecore#//FmiModelDescriptionType"/>
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.moka.fmi/model/Fmi2ModelDescription.ecore#//FmiModelDescriptionType"
+        changeable="false" volatile="true" transient="true" derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="fmuBundle" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.moka.fmi/model/fmumetamodel.ecore#//FMUBundle"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Parameter" eSuperTypes="#//ScalarVariable"/>
   <eClassifiers xsi:type="ecore:EClass" name="ScalarVariable" abstract="true">
@@ -62,9 +65,10 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="initial" ordered="false"
         lowerBound="1" eType="#//InitialKind"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="valueReference" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        defaultValueLiteral="-1"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="fmiVariable" ordered="false"
-        eType="ecore:EClass ../../org.eclipse.papyrus.moka.fmi/model/Fmi2ModelDescription.ecore#//Fmi2ScalarVariable"/>
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.papyrus.moka.fmi/model/Fmi2ModelDescription.ecore#//Fmi2ScalarVariable"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="VariabilityKind">
     <eLiterals name="constant"/>

@@ -13,6 +13,7 @@ package org.eclipse.papyrus.moka.fmi.master.masterlibrary;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Port;
 
@@ -33,20 +34,22 @@ public class DependencyGraph {
 	/**
 	 * creates the dependency graph from the coSimgraph
 	 **/
-	public DependencyGraph(HashMap<Fmi2Port, Fmi2Port> P, ArrayList<Dependency> ioDependencies) {
+	public DependencyGraph(CoSimEnvironment cosimEnvironnement) {
+		List<Dependency> ioDependencies = cosimEnvironnement.getIoDependencies();
+
 		// create the edges of the dependency graph
 		// Port mapping --> Output 2 Input
 		// Dependencies --> Input 2 Output
 		Node sourceNode = null;
 		Node targetNode = null;
-		for (Fmi2Port key : P.keySet()) {
-			Fmi2Port value = P.get(key);
+		for (Fmi2Port targetPort : cosimEnvironnement.getInputPorts()) {
+			Fmi2Port sourcePort = targetPort.getDrivingPort();
 			// create an edge from the output to the input
 			// this correspond to create an edge from value to key
 			// the key is an input port --> target
 			// the value is an output port --> source
-			sourceNode = new Node(value);
-			targetNode = new Node(key);
+			sourceNode = new Node(sourcePort);
+			targetNode = new Node(targetPort);
 			Edge edge = new Edge(sourceNode, targetNode);
 			this.addNode(sourceNode);
 			this.addNode(targetNode);
