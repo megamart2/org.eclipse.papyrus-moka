@@ -73,6 +73,9 @@
       <strategy
             strategy="org.eclipse.papyrus.moka.simex.dnd.strategy.AssociationToCreateLinkAction">
       </strategy>
+      <strategy
+            strategy="org.eclipse.papyrus.moka.simex.dnd.strategy.ParameterToActivityParameterNodeStrategy">
+      </strategy>
    </extension>
 
 </plugin>
