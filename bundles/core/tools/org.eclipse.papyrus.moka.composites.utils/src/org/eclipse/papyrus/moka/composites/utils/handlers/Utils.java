@@ -237,6 +237,42 @@ public class Utils {
 	}
 
 	/**
+	 * Returns the the method activity for the context operation.
+	 * If the method does not exist, it is the generated, with side effects
+	 * on the given context Class (i.e., the generated method is added to the list of
+	 * of owned behaviors the given context Class.)
+	 * The generated method signature matches the signature of the operation
+	 *
+	 * @param context
+	 *            A UML Class
+	 * @param operation
+	 * 			  A UML operation
+	 * @return the method Activity of the given Operation for the given context Class
+	 */
+	public static Activity getMethod(Class context, Operation operation) {
+		Activity method = null ;
+		if (operation.getMethods().isEmpty()) {
+			method = (Activity)context.createOwnedBehavior(operation.getName() + "Impl", UMLPackage.eINSTANCE.getActivity()) ;
+			method.setSpecification(operation);
+			for (Parameter p : operation.getOwnedParameters()) {
+				Parameter pAct = method.createOwnedParameter(p.getName(), p.getType()) ;
+				pAct.setDirection(p.getDirection());
+				pAct.setLowerValue(pAct.getLowerValue());
+				pAct.setUpperValue(p.getUpperValue());
+			}
+		}
+		else {
+			for(Iterator<Behavior> i = operation.getMethods().iterator() ; i.hasNext() && method==null ; ) {
+				Behavior b = i.next() ;
+				if (b instanceof Activity) {
+					method = (Activity)b ;
+				}
+			}
+		}
+		return method ;
+	}
+	
+	/**
 	 * Returns true if the Standard profile is applied on the Model containing the given element
 	 *
 	 * @param element

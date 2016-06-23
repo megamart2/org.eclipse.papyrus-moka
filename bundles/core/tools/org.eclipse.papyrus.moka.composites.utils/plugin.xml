@@ -52,6 +52,17 @@
                    checkEnabled="false">
              </visibleWhen>
          	</command>
+         	<command
+               commandId="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodCommand"
+               icon="platform:/plugin/org.eclipse.papyrus.uml.icons/resource/gif/Activity.gif"
+               id="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodHandlerMenu"
+               label="Generate Method"
+               style="push"
+               tooltip="Generate Method">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         	</command>
       </menuContribution>
       <menuContribution
             allPopups="false"
@@ -85,6 +96,16 @@
                    checkEnabled="false">
              </visibleWhen>
          	</command>
+         	<command
+               commandId="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodCommand"
+               icon="platform:/plugin/org.eclipse.papyrus.uml.icons/resource/gif/Activity.gif"
+               id="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodHandlerMenu"
+               label="Generate Method"
+               style="push">
+            <visibleWhen
+                  checkEnabled="false">
+            </visibleWhen>
+         	</command>
       </menuContribution>
    </extension>   
    <extension
@@ -100,6 +121,12 @@
             description="Generate Constructor Using Fields"
             id="org.eclipse.papyrus.moka.composites.utils.generatorconstructorusingfieldscommand"
             name="Generate Constructor Using Fields">
+      </command>
+      <command
+            categoryId="org.eclipse.papyrus.editor.category"
+            description="Generate Method"
+            id="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodCommand"
+            name="Generate Method">
       </command>
    </extension>
    <extension
@@ -136,6 +163,25 @@
                         type="org.eclipse.emf.ecore.EObject">
                      <instanceof
                            value="org.eclipse.uml2.uml.Class">
+                     </instanceof>
+                  </adapt>
+               </iterate>
+            </with>
+         </enabledWhen>
+      </handler>
+      <handler
+            class="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodHandler"
+            commandId="org.eclipse.papyrus.moka.composites.utils.handlers.GenerateMethodCommand">
+         <enabledWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="and">
+                  <adapt
+                        type="org.eclipse.emf.ecore.EObject">
+                     <instanceof
+                           value="org.eclipse.uml2.uml.Operation">
                      </instanceof>
                   </adapt>
                </iterate>
