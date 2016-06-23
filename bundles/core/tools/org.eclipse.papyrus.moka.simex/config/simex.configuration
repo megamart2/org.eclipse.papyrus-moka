@@ -25,13 +25,13 @@
       </owningRules>
     </modelKinds>
     <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_VerKMGAyEeWAtYeYccnjOA" name="Simex Activity Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.activity/icons/obj16/Diagram_Activity.gif" implementationID="PapyrusUMLActivityDiagram" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="" customStyle="platform:/plugin/org.eclipse.papyrus.moka.simex/css/activity-canonical.css">
-      <modelRules xmi:id="_Zf02AGAzEeWAtYeYccnjOA">
-        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
-      </modelRules>
       <modelRules xmi:id="_wFHKUGEDEeWAtYeYccnjOA" multiplicity="1">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
       </modelRules>
-      <modelRules xmi:id="_eliLkGAzEeWAtYeYccnjOA">
+      <modelRules xmi:id="_pqLcADbPEeaGc5Cpc9rXCQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
+      </modelRules>
+      <modelRules xmi:id="_xAfiQDbPEeaGc5Cpc9rXCQ">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
       </modelRules>
       <owningRules xmi:id="_-i9MwGErEeWAtYeYccnjOA">
@@ -40,7 +40,9 @@
       <owningRules xmi:id="_WR3aYKivEeW8cJChdmfSPQ">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </owningRules>
-      <childRules xmi:id="_5trKsGHtEeWAtYeYccnjOA"/>
+      <owningRules xmi:id="_I-1AIDbPEeaGc5Cpc9rXCQ">
+        <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Class"/>
+      </owningRules>
     </modelKinds>
   </viewpoints>
   <metamodel href="http://www.eclipse.org/uml2/5.0.0/UML#/"/>
