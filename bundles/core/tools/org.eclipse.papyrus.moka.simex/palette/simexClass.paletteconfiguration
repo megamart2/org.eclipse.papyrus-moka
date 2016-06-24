@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ASCII"?>
+<paletteconfiguration:PaletteConfiguration xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:paletteconfiguration="http://www.eclipse.org/papyrus/diagram/paletteconfiguration/0.7" id="org.eclipse.papyrus.moka.simex.class.palette" label="uml">
+  <drawerConfigurations id="palette.simex.class" label="Simex Class Diagram" description="Simex Class Diagram">
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Class" label="Class" description="Class">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Class.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Class_Shape"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.DataType" label="Data Type" description="Data Type">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/DataType.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.DataType_Shape"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Interface" label="Interface" description="Interface">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Interface.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Interface_Shape"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Enumeration" label="Enumeration" description="Enumeration">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Enumeration.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Enumeration_Shape"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.EnumerationLiteral" label="Enumeration Literal" description="Enumeration Literal">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/EnumerationLiteral.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.EnumerationLiteral_LiteralLabel"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Signal" label="Signal" description="Signal">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Signal.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Signal_Shape"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:SeparatorConfiguration"/>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Property" label="Property" description="Property">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Property.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Property_AttributeLabel"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:SeparatorConfiguration"/>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.ControlFlow" label="Control Flow" description="Control Flow" kind="ConnectionTool">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/ControlFlow.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.ControlFlow_Edge"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:SeparatorConfiguration"/>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Comment" label="Comment" description="Comment">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Comment.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Comment_Shape"/>
+    </ownedConfigurations>
+    <ownedConfigurations xsi:type="paletteconfiguration:ToolConfiguration" id="org.eclipe.papyrus.moka.simex.palette.Constraint" label="Constraint" description="Constraint">
+      <icon iconPath="platform:/plugin/org.eclipse.uml2.uml.edit/icons/full/obj16/Constraint.gif"/>
+      <elementDescriptors elementTypeId="org.eclipse.papyrus.umldi.Constraint_Shape"/>
+    </ownedConfigurations>
+  </drawerConfigurations>
+</paletteconfiguration:PaletteConfiguration>
