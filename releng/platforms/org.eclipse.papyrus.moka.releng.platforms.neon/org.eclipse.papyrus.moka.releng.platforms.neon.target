@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
 <!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Tycho Tutorial" sequenceNumber="1464774029">
+<target name="Tycho Tutorial" sequenceNumber="1467125103">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.platform.feature.group" version="4.6.0.v20160519-2118"/>
-      <unit id="org.eclipse.rcp.feature.group" version="4.6.0.v20160519-2118"/>
-      <unit id="org.eclipse.jdt.feature.group" version="3.12.0.v20160519-1730"/>
-      <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="1.0.400.v20160504-1450"/>
-      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160519-1731"/>
+      <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.rcp.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.equinox.executable.feature.group" version="3.6.300.v20160525-1303"/>
       <repository id="eclipse-neon" location="http://download.eclipse.org/releases/neon/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
@@ -20,12 +20,12 @@
       <repository id="papyrus-neon-developper-nightly" location="https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.aspectj.feature.group" version="1.8.9.201604052120"/>
-      <unit id="org.eclipse.ajdt.feature.group" version="2.2.4.201604052120"/>
+      <unit id="org.aspectj.feature.group" version="0.0.0"/>
+      <unit id="org.eclipse.ajdt.feature.group" version="0.0.0"/>
       <repository id="aspectj-neon" location="http://download.eclipse.org/tools/ajdt/46/dev/update"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
-      <unit id="org.eclipse.orbit.category.json" version="1.0.0.7f_e7McLz57EEXeLAn2b0b7y_z-IG"/>
+      <unit id="org.eclipse.orbit.category.json" version="0.0.0"/>
       <repository id="orbit-fasterxml" location="http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/"/>
     </location>
   </locations>

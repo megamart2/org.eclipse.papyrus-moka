@@ -1,10 +1,10 @@
 target "Tycho Tutorial" with source requirements
 
 location "http://download.eclipse.org/releases/neon/" eclipse-neon {
- org.eclipse.platform.feature.group
- org.eclipse.rcp.feature.group
- org.eclipse.jdt.feature.group
- org.eclipse.equinox.p2.discovery.feature.feature.group
+ org.eclipse.platform.feature.group lazy
+ org.eclipse.rcp.feature.group lazy
+ org.eclipse.jdt.feature.group lazy
+ org.eclipse.equinox.p2.discovery.feature.feature.group lazy
  org.eclipse.equinox.executable.feature.group
 }
 
@@ -17,10 +17,10 @@ location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSu
 }
 
 location "http://download.eclipse.org/tools/ajdt/46/dev/update" aspectj-neon{
-	org.aspectj.feature.group
-	org.eclipse.ajdt.feature.group
+	org.aspectj.feature.group lazy
+	org.eclipse.ajdt.feature.group lazy
 }
 
 location "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/" orbit-fasterxml{
-	org.eclipse.orbit.category.json
+	org.eclipse.orbit.category.json lazy
 }
