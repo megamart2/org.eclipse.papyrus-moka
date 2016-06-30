@@ -24,7 +24,7 @@ import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.debug.core.model.IProcess;
 import org.eclipse.debug.core.model.IStreamsProxy;
-import org.eclipse.papyrus.moka.debug.Activator;
+import org.eclipse.papyrus.moka.debug.MokaDebugPlugin;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 public class MokaProcess implements IProcess {
@@ -102,7 +102,7 @@ public class MokaProcess implements IProcess {
 		if (this.isTerminated()) {
 			return this.jobStatus.getSeverity();
 		}
-		throw new DebugException(new Status(IStatus.ERROR, Activator.PLUGIN_ID, "Moka execution process is still running"));
+		throw new DebugException(new Status(IStatus.ERROR, MokaDebugPlugin.PLUGIN_ID, "Moka execution process is still running"));
 	}
 
 

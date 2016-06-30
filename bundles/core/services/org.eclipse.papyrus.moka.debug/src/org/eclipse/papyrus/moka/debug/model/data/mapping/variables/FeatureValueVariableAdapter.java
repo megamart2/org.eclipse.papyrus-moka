@@ -29,6 +29,7 @@ import org.eclipse.uml2.uml.Association;
 import org.eclipse.uml2.uml.Feature;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
+import org.eclipse.uml2.uml.VisibilityKind;
 
 public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 
@@ -136,6 +137,27 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 		return false;
 	}
 
+	public boolean isFeaturePublic(){
+		if(this.featureValue != null){
+			return this.featureValue.getFeature().getVisibility() == VisibilityKind.PUBLIC_LITERAL;
+		}
+		return false;
+	}
+	
+	public boolean isFeatureProtected(){
+		if(this.featureValue != null){
+			return this.featureValue.getFeature().getVisibility() == VisibilityKind.PROTECTED_LITERAL;
+		}
+		return false;
+	}
+	
+	public boolean isFeaturePrivate(){
+		if(this.featureValue != null){
+			return this.featureValue.getFeature().getVisibility() == VisibilityKind.PRIVATE_LITERAL;
+		}
+		return false;
+	}
+	
 	protected List<ILink> getMatchingLinks(Association association, StructuralFeature end, IValue oppositeValue, ILocus locus) {
 		return this.getMatchingLinksForEndValue(association, end, oppositeValue, null, locus);
 	}

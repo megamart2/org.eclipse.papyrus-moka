@@ -14,7 +14,7 @@
 package org.eclipse.papyrus.moka.debug.engine;
 
 import org.eclipse.debug.core.model.DebugElement;
-import org.eclipse.papyrus.moka.debug.Activator;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.MokaDebugModelPresentation;
 
 public abstract class MokaDebugElement extends DebugElement {
 
@@ -27,6 +27,6 @@ public abstract class MokaDebugElement extends DebugElement {
 
 	@Override
 	public String getModelIdentifier() {
-		return Activator.PLUGIN_ID;
+		return MokaDebugModelPresentation.ID;
 	}
 }
