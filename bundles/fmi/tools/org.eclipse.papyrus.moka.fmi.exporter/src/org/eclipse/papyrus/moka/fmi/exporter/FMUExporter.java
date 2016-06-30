@@ -62,7 +62,7 @@ public class FMUExporter {
 
 	private static void addJRE(String jrePath, FMUBundle fmuBundle) {
 		File jreFile = new File(jrePath);
-		JavaFileProxy proxy = FMUResourceUtil.createJavaFileProxy(jreFile, "rpc/jre");
+		JavaFileProxy proxy = FMUResourceUtil.createJavaFileProxy(jreFile, "rcp/jre");
 		fmuBundle.getResourcesFiles().add(proxy);
 	}
 

@@ -1,33 +1,26 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-<fmiModelDescription
-  fmiVersion="2.0"
-  modelName="mokaC1"
-  guid="{81bebce6-7fa9-40e0-adf6-f1e2c440a09e}"
- >
-
-<CoSimulation
-  modelIdentifier="mokaC1"
-  canHandleVariableCommunicationStepSize="true"/>
-
-
-<ModelVariables>
-
-  
-  <ScalarVariable name="openclose" valueReference="1" description="open/close output"
-                  causality="output" variability="discrete" initial="exact">
-    <Boolean start="false"/>
-  </ScalarVariable>
-  
- 
-  
-</ModelVariables>
-
-<ModelStructure>
-<Outputs>
-	<Unknown index="1"/>
-
-</Outputs>
-  
-</ModelStructure>
-
+<?xml version="1.0" encoding="utf-8"?>
+<fmiModelDescription fmiVersion="2.0" generationDateAndTime="2016-06-10T12:43:59.797+02:00" generationTool="Moka FMU exporter" guid="3a0227e1-c453-4f61-bb32-4f8f7829c343" modelName="A">
+  <CoSimulation canBeInstantiatedOnlyOncePerProcess="true" canGetAndSetFMUstate="false" canHandleVariableCommunicationStepSize="true" canInterpolateInputs="false" canNotUseMemoryManagementFunctions="true" canRunAsynchronuously="false" canSerializeFMUstate="false" maxOutputDerivativeOrder="0" modelIdentifier="AChangeEvent" needsExecutionTool="false" providesDirectionalDerivative="false"/>
+  <ModelVariables>
+    <ScalarVariable causality="input" initial="exact" name="inBoolean" valueReference="0" variability="discrete">
+      <Boolean/>
+    </ScalarVariable>
+    <ScalarVariable causality="input" initial="exact" name="inInteger" valueReference="1" variability="discrete">
+      <Integer/>
+    </ScalarVariable>
+    <ScalarVariable causality="input" initial="exact" name="inReal" valueReference="2" variability="discrete">
+      <Real/>
+    </ScalarVariable>
+    <ScalarVariable causality="input" initial="exact" name="inString" valueReference="3" variability="discrete">
+      <String/>
+    </ScalarVariable>
+    <ScalarVariable causality="output" initial="exact" name="outBoolean" valueReference="4" variability="discrete">
+      <Boolean start="false"/>
+    </ScalarVariable>
+  </ModelVariables>
+  <ModelStructure>
+    <Outputs>
+      <Unknown index="5"/>
+    </Outputs>
+  </ModelStructure>
 </fmiModelDescription>

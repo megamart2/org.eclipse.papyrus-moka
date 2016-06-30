@@ -43,7 +43,7 @@ public class MokaUML2FMI {
 
 	public static void setDefaultValuesForMokaFMU(Class umlClass){
 		CS_FMU csFMU = FMIProfileUtil.getCSFMU(umlClass);
-		
+
 		csFMU.setCanHandleVariableCommunicationStepSize(true);
 		csFMU.setCanInterpolateInputs(false);
 		csFMU.setCanRunAsynchronuously(false);
@@ -51,19 +51,19 @@ public class MokaUML2FMI {
 		csFMU.setNeedsExecutionTool(false);
 		csFMU.setFmiVersion("2.0");
 		csFMU.setGenerationTool("Moka Exporter");
-		
-		
-		
+
+
+
 	}
-	
+
 	public static FmiModelDescriptionType getModelDescription(Class umlClass, String modelIdentifier){
 		CS_FMU csFMU = FMIProfileUtil.getCSFMU(umlClass);
-		
+
 		if (csFMU !=null) {
 			FmiModelDescriptionType result = FmiFactory.eINSTANCE.createFmiModelDescriptionType();
 			result.setGenerationTool("Moka FMU exporter");
 			result.setFmiVersion("2.0");
-			
+
 			GregorianCalendar date= new GregorianCalendar();
 			date.setTime(new Date());
 			XMLGregorianCalendar xmlDate;
@@ -73,10 +73,10 @@ public class MokaUML2FMI {
 			} catch (DatatypeConfigurationException e) {
 				e.printStackTrace();
 			}
-		
+
 			result.setModelName(umlClass.getLabel());
 			result.setGuid(UUID.randomUUID().toString());
-			
+
 			CoSimulationType cosim = FmiFactory.eINSTANCE.createCoSimulationType();
 			result.getCoSimulation().add(cosim);
 			cosim.setCanGetAndSetFMUstate(false);
@@ -89,12 +89,12 @@ public class MokaUML2FMI {
 			cosim.setNeedsExecutionTool(false);
 			cosim.setProvidesDirectionalDerivative(false);
 			cosim.setMaxOutputDerivativeOrder(0);
-			
+
 			if (modelIdentifier == null){
 				modelIdentifier = umlClass.getName();
 			}
 			cosim.setModelIdentifier(modelIdentifier);
-			
+
 			List<ScalarVariable> umlVariables = FMIProfileUtil.collectScalarVariables(umlClass);
 			List<Port> outputUMLVariables = new ArrayList<Port>();
 			if (!umlVariables.isEmpty()){
@@ -106,11 +106,11 @@ public class MokaUML2FMI {
 						outputUMLVariables.add((Port)umlVariable);
 					}
 				}
-				
+
 			}
-			
+
 			if (!outputUMLVariables.isEmpty()){
-				
+
 				ModelStructureType modelStructure = FmiFactory.eINSTANCE.createModelStructureType();
 				result.setModelStructure(modelStructure);
 				Fmi2VariableDependency outputs = FmiFactory.eINSTANCE.createFmi2VariableDependency();
@@ -118,18 +118,18 @@ public class MokaUML2FMI {
 				for (Port outputPort : outputUMLVariables){
 					outputs.getUnknown().add(createUnknown(outputPort, umlVariables));
 				}
-				
-				
+
+
 			}
-			
-			
-			
+
+
+
 			return result;
 		}else {
 			return null;
 		}
-		
-		
+
+
 	}
 
 	private static UnknownType1 createUnknown(Port outputPort, List<ScalarVariable> umlVariables) {
@@ -146,7 +146,7 @@ public class MokaUML2FMI {
 		}
 		result.setName(baseProperty.getName());
 		result.setValueReference(umlVariable.getValueReference());
-		
+
 		if( !baseProperty.getOwnedComments().isEmpty()){
 			String description = "";
 			for (Comment comment: baseProperty.getOwnedComments()){
@@ -156,48 +156,62 @@ public class MokaUML2FMI {
 			}
 			result.setDescription(description);
 		}
-		
+
 		result.setVariability(VariabilityType.DISCRETE);
-		result.setInitial(InitialType.EXACT);
 		
-		result.setCausality(computeCausality(umlVariable));
-		updateTypeAndInitial(result, baseProperty);
-		
-		
+
+		CausalityType causality = computeCausality(umlVariable);
+		result.setCausality(causality);
+		updateTypeAndInitial(result, baseProperty, causality);
+
+
 		return result;
 	}
 
-	private static void updateTypeAndInitial(Fmi2ScalarVariable result, Property baseProperty) {
+	private static void updateTypeAndInitial(Fmi2ScalarVariable result, Property baseProperty, CausalityType causality) {
 		if (baseProperty.getType().equals(UMLPrimitiveTypesUtils.getReal(baseProperty))){
 			RealType fmiReal = FmiFactory.eINSTANCE.createRealType();
 			result.setReal(fmiReal);
-			String defaultValue = baseProperty.getDefault();
-			if( defaultValue != null){
-				fmiReal.setStart(Double.parseDouble(defaultValue));
+			if (causality != CausalityType.INPUT){
+				result.setInitial(InitialType.EXACT);
+				String defaultValue = baseProperty.getDefault();
+				if( defaultValue != null){
+					fmiReal.setStart(Double.parseDouble(defaultValue));
+				}
 			}
+
 		}else if (baseProperty.getType().equals(UMLPrimitiveTypesUtils.getInteger(baseProperty))){
 			IntegerType fmiInteger = FmiFactory.eINSTANCE.createIntegerType();
 			result.setInteger(fmiInteger);
-			String defaultValue = baseProperty.getDefault();
-			if( defaultValue != null){
-				fmiInteger.setStart(Integer.decode(defaultValue));
+			if (causality != CausalityType.INPUT){
+				result.setInitial(InitialType.EXACT);
+				String defaultValue = baseProperty.getDefault();
+				if( defaultValue != null){
+					fmiInteger.setStart(Integer.decode(defaultValue));
+				}
 			}
 		}else if (baseProperty.getType().equals(UMLPrimitiveTypesUtils.getBoolean(baseProperty))){
 			BooleanType fmiBoolean = FmiFactory.eINSTANCE.createBooleanType();
 			result.setBoolean(fmiBoolean);
-			String defaultValue = baseProperty.getDefault();
-			if( defaultValue != null){
-				fmiBoolean.setStart(Boolean.getBoolean(defaultValue));
+			if (causality != CausalityType.INPUT){
+				result.setInitial(InitialType.EXACT);
+				String defaultValue = baseProperty.getDefault();
+				if( defaultValue != null){
+					fmiBoolean.setStart(Boolean.getBoolean(defaultValue));
+				}
 			}
 		}else {
 			StringType fmiString = FmiFactory.eINSTANCE.createStringType();
 			result.setString(fmiString);
-			String defaultValue = baseProperty.getDefault();
-			if( defaultValue != null){
-				fmiString.setStart(defaultValue);
+			if (causality != CausalityType.INPUT){
+				result.setInitial(InitialType.EXACT);
+				String defaultValue = baseProperty.getDefault();
+				if( defaultValue != null){
+					fmiString.setStart(defaultValue);
+				}
 			}
 		}
-		
+
 	}
 
 	public static CausalityType computeCausality(ScalarVariable umlVariable) {
@@ -217,7 +231,7 @@ public class MokaUML2FMI {
 		}else if (umlVariable instanceof Independent){
 			return CausalityType.INDEPENDENT;
 		}
-		
+
 		return null;
 	}
 }

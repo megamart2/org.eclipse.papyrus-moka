@@ -38,7 +38,7 @@ import org.eclipse.papyrus.moka.fmi.fmu.FMUResource;
 import org.eclipse.papyrus.moka.fmi.fmumetamodel.FMUBundle;
 import org.eclipse.papyrus.moka.fmi.modeldescription.FmiModelDescriptionType;
 import org.eclipse.papyrus.moka.fmi.ui.Activator;
-import org.eclipse.papyrus.moka.fmi.ui.dialogs.ExportFmiDialog;
+import org.eclipse.papyrus.moka.fmi.ui.dialogs.ImportFMUDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.FileDialog;
@@ -62,13 +62,13 @@ public class ImportFMULibHandler  extends AbstractCommandHandler
 
 	public String getLibraryName(){
 		String defaultModelLibName = DEFAULT_LIBRARY_NAME;
-		ExportFmiDialog dialog = new ExportFmiDialog(Display.getCurrent().getActiveShell(), defaultModelLibName );
+		ImportFMUDialog dialog = new ImportFMUDialog(Display.getCurrent().getActiveShell(), defaultModelLibName );
 		IPreferenceStore store = Activator.getDefault().getPreferenceStore();
 		dialog.setPreferenceStore(store);
 		dialog.open();
 
 		// If the operation was cancelled, then return
-		if (dialog.getReturnCode() != ExportFmiDialog.CANCEL) {
+		if (dialog.getReturnCode() != ImportFMUDialog.CANCEL) {
 			return dialog.getImportedModelName();            
 		}
 		return null;

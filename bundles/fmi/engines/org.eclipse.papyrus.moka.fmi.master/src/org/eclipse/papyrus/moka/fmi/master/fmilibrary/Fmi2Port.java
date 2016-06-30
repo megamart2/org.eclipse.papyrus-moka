@@ -43,6 +43,9 @@ public class Fmi2Port extends Fmi2ScalarVariable {
 	}
 	
 	public void updateRuntimeValue(){
-		setRuntimeValue(drivingPort.getRuntimeValue());
+		if (drivingPort != null){
+			setRuntimeValue(drivingPort.getRuntimeValue());
+		}
+		
 	}
 }

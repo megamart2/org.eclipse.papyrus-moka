@@ -2,7 +2,7 @@
 
 CONFIGURATION=$1 #should be Debug or Release
 
-FMU_NAME="mokaC1"
+FMU_NAME="AChangeEvent"
 
 
 rm fmu_build/binaries/linux64/*.so

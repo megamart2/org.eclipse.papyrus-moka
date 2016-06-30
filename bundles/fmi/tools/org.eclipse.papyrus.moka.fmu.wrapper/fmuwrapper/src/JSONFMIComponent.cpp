@@ -91,7 +91,7 @@ fmi2Status  JSONFMIComponent::doStep(fmi2Real currentCommunicationTime, fmi2Real
 		rapidjson::Value reals(rapidjson::kArrayType);
 		for( std::map<int,double>::iterator iterator = setRealRequests.begin(); iterator != setRealRequests.end(); iterator++) {
 			realVR.PushBack(iterator->first, allocator);
-			realVR.PushBack(iterator->second, allocator);
+			reals.PushBack(iterator->second, allocator);
 		}
 		setRealRequests.clear();
 		request.AddMember(rapidjson::StringRef(REQ_STEP__DOUBLEVRS), realVR, allocator);
@@ -148,7 +148,7 @@ void  JSONFMIComponent::terminate(){
 
 fmi2Status  JSONFMIComponent::handleResponse(){
 
-	if (response.HasMember(rapidjson::StringRef(REQ_STEP__BOOLVRS))){
+	if (response.HasMember(rapidjson::StringRef(REQ_STEP__BOOL))){
 		const rapidjson::Value& boolVRs = response[REQ_STEP__BOOLVRS];
 		const rapidjson::Value& bools = response[REQ_STEP__BOOL];
 
@@ -157,7 +157,7 @@ fmi2Status  JSONFMIComponent::handleResponse(){
 		}
 	}
 
-	if (response.HasMember(rapidjson::StringRef(REQ_STEP__DOUBLEVRS))){
+	if (response.HasMember(rapidjson::StringRef(REQ_STEP__DOUBLE))){
 		const rapidjson::Value& doubleVRs = response[REQ_STEP__DOUBLEVRS];
 		const rapidjson::Value& doubles = response[REQ_STEP__DOUBLE];
 
@@ -166,7 +166,7 @@ fmi2Status  JSONFMIComponent::handleResponse(){
 		}
 	}
 
-	if (response.HasMember(rapidjson::StringRef(REQ_STEP__INTVRS))){
+	if (response.HasMember(rapidjson::StringRef(REQ_STEP__INT))){
 		const rapidjson::Value& intVRs = response[REQ_STEP__INTVRS];
 		const rapidjson::Value& ints = response[REQ_STEP__INT];
 
@@ -176,13 +176,18 @@ fmi2Status  JSONFMIComponent::handleResponse(){
 	}
 
 
-	if (response.HasMember(rapidjson::StringRef(REQ_STEP__STRINGVRS))){
+	if (response.HasMember(rapidjson::StringRef(REQ_STEP__STRING))  && response.HasMember(rapidjson::StringRef(REQ_STEP__STRINGVRS)) ){
 		const rapidjson::Value& stringVRs = response[REQ_STEP__STRINGVRS];
 		const rapidjson::Value& strings = response[REQ_STEP__STRING];
 
-		for (rapidjson::SizeType i = 0; i < stringVRs.Size(); i++) {
-			responseStrings[stringVRs[i].GetInt()]= strings[i].GetString();
+		//
+		if (strings.IsArray()){
+			for (rapidjson::SizeType i = 0; i < stringVRs.Size(); i++) {
+						responseStrings[stringVRs[i].GetInt()]= strings[i].GetString();
+			}
 		}
+
+
 	}
 
 

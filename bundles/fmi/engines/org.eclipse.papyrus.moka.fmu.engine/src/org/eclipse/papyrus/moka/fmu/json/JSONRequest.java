@@ -1,7 +1,6 @@
 package org.eclipse.papyrus.moka.fmu.json;
 
-
-
+import java.util.ArrayList;
 
 public class JSONRequest {
 
@@ -27,17 +26,17 @@ public class JSONRequest {
 	public double t;
 	public double h;
 	
-	public int[] intVRs;
-	public int[] ints;
+	public ArrayList<Integer> intVRs=new  ArrayList<Integer> ();
+	public ArrayList<Integer> ints = new  ArrayList<Integer> ();
 	
-	public int[] doubleVRs;
-	public double[] doubles;
+	public ArrayList<Integer> doubleVRs=new  ArrayList<Integer> ();
+	public ArrayList<Double> doubles=new  ArrayList<Double>();
 	
-	public int[] boolVRs;
-	public boolean[] bools;
+	public  ArrayList<Integer> boolVRs=new  ArrayList<Integer> ();
+	public ArrayList<Boolean> bools=new  ArrayList<Boolean>();
 	
-	public int[] stringVRs;
-	public String[] strings;
+	public  ArrayList<Integer> stringVRs=new  ArrayList<Integer> ();
+	public ArrayList<String> strings=new  ArrayList<String> ();
 
 	
 	
