@@ -16,6 +16,7 @@ import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.TokensVariableAdapter;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.uml2.uml.ActivityNode;
 
 public class ActivityNodeActivationValueAdapter extends MokaValueAdapter {
 
@@ -33,7 +34,12 @@ public class ActivityNodeActivationValueAdapter extends MokaValueAdapter {
 
 	@Override
 	public String getValueString() throws DebugException {
-		return this.nodeVisitor.toString();
+		String serialization = "<empty>";
+		ActivityNode node = this.nodeVisitor.getNode();
+		if(node != null){
+			serialization = node.getQualifiedName();
+		}
+		return serialization;
 	}
 
 	@Override

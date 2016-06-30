@@ -33,7 +33,7 @@ public class TokenValueAdapter extends MokaValueAdapter {
 
 	@Override
 	public String getValueString() throws DebugException {
-		return token.toString();
+		return "Control";
 	}
 
 }

@@ -18,6 +18,7 @@ import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.FeatureValueVariableAdapter;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.uml2.uml.Classifier;
 
@@ -48,6 +49,9 @@ public class StructuredValueAdapter extends MokaValueAdapter {
 
 	@Override
 	public String getValueString() throws DebugException {
+		if(this.value instanceof IReference){
+			return ((IReference)this.value).getReferent().getIdentifier();
+		}
 		return value.toString();
 	}
 
