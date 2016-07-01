@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IForkedToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectToken;
@@ -61,6 +62,8 @@ public class MokaValueAdapterFactory {
 			} else if (value instanceof ISemanticVisitor) {
 				if (value instanceof IActivityNodeActivation) {
 					adapter = new ActivityNodeActivationValueAdapter(debugTarget, (IActivityNodeActivation) value);
+				}else if (value instanceof IActivityEdgeInstance){
+					adapter = new ActivityEdgeInstanceValueAdapter(debugTarget, (IActivityEdgeInstance)value);
 				}
 			}
 		}

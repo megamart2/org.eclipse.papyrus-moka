@@ -12,16 +12,19 @@
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.uml2.uml.NamedElement;
 
-public class ActivityNodeActivationValueAdapter extends ActivityVisitorValueAdapter{
+public class ActivityEdgeInstanceValueAdapter extends ActivityVisitorValueAdapter {
 
-	public ActivityNodeActivationValueAdapter(MokaDebugTarget debugTarget, IActivityNodeActivation visitor) {
+	public ActivityEdgeInstanceValueAdapter(MokaDebugTarget debugTarget, ISemanticVisitor visitor) {
 		super(debugTarget, visitor);
 	}
+
 	@Override
 	protected NamedElement getNode() {
-		return ((IActivityNodeActivation)this.visitor).getNode();
+		return ((IActivityEdgeInstance)this.visitor).getEdge();
 	}
+
 }
