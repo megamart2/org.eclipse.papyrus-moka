@@ -9,7 +9,7 @@
 
 :suspended{
 	/*Edge of the shape affected by the pseudo selector*/
-	lineColor: #c00000;
+	lineColor: #ff8c00;
 	lineWidth: 2px;
 	/*Content of the shape affected by the pseudo selector*/
 	fillColor: #fab953;

@@ -30,15 +30,6 @@
       </persistent>
    </extension>
    <extension
-         point="org.eclipse.papyrus.infra.gmfdiag.css.theme">
-      <themeContribution
-            id="org.eclipse.papyrus.css.papyrus_theme">
-         <stylesheet
-               stylesheetPath="theme/defaultAnimationTheme.css">
-         </stylesheet>
-      </themeContribution>
-   </extension>
-   <extension
          id="org.eclipse.papyrus.moka.animation.visitedmarker"
          name="VISITED MARKER"
          point="org.eclipse.core.resources.markers">
@@ -66,6 +57,12 @@
             class="org.eclipse.papyrus.moka.animation.engine.AnimationService"
             description="Moka Animation Service">
       </service>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.gmfdiag.css.userAgentStyleSheet">
+      <stylesheet
+            stylesheetPath="theme/defaultAnimationTheme.css">
+      </stylesheet>
    </extension>
 
 </plugin>
