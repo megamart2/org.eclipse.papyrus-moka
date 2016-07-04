@@ -22,7 +22,7 @@ import org.eclipse.ui.part.ViewPart;
 
 public class AnimationControlView extends ViewPart {
 
-	public static final String VIEW_ID = "org.eclipse.papyrus.moka.animation.presentation.control.controlview";
+	public static final String ID = "org.eclipse.papyrus.moka.animation.presentation.control.controlview";
 
 	protected TreeViewer viewer;
 

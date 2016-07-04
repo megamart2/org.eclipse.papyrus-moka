@@ -101,7 +101,7 @@ public class DiagramHandler {
 		Display.getDefault().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				IViewPart animationControlView = DiagramHandler.this.getView(AnimationControlView.VIEW_ID, false);
+				IViewPart animationControlView = DiagramHandler.this.getView(AnimationControlView.ID, false);
 				if (animationControlView != null && animationControlView instanceof AnimationControlView) {
 					((AnimationControlView) animationControlView).setInitialInput(DiagramHandler.this.animatedDiagrams);
 				}
@@ -380,7 +380,7 @@ public class DiagramHandler {
 		Display.getDefault().syncExec(new Runnable() {
 			@Override
 			public void run() {
-				IViewPart animationControlView = DiagramHandler.this.getView(AnimationControlView.VIEW_ID, false);
+				IViewPart animationControlView = DiagramHandler.this.getView(AnimationControlView.ID, false);
 				if (animationControlView != null && animationControlView instanceof AnimationControlView) {
 					((AnimationControlView) animationControlView).dispose();
 				}

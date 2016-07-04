@@ -223,18 +223,6 @@
       </client>
    </extension>
    <extension
-         point="org.eclipse.ui.perspectiveExtensions">
-      <perspectiveExtension
-            targetID="org.eclipse.debug.ui.DebugPerspective">
-         <view
-               id="org.eclipse.papyrus.moka.ui.views.MokaAnimationView"
-               ratio="0.25"
-               relationship="right"
-               relative="org.eclipse.ui.views.ProblemView">
-         </view>
-      </perspectiveExtension>
-   </extension>
-   <extension
          point="org.eclipse.ui.views">
       <category
             id="org.eclipse.papyrus.moka.ui"
@@ -288,6 +276,15 @@
             </with>
          </enabledWhen>
       </handler>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="org.eclipse.papyrus.moka.ui.perspectives.debug.MokaDebugPerspective"
+            icon="icons/moka_debug_icon.png"
+            id="org.eclipse.papyrus.moka.ui.debug.perspectives.moka.debug"
+            name="Moka Debug Perspective">
+      </perspective>
    </extension>
 
 </plugin>
