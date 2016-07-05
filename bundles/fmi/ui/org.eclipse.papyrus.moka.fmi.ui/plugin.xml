@@ -173,5 +173,16 @@
          </stylesheet>
       </themeContribution>
    </extension>
+   <extension point="org.eclipse.ui.newWizards">
+		<wizard
+			category="org.eclipse.ui.Examples/org.eclipse.papyrus.examples"
+			class="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
+			finalPerspective="org.eclipse.papyrus.infra.core.perspective"
+			icon="platform:/plugin/org.eclipse.papyrus.moka.ui/icons/moka_icon.png"
+			id="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
+			name="FMU Tutorial Model Example">
+			<selection class="org.eclipse.core.resources.IResource"/>
+		</wizard>
+	</extension>
 
 </plugin>
