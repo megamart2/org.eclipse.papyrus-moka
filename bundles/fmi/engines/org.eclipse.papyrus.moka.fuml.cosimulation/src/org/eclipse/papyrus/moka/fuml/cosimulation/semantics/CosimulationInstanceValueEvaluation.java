@@ -19,17 +19,25 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmuproxy.Fmu2ProxyService;
 import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IDataValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IEnumerationValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IIntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IRealValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStringValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.DataValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.EnumerationValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.InstanceValueEvaluation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Reference;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
@@ -40,6 +48,7 @@ import org.eclipse.uml2.uml.Enumeration;
 import org.eclipse.uml2.uml.EnumerationLiteral;
 import org.eclipse.uml2.uml.InstanceSpecification;
 import org.eclipse.uml2.uml.InstanceValue;
+import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Slot;
 import org.eclipse.uml2.uml.ValueSpecification;
 
@@ -66,6 +75,7 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 		InstanceSpecification instance = ((InstanceValue) this.specification).getInstance();
 		List<Classifier> types = instance.getClassifiers();
 		Classifier myType = types.get(0);
+		IObject_ object = null;
 
 		Debug.println("[evaluate] type = " + myType.getName());
 
@@ -85,7 +95,7 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 				dataValue.setType((DataType) myType);
 				structuredValue = dataValue;
 			} else {
-				IObject_ object = null;
+
 				if (myType instanceof Behavior) {
 					// Debug.println("[evaluate] Type is a behavior.");
 					object = this.locus.getFactory().createExecution((Behavior) myType, null);
@@ -139,7 +149,25 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 					ValueSpecification slotValue = slotValues.get(j);
 					// Debug.println("[evaluate] Value = " +
 					// slotValue.getClass().getName());
-					values.add(this.locus.getExecutor().evaluate(slotValue));
+					IValue runtimeValue = this.locus.getExecutor().evaluate(slotValue) ;
+					values.add(runtimeValue);
+					if (object instanceof Fmu2ProxyService) {
+						Fmi2ScalarVariable variable = ((Fmu2ProxyService)object).getVariable((Property)slot.getDefiningFeature()) ;
+						Object actualRuntimeValue = null;
+						if (runtimeValue instanceof IntegerValue) {
+							actualRuntimeValue = ((IIntegerValue)runtimeValue).getValue() ;
+						}
+						else if (runtimeValue instanceof BooleanValue) {
+							actualRuntimeValue = ((IBooleanValue)runtimeValue).getValue() ;
+						}
+						else if (runtimeValue instanceof RealValue) {
+							actualRuntimeValue = ((IRealValue)runtimeValue).getValue() ;
+						}
+						else  {
+							actualRuntimeValue = ((IStringValue)runtimeValue).getValue() ;
+						}
+						variable.setRuntimeValue(actualRuntimeValue);
+					}
 				}
 				structuredValue.setFeatureValue(slot.getDefiningFeature(), values, 0);
 			}

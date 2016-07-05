@@ -15,6 +15,8 @@ import java.nio.DoubleBuffer;
 import java.nio.IntBuffer;
 import java.nio.LongBuffer;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
@@ -111,6 +113,8 @@ public class Fmu2ProxyService extends CS_Object {
 	private int[] getRealPrimVR;
 
 	private double[] getRealPrimValues;
+	
+	protected Map<Property, Fmi2ScalarVariable> property2VarialeMap = new HashMap<>();
 
 	public void setComponent(Pointer component) {
 		this.component = component;
@@ -126,6 +130,10 @@ public class Fmu2ProxyService extends CS_Object {
 		initialize();
 	}
 
+	public Fmi2ScalarVariable getVariable(Property p) {
+		return this.property2VarialeMap.get(p) ;
+	}
+	
 	private void initialize() {
 		for (Property p : types.get(0).getOwnedAttributes()) {
 			Stereotype st = p.getAppliedStereotypes().get(0);
@@ -141,6 +149,7 @@ public class Fmu2ProxyService extends CS_Object {
 					}
 				}else {
 					 variable = new Fmi2ScalarVariable(this, p, st);
+					 this.property2VarialeMap.put(p, variable) ;
 				}
 				
 				variables.add(variable);
@@ -1340,51 +1349,22 @@ public class Fmu2ProxyService extends CS_Object {
 
 	public int fmi2Set(Fmi2ScalarVariable variable, Object value) {
 
-		LiteralSpecification literalValue = getLiteral(value);
-
 		if (variable.getType().equals(Fmi2VariableType.fmi2Real)) {
-			fmi2Status = fmi2SetReal(variable, ((LiteralReal) literalValue).getValue());
+			Double doubleValue = value instanceof String ? new Double((String)value) : (Double)value ;
+			fmi2Status = fmi2SetReal(variable, doubleValue) ; 
 		} else if (variable.getType().equals(Fmi2VariableType.fmi2Integer)) {
-			fmi2Status = fmi2SetInteger(variable, ((LiteralInteger) literalValue).getValue());
+			Integer integerValue = value instanceof String ? new Integer((String)value) : (Integer)value ;
+			fmi2Status = fmi2SetInteger(variable, integerValue);
 		} else if (variable.getType().equals(Fmi2VariableType.fmi2Boolean)) {
-			fmi2Status = fmi2SetBoolean(variable, ((LiteralBoolean) literalValue).isValue());
+			Boolean booleanValue = value instanceof String ? new Boolean((String)value) : (Boolean)value ;
+			fmi2Status = fmi2SetBoolean(variable, booleanValue);
 		} else if (variable.getType().equals(Fmi2VariableType.fmi2String)) {
-			fmi2Status = fmi2SetString(variable, ((LiteralString) literalValue).getValue());
+			fmi2Status = fmi2SetString(variable, (String)value);
 		}
 		return fmi2Status;
 	}
 
-	public LiteralSpecification getLiteral(Object fromValue) {
-		LiteralSpecification result = null;
-		if (fromValue instanceof Double) {
-			LiteralReal real = UMLFactory.eINSTANCE.createLiteralReal();
-			real.setValue((Double) fromValue);
-			result = real;
-		} else if (fromValue instanceof Integer) {
-			LiteralInteger integer = UMLFactory.eINSTANCE.createLiteralInteger();
-			integer.setValue((Integer) fromValue);
-			result = integer;
-		} else if (fromValue instanceof String) {
-			LiteralString str = UMLFactory.eINSTANCE.createLiteralString();
-			str.setValue((String) fromValue);
-			result = str;
-		} else if (fromValue instanceof Boolean) {
-			LiteralBoolean bool = UMLFactory.eINSTANCE.createLiteralBoolean();
-			bool.setValue((Boolean) fromValue);
-			result = bool;
-		} else if (fromValue instanceof LiteralReal) {
-			result = (LiteralSpecification) fromValue;
-		} else if (fromValue instanceof LiteralInteger) {
-			result = (LiteralSpecification) fromValue;
-		} else if (fromValue instanceof LiteralString) {
-			result = (LiteralSpecification) fromValue;
-		} else if (fromValue instanceof LiteralBoolean) {
-			result = (LiteralSpecification) fromValue;
-		}
-		return result;
-	}
-
-	// TODO
+	
 	public int fmi2UpdateVariables() {
 
 		if (fmu2Status == Fmu2Status.instantiated) {

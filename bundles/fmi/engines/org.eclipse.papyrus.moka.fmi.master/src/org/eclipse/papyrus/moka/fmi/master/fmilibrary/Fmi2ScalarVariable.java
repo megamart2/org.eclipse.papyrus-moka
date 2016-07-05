@@ -24,12 +24,12 @@ public class Fmi2ScalarVariable {
 	private String causality;
 	private String initial;
 	private String type;
-	
+
 	private boolean hasChanged;
 
-	
-private Object runtimeValue;
-	
+
+	private Object runtimeValue;
+
 	public Object getRuntimeValue() {
 		return runtimeValue;
 	}
@@ -37,59 +37,34 @@ private Object runtimeValue;
 	public void setRuntimeValue(Object runtimeValue) {
 		this.runtimeValue = runtimeValue;
 	}
-	
+
 	public Fmi2ScalarVariable(Fmu2ProxyService fmu, Property p, Stereotype st) {
-		// TODO Auto-generated constructor stub
-		
+
 		ScalarVariable variable = (ScalarVariable) p.getStereotypeApplication(st);
 		org.eclipse.papyrus.moka.fmi.modeldescription.Fmi2ScalarVariable modelDescVariable = variable.getFmiVariable();
-		
+
 		this.fmu = fmu;
 		this.name = p.getName();
 		this.valueReference = modelDescVariable.getValueReference();
 		this.variability = modelDescVariable.getVariability().getName();
-
 		this.causality = modelDescVariable.getCausality().toString();
-		System.out.println("P: " + p.getName());
-
 		this.initial = modelDescVariable.getInitial().getName();
 		this.setType(p.getType().getName());
-		if (p.getDefaultValue() != null){
-			switch (type){
-			case Fmi2VariableType.fmi2Boolean :
-				this.setRuntimeValue(p.getDefaultValue().booleanValue());
-				break;
-			case Fmi2VariableType.fmi2Integer :
-				this.setRuntimeValue(p.getDefaultValue().integerValue());
-				break;
-			case Fmi2VariableType.fmi2Real :
-				this.setRuntimeValue(p.getDefaultValue().realValue());
-				break;
-			case Fmi2VariableType.fmi2String :
-				this.setRuntimeValue(p.getDefaultValue().stringValue());
-				break;
-			}
-		}else {
-			//TODO: should better handle default values?
-			switch (type){
-			case Fmi2VariableType.fmi2Boolean :
-				this.setRuntimeValue(false);
-				break;
-			case Fmi2VariableType.fmi2Integer :
-				this.setRuntimeValue(0);
-				break;
-			case Fmi2VariableType.fmi2Real :
-				this.setRuntimeValue(0.0);
-				break;
-			case Fmi2VariableType.fmi2String :
-				this.setRuntimeValue("MOKA_DEFAULT");
-				break;
-			}
+		
+		switch (type){
+		case Fmi2VariableType.fmi2Boolean :
+			this.setRuntimeValue(false);
+			break;
+		case Fmi2VariableType.fmi2Integer :
+			this.setRuntimeValue(0);
+			break;
+		case Fmi2VariableType.fmi2Real :
+			this.setRuntimeValue(0.0);
+			break;
+		case Fmi2VariableType.fmi2String :
+			this.setRuntimeValue("MOKA_DEFAULT");
+			break;
 		}
-		
-			
-			
-		
 	}
 
 	public Fmu2ProxyService getFmu() {
@@ -140,7 +115,7 @@ private Object runtimeValue;
 		this.initial = initial;
 	}
 
-	
+
 	public String getType() {
 		return type;
 	}
@@ -151,9 +126,9 @@ private Object runtimeValue;
 
 	public void setHasChanged(boolean hasChanged) {
 		this.hasChanged =hasChanged; 
-		
+
 	}
-	
+
 	public boolean hasChanged(){
 		return hasChanged;
 	}
