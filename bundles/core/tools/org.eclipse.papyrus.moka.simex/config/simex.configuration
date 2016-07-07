@@ -2,7 +2,7 @@
 <configuration:PapyrusConfiguration xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmi:id="_N8EKoFY9EeWcmuYjB__atg" defaultStakeholder="_frwfgFY9EeWcmuYjB__atg">
   <stakeholders xmi:id="_frwfgFY9EeWcmuYjB__atg" name="Simex Designer" viewpoints="_Swj0YFY9EeWcmuYjB__atg"/>
   <viewpoints xsi:type="configuration:PapyrusViewpoint" xmi:id="_Swj0YFY9EeWcmuYjB__atg" name="Simex Viewpoint">
-    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_1PVVsFY9EeWcmuYjB__atg" name="Simex Class Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/icons/obj16/Diagram_Class.gif" implementationID="PapyrusUMLClassDiagram" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="" customStyle="">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_1PVVsFY9EeWcmuYjB__atg" name="Simex Class Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.clazz/icons/obj16/Diagram_Class.gif" implementationID="PapyrusUMLClassDiagram" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="platform:/plugin/org.eclipse.papyrus.moka.simex/palette/simexClass.paletteconfiguration" customStyle="">
       <modelRules xmi:id="_xDduAFZEEeWcmuYjB__atg">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
@@ -24,7 +24,7 @@
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </owningRules>
     </modelKinds>
-    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_VerKMGAyEeWAtYeYccnjOA" name="Simex Activity Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.activity/icons/obj16/Diagram_Activity.gif" implementationID="PapyrusUMLActivityDiagram" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="" customStyle="platform:/plugin/org.eclipse.papyrus.moka.simex/css/activity-canonical.css">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_VerKMGAyEeWAtYeYccnjOA" name="Simex Activity Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.activity/icons/obj16/Diagram_Activity.gif" implementationID="PapyrusUMLActivityDiagram" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="platform:/plugin/org.eclipse.papyrus.moka.simex/palette/simexActivity.paletteconfiguration" customStyle="platform:/plugin/org.eclipse.papyrus.moka.simex/css/activity-canonical.css">
       <modelRules xmi:id="_wFHKUGEDEeWAtYeYccnjOA" multiplicity="1">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Activity"/>
       </modelRules>

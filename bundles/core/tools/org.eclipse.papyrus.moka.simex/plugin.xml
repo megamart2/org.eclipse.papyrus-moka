@@ -77,17 +77,4 @@
             strategy="org.eclipse.papyrus.moka.simex.dnd.strategy.ParameterToActivityParameterNodeStrategy">
       </strategy>
    </extension>
-   <extension
-         point="org.eclipse.papyrus.uml.diagram.common.paletteDefinition">
-      <paletteDefinition
-            ID="org.eclipse.papyrus.moka.simex.activity.palette"
-            class="org.eclipse.papyrus.uml.diagram.common.service.ExtendedPluginPaletteProvider"
-            name="org.eclipse.papyrus.moka.simex.activity.palette"
-            path="palette/simexActivity.paletteconfiguration">
-         <Priority
-               name="Lowest">
-         </Priority>
-      </paletteDefinition>
-   </extension>
-
 </plugin>
