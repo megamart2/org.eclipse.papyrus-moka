@@ -3,6 +3,7 @@ package org.eclipse.papyrus.moka.fmu.engine.semantics;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_ExecutionFactory;
 import org.eclipse.uml2.uml.AcceptEventAction;
+import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.ChangeEvent;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Trigger;
@@ -23,7 +24,11 @@ public class FMUExecutionFactory extends Timed_ExecutionFactory {
 			if (visitor == null) {
 				visitor = super.instantiateVisitor(element) ;
 			}
-		} else {
+		} 
+		else if (element instanceof AddStructuralFeatureValueAction) {
+			visitor = new FMUAddStructuralFeatureValueAction() ;
+		}
+		else {
 			visitor = super.instantiateVisitor(element);
 		}
 		return visitor ;

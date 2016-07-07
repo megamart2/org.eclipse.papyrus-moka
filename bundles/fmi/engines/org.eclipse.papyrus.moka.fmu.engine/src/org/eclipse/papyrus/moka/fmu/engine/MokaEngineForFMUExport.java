@@ -1,16 +1,26 @@
 package org.eclipse.papyrus.moka.fmu.engine;
 
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultRequestPropagationStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
 import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.moka.fmu.engine.de.FMIPushPullStrategy;
+import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUConstructStrategy;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUExecutionFactory;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMULocus;
 import org.eclipse.papyrus.moka.fmu.engine.semantics.FMUObject;
 import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.papyrus.moka.fmu.json.JSONSocketClient;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.CreateObjectActionStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RedefinitionBasedDispatchStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.FIFOGetNextEventStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.FirstChoiceStrategy;
 import org.eclipse.papyrus.moka.service.IMokaService;
 import org.eclipse.papyrus.moka.service.MokaServiceRegistry;
 import org.eclipse.papyrus.moka.timedfuml.TimedUmlExecutionEngine;
@@ -81,4 +91,18 @@ public class MokaEngineForFMUExport extends TimedUmlExecutionEngine {
 		}
 	}
 
+	// Register semantic strategies available in the environment
+		@Override
+		protected void registerSemanticStrategies(ILocus locus) {
+			locus.getFactory().setStrategy(new FirstChoiceStrategy());
+			locus.getFactory().setStrategy(new FIFOGetNextEventStrategy());
+			locus.getFactory().setStrategy(new RedefinitionBasedDispatchStrategy());
+			locus.getFactory().setStrategy(new DefaultCreateObjectActionStrategy());
+			locus.getFactory().setStrategy(new DefaultGetAssociationStrategy());
+			locus.getFactory().setStrategy(new CS_DispatchOperationOfInterfaceStrategy());
+			locus.getFactory().setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
+			locus.getFactory().setStrategy(new CS_DefaultRequestPropagationStrategy());
+			locus.getFactory().setStrategy(new FMUConstructStrategy());
+		}
+	
 }
