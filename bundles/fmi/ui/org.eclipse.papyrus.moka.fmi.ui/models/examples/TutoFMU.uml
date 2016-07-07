@@ -9,11 +9,11 @@
     </packageImport>
     <packagedElement xmi:type="uml:Package" xmi:id="_bm5oUDbsEeaDY4APNmfY0g" name="01 - Creating an FMU">
       <packagedElement xmi:type="uml:Class" xmi:id="_hi5FoDbsEeaDY4APNmfY0g" name="A" classifierBehavior="_ncGUsDbsEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_qDf_UDbtEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_qDf_UDbtEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_sMRpsDbtEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_stLXUDbtEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_stLXUDbtEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_vWJksDbtEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -22,11 +22,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_fkTnIDbuEeaDY4APNmfY0g" name="02 - Reacting at absolute date">
       <packagedElement xmi:type="uml:Class" xmi:id="_fkTnITbuEeaDY4APNmfY0g" name="A" classifierBehavior="_fkTnJjbuEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_fkTnIjbuEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_fkTnIjbuEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_fkTnIzbuEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_fkTnJDbuEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_fkTnJDbuEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_fkTnJTbuEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -50,11 +50,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_sLU8kDbvEeaDY4APNmfY0g" name="03 - Reacting at relative date">
       <packagedElement xmi:type="uml:Class" xmi:id="_sLU8kTbvEeaDY4APNmfY0g" name="A" classifierBehavior="_sLU8ljbvEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_sLU8kjbvEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_sLU8kjbvEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_sLU8kzbvEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_sLU8lDbvEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_sLU8lDbvEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_sLU8lTbvEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -87,11 +87,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_iIODcDbwEeaDY4APNmfY0g" name="04 - Some basic computation">
       <packagedElement xmi:type="uml:Class" xmi:id="_iIODcTbwEeaDY4APNmfY0g" name="A" classifierBehavior="_iIODdjbwEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iIODcjbwEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_iIODcjbwEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_iIODczbwEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_iIODdDbwEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_iIODdDbwEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_iIODdTbwEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -252,11 +252,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_xP67ADbzEeaDY4APNmfY0g" name="05 - Periodic Loop - V1">
       <packagedElement xmi:type="uml:Class" xmi:id="_xP67ATbzEeaDY4APNmfY0g" name="A" classifierBehavior="_xP67BjbzEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_xP67AjbzEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_xP67AjbzEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_xP67AzbzEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_xP67BDbzEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_xP67BDbzEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_xP67BTbzEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -415,11 +415,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_Ufn4EDb2EeaDY4APNmfY0g" name="06 - Periodic Loop - V2">
       <packagedElement xmi:type="uml:Class" xmi:id="_Ufn4ETb2EeaDY4APNmfY0g" name="A" classifierBehavior="_Ufn4Fjb2EeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Ufn4Ejb2EeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Ufn4Ejb2EeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_Ufn4Ezb2EeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_Ufn4FDb2EeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_Ufn4FDb2EeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Ufn4FTb2EeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -573,11 +573,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_FE7PMDb3EeaDY4APNmfY0g" name="07 - Reacting to changes">
       <packagedElement xmi:type="uml:Class" xmi:id="_FE7PMTb3EeaDY4APNmfY0g" name="A" classifierBehavior="_FE7PNjb3EeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_FE7PMjb3EeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_FE7PMjb3EeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_FE7PMzb3EeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_FE7PNDb3EeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_FE7PNDb3EeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_FE7PNTb3EeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -741,11 +741,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_BNojYDeNEeaDY4APNmfY0g" name="08 - Infinite change loop - V1">
       <packagedElement xmi:type="uml:Class" xmi:id="_BNpKcDeNEeaDY4APNmfY0g" name="A" classifierBehavior="_BNpKdTeNEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_BNpKcTeNEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_BNpKcTeNEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_BNpKcjeNEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_BNpKczeNEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_BNpKczeNEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_BNpKdDeNEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -911,11 +911,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_jHN3gDeOEeaDY4APNmfY0g" name="09 - Infinite change loop - V2">
       <packagedElement xmi:type="uml:Class" xmi:id="_jHN3gTeOEeaDY4APNmfY0g" name="A" classifierBehavior="_jHN3hjeOEeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_jHN3gjeOEeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_jHN3gjeOEeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_jHN3gzeOEeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_jHN3hDeOEeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_jHN3hDeOEeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_jHN3hTeOEeaDY4APNmfY0g"/>
         </ownedAttribute>
@@ -1076,11 +1076,11 @@
     </packagedElement>
     <packagedElement xmi:type="uml:Package" xmi:id="_EsJU0DeREeaDY4APNmfY0g" name="10 - Test and loop">
       <packagedElement xmi:type="uml:Class" xmi:id="_EsJU0TeREeaDY4APNmfY0g" name="A" classifierBehavior="_EsJU1jeREeaDY4APNmfY0g" isActive="true">
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_EsJU0jeREeaDY4APNmfY0g" name="x">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_EsJU0jeREeaDY4APNmfY0g" name="x">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
           <defaultValue xmi:type="uml:LiteralInteger" xmi:id="_EsJU0zeREeaDY4APNmfY0g"/>
         </ownedAttribute>
-        <ownedAttribute xmi:type="uml:Property" xmi:id="_EsJU1DeREeaDY4APNmfY0g" name="y">
+        <ownedAttribute xmi:type="uml:Port" xmi:id="_EsJU1DeREeaDY4APNmfY0g" name="y">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
           <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_EsJU1TeREeaDY4APNmfY0g"/>
         </ownedAttribute>

@@ -5,7 +5,7 @@
       <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
     </packageImport>
     <packagedElement xmi:type="uml:Class" xmi:id="_NO0UEMXQEeWwx_puHDzFYw" name="C1" classifierBehavior="_bnRAUMXQEeWwx_puHDzFYw" isActive="true">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_RUkBcMXQEeWwx_puHDzFYw" name="valve" visibility="public">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_RUkBcMXQEeWwx_puHDzFYw" name="valve" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_Vs8W8MXQEeWwx_puHDzFYw"/>
       </ownedAttribute>
@@ -195,11 +195,11 @@ end C1;</body>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_V9MCEMaDEeWfFdnv26Efug" name="C2" classifierBehavior="_BxUJMMaEEeWfFdnv26Efug" isActive="true">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_auAFsMaDEeWfFdnv26Efug" name="abort" visibility="public">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_auAFsMaDEeWfFdnv26Efug" name="abort" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
         <defaultValue xmi:type="uml:LiteralBoolean" xmi:id="_lTy_sMaDEeWfFdnv26Efug"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_wQ2jIMaDEeWfFdnv26Efug" name="size" visibility="public">
+      <ownedAttribute xmi:type="uml:Port" xmi:id="_wQ2jIMaDEeWfFdnv26Efug" name="size" visibility="public">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Real"/>
         <defaultValue xmi:type="uml:LiteralReal" xmi:id="_15xTcMaDEeWfFdnv26Efug" value="1.0"/>
       </ownedAttribute>
@@ -372,7 +372,7 @@ end C2;</body>
   <standard:Create xmi:id="_XBc0EMaGEeWfFdnv26Efug" base_BehavioralFeature="_XBWGYMaGEeWfFdnv26Efug"/>
   <fmiprofile:CS_FMU xmi:id="_8VtIkM44EeW5W4GIqJpyFA" base_Class="_NO0UEMXQEeWwx_puHDzFYw" canNotUseMemoryManagementFunctions="true" canHandleVariableCommunicationStepSize="true"/>
   <fmiprofile:CS_FMU xmi:id="_-41MoM44EeW5W4GIqJpyFA" base_Class="_V9MCEMaDEeWfFdnv26Efug"/>
-  <fmiprofile:Port xmi:id="_IFSVIM45EeW5W4GIqJpyFA" base_Property="_RUkBcMXQEeWwx_puHDzFYw" description="" variability="discrete" valueReference="1"/>
-  <fmiprofile:Port xmi:id="_TZaUwM45EeW5W4GIqJpyFA" base_Property="_auAFsMaDEeWfFdnv26Efug" variability="discrete"/>
-  <fmiprofile:Port xmi:id="_WYYAQM45EeW5W4GIqJpyFA" base_Property="_wQ2jIMaDEeWfFdnv26Efug" variability="discrete" valueReference="1"/>
+  <fmiprofile:Port xmi:id="_IFSVIM45EeW5W4GIqJpyFA" base_Property="_RUkBcMXQEeWwx_puHDzFYw" description="" variability="discrete" valueReference="1" direction="out"/>
+  <fmiprofile:Port xmi:id="_TZaUwM45EeW5W4GIqJpyFA" base_Property="_auAFsMaDEeWfFdnv26Efug" variability="discrete" direction="out"/>
+  <fmiprofile:Port xmi:id="_WYYAQM45EeW5W4GIqJpyFA" base_Property="_wQ2jIMaDEeWfFdnv26Efug" variability="discrete" valueReference="1" direction="out"/>
 </xmi:XMI>
