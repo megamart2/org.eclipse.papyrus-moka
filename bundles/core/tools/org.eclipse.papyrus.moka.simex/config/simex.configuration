@@ -10,7 +10,7 @@
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </owningRules>
     </modelKinds>
-    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_a-WsUFiaEeWZUMJhjgTKEw" name="Simex Composite Structure Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.composite/icons/obj16/Diagram_CompositeStructure.gif" implementationID="CompositeStructure" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="" customStyle="">
+    <modelKinds xsi:type="configuration:PapyrusDiagram" xmi:id="_a-WsUFiaEeWZUMJhjgTKEw" name="Simex Composite Structure Diagram" icon="platform:/plugin/org.eclipse.papyrus.uml.diagram.composite/icons/obj16/Diagram_CompositeStructure.gif" implementationID="CompositeStructure" categories="_q2Pa8FY9EeWcmuYjB__atg" customPalette="platform:/plugin/org.eclipse.papyrus.moka.simex/palette/simexComposite.paletteconfiguration" customStyle="">
       <modelRules xmi:id="_a-WsUViaEeWZUMJhjgTKEw">
         <element href="http://www.eclipse.org/uml2/5.0.0/UML#//Package"/>
       </modelRules>
