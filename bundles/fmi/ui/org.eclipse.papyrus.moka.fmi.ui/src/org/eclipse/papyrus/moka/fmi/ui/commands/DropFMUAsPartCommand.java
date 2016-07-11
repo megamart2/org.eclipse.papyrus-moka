@@ -6,6 +6,7 @@ import java.util.List;
 import org.eclipse.core.commands.ExecutionException;
 import org.eclipse.core.runtime.IAdaptable;
 import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
 import org.eclipse.draw2d.geometry.Dimension;
 import org.eclipse.draw2d.geometry.Point;
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -84,6 +85,11 @@ public class DropFMUAsPartCommand extends AbstractTransactionalCommand {
 
 	}
 
+	@Override
+	protected IStatus doUndo(IProgressMonitor monitor, IAdaptable info) throws ExecutionException {
+		// TODO Auto-generated method stub
+		return super.doUndo(monitor, info);
+	}
 	protected void createNewPart() {
 		int numInstance = 0;
 
@@ -91,9 +97,6 @@ public class DropFMUAsPartCommand extends AbstractTransactionalCommand {
 			if (p.getType() == sourceType)
 				numInstance++;
 		}
-
-
-
 		String partName = sourceType.getName();
 
 		if (numInstance> 0){
@@ -187,40 +190,13 @@ public class DropFMUAsPartCommand extends AbstractTransactionalCommand {
 			e.printStackTrace();
 		}
 
-		View resultingPortView = ((IAdaptable) createCommand.getCommandResult().getReturnValue())
-				.getAdapter(View.class);
+	
 
-		if (resultingPortView instanceof CSSShapeImpl && !resultingPortView.getChildren().isEmpty()) {
-			alignPortLabel((CSSShapeImpl) resultingPortView, port, position);
-		}
+		
 
 	}
 
-	private void alignPortLabel(CSSShapeImpl shape, Port port, PositionKind position) {
-
-//		if (shape.getChildren().get(0) instanceof Node) {
-//			Node label = (Node) shape.getChildren().get(0);
-//
-//			if (port.getName() != null) {
-//				int xOffset;
-//				if (position == PositionKind.EAST) {
-//					xOffset = (int) Math
-//							.round(-port.getName().length() * shape.getCSSFontHeight() * X_FONT_HEIGHT_FACTOR);
-//				} else {
-//
-//					xOffset = (int) Math.round(X_WEST_OFFSET * X_FONT_HEIGHT_FACTOR);
-//				}
-//				SetBoundsCommand setLabelBoundsCommand = new SetBoundsCommand(domain, "move", new EObjectAdapter(label),
-//						new Point(xOffset, (int) Math.round(Y_LABEL_OFFSET * Y_FONT_HEIGHT_FACTOR)));
-//				try {
-//					setLabelBoundsCommand.execute(null, null);
-//				} catch (ExecutionException e) {
-//					e.printStackTrace();
-//				}
-//			}
-//		}
-
-	}
+	
 
 	private List<Port> collectPorts(Property newPart, FlowDirection direction) {
 		List<Port> ret = new ArrayList<Port>();

@@ -30,6 +30,7 @@ import org.eclipse.core.runtime.Platform;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.jface.dialogs.MessageDialog;
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CallbackFunctions;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2InitialType;
@@ -44,6 +45,7 @@ import org.eclipse.papyrus.moka.fmi.master.masterlibrary.CoSimEnvironment;
 import org.eclipse.papyrus.moka.fmi.master.masterlibrary.DependencyGraph;
 import org.eclipse.papyrus.moka.fmi.master.masterlibrary.Experiments;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.BooleanValue;
@@ -53,6 +55,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Operation;
+import org.eclipse.uml2.uml.StructuralFeature;
 
 public class Master2ProxyService extends AbstractService {
 
@@ -117,8 +120,27 @@ public class Master2ProxyService extends AbstractService {
 		}
 		String line = "time";
 		for (Fmu2ProxyService fmu : coSimEnv.getFmus()) {
+			StructuralFeature definingFeature =null;
+			for (IFeatureValue featValue :fmu.getDirectContainers().get(0).getFeatureValues()){
+				for (IValue value : featValue.getValues()){
+					if (value instanceof CS_Reference){
+						CS_Reference ref = (CS_Reference) value;
+						if (fmu.equals(ref.getCompositeReferent())){
+							definingFeature = featValue.getFeature();
+							break;
+						}
+					}
+					
+				}
+				if (definingFeature != null) {
+					break;
+				}
+			}
+			String featName = definingFeature!= null? definingFeature.getName()+".": "";
+			
+
 			for (Fmi2ScalarVariable output : fmu.variables) {
-				line += ";" + output.getFmu().getTypes().get(0).getName() + "." + output.getName();
+				line += ";" + featName + output.getName();
 			}
 		}
 
@@ -319,12 +341,7 @@ public class Master2ProxyService extends AbstractService {
 	               public void run() {
 	       			MessageDialog.openInformation(Display.getDefault().getActiveShell(), "Simulation success", "Successfully Simulated " + finalSteps + " steps in " +duration+" ms");
 	       			
-	       			try {
-						ResourcesPlugin.getWorkspace().getRoot().refreshLocal(2, new NullProgressMonitor());
-					} catch (CoreException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
+	       			
 	               }
 	            });
 		  
