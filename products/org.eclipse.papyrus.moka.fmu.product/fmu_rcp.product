@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="FMU Embedded Moka" uid="fmu_embedded_moka" id="org.eclipse.papyrus.moka.fmu.rcp.product" application="org.eclipse.papyrus.moka.fmu.rcpapplication" version="0.1" useFeatures="false" includeLaunchers="true">
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-noSplash  -configuration @none
+      </programArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages/>
+
+   <launcher name="fmu_rcp">
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm>
+   </vm>
+
+   <plugins>
+      <plugin id="com.fasterxml.jackson.core.jackson-annotations"/>
+      <plugin id="com.fasterxml.jackson.core.jackson-core"/>
+      <plugin id="javax.xml"/>
+      <plugin id="org.apache.commons.cli"/>
+      <plugin id="org.apache.commons.lang"/>
+      <plugin id="org.apache.commons.logging"/>
+      <plugin id="org.aspectj.runtime"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.filesystem"/>
+      <plugin id="org.eclipse.core.filesystem.linux.x86_64" fragment="true"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.resources"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.emf"/>
+      <plugin id="org.eclipse.emf.common"/>
+      <plugin id="org.eclipse.emf.ecore"/>
+      <plugin id="org.eclipse.emf.ecore.xmi"/>
+      <plugin id="org.eclipse.emf.mapping.ecore2xml"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
+      <plugin id="org.eclipse.papyrus.moka"/>
+      <plugin id="org.eclipse.papyrus.moka.composites"/>
+      <plugin id="org.eclipse.papyrus.moka.composites.interfaces"/>
+      <plugin id="org.eclipse.papyrus.moka.discreteevent"/>
+      <plugin id="org.eclipse.papyrus.moka.fmi"/>
+      <plugin id="org.eclipse.papyrus.moka.fmi.profile"/>
+      <plugin id="org.eclipse.papyrus.moka.fmu.engine"/>
+      <plugin id="org.eclipse.papyrus.moka.fmu.rcp"/>
+      <plugin id="org.eclipse.papyrus.moka.fuml"/>
+      <plugin id="org.eclipse.papyrus.moka.fuml.interfaces"/>
+      <plugin id="org.eclipse.papyrus.moka.service"/>
+      <plugin id="org.eclipse.papyrus.moka.timedfuml"/>
+      <plugin id="org.eclipse.papyrus.moka.utils"/>
+      <plugin id="org.eclipse.uml2.common"/>
+      <plugin id="org.eclipse.uml2.types"/>
+      <plugin id="org.eclipse.uml2.uml"/>
+      <plugin id="org.eclipse.uml2.uml.profile.standard"/>
+      <plugin id="org.eclipse.uml2.uml.resources"/>
+   </plugins>
+
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>

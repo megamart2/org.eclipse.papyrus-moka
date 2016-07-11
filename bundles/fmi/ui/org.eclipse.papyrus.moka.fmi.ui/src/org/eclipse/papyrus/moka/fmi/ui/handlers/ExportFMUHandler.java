@@ -13,18 +13,13 @@ package org.eclipse.papyrus.moka.fmi.ui.handlers;
 
 import org.eclipse.emf.transaction.RecordingCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
-import org.eclipse.jface.preference.IPreferenceStore;
 import org.eclipse.papyrus.moka.composites.utils.handlers.AbstractCompositeUtilsHandler;
 import org.eclipse.papyrus.moka.composites.utils.handlers.Utils;
 import org.eclipse.papyrus.moka.fmi.exporter.FMUExporter;
 import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
-import org.eclipse.papyrus.moka.fmi.ui.Activator;
 import org.eclipse.papyrus.moka.fmi.ui.dialogs.ExportFMUDialog;
-import org.eclipse.papyrus.moka.fmi.ui.dialogs.ImportFMUDialog;
-import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Display;
-import org.eclipse.swt.widgets.Shell;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Element;

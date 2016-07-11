@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.eclipse.core.runtime.FileLocator;
@@ -28,8 +30,16 @@ import org.osgi.framework.Bundle;
 public class FMUExporter {
 
 	private static final String RESOURCE_DIR = "resources";
-	private static final String RCP_NAME = "rcp.zip";
 	private static final String LIB_NAME = "libfmuwrapper";
+	
+	private static Map<String, String> platformsToRCPfile;
+	
+	static{
+		platformsToRCPfile = new HashMap<String, String>();
+		platformsToRCPfile.put(FMUResourceUtil.BINARIES_LINUX32, "rcp-linux.gtk.x86.zip");
+		platformsToRCPfile.put(FMUResourceUtil.BINARIES_LINUX64, "rcp-linux.gtk.x86_64.zip");
+		platformsToRCPfile.put(FMUResourceUtil.BINARIES_WIN64, "rcp-win32.win32.x86_64.zip");
+	}
 
 	public static void generateFMU(Class umlClass,String fmuName , String outputPath, String targetPlatform, String jrePath ){
 		ResourceSet resSet = new ResourceSetImpl();
@@ -106,7 +116,7 @@ public class FMUExporter {
 
 	private static void addRcp(String targetPlatform, FMUBundle fmuBundle) {
 		Bundle bundle = Activator.getDefault().getBundle();
-		URL rcpURL = bundle.getEntry(RESOURCE_DIR+"/"+targetPlatform+"/"+RCP_NAME);
+		URL rcpURL = bundle.getEntry(RESOURCE_DIR+"/"+targetPlatform+"/"+platformsToRCPfile.get(targetPlatform));
 		try {
 			rcpURL = FileLocator.toFileURL(rcpURL);
 			File rcpFile = new File (rcpURL.getFile());

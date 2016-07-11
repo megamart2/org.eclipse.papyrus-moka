@@ -20,7 +20,17 @@
 	
 	<!-- Modules to build -->
 	<modules>
-		<module>org.eclipse.papyrus.moka.standalone.product</module>
+		<module>org.eclipse.papyrus.moka.fmu.product</module>
 	</modules>
+	
+	<profiles>
+		<profile>
+			<id>release</id>
+			<modules>
+				<module>org.eclipse.papyrus.moka.standalone.product</module>
+				<module>org.eclipse.papyrus.moka.fmu.product</module>
+			</modules>
+		</profile>
+	</profiles>
 	
 </project>
