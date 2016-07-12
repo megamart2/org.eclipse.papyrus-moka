@@ -26,6 +26,7 @@
 		<module>org.eclipse.papyrus.moka.simex</module>
 		<module>org.eclipse.papyrus.moka.utils</module>
 		<module>org.eclipse.papyrus.moka.utils.ui</module>
+		<module>visualization</module>
 	</modules>
 	
 </project>

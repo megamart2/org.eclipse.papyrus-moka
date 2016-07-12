@@ -1,0 +1,104 @@
+/**
+ * Copyright (c) 2016 CEA LIST.
+ * 
+ *  All rights reserved. This program and the accompanying materials
+ *  are made available under the terms of the Eclipse Public License v1.0
+ *  which accompanies this distribution, and is available at
+ *  http://www.eclipse.org/legal/epl-v10.html
+ * 
+ *  Contributors:
+ *   CEA LIST - Initial API and implementation
+ */
+package org.eclipse.papyrus.moka.datavisualization.profile;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EObject;
+
+import org.eclipse.uml2.uml.DataType;
+
+/**
+ * <!-- begin-user-doc -->
+ * A representation of the model object '<em><b>Data Source</b></em>'.
+ * <!-- end-user-doc -->
+ *
+ * <p>
+ * The following features are supported:
+ * </p>
+ * <ul>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getBase_DataType <em>Base Data Type</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets <em>Value Sets</em>}</li>
+ * </ul>
+ *
+ * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource()
+ * @model
+ * @generated
+ */
+public interface DataSource extends EObject {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	String copyright = "Copyright (c) 2016 CEA LIST.\r\n\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n\r\n Contributors:\r\n  CEA LIST - Initial API and implementation";
+
+	/**
+	 * Returns the value of the '<em><b>Base Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Base Data Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Data Type</em>' reference.
+	 * @see #setBase_DataType(DataType)
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_Base_DataType()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	DataType getBase_DataType();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getBase_DataType <em>Base Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Data Type</em>' reference.
+	 * @see #getBase_DataType()
+	 * @generated
+	 */
+	void setBase_DataType(DataType value);
+
+	/**
+	 * Returns the value of the '<em><b>Variables</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.moka.datavisualization.profile.Variable}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Variables</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Variables</em>' reference list.
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_Variables()
+	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
+	 * @generated
+	 */
+	EList<Variable> getVariables();
+
+	/**
+	 * Returns the value of the '<em><b>Value Sets</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value Sets</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value Sets</em>' reference list.
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_ValueSets()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<DataValueSet> getValueSets();
+
+} // DataSource
