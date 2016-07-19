@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getVariableName <em>Variable Name</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBinaryString <em>Binary String</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getValueSeries()
@@ -62,6 +63,32 @@ public interface ValueSeries extends EObject {
 	 * @generated
 	 */
 	void setVariableName(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Binary String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Binary String</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Binary String</em>' attribute.
+	 * @see #setBinaryString(String)
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getValueSeries_BinaryString()
+	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @generated
+	 */
+	String getBinaryString();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBinaryString <em>Binary String</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Binary String</em>' attribute.
+	 * @see #getBinaryString()
+	 * @generated
+	 */
+	void setBinaryString(String value);
 
 	/**
 	 * <!-- begin-user-doc -->

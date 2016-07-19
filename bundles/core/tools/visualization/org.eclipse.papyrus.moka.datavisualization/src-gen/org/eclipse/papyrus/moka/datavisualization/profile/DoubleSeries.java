@@ -48,7 +48,7 @@ public interface DoubleSeries extends ValueSeries {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDoubleSeries_Values()
-	 * @model unique="false"
+	 * @model unique="false" transient="true"
 	 * @generated
 	 */
 	EList<Double> getValues();

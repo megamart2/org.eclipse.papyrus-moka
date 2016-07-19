@@ -15,6 +15,7 @@
 package org.eclipse.papyrus.moka.datavisualization.profile.custom;
 
 import org.eclipse.papyrus.moka.datavisualization.profile.impl.IntegerSeriesImpl;
+import org.eclipse.papyrus.moka.datavisualization.util.VisualizationUtil;
 
 public class CustomIntegerSeries extends IntegerSeriesImpl {
 	@Override
@@ -25,5 +26,16 @@ public class CustomIntegerSeries extends IntegerSeriesImpl {
 	@Override
 	public int getSize() {
 		return getValues().size();
+	}
+	
+	@Override
+	public void setBinaryString(String newBinaryString) {
+		VisualizationUtil.initValuesFromBinaryString(this, newBinaryString);
+	}
+
+	@Override
+	public String getBinaryString() {
+			return VisualizationUtil.getBinaryString(this);
+
 	}
 }

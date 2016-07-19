@@ -86,7 +86,7 @@ public interface DataSource extends EObject {
 	EList<Variable> getVariables();
 
 	/**
-	 * Returns the value of the '<em><b>Value Sets</b></em>' reference list.
+	 * Returns the value of the '<em><b>Value Sets</b></em>' containment reference list.
 	 * The list contents are of type {@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet}.
 	 * <!-- begin-user-doc -->
 	 * <p>
@@ -94,9 +94,9 @@ public interface DataSource extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value Sets</em>' reference list.
+	 * @return the value of the '<em>Value Sets</em>' containment reference list.
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_ValueSets()
-	 * @model ordered="false"
+	 * @model containment="true" ordered="false"
 	 * @generated
 	 */
 	EList<DataValueSet> getValueSets();

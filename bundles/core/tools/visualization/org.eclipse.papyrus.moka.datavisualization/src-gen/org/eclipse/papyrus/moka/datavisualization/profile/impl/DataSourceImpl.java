@@ -15,6 +15,7 @@ import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,8 +24,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
 import org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet;
 import org.eclipse.papyrus.moka.datavisualization.profile.Variable;
@@ -66,7 +67,7 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	protected DataType base_DataType;
 
 	/**
-	 * The cached value of the '{@link #getValueSets() <em>Value Sets</em>}' reference list.
+	 * The cached value of the '{@link #getValueSets() <em>Value Sets</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValueSets()
@@ -150,9 +151,23 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 */
 	public EList<DataValueSet> getValueSets() {
 		if (valueSets == null) {
-			valueSets = new EObjectResolvingEList<DataValueSet>(DataValueSet.class, this, VisualizationPackage.DATA_SOURCE__VALUE_SETS);
+			valueSets = new EObjectContainmentEList<DataValueSet>(DataValueSet.class, this, VisualizationPackage.DATA_SOURCE__VALUE_SETS);
 		}
 		return valueSets;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case VisualizationPackage.DATA_SOURCE__VALUE_SETS:
+				return ((InternalEList<?>)getValueSets()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**

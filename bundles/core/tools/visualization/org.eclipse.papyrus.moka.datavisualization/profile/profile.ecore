@@ -12,7 +12,7 @@
         upperBound="-1" eType="#//Variable" changeable="false" volatile="true" transient="true"
         derived="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="valueSets" ordered="false"
-        upperBound="-1" eType="#//DataValueSet"/>
+        upperBound="-1" eType="#//DataValueSet" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Variable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
@@ -28,6 +28,8 @@
     <eOperations name="getSize" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="binaryString" ordered="false"
+        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DataValueSet">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="metadata" ordered="false"
@@ -37,18 +39,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringSeries" eSuperTypes="#//ValueSeries">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="DoubleSeries" eSuperTypes="#//ValueSeries">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDouble"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntegerSeries" eSuperTypes="#//ValueSeries">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
+        transient="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BooleanSeries" eSuperTypes="#//ValueSeries">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        transient="true"/>
   </eClassifiers>
 </ecore:EPackage>

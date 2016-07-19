@@ -48,7 +48,7 @@ public interface StringSeries extends ValueSeries {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Values</em>' attribute list.
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getStringSeries_Values()
-	 * @model unique="false"
+	 * @model unique="false" transient="true"
 	 * @generated
 	 */
 	EList<String> getValues();

@@ -49,6 +49,7 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSeries">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSeries/variableName"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSeries/binaryString"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSeries/getStringValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="profile.ecore#//ValueSeries/getStringValue/index"/>
       </genOperations>

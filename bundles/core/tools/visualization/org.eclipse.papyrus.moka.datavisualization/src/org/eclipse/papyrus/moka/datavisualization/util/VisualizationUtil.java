@@ -14,14 +14,28 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.datavisualization.util;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.util.Base64;
 import java.util.Iterator;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
+import java.util.zip.ZipOutputStream;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import org.eclipse.papyrus.moka.datavisualization.profile.BooleanSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
 import org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet;
+import org.eclipse.papyrus.moka.datavisualization.profile.DoubleSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.IntegerSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.StringSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
 import org.eclipse.uml2.uml.DataType;
@@ -37,114 +51,288 @@ import org.eclipse.uml2.uml.util.UMLUtil;
 public class VisualizationUtil {
 
 	private static final String DEFAULT_DATATYPE_NAME = "CSVResource";
-	
+
 	public static final String VISUALIZATION_PROFILE_URI = "pathmap://PAPYRUS_MOKA_DATA_VISUALIZATION/datavisualization.profile.uml";
 	public static final String DATA_SOURCE_STEREO_NAME = "DataSource";
 	public static final String VARIABLE_STEREO_NAME = "Variable";
-	public static final String VISUALIZATION_PROFILE_NAME="DataVisualizationProfile";
+	public static final String VISUALIZATION_PROFILE_NAME = "DataVisualizationProfile";
 
-	
-	public static final String DATA_SOURCE_STEREO_QUALIFIED_NAME = VISUALIZATION_PROFILE_NAME+"::"+DATA_SOURCE_STEREO_NAME;
-	public static final String VARIABLE_STEREO__QUALIFIED_NAME = VISUALIZATION_PROFILE_NAME+"::"+VARIABLE_STEREO_NAME;
+	public static final String DATA_SOURCE_STEREO_QUALIFIED_NAME = VISUALIZATION_PROFILE_NAME + "::"
+			+ DATA_SOURCE_STEREO_NAME;
+	public static final String VARIABLE_STEREO__QUALIFIED_NAME = VISUALIZATION_PROFILE_NAME + "::"
+			+ VARIABLE_STEREO_NAME;
 
 	public static final String PRIMITIVE_TYPE_URI = "pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml";
 	public static final String REAL_NAME = "Real";
 	public static final String BOOLEAN_NAME = "Boolean";
 	public static final String INTEGER_NAME = "Integer";
 	public static final String STRING_NAME = "String";
-	
-	
 
-	public static DataType createOwnedDataType(Package owningPackage, DataValueSet valueSet){
-		
+	public static final byte BINARY_STRING_SEPARATOR = ';';
+
+	public static final String BINARY_STRING_ZIP_ENTRY_NAME = "entry";
+
+	public static DataType createOwnedDataType(Package owningPackage, DataValueSet valueSet) {
+
 		applyVisualizationProfileIfNeeded(owningPackage);
 		String name;
-		if (valueSet.eResource()!=null && valueSet.eResource().getURI() != null){
+		if (valueSet.eResource() != null && valueSet.eResource().getURI() != null) {
 			name = valueSet.eResource().getURI().trimFileExtension().lastSegment();
-		}else {
+		} else {
 			name = DEFAULT_DATATYPE_NAME;
 		}
 		DataType ret = (DataType) owningPackage.createPackagedElement(name, UMLPackage.eINSTANCE.getDataType());
 		Stereotype dataSourceStereo = getDataSourceStereotype(owningPackage);
-		if (dataSourceStereo!= null){
+		if (dataSourceStereo != null) {
 			DataSource dataSourceApplication = (DataSource) ret.applyStereotype(dataSourceStereo);
 			dataSourceApplication.getValueSets().add(valueSet);
 		}
 		Stereotype variableStereo = getVariableStereotype(owningPackage);
-		for (ValueSeries serie : valueSet.getSeries()){
+		for (ValueSeries serie : valueSet.getSeries()) {
 			Property variable = ret.createOwnedAttribute(serie.getVariableName(), getUMLTypeForValueSeries(serie));
-			if (variableStereo != null){
+			if (variableStereo != null) {
 				variable.applyStereotype(variableStereo);
 			}
-		}		
+		}
 		return ret;
 	}
 
 	private static Type getUMLTypeForValueSeries(ValueSeries serie) {
-		switch (serie.eClass().getClassifierID()){
-		case VisualizationPackage.BOOLEAN_SERIES :
+		switch (serie.eClass().getClassifierID()) {
+		case VisualizationPackage.BOOLEAN_SERIES:
 			return getUMLPrimitiveType(serie, BOOLEAN_NAME);
-		case VisualizationPackage.INTEGER_SERIES :
+		case VisualizationPackage.INTEGER_SERIES:
 			return getUMLPrimitiveType(serie, INTEGER_NAME);
-		case VisualizationPackage.DOUBLE_SERIES :
+		case VisualizationPackage.DOUBLE_SERIES:
 			return getUMLPrimitiveType(serie, REAL_NAME);
-		default : 
+		default:
 			return getUMLPrimitiveType(serie, STRING_NAME);
 		}
-		
+
 	}
 
 	public static void applyVisualizationProfileIfNeeded(Package owningPackage) {
 		Profile visualizationProfile = getVisualizationProfile(owningPackage);
-		
+
 		Iterator<Profile> profileIter = owningPackage.getAllAppliedProfiles().iterator();
 		Profile appliedProfile = null;
-		while (profileIter.hasNext() && (appliedProfile != visualizationProfile)){
+		while (profileIter.hasNext() && (appliedProfile != visualizationProfile)) {
 			appliedProfile = profileIter.next();
 		}
-		if(appliedProfile != visualizationProfile){
+		if (appliedProfile != visualizationProfile) {
 			Package rootPackage = owningPackage.getModel();
-			if (rootPackage != null && rootPackage.eResource() == owningPackage.eResource()){
+			if (rootPackage != null && rootPackage.eResource() == owningPackage.eResource()) {
 				rootPackage.applyProfile(visualizationProfile);
-			}else {
+			} else {
 				owningPackage.applyProfile(visualizationProfile);
 			}
 		}
 	}
 
 	public ResourceSet getResourceSet(EObject context) {
-		if (context != null && context.eResource() != null && context.eResource().getResourceSet() != null){
+		if (context != null && context.eResource() != null && context.eResource().getResourceSet() != null) {
 			return context.eResource().getResourceSet();
-		}else {
+		} else {
 			return new ResourceSetImpl();
 		}
 	}
-	
-	public static Profile getVisualizationProfile(EObject context){
+
+	public static Profile getVisualizationProfile(EObject context) {
 		return UMLUtil.getProfile(VisualizationPackage.eINSTANCE, context);
 	}
-	
-	public static PrimitiveType getUMLPrimitiveType(EObject context, String typeName){
+
+	public static PrimitiveType getUMLPrimitiveType(EObject context, String typeName) {
 		ResourceSet resSet = UMLUtil.getResourceSet(context);
-		if (resSet == null){
+		if (resSet == null) {
 			resSet = new ResourceSetImpl();
 		}
 		return (PrimitiveType) resSet.getEObject(URI.createURI(PRIMITIVE_TYPE_URI).appendFragment(typeName), true);
 	}
-	
-	public static Stereotype getDataSourceStereotype(EObject context){
+
+	public static Stereotype getDataSourceStereotype(EObject context) {
 		Profile visualizationProfile = getVisualizationProfile(context);
-		if (visualizationProfile != null){
+		if (visualizationProfile != null) {
 			return visualizationProfile.getOwnedStereotype(DATA_SOURCE_STEREO_NAME);
 		}
-		return  null;
+		return null;
 	}
-	public static Stereotype getVariableStereotype(EObject context){
+
+	public static Stereotype getVariableStereotype(EObject context) {
 		Profile visualizationProfile = getVisualizationProfile(context);
-		if (visualizationProfile != null){
+		if (visualizationProfile != null) {
 			return visualizationProfile.getOwnedStereotype(VARIABLE_STEREO_NAME);
 		}
 		return null;
 	}
-	
+
+	public static String getBinaryString(ValueSeries series) {
+		try (ByteArrayOutputStream outputStringStream = new ByteArrayOutputStream();
+				ZipOutputStream zipStream = new ZipOutputStream(outputStringStream);) {
+
+			zipStream.putNextEntry(new ZipEntry(VisualizationUtil.BINARY_STRING_ZIP_ENTRY_NAME));
+
+			switch (series.eClass().getClassifierID()) {
+
+			case VisualizationPackage.BOOLEAN_SERIES:
+				encodeBooleanSeries((BooleanSeries) series, zipStream);
+				break;
+			case VisualizationPackage.DOUBLE_SERIES:
+				encodeDoubleSeries((DoubleSeries) series, zipStream);
+				break;
+
+			case VisualizationPackage.INTEGER_SERIES:
+				encodeIntegerSeries((IntegerSeries) series, zipStream);
+				break;
+
+			case VisualizationPackage.STRING_SERIES:
+				encodeStringSeries((StringSeries) series, zipStream);
+				break;
+			}
+
+			zipStream.closeEntry();
+			zipStream.close();
+
+			return Base64.getEncoder().encodeToString(outputStringStream.toByteArray());
+		} catch (IOException e1) {
+
+		}
+
+		return null;
+
+	}
+
+	private static void encodeBooleanSeries(BooleanSeries series, ZipOutputStream zipStream) throws IOException {
+		for (Boolean value : series.getValues()) {
+			if (value) {
+				zipStream.write('1');
+			} else {
+				zipStream.write('0');
+			}
+			zipStream.write(VisualizationUtil.BINARY_STRING_SEPARATOR);
+		}
+
+	}
+
+	public static void initValuesFromBinaryString(ValueSeries series, String newBinaryString) {
+
+		if (newBinaryString != null) {
+
+			byte[] array = Base64.getDecoder().decode(newBinaryString);
+
+			// Deactivate notification when filling the list
+			// We store current state before deactivating
+			boolean previousDeliver = series.eDeliver();
+			series.eSetDeliver(false);
+
+			try (ZipInputStream zipInput = new ZipInputStream(new ByteArrayInputStream(array));) {
+
+				zipInput.getNextEntry();
+
+				switch (series.eClass().getClassifierID()) {
+
+				case VisualizationPackage.BOOLEAN_SERIES:
+					decodeBooleanSeries((BooleanSeries) series, zipInput);
+					break;
+				case VisualizationPackage.DOUBLE_SERIES:
+					decodeDoubleSeries((DoubleSeries) series, zipInput);
+					break;
+
+				case VisualizationPackage.INTEGER_SERIES:
+					decodeIntegerSeries((IntegerSeries) series, zipInput);
+					break;
+
+				case VisualizationPackage.STRING_SERIES:
+					decodeStringSeries((StringSeries) series, zipInput);
+					break;
+				}
+
+				zipInput.closeEntry();
+				zipInput.close();
+
+			} catch (IOException e) {
+
+			}
+
+			series.eSetDeliver(previousDeliver);
+		}
+
+	}
+
+	private static void encodeStringSeries(StringSeries series, ZipOutputStream zipStream) throws IOException {
+		for (String value : series.getValues()) {
+			zipStream.write(value.getBytes());
+			zipStream.write(VisualizationUtil.BINARY_STRING_SEPARATOR);
+		}
+
+	}
+
+	private static void decodeStringSeries(StringSeries series, ZipInputStream zipInput) throws IOException {
+		int readByte;
+		ByteArrayOutputStream outputStringStream = new ByteArrayOutputStream();
+		while ((readByte = zipInput.read()) != -1) {
+			if (readByte == VisualizationUtil.BINARY_STRING_SEPARATOR) {
+				series.getValues().add(outputStringStream.toString());
+				outputStringStream.reset();
+			} else {
+				outputStringStream.write(readByte);
+			}
+		}
+
+	}
+
+	private static void encodeIntegerSeries(IntegerSeries series, ZipOutputStream zipStream) throws IOException {
+		for (Integer value : series.getValues()) {
+			zipStream.write(value.toString().getBytes());
+			zipStream.write(VisualizationUtil.BINARY_STRING_SEPARATOR);
+		}
+	}
+
+	private static void decodeIntegerSeries(IntegerSeries series, ZipInputStream zipInput)
+			throws NumberFormatException, IOException {
+		int readByte;
+		ByteArrayOutputStream outputStringStream = new ByteArrayOutputStream();
+		while ((readByte = zipInput.read()) != -1) {
+			if (readByte == VisualizationUtil.BINARY_STRING_SEPARATOR) {
+				series.getValues().add(Integer.parseInt(outputStringStream.toString()));
+				outputStringStream.reset();
+			} else {
+				outputStringStream.write(readByte);
+			}
+		}
+
+	}
+
+	private static void encodeDoubleSeries(DoubleSeries series, ZipOutputStream zipStream) throws IOException {
+		for (Double value : series.getValues()) {
+			zipStream.write(value.toString().getBytes());
+			zipStream.write(VisualizationUtil.BINARY_STRING_SEPARATOR);
+		}
+
+	}
+
+	private static void decodeDoubleSeries(DoubleSeries series, ZipInputStream zipInput) throws IOException {
+		int readByte;
+		ByteArrayOutputStream outputStringStream = new ByteArrayOutputStream();
+		while ((readByte = zipInput.read()) != -1) {
+			if (readByte == VisualizationUtil.BINARY_STRING_SEPARATOR) {
+				series.getValues().add(Double.parseDouble(outputStringStream.toString()));
+				outputStringStream.reset();
+			} else {
+				outputStringStream.write(readByte);
+			}
+		}
+	}
+
+	private static void decodeBooleanSeries(BooleanSeries series, ZipInputStream zipInput) throws IOException {
+		int readByte;
+		while ((readByte = zipInput.read()) != -1) {
+			if ('1' == readByte) {
+				series.getValues().add(true);
+			} else {
+				series.getValues().add(false);
+			}
+		}
+
+	}
+
 }

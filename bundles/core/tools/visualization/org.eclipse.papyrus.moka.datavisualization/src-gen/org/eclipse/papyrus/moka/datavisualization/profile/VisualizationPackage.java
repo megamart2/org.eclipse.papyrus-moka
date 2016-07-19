@@ -103,7 +103,7 @@ public interface VisualizationPackage extends EPackage {
 	int DATA_SOURCE__VARIABLES = 1;
 
 	/**
-	 * The feature id for the '<em><b>Value Sets</b></em>' reference list.
+	 * The feature id for the '<em><b>Value Sets</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -195,13 +195,22 @@ public interface VisualizationPackage extends EPackage {
 	int VALUE_SERIES__VARIABLE_NAME = 0;
 
 	/**
+	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SERIES__BINARY_STRING = 1;
+
+	/**
 	 * The number of structural features of the '<em>Value Series</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SERIES_FEATURE_COUNT = 1;
+	int VALUE_SERIES_FEATURE_COUNT = 2;
 
 	/**
 	 * The operation id for the '<em>Get String Value</em>' operation.
@@ -296,6 +305,15 @@ public interface VisualizationPackage extends EPackage {
 	int STRING_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
+
+	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -358,6 +376,15 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOUBLE_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -424,6 +451,15 @@ public interface VisualizationPackage extends EPackage {
 	int INTEGER_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
 
 	/**
+	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
+
+	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -486,6 +522,15 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOLEAN_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -566,10 +611,10 @@ public interface VisualizationPackage extends EPackage {
 	EReference getDataSource_Variables();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets <em>Value Sets</em>}'.
+	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets <em>Value Sets</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Value Sets</em>'.
+	 * @return the meta object for the containment reference list '<em>Value Sets</em>'.
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets()
 	 * @see #getDataSource()
 	 * @generated
@@ -628,6 +673,17 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValueSeries_VariableName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBinaryString <em>Binary String</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Binary String</em>'.
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBinaryString()
+	 * @see #getValueSeries()
+	 * @generated
+	 */
+	EAttribute getValueSeries_BinaryString();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getStringValue(int) <em>Get String Value</em>}' operation.
@@ -815,7 +871,7 @@ public interface VisualizationPackage extends EPackage {
 		EReference DATA_SOURCE__VARIABLES = eINSTANCE.getDataSource_Variables();
 
 		/**
-		 * The meta object literal for the '<em><b>Value Sets</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Value Sets</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
@@ -865,6 +921,14 @@ public interface VisualizationPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute VALUE_SERIES__VARIABLE_NAME = eINSTANCE.getValueSeries_VariableName();
+
+		/**
+		 * The meta object literal for the '<em><b>Binary String</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute VALUE_SERIES__BINARY_STRING = eINSTANCE.getValueSeries_BinaryString();
 
 		/**
 		 * The meta object literal for the '<em><b>Get String Value</b></em>' operation.

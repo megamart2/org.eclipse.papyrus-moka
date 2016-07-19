@@ -254,6 +254,15 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getValueSeries_BinaryString() {
+		return (EAttribute)valueSeriesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EOperation getValueSeries__GetStringValue__int() {
 		return valueSeriesEClass.getEOperations().get(0);
 	}
@@ -405,6 +414,7 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 
 		valueSeriesEClass = createEClass(VALUE_SERIES);
 		createEAttribute(valueSeriesEClass, VALUE_SERIES__VARIABLE_NAME);
+		createEAttribute(valueSeriesEClass, VALUE_SERIES__BINARY_STRING);
 		createEOperation(valueSeriesEClass, VALUE_SERIES___GET_STRING_VALUE__INT);
 		createEOperation(valueSeriesEClass, VALUE_SERIES___GET_SIZE);
 
@@ -466,7 +476,7 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataSource_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getDataSource_Variables(), this.getVariable(), null, "variables", null, 0, -1, DataSource.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDataSource_ValueSets(), this.getDataValueSet(), null, "valueSets", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getDataSource_ValueSets(), this.getDataValueSet(), null, "valueSets", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getVariable_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -474,6 +484,7 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 
 		initEClass(valueSeriesEClass, ValueSeries.class, "ValueSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getValueSeries_VariableName(), theTypesPackage.getString(), "variableName", null, 1, 1, ValueSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getValueSeries_BinaryString(), theTypesPackage.getString(), "binaryString", null, 1, 1, ValueSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		EOperation op = initEOperation(getValueSeries__GetStringValue__int(), ecorePackage.getEString(), "getStringValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "index", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -485,16 +496,16 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 		initEReference(getDataValueSet_Series(), this.getValueSeries(), null, "series", null, 0, -1, DataValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(stringSeriesEClass, StringSeries.class, "StringSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getStringSeries_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getStringSeries_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringSeries.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(doubleSeriesEClass, DoubleSeries.class, "DoubleSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDoubleSeries_Values(), ecorePackage.getEDouble(), "values", null, 0, -1, DoubleSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDoubleSeries_Values(), ecorePackage.getEDouble(), "values", null, 0, -1, DoubleSeries.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(integerSeriesEClass, IntegerSeries.class, "IntegerSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIntegerSeries_Values(), ecorePackage.getEInt(), "values", null, 0, -1, IntegerSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getIntegerSeries_Values(), ecorePackage.getEInt(), "values", null, 0, -1, IntegerSeries.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(booleanSeriesEClass, BooleanSeries.class, "BooleanSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBooleanSeries_Values(), ecorePackage.getEBoolean(), "values", null, 0, -1, BooleanSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanSeries_Values(), ecorePackage.getEBoolean(), "values", null, 0, -1, BooleanSeries.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
