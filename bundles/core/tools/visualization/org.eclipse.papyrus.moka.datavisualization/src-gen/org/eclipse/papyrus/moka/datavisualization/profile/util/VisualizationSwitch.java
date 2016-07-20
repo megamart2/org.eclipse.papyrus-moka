@@ -88,21 +88,9 @@ public class VisualizationSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case VisualizationPackage.VARIABLE: {
-				Variable variable = (Variable)theEObject;
-				T result = caseVariable(variable);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case VisualizationPackage.VALUE_SERIES: {
 				ValueSeries valueSeries = (ValueSeries)theEObject;
 				T result = caseValueSeries(valueSeries);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case VisualizationPackage.DATA_VALUE_SET: {
-				DataValueSet dataValueSet = (DataValueSet)theEObject;
-				T result = caseDataValueSet(dataValueSet);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -154,21 +142,6 @@ public class VisualizationSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Variable</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseVariable(Variable object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Value Series</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -180,21 +153,6 @@ public class VisualizationSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseValueSeries(ValueSeries object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Data Value Set</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Data Value Set</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDataValueSet(DataValueSet object) {
 		return null;
 	}
 

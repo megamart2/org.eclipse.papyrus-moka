@@ -16,14 +16,14 @@ package org.eclipse.papyrus.moka.xygraph.mapping.writing.impl;
 
 import org.eclipse.nebula.visualization.xygraph.figures.Axis;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.AxisUpdateStrategy;
 
 public class DefaultAxisUpdateStrategy implements AxisUpdateStrategy{
 
 	@Override
-	public void updateAxisDescriptor(Axis axis, XYGraphBinder map) {
+	public void updateAxisDescriptor(Axis axis, XYGraphWidgetBinder map) {
 		AxisDescriptor aDesc = map.getDescriptorFor(axis);
 		
 		aDesc.setTitle(axis.getTitle());
@@ -55,7 +55,4 @@ public class DefaultAxisUpdateStrategy implements AxisUpdateStrategy{
 		aDesc.setFont(XYGraphMappingHelper.mapFontData(axis.getScaleFontData()));
 		aDesc.setTitleFont(XYGraphMappingHelper.mapFontData(axis.getTitleFontData()));
 	}
-
-	
-
 }

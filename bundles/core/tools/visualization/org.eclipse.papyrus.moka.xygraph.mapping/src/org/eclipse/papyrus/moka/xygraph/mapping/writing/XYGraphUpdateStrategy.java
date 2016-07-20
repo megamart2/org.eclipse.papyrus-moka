@@ -15,9 +15,12 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.writing;
 
 import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
+import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
+import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 
 public interface XYGraphUpdateStrategy {
-	
-	public void updateXYGraph(XYGraph graph, XYGraphBinder map);
+	public void updateXYGraph(XYGraph graph, XYGraphWidgetBinder map);
+	public void addTrace(XYGraphDescriptor gDesc, TraceDescriptor trace );
+	public void setTraceVisibility(XYGraphDescriptor gDesc, TraceDescriptor tDesc, boolean visible);
 }

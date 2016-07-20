@@ -20,10 +20,10 @@ import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
 import org.eclipse.papyrus.infra.core.utils.ServiceUtils;
-import org.eclipse.papyrus.moka.xygraph.common.model.XYGraphDescriptorModel;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphCoordinator;
 
 public class XYGraphPropertiesNotificationService implements IService {
+	
 	private XYGraphResourceSetListener listener;
 	
 	public XYGraphPropertiesNotificationService() {
@@ -37,19 +37,12 @@ public class XYGraphPropertiesNotificationService implements IService {
 		try {
 			registerListener(modelSet);
 		} catch (NotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}
-
 	
 	private void registerListener(ModelSet modelSet) throws NotFoundException{
-		final XYGraphDescriptorModel model = (XYGraphDescriptorModel) modelSet.getModelChecked(XYGraphDescriptorModel.MODEL_ID);
 		modelSet.getTransactionalEditingDomain().addResourceSetListener(listener);
-		
-//		for( XYGraphDescriptor xyDesc : model.getModelRoots() ){
-//			xyDesc.eAdapters().add(adapter);
-//		}
 	}
 
 	public void register(XYGraphCoordinator coordinator) {
@@ -65,6 +58,4 @@ public class XYGraphPropertiesNotificationService implements IService {
 	public void disposeService() throws ServiceException {
 
 	}
-
-
 }

@@ -37,7 +37,6 @@ import org.eclipse.ui.part.EditorActionBarContributor;
 
 public abstract class AbstractXYGraphPageFactory implements IPluggableEditorFactory{
 
-	//private ImageDescriptor icon;
 	protected ServicesRegistry servicesRegistry;
 	protected EditorDescriptor editorDescriptor;
 	private Image iconImage;
@@ -49,7 +48,6 @@ public abstract class AbstractXYGraphPageFactory implements IPluggableEditorFact
 
 	@Override
 	public void init(ServicesRegistry serviceRegistry, EditorDescriptor editorDescriptor) {
-		//this.icon = editorDescriptor.getIcon();
 		this.editorDescriptor = editorDescriptor;
 		this.servicesRegistry = serviceRegistry;
 	}
@@ -78,9 +76,8 @@ public abstract class AbstractXYGraphPageFactory implements IPluggableEditorFact
 		return new XYGraphEditorModel(lblProv, coordinator);
 	}
 	
-	
 	class XYGraphEditorModel extends AbstractPageModel implements IEditorModel{
-		
+
 		private XYGraphCoordinator coordinator;
 		private XYGraphLabelProvider lblProvider;
 		
@@ -97,22 +94,8 @@ public abstract class AbstractXYGraphPageFactory implements IPluggableEditorFact
 
 		@Override
 		public void dispose() {
-			
+			coordinator.dispose();
 		}
-
-//		protected ToolbarArmedXYGraph buildGraphFromModel(){
-//			IXYGraph xyGraph = coordinator.buildXYGraph();
-//			xyGraph.addPropertyChangeListener(IXYGraph.PROPERTY_CONFIG, this);
-//			return new ToolbarArmedXYGraph(xyGraph);
-//		}
-	//	
-//		@Override
-//		public void propertyChange(PropertyChangeEvent evt) {
-//			XYGraphDescriptor gDesc = coordinator.getXYGraphDescriptor();
-//			gDesc.getContext();
-//			coordinator.updateDescriptors((XYGraph) evt.getNewValue());
-//			lblProvider.onGraphUpdated(gDesc);
-//		}
 
 		@Override
 		public IEditorPart createIEditorPart() throws PartInitException {
@@ -143,8 +126,6 @@ public abstract class AbstractXYGraphPageFactory implements IPluggableEditorFact
 			}
 		}
 	}
-	
-	
 	
 	public abstract XYGraphCoordinator getXYGraphCoordinator(XYGraphDescriptor model);
 }

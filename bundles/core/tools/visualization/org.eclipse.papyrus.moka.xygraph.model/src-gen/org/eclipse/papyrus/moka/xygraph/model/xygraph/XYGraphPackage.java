@@ -601,13 +601,22 @@ public interface XYGraphPackage extends EPackage {
 	int TRACE_DESCRIPTOR__YERROR_BAR_TYPE = 16;
 
 	/**
+	 * The feature id for the '<em><b>Data Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRACE_DESCRIPTOR__DATA_SOURCE = 17;
+
+	/**
 	 * The number of structural features of the '<em>Trace Descriptor</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRACE_DESCRIPTOR_FEATURE_COUNT = 17;
+	int TRACE_DESCRIPTOR_FEATURE_COUNT = 18;
 
 	/**
 	 * The number of operations of the '<em>Trace Descriptor</em>' class.
@@ -1403,6 +1412,17 @@ public interface XYGraphPackage extends EPackage {
 	EAttribute getTraceDescriptor_YErrorBarType();
 
 	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getDataSource <em>Data Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Data Source</em>'.
+	 * @see org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getDataSource()
+	 * @see #getTraceDescriptor()
+	 * @generated
+	 */
+	EReference getTraceDescriptor_DataSource();
+
+	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.FontDescriptor <em>Font Descriptor</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2024,6 +2044,14 @@ public interface XYGraphPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TRACE_DESCRIPTOR__YERROR_BAR_TYPE = eINSTANCE.getTraceDescriptor_YErrorBarType();
+
+		/**
+		 * The meta object literal for the '<em><b>Data Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRACE_DESCRIPTOR__DATA_SOURCE = eINSTANCE.getTraceDescriptor_DataSource();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.impl.FontDescriptorImpl <em>Font Descriptor</em>}' class.

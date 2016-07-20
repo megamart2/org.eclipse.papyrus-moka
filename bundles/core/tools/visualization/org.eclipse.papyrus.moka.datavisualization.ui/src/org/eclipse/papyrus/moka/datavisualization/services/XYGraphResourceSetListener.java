@@ -36,7 +36,6 @@ public class XYGraphResourceSetListener extends ResourceSetListenerImpl {
 			if( !(n.getNotifier() instanceof XYGraphDescriptor) )
 				continue;
 			
-			XYGraphDescriptor graph = (XYGraphDescriptor) n.getNotifier();
 			XYGraphCoordinator coord = coords.get(n.getNotifier());
 			
 			if( coord == null )
@@ -54,5 +53,4 @@ public class XYGraphResourceSetListener extends ResourceSetListenerImpl {
 	public boolean isPostcommitOnly() {
 		return super.isPostcommitOnly();
 	}
-
 }

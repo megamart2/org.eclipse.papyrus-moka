@@ -33,5 +33,4 @@ public class IsXYGraphConstraint extends AbstractConstraint{
 		final EObject obj = EMFHelper.getEObject(selection);
 		return (obj instanceof XYGraphDescriptor) == expectedValue;
 	}
-
 }

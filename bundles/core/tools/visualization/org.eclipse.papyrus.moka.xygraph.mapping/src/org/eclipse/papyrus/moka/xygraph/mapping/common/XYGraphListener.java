@@ -19,5 +19,4 @@ import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 public interface XYGraphListener {
 	void onXYGraphUpdated( XYGraphCoordinator coordinator, XYGraphDescriptor xyGraph );
 	void onXYGraphBuilt( XYGraphCoordinator coordinator, XYGraphDescriptor xyGraph );
-	
 }

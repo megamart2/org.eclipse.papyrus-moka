@@ -17,17 +17,16 @@ package org.eclipse.papyrus.moka.xygraph.mapping.writing.impl;
 import org.eclipse.nebula.visualization.xygraph.figures.Axis;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.LinearScale_Orientation;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.AxisBuildStrategy;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 
-
 public class DefaultAxisBuildStrategy implements AxisBuildStrategy {
 
 	@Override
-	public void buildAxes(XYGraphBinder map) {
+	public void rebuildAxes(XYGraphWidgetBinder map) {
 		for (AxisDescriptor aDesc : map.getXYGraphDescriptor().getAxisDescriptors() )
 			map.bindAxis(aDesc, buildAxis(aDesc));
 	}
@@ -61,5 +60,4 @@ public class DefaultAxisBuildStrategy implements AxisBuildStrategy {
 		
 		return axis;
 	}
-
 }

@@ -46,5 +46,4 @@ public class IsXYGraphContainer implements IJavaQuery2<EObject, Boolean>{
 		}
 		return false;
 	}
-
 }

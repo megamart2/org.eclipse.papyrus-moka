@@ -88,16 +88,8 @@ public class VisualizationAdapterFactory extends AdapterFactoryImpl {
 				return createDataSourceAdapter();
 			}
 			@Override
-			public Adapter caseVariable(Variable object) {
-				return createVariableAdapter();
-			}
-			@Override
 			public Adapter caseValueSeries(ValueSeries object) {
 				return createValueSeriesAdapter();
-			}
-			@Override
-			public Adapter caseDataValueSet(DataValueSet object) {
-				return createDataValueSetAdapter();
 			}
 			@Override
 			public Adapter caseStringSeries(StringSeries object) {
@@ -150,20 +142,6 @@ public class VisualizationAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.moka.datavisualization.profile.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.Variable
-	 * @generated
-	 */
-	public Adapter createVariableAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries <em>Value Series</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -174,20 +152,6 @@ public class VisualizationAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createValueSeriesAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet <em>Data Value Set</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet
-	 * @generated
-	 */
-	public Adapter createDataValueSetAdapter() {
 		return null;
 	}
 

@@ -17,7 +17,7 @@ package org.eclipse.papyrus.moka.xygraph.common.writing;
 import org.eclipse.emf.common.command.CompoundCommand;
 import org.eclipse.emf.transaction.TransactionalEditingDomain;
 import org.eclipse.nebula.visualization.xygraph.figures.Axis;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.AxisUpdateStrategy;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
@@ -27,7 +27,7 @@ import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphPackage;
 public class ResourceAxisUpdateStrategy extends ResourceBaseUpdateStrategy implements AxisUpdateStrategy {
 
 	@Override
-	public void updateAxisDescriptor(Axis axis, XYGraphBinder map) {
+	public void updateAxisDescriptor(Axis axis, XYGraphWidgetBinder map) {
 		
 		AxisDescriptor aDesc = map.getDescriptorFor(axis);
 		
@@ -65,5 +65,4 @@ public class ResourceAxisUpdateStrategy extends ResourceBaseUpdateStrategy imple
 		if( cc.canExecute() )
 			domain.getCommandStack().execute(cc);
 	}
-
 }

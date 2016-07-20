@@ -45,5 +45,16 @@ public class LUT<K, V> {
 	public Set<K> keySet(){
 		return key2Value.keySet();
 	}
+
+	public V remove(K key) {
+		V val = key2Value.remove(key);
+		value2Key.remove(val);
+		return val;
+	}
+
+	public void dispose() {
+		key2Value.clear();
+		value2Key.clear();
+	}
 	
 }

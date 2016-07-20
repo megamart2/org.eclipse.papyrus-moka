@@ -17,41 +17,38 @@ package org.eclipse.papyrus.moka.xygraph.mapping.writing;
 import org.eclipse.nebula.visualization.xygraph.figures.Trace;
 import org.eclipse.papyrus.moka.xygraph.model.reflection.TraceStructuralFeature;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
 
 public interface TraceUpdateStrategy {
 	
 	public void commitUpdate();
 	
-	public void updateTraceDescriptor(Trace trace, XYGraphBinder map);
+	public void updateTraceDescriptor(Trace trace, XYGraphWidgetBinder map);
 	
 	public <T> void  updateTraceFeature( TraceDescriptor tDesc, TraceStructuralFeature field, T newValue);
 	
-	public static void updateAllFeatures(TraceUpdateStrategy strategy, Trace trace, XYGraphBinder map){
+	default void updateAllFeatures(Trace trace, XYGraphWidgetBinder map){
 		TraceDescriptor tDesc = map.getDescriptorFor(trace);
 		
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.AreaAlpha, trace.getAreaAlpha());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.BaseLine,XYGraphMappingHelper.descTraceBaseLine(trace.getBaseLine()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.ErrorBarCapWidth,tDesc.getErrorBarCapWidth());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.ErrorBarColor,XYGraphMappingHelper.mapColor(trace.getErrorBarColor()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.LineWidth,trace.getLineWidth());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.PointSize,trace.getPointSize());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.PointStyle,XYGraphMappingHelper.descPointStyle(trace.getPointStyle()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.TraceColor,XYGraphMappingHelper.mapColor(trace.getTraceColor()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.TraceType,XYGraphMappingHelper.descTraceType(trace.getTraceType()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.XErrorBarType,XYGraphMappingHelper.descErrorBarType(trace.getXErrorBarType()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.YErrorBarType,XYGraphMappingHelper.descErrorBarType(trace.getYErrorBarType()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.AntiAliasing,trace.isAntiAliasing());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.DrawYErrorInArea,trace.isDrawYErrorInArea());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.ErrorBarEnabled,trace.isErrorBarEnabled());
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.Name,trace.getName());
+		updateTraceFeature(tDesc, TraceStructuralFeature.AreaAlpha, trace.getAreaAlpha());
+		updateTraceFeature(tDesc, TraceStructuralFeature.BaseLine,XYGraphMappingHelper.descTraceBaseLine(trace.getBaseLine()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.ErrorBarCapWidth,tDesc.getErrorBarCapWidth());
+		updateTraceFeature(tDesc, TraceStructuralFeature.ErrorBarColor,XYGraphMappingHelper.mapColor(trace.getErrorBarColor()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.LineWidth,trace.getLineWidth());
+		updateTraceFeature(tDesc, TraceStructuralFeature.PointSize,trace.getPointSize());
+		updateTraceFeature(tDesc, TraceStructuralFeature.PointStyle,XYGraphMappingHelper.descPointStyle(trace.getPointStyle()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.TraceColor,XYGraphMappingHelper.mapColor(trace.getTraceColor()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.TraceType,XYGraphMappingHelper.descTraceType(trace.getTraceType()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.XErrorBarType,XYGraphMappingHelper.descErrorBarType(trace.getXErrorBarType()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.YErrorBarType,XYGraphMappingHelper.descErrorBarType(trace.getYErrorBarType()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.AntiAliasing,trace.isAntiAliasing());
+		updateTraceFeature(tDesc, TraceStructuralFeature.DrawYErrorInArea,trace.isDrawYErrorInArea());
+		updateTraceFeature(tDesc, TraceStructuralFeature.ErrorBarEnabled,trace.isErrorBarEnabled());
+		updateTraceFeature(tDesc, TraceStructuralFeature.Name,trace.getName());
 		
 		//Only 
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.XAxis,map.getDescriptorFor(trace.getXAxis()));
-		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.YAxis,map.getDescriptorFor(trace.getYAxis()));
-		
-		//TODO This doesn't work like this ! :)
-		//strategy.updateTraceFeature(tDesc, TraceStructuralFeature.Visible,trace.isVisible());
+		updateTraceFeature(tDesc, TraceStructuralFeature.XAxis,map.getDescriptorFor(trace.getXAxis()));
+		updateTraceFeature(tDesc, TraceStructuralFeature.YAxis,map.getDescriptorFor(trace.getYAxis()));
 	}
 }

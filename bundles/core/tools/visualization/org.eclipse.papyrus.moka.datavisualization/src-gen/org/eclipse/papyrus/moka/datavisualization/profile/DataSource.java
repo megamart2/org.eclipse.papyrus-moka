@@ -27,8 +27,7 @@ import org.eclipse.uml2.uml.DataType;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getBase_DataType <em>Base Data Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets <em>Value Sets</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getSeries <em>Series</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource()
@@ -70,35 +69,19 @@ public interface DataSource extends EObject {
 	void setBase_DataType(DataType value);
 
 	/**
-	 * Returns the value of the '<em><b>Variables</b></em>' reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.moka.datavisualization.profile.Variable}.
+	 * Returns the value of the '<em><b>Series</b></em>' reference list.
+	 * The list contents are of type {@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Variables</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Series</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variables</em>' reference list.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_Variables()
+	 * @return the value of the '<em>Series</em>' reference list.
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_Series()
 	 * @model transient="true" changeable="false" volatile="true" derived="true" ordered="false"
 	 * @generated
 	 */
-	EList<Variable> getVariables();
-
-	/**
-	 * Returns the value of the '<em><b>Value Sets</b></em>' containment reference list.
-	 * The list contents are of type {@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value Sets</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value Sets</em>' containment reference list.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getDataSource_ValueSets()
-	 * @model containment="true" ordered="false"
-	 * @generated
-	 */
-	EList<DataValueSet> getValueSets();
+	EList<ValueSeries> getSeries();
 
 } // DataSource

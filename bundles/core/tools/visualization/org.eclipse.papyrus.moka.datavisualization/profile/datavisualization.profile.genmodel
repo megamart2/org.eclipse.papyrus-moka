@@ -37,28 +37,18 @@
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//DataSource/base_DataType"/>
       <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference profile.ecore#//DataSource/variables"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//DataSource/valueSets"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//Variable">
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//Variable/base_Property"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="Readonly" notify="false"
-          createChild="false" ecoreFeature="ecore:EReference profile.ecore#//Variable/series"/>
+          createChild="false" ecoreFeature="ecore:EReference profile.ecore#//DataSource/series"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//ValueSeries">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSeries/variableName"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//ValueSeries/binaryString"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSeries/base_Property"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference profile.ecore#//ValueSeries/dependent"/>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSeries/getSize"/>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSeries/getStringValue">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="profile.ecore#//ValueSeries/getStringValue/index"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="profile.ecore#//ValueSeries/getSize"/>
-    </genClasses>
-    <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//DataValueSet">
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//DataValueSet/metadata"/>
-      <genFeatures xsi:type="genmodel:GenFeature" property="None" children="true"
-          createChild="true" ecoreFeature="ecore:EReference profile.ecore#//DataValueSet/series"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="profile.ecore#//StringSeries">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute profile.ecore#//StringSeries/values"/>

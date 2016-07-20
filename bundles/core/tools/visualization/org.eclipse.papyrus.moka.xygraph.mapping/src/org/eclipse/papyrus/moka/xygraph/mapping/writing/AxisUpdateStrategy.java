@@ -15,8 +15,8 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.writing;
 
 import org.eclipse.nebula.visualization.xygraph.figures.Axis;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 
 public interface AxisUpdateStrategy {
-	public void updateAxisDescriptor(Axis axis, XYGraphBinder map);
+	public void updateAxisDescriptor(Axis axis, XYGraphWidgetBinder map);
 }

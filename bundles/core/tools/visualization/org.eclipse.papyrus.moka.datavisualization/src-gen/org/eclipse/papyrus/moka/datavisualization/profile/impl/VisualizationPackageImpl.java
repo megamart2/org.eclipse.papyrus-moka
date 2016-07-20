@@ -21,12 +21,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.papyrus.moka.datavisualization.profile.BooleanSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
-import org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet;
 import org.eclipse.papyrus.moka.datavisualization.profile.DoubleSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.IntegerSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.StringSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
-import org.eclipse.papyrus.moka.datavisualization.profile.Variable;
 import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationFactory;
 import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
 
@@ -60,21 +58,7 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass variableEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass valueSeriesEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass dataValueSetEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -191,44 +175,8 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getDataSource_Variables() {
+	public EReference getDataSource_Series() {
 		return (EReference)dataSourceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataSource_ValueSets() {
-		return (EReference)dataSourceEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getVariable() {
-		return variableEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariable_Base_Property() {
-		return (EReference)variableEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getVariable_Series() {
-		return (EReference)variableEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -245,7 +193,7 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getValueSeries_VariableName() {
+	public EAttribute getValueSeries_BinaryString() {
 		return (EAttribute)valueSeriesEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -254,8 +202,17 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getValueSeries_BinaryString() {
-		return (EAttribute)valueSeriesEClass.getEStructuralFeatures().get(1);
+	public EReference getValueSeries_Base_Property() {
+		return (EReference)valueSeriesEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getValueSeries_Dependent() {
+		return (EReference)valueSeriesEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -264,15 +221,6 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * @generated
 	 */
 	public EOperation getValueSeries__GetStringValue__int() {
-		return valueSeriesEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getValueSeries__GetSize() {
 		return valueSeriesEClass.getEOperations().get(1);
 	}
 
@@ -281,26 +229,8 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getDataValueSet() {
-		return dataValueSetEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getDataValueSet_Metadata() {
-		return (EAttribute)dataValueSetEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getDataValueSet_Series() {
-		return (EReference)dataValueSetEClass.getEStructuralFeatures().get(1);
+	public EOperation getValueSeries__GetSize() {
+		return valueSeriesEClass.getEOperations().get(0);
 	}
 
 	/**
@@ -405,22 +335,14 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 		// Create classes and their features
 		dataSourceEClass = createEClass(DATA_SOURCE);
 		createEReference(dataSourceEClass, DATA_SOURCE__BASE_DATA_TYPE);
-		createEReference(dataSourceEClass, DATA_SOURCE__VARIABLES);
-		createEReference(dataSourceEClass, DATA_SOURCE__VALUE_SETS);
-
-		variableEClass = createEClass(VARIABLE);
-		createEReference(variableEClass, VARIABLE__BASE_PROPERTY);
-		createEReference(variableEClass, VARIABLE__SERIES);
+		createEReference(dataSourceEClass, DATA_SOURCE__SERIES);
 
 		valueSeriesEClass = createEClass(VALUE_SERIES);
-		createEAttribute(valueSeriesEClass, VALUE_SERIES__VARIABLE_NAME);
 		createEAttribute(valueSeriesEClass, VALUE_SERIES__BINARY_STRING);
-		createEOperation(valueSeriesEClass, VALUE_SERIES___GET_STRING_VALUE__INT);
+		createEReference(valueSeriesEClass, VALUE_SERIES__BASE_PROPERTY);
+		createEReference(valueSeriesEClass, VALUE_SERIES__DEPENDENT);
 		createEOperation(valueSeriesEClass, VALUE_SERIES___GET_SIZE);
-
-		dataValueSetEClass = createEClass(DATA_VALUE_SET);
-		createEAttribute(dataValueSetEClass, DATA_VALUE_SET__METADATA);
-		createEReference(dataValueSetEClass, DATA_VALUE_SET__SERIES);
+		createEOperation(valueSeriesEClass, VALUE_SERIES___GET_STRING_VALUE__INT);
 
 		stringSeriesEClass = createEClass(STRING_SERIES);
 		createEAttribute(stringSeriesEClass, STRING_SERIES__VALUES);
@@ -475,25 +397,17 @@ public class VisualizationPackageImpl extends EPackageImpl implements Visualizat
 		// Initialize classes, features, and operations; add parameters
 		initEClass(dataSourceEClass, DataSource.class, "DataSource", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDataSource_Base_DataType(), theUMLPackage.getDataType(), null, "base_DataType", null, 1, 1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDataSource_Variables(), this.getVariable(), null, "variables", null, 0, -1, DataSource.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
-		initEReference(getDataSource_ValueSets(), this.getDataValueSet(), null, "valueSets", null, 0, -1, DataSource.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getVariable_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getVariable_Series(), this.getValueSeries(), null, "series", null, 0, -1, Variable.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, IS_ORDERED);
+		initEReference(getDataSource_Series(), this.getValueSeries(), null, "series", null, 0, -1, DataSource.class, IS_TRANSIENT, IS_VOLATILE, !IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, IS_DERIVED, !IS_ORDERED);
 
 		initEClass(valueSeriesEClass, ValueSeries.class, "ValueSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getValueSeries_VariableName(), theTypesPackage.getString(), "variableName", null, 1, 1, ValueSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getValueSeries_BinaryString(), theTypesPackage.getString(), "binaryString", null, 1, 1, ValueSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		EOperation op = initEOperation(getValueSeries__GetStringValue__int(), ecorePackage.getEString(), "getStringValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "index", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEReference(getValueSeries_Base_Property(), theUMLPackage.getProperty(), null, "base_Property", null, 1, 1, ValueSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getValueSeries_Dependent(), this.getValueSeries(), null, "dependent", null, 0, 1, ValueSeries.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEOperation(getValueSeries__GetSize(), ecorePackage.getEInt(), "getSize", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(dataValueSetEClass, DataValueSet.class, "DataValueSet", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDataValueSet_Metadata(), theTypesPackage.getString(), "metadata", null, 0, 1, DataValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getDataValueSet_Series(), this.getValueSeries(), null, "series", null, 0, -1, DataValueSet.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		EOperation op = initEOperation(getValueSeries__GetStringValue__int(), ecorePackage.getEString(), "getStringValue", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "index", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(stringSeriesEClass, StringSeries.class, "StringSeries", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringSeries_Values(), ecorePackage.getEString(), "values", null, 0, -1, StringSeries.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -12,9 +12,30 @@
  *  Sebastien REVOL (CEA LIST)
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.datavisualization.service;
+package org.eclipse.papyrus.moka.xygraph.mapping.common;
 
 public interface Variable {
+	
+	public static abstract class VariableID{
+		
+		public abstract boolean equals(Object obj);
+		
+		public abstract int hashCode();	
+	}
+	
 	String getName();
-	String getUUID();
+	
+	String getFullyQualifiedName();
+	
+	VariableID getID();
+	
+	Variable getDependsOn();
+	
+	default boolean isIndependent(){
+		return getDependsOn() == null;
+	}
+	
+	default boolean equals(Variable other){
+		return getID().equals(other.getID());
+	}
 }

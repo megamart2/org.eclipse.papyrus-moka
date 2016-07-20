@@ -677,6 +677,15 @@ public class XYGraphPackageImpl extends EPackageImpl implements XYGraphPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTraceDescriptor_DataSource() {
+		return (EReference)traceDescriptorEClass.getEStructuralFeatures().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getFontDescriptor() {
 		return fontDescriptorEClass;
 	}
@@ -884,6 +893,7 @@ public class XYGraphPackageImpl extends EPackageImpl implements XYGraphPackage {
 		createEAttribute(traceDescriptorEClass, TRACE_DESCRIPTOR__XERROR_BAR_TYPE);
 		createEReference(traceDescriptorEClass, TRACE_DESCRIPTOR__YAXIS);
 		createEAttribute(traceDescriptorEClass, TRACE_DESCRIPTOR__YERROR_BAR_TYPE);
+		createEReference(traceDescriptorEClass, TRACE_DESCRIPTOR__DATA_SOURCE);
 
 		fontDescriptorEClass = createEClass(FONT_DESCRIPTOR);
 		createEAttribute(fontDescriptorEClass, FONT_DESCRIPTOR__NAME);
@@ -992,6 +1002,7 @@ public class XYGraphPackageImpl extends EPackageImpl implements XYGraphPackage {
 		initEAttribute(getTraceDescriptor_XErrorBarType(), this.getTrace_ErrorBarType(), "xErrorBarType", "BOTH", 0, 1, TraceDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTraceDescriptor_YAxis(), this.getAxisDescriptor(), null, "yAxis", null, 0, 1, TraceDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getTraceDescriptor_YErrorBarType(), this.getTrace_ErrorBarType(), "yErrorBarType", "BOTH", 0, 1, TraceDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTraceDescriptor_DataSource(), ecorePackage.getEObject(), null, "dataSource", null, 0, 1, TraceDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(fontDescriptorEClass, FontDescriptor.class, "FontDescriptor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getFontDescriptor_Name(), ecorePackage.getEString(), "name", "Arial", 0, 1, FontDescriptor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -12,8 +12,12 @@
  *  Sebastien REVOL (CEA LIST)
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.datavisualization.service;
+package org.eclipse.papyrus.moka.xygraph.mapping.common;
 
-public interface Visualization {
-	
+import org.eclipse.papyrus.moka.xygraph.mapping.util.DataBatch;
+import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
+
+public interface XYGraphDataBinder {
+	void addTraceSample(TraceDescriptor tDesc, double x, double y);
+	void setTraceData(TraceDescriptor tDesc, DataBatch x, DataBatch y);
 }

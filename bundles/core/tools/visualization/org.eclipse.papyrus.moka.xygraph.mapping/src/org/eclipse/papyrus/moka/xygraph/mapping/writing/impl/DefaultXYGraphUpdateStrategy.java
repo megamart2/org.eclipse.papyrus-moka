@@ -15,15 +15,16 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.writing.impl;
 
 import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
+import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.XYGraphUpdateStrategy;
 
 public class DefaultXYGraphUpdateStrategy implements XYGraphUpdateStrategy{
 
 	@Override
-	public void updateXYGraph(XYGraph xy, XYGraphBinder graphMap) {
+	public void updateXYGraph(XYGraph xy, XYGraphWidgetBinder graphMap) {
 		
 		XYGraphDescriptor gDesc = graphMap.getXYGraphDescriptor();
 		
@@ -38,5 +39,16 @@ public class DefaultXYGraphUpdateStrategy implements XYGraphUpdateStrategy{
 		gDesc.setPlotAreaBackgroundColor( XYGraphMappingHelper.mapColor(xy.getPlotArea().getBackgroundColor()) );
 	}
 
-	
+	@Override
+	public void addTrace(XYGraphDescriptor gDesc, TraceDescriptor trace) {
+		gDesc.getTraceDescriptors().add(trace);
+	}
+
+	@Override
+	public void setTraceVisibility(XYGraphDescriptor gDesc, TraceDescriptor tDesc, boolean visible) {
+		if( visible )
+			gDesc.getVisibleTraces().add(tDesc);
+		else
+			gDesc.getVisibleTraces().remove(tDesc);
+	}
 }

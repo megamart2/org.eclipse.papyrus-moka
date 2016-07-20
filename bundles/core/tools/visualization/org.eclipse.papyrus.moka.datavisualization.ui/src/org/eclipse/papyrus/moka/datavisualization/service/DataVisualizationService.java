@@ -15,22 +15,30 @@
 package org.eclipse.papyrus.moka.datavisualization.service;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
 
 import org.eclipse.papyrus.infra.core.services.IService;
 import org.eclipse.papyrus.infra.core.services.ServiceException;
 import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.moka.datavisualization.profile.BooleanSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
+import org.eclipse.papyrus.moka.datavisualization.profile.DoubleSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.IntegerSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
+import org.eclipse.papyrus.moka.datavisualization.ui.GraphBuilderHelper;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable.VariableID;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.DataBatch;
 
 public class DataVisualizationService implements IService{
 	
 	private List<DataPort> dataPorts;
-	private HashMap<String, DataSampleBuffer<Double, Double>> dataBuffers;
+	private VariableEntryTable<VariableEntry> varTable;
 	
 	private DataVisualizationService(){
 		dataPorts = new ArrayList<>();
-		dataBuffers = new HashMap<>();
+		varTable = new VariableEntryTable<>();
 	}
 	
 	private static DataVisualizationService instance = new DataVisualizationService();
@@ -39,104 +47,20 @@ public class DataVisualizationService implements IService{
 		return instance;
 	}
 	
-	static class DataSample<T, V>{
-		public T time;
-		public V value;
-		
-		public DataSample(T time, V value) {
-			super();
-			this.time = time;
-			this.value = value;
-		}
-		
-		public DataSample() {
-			super();
-		}
-	}
-	
-	static class DataSampleBuffer<T, V>{
-		private List<DataSample<T, V>> buffer;
-		
-		public DataSampleBuffer(){
-			buffer = new ArrayList<>();			
-		}
-		
-		public void addSample( T t, V v ){
-			buffer.add(new DataSample<T, V>(t, v));
-		}
-		
-		public void addBatch(List<T> t, List<V> v){
-			for( int i = 0 ; i < t.size(); i++)
-				addSample(t.get(i), v.get(i));
-		}
-		
-		public int size(){
-			return buffer.size();
-		}
-		
-		public List<T> getTimes(){
-			List<T> times = new ArrayList<>(size());
-			for( int i = 0; i < buffer.size(); i++)
-				times.add( buffer.get(i).time );
-			
-			return times;
-		}
-		
-		public List<V> getValue(){
-			List<V> values = new ArrayList<>(size());
-			for( int i = 0; i < buffer.size(); i++)
-				values.add( buffer.get(i).value );
-			
-			return values;
-		}
-		
-		public boolean isEmpty(){
-			return buffer.size() == 0;
-		}
-
-		public void clear() {
-			buffer.clear();
-		}
-	}
-	
-	public void registerVariable(String v){
+	public void registerUnlinkedVariable(Variable v){
 		if( hasVariable(v) )
 			return;
 		
-		//dataPorts.put(v, new ArrayList<>());
-		dataBuffers.put(v, new DataSampleBuffer<>());
+		varTable.addEntryFor(v.getID(), new VariableDataEntry(v));
 	}
 	
-	public boolean hasVariable(String id){
-		return dataBuffers.keySet().stream().anyMatch(v -> v.equalsIgnoreCase(id));
+	public boolean hasVariable(Variable var){
+		return hasVariable(var.getID());
 	}
 	
-	private List<DataPort> getDataPortsFor(String v){
-//		List<DataPort> ports = dataPorts.get(v);
-//		
-//		if( ports == null ) //Exception 
-//			throw new RuntimeException("Variable unregistered [" + v + "]");
-//		
-//		return ports;
-		
-		return dataPorts;
+	private boolean hasVariable(VariableID id){
+		return varTable.hasVariable(id);
 	}
-	
-	private boolean hasDataPorts(String variable){
-		return getDataPortsFor(variable).size() > 0;
-	}
-	
-	public boolean hasBufferedData(String variable){
-		if( !hasVariable(variable))
-			return false;
-		
-		return !dataBuffers.get(variable).isEmpty();
-	}
-	
-//	public void addDataPortToVariable(String v, DataPort port){
-//		List<DataPort> ports = getDataPortsFor(v);
-//		ports.add(port);
-//	}
 	
 	public void addDataPort(DataPort port){
 		if( dataPorts.contains(port) )
@@ -145,91 +69,169 @@ public class DataVisualizationService implements IService{
 		dataPorts.add(port);
 	}
 	
-	public void addSample( String v, double t, double value ){
-		if( !hasDataPorts(v) ){
-			bufferSample(v, t, value);
-			return;
+	private VariableDataEntry getEntry(VariableID vID){
+		return (VariableDataEntry) varTable.getEntry(vID);
+	}
+	
+	public Variable makeIndependentVariable(ValueSeries independentSeries){
+		return new VariableImpl(independentSeries.getBase_Property().getLabel(), new DataSourceVariableID(independentSeries));
+	}
+	
+	public Variable makeDependentVariable(ValueSeries depSeries, Variable independent){
+		return new VariableImpl(depSeries.getBase_Property().getLabel(), new DataSourceVariableID(depSeries), independent);
+	}
+	
+	public void setVariableBatch( Variable var, DataBatch batch){
+		getEntry(var.getID()).setData(batch);
+	}
+	
+	public List<Variable> importNewDataValueSet(DataSource set){
+		
+		ArrayList<Variable> contained = new ArrayList<>();
+		
+		ArrayList<ValueSeries> independent = new ArrayList<>();
+		ArrayList<ValueSeries> dependent = new ArrayList<>();
+		
+		GraphBuilderHelper.separateValueSeries( set.getSeries(), independent, dependent );
+		
+		if( independent.size() == 0 )
+			return contained;
+		
+		ValueSeries independentSeries = independent.get(0);
+		
+		//1. Check the independent variables.
+		
+		//For the moment we are adding a new series only if it wasn't previously.
+		if( getVariable(independentSeries) == null ){
+			//For the moment only 1 is supported.
+			Variable iVar = makeIndependentVariable(independentSeries);
+			
+			//1.1. Add the independent variables.
+			registerUnlinkedVariable(iVar);
+			setVariableBatch(iVar, getDataFromValueSeries(independentSeries) );
 		}
 		
-		flushNewValue(v, t, value);
-	}
-	
-	private void bufferSample(String v, Double t, Double value){
-		DataSampleBuffer< Double, Double > buffer = dataBuffers.get(v);
-		
-		if( buffer == null ) //Variable not registered.
-			throw new RuntimeException("Variable unregistered [" + v + "]");
-		
-		buffer.addSample(t, value);
-	}
-	
-	public void addBatch(String v, List<Double> times, List<Double> values) {
-		if( !hasDataPorts(v) ){
-			bufferBatch(v, times, values);
-			return;
+		//2. Add the dependent variables.
+		for( ValueSeries dep : dependent ){
+			
+			//if it's already a contained variable, ignore it.
+			if( getEntryFromSerie(dep) != null )
+				continue;
+			
+			Variable in = getEntryFromSerie(dep.getDependent()).getVariable();
+
+			//TODO Formally validate this before this method 
+			//Assert.isNotNull(in, "The independent series for " + dep.getBase_Property().getLabel() + " is not in the dataset");
+			//Assert.isTrue( !in.isIndependent(), "The independent series for " + dep.getBase_Property() + " is not independent");
+			
+			Variable dVar = makeDependentVariable( dep, in );
+			registerUnlinkedVariable(dVar);
+			setVariableBatch(dVar, getDataFromValueSeries(dep) );
 		}
 		
-		DataBatch tBatch = DataBatch.fromDouble(times);
-		DataBatch vBatch = DataBatch.fromDouble(values);
-		flushBatch(v, tBatch, vBatch);
+		return contained;
 	}
 	
-	private void bufferBatch(String v, List<Double> t, List<Double> valueBatch) {
-		DataSampleBuffer< Double, Double > buffer = dataBuffers.get(v);
-		
-		if( buffer == null ) //Variable not registered.
-			throw new RuntimeException("Variable unregistered [" + v + "]");
-		
-		buffer.addBatch(t, valueBatch);
+	private VariableEntry getEntryFromSerie(ValueSeries dependent) {
+		DataSourceVariableID dsID = new DataSourceVariableID(dependent);
+		return getEntry(dsID);
 	}
 
-	public void flushBuffers(){
-		for( String variable : dataBuffers.keySet() )
-			flushBuffer(variable);
+	public void updateVariableData(Variable v, DataBatch values) {
+		VariableDataEntry entry = getEntry(v.getID());
+		entry.setData(values);
 	}
 	
-	private void flushBuffer(String variable){
-		DataSampleBuffer<Double, Double> buffer = dataBuffers.get(variable);
-		
-		if( buffer == null || buffer.isEmpty())
+	public void flushData(){
+		for( DataPort port : dataPorts )
+			pullAllData( port );
+	}
+	
+	public void flushVariable(Variable v){
+		for( DataPort port : dataPorts )
+			if( !v.isIndependent() && port.getSupportedVariableIDs().contains(v.getID()) )
+				flushVariableToPort(getEntry(v.getID()), port);
+	}
+	
+	private void flushVariableToPort(VariableDataEntry entry, DataPort port) {		
+		if( entry.getVariable().isIndependent() )
 			return;
+
+		Variable v = entry.getVariable();
+		VariableDataEntry indepEntry = getEntry(v.getDependsOn().getID());
 		
-		List<Double> times = buffer.getTimes();
-		List<Double> values = buffer.getValue();
-		
-		DataBatch tBatch = DataBatch.fromDouble(times);
-		DataBatch vBatch = DataBatch.fromDouble(values);
-		
-		flushBatch(variable, tBatch, vBatch);
-		buffer.clear();
-	}
-	
-	private void flushNewValue(String v, Double t, Double value){
-		for( DataPort p : getDataPortsFor(v) )
-			p.receiveNewValue(v, t, value);
-	}
-	
-	private void flushBatch(String v, DataBatch t, DataBatch valueBatch){
-		for( DataPort p : getDataPortsFor(v) )
-			p.receiveNewBatch(v, t, valueBatch);
-	}
-	
-	public void addToNotation(){
-		
+		long portLastUpdate = port.getLastUpdate(v.getID());
+		if( portLastUpdate < indepEntry.getLastUpdate() ){
+			port.resetValues(v.getID(), indepEntry.getValuesBatch(), entry.getValuesBatch());
+		}
 	}
 
+	public void pullAllData(DataPort port){
+		for( VariableID vId : port.getSupportedVariableIDs() ){
+			VariableDataEntry entry = getEntry(vId);
+			flushVariableToPort(entry, port);
+		}
+	}
+
+	public static DataBatch getDataFromValueSeries(ValueSeries serie){
+		
+		switch (serie.eClass().getClassifierID()){
+			
+			case VisualizationPackage.BOOLEAN_SERIES :
+				return DataBatch.fromBoolean( ((BooleanSeries) serie).getValues() );
+				
+			case VisualizationPackage.INTEGER_SERIES :
+				return DataBatch.fromInteger( ((IntegerSeries) serie).getValues() );
+				
+			case VisualizationPackage.DOUBLE_SERIES :
+				return DataBatch.fromDouble( ((DoubleSeries) serie).getValues() );
+				
+				
+			default : 
+				//TODO This case is not implemented
+				return DataBatch.dummy();
+		}
+	}
+	
 	@Override
 	public void init(ServicesRegistry servicesRegistry) throws ServiceException {
-		//adknasd servicesRegistry.getService(ModelSet.class);
 	}
 
 	@Override
 	public void startService() throws ServiceException {
-		// TODO Auto-generated method stub
 	}
 
 	@Override
 	public void disposeService() throws ServiceException {
-		// TODO Auto-generated method stub
+		//TODO Dispose all dataPorts ?
+		
+	}
+
+	//TODO This should be done automatically at the DataSource instantiation.
+	public void fixDependencies(DataSource dataSource) {
+		
+		ValueSeries dep = null;
+		
+		for(ValueSeries serie : dataSource.getSeries())
+			if( "time".equalsIgnoreCase(serie.getBase_Property().getLabel()) ){
+				dep = serie;
+				break;
+			}
+		
+		for(ValueSeries serie : dataSource.getSeries()){
+			if( "time".equalsIgnoreCase(serie.getBase_Property().getLabel()) ){
+				continue;
+			}
+			
+			serie.setDependent(dep);
+		}
+	}
+	
+	public Variable getVariable(ValueSeries series){
+		return varTable.getEntry( new DataSourceVariableID(series) ).getVariable();
+	}
+
+	public void removeDataPort(DataPort port) {
+		dataPorts.remove(port);
 	}
 }

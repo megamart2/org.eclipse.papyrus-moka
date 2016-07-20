@@ -14,8 +14,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.datavisualization.ui;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
+import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
+import org.eclipse.papyrus.moka.datavisualization.service.DataSourceVariableID;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable.VariableID;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.ColorDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.FontDescriptor;
@@ -24,18 +29,15 @@ import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.Trace_TraceType;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphFactory;
-import org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet;
-import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
 import org.eclipse.swt.SWT;
 
 public class GraphBuilderHelper {
-	
 	final static int[] colors[] = { 
 			{21, 21, 196}, // blue
 			{242, 26, 26}, // red
 			{33, 179, 33}, // green
 			//{0, 0, 0}, // black
-			//{128, 0, 255}, // violett
+			//{128, 0, 255}, // violet
 			{255, 170, 0}, // (darkish) yellow
 			{255, 0, 240}, // pink
 			{243, 132, 132}, // peachy
@@ -50,62 +52,6 @@ public class GraphBuilderHelper {
 			Trace_TraceType.DASHDOT_LINE,
 			Trace_TraceType.DOT_LINE
 	};
-	
-	public static XYGraphDescriptor buildFromDataValueSet(DataValueSet set){
-		XYGraphDescriptor xy = XYGraphFactory.eINSTANCE.createXYGraphDescriptor();
-		xy.setTitle("CSV-Graph");
-		xy.setTitleFont(makeFontDescriptor("Segoe UI", 16, SWT.BOLD));
-		xy.setPlotAreaBackgroundColor(makeColor(255, 255, 255));
-		
-		AxisDescriptor xAxis = XYGraphFactory.eINSTANCE.createAxisDescriptor();
-		xAxis.setOrientation(LinearScale_Orientation.HORIZONTAL);
-		xAxis.setTitle("Time");		
-		xAxis.setFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		xAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		
-		xy.getAxisDescriptors().add(xAxis);
-
-		AxisDescriptor yAxis = XYGraphFactory.eINSTANCE.createAxisDescriptor();
-		yAxis.setOrientation(LinearScale_Orientation.VERTICAL);
-		yAxis.setTitle("Values");
-		yAxis.setFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		yAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		xy.getAxisDescriptors().add(yAxis);
-
-		
-		int added = 0;
-		for(ValueSeries serie : set.getSeries()){
-			if( "time".equalsIgnoreCase(serie.getVariableName()) )
-				continue;
-			
-			TraceDescriptor t1 = XYGraphFactory.eINSTANCE.createTraceDescriptor();
-			t1.setXAxis(xAxis);
-			t1.setYAxis(yAxis);
-			t1.setName(serie.getVariableName());
-			//t1.setPointStyle(Trace_PointStyle.CIRCLE);
-			//t1.setPointSize(6);
-			t1.setTraceColor(makeColor(colors[added % colors.length][0], colors[added % colors.length][1], colors[added % colors.length][2]));
-			t1.setTraceType(types[added / colors.length]);
-			xy.getTraceDescriptors().add(t1);
-			
-			added ++;
-			
-//			if( added >= count )
-//				break;
-			
-//			TraceDescriptor t2 = XYGraphFactory.eINSTANCE.createTraceDescriptor();
-//			t2.setXAxis(xAxis);
-//			t2.setYAxis(yAxis);
-//			t2.setName("Data 2");
-//			t2.setPointStyle(Trace_PointStyle.XCROSS);
-//			t2.setTraceType(Trace_TraceType.BAR);
-//			t2.setLineWidth(10);
-//			t2.setTraceColor(makeColor(21, 21, 196));
-//			xy.getTraceDescriptors().add(t2);
-		
-		}
-		return xy;
-	}
 	
 	private static ColorDescriptor makeColor(int r, int g, int b) {
 		ColorDescriptor color = XYGraphFactory.eINSTANCE.createColorDescriptor();
@@ -125,63 +71,81 @@ public class GraphBuilderHelper {
 		
 		return fd;
 	}
-
-	public static XYGraphDescriptor buildFromSeries(List<ValueSeries> series, List<ValueSeries> visibles) {
+	
+	public static TraceDescriptor buildTraceFor(XYGraphDescriptor xyDesc, ValueSeries serie){ //String traceName, VariableID traceID){
+		
+		String traceName = serie.getBase_Property().getLabel();
+		VariableID traceID = new DataSourceVariableID(serie);
+		
+		int added = xyDesc.getTraceDescriptors().size();
+		
+		TraceDescriptor tDesc = XYGraphFactory.eINSTANCE.createTraceDescriptor();
+		tDesc.setXAxis(xyDesc.getAxisDescriptors().get(0));
+		tDesc.setYAxis(xyDesc.getAxisDescriptors().get(1));
+		tDesc.setName(traceName);
+		
+		//Only sets dataSource if it comes from a UML Stereotyped value series.
+		if( traceID instanceof DataSourceVariableID ){
+			tDesc.setDataSource( serie );
+		}
+		
+		tDesc.setTraceColor(makeColor(colors[added % colors.length][0], colors[added % colors.length][1], colors[added % colors.length][2]));
+		tDesc.setTraceType(types[added / colors.length]);
+		
+		return tDesc;
+	}
+	
+	public static void separateValueSeries(List<ValueSeries> series, List<ValueSeries> indep, List<ValueSeries> dep){		
+		for( ValueSeries vs : series )
+			if( vs.getDependent() == null )
+				indep.add(vs);
+			else
+				dep.add(vs);
+		
+	}
+	
+	public static XYGraphDescriptor buildFromSeries(DataSource dataSource, List<ValueSeries> visibles) {
+		
+		ArrayList<ValueSeries> independent = new ArrayList<>();
+		ArrayList<ValueSeries> dependent = new ArrayList<>();
+		
+		separateValueSeries(dataSource.getSeries(), independent, dependent);
+		
+		//Check that there's only one independent variable.
+		if( independent.size() != 1 )
+			throw new UnsupportedOperationException("For the moment there can only be one independent value series");
+		
+		ValueSeries ind = independent.get(0);
+		
 		XYGraphDescriptor xy = XYGraphFactory.eINSTANCE.createXYGraphDescriptor();
 		xy.setTitle("CSV-Graph");
 		xy.setTitleFont(makeFontDescriptor("Segoe UI", 16, SWT.BOLD));
 		xy.setPlotAreaBackgroundColor(makeColor(255, 255, 255));
+		xy.setDataSource(null);
 		
+		//The independent variable
 		AxisDescriptor xAxis = XYGraphFactory.eINSTANCE.createAxisDescriptor();
 		xAxis.setOrientation(LinearScale_Orientation.HORIZONTAL);
-		xAxis.setTitle("Time");		
+		xAxis.setTitle(ind.getBase_Property().getLabel());		
 		xAxis.setFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		xAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		
+		xAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));		
 		xy.getAxisDescriptors().add(xAxis);
 
 		AxisDescriptor yAxis = XYGraphFactory.eINSTANCE.createAxisDescriptor();
 		yAxis.setOrientation(LinearScale_Orientation.VERTICAL);
-		yAxis.setTitle("Values");
+		yAxis.setTitle("Values"); //TODO This might be controlled from the dataSource object? dataSource.getBase_DataType().getLabel()
 		yAxis.setFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
 		yAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
 		xy.getAxisDescriptors().add(yAxis);
 
-		
-		int added = 0;
-		for(ValueSeries serie : series){
-			if( "time".equalsIgnoreCase(serie.getVariableName()) )
-				continue;
+		//Only for the dependent
+		for(ValueSeries serie : dependent){
+
+			TraceDescriptor tDesc = buildTraceFor(xy, serie);
+			xy.getTraceDescriptors().add(tDesc);
 			
-			TraceDescriptor t1 = XYGraphFactory.eINSTANCE.createTraceDescriptor();
-			t1.setXAxis(xAxis);
-			t1.setYAxis(yAxis);
-			t1.setName(serie.getVariableName());
-			//t1.setPointStyle(Trace_PointStyle.CIRCLE);
-			//t1.setPointSize(6);
-			t1.setTraceColor(makeColor(colors[added % colors.length][0], colors[added % colors.length][1], colors[added % colors.length][2]));
-			t1.setTraceType(types[added / colors.length]);
-			xy.getTraceDescriptors().add(t1);
-			
-			//Add the visible series
 			if( visibles.contains(serie) )
-				xy.getVisibleTraces().add(t1);
-			
-			added ++;
-			
-//			if( added >= count )
-//				break;
-			
-//			TraceDescriptor t2 = XYGraphFactory.eINSTANCE.createTraceDescriptor();
-//			t2.setXAxis(xAxis);
-//			t2.setYAxis(yAxis);
-//			t2.setName("Data 2");
-//			t2.setPointStyle(Trace_PointStyle.XCROSS);
-//			t2.setTraceType(Trace_TraceType.BAR);
-//			t2.setLineWidth(10);
-//			t2.setTraceColor(makeColor(21, 21, 196));
-//			xy.getTraceDescriptors().add(t2);
-		
+				xy.getVisibleTraces().add(tDesc);
 		}
 		return xy;
 	}

@@ -62,7 +62,6 @@ public class XYGraphEditorPart extends EditorPart implements PropertyChangeListe
 		setInput( new NullEditorInput() );
 		setPartName(this.coordinator.getXYGraphDescriptor().getTitle());
 		
-		//TODO Implement this !
 		site.setSelectionProvider(new XYGraphEditorPartSelectionProvider(this.coordinator.getXYGraphDescriptor()));
 	}
 
@@ -103,8 +102,4 @@ public class XYGraphEditorPart extends EditorPart implements PropertyChangeListe
 		lblProvider.onGraphUpdated(gDesc);
 		dirty = true;
 	}
-	
-//	public void setTraceVisibility(TraceDescriptor tDesc, boolean visibility){		
-//		coordinator.setTraceVisibility(tDesc, visibility);		
-//	}
 }

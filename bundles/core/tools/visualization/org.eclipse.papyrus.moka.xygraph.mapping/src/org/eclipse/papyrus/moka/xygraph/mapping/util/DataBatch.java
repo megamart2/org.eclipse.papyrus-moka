@@ -23,26 +23,16 @@ import java.util.List;
  *
  */
 public class DataBatch {
-	//private double[] buffer;
+	
 	private List<Double> values;
 	
-	private DataBatch(){
-		
-	}
-	
 	private DataBatch(int size){
-	//	buffer = new double[size];
 		values = new ArrayList<>(size);
 	}
-
+	
 	public static DataBatch fromDouble(List<Double> values){
-		
 		DataBatch batch = new DataBatch(values.size());
-		
 		batch.values.addAll(values);
-		//for(int i = 0; i < values.size(); i++)
-			//batch.buffer[i] = values.get(i);
-		
 		return batch;
 	}
 	
@@ -52,7 +42,6 @@ public class DataBatch {
 		
 		for(int i = 0; i < values.size(); i++)
 			batch.values.add(values.get(i) ? 1.0 : 0.0);
-			//batch.buffer[i] = values.get(i) ? 1.0 : 0.0;
 		
 		return batch;
 	}
@@ -64,18 +53,9 @@ public class DataBatch {
 		//TODO This is insanely slow !
 		for(int i = 0; i < values.size(); i++)
 			batch.values.add((double)values.get(i));
-			//batch.buffer[i] = values.get(i);
 		
 		return batch;
 	}
-	
-		
-//	public static DataBatch from(double[] values){
-//		DataBatch batch = new DataBatch();
-//		//Not sure if they should be copied !
-//		batch.buffer = values;
-//		return batch;
-//	}
 	
 	public static DataBatch dummy(){
 		DataBatch batch = new DataBatch(1);
@@ -89,12 +69,13 @@ public class DataBatch {
 	public int size(){
 		return values.size();
 	}
-//	public double[] getBuffer(){
-//		return buffer;
-//	}
-//	
-//	public int size(){
-//		return buffer.length;
-//	}
+	
+	public void addValue(double value){
+		values.add(value);
+	}
+	
+	public void clean(){
+		values.clear();
+	}
 }
 	

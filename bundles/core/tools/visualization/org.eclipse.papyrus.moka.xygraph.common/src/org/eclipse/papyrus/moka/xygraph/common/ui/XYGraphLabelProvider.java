@@ -49,20 +49,4 @@ public class XYGraphLabelProvider extends LabelProvider{
 		LabelProviderChangedEvent event = new LabelProviderChangedEvent(this, gDesc);
 		fireLabelProviderChanged(event);
 	}
-
-//	public XYGraphLabelProvider(XYGraphCoordinator coordinator) {
-//		coordinator.addXYGraphListener(this);
-//	}
-//
-//	@Override
-//	public void onXYGraphUpdated(XYGraphCoordinator coordinator, XYGraphDescriptor xyGraph) {
-//		LabelProviderChangedEvent event = new LabelProviderChangedEvent(this, xyGraph);
-//		this.fireLabelProviderChanged(event);
-//	}
-//
-//	@Override
-//	public void onXYGraphBuilt(XYGraphCoordinator coordinator, XYGraphDescriptor xyGraph) {
-//		
-//	}
-
 }

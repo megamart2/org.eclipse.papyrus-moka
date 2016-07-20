@@ -73,9 +73,7 @@ public class VisualizationFactoryImpl extends EFactoryImpl implements Visualizat
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case VisualizationPackage.DATA_SOURCE: return createDataSource();
-			case VisualizationPackage.VARIABLE: return createVariable();
 			case VisualizationPackage.VALUE_SERIES: return createValueSeries();
-			case VisualizationPackage.DATA_VALUE_SET: return createDataValueSet();
 			case VisualizationPackage.STRING_SERIES: return createStringSeries();
 			case VisualizationPackage.DOUBLE_SERIES: return createDoubleSeries();
 			case VisualizationPackage.INTEGER_SERIES: return createIntegerSeries();
@@ -100,29 +98,9 @@ public class VisualizationFactoryImpl extends EFactoryImpl implements Visualizat
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable createVariable() {
-		VariableImpl variable = new VariableImpl();
-		return variable;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ValueSeries createValueSeries() {
 		ValueSeriesImpl valueSeries = new ValueSeriesImpl();
 		return valueSeries;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public DataValueSet createDataValueSet() {
-		DataValueSetImpl dataValueSet = new DataValueSetImpl();
-		return dataValueSet;
 	}
 
 	/**

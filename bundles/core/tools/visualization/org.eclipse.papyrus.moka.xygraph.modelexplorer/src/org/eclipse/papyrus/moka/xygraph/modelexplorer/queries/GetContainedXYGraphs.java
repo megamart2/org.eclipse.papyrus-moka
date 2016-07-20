@@ -49,5 +49,4 @@ public class GetContainedXYGraphs implements IJavaQuery2<EObject, Collection<XYG
 		}
 		return result;
 	}
-
 }

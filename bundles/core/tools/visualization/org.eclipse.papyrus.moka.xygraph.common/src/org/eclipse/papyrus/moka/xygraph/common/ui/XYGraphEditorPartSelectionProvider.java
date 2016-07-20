@@ -59,5 +59,4 @@ public class XYGraphEditorPartSelectionProvider implements ISelectionProvider {
 			current.selectionChanged(event);
 		}
 	}
-
 }

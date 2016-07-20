@@ -8,34 +8,21 @@
   <eClassifiers xsi:type="ecore:EClass" name="DataSource">
     <eStructuralFeatures xsi:type="ecore:EReference" name="base_DataType" ordered="false"
         lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//DataType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="variables" ordered="false"
-        upperBound="-1" eType="#//Variable" changeable="false" volatile="true" transient="true"
-        derived="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="valueSets" ordered="false"
-        upperBound="-1" eType="#//DataValueSet" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Variable">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
-        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="series" upperBound="-1"
-        eType="#//ValueSeries" changeable="false" volatile="true" transient="true"
-        derived="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="series" ordered="false"
+        upperBound="-1" eType="#//ValueSeries" changeable="false" volatile="true"
+        transient="true" derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ValueSeries">
+    <eOperations name="getSize" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eOperations name="getStringValue" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="index" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eOperations>
-    <eOperations name="getSize" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="variableName" ordered="false"
-        lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="binaryString" ordered="false"
         lowerBound="1" eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DataValueSet">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="metadata" ordered="false"
-        eType="ecore:EDataType ../../org.eclipse.uml2.types/model/Types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="series" ordered="false"
-        upperBound="-1" eType="#//ValueSeries" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="base_Property" ordered="false"
+        lowerBound="1" eType="ecore:EClass ../../org.eclipse.uml2.uml/model/UML.ecore#//Property"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dependent" ordered="false"
+        eType="#//ValueSeries"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StringSeries" eSuperTypes="#//ValueSeries">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="values" unique="false"

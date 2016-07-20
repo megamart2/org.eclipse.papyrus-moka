@@ -37,5 +37,4 @@ public class XYGraphAdapterFactory implements IAdapterFactory{
 	public Class[] getAdapterList() {
 		return new Class[] { IOpenable.class };
 	}
-
 }

@@ -14,8 +14,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.xygraph.mapping.writing;
 
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 
 public interface AxisBuildStrategy {
-	public void buildAxes(XYGraphBinder map);
+	/**
+	 * Rebuilds the axes that are not yet in the xyGraph
+	 * @param map
+	 */
+	public void rebuildAxes(XYGraphWidgetBinder map);
 }

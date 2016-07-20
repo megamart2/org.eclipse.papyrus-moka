@@ -15,29 +15,26 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.writing.impl;
 
 import org.eclipse.nebula.visualization.xygraph.figures.Trace;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.util.LightDataProvider;
+import org.eclipse.papyrus.moka.xygraph.mapping.writing.TraceBuildStrategy;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
-import org.eclipse.papyrus.moka.xygraph.mapping.util.BatchedCircularDataProvider;
-import org.eclipse.papyrus.moka.xygraph.mapping.writing.TraceBuildStrategy;
 
 public class DefaultTraceBuildStrategy implements TraceBuildStrategy {
 
 	@Override
-	public void buildTraces(XYGraphBinder map) {
+	public void rebuildTraces(XYGraphWidgetBinder map) {
 		XYGraphDescriptor gDesc = map.getXYGraphDescriptor();
-		for( TraceDescriptor tDesc : gDesc.getTraceDescriptors()){
-			map.bindTrace(tDesc, buildTrace(tDesc, map) );
-		}
+		for( TraceDescriptor tDesc : gDesc.getTraceDescriptors())
+			if( !map.isTraceMapped(tDesc) )				
+				map.bindTrace(tDesc, buildTrace(tDesc, map) );
 	}
 
-	protected Trace buildTrace(TraceDescriptor tDesc, XYGraphBinder map) {
+	protected Trace buildTrace(TraceDescriptor tDesc, XYGraphWidgetBinder map) {
 		
-		BatchedCircularDataProvider prov = new BatchedCircularDataProvider(true);
-//
-//		RandomDataProducer rdp = new RandomDataProducer(4, 5, 100);
-//		rdp.sample(prov);
+		LightDataProvider prov = new LightDataProvider(true);
 
 		Trace trace = new Trace(tDesc.getName(), map.getAxisFor(tDesc.getXAxis()),
 				map.getAxisFor(tDesc.getYAxis()), prov);
@@ -59,7 +56,5 @@ public class DefaultTraceBuildStrategy implements TraceBuildStrategy {
 		trace.setErrorBarEnabled(tDesc.isErrorBarEnabled());
 
 		return trace;
-		
 	}
-
 }

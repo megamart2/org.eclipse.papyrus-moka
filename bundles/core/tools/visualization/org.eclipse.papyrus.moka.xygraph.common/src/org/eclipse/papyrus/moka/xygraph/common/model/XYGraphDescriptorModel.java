@@ -22,9 +22,8 @@ import org.eclipse.papyrus.infra.core.resource.AbstractModelWithSharedResource;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 
 public class XYGraphDescriptorModel extends AbstractModelWithSharedResource<XYGraphDescriptor>{
-	
-	public static final String MODEL_ID = "org.eclipse.papyrus.infra.xygraph.model.XYGraphDescriptorModel"; //$NON-NLS-1$
 
+	public static final String MODEL_ID = "org.eclipse.papyrus.moka.xygraph.model.XYGraphDescriptorModel"; //$NON-NLS-1$
 	public static final String MODEL_FILE_EXTENSION = "notation"; //$NON-NLS-1$
 	
 	@Override

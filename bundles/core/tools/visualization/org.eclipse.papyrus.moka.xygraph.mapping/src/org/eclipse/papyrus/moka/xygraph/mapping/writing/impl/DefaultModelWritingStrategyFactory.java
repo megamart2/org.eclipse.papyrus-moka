@@ -54,5 +54,4 @@ public class DefaultModelWritingStrategyFactory implements ModelWritingStrategyF
 	public XYGraphBuildStrategy getXYGraphBuildStrategy() {
 		return new DefaultXYGraphBuildStrategy();
 	}
-
 }

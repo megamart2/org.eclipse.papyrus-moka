@@ -15,8 +15,8 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.writing;
 
 import org.eclipse.nebula.visualization.xygraph.figures.IXYGraph;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 
 public interface XYGraphBuildStrategy {
-	public IXYGraph buildGraph(XYGraphBinder map);
+	public IXYGraph buildGraph(XYGraphWidgetBinder map);
 }

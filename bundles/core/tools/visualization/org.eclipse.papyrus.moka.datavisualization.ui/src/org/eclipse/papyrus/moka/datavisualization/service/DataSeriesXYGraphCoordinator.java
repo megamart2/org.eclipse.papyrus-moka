@@ -14,70 +14,103 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.datavisualization.service;
 
+import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
+import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
+import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
+import org.eclipse.papyrus.moka.datavisualization.profile.impl.DoubleSeriesImpl;
+import org.eclipse.papyrus.moka.datavisualization.ui.GraphBuilderHelper;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable.VariableID;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphCoordinator;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.DataBatch;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.ModelWritingStrategyFactory;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
+import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 
-public class DataSeriesXYGraphCoordinator extends XYGraphCoordinator implements DataPort {
-
+public class DataSeriesXYGraphCoordinator extends XYGraphCoordinator implements LocalDataPort {
+	
+	private VariableEntryTable<VariableDataEntry> varTable = new VariableEntryTable<VariableDataEntry>();
+	
 	public DataSeriesXYGraphCoordinator(XYGraphBinder binder, ModelWritingStrategyFactory factory) {
 		super(binder, factory);
 	}
 
 	@Override
-	public void receiveNewValue(String variable, Double x, Double y) {
-		TraceDescriptor tDesc = getTraceForVariable(variable);
+	protected void onXYGraphBuilt() {
+		super.onXYGraphBuilt();
+
+		DataVisualizationService.getInstance().importNewDataValueSet((DataSource)getXYGraphDescriptor().getDataSource());
+		addNewVariables();
+		DataVisualizationService.getInstance().addDataPort(this);
 		
-		if( tDesc == null )
-			return;
+		synchronizeTracesVisibility();
 		
+		DataVisualizationService.getInstance().pullAllData(this);
+	}
+
+	private VariableDataEntry makeEntryFor(VariableID id, TraceDescriptor tDesc){
+		Variable var = new VariableImpl(tDesc.getName(), id);
+		return new VariableDataEntry(var, tDesc);
+	}
+
+	private void addNewVariables() {
+		for( TraceDescriptor tDesc : getXYGraphDescriptor().getTraceDescriptors() ){
+			
+			VariableID id = new DataSourceVariableID((ValueSeries)tDesc.getDataSource());
+					
+			if( isVariableSupported(id) )
+				continue;
+			
+			getVariablesTable().addEntryFor(id, makeEntryFor(id, tDesc));
+		}
+	}
+	
+	@Override
+	public VariableEntryTable<VariableDataEntry> getVariablesTable() {
+		return varTable;
+	}
+
+	@Override
+	public void doAddNewVariable(VariableID varId) {
+		
+		if( !(varId instanceof DataSourceVariableID) ){
+			throw new UnsupportedOperationException("For the moment only DataSourceVariables are supported");
+		}
+		
+		DataSourceVariableID dsId = (DataSourceVariableID)varId;
+		XYGraphDescriptor xy = graphMap.getXYGraphDescriptor();
+		TraceDescriptor tDesc = GraphBuilderHelper.buildTraceFor(xy, (ValueSeries)dsId.getDataSource());	
+		factory.getXYGraphUpdateStrategy().addTrace(xy, tDesc);
+	}
+
+	@Override
+	public void doRemoveVariable(VariableID varId) {
+		VariableDataEntry entry = (VariableDataEntry)varTable.getEntry(varId);
+		TraceDescriptor tDesc = entry.getTraceDescriptor();
+		removeTrace(tDesc);
+	}
+
+	@Override
+	public void doAddNewSample(VariableID varId, Double x, Double y) {
+		//Add a new value
+		VariableDataEntry entry = (VariableDataEntry)varTable.getEntry(varId);
+		TraceDescriptor tDesc = entry.getTraceDescriptor();
 		graphMap.addTraceSample(tDesc, x, y);
 	}
 
 	@Override
-	public void receiveNewBatch(String variable, DataBatch x, DataBatch y) {
-		TraceDescriptor tDesc = getTraceForVariable(variable);
-		
-		if( tDesc == null )
-			return;
-		
-		graphMap.addTraceBatch(tDesc, x, y);
-	}
-
-	private TraceDescriptor getTraceForVariable(String variable){
-		for( TraceDescriptor trace : this.graphMap.getTraceDescriptors() ) {
-			if( trace.getName().equalsIgnoreCase(variable) )
-				return trace;
-		}
-		
-		return null;
+	public void doResetValues(VariableID varId, DataBatch x, DataBatch y) {
+		//Reset the batches.
+		VariableDataEntry entry = (VariableDataEntry)varTable.getEntry(varId);
+		TraceDescriptor tDesc = entry.getTraceDescriptor();
+		graphMap.setTraceData(tDesc, x, y);
 	}
 
 	@Override
-	protected void onXYGraphBuilt() {
-		super.onXYGraphBuilt();
+	public void dispose() {
+		super.dispose();
 		
-//		XYGraphDescriptorAdapter adapter = new XYGraphDescriptorAdapter();
-//		this.graphMap.getXYGraphDescriptor().eAdapters().add(adapter);
-//		
-//		for( TraceDescriptor tDesc : this.graphMap.getXYGraphDescriptor().getTraceDescriptors())
-//			tDesc.eAdapters().add(adapter);
-		
-		//DataValueSetGraphPopulator populator = new DataValueSetGraphPopulator();
-		//populator.populate(this, getXYGraphDescriptor());
-		
-		synchronizeTracesVisibility();
+		DataVisualizationService.getInstance().removeDataPort(this);
 	}
-
-	@Override
-	public void synchronizeTracesVisibility() {
-		super.synchronizeTracesVisibility();
-		
-		DataValueSetGraphPopulator populator = new DataValueSetGraphPopulator();
-		populator.populate(this, getXYGraphDescriptor());
-	}
-	
-	
 }

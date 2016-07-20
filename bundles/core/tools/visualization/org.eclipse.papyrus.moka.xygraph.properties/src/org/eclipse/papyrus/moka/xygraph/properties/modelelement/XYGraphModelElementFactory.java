@@ -25,14 +25,11 @@ public class XYGraphModelElementFactory extends EMFModelElementFactory{
 
 	@Override
 	protected EMFModelElement doCreateFromSource(Object sourceElement, DataContextElement context) {
-		
 		EObject obj = EMFHelper.getEObject(sourceElement);
 		
 		if( obj instanceof XYGraphDescriptor )
-		
 			return new XYGraphModelElement((XYGraphDescriptor) obj, EMFHelper.resolveEditingDomain(obj));
 			
 		return super.doCreateFromSource(sourceElement, context);
 	}
-
 }

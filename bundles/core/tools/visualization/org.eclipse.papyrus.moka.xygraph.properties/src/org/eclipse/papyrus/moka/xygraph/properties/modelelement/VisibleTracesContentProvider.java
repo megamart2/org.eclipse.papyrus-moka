@@ -55,5 +55,4 @@ public class VisibleTracesContentProvider implements IStaticContentProvider, IGr
 	public void createAfter(Composite parent) {
 		
 	}
-
 }

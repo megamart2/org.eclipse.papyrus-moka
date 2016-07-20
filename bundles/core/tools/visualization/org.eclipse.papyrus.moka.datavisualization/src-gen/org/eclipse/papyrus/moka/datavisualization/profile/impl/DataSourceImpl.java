@@ -11,11 +11,7 @@
  */
 package org.eclipse.papyrus.moka.datavisualization.profile.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
@@ -23,12 +19,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
-import org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet;
-import org.eclipse.papyrus.moka.datavisualization.profile.Variable;
+import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
 
 import org.eclipse.uml2.uml.DataType;
@@ -42,8 +34,7 @@ import org.eclipse.uml2.uml.DataType;
  * </p>
  * <ul>
  *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.DataSourceImpl#getBase_DataType <em>Base Data Type</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.DataSourceImpl#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.DataSourceImpl#getValueSets <em>Value Sets</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.DataSourceImpl#getSeries <em>Series</em>}</li>
  * </ul>
  *
  * @generated
@@ -65,16 +56,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * @ordered
 	 */
 	protected DataType base_DataType;
-
-	/**
-	 * The cached value of the '{@link #getValueSets() <em>Value Sets</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValueSets()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<DataValueSet> valueSets;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -138,36 +119,10 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Variable> getVariables() {
-		// TODO: implement this method to return the 'Variables' reference list
+	public EList<ValueSeries> getSeries() {
+		// TODO: implement this method to return the 'Series' reference list
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<DataValueSet> getValueSets() {
-		if (valueSets == null) {
-			valueSets = new EObjectContainmentEList<DataValueSet>(DataValueSet.class, this, VisualizationPackage.DATA_SOURCE__VALUE_SETS);
-		}
-		return valueSets;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case VisualizationPackage.DATA_SOURCE__VALUE_SETS:
-				return ((InternalEList<?>)getValueSets()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -181,10 +136,8 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 			case VisualizationPackage.DATA_SOURCE__BASE_DATA_TYPE:
 				if (resolve) return getBase_DataType();
 				return basicGetBase_DataType();
-			case VisualizationPackage.DATA_SOURCE__VARIABLES:
-				return getVariables();
-			case VisualizationPackage.DATA_SOURCE__VALUE_SETS:
-				return getValueSets();
+			case VisualizationPackage.DATA_SOURCE__SERIES:
+				return getSeries();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -201,10 +154,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 			case VisualizationPackage.DATA_SOURCE__BASE_DATA_TYPE:
 				setBase_DataType((DataType)newValue);
 				return;
-			case VisualizationPackage.DATA_SOURCE__VALUE_SETS:
-				getValueSets().clear();
-				getValueSets().addAll((Collection<? extends DataValueSet>)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -220,9 +169,6 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 			case VisualizationPackage.DATA_SOURCE__BASE_DATA_TYPE:
 				setBase_DataType((DataType)null);
 				return;
-			case VisualizationPackage.DATA_SOURCE__VALUE_SETS:
-				getValueSets().clear();
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -237,10 +183,8 @@ public class DataSourceImpl extends MinimalEObjectImpl.Container implements Data
 		switch (featureID) {
 			case VisualizationPackage.DATA_SOURCE__BASE_DATA_TYPE:
 				return base_DataType != null;
-			case VisualizationPackage.DATA_SOURCE__VARIABLES:
-				return !getVariables().isEmpty();
-			case VisualizationPackage.DATA_SOURCE__VALUE_SETS:
-				return valueSets != null && !valueSets.isEmpty();
+			case VisualizationPackage.DATA_SOURCE__SERIES:
+				return !getSeries().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

@@ -23,7 +23,7 @@ import org.eclipse.papyrus.moka.xygraph.mapping.writing.impl.DefaultModelWriting
 public class ResourceWriteStrategyFactory extends DefaultModelWritingStrategyFactory{
 	
 	private ResourceAxisUpdateStrategy axisUpdateStrategy;
-	private ResourceTraceBindStrategy traceUpdateStrategy;
+	private ResourceTraceUpdateStrategy traceUpdateStrategy;
 	private ResourceXYGraphUpdateStrategy xyGraphUpdateStrategy;
 	
 	public ResourceWriteStrategyFactory() {
@@ -40,7 +40,7 @@ public class ResourceWriteStrategyFactory extends DefaultModelWritingStrategyFac
 	@Override
 	public TraceUpdateStrategy getTraceUpdateStrategy() {
 		if( traceUpdateStrategy == null )
-			traceUpdateStrategy = new ResourceTraceBindStrategy();
+			traceUpdateStrategy = new ResourceTraceUpdateStrategy();
 		
 		return traceUpdateStrategy;
 	}
@@ -52,5 +52,4 @@ public class ResourceWriteStrategyFactory extends DefaultModelWritingStrategyFac
 		
 		return xyGraphUpdateStrategy;
 	}
-
 }

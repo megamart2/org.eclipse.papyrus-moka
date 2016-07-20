@@ -29,11 +29,10 @@ import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphPackage;
 
 public class XYGraphCoordinator{
-	
+
 	protected XYGraphBinder graphMap;
-	private ModelWritingStrategyFactory factory;
+	protected ModelWritingStrategyFactory factory;
 	private List<XYGraphListener> listeners = new ArrayList<XYGraphListener>();
-	
 	
 	public XYGraphCoordinator(XYGraphBinder binder, ModelWritingStrategyFactory factory){
 		this.graphMap = binder;
@@ -58,7 +57,7 @@ public class XYGraphCoordinator{
 
 	public IXYGraph buildXYGraph(){
 		//1. Axes first (Primary axes are required for the xyGraph)
-		factory.getAxisBuildStrategy().buildAxes(graphMap);
+		factory.getAxisBuildStrategy().rebuildAxes(graphMap);
 		
 		//2. Build the xyGraph 
 		IXYGraph xy = factory.getXYGraphBuildStrategy().buildGraph(graphMap);		
@@ -73,7 +72,7 @@ public class XYGraphCoordinator{
 		}
 		
 		//3. Build and add the traces
-		factory.getTraceBuildStrategy().buildTraces(graphMap);
+		factory.getTraceBuildStrategy().rebuildTraces(graphMap);
 		
 		for( TraceDescriptor tDesc : gDesc.getTraceDescriptors() )
 			xy.addTrace(graphMap.getTraceFor(tDesc));
@@ -109,6 +108,9 @@ public class XYGraphCoordinator{
 		XYGraphDescriptor xyDesc = graphMap.getXYGraphDescriptor();
 		List<TraceDescriptor> visibles = xyDesc.getVisibleTraces();
 		
+		//Make the newly added traces visible?
+		factory.getTraceBuildStrategy().rebuildTraces(graphMap);
+		
 		for( TraceDescriptor tDesc : graphMap.getTraceDescriptors() ){
 			if( visibles.contains(tDesc) )
 				showTrace(graphMap.getXYGraph(), graphMap.getTraceFor(tDesc));
@@ -117,30 +119,37 @@ public class XYGraphCoordinator{
 		}
 	}
 	
-//	public void setTraceVisibility(TraceDescriptor tDesc, boolean visibility){
-//		
-//		if( tDesc.isVisible() == visibility )
-//			return;//No need to change, add, remove ...etc.
-//		
-//		TraceUpdateStrategy strategy = factory.getTraceUpdateStrategy();
-//		strategy.updateTraceFeature(tDesc, TraceStructuralFeature.Visible, visibility);
-//		strategy.commitUpdate();
-//		
-//		XYGraph xyGraph = graphMap.getXYGraph();
-//		Trace trace = graphMap.getTraceFor(tDesc);
-//		
-//		if( visibility )
-//			showTrace(xyGraph , trace);
-//		else
-//			hideTrace(xyGraph, trace);
-//	}
+	protected void addNewTrace( TraceDescriptor tDesc, boolean visible ){
+		XYGraphDescriptor xy = graphMap.getXYGraphDescriptor();		
+		//Add the trace descriptor.
+		xy.getTraceDescriptors().add(tDesc);
+		
+		//Rebuild the traces
+		factory.getTraceBuildStrategy().rebuildTraces(graphMap);
+		
+		if( visible ){
+			xy.getVisibleTraces().add( tDesc );
+			showTrace(graphMap.getXYGraph(), graphMap.getTraceFor(tDesc));
+		}
+	}
+	
+	protected void removeTrace( TraceDescriptor tDesc ){
+		//Remove it from the visibles
+		XYGraphDescriptor xy = graphMap.getXYGraphDescriptor();
+		xy.getVisibleTraces().remove(tDesc);
+		
+		//Unbind it
+		Trace trace = graphMap.unbindTrace(tDesc);
+
+		//Hide it
+		hideTrace(graphMap.getXYGraph(), trace);
+	}
 
 	private void hideTrace(XYGraph graph, Trace trace){
 		//Only remove it if contained			
 		if( graph.getPlotArea().getChildren().contains(trace) ){ 
 			graph.removeTrace(trace);
 		}
-		
 	}
 	
 	private void showTrace(XYGraph graph, Trace trace){
@@ -151,45 +160,13 @@ public class XYGraphCoordinator{
 	}
 
 	public void onModelUpdate(Notification notification) {
+		System.out.println(notification.getFeature());
 		if( XYGraphPackage.eINSTANCE.getXYGraphDescriptor_VisibleTraces().equals(notification.getFeature()) ){
-//			if( Notification.ADD == notification.getEventType() )
-//				System.out.println("Adding a visible trace");
-//			else if ( Notification.REMOVE == notification.getEventType() ){
-//				System.out.println("Removing a visible trace");
-//			}else if( Notification.ADD_MANY == notification.getEventType() ){
-//				System.out.println("Adding many !");
-//			}
 			synchronizeTracesVisibility();
 		}
-		
-		//System.out.println("Changed !");
 	}
-	
-//	private XYGraphDataCollector collector = new XYGraphDataCollector() {
-//		
-//		@Override
-//		public void collectValue(TraceDescriptor tDesc, double x, double y) {
-//			Trace trace = graphMap.getTraceFor(tDesc);
-//			CircularBufferDataProvider provider = (CircularBufferDataProvider)trace.getDataProvider();
-//			provider.addSample(new Sample(x, y));
-//		}
-//	};
-//	
-//	protected void addXYGraphDataProducer(XYGraphDataProducer producer){
-//		producer.init(collector);
-//	}
-	
-//	private XYGraphDataListener dataListener = new XYGraphDataListener() {
-//
-//		@Override
-//		public void onDataSampleAdded(TraceDescriptor tDesc, double x, double y) {
-//			Trace trace = graphMap.getTraceFor(tDesc);
-//			CircularBufferDataProvider provider = (CircularBufferDataProvider)trace.getDataProvider();
-//			provider.addSample(new Sample(x, y));
-//		}
-//	};
-//	
-//	public void addXYGraphDataProducer(XYGraphDataProducer producer){
-//		producer.setXYGraphDataListener(dataListener);
-//	}
+
+	public void dispose() {
+		graphMap.dispose();
+	}
 }

@@ -12,8 +12,10 @@
  *  Sebastien REVOL (CEA LIST)
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.xygraph.mapping.common;
+package org.eclipse.papyrus.moka.datavisualization.service;
 
-public interface XYGraphBinder extends XYGraphWidgetBinder, XYGraphDataBinder {
+import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable;
 
+public interface VariableEntryFactory {
+	public VariableEntry newEntry(Variable v);
 }

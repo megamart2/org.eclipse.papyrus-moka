@@ -94,22 +94,13 @@ public interface VisualizationPackage extends EPackage {
 	int DATA_SOURCE__BASE_DATA_TYPE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Variables</b></em>' reference list.
+	 * The feature id for the '<em><b>Series</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SOURCE__VARIABLES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Value Sets</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_SOURCE__VALUE_SETS = 2;
+	int DATA_SOURCE__SERIES = 1;
 
 	/**
 	 * The number of structural features of the '<em>Data Source</em>' class.
@@ -118,7 +109,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DATA_SOURCE_FEATURE_COUNT = 3;
+	int DATA_SOURCE_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Data Source</em>' class.
@@ -130,52 +121,6 @@ public interface VisualizationPackage extends EPackage {
 	int DATA_SOURCE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.VariableImpl <em>Variable</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VariableImpl
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getVariable()
-	 * @generated
-	 */
-	int VARIABLE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Base Property</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__BASE_PROPERTY = 0;
-
-	/**
-	 * The feature id for the '<em><b>Series</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__SERIES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Variable</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.ValueSeriesImpl <em>Value Series</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -183,16 +128,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getValueSeries()
 	 * @generated
 	 */
-	int VALUE_SERIES = 2;
-
-	/**
-	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SERIES__VARIABLE_NAME = 0;
+	int VALUE_SERIES = 1;
 
 	/**
 	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
@@ -201,7 +137,25 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SERIES__BINARY_STRING = 1;
+	int VALUE_SERIES__BINARY_STRING = 0;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SERIES__BASE_PROPERTY = 1;
+
+	/**
+	 * The feature id for the '<em><b>Dependent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SERIES__DEPENDENT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Value Series</em>' class.
@@ -210,16 +164,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SERIES_FEATURE_COUNT = 2;
-
-	/**
-	 * The operation id for the '<em>Get String Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VALUE_SERIES___GET_STRING_VALUE__INT = 0;
+	int VALUE_SERIES_FEATURE_COUNT = 3;
 
 	/**
 	 * The operation id for the '<em>Get Size</em>' operation.
@@ -228,7 +173,16 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int VALUE_SERIES___GET_SIZE = 1;
+	int VALUE_SERIES___GET_SIZE = 0;
+
+	/**
+	 * The operation id for the '<em>Get String Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int VALUE_SERIES___GET_STRING_VALUE__INT = 1;
 
 	/**
 	 * The number of operations of the '<em>Value Series</em>' class.
@@ -240,52 +194,6 @@ public interface VisualizationPackage extends EPackage {
 	int VALUE_SERIES_OPERATION_COUNT = 2;
 
 	/**
-	 * The meta object id for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.DataValueSetImpl <em>Data Value Set</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.DataValueSetImpl
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getDataValueSet()
-	 * @generated
-	 */
-	int DATA_VALUE_SET = 3;
-
-	/**
-	 * The feature id for the '<em><b>Metadata</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_VALUE_SET__METADATA = 0;
-
-	/**
-	 * The feature id for the '<em><b>Series</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_VALUE_SET__SERIES = 1;
-
-	/**
-	 * The number of structural features of the '<em>Data Value Set</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_VALUE_SET_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Data Value Set</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DATA_VALUE_SET_OPERATION_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.StringSeriesImpl <em>String Series</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -293,16 +201,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getStringSeries()
 	 * @generated
 	 */
-	int STRING_SERIES = 4;
-
-	/**
-	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
+	int STRING_SERIES = 2;
 
 	/**
 	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
@@ -312,6 +211,24 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SERIES__BASE_PROPERTY = VALUE_SERIES__BASE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Dependent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SERIES__DEPENDENT = VALUE_SERIES__DEPENDENT;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -332,15 +249,6 @@ public interface VisualizationPackage extends EPackage {
 	int STRING_SERIES_FEATURE_COUNT = VALUE_SERIES_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get String Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
-
-	/**
 	 * The operation id for the '<em>Get Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -348,6 +256,15 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int STRING_SERIES___GET_SIZE = VALUE_SERIES___GET_SIZE;
+
+	/**
+	 * The operation id for the '<em>Get String Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
 
 	/**
 	 * The number of operations of the '<em>String Series</em>' class.
@@ -366,16 +283,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getDoubleSeries()
 	 * @generated
 	 */
-	int DOUBLE_SERIES = 5;
-
-	/**
-	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
+	int DOUBLE_SERIES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
@@ -385,6 +293,24 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOUBLE_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_SERIES__BASE_PROPERTY = VALUE_SERIES__BASE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Dependent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_SERIES__DEPENDENT = VALUE_SERIES__DEPENDENT;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -405,15 +331,6 @@ public interface VisualizationPackage extends EPackage {
 	int DOUBLE_SERIES_FEATURE_COUNT = VALUE_SERIES_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get String Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int DOUBLE_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
-
-	/**
 	 * The operation id for the '<em>Get Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -421,6 +338,15 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOUBLE_SERIES___GET_SIZE = VALUE_SERIES___GET_SIZE;
+
+	/**
+	 * The operation id for the '<em>Get String Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DOUBLE_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
 
 	/**
 	 * The number of operations of the '<em>Double Series</em>' class.
@@ -439,16 +365,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getIntegerSeries()
 	 * @generated
 	 */
-	int INTEGER_SERIES = 6;
-
-	/**
-	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
+	int INTEGER_SERIES = 4;
 
 	/**
 	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
@@ -458,6 +375,24 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTEGER_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SERIES__BASE_PROPERTY = VALUE_SERIES__BASE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Dependent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SERIES__DEPENDENT = VALUE_SERIES__DEPENDENT;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -478,15 +413,6 @@ public interface VisualizationPackage extends EPackage {
 	int INTEGER_SERIES_FEATURE_COUNT = VALUE_SERIES_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get String Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INTEGER_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
-
-	/**
 	 * The operation id for the '<em>Get Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -494,6 +420,15 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int INTEGER_SERIES___GET_SIZE = VALUE_SERIES___GET_SIZE;
+
+	/**
+	 * The operation id for the '<em>Get String Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTEGER_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
 
 	/**
 	 * The number of operations of the '<em>Integer Series</em>' class.
@@ -512,16 +447,7 @@ public interface VisualizationPackage extends EPackage {
 	 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getBooleanSeries()
 	 * @generated
 	 */
-	int BOOLEAN_SERIES = 7;
-
-	/**
-	 * The feature id for the '<em><b>Variable Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_SERIES__VARIABLE_NAME = VALUE_SERIES__VARIABLE_NAME;
+	int BOOLEAN_SERIES = 5;
 
 	/**
 	 * The feature id for the '<em><b>Binary String</b></em>' attribute.
@@ -531,6 +457,24 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOLEAN_SERIES__BINARY_STRING = VALUE_SERIES__BINARY_STRING;
+
+	/**
+	 * The feature id for the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SERIES__BASE_PROPERTY = VALUE_SERIES__BASE_PROPERTY;
+
+	/**
+	 * The feature id for the '<em><b>Dependent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SERIES__DEPENDENT = VALUE_SERIES__DEPENDENT;
 
 	/**
 	 * The feature id for the '<em><b>Values</b></em>' attribute list.
@@ -551,15 +495,6 @@ public interface VisualizationPackage extends EPackage {
 	int BOOLEAN_SERIES_FEATURE_COUNT = VALUE_SERIES_FEATURE_COUNT + 1;
 
 	/**
-	 * The operation id for the '<em>Get String Value</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
-
-	/**
 	 * The operation id for the '<em>Get Size</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -567,6 +502,15 @@ public interface VisualizationPackage extends EPackage {
 	 * @ordered
 	 */
 	int BOOLEAN_SERIES___GET_SIZE = VALUE_SERIES___GET_SIZE;
+
+	/**
+	 * The operation id for the '<em>Get String Value</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_SERIES___GET_STRING_VALUE__INT = VALUE_SERIES___GET_STRING_VALUE__INT;
 
 	/**
 	 * The number of operations of the '<em>Boolean Series</em>' class.
@@ -600,58 +544,15 @@ public interface VisualizationPackage extends EPackage {
 	EReference getDataSource_Base_DataType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getVariables <em>Variables</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Variables</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getVariables()
-	 * @see #getDataSource()
-	 * @generated
-	 */
-	EReference getDataSource_Variables();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets <em>Value Sets</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Value Sets</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getValueSets()
-	 * @see #getDataSource()
-	 * @generated
-	 */
-	EReference getDataSource_ValueSets();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.datavisualization.profile.Variable <em>Variable</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Variable</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.Variable
-	 * @generated
-	 */
-	EClass getVariable();
-
-	/**
-	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.moka.datavisualization.profile.Variable#getBase_Property <em>Base Property</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Base Property</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.Variable#getBase_Property()
-	 * @see #getVariable()
-	 * @generated
-	 */
-	EReference getVariable_Base_Property();
-
-	/**
-	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.Variable#getSeries <em>Series</em>}'.
+	 * Returns the meta object for the reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getSeries <em>Series</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference list '<em>Series</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.Variable#getSeries()
-	 * @see #getVariable()
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataSource#getSeries()
+	 * @see #getDataSource()
 	 * @generated
 	 */
-	EReference getVariable_Series();
+	EReference getDataSource_Series();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries <em>Value Series</em>}'.
@@ -664,17 +565,6 @@ public interface VisualizationPackage extends EPackage {
 	EClass getValueSeries();
 
 	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getVariableName <em>Variable Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Variable Name</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getVariableName()
-	 * @see #getValueSeries()
-	 * @generated
-	 */
-	EAttribute getValueSeries_VariableName();
-
-	/**
 	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBinaryString <em>Binary String</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -684,6 +574,28 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getValueSeries_BinaryString();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBase_Property <em>Base Property</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Base Property</em>'.
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBase_Property()
+	 * @see #getValueSeries()
+	 * @generated
+	 */
+	EReference getValueSeries_Base_Property();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getDependent <em>Dependent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Dependent</em>'.
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getDependent()
+	 * @see #getValueSeries()
+	 * @generated
+	 */
+	EReference getValueSeries_Dependent();
 
 	/**
 	 * Returns the meta object for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getStringValue(int) <em>Get String Value</em>}' operation.
@@ -704,38 +616,6 @@ public interface VisualizationPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getValueSeries__GetSize();
-
-	/**
-	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet <em>Data Value Set</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Data Value Set</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet
-	 * @generated
-	 */
-	EClass getDataValueSet();
-
-	/**
-	 * Returns the meta object for the attribute '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet#getMetadata <em>Metadata</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Metadata</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet#getMetadata()
-	 * @see #getDataValueSet()
-	 * @generated
-	 */
-	EAttribute getDataValueSet_Metadata();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet#getSeries <em>Series</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Series</em>'.
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet#getSeries()
-	 * @see #getDataValueSet()
-	 * @generated
-	 */
-	EReference getDataValueSet_Series();
 
 	/**
 	 * Returns the meta object for class '{@link org.eclipse.papyrus.moka.datavisualization.profile.StringSeries <em>String Series</em>}'.
@@ -863,46 +743,12 @@ public interface VisualizationPackage extends EPackage {
 		EReference DATA_SOURCE__BASE_DATA_TYPE = eINSTANCE.getDataSource_Base_DataType();
 
 		/**
-		 * The meta object literal for the '<em><b>Variables</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_SOURCE__VARIABLES = eINSTANCE.getDataSource_Variables();
-
-		/**
-		 * The meta object literal for the '<em><b>Value Sets</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_SOURCE__VALUE_SETS = eINSTANCE.getDataSource_ValueSets();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.VariableImpl <em>Variable</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VariableImpl
-		 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getVariable()
-		 * @generated
-		 */
-		EClass VARIABLE = eINSTANCE.getVariable();
-
-		/**
-		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference VARIABLE__BASE_PROPERTY = eINSTANCE.getVariable_Base_Property();
-
-		/**
 		 * The meta object literal for the '<em><b>Series</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference VARIABLE__SERIES = eINSTANCE.getVariable_Series();
+		EReference DATA_SOURCE__SERIES = eINSTANCE.getDataSource_Series();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.ValueSeriesImpl <em>Value Series</em>}' class.
@@ -915,20 +761,28 @@ public interface VisualizationPackage extends EPackage {
 		EClass VALUE_SERIES = eINSTANCE.getValueSeries();
 
 		/**
-		 * The meta object literal for the '<em><b>Variable Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute VALUE_SERIES__VARIABLE_NAME = eINSTANCE.getValueSeries_VariableName();
-
-		/**
 		 * The meta object literal for the '<em><b>Binary String</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute VALUE_SERIES__BINARY_STRING = eINSTANCE.getValueSeries_BinaryString();
+
+		/**
+		 * The meta object literal for the '<em><b>Base Property</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE_SERIES__BASE_PROPERTY = eINSTANCE.getValueSeries_Base_Property();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependent</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference VALUE_SERIES__DEPENDENT = eINSTANCE.getValueSeries_Dependent();
 
 		/**
 		 * The meta object literal for the '<em><b>Get String Value</b></em>' operation.
@@ -945,32 +799,6 @@ public interface VisualizationPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation VALUE_SERIES___GET_SIZE = eINSTANCE.getValueSeries__GetSize();
-
-		/**
-		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.DataValueSetImpl <em>Data Value Set</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.DataValueSetImpl
-		 * @see org.eclipse.papyrus.moka.datavisualization.profile.impl.VisualizationPackageImpl#getDataValueSet()
-		 * @generated
-		 */
-		EClass DATA_VALUE_SET = eINSTANCE.getDataValueSet();
-
-		/**
-		 * The meta object literal for the '<em><b>Metadata</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute DATA_VALUE_SET__METADATA = eINSTANCE.getDataValueSet_Metadata();
-
-		/**
-		 * The meta object literal for the '<em><b>Series</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference DATA_VALUE_SET__SERIES = eINSTANCE.getDataValueSet_Series();
 
 		/**
 		 * The meta object literal for the '{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.StringSeriesImpl <em>String Series</em>}' class.

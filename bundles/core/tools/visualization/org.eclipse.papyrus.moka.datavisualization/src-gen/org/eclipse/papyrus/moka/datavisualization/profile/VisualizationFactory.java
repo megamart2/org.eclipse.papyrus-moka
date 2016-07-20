@@ -47,15 +47,6 @@ public interface VisualizationFactory extends EFactory {
 	DataSource createDataSource();
 
 	/**
-	 * Returns a new object of class '<em>Variable</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable</em>'.
-	 * @generated
-	 */
-	Variable createVariable();
-
-	/**
 	 * Returns a new object of class '<em>Value Series</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -63,15 +54,6 @@ public interface VisualizationFactory extends EFactory {
 	 * @generated
 	 */
 	ValueSeries createValueSeries();
-
-	/**
-	 * Returns a new object of class '<em>Data Value Set</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Data Value Set</em>'.
-	 * @generated
-	 */
-	DataValueSet createDataValueSet();
 
 	/**
 	 * Returns a new object of class '<em>String Series</em>'.

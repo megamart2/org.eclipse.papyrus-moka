@@ -33,6 +33,4 @@ public class XYGraphModelElement extends EMFModelElement{
 
 		return super.getContentProvider(propertyPath);
 	}
-	
-
 }

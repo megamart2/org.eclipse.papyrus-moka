@@ -30,5 +30,4 @@ public class EmptyListQuery implements IJavaQuery2<EObject, List<Object>>{
 			throws DerivedTypedElementException {
 		return Collections.emptyList();
 	}
-
 }

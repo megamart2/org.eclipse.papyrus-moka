@@ -29,9 +29,7 @@ public class CreateXYGraphFromDataSourceHandler extends AbstractCommandHandler{
 	protected Command getCommand(IEvaluationContext context) {
 		
 		EObject selectedElement = getSelectedElement();
-//		if (getSelectedElement() instanceof Package){
-//			return new LoadCSVCommand(getEditingDomain(context),(Package)selectedElement, context);
-//		}
+
 		if( !(selectedElement instanceof DataType) )
 			return null;
 		

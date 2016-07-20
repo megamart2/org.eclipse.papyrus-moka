@@ -172,6 +172,6 @@
       <properties xmi:id="_3MV4GCixEeaZYvwPs2eqUw" name="g" type="Integer"/>
       <properties xmi:id="_3MV4GSixEeaZYvwPs2eqUw" name="b" type="Integer"/>
     </elements>
-    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.infra.xygraph.properties/properties/xygraph.environment#_pK5gwCiyEeaZYvwPs2eqUw"/>
+    <modelElementFactory href="ppe:/environment/org.eclipse.papyrus.moka.xygraph.properties/properties/xygraph.environment#_pK5gwCiyEeaZYvwPs2eqUw"/>
   </dataContexts>
 </contexts:Context>

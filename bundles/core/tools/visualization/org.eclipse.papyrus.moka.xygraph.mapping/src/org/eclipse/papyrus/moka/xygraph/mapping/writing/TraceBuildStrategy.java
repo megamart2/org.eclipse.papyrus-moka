@@ -14,8 +14,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.xygraph.mapping.writing;
 
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 
 public interface TraceBuildStrategy {
-	public void buildTraces(XYGraphBinder xyGraphBind);
+	/**
+	 * Rebuild the traces that are not already in the xyGraph
+	 * @param xyGraphBind
+	 */
+	public void rebuildTraces(XYGraphWidgetBinder xyGraphBind);
 }

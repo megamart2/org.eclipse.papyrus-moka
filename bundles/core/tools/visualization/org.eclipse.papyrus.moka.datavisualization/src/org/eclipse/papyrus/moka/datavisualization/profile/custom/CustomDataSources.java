@@ -17,7 +17,7 @@ package org.eclipse.papyrus.moka.datavisualization.profile.custom;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.moka.datavisualization.profile.Variable;
+import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.impl.DataSourceImpl;
 import org.eclipse.uml2.uml.DataType;
 import org.eclipse.uml2.uml.Property;
@@ -25,14 +25,14 @@ import org.eclipse.uml2.uml.Property;
 public class CustomDataSources extends DataSourceImpl {
 
 	@Override
-	public EList<Variable> getVariables() {
-		EList<Variable> ret = new BasicEList<Variable>();
+	public EList<ValueSeries> getSeries() {
+		EList<ValueSeries> ret = new BasicEList<ValueSeries>();
 		DataType baseDataType = getBase_DataType();
 		if (baseDataType != null){
 			for (Property prop : baseDataType.allAttributes()){
 				for( EObject stereoApplication : prop.getStereotypeApplications()){
-					if (stereoApplication instanceof Variable){
-						ret.add((Variable) stereoApplication);
+					if (stereoApplication instanceof ValueSeries){
+						ret.add((ValueSeries) stereoApplication);
 					}
 				}
 			}

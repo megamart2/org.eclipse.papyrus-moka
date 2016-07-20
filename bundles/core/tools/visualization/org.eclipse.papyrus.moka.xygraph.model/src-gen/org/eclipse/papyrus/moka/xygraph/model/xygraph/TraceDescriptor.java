@@ -30,6 +30,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getXErrorBarType <em>XError Bar Type</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getYAxis <em>YAxis</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getYErrorBarType <em>YError Bar Type</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getDataSource <em>Data Source</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphPackage#getTraceDescriptor()
@@ -502,5 +503,31 @@ public interface TraceDescriptor extends EObject {
 	 * @generated
 	 */
 	void setYErrorBarType(Trace_ErrorBarType value);
+
+	/**
+	 * Returns the value of the '<em><b>Data Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Source</em>' reference.
+	 * @see #setDataSource(EObject)
+	 * @see org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphPackage#getTraceDescriptor_DataSource()
+	 * @model
+	 * @generated
+	 */
+	EObject getDataSource();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor#getDataSource <em>Data Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data Source</em>' reference.
+	 * @see #getDataSource()
+	 * @generated
+	 */
+	void setDataSource(EObject value);
 
 } // TraceDescriptor

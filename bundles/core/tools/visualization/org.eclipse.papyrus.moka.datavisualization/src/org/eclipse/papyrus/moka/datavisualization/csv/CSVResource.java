@@ -25,18 +25,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.emf.ecore.resource.impl.ResourceImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.papyrus.moka.datavisualization.profile.BooleanSeries;
-import org.eclipse.papyrus.moka.datavisualization.profile.DataValueSet;
+import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
 import org.eclipse.papyrus.moka.datavisualization.profile.DoubleSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.IntegerSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.StringSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
-import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationFactory;
 import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
+import org.eclipse.papyrus.moka.datavisualization.util.VisualizationUtil;
+import org.eclipse.uml2.uml.DataType;
+import org.eclipse.uml2.uml.Package;
+import org.eclipse.uml2.uml.Property;
+import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 public class CSVResource extends ResourceImpl {
 
@@ -46,8 +52,8 @@ public class CSVResource extends ResourceImpl {
 	private String separator=";";
 
 
-	public static final String OPTION_INIT_DATATYPE= "DefiningDataType";
 	public static final String OPTION_SEPARATOR= "separator";
+	public static final String OPTION_TARGET_PACKAGE= "TARGET_PACKAGE";
 
 
 
@@ -57,8 +63,13 @@ public class CSVResource extends ResourceImpl {
 
 
 
-	private VisualizationFactory eFactory = (VisualizationFactory) VisualizationPackage.eINSTANCE.getEFactoryInstance();
-	private DataValueSet valueSet = eFactory.createDataValueSet();
+	
+	private UMLFactory eFactory = (UMLFactory) UMLPackage.eINSTANCE.getEFactoryInstance();
+	private Package rootModel;
+	private DataType dataType;
+	private ArrayList<ValueSeries> seriesList= new ArrayList<>();
+
+	private String DEFAULT_SOURCE_NAME= "CSVFile";
 	
 
 
@@ -66,14 +77,33 @@ public class CSVResource extends ResourceImpl {
 
 	@Override
 	protected void doLoad(InputStream inputStream, Map<?, ?> options) throws IOException {
-
-		valueSet.eSetDeliver(false);
-		String name ="default";
-		if (getURI() != null){
-			name = getURI().toString();
+	
+		if (options!= null){
+			rootModel = (Package) options.get(OPTION_TARGET_PACKAGE);
+			
 		}
-		valueSet.setMetadata("CSV file Name:" + name );
-
+		
+		URI uri = getURI();
+		String sourceName = DEFAULT_SOURCE_NAME;
+		if (uri != null){
+			sourceName = uri.trimFileExtension().lastSegment();
+		}
+		if (rootModel ==null){
+			rootModel = eFactory.createModel();
+			rootModel.setName(sourceName+"Model");
+			getContents().add(rootModel);
+		}
+		
+		
+		VisualizationUtil.applyVisualizationProfileIfNeeded(rootModel);
+		
+		dataType = (DataType) rootModel.createOwnedType(sourceName, UMLPackage.eINSTANCE.getDataType());
+		dataType.setName(sourceName);
+		dataType.applyStereotype(VisualizationUtil.getDataSourceStereotype(rootModel));
+		
+		dataType.eSetDeliver(false);
+		rootModel.getPackagedElements().add(dataType);
+		
 		//first release does not support options
 		//initializeOptions(options);
 
@@ -86,14 +116,14 @@ public class CSVResource extends ResourceImpl {
 			line = bufferedReader.readLine();
 		}
 		if (line != null){
-			List<String> variableNames = getVariableNames(line);
+			 initializeProperties(line);
 
 			line = bufferedReader.readLine();
 			//we skip emptyLines
 			while (line != null && line.trim().isEmpty()){
 				line = bufferedReader.readLine();
 			}
-			initializeSeries(line, variableNames);
+			initializeSeries(line);
 
 			while ((line = bufferedReader.readLine()) != null){
 				populateValues(line);
@@ -103,9 +133,9 @@ public class CSVResource extends ResourceImpl {
 			
 		bufferedReader.close();
 
-		getContents().add(valueSet);
-		valueSet.eSetDeliver(true);
-		for (ValueSeries serie : valueSet.getSeries()){
+		
+		rootModel.eSetDeliver(true);
+		for (ValueSeries serie : seriesList){
 			serie.eSetDeliver(true);
 		}
 
@@ -132,29 +162,26 @@ public class CSVResource extends ResourceImpl {
 
 
 
-	private void initializeSeries(String line, List<String> variableNames) {
+	private void initializeSeries(String line) {
 		String[] tokens = line.split(separator);
 		if (tokens != null){
 			for(int i = 0; i< tokens.length; i++){
 				String token = tokens[i];
-				ValueSeries serie = getValueSeries(guessType(token));
-				serie.setVariableName(variableNames.get(i));
-				 valueSet.getSeries().add(serie);		
+				ValueSeries serie = getValueSeries(guessType(token), dataType.getOwnedAttributes().get(i));
 				 addInSeries(serie, token);
 			}
 		}
 	}
 
 
-	private List<String> getVariableNames(String line) {
-		List<String> ret = new ArrayList<String>();
+	private void initializeProperties(String line) {
 		String[] tokens = line.split(separator);
 		if (tokens != null){
 			for(int i = 0; i< tokens.length; i++){
-				ret.add(tokens[i]);
+				dataType.createOwnedAttribute(tokens[i], null);
 			}
 		}
-		return ret;
+		
 	}
 
 
@@ -235,23 +262,29 @@ public class CSVResource extends ResourceImpl {
 		}
 	}
 
-	private ValueSeries getValueSeries(int dataTypeID){
+	private ValueSeries getValueSeries(int dataTypeID, Property property){
 		ValueSeries ret= null;
+		
 		switch (dataTypeID){
 		case EcorePackage.EDOUBLE :
-			ret = eFactory.createDoubleSeries();
+			ret = (ValueSeries) property.applyStereotype(VisualizationUtil.getStereotype(VisualizationPackage.eINSTANCE.getDoubleSeries(), property));
+			property.setType(VisualizationUtil.getUMLPrimitiveType(property,VisualizationUtil.REAL_NAME));
 			break;
 		case EcorePackage.EBOOLEAN:
-			ret=  eFactory.createBooleanSeries();
+			ret = (ValueSeries) property.applyStereotype(VisualizationUtil.getStereotype(VisualizationPackage.eINSTANCE.getBooleanSeries(), property));
+			property.setType(VisualizationUtil.getUMLPrimitiveType(property,VisualizationUtil.BOOLEAN_NAME));
 			break;
 		case EcorePackage.EINT :
-			ret=  eFactory.createIntegerSeries();
+			ret = (ValueSeries) property.applyStereotype(VisualizationUtil.getStereotype(VisualizationPackage.eINSTANCE.getIntegerSeries(), property));
+			property.setType(VisualizationUtil.getUMLPrimitiveType(property,VisualizationUtil.INTEGER_NAME));
 			break;
 		default:
-			ret= eFactory.createStringSeries();
+			ret = (ValueSeries) property.applyStereotype(VisualizationUtil.getStereotype(VisualizationPackage.eINSTANCE.getStringSeries(), property));
+			property.setType(VisualizationUtil.getUMLPrimitiveType(property,VisualizationUtil.STRING_NAME));
 			break;
 		}
 		ret.eSetDeliver(false);
+		seriesList.add(ret);
 		return ret;
 	}
 
@@ -278,21 +311,22 @@ public class CSVResource extends ResourceImpl {
 
 	private void reinitializeSeries(ValueSeries serie, String token) {
 
-		ValueSeries newSerie = getValueSeries(computeAlternateType(token, serie.eClass().getClassifierID()));
-
+		ValueSeries newSerie = getValueSeries(computeAlternateType(token, serie.eClass().getClassifierID()), serie.getBase_Property());
+		int index = seriesList.indexOf(serie);
+		seriesList.remove(index);
+		seriesList.add(index,newSerie);
+		
 		@SuppressWarnings("rawtypes")
 		List values = (List) serie.eGet(serie.eClass().getEStructuralFeature(VALUES_FEATURE_NAME));
 
 		for (Object value : values){
 			addInSeries(newSerie, value.toString());
 		}
-		int originalSerieIndex =  valueSet.getSeries().indexOf(serie);
-		valueSet.getSeries().remove(originalSerieIndex);
-		valueSet.getSeries().add(originalSerieIndex, newSerie);
-		newSerie.setVariableName(serie.getVariableName());
+		
 		addInSeries(newSerie, token);
 
-		EcoreUtil.delete(serie);
+		serie.getBase_Property().unapplyStereotype(UMLUtil.getStereotype(serie));
+		
 
 	}
 
@@ -302,8 +336,8 @@ public class CSVResource extends ResourceImpl {
 		String[] tokens = line.split(separator);
 		for (int i = 0; i< tokens.length; i++){
 			//we skip incorrect lines
-			if (tokens.length ==  valueSet.getSeries().size()){
-				addInSeries( valueSet.getSeries().get(i), tokens[i]);
+			if (tokens.length ==  dataType.getOwnedAttributes().size()){
+				addInSeries( seriesList.get(i), tokens[i]);
 			}
 		}
 
@@ -316,36 +350,40 @@ public class CSVResource extends ResourceImpl {
 	protected void doSave(OutputStream outputStream, Map<?, ?> options) throws IOException {
 		//first release does not support options
 		//initializeOptions(options);
-		updateValueSet();
-		if (valueSet != null && !valueSet.getSeries().isEmpty()){
+		updateDataType();
+		if (dataType != null){
 			BufferedWriter writter = new BufferedWriter(new PrintWriter(outputStream));
 			
-			List<ValueSeries> series = valueSet.getSeries();
-			int seriesNumber = series.size();
-			
-			for(int i=0; i< seriesNumber; i++){
-				writter.append(series.get(i).getVariableName());
-				if (i < seriesNumber -1){
-					writter.append(separator);
-				}
-			}
-			writter.newLine();
-			
-		
-			int lineNumber = valueSet.getSeries().get(0).getSize();
-			
-			for (int lineIndex  =0 ; lineIndex< lineNumber; lineIndex++ ){
-				for(int serieIndex  = 0; serieIndex <seriesNumber; serieIndex++){
-					writter.append( valueSet.getSeries().get(serieIndex).getStringValue(lineIndex));
-					if (serieIndex < seriesNumber-1){
+			DataSource source = (DataSource) dataType.getStereotypeApplication((VisualizationUtil.getDataSourceStereotype(dataType)));
+			if( source != null){
+				List<ValueSeries> series = source.getSeries();
+				int seriesNumber = series.size();
+				
+				for(int i=0; i< seriesNumber; i++){
+					writter.append(series.get(i).getBase_Property().getName());
+					if (i < seriesNumber -1){
 						writter.append(separator);
 					}
 				}
-				if (lineIndex < lineNumber -1){
-					writter.newLine();
-				}
+				writter.newLine();
+				
 			
+				int lineNumber = source.getSeries().get(0).getSize();
+				
+				for (int lineIndex  =0 ; lineIndex< lineNumber; lineIndex++ ){
+					for(int serieIndex  = 0; serieIndex <seriesNumber; serieIndex++){
+						writter.append( source.getSeries().get(serieIndex).getStringValue(lineIndex));
+						if (serieIndex < seriesNumber-1){
+							writter.append(separator);
+						}
+					}
+					if (lineIndex < lineNumber -1){
+						writter.newLine();
+					}
+				
+				}
 			}
+		
 			
 			writter.close();
 		
@@ -357,10 +395,11 @@ public class CSVResource extends ResourceImpl {
 
 
 
-	private void updateValueSet() {
+	private void updateDataType() {
 		for (EObject content : getContents()){
-			if( content instanceof DataValueSet){
-				valueSet = (DataValueSet) content;
+			if( content instanceof DataType && ((DataType)content).getAppliedStereotype(VisualizationUtil.DATA_SOURCE_STEREO_QUALIFIED_NAME) != null){
+				dataType = (DataType) content;
+				return;
 			}
 		}
 		

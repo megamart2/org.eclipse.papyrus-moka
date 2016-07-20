@@ -6,6 +6,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -44,6 +45,7 @@ import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphPackage;
  *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.impl.TraceDescriptorImpl#getXErrorBarType <em>XError Bar Type</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.impl.TraceDescriptorImpl#getYAxis <em>YAxis</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.impl.TraceDescriptorImpl#getYErrorBarType <em>YError Bar Type</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.xygraph.model.xygraph.impl.TraceDescriptorImpl#getDataSource <em>Data Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -348,6 +350,16 @@ public class TraceDescriptorImpl extends MinimalEObjectImpl.Container implements
 	 * @ordered
 	 */
 	protected Trace_ErrorBarType yErrorBarType = YERROR_BAR_TYPE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDataSource() <em>Data Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDataSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected EObject dataSource;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -808,6 +820,44 @@ public class TraceDescriptorImpl extends MinimalEObjectImpl.Container implements
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EObject getDataSource() {
+		if (dataSource != null && dataSource.eIsProxy()) {
+			InternalEObject oldDataSource = (InternalEObject)dataSource;
+			dataSource = eResolveProxy(oldDataSource);
+			if (dataSource != oldDataSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XYGraphPackage.TRACE_DESCRIPTOR__DATA_SOURCE, oldDataSource, dataSource));
+			}
+		}
+		return dataSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject basicGetDataSource() {
+		return dataSource;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataSource(EObject newDataSource) {
+		EObject oldDataSource = dataSource;
+		dataSource = newDataSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, XYGraphPackage.TRACE_DESCRIPTOR__DATA_SOURCE, oldDataSource, dataSource));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -863,6 +913,9 @@ public class TraceDescriptorImpl extends MinimalEObjectImpl.Container implements
 				return basicGetYAxis();
 			case XYGraphPackage.TRACE_DESCRIPTOR__YERROR_BAR_TYPE:
 				return getYErrorBarType();
+			case XYGraphPackage.TRACE_DESCRIPTOR__DATA_SOURCE:
+				if (resolve) return getDataSource();
+				return basicGetDataSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -925,6 +978,9 @@ public class TraceDescriptorImpl extends MinimalEObjectImpl.Container implements
 				return;
 			case XYGraphPackage.TRACE_DESCRIPTOR__YERROR_BAR_TYPE:
 				setYErrorBarType((Trace_ErrorBarType)newValue);
+				return;
+			case XYGraphPackage.TRACE_DESCRIPTOR__DATA_SOURCE:
+				setDataSource((EObject)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -989,6 +1045,9 @@ public class TraceDescriptorImpl extends MinimalEObjectImpl.Container implements
 			case XYGraphPackage.TRACE_DESCRIPTOR__YERROR_BAR_TYPE:
 				setYErrorBarType(YERROR_BAR_TYPE_EDEFAULT);
 				return;
+			case XYGraphPackage.TRACE_DESCRIPTOR__DATA_SOURCE:
+				setDataSource((EObject)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -1035,6 +1094,8 @@ public class TraceDescriptorImpl extends MinimalEObjectImpl.Container implements
 				return yAxis != null;
 			case XYGraphPackage.TRACE_DESCRIPTOR__YERROR_BAR_TYPE:
 				return yErrorBarType != YERROR_BAR_TYPE_EDEFAULT;
+			case XYGraphPackage.TRACE_DESCRIPTOR__DATA_SOURCE:
+				return dataSource != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -63,5 +63,4 @@ public class XYGraphFilteredLabelProvider implements IFilteredLabelProvider {
 		
 		return false;
 	}
-
 }

@@ -15,6 +15,8 @@
 package org.eclipse.papyrus.moka.datavisualization.ui.diagram;
 
 import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.moka.datavisualization.service.DataSeriesXYGraphCoordinator;
+import org.eclipse.papyrus.moka.datavisualization.services.XYGraphPropertiesNotificationService;
 import org.eclipse.papyrus.moka.xygraph.common.ui.AbstractXYGraphPageFactory;
 import org.eclipse.papyrus.moka.xygraph.common.writing.ResourceWriteStrategyFactory;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.DefaultXYGraphBinder;
@@ -22,8 +24,6 @@ import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphCoordinator;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.ModelWritingStrategyFactory;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
-import org.eclipse.papyrus.moka.datavisualization.service.DataSeriesXYGraphCoordinator;
-import org.eclipse.papyrus.moka.datavisualization.services.XYGraphPropertiesNotificationService;
 
 public class DataSeriesXYGraphPageFactory extends AbstractXYGraphPageFactory{
 
@@ -42,11 +42,9 @@ public class DataSeriesXYGraphPageFactory extends AbstractXYGraphPageFactory{
 			XYGraphPropertiesNotificationService notifSrv = servicesRegistry.getService(XYGraphPropertiesNotificationService.class);
 			notifSrv.register(coordinator);
 		} catch (ServiceException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 		return coordinator;
 	}
-
 }

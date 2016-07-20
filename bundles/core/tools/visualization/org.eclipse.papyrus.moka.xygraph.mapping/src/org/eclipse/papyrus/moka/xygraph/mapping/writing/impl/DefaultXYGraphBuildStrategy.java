@@ -19,7 +19,7 @@ import org.eclipse.nebula.visualization.xygraph.figures.IAxesFactory;
 import org.eclipse.nebula.visualization.xygraph.figures.IXYGraph;
 import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.XYGraphBuildStrategy;
 import org.eclipse.swt.graphics.Font;
@@ -28,7 +28,7 @@ import org.eclipse.swt.widgets.Display;
 public class DefaultXYGraphBuildStrategy implements XYGraphBuildStrategy {
 
 	@Override
-	public IXYGraph buildGraph(XYGraphBinder map) {
+	public IXYGraph buildGraph(XYGraphWidgetBinder map) {
 		
 		XYGraph xy = new XYGraph(new IAxesFactory() {
 			@Override
@@ -60,5 +60,4 @@ public class DefaultXYGraphBuildStrategy implements XYGraphBuildStrategy {
 		xy.getPlotArea().setShowBorder(gDesc.isShowPlotAreaBorder());
 		xy.getPlotArea().setBackgroundColor(XYGraphMappingHelper.mapColorDescriptor(gDesc.getPlotAreaBackgroundColor()));
 	}
-
 }

@@ -19,11 +19,13 @@ import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
 import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
+import org.eclipse.uml2.uml.Property;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,8 +35,9 @@ import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.ValueSeriesImpl#getVariableName <em>Variable Name</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.ValueSeriesImpl#getBinaryString <em>Binary String</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.ValueSeriesImpl#getBase_Property <em>Base Property</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.impl.ValueSeriesImpl#getDependent <em>Dependent</em>}</li>
  * </ul>
  *
  * @generated
@@ -46,26 +49,6 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	 * @generated
 	 */
 	public static final String copyright = "Copyright (c) 2016 CEA LIST.\r\n\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n\r\n Contributors:\r\n  CEA LIST - Initial API and implementation";
-
-	/**
-	 * The default value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVariableName()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VARIABLE_NAME_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getVariableName() <em>Variable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getVariableName()
-	 * @generated
-	 * @ordered
-	 */
-	protected String variableName = VARIABLE_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBinaryString() <em>Binary String</em>}' attribute.
@@ -86,6 +69,26 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	 * @ordered
 	 */
 	protected String binaryString = BINARY_STRING_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getBase_Property() <em>Base Property</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBase_Property()
+	 * @generated
+	 * @ordered
+	 */
+	protected Property base_Property;
+
+	/**
+	 * The cached value of the '{@link #getDependent() <em>Dependent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDependent()
+	 * @generated
+	 * @ordered
+	 */
+	protected ValueSeries dependent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,27 +114,6 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getVariableName() {
-		return variableName;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setVariableName(String newVariableName) {
-		String oldVariableName = variableName;
-		variableName = newVariableName;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, VisualizationPackage.VALUE_SERIES__VARIABLE_NAME, oldVariableName, variableName));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public String getBinaryString() {
 		return binaryString;
 	}
@@ -146,6 +128,82 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 		binaryString = newBinaryString;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, VisualizationPackage.VALUE_SERIES__BINARY_STRING, oldBinaryString, binaryString));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Property getBase_Property() {
+		if (base_Property != null && base_Property.eIsProxy()) {
+			InternalEObject oldBase_Property = (InternalEObject)base_Property;
+			base_Property = (Property)eResolveProxy(oldBase_Property);
+			if (base_Property != oldBase_Property) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisualizationPackage.VALUE_SERIES__BASE_PROPERTY, oldBase_Property, base_Property));
+			}
+		}
+		return base_Property;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Property basicGetBase_Property() {
+		return base_Property;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBase_Property(Property newBase_Property) {
+		Property oldBase_Property = base_Property;
+		base_Property = newBase_Property;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisualizationPackage.VALUE_SERIES__BASE_PROPERTY, oldBase_Property, base_Property));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValueSeries getDependent() {
+		if (dependent != null && dependent.eIsProxy()) {
+			InternalEObject oldDependent = (InternalEObject)dependent;
+			dependent = (ValueSeries)eResolveProxy(oldDependent);
+			if (dependent != oldDependent) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, VisualizationPackage.VALUE_SERIES__DEPENDENT, oldDependent, dependent));
+			}
+		}
+		return dependent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ValueSeries basicGetDependent() {
+		return dependent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDependent(ValueSeries newDependent) {
+		ValueSeries oldDependent = dependent;
+		dependent = newDependent;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, VisualizationPackage.VALUE_SERIES__DEPENDENT, oldDependent, dependent));
 	}
 
 	/**
@@ -178,10 +236,14 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case VisualizationPackage.VALUE_SERIES__VARIABLE_NAME:
-				return getVariableName();
 			case VisualizationPackage.VALUE_SERIES__BINARY_STRING:
 				return getBinaryString();
+			case VisualizationPackage.VALUE_SERIES__BASE_PROPERTY:
+				if (resolve) return getBase_Property();
+				return basicGetBase_Property();
+			case VisualizationPackage.VALUE_SERIES__DEPENDENT:
+				if (resolve) return getDependent();
+				return basicGetDependent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,11 +256,14 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case VisualizationPackage.VALUE_SERIES__VARIABLE_NAME:
-				setVariableName((String)newValue);
-				return;
 			case VisualizationPackage.VALUE_SERIES__BINARY_STRING:
 				setBinaryString((String)newValue);
+				return;
+			case VisualizationPackage.VALUE_SERIES__BASE_PROPERTY:
+				setBase_Property((Property)newValue);
+				return;
+			case VisualizationPackage.VALUE_SERIES__DEPENDENT:
+				setDependent((ValueSeries)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,11 +277,14 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case VisualizationPackage.VALUE_SERIES__VARIABLE_NAME:
-				setVariableName(VARIABLE_NAME_EDEFAULT);
-				return;
 			case VisualizationPackage.VALUE_SERIES__BINARY_STRING:
 				setBinaryString(BINARY_STRING_EDEFAULT);
+				return;
+			case VisualizationPackage.VALUE_SERIES__BASE_PROPERTY:
+				setBase_Property((Property)null);
+				return;
+			case VisualizationPackage.VALUE_SERIES__DEPENDENT:
+				setDependent((ValueSeries)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -230,10 +298,12 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case VisualizationPackage.VALUE_SERIES__VARIABLE_NAME:
-				return VARIABLE_NAME_EDEFAULT == null ? variableName != null : !VARIABLE_NAME_EDEFAULT.equals(variableName);
 			case VisualizationPackage.VALUE_SERIES__BINARY_STRING:
 				return BINARY_STRING_EDEFAULT == null ? binaryString != null : !BINARY_STRING_EDEFAULT.equals(binaryString);
+			case VisualizationPackage.VALUE_SERIES__BASE_PROPERTY:
+				return base_Property != null;
+			case VisualizationPackage.VALUE_SERIES__DEPENDENT:
+				return dependent != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -246,10 +316,10 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case VisualizationPackage.VALUE_SERIES___GET_STRING_VALUE__INT:
-				return getStringValue((Integer)arguments.get(0));
 			case VisualizationPackage.VALUE_SERIES___GET_SIZE:
 				return getSize();
+			case VisualizationPackage.VALUE_SERIES___GET_STRING_VALUE__INT:
+				return getStringValue((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
@@ -264,9 +334,7 @@ public class ValueSeriesImpl extends MinimalEObjectImpl.Container implements Val
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (variableName: ");
-		result.append(variableName);
-		result.append(", binaryString: ");
+		result.append(" (binaryString: ");
 		result.append(binaryString);
 		result.append(')');
 		return result.toString();

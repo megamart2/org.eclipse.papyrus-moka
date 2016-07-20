@@ -19,14 +19,13 @@ import java.util.Collection;
 import org.eclipse.nebula.visualization.xygraph.figures.Axis;
 import org.eclipse.nebula.visualization.xygraph.figures.Trace;
 import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
-import org.eclipse.papyrus.moka.xygraph.mapping.util.BatchedCircularDataProvider;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.DataBatch;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.LUT;
+import org.eclipse.papyrus.moka.xygraph.mapping.util.LightDataProvider;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.LinearScale_Orientation;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
-
 
 public class DefaultXYGraphBinder implements XYGraphBinder {
 	
@@ -34,7 +33,6 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 	private XYGraph xyGraph;
 	private Axis xAxisPrimary = null, yAxisPrimary = null;
 	private LUT<AxisDescriptor, Axis> axisMap;
-	
 	private LUT<TraceDescriptor, Trace> traceMap;
 	
 	public DefaultXYGraphBinder() {
@@ -69,6 +67,11 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 	}
 	
 	@Override
+	public Trace unbindTrace(TraceDescriptor tDesc) {	
+		return traceMap.remove(tDesc);
+	}
+
+	@Override
 	public Axis getAxisFor(AxisDescriptor aDesc){
 		return axisMap.getValueOf(aDesc);
 	}
@@ -81,6 +84,11 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 	@Override
 	public Trace getTraceFor(TraceDescriptor tDesc){
 		return traceMap.getValueOf(tDesc);
+	}
+	
+	@Override
+	public boolean isTraceMapped(TraceDescriptor tDesc){
+		return traceMap.keySet().contains(tDesc);
 	}
 	
 	@Override
@@ -118,7 +126,6 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 		return traceMap.valueSet();
 	}
 
-
 	@Override
 	public void setGraphDescriptor(XYGraphDescriptor gDesc) {
 		this.gDesc = gDesc;		
@@ -133,19 +140,20 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 	public Collection<AxisDescriptor> getAxisDescriptors() {
 		return axisMap.keySet();
 	}
-
+	
+	private LightDataProvider getProviderOf( TraceDescriptor tDesc ){
+		Trace trace = getTraceFor(tDesc);
+		return (LightDataProvider) trace.getDataProvider();
+	}
+	
 	@Override
 	public void addTraceSample(TraceDescriptor tDesc, double x, double y) {
-		Trace trace = getTraceFor(tDesc);
-		//BatchedCircularDataProvider provider = (BatchedCircularDataProvider)trace.getDataProvider();
-		//provider.addSample(new Sample(x, y));
+		getProviderOf(tDesc).addSample(x, y);
 	}
 
 	@Override
-	public void addTraceBatch(TraceDescriptor tDesc, DataBatch x, DataBatch y) {
-		Trace trace = getTraceFor(tDesc);
-		BatchedCircularDataProvider provider = (BatchedCircularDataProvider)trace.getDataProvider();
-		provider.setDataList(x.getValues(), y.getValues());
+	public void setTraceData(TraceDescriptor tDesc, DataBatch x, DataBatch y) {
+		getProviderOf(tDesc).setDataList(x.getValues(), y.getValues());		
 	}
 
 	@Override
@@ -155,5 +163,18 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 	
 	public XYGraph getXYGraph(){
 		return xyGraph;
+	}
+
+	@Override
+	public void dispose() {
+		for( TraceDescriptor tDesc : gDesc.getTraceDescriptors() ){
+			getProviderOf(tDesc).clear();
+			
+			//Manually clean the trace. Why is this not being cleaned automatically by the widget?
+			getTraceFor(tDesc).getHotSampleList().clear();
+		}
+		
+		axisMap.dispose();
+		traceMap.dispose();
 	}
 }

@@ -12,6 +12,7 @@
 package org.eclipse.papyrus.moka.datavisualization.profile;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.uml2.uml.Property;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,8 +23,9 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getVariableName <em>Variable Name</em>}</li>
  *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBinaryString <em>Binary String</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBase_Property <em>Base Property</em>}</li>
+ *   <li>{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getDependent <em>Dependent</em>}</li>
  * </ul>
  *
  * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getValueSeries()
@@ -37,32 +39,6 @@ public interface ValueSeries extends EObject {
 	 * @generated
 	 */
 	String copyright = "Copyright (c) 2016 CEA LIST.\r\n\r\n All rights reserved. This program and the accompanying materials\r\n are made available under the terms of the Eclipse Public License v1.0\r\n which accompanies this distribution, and is available at\r\n http://www.eclipse.org/legal/epl-v10.html\r\n\r\n Contributors:\r\n  CEA LIST - Initial API and implementation";
-
-	/**
-	 * Returns the value of the '<em><b>Variable Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Variable Name</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Variable Name</em>' attribute.
-	 * @see #setVariableName(String)
-	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getValueSeries_VariableName()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
-	 * @generated
-	 */
-	String getVariableName();
-
-	/**
-	 * Sets the value of the '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getVariableName <em>Variable Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Variable Name</em>' attribute.
-	 * @see #getVariableName()
-	 * @generated
-	 */
-	void setVariableName(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Binary String</b></em>' attribute.
@@ -89,6 +65,58 @@ public interface ValueSeries extends EObject {
 	 * @generated
 	 */
 	void setBinaryString(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Base Property</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Base Property</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Base Property</em>' reference.
+	 * @see #setBase_Property(Property)
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getValueSeries_Base_Property()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	Property getBase_Property();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getBase_Property <em>Base Property</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Base Property</em>' reference.
+	 * @see #getBase_Property()
+	 * @generated
+	 */
+	void setBase_Property(Property value);
+
+	/**
+	 * Returns the value of the '<em><b>Dependent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Dependent</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Dependent</em>' reference.
+	 * @see #setDependent(ValueSeries)
+	 * @see org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage#getValueSeries_Dependent()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	ValueSeries getDependent();
+
+	/**
+	 * Sets the value of the '{@link org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries#getDependent <em>Dependent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Dependent</em>' reference.
+	 * @see #getDependent()
+	 * @generated
+	 */
+	void setDependent(ValueSeries value);
 
 	/**
 	 * <!-- begin-user-doc -->
