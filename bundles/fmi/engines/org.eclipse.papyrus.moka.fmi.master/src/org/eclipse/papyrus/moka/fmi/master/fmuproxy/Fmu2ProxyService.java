@@ -18,7 +18,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
+import org.eclipse.papyrus.moka.fmi.fmiprofile.Parameter;
+import org.eclipse.papyrus.moka.fmi.fmiprofile.ScalarVariable;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2CausalityType;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Parameters;
 import org.eclipse.papyrus.moka.fmi.master.fmilibrary.Fmi2Port;
@@ -32,6 +35,7 @@ import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Library;
 import org.eclipse.papyrus.moka.fmi.master.fmulibrary.Fmu2Status;
 import org.eclipse.papyrus.moka.fmi.master.jna.FMIInterface;
 import org.eclipse.papyrus.moka.fmi.master.jna.FMINativeStub;
+import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.LiteralBoolean;
 import org.eclipse.uml2.uml.LiteralInteger;
@@ -42,6 +46,7 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.Stereotype;
 import org.eclipse.uml2.uml.UMLFactory;
+import org.eclipse.uml2.uml.util.UMLUtil;
 
 import com.sun.jna.Function;
 import com.sun.jna.NativeLibrary;
@@ -136,7 +141,15 @@ public class Fmu2ProxyService extends CS_Object {
 	
 	private void initialize() {
 		for (Property p : types.get(0).getOwnedAttributes()) {
-			Stereotype st = p.getAppliedStereotypes().get(0);
+			
+			Stereotype st= null;
+			for (EObject application : p.getStereotypeApplications()){
+				if (application instanceof ScalarVariable){
+					st = UMLUtil.getStereotype(application);
+					break;
+				}
+			}
+			
 			if (st != null) {
 				// String variableType = p.getType().getName();
 				Fmi2ScalarVariable variable;

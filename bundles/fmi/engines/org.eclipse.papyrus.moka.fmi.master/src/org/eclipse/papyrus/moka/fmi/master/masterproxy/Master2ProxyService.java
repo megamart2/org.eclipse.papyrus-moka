@@ -239,7 +239,7 @@ public class Master2ProxyService extends AbstractService {
 			for (Fmu2ProxyService fmu : coSimEnv.getFmus()){
 				for (Fmi2ScalarVariable variable : fmu.variables){
 					if (variable.getCausality().equals(Fmi2CausalityType.fmi2Parameter)  && !variable.getVariability().equals(Fmi2VariabilityType.fmi2Constant) 
-							&& variable.getInitial().equals(Fmi2InitialType.fmi2Exact)){
+							&& variable.getInitial().equals(Fmi2InitialType.fmi2Exact) && variable.getRuntimeValue() != null){
 						fmu.fmi2Set(variable, variable.getRuntimeValue());
 					}
 				}

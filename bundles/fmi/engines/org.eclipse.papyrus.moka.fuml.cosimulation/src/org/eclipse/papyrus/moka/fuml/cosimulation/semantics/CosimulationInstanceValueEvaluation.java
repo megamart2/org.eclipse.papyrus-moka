@@ -166,9 +166,12 @@ public class CosimulationInstanceValueEvaluation extends InstanceValueEvaluation
 						else  {
 							actualRuntimeValue = ((IStringValue)runtimeValue).getValue() ;
 						}
-						variable.setRuntimeValue(actualRuntimeValue);
+						if (variable != null) {
+							variable.setRuntimeValue(actualRuntimeValue);
+						}
 					}
 				}
+				
 				structuredValue.setFeatureValue(slot.getDefiningFeature(), values, 0);
 			}
 
