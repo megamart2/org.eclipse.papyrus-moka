@@ -31,37 +31,40 @@ public class FMUExporter {
 
 	private static final String RESOURCE_DIR = "resources";
 	private static final String LIB_NAME = "libfmuwrapper";
-	
+	private static final String RCP_FOLDER_NAME = "rcp";
+
 	private static Map<String, String> platformsToRCPfile;
-	
-	static{
+
+	static {
 		platformsToRCPfile = new HashMap<String, String>();
 		platformsToRCPfile.put(FMUResourceUtil.BINARIES_LINUX32, "rcp-linux.gtk.x86.zip");
 		platformsToRCPfile.put(FMUResourceUtil.BINARIES_LINUX64, "rcp-linux.gtk.x86_64.zip");
 		platformsToRCPfile.put(FMUResourceUtil.BINARIES_WIN64, "rcp-win32.win32.x86_64.zip");
 	}
 
-	public static void generateFMU(Class umlClass,String fmuName , String outputPath, String targetPlatform, String jrePath ){
+	public static void generateFMU(Class umlClass, String fmuName, String outputPath, String targetPlatform,
+			String jrePath) {
 		ResourceSet resSet = new ResourceSetImpl();
-		
-		FMUResource fmuRes = (FMUResource) resSet.createResource(URI.createFileURI(outputPath).appendSegment(fmuName).appendFileExtension("fmu"));
+
+		FMUResource fmuRes = (FMUResource) resSet
+				.createResource(URI.createFileURI(outputPath).appendSegment(fmuName).appendFileExtension("fmu"));
 		FMUBundle fmuBundle = FmumetamodelFactory.eINSTANCE.createFMUBundle();
 		fmuRes.getContents().add(fmuBundle);
-		
+
 		addModelDescription(umlClass, fmuName, fmuBundle);
-		
+
 		URI tmpURI = addUMLFile(umlClass, resSet, fmuBundle);
-		
-		addPropertiesFile(umlClass,tmpURI, fmuBundle);
-		
+
+		addPropertiesFile(umlClass, tmpURI, fmuBundle);
+
 		addRcp(targetPlatform, fmuBundle);
-		
+
 		addLibrary(targetPlatform, fmuName, fmuBundle);
-		
-		if (jrePath != null){
-			addJRE(jrePath,fmuBundle);
+
+		if (jrePath != null) {
+			addJRE(jrePath, fmuBundle);
 		}
-		
+
 		try {
 			fmuRes.save(null);
 		} catch (IOException e) {
@@ -78,58 +81,54 @@ public class FMUExporter {
 
 	private static void addLibrary(String targetPlatform, String fmuName, FMUBundle fmuBundle) {
 		Bundle bundle = Activator.getDefault().getBundle();
-		
+
 		String fileExtension;
-		if (targetPlatform.startsWith("linux")){
+		if (targetPlatform.startsWith("linux")) {
 			fileExtension = ".so";
-		}else {
+		} else {
 			fileExtension = ".dll";
 		}
-		URL libURL = bundle.getEntry(RESOURCE_DIR+"/"+targetPlatform+"/"+LIB_NAME+fileExtension);
+		URL libURL = bundle.getEntry(RESOURCE_DIR + "/" + targetPlatform + "/" + LIB_NAME + fileExtension);
 		try {
 			libURL = FileLocator.toFileURL(libURL);
-			File libFile = new File (libURL.getFile());
-			JavaFileProxy proxy = FMUResourceUtil.createJavaFileProxy(libFile, fmuName+fileExtension);
-			
+			File libFile = new File(libURL.getFile());
+			JavaFileProxy proxy = FMUResourceUtil.createJavaFileProxy(libFile, fmuName + fileExtension);
 
-			switch (targetPlatform){
-				case FMUResourceUtil.BINARIES_LINUX32 :
-					fmuBundle.getLinux32Files().add(proxy);
-					break;
-				case FMUResourceUtil.BINARIES_LINUX64 :
-					fmuBundle.getLinux64Files().add(proxy);
-					break;
-				case FMUResourceUtil.BINARIES_WIN64 :
-					fmuBundle.getWin64Files().add(proxy);
-					break;
+			switch (targetPlatform) {
+			case FMUResourceUtil.BINARIES_LINUX32:
+				fmuBundle.getLinux32Files().add(proxy);
+				break;
+			case FMUResourceUtil.BINARIES_LINUX64:
+				fmuBundle.getLinux64Files().add(proxy);
+				break;
+			case FMUResourceUtil.BINARIES_WIN64:
+				fmuBundle.getWin64Files().add(proxy);
+				break;
 			}
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
-		
+
 	}
 
 	private static void addRcp(String targetPlatform, FMUBundle fmuBundle) {
 		Bundle bundle = Activator.getDefault().getBundle();
-		URL rcpURL = bundle.getEntry(RESOURCE_DIR+"/"+targetPlatform+"/"+platformsToRCPfile.get(targetPlatform));
+		URL rcpURL = bundle
+				.getEntry(RESOURCE_DIR + "/" + targetPlatform + "/" + platformsToRCPfile.get(targetPlatform));
 		try {
 			rcpURL = FileLocator.toFileURL(rcpURL);
-			File rcpFile = new File (rcpURL.getFile());
+			File rcpFile = new File(rcpURL.getFile());
 			ArchiveToUnzipInFMU archive = FMUResourceUtil.createArchiveToUnzipInFMU(rcpFile);
+			archive.setName(RCP_FOLDER_NAME);
 			fmuBundle.getResourcesFiles().add(archive);
-			
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 	}
 
 	private static void addPropertiesFile(Class umlClass, URI tmpURI, FMUBundle fmuBundle) {
@@ -137,12 +136,13 @@ public class FMUExporter {
 		prop.setProperty(FMURCPApplication.FMU_QN, umlClass.getQualifiedName());
 		prop.setProperty(FMURCPApplication.MODEL_PATH_PROP, tmpURI.lastSegment());
 		try {
-			File propFile = new File(tmpURI.trimSegments(1).appendSegment(FMURCPApplication.MOKA_PROP_FILE_NAME).toFileString());
+			File propFile = new File(
+					tmpURI.trimSegments(1).appendSegment(FMURCPApplication.MOKA_PROP_FILE_NAME).toFileString());
 			prop.store(new FileOutputStream(propFile), null);
 			propFile.deleteOnExit();
 			JavaFileProxy proxy = FMUResourceUtil.createJavaFileProxy(propFile);
 			fmuBundle.getResourcesFiles().add(proxy);
-			
+
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -150,50 +150,47 @@ public class FMUExporter {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
 
 	private static URI addUMLFile(Class umlClass, ResourceSet resSet, FMUBundle fmuBundle) {
 		Resource originalUMLResource = umlClass.eResource();
 		try {
 			Path tmpDirPath = Files.createTempDirectory("fmuExport");
-			
-			
+
 			URI tmpURI = URI.createFileURI(tmpDirPath.toAbsolutePath().toString());
-		
+
 			String fileName = originalUMLResource.getURI().lastSegment();
-			
+
 			tmpURI = tmpURI.appendSegment(fileName);
-			Resource reloadedResource = resSet.getResource( originalUMLResource.getURI(), true);
+			Resource reloadedResource = resSet.getResource(originalUMLResource.getURI(), true);
 			Resource newResource = resSet.createResource(tmpURI);
 			newResource.getContents().addAll(reloadedResource.getContents());
-			
+
 			newResource.save(null);
 			File newResourceFile = new File(tmpURI.toFileString());
 			newResourceFile.deleteOnExit();
-			
+
 			JavaFileProxy proxy = FMUResourceUtil.createJavaFileProxy(newResourceFile);
 			fmuBundle.getResourcesFiles().add(proxy);
-			
-		
+
 			return tmpURI;
-			
+
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
+
 		return null;
 	}
 
 	private static void addModelDescription(Class umlClass, String fmuName, FMUBundle fmuBundle) {
-	
+
 		FmiModelDescriptionType modelDesc = MokaUML2FMI.getModelDescription(umlClass, fmuName);
-		if (modelDesc != null){
+		if (modelDesc != null) {
 			fmuBundle.setModelDescription(modelDesc);
 		}
-		
+
 	}
-	
+
 }

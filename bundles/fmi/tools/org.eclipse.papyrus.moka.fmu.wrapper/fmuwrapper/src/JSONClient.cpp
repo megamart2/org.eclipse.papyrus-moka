@@ -59,9 +59,10 @@ int JSONClient::init(const char * fmuResourceLocation) {
 		locationString = replaceAll(locationString, "file:///","");
 		locationString = replaceAll(locationString, "file://","");
 		locationString = replaceAll(locationString, "/","\\");
-		ss <<"start " << locationString <<FILE_SEPARATOR <<"rcp" << FILE_SEPARATOR<<"fmu_rcp" <<EXE_EXTENSION;
+		ss <<"start /B " << locationString <<FILE_SEPARATOR <<"rcp" << FILE_SEPARATOR<<"eclipsec.exe";
+		ss<<" --launcher.ini "<< locationString <<FILE_SEPARATOR <<"rcp" <<FILE_SEPARATOR<<"fmu_rcp.ini";
 		ss <<" -data "<< locationString << FILE_SEPARATOR<<"rcp" << FILE_SEPARATOR<< "tmpData$$";
-		ss <<" -fmu "<< locationString << FILE_SEPARATOR << ".. -port " << port<< " &";
+		ss <<" -fmu "<< locationString << FILE_SEPARATOR << ".. -port " << port;
 
 #else
 
