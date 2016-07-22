@@ -35,9 +35,8 @@ import org.eclipse.uml2.uml.Property;
 public class FMUDebugDialog extends Dialog {
 
 	protected FMUDebugDialog(Shell parentShell) {
-		super(parentShell);
+		super(parentShell) ;
 		setShellStyle(SWT.CLOSE | SWT.MODELESS | SWT.BORDER | SWT.TITLE);
-		
 	}
 
 	@Override
@@ -396,4 +395,18 @@ public class FMUDebugDialog extends Dialog {
 		fmuObject.fmiSetStrings(stringMap);
 	}
 
+	@Override
+	protected void createButtonsForButtonBar(Composite parent) {
+		// Does nothing to avoid the creation of OK and CANCEL buttons
+		// FIXME Should rather deal with the creation of init and step buttons
+	}
+
+	@Override
+	protected void configureShell(Shell newShell) {
+		super.configureShell(newShell);
+		newShell.setText("FMU Controller");
+	}
+
+	
+	
 }
