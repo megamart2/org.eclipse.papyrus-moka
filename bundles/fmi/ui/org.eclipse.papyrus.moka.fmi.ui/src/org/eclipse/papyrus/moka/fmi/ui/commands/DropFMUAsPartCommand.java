@@ -27,6 +27,7 @@ import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
 import org.eclipse.papyrus.uml.diagram.composite.custom.edit.command.CreateViewCommand;
 import org.eclipse.papyrus.uml.diagram.composite.part.UMLVisualIDRegistry;
 import org.eclipse.papyrus.uml.diagram.composite.providers.UMLElementTypes;
+import org.eclipse.papyrus.uml.tools.utils.NamedElementUtil;
 import org.eclipse.uml2.uml.AggregationKind;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Port;
@@ -91,18 +92,13 @@ public class DropFMUAsPartCommand extends AbstractTransactionalCommand {
 		return super.doUndo(monitor, info);
 	}
 	protected void createNewPart() {
-		int numInstance = 0;
+		
 
-		for (Property p : targetSimulator.getOwnedAttributes()) {
-			if (p.getType() == sourceType)
-				numInstance++;
-		}
 		String partName = sourceType.getName();
 
-		if (numInstance> 0){
-			partName += numInstance +1;
-		}
+		
 		newPart = targetSimulator.createOwnedAttribute(partName, sourceType);
+		newPart.setName(NamedElementUtil.getDefaultNameWithIncrementFromBase(partName,targetSimulator.getOwnedAttributes()));
 		newPart.setAggregation(AggregationKind.COMPOSITE_LITERAL);
 		
 	}
