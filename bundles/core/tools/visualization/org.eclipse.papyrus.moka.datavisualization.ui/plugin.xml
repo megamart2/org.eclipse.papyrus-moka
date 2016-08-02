@@ -5,6 +5,7 @@
          point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
       <profile
             description="Profile for effiently hodling values to be displayed in Papyrus Graphes"
+            iconpath="platform:/plugin/org.eclipse.papyrus.moka.datavisualization/icons/datasource.png"
             name="Data Visualization Profile"
             path="pathmap://PAPYRUS_MOKA_DATA_VISUALIZATION/datavisualization.profile.uml">
       </profile>
