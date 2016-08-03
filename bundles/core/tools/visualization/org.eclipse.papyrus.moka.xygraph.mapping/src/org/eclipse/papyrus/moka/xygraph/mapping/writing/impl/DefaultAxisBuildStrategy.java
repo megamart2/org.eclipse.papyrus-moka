@@ -15,11 +15,11 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.writing.impl;
 
 import org.eclipse.nebula.visualization.xygraph.figures.Axis;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
+import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
+import org.eclipse.papyrus.moka.xygraph.mapping.writing.AxisBuildStrategy;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.LinearScale_Orientation;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphWidgetBinder;
-import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphMappingHelper;
-import org.eclipse.papyrus.moka.xygraph.mapping.writing.AxisBuildStrategy;
 import org.eclipse.swt.graphics.Font;
 import org.eclipse.swt.widgets.Display;
 

@@ -228,7 +228,11 @@ public class DataVisualizationService implements IService{
 	}
 	
 	public Variable getVariable(ValueSeries series){
-		return varTable.getEntry( new DataSourceVariableID(series) ).getVariable();
+		VariableEntry entry = varTable.getEntry(new DataSourceVariableID(series));
+		if( entry == null )
+			return null;
+		
+		return entry.getVariable();
 	}
 
 	public void removeDataPort(DataPort port) {

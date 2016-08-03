@@ -36,7 +36,7 @@ public class DefaultAxisUpdateStrategy implements AxisUpdateStrategy{
 		aDesc.setMajorGridColor(XYGraphMappingHelper.mapColor(axis.getMajorGridColor()));
 		aDesc.setMinorGridColor(XYGraphMappingHelper.mapColor(axis.getMinorGridColor()));
 		aDesc.setRangeUpper(axis.getRange().getUpper());
-		aDesc.setRangeLower( axis.getRange().getLower());
+		aDesc.setRangeLower(axis.getRange().getLower());
 		
 		//** Strangely there's no getZoomType() method.
 		//** aDesc.setZoomType(descZoomType(axis.getZoomType())));

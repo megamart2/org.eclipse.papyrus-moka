@@ -22,6 +22,7 @@ import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.DataBatch;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.LUT;
 import org.eclipse.papyrus.moka.xygraph.mapping.util.LightDataProvider;
+import org.eclipse.papyrus.moka.xygraph.mapping.util.TraceDataBounds;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.LinearScale_Orientation;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
@@ -155,7 +156,7 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 	public void setTraceData(TraceDescriptor tDesc, DataBatch x, DataBatch y) {
 		getProviderOf(tDesc).setDataList(x.getValues(), y.getValues());		
 	}
-
+	
 	@Override
 	public void bindXYGraph(XYGraph xy) {
 		this.xyGraph = xy;
@@ -177,4 +178,10 @@ public class DefaultXYGraphBinder implements XYGraphBinder {
 		axisMap.dispose();
 		traceMap.dispose();
 	}
+
+	@Override
+	public TraceDataBounds getTraceDataBounds(TraceDescriptor tDesc) {
+		return getProviderOf(tDesc).getBounds();
+	}
+
 }

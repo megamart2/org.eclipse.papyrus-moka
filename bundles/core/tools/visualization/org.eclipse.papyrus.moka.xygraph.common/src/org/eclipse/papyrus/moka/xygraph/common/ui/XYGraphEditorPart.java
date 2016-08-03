@@ -86,6 +86,7 @@ public class XYGraphEditorPart extends EditorPart implements PropertyChangeListe
 	protected ToolbarArmedXYGraph buildGraphFromModel(){
 		IXYGraph xyGraph = coordinator.buildXYGraph();
 		xyGraph.addPropertyChangeListener(IXYGraph.PROPERTY_CONFIG, this);
+		xyGraph.addPropertyChangeListener(IXYGraph.PROPERTY_ZOOMTYPE, this);
 		return new ToolbarArmedXYGraph(xyGraph);
 	}
 
@@ -96,10 +97,15 @@ public class XYGraphEditorPart extends EditorPart implements PropertyChangeListe
 
 	@Override
 	public void propertyChange(PropertyChangeEvent evt) {
-		XYGraphDescriptor gDesc = coordinator.getXYGraphDescriptor();
-		gDesc.getContext();
-		coordinator.updateDescriptors((XYGraph) evt.getNewValue());
-		lblProvider.onGraphUpdated(gDesc);
-		dirty = true;
+		//It's also possible to react to changes of IXYGraph.PROPERTY_ZOOMTYPE 
+		//and IXYGraph.PROPERTY_XY_GRAPH_MEM   
+		
+		if( IXYGraph.PROPERTY_CONFIG.equals(evt.getPropertyName()) ) {
+			XYGraphDescriptor gDesc = coordinator.getXYGraphDescriptor();
+			gDesc.getContext();
+			coordinator.updateDescriptors((XYGraph) evt.getNewValue());
+			lblProvider.onGraphUpdated(gDesc);
+			dirty = true;
+		}
 	}
 }

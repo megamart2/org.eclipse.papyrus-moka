@@ -39,7 +39,6 @@ public interface XYGraphWidgetBinder {
 	TraceDescriptor getDescriptorFor(Trace trace);
 	boolean isTraceMapped(TraceDescriptor tDesc);
 	
-	
 	Axis getXAxisPrimary();
 	Axis getYAxisPrimary();
 

@@ -15,9 +15,11 @@
 package org.eclipse.papyrus.moka.xygraph.mapping.common;
 
 import org.eclipse.papyrus.moka.xygraph.mapping.util.DataBatch;
+import org.eclipse.papyrus.moka.xygraph.mapping.util.TraceDataBounds;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
 
 public interface XYGraphDataBinder {
 	void addTraceSample(TraceDescriptor tDesc, double x, double y);
 	void setTraceData(TraceDescriptor tDesc, DataBatch x, DataBatch y);
+	TraceDataBounds getTraceDataBounds(TraceDescriptor tDesc);
 }

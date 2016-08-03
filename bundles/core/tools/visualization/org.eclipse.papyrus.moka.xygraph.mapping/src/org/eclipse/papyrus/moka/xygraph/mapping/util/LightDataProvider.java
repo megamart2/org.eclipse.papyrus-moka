@@ -27,9 +27,13 @@ public class LightDataProvider extends AbstractDataProvider {
 	private List<LightDataSample> samples = new ArrayList<>();
 	
 	private boolean dataRangedirty; 
-		
+	
+	//private double xMin, xMax, yMin, yMax;
+	private TraceDataBounds bounds;
+	
 	public LightDataProvider(boolean chronological) {
 		super(chronological);
+		bounds = new TraceDataBounds();
 	}
 
 	public void setDataList(List<Double> xl, List<Double> yl) {
@@ -45,23 +49,18 @@ public class LightDataProvider extends AbstractDataProvider {
 
 		samples = new ArrayList<LightDataSample>();
 
-		double xMin = Float.POSITIVE_INFINITY, xMax = Float.NEGATIVE_INFINITY, yMin = Float.POSITIVE_INFINITY,
-				yMax = Float.NEGATIVE_INFINITY;
+		bounds.reset();
 
 		for (int i = 0; i < xl.size(); i++) {
 
 			double x = xl.get(i);
 			double y = yl.get(i);
 
-			xMin = Math.min(xMin, x);
-			xMax = Math.max(xMax, x);
-			yMin = Math.min(yMin, y);
-			yMax = Math.max(yMax, y);
-
+			bounds.addSample(x, y);
 			samples.add(new LightDataSample(this, i));
 		}
-		xDataMinMax = new Range(xMin, yMax);
-		yDataMinMax = new Range(yMin, yMax);
+		xDataMinMax = new Range(bounds.getxMin(), bounds.getxMax());
+		yDataMinMax = new Range(bounds.getyMin(), bounds.getyMax());
 
 		fireDataChange();
 
@@ -120,12 +119,12 @@ public class LightDataProvider extends AbstractDataProvider {
 
 			double xMin;
 			double xMax;
-			xMin = getSample(lowerBound).getXValue();
+			xMin = getXValue(lowerBound);//getSample(lowerBound).getXValue();
 			xMax = xMin;
 
 			double yMin;
 			double yMax;
-			yMin = getSample(lowerBound).getYValue();
+			yMin = getYValue(lowerBound);//getSample(lowerBound).getYValue();
 			yMax = yMin;
 
 			for (int i = lowerBound + 1; i < getSize(); i++) {
@@ -162,5 +161,9 @@ public class LightDataProvider extends AbstractDataProvider {
 		samples.clear();
 		xValues = null;
 		yValues = null;
+	}
+
+	public TraceDataBounds getBounds() {
+		return bounds;
 	}
 }

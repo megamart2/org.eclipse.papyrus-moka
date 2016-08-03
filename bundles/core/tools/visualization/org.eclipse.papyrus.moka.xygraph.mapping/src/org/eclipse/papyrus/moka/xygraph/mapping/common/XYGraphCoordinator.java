@@ -22,6 +22,9 @@ import org.eclipse.nebula.visualization.xygraph.figures.Axis;
 import org.eclipse.nebula.visualization.xygraph.figures.IXYGraph;
 import org.eclipse.nebula.visualization.xygraph.figures.Trace;
 import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
+import org.eclipse.nebula.visualization.xygraph.linearscale.Range;
+import org.eclipse.papyrus.moka.xygraph.mapping.util.BaseAxisListener;
+import org.eclipse.papyrus.moka.xygraph.mapping.util.TraceDataBounds;
 import org.eclipse.papyrus.moka.xygraph.mapping.writing.ModelWritingStrategyFactory;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.AxisDescriptor;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.TraceDescriptor;
@@ -65,10 +68,19 @@ public class XYGraphCoordinator{
 		
 		//2.1. The axes need the graph before the traces.
 		for( AxisDescriptor aDesc : gDesc.getAxisDescriptors() ){
+			Axis axis = graphMap.getAxisFor(aDesc);
+			//Listen range changes
+			axis.addListener(new BaseAxisListener(){
+				@Override
+				public void axisRangeChanged(Axis axis, Range old_range, Range new_range) {
+					onAxisRangeChanged( axis, old_range, new_range );
+				}
+			});
+			
 			if( graphMap.isPrimary(aDesc) )
 				continue;
-			
-			xy.addAxis(graphMap.getAxisFor(aDesc));
+
+			xy.addAxis(axis);
 		}
 		
 		//3. Build and add the traces
@@ -160,13 +172,59 @@ public class XYGraphCoordinator{
 	}
 
 	public void onModelUpdate(Notification notification) {
-		System.out.println(notification.getFeature());
+		//System.out.println(notification.getFeature());
+		
 		if( XYGraphPackage.eINSTANCE.getXYGraphDescriptor_VisibleTraces().equals(notification.getFeature()) ){
 			synchronizeTracesVisibility();
 		}
+		
+		//Apply the changes to the XYGraph (Figure)  
+		//Currently manual, we might want to change everything later?
+		if( XYGraphPackage.eINSTANCE.getXYGraphDescriptor_Title().equals(notification.getFeature()) ){
+			graphMap.getXYGraph().setTitle(notification.getNewStringValue());
+		}
+	}
+	
+	protected void onAxisRangeChanged(Axis axis, Range old_range, Range new_range) {
+		
+		AxisDescriptor aDesc = graphMap.getDescriptorFor(axis);
+		//aDesc.setRangeLower(new_range.getLower());
+		//aDesc.setRangeUpper(new_range.getUpper());
+		
+		//Update the range in the axis?
+		factory.getAxisUpdateStrategy().updateAxisDescriptor(axis, graphMap);
+		System.out.println("Updated axis Range: " + aDesc.getRangeLower() + ", " + aDesc.getRangeUpper());
 	}
 
 	public void dispose() {
 		graphMap.dispose();
+	}
+	
+	public void rescaleAxesIfNeeded(){
+		AxisDescriptor xPrimary = graphMap.getDescriptorFor(graphMap.getXAxisPrimary());
+		AxisDescriptor yPrimary = graphMap.getDescriptorFor(graphMap.getYAxisPrimary());
+		
+		if( xPrimary.getRangeLower() < xPrimary.getRangeUpper() && yPrimary.getRangeLower() < yPrimary.getRangeUpper() )
+			return; //not needed.
+		
+		forceAxesRescale();
+		
+	}
+	
+	public void forceAxesRescale(){
+		
+		//System.out.println("Forcing re-scale");
+		
+		TraceDataBounds dataBounds = new TraceDataBounds();
+		
+		for( TraceDescriptor tDesc : graphMap.getTraceDescriptors() )
+			dataBounds.union( graphMap.getTraceDataBounds(tDesc) );
+		
+		graphMap.getXAxisPrimary().setRange(dataBounds.getxMin(), dataBounds.getxMax());
+		graphMap.getYAxisPrimary().setRange(dataBounds.getyMin(), dataBounds.getyMax());
+		
+		factory.getAxisUpdateStrategy().updateAxisDescriptor(graphMap.getXAxisPrimary(), graphMap);
+		factory.getAxisUpdateStrategy().updateAxisDescriptor(graphMap.getYAxisPrimary(), graphMap);
+		
 	}
 }

@@ -125,17 +125,29 @@ public class GraphBuilderHelper {
 		
 		//The independent variable
 		AxisDescriptor xAxis = XYGraphFactory.eINSTANCE.createAxisDescriptor();
+		
+		xAxis.setAutoScale(false);
+		xAxis.setRangeLower(1);
+		xAxis.setRangeUpper(-1);
+		
 		xAxis.setOrientation(LinearScale_Orientation.HORIZONTAL);
 		xAxis.setTitle(ind.getBase_Property().getLabel());		
 		xAxis.setFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
-		xAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));		
+		xAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
+		
 		xy.getAxisDescriptors().add(xAxis);
 
 		AxisDescriptor yAxis = XYGraphFactory.eINSTANCE.createAxisDescriptor();
+		
+		yAxis.setAutoScale(false);
+		yAxis.setRangeLower(1);
+		yAxis.setRangeUpper(-1);
+		
 		yAxis.setOrientation(LinearScale_Orientation.VERTICAL);
 		yAxis.setTitle("Values"); //TODO This might be controlled from the dataSource object? dataSource.getBase_DataType().getLabel()
 		yAxis.setFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
 		yAxis.setTitleFont(makeFontDescriptor("Segoe UI", 12, SWT.NORMAL));
+		
 		xy.getAxisDescriptors().add(yAxis);
 
 		//Only for the dependent

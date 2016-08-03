@@ -16,8 +16,6 @@ package org.eclipse.papyrus.moka.datavisualization.service;
 
 import org.eclipse.papyrus.moka.datavisualization.profile.DataSource;
 import org.eclipse.papyrus.moka.datavisualization.profile.ValueSeries;
-import org.eclipse.papyrus.moka.datavisualization.profile.VisualizationPackage;
-import org.eclipse.papyrus.moka.datavisualization.profile.impl.DoubleSeriesImpl;
 import org.eclipse.papyrus.moka.datavisualization.ui.GraphBuilderHelper;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.Variable.VariableID;
@@ -47,6 +45,8 @@ public class DataSeriesXYGraphCoordinator extends XYGraphCoordinator implements 
 		synchronizeTracesVisibility();
 		
 		DataVisualizationService.getInstance().pullAllData(this);
+		
+		rescaleAxesIfNeeded();
 	}
 
 	private VariableDataEntry makeEntryFor(VariableID id, TraceDescriptor tDesc){
