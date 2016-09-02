@@ -13,7 +13,6 @@
 	</parent>
 	
 	<!-- POM Description -->
-	<groupId>org.eclipse.papyrus.moka.bundles</groupId>
 	<artifactId>org.eclipse.papyrus.moka.bundles</artifactId>
 	<packaging>pom</packaging>
 	<name>Moka Bundles (Bundles folder)</name>

@@ -4,8 +4,8 @@
 	
 	<!-- Parent POM (i.e., Services) -->
 	<parent>
+		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.core.services</artifactId>
-		<groupId>org.eclipse.papyrus.moka.bundles.core.services</groupId>
 		<version>2.0.0-SNAPSHOT</version>
 	</parent>
 	

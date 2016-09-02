@@ -4,8 +4,8 @@
 
 	<!-- Parent POM (Tools) -->
 	<parent>
+		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.core.tools.visualization</artifactId>
-		<groupId>org.eclipse.papyrus.moka.bundles.core.tools.visualization</groupId>
 		<version>1.0.0-SNAPSHOT</version>
 	</parent>
 

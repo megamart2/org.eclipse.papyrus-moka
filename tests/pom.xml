@@ -12,7 +12,6 @@
 	</parent>
 
 	<!-- POM Description -->
-	<groupId>org.eclipse.papyrus.moka.tests</groupId>
 	<artifactId>org.eclipse.papyrus.moka.tests</artifactId>
 	<packaging>pom</packaging>
 	<name>Moka Tests (Tests folder)</name>

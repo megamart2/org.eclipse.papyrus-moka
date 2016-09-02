@@ -4,8 +4,8 @@
 
 	<!-- Parent POM (Tools) -->
 	<parent>
+		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.core.tools</artifactId>
-		<groupId>org.eclipse.papyrus.moka.bundles.core.tools</groupId>
 		<version>2.0.0-SNAPSHOT</version>
 	</parent>
 

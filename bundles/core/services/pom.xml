@@ -7,13 +7,12 @@
 	
 	<!-- Parent POM (i.e., Core) -->
 	<parent>
-		<groupId>org.eclipse.papyrus.moka.bundles.core</groupId>
+		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.core</artifactId>
 		<version>2.0.0-SNAPSHOT</version>
 	</parent>
 	
 	<!-- POM Description -->
-	<groupId>org.eclipse.papyrus.moka.bundles.core.services</groupId>
 	<artifactId>org.eclipse.papyrus.moka.bundles.core.services</artifactId>
 	<packaging>pom</packaging>
 	<name>Moka Services (Services folder)</name>

@@ -13,7 +13,6 @@
 	</parent>
 	
 	<!-- POM Description -->
-	<groupId>org.eclipse.papyrus.moka.products</groupId>
 	<artifactId>org.eclipse.papyrus.moka.products</artifactId>
 	<packaging>pom</packaging>
 	<name>Moka RCP (Bundles folder)</name>

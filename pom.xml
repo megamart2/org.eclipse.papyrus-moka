@@ -7,13 +7,12 @@
 	<!-- Parent of this POM -->
 	<parent>
 		<version>2.0.0-SNAPSHOT</version>
-		<groupId>org.eclipse.papyrus.moka.releng</groupId>
+		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.releng.configuration</artifactId>
-		<relativePath>./releng/org.eclipse.papyrus.moka.releng.configuration</relativePath>
+		<relativePath>./releng/org.eclipse.papyrus.moka.configuration</relativePath>
 	</parent>
 
 	<!-- Moka project root POM (aggregator) -->
-	<groupId>org.eclipse.papyrus.moka</groupId>
 	<artifactId>org.eclipse.papyrus.moka.root</artifactId>
 	<name>Moka</name>
 	<packaging>pom</packaging>
@@ -25,28 +24,5 @@
 		<module>releng</module>
 		<module>products</module>
 	</modules>
-	
-	<profiles>
-	
-		<!-- Tests are not considered when quality analysis is performed -->
-		<profile>
-			<id>quality</id>
-			<modules>
-				<module>bundles</module>
-			</modules>
-		</profile>
-		
-		<profile>
-			<id>release</id>
-			<modules>
-				<module>bundles</module>
-				<module>features</module>
-				<module>releng</module>
-				<module>tests</module>
-				<module>products</module>
-			</modules>
-		</profile>
-		
-	</profiles>
 
 </project>
