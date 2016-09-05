@@ -8,6 +8,7 @@
 		<groupId>org.eclipse.papyrus.components</groupId>
 		<artifactId>org.eclipse.papyrus.components.parent</artifactId>
 		<version>0.0.16</version>
+		<relativePath></relativePath>
 	</parent>
 	
 	<!-- Moka root POM: general information -->
@@ -77,6 +78,14 @@
 		<connection>scm:git:http://git.eclipse.org/gitroot/papyrus/org.eclipse.papyrus-moka.git</connection>
 		<developerConnection>scm:git:ssh://git.eclipse.org/gitroot/papyrus/org.eclipse.papyrus-moka.git</developerConnection>
 	</scm>
+
+	<distributionManagement>
+		<site>
+			<id>git.eclipse.org.server</id>
+			<url>scm:git:https://git.eclipse.org/gitroot/www.eclipse.org/papyrus/components/${component.shortname}</url>
+		</site>
+	</distributionManagement>
+	
 
 	<!-- Location to resolve Papyrus tools -->
 	<repositories>
