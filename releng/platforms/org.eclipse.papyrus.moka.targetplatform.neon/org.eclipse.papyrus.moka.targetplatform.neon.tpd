@@ -1,31 +1,29 @@
 target "Moka Neon Target Platform" with source requirements
 
 location "http://download.eclipse.org/releases/neon/" eclipse-neon {
- org.eclipse.platform.feature.group lazy
- org.eclipse.rcp.feature.group lazy
- org.eclipse.jdt.feature.group lazy
- org.eclipse.equinox.p2.discovery.feature.feature.group lazy
+ org.eclipse.platform.feature.group
+ org.eclipse.rcp.feature.group
+ org.eclipse.jdt.feature.group
+ org.eclipse.equinox.p2.discovery.feature.feature.group
  org.eclipse.equinox.executable.feature.group
-}
-
-location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/" papyrus-neon-nightly {
- org.eclipse.papyrus.sdk.feature.feature.group lazy
+ org.eclipse.papyrus.sdk.feature.feature.group
 }
 
 location "https://hudson.eclipse.org/papyrus/job/Papyrus-Neon-Developer/lastSuccessfulBuild/artifact/repository/" papyrus-neon-developper-nightly {
  org.eclipse.papyrus.dev.feature.feature.group lazy
 }
 
-location "http://download.eclipse.org/tools/ajdt/46/dev/update" aspectj-neon{
-	org.aspectj.feature.group lazy
-	org.eclipse.ajdt.feature.group lazy
+location "http://download.eclipse.org/tools/ajdt/46/dev/update/ajdt-e46-2.2.4.201603152119/" aspectj-neon{
+	org.aspectj.feature.group
+	org.eclipse.ajdt.feature.group
+	org.eclipse.equinox.weaving.sdk.feature.group
 }
 
 location "http://download.eclipse.org/tools/orbit/downloads/drops/R20160520211859/repository/" orbit-fasterxml{
-	org.eclipse.orbit.category.json lazy
+	org.eclipse.orbit.category.json
 }
 
 location "http://download.eclipse.org/nebula/releases/1.0.0" nebula{
-	org.eclipse.nebula.widgets.xviewer.feature.feature.group lazy
-	org.eclipse.nebula.visualization.feature.feature.group lazy
+	org.eclipse.nebula.widgets.xviewer.feature.feature.group
+	org.eclipse.nebula.visualization.feature.feature.group
 }

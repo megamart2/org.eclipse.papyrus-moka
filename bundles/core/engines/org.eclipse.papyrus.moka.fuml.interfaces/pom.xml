@@ -11,7 +11,7 @@
   <!-- POM Description -->
   <artifactId>org.eclipse.papyrus.moka.fuml.interfaces</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <name>org.eclipse.papyrus.moka.composites.interfaces</name>
+  <name>org.eclipse.papyrus.moka.fuml.interfaces</name>
   <description>Interfaces for foundational UML execution engine</description>
   
 </project>

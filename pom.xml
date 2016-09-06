@@ -23,6 +23,7 @@
 		<module>tests</module>
 		<module>releng</module>
 		<module>products</module>
+		<module>features</module>
 	</modules>
 
 </project>
