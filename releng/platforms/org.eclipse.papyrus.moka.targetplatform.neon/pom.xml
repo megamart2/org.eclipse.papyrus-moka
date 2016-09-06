@@ -12,6 +12,6 @@
 	<!-- POM description -->
 	<artifactId>org.eclipse.papyrus.moka.targetplatform.neon</artifactId>
 	<packaging>eclipse-target-definition</packaging>
-	<name>Moka Neon Target Definition</name>
+	<name>Moka Neon Target Platform</name>
 	
 </project>
