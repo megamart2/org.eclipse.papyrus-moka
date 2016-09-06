@@ -18,17 +18,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 	<!-- Modules to build -->
 	<modules>
 		<module>platforms</module>
+		<module>org.eclipse.papyrus.moka.repository</module>
 	</modules>
-	
-	<profiles>
-		<profile>
-			<id>release</id>
-			<modules>
-				<module>platforms</module>
-				<module>org.eclipse.papyrus.moka.repository</module>
-				<module>org.eclipse.papyrus.moka.standalone.rcp</module>
-			</modules>
-		</profile>
-	</profiles>
 	
 </project>
