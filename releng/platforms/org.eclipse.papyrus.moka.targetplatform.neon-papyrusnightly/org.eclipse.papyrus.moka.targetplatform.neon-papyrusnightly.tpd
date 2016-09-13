@@ -1,18 +1,18 @@
 target "Moka Neon Papyrus Nightly Target Platform" with source requirements
 
 location "http://download.eclipse.org/releases/neon/" eclipse-neon {
- org.eclipse.platform.feature.group lazy
- org.eclipse.rcp.feature.group lazy
- org.eclipse.jdt.feature.group lazy
- org.eclipse.equinox.p2.discovery.feature.feature.group lazy
- org.eclipse.equinox.executable.feature.group lazy
+ org.eclipse.platform.feature.group
+ org.eclipse.rcp.feature.group
+ org.eclipse.jdt.feature.group
+ org.eclipse.equinox.p2.discovery.feature.feature.group
+ org.eclipse.equinox.executable.feature.group
 }
 
-location "http://download.eclipse.org/modeling/mdt/papyrus/updates/nightly/neon/main/" eclipse-papyrus-nighlty-neon {
+location "https://hudson.eclipse.org/papyrus/job/Papyrus-Neon/lastSuccessfulBuild/artifact/repository/" papyrus-neon-lastest {
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 
-location "https://hudson.eclipse.org/papyrus/job/Papyrus-Neon-Developer/lastSuccessfulBuild/artifact/repository/" papyrus-neon-developper-nightly {
+location "https://hudson.eclipse.org/papyrus/job/Papyrus-Neon-Developer/lastSuccessfulBuild/artifact/repository/" papyrus-neon-developper-latest {
  org.eclipse.papyrus.dev.feature.feature.group lazy
 }
 
