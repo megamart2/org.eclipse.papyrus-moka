@@ -1,0 +1,159 @@
+/* Apply to all elements */
+*{
+	fillColor: white;
+	fontName: Arial;
+	elementIcon:false;
+	gradient:none;
+	fontHeight: 7;
+}
+
+/* Structure related style */
+
+Model {
+	bold: true;
+	fillColor: white;
+	gradient: white;
+}
+
+Package{
+	bold: true;
+	qualifiedNameDepth:full;
+}
+
+Class{
+	bold: true;
+}
+
+Class > Compartment[kind="attributes"] {
+    visible:true;
+}
+
+Class > Compartment[kind="nestedclassifiers"] {
+    visible:false;
+}
+
+[appliedStereotypes~="Metaclass"]{
+	bold: true;
+	fillColor: lightgrey;
+}
+
+Property{
+	bold: false;
+}
+
+Comment{
+	fillColor: beige;
+}
+
+Operation{
+	maskLabel: name,
+	return multiplicity,
+	return type,
+	parametersdirection,
+	parametersname,
+	parametersmultiplicity,
+	parameterstype,
+	visibility;
+	fontName: Arial;
+}
+
+Constraint{
+	fillColor: beige;
+}
+
+Association, Generalization, Dependency{
+	routing: Rectilinear;
+}
+
+Association > Label:name {
+	visible:false;
+}
+
+DataType{
+	bold: true;
+}
+
+Enumeration{
+	bold: true;
+}
+
+EnumerationLiteral{
+	bold: false;
+}
+
+/* State machine style */
+
+StateMachine{
+	bold: true;
+}
+
+Region{
+	bold: true;
+}
+
+State{
+	bold: true;
+}
+
+FinalState{
+	fillColor: white;
+	gradient: none;
+}
+
+FinalState > Label{
+	visible: false;
+}
+
+Pseudostate{
+	fillColor: black;
+}
+
+Pseudostate[kind=exitPoint]{
+	fillColor: white;
+}
+
+Pseudostate[kind=entryPoint]{
+	fillColor: white;
+}
+
+Pseudostate > Label {
+	visible:false;
+}
+
+Transition{
+	routing: Rectilinear;
+}
+
+/* Activity style */
+
+InitialNode{
+	fillColor: black;
+}
+
+InitialNode > Label{
+	visible: false;
+}
+
+FinalNode > Label{
+	visible: false;
+}
+
+ForkNode > Label{
+	visible: false;
+}
+
+JoinNode > Label{
+	visible: false;
+}
+
+InputPin, OutputPin{
+	fillColor: black;
+}
+
+ObjectFlow, ControlFlow{
+	routing: Rectilinear;
+}
+
+ObjectFlow > Label{
+	visible: false;
+}

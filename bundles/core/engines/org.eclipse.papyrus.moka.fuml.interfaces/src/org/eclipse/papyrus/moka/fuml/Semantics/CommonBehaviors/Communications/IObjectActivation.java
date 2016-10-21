@@ -33,6 +33,8 @@ public interface IObjectActivation {
 	public IEventOccurrence getNextEvent();
 
 	public void send(ISignalInstance signalInstance);
+	
+	public void notifyEventArrival();
 
 	public void startBehavior(Class classifier, List<IParameterValue> inputs);
 

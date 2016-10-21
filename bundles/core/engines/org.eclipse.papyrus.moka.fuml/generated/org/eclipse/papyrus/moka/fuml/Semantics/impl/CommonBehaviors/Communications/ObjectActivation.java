@@ -206,6 +206,10 @@ public class ObjectActivation implements IObjectActivation {
 		}
 	} // _startObjectBehavior
 
+	public void notifyEventArrival(){
+		this._send(new ArrivalSignal());
+	}
+	
 	public void _send(ArrivalSignal signal) {
 		// Signal the arrival of a new signal instance in the event pool.
 		// *** This should send an ArrivalSignal to the EventDispatchLoop. ***

@@ -25,7 +25,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IP
 
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
 
 /**
  * A classifier behavior accepts an invocation event occurrence for the invocation
@@ -129,7 +128,11 @@ public class ClassifierBehaviorInvocationEventAccepter extends EventAccepter imp
 		return this.execution;
 	}
 
-	public Classifier getExecutedClassifier() {
+	public Class getExecutedClassifier() {
 		return this.classifier;
+	}
+	
+	public void setClassifier(Class classifier){
+		this.classifier = classifier;
 	}
 }

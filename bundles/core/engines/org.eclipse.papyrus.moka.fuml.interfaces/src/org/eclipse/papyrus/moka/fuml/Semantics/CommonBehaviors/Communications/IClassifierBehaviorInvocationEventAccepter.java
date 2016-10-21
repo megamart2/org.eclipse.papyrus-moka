@@ -18,7 +18,6 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.uml2.uml.Classifier;
 
 public interface IClassifierBehaviorInvocationEventAccepter extends IEventAccepter {
 
@@ -32,5 +31,7 @@ public interface IClassifierBehaviorInvocationEventAccepter extends IEventAccept
 
 	public IExecution getExecution();
 
-	public Classifier getExecutedClassifier();
+	public Class getExecutedClassifier();
+	
+	public void setClassifier(Class classifier);
 }

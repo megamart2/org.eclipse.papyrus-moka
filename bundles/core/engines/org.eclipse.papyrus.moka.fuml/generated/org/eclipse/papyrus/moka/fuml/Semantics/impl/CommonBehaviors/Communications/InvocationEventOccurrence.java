@@ -15,16 +15,27 @@
 package org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IInvocationEventOccurrence;
 
 /**
  * An invocation event occurrence represents a signal occurrence of the event of the asynchronous
  * invocation of a specific behavior execution.
  */
-public class InvocationEventOccurrence extends EventOccurrence {
+public class InvocationEventOccurrence extends EventOccurrence implements IInvocationEventOccurrence{
 
 	/*
 	 * The execution being asynchronously invoked.
 	 */
 	public IExecution execution;
+
+	@Override
+	public IExecution getExecution() {
+		return this.execution;
+	}
+	
+	@Override
+	public void setExecution(IExecution execution) {
+		this.execution = execution;
+	}
 
 }

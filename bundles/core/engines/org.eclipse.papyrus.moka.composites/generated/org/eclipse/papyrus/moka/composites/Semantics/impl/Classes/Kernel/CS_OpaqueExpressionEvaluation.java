@@ -16,13 +16,14 @@ package org.eclipse.papyrus.moka.composites.Semantics.impl.Classes.Kernel;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.Classes.Kernel.ICS_OpaqueExpressionEvaluation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Evaluation;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.OpaqueExpression;
 
-public class CS_OpaqueExpressionEvaluation extends Evaluation {
+public class CS_OpaqueExpressionEvaluation extends Evaluation implements ICS_OpaqueExpressionEvaluation {
 
 	@Override
 	public IValue evaluate() {
