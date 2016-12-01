@@ -15,7 +15,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.papyrus.infra.core.log,
  org.eclipse.papyrus.fuml.statemachines.interfaces,
  org.eclipse.papyrus.moka.fuml.interfaces,
- org.eclipse.papyrus.moka.composites.interfaces;bundle-version="2.0.0"
+ org.eclipse.papyrus.moka.composites.interfaces;bundle-version="2.0.0",
+ org.aspectj.runtime
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: CEA LIST

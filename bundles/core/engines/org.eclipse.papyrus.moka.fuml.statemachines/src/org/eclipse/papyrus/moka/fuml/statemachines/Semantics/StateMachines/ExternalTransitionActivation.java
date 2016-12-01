@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Vertex;
 
 public class ExternalTransitionActivation extends TransitionActivation {
 
-	protected void exitSource(IEventOccurrence eventOccurrence){
+	public void exitSource(IEventOccurrence eventOccurrence){
 		// The exiting phase of the source vertex activation is conditioned both by
 		// the prerequisites that apply to leave the source and the prerequisites that
 		// apply to enter the target. 
@@ -38,7 +38,7 @@ public class ExternalTransitionActivation extends TransitionActivation {
 		}
 	}
 	
-	protected void enterTarget(IEventOccurrence eventOccurrence) {
+	public void enterTarget(IEventOccurrence eventOccurrence) {
 		// If the target vertex activation can be entered (i.e., its possible prerequisites
 		// are satisfied) then the entering process begins. Note that this process may lead
 		// to enter other states based on what is the common ancestor exiting between the

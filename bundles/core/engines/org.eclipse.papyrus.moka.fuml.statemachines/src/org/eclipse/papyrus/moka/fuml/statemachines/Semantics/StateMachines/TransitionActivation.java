@@ -311,18 +311,6 @@ public abstract class TransitionActivation extends StateMachineSemanticVisitor i
 		return this.leastCommonAncestor;
 	}
 	
-	/*
-	 * This operation is intended to be implemented by sub-classes.
-	 * Sub-classes capture how the source vertex activation must be exited. 
-	 */
-	protected abstract void exitSource(IEventOccurrence eventOccurrence);
-	
-	/*
-	 * This operation is intended to be implemented by sub-classes.
-	 * Sub-classes capture how the target vertex activation must be entered.
-	 */
-	protected abstract void enterTarget(IEventOccurrence eventOccurrence);
-	
 	public String toString(){
 		String representation = "["+this.getSourceActivation()+"] -> ["+this.getTargetActivation()+"] (";
 		if(this.isReached(false)){

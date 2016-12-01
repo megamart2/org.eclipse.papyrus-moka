@@ -43,7 +43,7 @@ public class LocalTransitionActivation extends TransitionActivation {
 	}
 	
 	@Override
-	protected void exitSource(IEventOccurrence eventOccurrence) {
+	public void exitSource(IEventOccurrence eventOccurrence) {
 		// Exiting the source state of a local transition consists in the following set of actions:
 		// 1 - Check if the source state can be exited (if it cannot then do nothing)
 		// 2 - If the source can be exited and this latter is an entry point then the exit
@@ -89,7 +89,7 @@ public class LocalTransitionActivation extends TransitionActivation {
 	}
 	
 	@Override
-	protected void enterTarget(IEventOccurrence eventOccurrence) {
+	public void enterTarget(IEventOccurrence eventOccurrence) {
 		// Entering the target of local transition consists in checking if the target can be entered. If
 		// this is the case then only when the target is not also the containing state it is entered 
 		if(this.vertexTargetActivation.isEnterable(this, false)){	

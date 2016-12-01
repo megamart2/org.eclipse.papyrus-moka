@@ -18,12 +18,12 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IE
 public class InternalTransitionActivation extends TransitionActivation{
 	
 	@Override
-	protected void exitSource(IEventOccurrence eventOccurrence) {
+	public void exitSource(IEventOccurrence eventOccurrence) {
 		// An internal transition does not cause exit of the source state
 		return;
 	}
 	
-	protected void enterTarget(IEventOccurrence eventOccurrence) {
+	public void enterTarget(IEventOccurrence eventOccurrence) {
 		// An internal transition does not cause entry of the target state
 		return;
 	}
