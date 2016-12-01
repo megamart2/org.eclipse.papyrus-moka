@@ -16,6 +16,8 @@ import java.util.Set;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
+import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
+import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ICallActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
@@ -56,6 +58,16 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 			if (edgeInstance.getEdge() != null) {
 				this.engine.startRendering(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.ANIMATED);
 			}
+		} else if(nodeVisitor instanceof ITransitionActivation){
+			ITransitionActivation transitionActivation = (ITransitionActivation) nodeVisitor;
+			if(transitionActivation.getNode() != null){
+				this.renderAs(transitionActivation.getNode(), transitionActivation.getExecutionContext(), AnimationKind.ANIMATED);
+			}
+		} else if(nodeVisitor instanceof IVertexActivation){
+			IVertexActivation vertexActivation = (IVertexActivation) nodeVisitor;
+			if(vertexActivation.getNode() != null){
+				this.renderAs(vertexActivation.getNode(), vertexActivation.getExecutionContext(), AnimationKind.ANIMATED);
+			}
 		}
 	}
 
@@ -70,6 +82,16 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 			IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) nodeVisitor;
 			if (edgeInstance.getEdge() != null) {
 				this.renderAs(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.VISITED);
+			}
+		}else if(nodeVisitor instanceof ITransitionActivation){
+			ITransitionActivation transitionActivation = (ITransitionActivation) nodeVisitor;
+			if(transitionActivation.getNode() != null){
+				this.renderAs(transitionActivation.getNode(), transitionActivation.getExecutionContext(), AnimationKind.VISITED);
+			}
+		} else if(nodeVisitor instanceof IVertexActivation){
+			IVertexActivation vertexActivation = (IVertexActivation) nodeVisitor;
+			if(vertexActivation.getNode() != null){
+				this.renderAs(vertexActivation.getNode(), vertexActivation.getExecutionContext(), AnimationKind.VISITED);
 			}
 		}
 	}
@@ -108,10 +130,12 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 	public void renderAs(EObject modelElement, IObject_ animator, AnimationKind sourceStyle, AnimationKind targetStyle, int duration) {
 		this.engine.removeRenderingRules(modelElement);
 		this.engine.startRendering(modelElement, animator, sourceStyle);
-		try {
-			Thread.sleep(duration);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+		if(duration >= 25){	
+			try {
+				Thread.sleep(duration);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
 		}
 		this.engine.stopRendering(modelElement, animator, sourceStyle);
 		this.engine.startRendering(modelElement, animator, targetStyle);
