@@ -225,7 +225,7 @@ public class StateActivation extends VertexActivation implements IStateActivatio
 		return exit;
 	}
 	
-	public Behavior getdoActivity(){
+	public Behavior getDoActivity(){
 		// Return the doActivity behavior of the state or one inherited
 		// from a redefined state. If no doActivity can be found null is
 		// returned.
@@ -265,7 +265,7 @@ public class StateActivation extends VertexActivation implements IStateActivatio
 		// provides a doActivity then this latter is executed instead. The rule applies
 		// recursively.
 		if(!this.isDoActivityCompleted){
-			Behavior doActivity = this.getdoActivity();
+			Behavior doActivity = this.getDoActivity();
 			if(doActivity!=null){
 				// Create, initialize and register to the locus the doActivityContextObject. 
 				this.doActivityContextObject = new DoActivityContextObject();
@@ -378,7 +378,7 @@ public class StateActivation extends VertexActivation implements IStateActivatio
 			super.enter(enteringTransition, eventOccurrence, leastCommonAncestor);
 			// Initialization
 			this.isEntryCompleted = this.getEntry()==null;
-			this.isDoActivityCompleted = this.getdoActivity()==null;
+			this.isDoActivityCompleted = this.getDoActivity()==null;
 			this.isExitCompleted = this.getExit()==null;
 			// When the state is entered it is registered in the current
 			// state-machine configuration

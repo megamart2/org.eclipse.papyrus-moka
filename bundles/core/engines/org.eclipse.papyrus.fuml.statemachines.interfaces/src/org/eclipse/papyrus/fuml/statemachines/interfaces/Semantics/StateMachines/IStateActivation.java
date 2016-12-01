@@ -26,7 +26,7 @@ public interface IStateActivation extends IVertexActivation{
 	
 	public Behavior getExit();
 	
-	public Behavior getdoActivity();
+	public Behavior getDoActivity();
 	
 	public void tryExecuteEntry(IEventOccurrence eventOccurrence);
 	
