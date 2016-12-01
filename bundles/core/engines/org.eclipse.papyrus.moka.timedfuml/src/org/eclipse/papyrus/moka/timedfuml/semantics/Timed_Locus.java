@@ -11,8 +11,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.timedfuml.semantics;
 
-import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Locus;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.Loci.SM_Locus;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Class;
 
@@ -20,7 +20,7 @@ import org.eclipse.uml2.uml.Class;
  * @author ac221913
  *
  */
-public class Timed_Locus extends CS_Locus {
+public class Timed_Locus extends SM_Locus {
 
 	@Override
 	public IObject_ instantiate(Class type) {

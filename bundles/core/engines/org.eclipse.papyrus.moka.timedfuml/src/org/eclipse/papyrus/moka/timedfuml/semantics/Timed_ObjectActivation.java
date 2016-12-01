@@ -15,7 +15,7 @@ import org.eclipse.papyrus.moka.discreteevent.DEScheduler;
 import org.eclipse.papyrus.moka.discreteevent.Event;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ArrivalSignal;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventAccepter;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.CommonBehavior.SM_ObjectActivation;
 import org.eclipse.papyrus.moka.timedfuml.actions._acceptAction;
 import org.eclipse.papyrus.moka.timedfuml.actions._send_Action;
 
@@ -23,7 +23,7 @@ import org.eclipse.papyrus.moka.timedfuml.actions._send_Action;
  * @author ac221913
  *
  */
-public class Timed_ObjectActivation extends ObjectActivation {
+public class Timed_ObjectActivation extends SM_ObjectActivation {
 
 	@Override
 	public void register(IEventAccepter accepter) {

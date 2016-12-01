@@ -14,14 +14,14 @@ package org.eclipse.papyrus.moka.timedfuml.semantics;
 import java.util.List;
 
 import org.eclipse.uml2.uml.Class;
-import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Object;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
+import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StructuredClassifiers.SM_Object;
 
 /**
  * @author ac221913
  *
  */
-public class Timed_Object extends CS_Object {
+public class Timed_Object extends SM_Object {
 
 	@Override
 	public void startBehavior(Class classifier, List<IParameterValue> inputs) {

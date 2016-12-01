@@ -14,7 +14,6 @@
 package org.eclipse.papyrus.moka.fmu.engine.semantics;
 
 import org.eclipse.papyrus.moka.fmi.profile.util.FMIProfileUtil;
-import org.eclipse.papyrus.moka.fmu.engine.utils.FMUEngineUtils;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_Locus;
 import org.eclipse.uml2.uml.Class;

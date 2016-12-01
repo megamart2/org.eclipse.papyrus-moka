@@ -11,8 +11,8 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.timedfuml.semantics;
 
-import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_ExecutionFactory;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.Loci.SM_ExecutionFactory;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Event;
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Trigger;
  * @author sg239226
  *
  */
-public class Timed_ExecutionFactory extends CS_ExecutionFactory {
+public class Timed_ExecutionFactory extends SM_ExecutionFactory {
 
 	@Override
 	public ISemanticVisitor instantiateVisitor(Element element) {

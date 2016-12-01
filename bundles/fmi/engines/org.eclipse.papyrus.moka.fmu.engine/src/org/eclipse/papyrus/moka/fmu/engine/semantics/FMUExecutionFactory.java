@@ -19,6 +19,8 @@ import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.ChangeEvent;
 import org.eclipse.uml2.uml.Element;
+import org.eclipse.uml2.uml.Transition;
+import org.eclipse.uml2.uml.TransitionKind;
 import org.eclipse.uml2.uml.Trigger;
 
 public class FMUExecutionFactory extends Timed_ExecutionFactory {
@@ -40,6 +42,11 @@ public class FMUExecutionFactory extends Timed_ExecutionFactory {
 		} 
 		else if (element instanceof AddStructuralFeatureValueAction) {
 			visitor = new FMUAddStructuralFeatureValueAction() ;
+		} else if (element instanceof Transition){
+			Transition transition = (Transition) element;
+			if(transition.getKind() == TransitionKind.EXTERNAL_LITERAL){
+				visitor = new FMUExternalTransitionActivation();
+			}
 		}
 		else {
 			visitor = super.instantiateVisitor(element);

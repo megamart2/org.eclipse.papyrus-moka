@@ -107,6 +107,7 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 		} catch (InterruptedException e) {
 			// Activator.log.error(e);
 		}
+		System.out.println("here");
 	}
 
 	/**
