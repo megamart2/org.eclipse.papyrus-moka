@@ -111,7 +111,7 @@ public class EventTriggeredExecution extends Execution implements IEventTriggere
 		//    output Parameters, then the values returned for those parameters are those
 		//    produced by the last effect, entry or exit Behavior to complete its execution
 		//    during the RTC step. Since some or all of those Behaviors may execute concurrently,
-		//    which one completes “last” may be only partially determined by the specified semantics.
+		//    which one completes last may be only partially determined by the specified semantics.
 		//    The values returned may legally be those produced any Behavior that produces potential
 		//    output values and is the last to complete in any execution trace for the RTC
 		//    step consistent with the specified StateMachine semantics.
