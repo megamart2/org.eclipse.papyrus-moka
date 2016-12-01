@@ -13,11 +13,11 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.TransitionMetadata;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ChoiceStrategy;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.TransitionMetadata;
 
 public class JoinPseudostateActivation extends PseudostateActivation {
 

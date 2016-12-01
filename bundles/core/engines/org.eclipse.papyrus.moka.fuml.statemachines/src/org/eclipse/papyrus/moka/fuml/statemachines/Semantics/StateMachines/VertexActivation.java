@@ -18,13 +18,13 @@ import static org.eclipse.papyrus.moka.fuml.statemachines.Activator.logger;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.StateMetadata;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.TransitionMetadata;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.StateMetadata;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.TransitionMetadata;
 import org.eclipse.uml2.uml.TransitionKind;
 import org.eclipse.uml2.uml.Vertex;
 

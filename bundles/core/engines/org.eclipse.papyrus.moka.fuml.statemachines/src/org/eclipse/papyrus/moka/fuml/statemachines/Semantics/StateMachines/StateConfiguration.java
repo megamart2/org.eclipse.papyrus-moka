@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateConfiguration;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineConfiguration;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateConfiguration;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineConfiguration;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
 
 public class StateConfiguration implements IStateConfiguration{
 

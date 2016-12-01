@@ -13,9 +13,9 @@
 
 package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.ICompletionEventOccurrence;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ICompletionEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
 
 public class CompletionEventOccurrence extends EventOccurrence implements ICompletionEventOccurrence{
 	

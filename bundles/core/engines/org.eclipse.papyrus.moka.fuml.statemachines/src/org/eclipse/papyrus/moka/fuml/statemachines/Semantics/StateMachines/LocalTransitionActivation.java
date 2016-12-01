@@ -13,12 +13,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineExecution;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineExecution;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
 import org.eclipse.uml2.uml.Vertex;
 
 public class LocalTransitionActivation extends TransitionActivation {

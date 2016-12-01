@@ -13,9 +13,9 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.CommonBehavior;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventExecution;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.EventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventExecution;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventOccurrence;
 
 public class CallEventOccurrence extends EventOccurrence implements ICallEventOccurrence{
 

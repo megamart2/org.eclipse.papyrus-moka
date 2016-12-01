@@ -15,10 +15,6 @@ package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines;
 
 import java.util.List;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.CommonBehavior.ISM_ObjectActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IDeferredEventOccurrence;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IDoActivityContextObject;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
@@ -28,6 +24,10 @@ import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IE
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.Object_;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior.ISM_ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IDeferredEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IDoActivityContextObject;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
 import org.eclipse.uml2.uml.Operation;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.StructuralFeature;

@@ -16,17 +16,17 @@ package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines;
 
 import static org.eclipse.papyrus.moka.fuml.statemachines.Activator.logger;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.TransitionMetadata;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.Values.ISM_OpaqueExpressionEvaluation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IBooleanValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IEvaluation;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.SignalEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.CommonBehavior.CallEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IRegionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.TransitionMetadata;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.Values.ISM_OpaqueExpressionEvaluation;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Constraint;
 import org.eclipse.uml2.uml.NamedElement;

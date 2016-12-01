@@ -16,11 +16,11 @@ package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.CommonBehavior;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventExecution;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventExecution;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior.ICallEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.Operation;

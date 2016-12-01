@@ -21,11 +21,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateConfiguration;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineConfiguration;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineExecution;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateConfiguration;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineConfiguration;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineExecution;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
 
 public class StateMachineConfiguration implements IStateMachineConfiguration{
 		

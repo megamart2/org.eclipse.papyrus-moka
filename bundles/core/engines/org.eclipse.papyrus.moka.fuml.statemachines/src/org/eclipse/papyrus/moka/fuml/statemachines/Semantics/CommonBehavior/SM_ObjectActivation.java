@@ -16,14 +16,14 @@ package org.eclipse.papyrus.moka.fuml.statemachines.Semantics.CommonBehavior;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.CommonBehavior.ISM_ObjectActivation;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.ICompletionEventOccurrence;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IDeferredEventOccurrence;
-import org.eclipse.papyrus.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.ObjectActivation;
 import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines.CompletionEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines.DeferredEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior.ISM_ObjectActivation;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ICompletionEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IDeferredEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateActivation;
 
 public class SM_ObjectActivation extends ObjectActivation implements ISM_ObjectActivation {
 
