@@ -34,4 +34,8 @@ public interface IStateConfiguration {
 	public boolean add(IVertexActivation activation, List<IVertexActivation> context);
 	
 	public boolean remove(IVertexActivation activation, List<IVertexActivation> context);
+	
+	public boolean isConfigurationFor(IVertexActivation activation);
+	
+	public boolean isConfigurationFor(IVertexActivation activation, List<IVertexActivation> context);
 }

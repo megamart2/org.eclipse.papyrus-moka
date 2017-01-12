@@ -23,8 +23,4 @@ public interface IStateMachineConfiguration {
 	
 	public IStateConfiguration getRoot();
 	
-	public void addToCartography(IStateConfiguration configuration);
-	
-	public void deleteFromCartography(IStateConfiguration configuration);
-	
 }
