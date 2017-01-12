@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Operation;
 
-public class SM_RedefinitionBasedDispatchedStrategy extends CS_DispatchOperationOfInterfaceStrategy {
+public class SM_RedefinitionBasedDispatchStrategy extends CS_DispatchOperationOfInterfaceStrategy {
 
 	@Override
 	public IExecution dispatch(IObject_ object, Operation operation) {
