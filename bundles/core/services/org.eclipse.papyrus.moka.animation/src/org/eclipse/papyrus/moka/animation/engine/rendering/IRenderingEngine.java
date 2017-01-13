@@ -9,7 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
-package org.eclipse.papyrus.moka.animation.engine;
+package org.eclipse.papyrus.moka.animation.engine.rendering;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;

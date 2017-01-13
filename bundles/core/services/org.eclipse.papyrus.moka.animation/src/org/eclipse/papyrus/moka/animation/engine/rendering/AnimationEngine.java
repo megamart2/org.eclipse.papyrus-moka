@@ -11,7 +11,7 @@
  *  CEA LIST - Initial API and implementation
  *
  *****************************************************************************/
-package org.eclipse.papyrus.moka.animation.engine;
+package org.eclipse.papyrus.moka.animation.engine.rendering;
 
 import java.util.ArrayList;
 import java.util.HashMap;

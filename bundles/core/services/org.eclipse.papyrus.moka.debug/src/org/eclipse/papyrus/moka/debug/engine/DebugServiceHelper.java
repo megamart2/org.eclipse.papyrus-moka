@@ -19,7 +19,7 @@ import org.eclipse.debug.core.DebugPlugin;
 import org.eclipse.debug.core.IBreakpointManager;
 import org.eclipse.debug.core.model.IBreakpoint;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.papyrus.moka.animation.engine.IAnimation;
+import org.eclipse.papyrus.moka.animation.engine.rendering.IAnimation;
 import org.eclipse.papyrus.moka.debug.breakpoint.MokaBreakpoint;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
