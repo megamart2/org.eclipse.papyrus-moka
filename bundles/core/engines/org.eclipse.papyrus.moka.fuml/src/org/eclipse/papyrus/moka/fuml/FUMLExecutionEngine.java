@@ -159,13 +159,10 @@ public class FUMLExecutionEngine extends AbstractExecutionEngine {
 	}
 
 	protected void initializeBuiltInPrimitiveTypes(ILocus locus) {
-		
-		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getReal(null));
-		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getInteger(null));
-		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getBoolean(null));
-		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getString(null));
-					
-		
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getReal(this.executionEntryPoint));
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getInteger(this.executionEntryPoint));
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getBoolean(this.executionEntryPoint));
+		locus.getFactory().addBuiltInType(org.eclipse.papyrus.moka.utils.UMLPrimitiveTypesUtils.getString(this.executionEntryPoint));
 	}
 
 	protected static void loadLibrary(final Object o, final ILocus locus, final Object context) {
