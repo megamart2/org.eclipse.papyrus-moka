@@ -11,7 +11,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.engine;
 
-import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -19,9 +18,8 @@ import java.util.Set;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gmf.runtime.notation.Diagram;
-import org.eclipse.papyrus.moka.animation.engine.animators.ActivityAnimator;
 import org.eclipse.papyrus.moka.animation.engine.animators.Animator;
-import org.eclipse.papyrus.moka.animation.engine.animators.StateMachineAnimator;
+import org.eclipse.papyrus.moka.animation.engine.animators.AnimatorExtensionEvaluator;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationEngine;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationKind;
 import org.eclipse.papyrus.moka.animation.engine.rendering.DiagramHandler;
@@ -43,11 +41,9 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 	protected List<Animator> animators;
 	
 	public AnimationService() {
+		// Create the engine and instantiate animators.
 		this.engine = new AnimationEngine();
-		// TODO: Registration of animators shall be done using an extension point.
-		this.animators = new ArrayList<Animator>();
-		this.animators.add(new ActivityAnimator(engine));
-		this.animators.add(new StateMachineAnimator(engine));
+		this.animators = AnimatorExtensionEvaluator.evaluateAnimators(this.engine);
 	}
 
 	public void init(ILaunch launcher, EObject modelElement) {
@@ -57,15 +53,20 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 
 	public Animator getAnimator(ISemanticVisitor nodeVisitor){
 		// Find the animator capable of performing animation on the model element
-		// referenced by the visitor.
-		// TODO: in case of conflicting animators the selection should be done
-		// using a priority mechanism.
+		// referenced by the visitor. In situation of conflict (i.e., multiple animators
+		// accept to provide an animation logic for the same set of model elements) then
+		// the priority associated to animators is used to determine which animator must
+		// perform the animation.
 		Animator animator = null;
 		Iterator<Animator> animatorsIterator = this.animators.iterator();
-		while(animator == null && animatorsIterator.hasNext()){
+		while(animatorsIterator.hasNext()){
 			Animator current = animatorsIterator.next();
 			if(current.accept(nodeVisitor)){
-				animator = current;
+				if(animator != null){
+					animator = current.getPriority() > animator.getPriority() ? current : animator;
+				}else{
+					animator = current;
+				}
 			}
 		}
 		return animator;

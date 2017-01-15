@@ -24,8 +24,22 @@ public abstract class Animator implements IMokaExecutionListener, IAnimation{
 
 	protected AnimationEngine engine;
 	
-	public Animator(AnimationEngine engine){
+	protected int priority;
+	
+	public AnimationEngine getAnimationEngine(){
+		return this.engine;
+	}
+	
+	public void setAnimationEngine(AnimationEngine engine){
 		this.engine = engine;
+	}
+	
+	public int getPriority(){
+		return this.priority;
+	}
+	
+	public void setPriority(int priority){
+		this.priority = priority;
 	}
 	
 	public abstract boolean accept(ISemanticVisitor visitor);

@@ -11,17 +11,12 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.engine.animators;
 
-import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationEngine;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationKind;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
 import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IVertexActivation;
 
 public class StateMachineAnimator extends Animator{
-
-	public StateMachineAnimator(AnimationEngine engine) {
-		super(engine);
-	}
 
 	@Override
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {

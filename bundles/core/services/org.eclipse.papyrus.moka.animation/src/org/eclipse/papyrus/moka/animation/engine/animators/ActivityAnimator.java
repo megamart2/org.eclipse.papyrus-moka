@@ -11,7 +11,6 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.engine.animators;
 
-import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationEngine;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationKind;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.ICallActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
@@ -21,10 +20,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 public class ActivityAnimator extends Animator{
-	
-	public ActivityAnimator(AnimationEngine engine) {
-		super(engine);
-	}
 
 	@Override
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?eclipse version="3.4"?>
 <plugin>
+   <extension-point id="animator" name="Animator" schema="schema/animator.exsd"/>
    <extension
          point="org.eclipse.papyrus.infra.gmfdiag.css.markertopseudoselectormappingprovider">
       <provider
@@ -63,6 +64,17 @@
       <stylesheet
             stylesheetPath="theme/defaultAnimationTheme.css">
       </stylesheet>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.moka.animation.animator">
+      <animator
+            class="org.eclipse.papyrus.moka.animation.engine.animators.StateMachineAnimator"
+            priority="0">
+      </animator>
+      <animator
+            class="org.eclipse.papyrus.moka.animation.engine.animators.ActivityAnimator"
+            priority="0">
+      </animator>
    </extension>
 
 </plugin>
