@@ -20,7 +20,7 @@ import org.eclipse.papyrus.moka.discreteevent.actions.Action;
 
 public class DEScheduler {
 
-	protected double currentTime = 0.0 ;
+	protected double currentTime ;
 	protected double stopTime = -1.0 ;
 	protected boolean finished = false ;
 	protected boolean started = false ;
@@ -33,16 +33,27 @@ public class DEScheduler {
 	
 	public static void init(double stopTime) {
 		DefaultPushPullStrategy pushPullStrategy = new DefaultPushPullStrategy() ;
-		init(stopTime, pushPullStrategy) ;
+		init(stopTime,0.0, pushPullStrategy) ;
 	}
 	
-	public static void init(double stopTime, AbstractPushPullStrategy pushPullStrategy) {
+	public static void init(double stopTime, double startTime) {
+		DefaultPushPullStrategy pushPullStrategy = new DefaultPushPullStrategy() ;
+		init(stopTime,startTime, pushPullStrategy) ;
+	}
+	
+	public static void init(double stopTime, double startTime, AbstractPushPullStrategy pushPullStrategy) {
 		instance = new DEScheduler() ;
 		instance.stopTime = stopTime ;
+		instance.currentTime =startTime;
 		instance.started = false ;
 		instance.finished = false ;
 		instance.pushPullStrategy = pushPullStrategy ;
 		instance.pushPullStrategy.setScheduler(instance);
+		
+	}
+	
+	public static void init(double stopTime, AbstractPushPullStrategy pushPullStrategy) {
+		init(stopTime, 0.0, pushPullStrategy);
 	}
 	
 	public static DEScheduler getInstance() {

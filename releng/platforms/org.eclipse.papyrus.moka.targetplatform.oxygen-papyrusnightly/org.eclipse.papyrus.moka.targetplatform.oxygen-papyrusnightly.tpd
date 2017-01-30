@@ -1,18 +1,18 @@
 target "Moka Oxygen Papyrus Nightly Target Platform" with source requirements
 
 location "http://download.eclipse.org/releases/oxygen" eclipse {
- org.eclipse.platform.feature.group
- org.eclipse.rcp.feature.group
- org.eclipse.jdt.feature.group
- org.eclipse.equinox.p2.discovery.feature.feature.group
- org.eclipse.equinox.executable.feature.group
+ org.eclipse.platform.feature.group lazy
+ org.eclipse.rcp.feature.group lazy
+ org.eclipse.jdt.feature.group lazy
+ org.eclipse.equinox.p2.discovery.feature.feature.group lazy
+ org.eclipse.equinox.executable.feature.group lazy
 }
 
 location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/" papyrus-nightly {
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 
-location "http://download.eclipse.org/tools/ajdt/47/dev/update/ajdt-e47-2.2.4.201704242114/" aspectj-neon{
+location "http://download.eclipse.org/tools/ajdt/47/dev/update/ajdt-e47-2.2.4.201704242114/" aspectj{
 	org.aspectj.feature.group lazy
 	org.eclipse.ajdt.feature.group lazy
 	org.eclipse.equinox.weaving.sdk.feature.group lazy
