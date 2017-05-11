@@ -173,16 +173,32 @@
          </stylesheet>
       </themeContribution>
    </extension>
-   <extension point="org.eclipse.ui.newWizards">
-		<wizard
-			category="org.eclipse.ui.Examples/org.eclipse.papyrus.examples"
-			class="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
-			finalPerspective="org.eclipse.papyrus.infra.core.perspective"
-			icon="platform:/plugin/org.eclipse.papyrus.moka.ui/icons/moka_icon.png"
-			id="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
-			name="FMU Tutorial Model Example">
-			<selection class="org.eclipse.core.resources.IResource"/>
-		</wizard>
-	</extension>
+   <extension
+         point="org.eclipse.emf.common.ui.examples">
+      <example
+            id="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
+            pageImage="icons/moka_icon.png"
+            wizardID="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard">
+         <projectDescriptor
+               contentURI="platform:/plugin/org.eclipse.papyrus.moka.fmi.ui/models/examples/"
+               description="FMU Getting Started"
+               name="TutoFMU">
+         </projectDescriptor>
+         <fileToOpen
+               location="platform:/plugin/org.eclipse.papyrus.moka.fmi.ui/models/examples/TutoFMU.di">
+         </fileToOpen>
+      </example>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <wizard
+            category="org.eclipse.ui.Examples/org.eclipse.papyrus.examples"
+            class="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
+            finalPerspective="org.eclipse.papyrus.infra.core.perspective"
+            icon="icons/moka_icon.png"
+            id="org.eclipse.papyrus.moka.fmi.ui.wizards.FMUTutoWizard"
+            name="FMU Tutorial Model Example">
+      </wizard>
+   </extension>
 
 </plugin>

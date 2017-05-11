@@ -2,19 +2,6 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.papyrus.infra.viewpoints.policy.custom">
-      <configuration
-            file="config/simex.configuration"
-            priority="100">
-      </configuration>
-   </extension>
-   <extension
-         point="org.eclipse.papyrus.infra.viewpoints.policy.policycheckerlistener">
-      <policycheckerlistener
-            listenerClass="org.eclipse.papyrus.moka.simex.viewpoint.SimexViewpointListener">
-      </policycheckerlistener>
-   </extension>
-   <extension
          point="org.eclipse.papyrus.infra.gmfdiag.dnd.dropStrategy">
       <strategy
             strategy="org.eclipse.papyrus.moka.simex.dnd.strategy.ActivityToCallBehaviorActionStrategy">
@@ -76,5 +63,17 @@
       <strategy
             strategy="org.eclipse.papyrus.moka.simex.dnd.strategy.ParameterToActivityParameterNodeStrategy">
       </strategy>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.architecture.listeners">
+      <listener
+            class="org.eclipse.papyrus.moka.simex.viewpoint.SimexViewpointListener">
+      </listener>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.infra.architecture.models">
+      <model
+            path="config/simex.architecture">
+      </model>
    </extension>
 </plugin>

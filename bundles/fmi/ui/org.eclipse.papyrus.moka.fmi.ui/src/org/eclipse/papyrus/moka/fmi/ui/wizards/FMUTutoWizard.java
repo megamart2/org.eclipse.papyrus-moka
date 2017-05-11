@@ -14,14 +14,14 @@
 
 package org.eclipse.papyrus.moka.fmi.ui.wizards;
 
-import org.eclipse.papyrus.uml.diagram.wizards.wizards.ModelCopyWizard;
+import org.eclipse.papyrus.uml.diagram.wizards.wizards.PapyrusExampleInstallerWizard;
 
 /**
  * Copy wizard for the HelloWorld example
  */
-public class FMUTutoWizard extends ModelCopyWizard {
+public class FMUTutoWizard extends PapyrusExampleInstallerWizard {
 
 	public FMUTutoWizard() {
-		super("TutoFMU"); //$NON-NLS-1$
+		super();
 	}
 }

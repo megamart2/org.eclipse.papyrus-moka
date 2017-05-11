@@ -19,6 +19,8 @@
 	<modules>
 		<module>org.eclipse.papyrus.moka.targetplatform.neon</module>
 		<module>org.eclipse.papyrus.moka.targetplatform.neon-papyrusnightly</module>
+		<module>org.eclipse.papyrus.moka.targetplatform.oxygen</module>
+		<module>org.eclipse.papyrus.moka.targetplatform.oxygen-papyrusnightly</module>
 	</modules>
 
 </project>

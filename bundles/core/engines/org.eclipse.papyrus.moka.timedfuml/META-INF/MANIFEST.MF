@@ -4,13 +4,13 @@ Bundle-Name: Moka Timed fUML
 Bundle-SymbolicName: org.eclipse.papyrus.moka.timedfuml;singleton:=true
 Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.timedfuml.Activator
-Require-Bundle: org.eclipse.core.runtime;bundle-version="3.12.0",
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
  org.eclipse.papyrus.moka.discreteevent;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.fuml;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.composites;bundle-version="2.0.0",
- org.eclipse.uml2.uml;bundle-version="5.2.0",
+ org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
  org.eclipse.papyrus.moka;bundle-version="2.0.0",
- org.eclipse.debug.core;bundle-version="3.10.0";resolution:=optional,
+ org.eclipse.debug.core;bundle-version="[3.11.0,4.0.0)",
  org.eclipse.papyrus.moka.composites.interfaces;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.fuml.statemachines;bundle-version="1.0.0",

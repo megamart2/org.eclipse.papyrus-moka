@@ -1,0 +1,29 @@
+target "Moka Oxygen Target Platform" with source requirements
+
+location "http://download.eclipse.org/releases/oxygen" eclipse {
+ org.eclipse.platform.feature.group
+ org.eclipse.rcp.feature.group
+ org.eclipse.jdt.feature.group
+ org.eclipse.equinox.p2.discovery.feature.feature.group
+ org.eclipse.equinox.executable.feature.group
+ org.eclipse.papyrus.sdk.feature.feature.group
+}
+
+location "http://download.eclipse.org/tools/ajdt/47/dev/update/ajdt-e47-2.2.4.201704242114/" aspectj{
+	org.aspectj.feature.group
+	org.eclipse.ajdt.feature.group
+	org.eclipse.equinox.weaving.sdk.feature.group
+}
+
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" orbit{
+	org.eclipse.orbit.category.json
+	jnr.ffi
+	jnr.constants
+	jnr.enxio
+	javax.xml
+}
+
+location "http://download.eclipse.org/nebula/releases/1.2.0" nebula{
+	org.eclipse.nebula.widgets.xviewer.feature.feature.group
+	org.eclipse.nebula.visualization.feature.feature.group
+}

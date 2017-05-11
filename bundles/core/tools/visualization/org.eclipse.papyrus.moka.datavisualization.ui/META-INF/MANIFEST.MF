@@ -5,17 +5,17 @@ Bundle-SymbolicName: org.eclipse.papyrus.moka.datavisualization.ui;singleton:=tr
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.datavisualization.ui.Activator
 Bundle-Vendor: Eclipse Modeling Project
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.eclipse.papyrus.infra.emf;bundle-version="2.0.0",
- org.eclipse.papyrus.uml.extensionpoints;bundle-version="1.2.0",
- org.eclipse.papyrus.infra.ui;bundle-version="1.2.0",
- org.eclipse.emf.common.ui,
+Require-Bundle: org.eclipse.ui;bundle-version="[3.109.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
+ org.eclipse.papyrus.infra.emf;bundle-version="[2.0.0,3.0.1)",
+ org.eclipse.papyrus.uml.extensionpoints;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.papyrus.infra.ui;bundle-version="[2.0.0,3.0.0]",
+ org.eclipse.emf.common.ui;bundle-version="[2.12.0,3.0.0)",
  org.eclipse.papyrus.moka.datavisualization;bundle-version="1.0.0",
  org.eclipse.papyrus.moka.xygraph.common;bundle-version="1.0.0",
- org.eclipse.papyrus.moka.xygraph.mapping,
- org.eclipse.papyrus.infra.services.edit,
- org.eclipse.papyrus.infra.properties;bundle-version="1.2.0"
+ org.eclipse.papyrus.moka.xygraph.mapping;bundle-version="1.0.0",
+ org.eclipse.papyrus.infra.services.edit;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.infra.properties;bundle-version="[2.0.0,3.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.datavisualization.handlers,

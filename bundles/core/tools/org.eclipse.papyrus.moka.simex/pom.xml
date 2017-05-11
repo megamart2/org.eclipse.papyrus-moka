@@ -14,5 +14,6 @@
 	<artifactId>org.eclipse.papyrus.moka.simex</artifactId>
 	<packaging>eclipse-plugin</packaging>
 	<name>org.eclipse.papyrus.moka.simex</name>
-
+	<version>2.0.1-SNAPSHOT</version>
+	
 </project>

@@ -3,17 +3,17 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Moka standalone RCP for FMU
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fmu.rcp;singleton:=true
 Bundle-Version: 2.0.0.qualifier
-Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.uml2.uml;bundle-version="5.2.0",
- org.eclipse.papyrus.moka.fmu.engine;bundle-version="1.0.0",
- org.apache.commons.cli;bundle-version="1.2.0",
+Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
+ org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
+ org.eclipse.papyrus.moka.fmu.engine;bundle-version="2.0.0",
+ org.apache.commons.cli;bundle-version="[1.2.0,2.0.0)",
  org.eclipse.papyrus.moka;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.fmi;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.fmi.profile;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.timedfuml;bundle-version="2.0.0",
  org.eclipse.papyrus.moka.composites;bundle-version="2.0.0",
- org.aspectj.runtime;bundle-version="1.8.9",
- org.eclipse.debug.core;bundle-version="3.10.100";resolution:=optional
+ org.aspectj.runtime;bundle-version="[1.8.10,2.0.0)",
+ org.eclipse.debug.core;bundle-version="[3.11.0,4.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ClassPath: .
 Export-Package: org.eclipse.papyrus.moka.fmu.rcp

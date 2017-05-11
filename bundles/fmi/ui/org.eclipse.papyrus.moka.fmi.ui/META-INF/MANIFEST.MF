@@ -2,29 +2,29 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: FMI UI
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fmi.ui;singleton:=true
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.0.1.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.fmi.ui.Activator
-Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime,
- org.eclipse.ui.ide;bundle-version="3.12.0",
+Require-Bundle: org.eclipse.ui;bundle-version="[3.109.0,4.0.0)",
+ org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
+ org.eclipse.ui.ide;bundle-version="[3.13.0,4.0.0)",
  org.eclipse.papyrus.moka.ui;bundle-version="2.0.0",
- org.eclipse.uml2.uml;bundle-version="5.2.0",
- org.eclipse.papyrus.moka.composites.utils,
- org.eclipse.emf.transaction;bundle-version="1.9.0",
+ org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
+ org.eclipse.papyrus.moka.composites.utils;bundle-version="2.0.0",
+ org.eclipse.emf.transaction;bundle-version="[1.9.0,2.0.0)",
  org.eclipse.papyrus.moka.fmu.engine;bundle-version="2.0.0",
  org.eclipse.papyrus.infra.core;bundle-version="2.0.0",
- org.eclipse.papyrus.infra.ui,
- org.eclipse.papyrus.moka.fmi,
- org.eclipse.papyrus.moka.fmi.fmi2uml,
- org.eclipse.papyrus.infra.gmfdiag.dnd;bundle-version="1.2.0",
- org.eclipse.gef;bundle-version="3.11.0",
- org.eclipse.gmf.runtime.diagram.ui;bundle-version="1.8.0",
+ org.eclipse.papyrus.infra.ui;bundle-version="[2.0.0,3.0.0)",
+ org.eclipse.papyrus.moka.fmi;bundle-version="2.0.0",
+ org.eclipse.papyrus.moka.fmi.fmi2uml;bundle-version="2.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.dnd;bundle-version="[1.2.0,2.0.0)",
+ org.eclipse.gef;bundle-version="[3.11.0,4.0.0)",
+ org.eclipse.gmf.runtime.diagram.ui;bundle-version="[1.8.0,2.0.0)",
  org.eclipse.papyrus.moka.fmi.profile;bundle-version="2.0.0",
- org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="1.2.0",
- org.eclipse.papyrus.uml.diagram.composite;bundle-version="2.0.0",
+ org.eclipse.papyrus.infra.gmfdiag.css;bundle-version="[2.1.0,3.0.0)",
+ org.eclipse.papyrus.uml.diagram.composite;bundle-version="[3.0.0,4.0.0)",
  org.eclipse.papyrus.moka.fmi.exporter;bundle-version="2.0.0",
- org.eclipse.papyrus.uml.diagram.wizards;bundle-version="2.0.0",
- org.eclipse.papyrus.uml.tools.utils;bundle-version="2.0.0"
+ org.eclipse.papyrus.uml.diagram.wizards;bundle-version="[3.0.0,4.0.0)",
+ org.eclipse.papyrus.uml.tools.utils;bundle-version="[3.0.0,4.0.0)"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Eclipse Modeling Project
@@ -32,5 +32,4 @@ Export-Package: org.eclipse.papyrus.moka.fmi.ui,
  org.eclipse.papyrus.moka.fmi.ui.commands,
  org.eclipse.papyrus.moka.fmi.ui.dialogs,
  org.eclipse.papyrus.moka.fmi.ui.dnd,
- org.eclipse.papyrus.moka.fmi.ui.handlers,
- org.eclipse.papyrus.moka.fmi.ui.wizards
+ org.eclipse.papyrus.moka.fmi.ui.handlers
