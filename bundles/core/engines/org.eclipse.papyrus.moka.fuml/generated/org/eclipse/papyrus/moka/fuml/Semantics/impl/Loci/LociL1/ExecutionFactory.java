@@ -24,7 +24,6 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.IExecutionFactory;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.Execution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.BasicBehaviors.OpaqueBehaviorExecution;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Behavior;
@@ -79,7 +78,7 @@ public abstract class ExecutionFactory implements IExecutionFactory {
 		if (behavior instanceof OpaqueBehavior) {
 			execution = this.instantiateOpaqueBehaviorExecution((OpaqueBehavior) behavior);
 		} else {
-			execution = (Execution) this.instantiateVisitor(behavior);
+			execution = (IExecution) this.instantiateVisitor(behavior);
 			execution.addType(behavior);
 			execution.createFeatureValues();
 		}
