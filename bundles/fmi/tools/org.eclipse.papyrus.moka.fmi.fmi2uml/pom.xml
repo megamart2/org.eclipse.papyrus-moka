@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.fmi.tools</artifactId>
-		<version>2.0.100-SNAPSHOT</version>
+		<version>2.1.0-SNAPSHOT</version>
 	</parent>
 
 	<!-- POM Description -->
@@ -14,5 +14,6 @@
 	<packaging>eclipse-plugin</packaging>
 	<name>org.eclipse.papyrus.moka.fmi.fmi2uml</name>
 	<description>FMI 2 UML Importer</description>
+	<version>2.0.100-SNAPSHOT</version>
 
 </project>

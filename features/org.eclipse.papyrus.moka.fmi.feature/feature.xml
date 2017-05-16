@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.papyrus.moka.fmi.feature"
       label="Moka For Cosimulation (Incubation)"
-      version="2.0.100.qualifier"
+      version="2.1.0.qualifier"
       provider-name="Eclipse Modeling Project">
 
    <description url="http://www.example.com/description">

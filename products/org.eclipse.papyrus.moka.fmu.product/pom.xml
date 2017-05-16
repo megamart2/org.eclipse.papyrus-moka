@@ -17,7 +17,7 @@
 	<version>2.0.0-SNAPSHOT</version>
 
 	<properties>
-		<fmi.exporter.target.folder>../../bundles/fmi/tools/org.eclipse.papyrus.moka.fmi.exporter/resources/</fmi.exporter.target.folder>
+		<fmi.exporter.target.folder>../../bundles/fmi/tools/org.eclipse.papyrus.moka.fmi.rcp.export/resources/</fmi.exporter.target.folder>
 	</properties>
 
 	<!-- Specific build -->
