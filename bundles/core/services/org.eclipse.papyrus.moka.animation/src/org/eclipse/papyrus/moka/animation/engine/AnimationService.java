@@ -29,6 +29,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.AbstractMokaService;
 import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
+import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
 public class AnimationService extends AbstractMokaService implements IAnimation, IMokaExecutionListener {
 
@@ -39,7 +40,7 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 	// List of child animators that can be used to perform animation
 	// when a node is visited of left by the execution engine.
 	protected List<Animator> animators;
-	
+
 	public AnimationService() {
 		// Create the engine and instantiate animators.
 		this.engine = new AnimationEngine();
@@ -51,7 +52,7 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 		this.engine.init(modelElement);
 	}
 
-	public Animator getAnimator(ISemanticVisitor nodeVisitor){
+	public Animator getAnimator(ISemanticVisitor nodeVisitor) {
 		// Find the animator capable of performing animation on the model element
 		// referenced by the visitor. In situation of conflict (i.e., multiple animators
 		// accept to provide an animation logic for the same set of model elements) then
@@ -59,29 +60,32 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 		// perform the animation.
 		Animator animator = null;
 		Iterator<Animator> animatorsIterator = this.animators.iterator();
-		while(animatorsIterator.hasNext()){
+		while (animatorsIterator.hasNext()) {
 			Animator current = animatorsIterator.next();
-			if(current.accept(nodeVisitor)){
-				if(animator != null){
+			if (current.accept(nodeVisitor)) {
+				if (animator != null) {
 					animator = current.getPriority() > animator.getPriority() ? current : animator;
-				}else{
+				} else {
 					animator = current;
 				}
 			}
 		}
 		return animator;
 	}
-	
+
 	@Override
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {
 		// Find a registered animator to perform animation when a node gets executed by the execution engine.
 		// If one is found (i.e., it accepts to perform animation on the node interpreted by the visitor)
 		// then the realization of the animation is delegated to this latter. If no animator could be
 		// found then no animation is performed.
-		Animator animator = this.getAnimator(nodeVisitor);
-		if(animator != null){
-			animator.nodeVisited(nodeVisitor);
+		if (MokaConstants.MOKA_AUTOMATIC_ANIMATION) {
+			Animator animator = this.getAnimator(nodeVisitor);
+			if (animator != null) {
+				animator.nodeVisited(nodeVisitor);
+			}
 		}
+
 	}
 
 	@Override
@@ -89,9 +93,11 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 		// Find a registered animator to perform animation when a node gets exited by the execution engine.
 		// If one is found, then the realization of the animation is delegated to this latter. If no
 		// animator could be found then no animation is performed
-		Animator animator = this.getAnimator(nodeVisitor);
-		if(animator != null){
-			animator.nodeLeft(nodeVisitor);
+		if (MokaConstants.MOKA_AUTOMATIC_ANIMATION) {
+			Animator animator = this.getAnimator(nodeVisitor);
+			if (animator != null) {
+				animator.nodeLeft(nodeVisitor);
+			}
 		}
 	}
 
@@ -129,7 +135,7 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 	public void renderAs(EObject modelElement, IObject_ animator, AnimationKind sourceStyle, AnimationKind targetStyle, int duration) {
 		this.engine.removeRenderingRules(modelElement);
 		this.engine.startRendering(modelElement, animator, sourceStyle);
-		if(duration >= 25){	
+		if (duration >= 25) {
 			try {
 				Thread.sleep(duration);
 			} catch (InterruptedException e) {
