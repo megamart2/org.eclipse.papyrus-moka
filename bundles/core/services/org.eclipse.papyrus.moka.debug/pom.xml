@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.core.services</artifactId>
-		<version>2.0.0-SNAPSHOT</version>
+		<version>2.0.100-SNAPSHOT</version>
 	</parent>
 	
 	<!-- POM Description -->

@@ -2,12 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.papyrus.moka.fuml.statemachines.interfaces
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fuml.statemachines.interfaces
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.100.qualifier
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Require-Bundle: org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="2.0.0",
- org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
- org.eclipse.papyrus.moka.composites.interfaces;bundle-version="2.0.0"
+Require-Bundle: org.eclipse.papyrus.moka.composites.interfaces;bundle-version="2.0.100";visibility:=reexport
 Export-Package: org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.CommonBehavior,
  org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines,
  org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.Values

@@ -1,15 +1,10 @@
 Manifest-Version: 1.0
-Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
- org.eclipse.emf;bundle-version="[2.6.0,3.0.0)",
- org.eclipse.uml2.uml;bundle-version="[5.3.0,6.0.0)",
- org.eclipse.debug.core;bundle-version="[3.11.0,4.0.0)",
- org.apache.commons.lang;bundle-version="[2.6.0,3.0.0)",
- org.eclipse.emf.ecore;bundle-version="[2.13.0,3.0.0)",
- org.eclipse.papyrus.moka.utils;bundle-version="2.0.0",
- org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="2.0.0",
- org.eclipse.papyrus.moka;bundle-version="2.0.0",
- org.eclipse.papyrus.moka.service;bundle-version="2.0.0",
- org.aspectj.runtime;bundle-version="[1.8.10,2.0.0)"
+Require-Bundle: org.apache.commons.lang;bundle-version="[2.6.0,3.0.0)",
+ org.eclipse.papyrus.moka.utils;bundle-version="2.0.100",
+ org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="2.0.100";visibility:=reexport,
+ org.eclipse.papyrus.moka;bundle-version="2.0.100",
+ org.aspectj.runtime;bundle-version="[1.8.10,2.0.0)",
+ org.eclipse.papyrus.moka.service;bundle-version="2.0.100"
 Export-Package: org.eclipse.papyrus.moka.fuml;uses:="org.eclipse.ui.plugin,org.osgi.framework",
  org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions,
  org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions,
@@ -34,7 +29,7 @@ Export-Package: org.eclipse.papyrus.moka.fuml;uses:="org.eclipse.ui.plugin,org.o
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-ClassPath: .
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.0.100.qualifier
 Eclipse-BuddyPolicy: registered
 Bundle-Name: Moka fUML Execution Engine
 Bundle-ManifestVersion: 2
