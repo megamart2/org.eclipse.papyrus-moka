@@ -9,7 +9,8 @@ Require-Bundle: org.eclipse.papyrus.moka;bundle-version="2.0.100",
  org.eclipse.papyrus.uml.extensionpoints;bundle-version="[1.2.0,2.0.0)",
  org.eclipse.papyrus.moka.fmi.profile;bundle-version="2.0.100",
  jnr.ffi;bundle-version="[2.0.1,3.0.0)",
- org.eclipse.jface;bundle-version="[3.12.0,4.0.0)"
+ org.eclipse.jface;bundle-version="[3.12.0,4.0.0)",
+ com.github.jnr.jffi;bundle-version="1.2.11"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.fmi.master,

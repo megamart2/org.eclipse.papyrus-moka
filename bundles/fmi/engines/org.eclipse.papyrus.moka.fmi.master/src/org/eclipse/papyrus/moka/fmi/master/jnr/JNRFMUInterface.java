@@ -79,9 +79,9 @@ public interface JNRFMUInterface {
 	
 	
 	@IgnoreError
-	public Fmi2Status fmi2GetInteger(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @In int[] values);
+	public Fmi2Status fmi2GetInteger(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @Out int[] values);
 	@IgnoreError
-	public Fmi2Status fmi2SetInteger(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @Out int[] values);
+	public Fmi2Status fmi2SetInteger(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @In int[] values);
 	
 	@IgnoreError
 	public Fmi2Status fmi2GetInteger(@In Pointer pointer, @In Pointer vr, @In @size_t int nvr, @In Pointer values);
@@ -90,24 +90,24 @@ public interface JNRFMUInterface {
 	
 	
 	@IgnoreError
-	public Fmi2Status fmi2GetBoolean(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @In boolean[] values);
+	public Fmi2Status fmi2GetBoolean(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @Out boolean[] values);
 	@IgnoreError
-	public Fmi2Status fmi2SetBoolean(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @Out boolean[] values);
+	public Fmi2Status fmi2SetBoolean(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @In boolean[] values);
 	
 	@IgnoreError
-	public Fmi2Status fmi2GetBoolean(@In Pointer pointer, @In Pointer vr, @In @size_t int nvr, @In boolean[] values);
+	public Fmi2Status fmi2GetBoolean(@In Pointer pointer, @In Pointer vr, @In @size_t int nvr, @Out boolean[] values);
 	@IgnoreError
-	public Fmi2Status fmi2SetBoolean(@In Pointer pointer,@In Pointer vr, @In @size_t int nvr, @Out boolean[] values);
+	public Fmi2Status fmi2SetBoolean(@In Pointer pointer,@In Pointer vr, @In @size_t int nvr, @In boolean[] values);
 	
 	@IgnoreError
-	public Fmi2Status fmi2GetString(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @In String[] values);
+	public Fmi2Status fmi2GetString(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @Out String[] values);
 	@IgnoreError
-	public Fmi2Status fmi2SetString(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @Out String[] values);
+	public Fmi2Status fmi2SetString(@In Pointer pointer, @In int[] vr, @In @size_t int nvr, @In String[] values);
 	
 	@IgnoreError
-	public Fmi2Status fmi2GetString(@In Pointer pointer, @In Pointer vr, @In @size_t int nvr,  @In String[] values);
+	public Fmi2Status fmi2GetString(@In Pointer pointer, @In Pointer vr, @In @size_t int nvr,@Out String[] values);
 	@IgnoreError
-	public Fmi2Status fmi2SetString(@In Pointer pointer,@In Pointer vr, @In @size_t int nvr,@Out String[] values);
+	public Fmi2Status fmi2SetString(@In Pointer pointer,@In Pointer vr, @In @size_t int nvr,@In String[] values);
 	
 	@IgnoreError
 	public Fmi2Status fmi2GetFMUstate(@In Pointer component, @Out PointerByReference state);

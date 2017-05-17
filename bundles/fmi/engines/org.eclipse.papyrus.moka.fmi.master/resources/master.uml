@@ -8,7 +8,7 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_gBqtEOz2EeWTYsQuYWmHRA" name="masterProxy">
         <type xmi:type="uml:Class" href="pathmap://PAPYRUS_MOKA_EXTRAS_FMI2_MASTER/master2Proxy.uml#_Vqs90NlYEeSSmteSNPGivw"/>
       </ownedAttribute>
-      <ownedBehavior xmi:type="uml:Activity" xmi:id="_4i1LMOz1EeWTYsQuYWmHRA" name="MasterBehavior" node="_4i1LXez1EeWTYsQuYWmHRA _4i1LYOz1EeWTYsQuYWmHRA _4i1LY-z1EeWTYsQuYWmHRA _4i1LaOz1EeWTYsQuYWmHRA _4i1La-z1EeWTYsQuYWmHRA _4i1Lbuz1EeWTYsQuYWmHRA _4i1yQOz1EeWTYsQuYWmHRA _4i1yQez1EeWTYsQuYWmHRA _4i1yQuz1EeWTYsQuYWmHRA _4i1yQ-z1EeWTYsQuYWmHRA _4i1ySOz1EeWTYsQuYWmHRA _4i1yS-z1EeWTYsQuYWmHRA _4i1yTOz1EeWTYsQuYWmHRA _4i1yTez1EeWTYsQuYWmHRA _4i1yTuz1EeWTYsQuYWmHRA">
+      <ownedBehavior xmi:type="uml:Activity" xmi:id="_4i1LMOz1EeWTYsQuYWmHRA" name="MasterBehavior" node="_4i1LXez1EeWTYsQuYWmHRA _4i1LYOz1EeWTYsQuYWmHRA _4i1LY-z1EeWTYsQuYWmHRA _4i1LaOz1EeWTYsQuYWmHRA _4i1La-z1EeWTYsQuYWmHRA _4i1Lbuz1EeWTYsQuYWmHRA _4i1yQOz1EeWTYsQuYWmHRA _4i1yQez1EeWTYsQuYWmHRA _4i1yQuz1EeWTYsQuYWmHRA _4i1yQ-z1EeWTYsQuYWmHRA _4i1ySOz1EeWTYsQuYWmHRA _4i1yS-z1EeWTYsQuYWmHRA _4i1yTOz1EeWTYsQuYWmHRA _4i1yTez1EeWTYsQuYWmHRA _4i1yTuz1EeWTYsQuYWmHRA _Wt9eQOk3EeawZMZx1WhtuQ">
         <edge xmi:type="uml:ObjectFlow" xmi:id="_4i1LMez1EeWTYsQuYWmHRA" target="_4i1yQOz1EeWTYsQuYWmHRA" source="_4i1Lb-z1EeWTYsQuYWmHRA">
           <guard xmi:type="uml:LiteralBoolean" xmi:id="_4i1LMuz1EeWTYsQuYWmHRA" value="true"/>
           <weight xmi:type="uml:LiteralInteger" xmi:id="_4i1LM-z1EeWTYsQuYWmHRA" value="1"/>
@@ -62,9 +62,10 @@
         </edge>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4i1LWOz1EeWTYsQuYWmHRA" target="_4i1LaOz1EeWTYsQuYWmHRA" source="_4i1LYOz1EeWTYsQuYWmHRA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4i1LWez1EeWTYsQuYWmHRA" target="_4i1yTez1EeWTYsQuYWmHRA" source="_4i1La-z1EeWTYsQuYWmHRA"/>
-        <edge xmi:type="uml:ControlFlow" xmi:id="_4i1LWuz1EeWTYsQuYWmHRA" target="_4i1yTez1EeWTYsQuYWmHRA" source="_4i1yTOz1EeWTYsQuYWmHRA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_4i1LWuz1EeWTYsQuYWmHRA" target="_Wt9eQOk3EeawZMZx1WhtuQ" source="_4i1yTOz1EeWTYsQuYWmHRA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4i1LW-z1EeWTYsQuYWmHRA" target="_4i1LXez1EeWTYsQuYWmHRA" source="_4i1yTez1EeWTYsQuYWmHRA"/>
         <edge xmi:type="uml:ControlFlow" xmi:id="_4i1LXOz1EeWTYsQuYWmHRA" target="_4i1yTuz1EeWTYsQuYWmHRA" source="_4i1La-z1EeWTYsQuYWmHRA"/>
+        <edge xmi:type="uml:ControlFlow" xmi:id="_hVyYkOk3EeawZMZx1WhtuQ" target="_4i1yTez1EeWTYsQuYWmHRA" source="_Wt9eQOk3EeawZMZx1WhtuQ"/>
         <node xmi:type="uml:ReadSelfAction" xmi:id="_4i1LXez1EeWTYsQuYWmHRA" name="this" incoming="_4i1LW-z1EeWTYsQuYWmHRA">
           <result xmi:type="uml:OutputPin" xmi:id="_4i1LXuz1EeWTYsQuYWmHRA" name="master" outgoing="_4i1LSOz1EeWTYsQuYWmHRA" type="_YJZJQOz2EeWTYsQuYWmHRA">
             <upperBound xmi:type="uml:LiteralInteger" xmi:id="_4i1LX-z1EeWTYsQuYWmHRA" value="1"/>
@@ -130,8 +131,14 @@
         </node>
         <node xmi:type="uml:MergeNode" xmi:id="_4i1yS-z1EeWTYsQuYWmHRA" name="" incoming="_4i1LT-z1EeWTYsQuYWmHRA _4i1LUuz1EeWTYsQuYWmHRA" outgoing="_4i1LVez1EeWTYsQuYWmHRA"/>
         <node xmi:type="uml:InitialNode" xmi:id="_4i1yTOz1EeWTYsQuYWmHRA" outgoing="_4i1LWuz1EeWTYsQuYWmHRA"/>
-        <node xmi:type="uml:MergeNode" xmi:id="_4i1yTez1EeWTYsQuYWmHRA" incoming="_4i1LWuz1EeWTYsQuYWmHRA _4i1LWez1EeWTYsQuYWmHRA" outgoing="_4i1LW-z1EeWTYsQuYWmHRA"/>
+        <node xmi:type="uml:MergeNode" xmi:id="_4i1yTez1EeWTYsQuYWmHRA" incoming="_4i1LWez1EeWTYsQuYWmHRA _hVyYkOk3EeawZMZx1WhtuQ" outgoing="_4i1LW-z1EeWTYsQuYWmHRA"/>
         <node xmi:type="uml:ActivityFinalNode" xmi:id="_4i1yTuz1EeWTYsQuYWmHRA" name="ActivityFinalNode1" incoming="_4i1LXOz1EeWTYsQuYWmHRA"/>
+        <node xmi:type="uml:AcceptEventAction" xmi:id="_Wt9eQOk3EeawZMZx1WhtuQ" name="accept(Start)" incoming="_4i1LWuz1EeWTYsQuYWmHRA" outgoing="_hVyYkOk3EeawZMZx1WhtuQ">
+          <result xmi:type="uml:OutputPin" xmi:id="_szlRkOk3EeawZMZx1WhtuQ" name="result">
+            <upperBound xmi:type="uml:LiteralInteger" xmi:id="_szo78Ok3EeawZMZx1WhtuQ" value="1"/>
+          </result>
+          <trigger xmi:type="uml:Trigger" xmi:id="_szcHoOk3EeawZMZx1WhtuQ" name="StartEventTrigger" event="_nSEw0Ok3EeawZMZx1WhtuQ"/>
+        </node>
       </ownedBehavior>
       <ownedBehavior xmi:type="uml:Activity" xmi:id="_iIWPQO0CEeWhWLlrne2jXg" name="Master_Factory" node="_iIfZMO0CEeWhWLlrne2jXg _iSnlkO0CEeWhWLlrne2jXg _iSpawO0CEeWhWLlrne2jXg _iSwIcO0CEeWhWLlrne2jXg _iSx9oe0CEeWhWLlrne2jXg">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iIdkAO0CEeWhWLlrne2jXg" name="result" type="_YJZJQOz2EeWTYsQuYWmHRA" direction="return"/>
@@ -177,6 +184,10 @@
       <ownedOperation xmi:type="uml:Operation" xmi:id="_iOZz8O0CEeWhWLlrne2jXg" name="Master">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_iShe8O0CEeWhWLlrne2jXg" name="return" type="_YJZJQOz2EeWTYsQuYWmHRA" direction="return"/>
       </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Package" xmi:id="_lt-g0Ok3EeawZMZx1WhtuQ" name="Events">
+      <packagedElement xmi:type="uml:Signal" xmi:id="_nR5xsOk3EeawZMZx1WhtuQ" name="Start"/>
+      <packagedElement xmi:type="uml:SignalEvent" xmi:id="_nSEw0Ok3EeawZMZx1WhtuQ" name="StartEvent" signal="_nR5xsOk3EeawZMZx1WhtuQ"/>
     </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_M3ZdoCisEeaB5YKpIQCuHQ">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_M3bS0CisEeaB5YKpIQCuHQ" source="PapyrusVersion">

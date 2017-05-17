@@ -53,6 +53,7 @@
       <plugin id="org.eclipse.equinox.weaving.hook" fragment="true"/>
       <plugin id="org.eclipse.osgi"/>
       <plugin id="org.eclipse.osgi.compatibility.state" fragment="true"/>
+      <plugin id="org.eclipse.papyrus.infra.core.log"/>
       <plugin id="org.eclipse.papyrus.moka"/>
       <plugin id="org.eclipse.papyrus.moka.composites"/>
       <plugin id="org.eclipse.papyrus.moka.composites.interfaces"/>
@@ -64,6 +65,8 @@
       <plugin id="org.eclipse.papyrus.moka.fuml"/>
       <plugin id="org.eclipse.papyrus.moka.fuml.interfaces"/>
       <plugin id="org.eclipse.papyrus.moka.fuml.standardlibrary"/>
+      <plugin id="org.eclipse.papyrus.moka.fuml.statemachines"/>
+      <plugin id="org.eclipse.papyrus.moka.fuml.statemachines.interfaces"/>
       <plugin id="org.eclipse.papyrus.moka.service"/>
       <plugin id="org.eclipse.papyrus.moka.timedfuml"/>
       <plugin id="org.eclipse.papyrus.moka.utils"/>

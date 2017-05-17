@@ -52,7 +52,7 @@
             di_file="template/SimpleMasterTemplate.di"
             file="template/SimpleMasterTemplate.uml"
             id="org.eclipse.papyrus.moka.fmi.master.simpletemplate"
-            language="uml"
+            language="org.eclipse.papyrus.infra.services.edit.TypeContext"
             name="FMI simulator with Simple Master"
             notation_file="template/SimpleMasterTemplate.notation">
       </template>

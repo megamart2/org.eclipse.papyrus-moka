@@ -21,6 +21,7 @@ location "http://download.eclipse.org/tools/orbit/downloads/drops/R2017030718063
 	jnr.constants
 	jnr.enxio
 	javax.xml
+	com.github.jnr.jffi
 }
 
 location "http://download.eclipse.org/nebula/releases/1.2.0" nebula{

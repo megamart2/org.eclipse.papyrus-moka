@@ -106,10 +106,11 @@ public class FMUControlService extends AbstractMokaService implements FMUInterfa
 		deSchedulerThread.start();
 		try {
 			stepLock.acquire();
+			
 		} catch (InterruptedException e) {
 			// Activator.log.error(e);
 		}
-		System.out.println("here");
+		
 	}
 
 	/**

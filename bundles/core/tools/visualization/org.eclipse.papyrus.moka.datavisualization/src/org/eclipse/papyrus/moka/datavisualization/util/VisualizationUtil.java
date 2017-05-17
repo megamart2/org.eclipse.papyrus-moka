@@ -26,7 +26,6 @@ import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
@@ -183,11 +182,11 @@ public class VisualizationUtil {
 	private static void encodeBooleanSeries(BooleanSeries series, ZipOutputStream zipStream) throws IOException {
 		for (Boolean value : series.getValues()) {
 			if (value) {
-				zipStream.write('1');
+				zipStream.write(1);
 			} else {
-				zipStream.write('0');
+				zipStream.write(0);
 			}
-			zipStream.write(VisualizationUtil.BINARY_STRING_SEPARATOR);
+			
 		}
 
 	}
@@ -305,7 +304,7 @@ public class VisualizationUtil {
 	private static void decodeBooleanSeries(BooleanSeries series, ZipInputStream zipInput) throws IOException {
 		int readByte;
 		while ((readByte = zipInput.read()) != -1) {
-			if ('1' == readByte) {
+			if (1 == readByte) {
 				series.getValues().add(true);
 			} else {
 				series.getValues().add(false);

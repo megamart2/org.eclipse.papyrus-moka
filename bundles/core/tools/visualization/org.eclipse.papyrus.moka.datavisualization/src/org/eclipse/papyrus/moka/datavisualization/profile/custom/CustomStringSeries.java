@@ -18,16 +18,21 @@ import org.eclipse.papyrus.moka.datavisualization.profile.impl.StringSeriesImpl;
 import org.eclipse.papyrus.moka.datavisualization.util.VisualizationUtil;
 
 public class CustomStringSeries extends StringSeriesImpl {
+	public CustomStringSeries() {
+		// we modify the default value in order to force serialization
+		binaryString = "";
+	}
+
 	@Override
 	public String getStringValue(int index) {
-		return 	getValues().get(index);
+		return getValues().get(index);
 	}
-	
+
 	@Override
 	public int getSize() {
 		return getValues().size();
 	}
-	
+
 	@Override
 	public void setBinaryString(String newBinaryString) {
 		VisualizationUtil.initValuesFromBinaryString(this, newBinaryString);
@@ -35,7 +40,7 @@ public class CustomStringSeries extends StringSeriesImpl {
 
 	@Override
 	public String getBinaryString() {
-			return VisualizationUtil.getBinaryString(this);
+		return VisualizationUtil.getBinaryString(this);
 
 	}
 }

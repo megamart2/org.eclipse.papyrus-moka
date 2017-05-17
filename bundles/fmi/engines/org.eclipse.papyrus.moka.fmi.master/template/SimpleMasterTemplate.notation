@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:configuration="http://www.eclipse.org/papyrus/infra/viewpoints/configuration" xmlns:gmfdiagrepresentation="http://www.eclipse.org/papyrus/infra/gmfdiag/representation" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/viewpoints/policy/style" xmlns:style_1="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML">
   <notation:Diagram xmi:id="_5RLclEa9EeWyAIlWLcMt6g" type="CompositeStructure" name="Simulator Architecture " measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_5RLclUa9EeWyAIlWLcMt6g" type="Class_Shape">
       <children xmi:type="notation:DecorationNode" xmi:id="_5RLclka9EeWyAIlWLcMt6g" type="Class_NameLabel"/>
@@ -69,7 +69,7 @@
       <element xsi:nil="true"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5RLctEa9EeWyAIlWLcMt6g" x="240" y="40"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_5RLctUa9EeWyAIlWLcMt6g" name="diagram_compatibility_version" stringValue="1.2.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_5RLctUa9EeWyAIlWLcMt6g" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_5RLctka9EeWyAIlWLcMt6g"/>
     <styles xmi:type="style:PapyrusViewStyle" xmi:id="_5RLct0a9EeWyAIlWLcMt6g">
       <owner xmi:type="uml:Class" href="SimpleMasterTemplate.uml#_5LgSYEa9EeWyAIlWLcMt6g"/>
@@ -311,24 +311,25 @@
         </children>
         <children xmi:type="notation:Shape" xmi:id="_mkJQACipEeaB5YKpIQCuHQ" type="InitialNode_Shape" fillColor="0" gradient="8421504, 16777215, 0">
           <children xmi:type="notation:DecorationNode" xmi:id="_mkJ3ECipEeaB5YKpIQCuHQ" type="InitialNode_FloatingNameLabel">
-            <layoutConstraint xmi:type="notation:Location" xmi:id="_mkJ3ESipEeaB5YKpIQCuHQ" y="5"/>
+            <layoutConstraint xmi:type="notation:Location" xmi:id="_mkJ3ESipEeaB5YKpIQCuHQ" x="83"/>
           </children>
           <children xmi:type="notation:DecorationNode" xmi:id="_mkJ3EiipEeaB5YKpIQCuHQ" type="InitialNode_StereotypeLabel">
             <layoutConstraint xmi:type="notation:Location" xmi:id="_mkJ3EyipEeaB5YKpIQCuHQ" y="5"/>
           </children>
           <styles xmi:type="notation:HintedDiagramLinkStyle" xmi:id="_mkJQASipEeaB5YKpIQCuHQ"/>
           <element xmi:type="uml:InitialNode" href="SimpleMasterTemplate.uml#_ZktV8u9VEeWQ9clF5mNilw"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mkJQAiipEeaB5YKpIQCuHQ" x="535" y="30"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_mkJQAiipEeaB5YKpIQCuHQ" x="535" y="24"/>
         </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fFHSsSipEeaB5YKpIQCuHQ"/>
       </children>
       <element xmi:type="uml:Activity" href="SimpleMasterTemplate.uml#_ZktV4O9VEeWQ9clF5mNilw"/>
       <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fFHSsiipEeaB5YKpIQCuHQ" width="1152" height="744"/>
     </children>
-    <styles xmi:type="notation:StringValueStyle" xmi:id="_fFHSsyipEeaB5YKpIQCuHQ" name="diagram_compatibility_version" stringValue="1.2.0"/>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_fFHSsyipEeaB5YKpIQCuHQ" name="diagram_compatibility_version" stringValue="1.3.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_fFHStCipEeaB5YKpIQCuHQ"/>
-    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_fFHStSipEeaB5YKpIQCuHQ">
+    <styles xmi:type="style_1:PapyrusDiagramStyle" xmi:id="_WhGCQDsNEeeDkKp3BvpalA">
       <owner xmi:type="uml:Activity" href="SimpleMasterTemplate.uml#_ZktV4O9VEeWQ9clF5mNilw"/>
+      <diagramKind xmi:type="gmfdiagrepresentation:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.uml.architecture/model/uml.architecture#_UzcgsHDtEeWh-MssWmCB_A"/>
     </styles>
     <element xmi:type="uml:Activity" href="SimpleMasterTemplate.uml#_ZktV4O9VEeWQ9clF5mNilw"/>
     <edges xmi:type="notation:Connector" xmi:id="_otMAICipEeaB5YKpIQCuHQ" type="ControlFlow_Edge" source="_mkJQACipEeaB5YKpIQCuHQ" target="_i2NlsCipEeaB5YKpIQCuHQ">

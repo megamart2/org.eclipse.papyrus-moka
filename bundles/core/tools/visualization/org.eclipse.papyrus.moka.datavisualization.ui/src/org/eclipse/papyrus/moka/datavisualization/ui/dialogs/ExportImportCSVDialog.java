@@ -188,7 +188,10 @@ public class ExportImportCSVDialog extends Dialog {
 			
 				if (selectedPath != null) {
 					selectedPathText.setText(selectedPath);
-
+					IDialogSettings settings = Activator.getDefault().getDialogSettings();
+					if (settings != null){
+						settings.put(TARGET_DIR_SETTING, selectedPath);
+					}
 					
 				}
 				else {
@@ -249,5 +252,9 @@ public class ExportImportCSVDialog extends Dialog {
 		
 		}
 		super.okPressed();
+	}
+
+	public void setDefaultPath(String defaultPath) {
+		previousDir = defaultPath;
 	}
 }
