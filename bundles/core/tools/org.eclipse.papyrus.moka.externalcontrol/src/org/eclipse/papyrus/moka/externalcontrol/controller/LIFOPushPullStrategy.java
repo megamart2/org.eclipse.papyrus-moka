@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.externalcontrol.controller;
 
+import java.util.Iterator;
 import java.util.Stack;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
@@ -37,7 +38,17 @@ public class LIFOPushPullStrategy implements IControlledVisitorPushPullStrategy 
 	@Override
 	public void pushVisitor(IExternallyControlledVisitor<? extends ISemanticVisitor> visitor) {
 			visitors.push(visitor);
-
+	}
+	
+	@Override
+	public boolean hasEnabledVisitors() {
+		Iterator<IExternallyControlledVisitor<? extends ISemanticVisitor>> visitorIterator = visitors.iterator();
+		while (visitorIterator.hasNext()){
+			if (visitorIterator.next().isExecutionAllowed()){
+				return true;
+			}
+		}
+		return false;
 	}
 
 }

@@ -14,6 +14,7 @@
 package org.eclipse.papyrus.moka.externalcontrol.controller;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.externalcontrol.util.PushPullStrategyUtil;
@@ -88,4 +89,37 @@ public class NodeEdgeAlternatePushPullStrategy implements IControlledVisitorPush
 
 	}
 
+	@Override
+	public boolean hasEnabledVisitors() {
+		Iterator<IExternallyControlledVisitor<? extends ISemanticVisitor>> visitorIterator = startingActionVisitors.iterator();
+		while (visitorIterator.hasNext()){
+			if (visitorIterator.next().isExecutionAllowed()){
+				return true;
+			}
+		}
+		
+		 visitorIterator = finishingActionVisitors.iterator();
+		while (visitorIterator.hasNext()){
+			if (visitorIterator.next().isExecutionAllowed()){
+				return true;
+			}
+		}
+		
+		visitorIterator = startingOthers.iterator();
+		while (visitorIterator.hasNext()){
+			if (visitorIterator.next().isExecutionAllowed()){
+				return true;
+			}
+		}
+		
+		visitorIterator = finishingOthers.iterator();
+		while (visitorIterator.hasNext()){
+			if (visitorIterator.next().isExecutionAllowed()){
+				return true;
+			}
+		}
+		return false;
+	}
+
+	
 }

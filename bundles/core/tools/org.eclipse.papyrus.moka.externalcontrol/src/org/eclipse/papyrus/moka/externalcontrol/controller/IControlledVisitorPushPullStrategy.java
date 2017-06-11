@@ -19,4 +19,7 @@ public interface IControlledVisitorPushPullStrategy {
 
 	public IExternallyControlledVisitor<? extends ISemanticVisitor> pullEnabledVisitor();
 	public void pushVisitor(IExternallyControlledVisitor<? extends ISemanticVisitor> visitor);
+	
+	public boolean hasEnabledVisitors();
+	
 }

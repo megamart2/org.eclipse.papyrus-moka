@@ -40,7 +40,7 @@ public class Event {
 
 	public Event(double relativeDate, Action action) {
 		this.relativeDate = relativeDate;
-		this.action = action;
+		setAction(action);
 	}
 	
 	public double getRelativeDate() {

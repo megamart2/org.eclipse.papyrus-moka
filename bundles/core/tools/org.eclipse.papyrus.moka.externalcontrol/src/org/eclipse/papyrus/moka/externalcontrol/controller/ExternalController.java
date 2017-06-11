@@ -63,6 +63,8 @@ public class ExternalController {
 		
 	}
 	
-	
+	public boolean hasEnabledVisitors(){
+		return pushPullStrategy.hasEnabledVisitors();
+	}
 
 }

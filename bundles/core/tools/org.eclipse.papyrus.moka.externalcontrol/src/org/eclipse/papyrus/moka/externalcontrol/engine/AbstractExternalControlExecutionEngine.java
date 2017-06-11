@@ -132,7 +132,7 @@ public abstract class  AbstractExternalControlExecutionEngine  extends StateMach
 		locus.setExecutor(getExecutor());
 		
 		
-		controller = new ExternalController(DEScheduler.getInstance(), getControllerPushPullStrategy());
+		
 		IExecutionFactory delegatedFactory = getDelegatedExecutionFactory();
 		
 		ExecutionFactory externalControlExecutionFactory = new ExternalControlExecutionFactory(delegatedFactory,controller,getAdviceFactories());
@@ -145,6 +145,7 @@ public abstract class  AbstractExternalControlExecutionEngine  extends StateMach
 	@Override
 	public void start(IProgressMonitor monitor) {
 		initDEScheduler();
+		controller = new ExternalController(DEScheduler.getInstance(), getControllerPushPullStrategy());
 		doPreRunActions();
 		
 		
@@ -161,7 +162,7 @@ public abstract class  AbstractExternalControlExecutionEngine  extends StateMach
 	
 
 
-	private void initDEScheduler() {
+	protected void initDEScheduler() {
 		//we init here the DEScheduler since we need it for the ExternalController 
 		DEScheduler.init(getStopTime());
 		
