@@ -12,10 +12,6 @@ location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master/lastSuccessfulBu
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 
-location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Developer/lastSuccessfulBuild/artifact/repository/" papyrus-developper-nightly {
- org.eclipse.papyrus.dev.feature.feature.group lazy
-}
-
 location "http://download.eclipse.org/tools/ajdt/47/dev/update/ajdt-e47-2.2.4.201704242114/" aspectj-neon{
 	org.aspectj.feature.group lazy
 	org.eclipse.ajdt.feature.group lazy
