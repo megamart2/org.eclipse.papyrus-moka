@@ -66,7 +66,7 @@ public class ReclassifyObjectActionActivation extends ActionActivation {
 					toBeRemoved = !notInOld;
 				}
 				if (toBeRemoved) {
-					object.getTypes().remove(i - 1); // Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
+					object.removeType(type); // Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
 				} else {
 					i = i + 1;
 				}
@@ -80,7 +80,7 @@ public class ReclassifyObjectActionActivation extends ActionActivation {
 					j = j + 1;
 				}
 				if (toBeAdded) {
-					object.getTypes().add(classifier); // Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
+					object.addType((Class)classifier); // Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
 				}
 			}
 			// Apply fix for FUML12-21 ReclassifyObjectAction handles removal of structural features incorrect
