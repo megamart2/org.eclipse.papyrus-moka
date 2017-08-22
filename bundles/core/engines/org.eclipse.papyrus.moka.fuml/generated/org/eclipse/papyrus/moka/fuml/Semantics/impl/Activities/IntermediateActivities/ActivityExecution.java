@@ -45,7 +45,7 @@ public class ActivityExecution extends Execution implements IActivityExecution {
 		// Debug.println("[execute] context = " + this.context.objectId());
 		Debug.println("[event] Execute activity=" + activity.getName());
 		this.activationGroup = new ActivityNodeActivationGroup();
-		this.activationGroup.setActivityExecution(this);
+		this.activationGroup.setActivityExecution_(this);
 		this.activationGroup.activate(activity.getNodes(), activity.getEdges());
 		// Debug.println("[execute] Getting output parameter node activations...");
 		List<IActivityParameterNodeActivation> outputActivations = this.activationGroup.getOutputParameterNodeActivations();

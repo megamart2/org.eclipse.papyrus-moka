@@ -28,8 +28,8 @@ public class ActivityFinalNodeActivation extends ControlNodeActivation {
 		// containing this activation.
 		Debug.println("[fire] Activity final node " + this.node.getName() + "...");
 		if (incomingTokens.size() > 0 | this.incomingEdges.size() == 0) {
-			if (this.getGroup().getActivityExecution() != null) {
-				this.getGroup().getActivityExecution().terminate();
+			if (this.getGroup().getActivityExecution_() != null) {
+				this.getGroup().getActivityExecution_().terminate();
 			} else if (this.getGroup().getContainingActivation() != null) {
 				this.getGroup().getContainingActivation().terminateAll();
 			} else if (this.getGroup() instanceof ExpansionActivationGroup) {

@@ -80,7 +80,7 @@ public class ExternallyControlledActivityExecution extends AbstractExternallyCon
 		// Debug.println("[execute] context = " + this.context.objectId());
 		Debug.println("[event] Execute activity=" + activity.getName());
 		setGroup( new ActivityNodeActivationGroup());
-		this.getGroup().setActivityExecution(this);
+		this.getGroup().setActivityExecution_(this);
 		this.getGroup().activate(activity.getNodes(), activity.getEdges());
 		
 	}

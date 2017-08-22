@@ -41,7 +41,9 @@ public interface IActivityNodeActivationGroup {
 
 	public IActivityExecution getActivityExecution();
 
-	public void setActivityExecution(IActivityExecution execution);
+	public void setActivityExecution_(IActivityExecution execution);
+	
+	public IActivityExecution getActivityExecution_();
 
 	public List<IActivityParameterNodeActivation> getOutputParameterNodeActivations();
 

@@ -326,7 +326,12 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		return this.nodeActivations;
 	}
 
-	public void setActivityExecution(IActivityExecution execution) {
+	public void setActivityExecution_(IActivityExecution execution) {
 		this.activityExecution = execution;
+		
+	}
+
+	public IActivityExecution getActivityExecution_() {
+		return this.activityExecution;
 	}
 }
