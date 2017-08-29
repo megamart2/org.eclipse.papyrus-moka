@@ -28,7 +28,7 @@
 		<component.bugzilla.name>Moka</component.bugzilla.name>
 		<component.package.rootname>org.eclipse.papyrus.moka</component.package.rootname>
 		<component.apibaseline.url>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/</component.apibaseline.url>
-		<eclipse.targetrelease>oxygen-papyrusnightly</eclipse.targetrelease>
+		<eclipse.targetrelease>oxygen</eclipse.targetrelease>
 		<target.version>2.0.100-SNAPSHOT</target.version>
 	</properties>
 
