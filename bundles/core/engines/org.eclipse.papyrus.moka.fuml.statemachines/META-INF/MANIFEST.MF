@@ -2,10 +2,10 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.eclipse.papyrus.moka.fuml.statemachines
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fuml.statemachines;singleton:=true
-Bundle-Version: 1.0.100.qualifier
+Bundle-Version: 2.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.fuml.statemachines.Activator
-Require-Bundle: org.eclipse.papyrus.moka.composites;bundle-version="2.0.100";visibility:=reexport,
- org.eclipse.papyrus.moka.fuml.statemachines.interfaces;bundle-version="1.0.100";visibility:=reexport,
+Require-Bundle: org.eclipse.papyrus.moka.composites;bundle-version="3.0.0";visibility:=reexport,
+ org.eclipse.papyrus.moka.fuml.statemachines.interfaces;bundle-version="2.0.0";visibility:=reexport,
  org.eclipse.papyrus.uml.extensionpoints;bundle-version="[1.2.0,2.0.0)",
  org.eclipse.papyrus.moka;bundle-version="2.0.100",
  org.eclipse.papyrus.infra.core.log;bundle-version="[1.2.0,2.0.0)",

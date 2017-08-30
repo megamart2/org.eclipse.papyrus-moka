@@ -2,9 +2,9 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: FMU slave engine
 Bundle-SymbolicName: org.eclipse.papyrus.moka.fmu.engine;singleton:=true
-Bundle-Version: 2.0.100.qualifier
+Bundle-Version: 3.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.fmu.engine.Activator
-Require-Bundle: org.eclipse.papyrus.moka.timedfuml;bundle-version="2.0.100";visibility:=reexport,
+Require-Bundle: org.eclipse.papyrus.moka.timedfuml;bundle-version="3.0.0";visibility:=reexport,
  org.eclipse.papyrus.moka.fmi.profile;bundle-version="2.0.100";visibility:=reexport,
  org.eclipse.papyrus.moka.service;bundle-version="2.0.100",
  org.eclipse.papyrus.moka;bundle-version="2.0.100",
