@@ -90,7 +90,7 @@ public class GraphBuilderHelper {
 		}
 		
 		tDesc.setTraceColor(makeColor(colors[added % colors.length][0], colors[added % colors.length][1], colors[added % colors.length][2]));
-		tDesc.setTraceType(types[added / colors.length]);
+		tDesc.setTraceType(types[(added / colors.length)%types.length]);
 		
 		return tDesc;
 	}
