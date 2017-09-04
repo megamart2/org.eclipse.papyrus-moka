@@ -13,6 +13,7 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.externalcontrol.advice;
 
+import org.eclipse.papyrus.moka.externalcontrol.controller.IExternallyControlledVisitor;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.uml2.uml.Element;
 
@@ -30,6 +31,7 @@ public class BasicControllerAdvice<E extends Element, V extends ISemanticVisitor
 	
 	protected V delegatedVisitor;
 	protected E element;
+	protected IExternallyControlledVisitor<V> controlledVisitor;
 	
 	public BasicControllerAdvice(E element, V delegatedVisitor) {
 		this.element= element;
@@ -59,6 +61,14 @@ public class BasicControllerAdvice<E extends Element, V extends ISemanticVisitor
 	@Override
 	public void doFinishAction() {
 		// do Nothing...
+	}
+
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public void setControlledVisitor(IExternallyControlledVisitor<? extends ISemanticVisitor> visitor) {
+		controlledVisitor =(IExternallyControlledVisitor<V>) visitor;
+		
 	}
 
 	

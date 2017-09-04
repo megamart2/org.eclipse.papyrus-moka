@@ -35,7 +35,6 @@ public abstract class AbstractExternallyControlledVisitor<T extends ISemanticVis
 	
 	protected List<IToken> suspendedTokens;
 	
-	protected  FUMLExecutionStack stack = new FUMLExecutionStack();
 	
 	protected Set<AbstractExternallyControlledVisitor<? extends ISemanticVisitor>> suspendedChildren = new HashSet<AbstractExternallyControlledVisitor<? extends ISemanticVisitor>>();
 	
@@ -52,8 +51,14 @@ public abstract class AbstractExternallyControlledVisitor<T extends ISemanticVis
 	
 	protected abstract void doSemanticAction();
 	
-	protected abstract  AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent();
 	
+	public abstract IExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent();
+	
+	
+	@Override
+	public List<IControllerAdvice> getRegisteredAdvices() {
+		return advices;
+	}
 	
 	public boolean hasSuspendedChildren(){
 		return ! suspendedChildren.isEmpty();
@@ -67,18 +72,20 @@ public abstract class AbstractExternallyControlledVisitor<T extends ISemanticVis
 		suspendedChildren.remove(child);
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void resumeExecution(){
-		AbstractExternallyControlledVisitor<? extends ISemanticVisitor> parent = getStackParent();
-		if (parent != null){
-			parent.removeSuspendedChild(this);
+		IExternallyControlledVisitor<? extends ISemanticVisitor> parent = getStackParent();
+		if (parent instanceof AbstractExternallyControlledVisitor){
+			((AbstractExternallyControlledVisitor)parent).removeSuspendedChild(this);
 		}
 		doResumeExecution();
 	}
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	protected void suspendForControl() {
-		AbstractExternallyControlledVisitor<? extends ISemanticVisitor> parent = getStackParent();
-		if (parent  != null){
-			parent.addSuspendedChild(this);
+		IExternallyControlledVisitor<? extends ISemanticVisitor> parent = getStackParent();
+		if (parent instanceof AbstractExternallyControlledVisitor){
+			((AbstractExternallyControlledVisitor)parent).addSuspendedChild(this);
 		}
 		controller.suspendForControl(this);
 	}

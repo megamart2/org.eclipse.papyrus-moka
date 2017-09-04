@@ -47,7 +47,7 @@ public class ExternallyControlledActivityEdgeInstance extends AbstractExternally
 
 	@SuppressWarnings("unchecked")
 	@Override
-	protected AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent() {
+	public AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent() {
 		//TODO to be implemented
 		return null;
 	}

@@ -63,7 +63,7 @@ public abstract class AbstractExternallyControlledActionActivation<T extends IAc
 
 	@SuppressWarnings("unchecked")
 	@Override
-	protected AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent() {
+	public AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent() {
 		IActivityExecution execution = getActivityExecution();
 		if (execution instanceof  AbstractExternallyControlledVisitor<? >){
 			return (AbstractExternallyControlledVisitor<? extends ISemanticVisitor>) execution;
@@ -71,6 +71,8 @@ public abstract class AbstractExternallyControlledActionActivation<T extends IAc
 		
 		return null;
 	}
+	
+
 	
 
 

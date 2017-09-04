@@ -58,12 +58,12 @@ public class ExternallyControlledActivityExecution extends AbstractExternallyCon
 	protected AbstractExternallyControlledVisitor<? extends ISemanticVisitor> stackParent;
 
 	@Override
-	protected AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent() {
+	public AbstractExternallyControlledVisitor<? extends ISemanticVisitor> getStackParent() {
 		return stackParent;
 	}
 	
 	//This operation is normally called by the ExternallyControlledCallActionActivation which created this execution
-	protected void setStackParent(AbstractExternallyControlledVisitor<? extends ISemanticVisitor> parent) {
+	public void setStackParent(AbstractExternallyControlledVisitor<? extends ISemanticVisitor> parent) {
 		this.stackParent = parent;
 	}
 
@@ -76,6 +76,8 @@ public class ExternallyControlledActivityExecution extends AbstractExternallyCon
 		// When this is complete, copy the values on the tokens offered by
 		// output parameter nodes to the corresponding output parameters.
 		Activity activity = (Activity) (this.getTypes().get(0));
+	
+		
 		Debug.println("[execute] Activity " + activity.getName() + "...");
 		// Debug.println("[execute] context = " + this.context.objectId());
 		Debug.println("[event] Execute activity=" + activity.getName());

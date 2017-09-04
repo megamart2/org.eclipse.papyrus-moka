@@ -13,16 +13,20 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.externalcontrol.controller;
 
+import java.util.List;
+
 import org.eclipse.papyrus.moka.externalcontrol.advice.IControllerAdvice;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 
-public interface IExternallyControlledVisitor<T extends ISemanticVisitor> {
+public interface IExternallyControlledVisitor<T extends ISemanticVisitor> extends ISemanticVisitor{
 	
 	public boolean isExecutionAllowed();
 	
 	public void doExecute();
 	
 	public void registerAdvice(IControllerAdvice advice);
+	
+	public List<IControllerAdvice> getRegisteredAdvices();
 	
 	public T getDelegatedVisitor();
 	
@@ -31,4 +35,5 @@ public interface IExternallyControlledVisitor<T extends ISemanticVisitor> {
 	public void setController(ExternalController controller);
 
 	public ControlledVisitorStep getState();
-}
+	
+	}

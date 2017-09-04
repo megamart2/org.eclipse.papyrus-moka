@@ -20,6 +20,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.externalcontrol.advice.IControllerAdvice;
 import org.eclipse.papyrus.moka.externalcontrol.advice.IControllerAdviceFactory;
 import org.eclipse.papyrus.moka.externalcontrol.controller.ExternalController;
+import org.eclipse.papyrus.moka.externalcontrol.controller.IExternallyControlledVisitor;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.IExecutionFactory;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
@@ -71,23 +72,34 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 		
 		
 		ISemanticVisitor delegatedVisitor = delegatedExecutionFactory.instantiateVisitor(element);
-
+		IExternallyControlledVisitor<? extends ISemanticVisitor> controlledVisitor= null;
+		
 		List<IControllerAdvice> adviceList = getControllerAdvices(element, delegatedVisitor);
 		if(delegatedVisitor instanceof ActivityExecution){
-			return new ExternallyControlledActivityExecution((ActivityExecution)delegatedVisitor, controller, adviceList);
+			
+			controlledVisitor= new ExternallyControlledActivityExecution((ActivityExecution)delegatedVisitor, controller, adviceList);
 		}else if (delegatedVisitor instanceof CallActionActivation) {
-			return new ExternallyControlledCallActionActivation((CallActionActivation) delegatedVisitor, controller, adviceList);
+			controlledVisitor= new ExternallyControlledCallActionActivation((CallActionActivation) delegatedVisitor, controller, adviceList);
 		}
 		
-		if (!adviceList.isEmpty()) {
+		if (!adviceList.isEmpty()&& controlledVisitor == null) {
 			if (delegatedVisitor instanceof ActivityEdgeInstance) {
-				return new ExternallyControlledActivityEdgeInstance((IActivityEdgeInstance) delegatedVisitor, controller, adviceList);
+				controlledVisitor= new ExternallyControlledActivityEdgeInstance((IActivityEdgeInstance) delegatedVisitor, controller, adviceList);
 
 			} else if (delegatedVisitor instanceof ActionActivation) {
-				return new ExternallyControlledActionActivation((ActionActivation) delegatedVisitor, controller, adviceList);
+				controlledVisitor= new ExternallyControlledActionActivation((ActionActivation) delegatedVisitor, controller, adviceList);
 			}
 		}
 
+		if (controlledVisitor != null) {
+			for (IControllerAdvice advice : adviceList) {
+				advice.setControlledVisitor(controlledVisitor);
+			}
+			
+			return  controlledVisitor;
+		}
+		
+		
 		return delegatedVisitor;
 	}
 
