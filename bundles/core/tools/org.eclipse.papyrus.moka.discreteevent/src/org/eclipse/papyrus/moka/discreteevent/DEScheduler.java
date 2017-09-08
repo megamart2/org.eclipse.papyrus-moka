@@ -107,7 +107,9 @@ public class DEScheduler {
 	}
 	
 	public void pushEvent(Event event, double absoluteDate) {
-		this.pushPullStrategy.pushEvent(event, absoluteDate);
+		if(this.currentTime < absoluteDate) {
+			this.pushPullStrategy.pushEvent(event, absoluteDate);
+		}
 	}
 	
 	public void pushPreRunAction(Action action) {

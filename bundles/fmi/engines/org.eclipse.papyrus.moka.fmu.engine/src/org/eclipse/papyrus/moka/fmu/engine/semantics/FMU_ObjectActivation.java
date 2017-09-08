@@ -14,9 +14,9 @@
 
 package org.eclipse.papyrus.moka.fmu.engine.semantics;
 
-import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.CommonBehavior.SM_ObjectActivation;
+import org.eclipse.papyrus.moka.timedfuml.semantics.CommonBehaviors.TimedObjectActivation;
 
-public class FMU_ObjectActivation extends SM_ObjectActivation{
+public class FMU_ObjectActivation extends TimedObjectActivation{
 
 	public void register(FMUChangeEventOccurence changeEventOccurrence) {
 		// Add the change event occurrence at the end of the event pool.

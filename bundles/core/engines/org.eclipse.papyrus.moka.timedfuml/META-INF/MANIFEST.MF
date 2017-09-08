@@ -8,11 +8,16 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
  org.eclipse.papyrus.moka.discreteevent;bundle-version="3.0.0";visibility:=reexport,
  org.eclipse.papyrus.moka;bundle-version="2.0.100",
  org.eclipse.papyrus.moka.fuml.statemachines;bundle-version="2.0.0";visibility:=reexport,
- org.aspectj.runtime;bundle-version="[1.8.10,2.0.0)"
+ org.aspectj.runtime;bundle-version="[1.8.10,2.0.0)",
+ org.eclipse.uml2.uml,
+ org.eclipse.papyrus.moka.timedfuml.interfaces;bundle-version="1.0.0";visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.timedfuml,
  org.eclipse.papyrus.moka.timedfuml.actions,
  org.eclipse.papyrus.moka.timedfuml.control.queue,
- org.eclipse.papyrus.moka.timedfuml.semantics
+ org.eclipse.papyrus.moka.timedfuml.semantics,
+ org.eclipse.papyrus.moka.timedfuml.semantics.CommonBehaviors,
+ org.eclipse.papyrus.moka.timedfuml.semantics.Loci,
+ org.eclipse.papyrus.moka.timedfuml.semantics.StructuredClassifiers
 Bundle-Vendor: Eclipse Modeling Project

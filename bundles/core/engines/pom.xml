@@ -28,6 +28,7 @@
 		<module>org.eclipse.papyrus.moka.fuml.statemachines.interfaces</module>
 		<module>org.eclipse.papyrus.moka.async.fuml</module>
 		<module>org.eclipse.papyrus.moka.timedfuml</module>
+		<module>org.eclipse.papyrus.moka.timedfuml.interfaces</module>
 	</modules>
 	
 </project>

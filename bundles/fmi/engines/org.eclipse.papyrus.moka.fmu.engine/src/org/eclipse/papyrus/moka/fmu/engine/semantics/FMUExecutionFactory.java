@@ -14,11 +14,11 @@
 package org.eclipse.papyrus.moka.fmu.engine.semantics;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
-import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_ExecutionFactory;
+import org.eclipse.papyrus.moka.timedfuml.semantics.Loci.TimedExecutionFactory;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.Element;
 
-public class FMUExecutionFactory extends Timed_ExecutionFactory {
+public class FMUExecutionFactory extends TimedExecutionFactory {
 
 	@Override
 	public ISemanticVisitor instantiateVisitor(Element element) {

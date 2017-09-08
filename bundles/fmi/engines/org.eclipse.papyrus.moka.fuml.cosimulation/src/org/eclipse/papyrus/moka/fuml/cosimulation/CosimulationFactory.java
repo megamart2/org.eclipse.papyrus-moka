@@ -15,7 +15,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.fuml.cosimulation.semantics.CosimulationAddStructuralFeatureValueActionActivation;
 import org.eclipse.papyrus.moka.fuml.cosimulation.semantics.CosimulationInstanceValueEvaluation;
 import org.eclipse.papyrus.moka.fuml.cosimulation.semantics.CosimulationReadStructuralFeatureActionActivation;
-import org.eclipse.papyrus.moka.timedfuml.semantics.Timed_ExecutionFactory;
+import org.eclipse.papyrus.moka.timedfuml.semantics.Loci.TimedExecutionFactory;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.InstanceValue;
@@ -25,7 +25,7 @@ import org.eclipse.uml2.uml.ReadStructuralFeatureAction;
  * @author Sahar Guermazi (CEA-LIST)
  *
  */
-public class CosimulationFactory extends Timed_ExecutionFactory {
+public class CosimulationFactory extends TimedExecutionFactory {
 
 	@Override
 	public ISemanticVisitor instantiateVisitor(Element element) {

@@ -97,7 +97,9 @@ public class FMUChangeEventOccurence extends EventOccurrence {
 		// Register the change event occurrence in the event pool. It is added 
 		// to the event pool after any other event already registered in the pool.
 		FMU_ObjectActivation objectActivation = (FMU_ObjectActivation) this.target.getReferent().getObjectActivation();
-		objectActivation.register(this);
+		if(objectActivation != null) {
+			objectActivation.register(this);
+		}
 	}
 	
 	protected Property getObservedProperty(ChangeEvent event){
