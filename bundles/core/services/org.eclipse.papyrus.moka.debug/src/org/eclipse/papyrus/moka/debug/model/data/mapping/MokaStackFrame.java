@@ -24,9 +24,8 @@ import org.eclipse.papyrus.moka.debug.engine.MokaDebugElement;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.ExecutionContextVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.SuspensionPointVariableAdapter;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.utils.helper.semantics.SemanticHelper;
 
 public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
@@ -158,24 +157,7 @@ public class MokaStackFrame extends MokaDebugElement implements IStackFrame {
 
 	@Override
 	public String getName() throws DebugException {
-		String name = "undefined";
-		ISemanticVisitor visitor = this.owner.getSuspensionPoint();
-		if (visitor != null) {
-			if (visitor instanceof IActivityEdgeInstance) {
-				if (((IActivityEdgeInstance) visitor).getEdge() != null) {
-					name = ((IActivityEdgeInstance) visitor).getEdge().getName() + " [Activity Edge]";
-				} else {
-					name += " [Activity Edge]";
-				}
-			} else if (visitor instanceof IActivityNodeActivation) {
-				if (((IActivityNodeActivation) visitor).getNode() != null) {
-					name = ((IActivityNodeActivation) visitor).getNode().getName() + " [Activity Node]";
-				} else {
-					name += " [Activity Node]";
-				}
-			}
-		}
-		return name;
+		return SemanticHelper.getName(this.owner.getSuspensionPoint());
 	}
 
 	@Override

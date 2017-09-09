@@ -112,7 +112,7 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 				this.suspensionRequired = false;
 				try {
 					IAnimation animationService = DebugServiceHelper.INSTANCE.getAnimationService();
-					EObject visitedModelElement = SemanticHelper.getInstance().getModelElement(visitor);
+					EObject visitedModelElement = SemanticHelper.getModelElement(visitor);
 					if (animationService != null) {
 						animationService.renderAs(visitedModelElement, this.object, AnimationKind.SUSPENDED);
 					}

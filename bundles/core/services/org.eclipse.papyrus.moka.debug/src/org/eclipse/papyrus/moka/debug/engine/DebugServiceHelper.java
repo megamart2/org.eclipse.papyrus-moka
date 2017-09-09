@@ -21,13 +21,12 @@ import org.eclipse.debug.core.model.IBreakpoint;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.papyrus.moka.animation.engine.rendering.IAnimation;
 import org.eclipse.papyrus.moka.debug.breakpoint.MokaBreakpoint;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.IMokaService;
 import org.eclipse.papyrus.moka.service.MokaServiceRegistry;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
+import org.eclipse.papyrus.moka.utils.helper.semantics.SemanticHelper;
 import org.eclipse.uml2.uml.Class;
 import org.eclipse.uml2.uml.Classifier;
 
@@ -54,12 +53,7 @@ public class DebugServiceHelper {
 		boolean breakpointExist = false;
 		IBreakpointManager breakpointManager = DebugPlugin.getDefault().getBreakpointManager();
 		IBreakpoint[] breakpoints = breakpointManager.getBreakpoints(MokaConstants.MOKA_DEBUG_MODEL_ID);
-		EObject visitedModelElement = null;
-		if (visitor instanceof IActivityNodeActivation) {
-			visitedModelElement = ((IActivityNodeActivation) visitor).getNode();
-		} else if (visitor instanceof IActivityEdgeInstance) {
-			visitedModelElement = ((IActivityEdgeInstance) visitor).getEdge();
-		}
+		EObject visitedModelElement = SemanticHelper.getModelElement(visitor);
 		if (visitedModelElement != null) {
 			int i = 0;
 			while (!breakpointExist && i < breakpoints.length) {

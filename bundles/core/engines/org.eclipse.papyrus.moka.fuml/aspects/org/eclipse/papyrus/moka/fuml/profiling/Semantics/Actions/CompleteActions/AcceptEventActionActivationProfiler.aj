@@ -26,6 +26,6 @@ public aspect AcceptEventActionActivationProfiler extends SemanticVisitorProfile
 		call(* IAcceptEventActionActivation.accept(IEventOccurrence));
 	
 	before(IAcceptEventActionActivation activation, IEventOccurrence eventOccurrence): accept(activation, eventOccurrence){
-		this.fireNodeLeft(activation);
+		this.leave(activation);
 	}
 }

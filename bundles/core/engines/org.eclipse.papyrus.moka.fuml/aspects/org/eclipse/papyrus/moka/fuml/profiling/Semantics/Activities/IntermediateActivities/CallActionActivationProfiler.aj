@@ -33,7 +33,7 @@ public aspect CallActionActivationProfiler extends SemanticVisitorProfiler{
 	after(ICallActionActivation activation, IExecution execution) : removeCallExecution(activation, execution){
 		CallAction callAction = (CallAction) activation.getNode();
 		if(callAction.isSynchronous()){
-			this.fireNodeLeft(activation);
+			this.leave(activation);
 		}
 	}
 }

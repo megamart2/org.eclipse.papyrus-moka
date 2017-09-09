@@ -19,6 +19,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineSemanticVisitor;
 import org.eclipse.papyrus.moka.service.AbstractMokaService;
 import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
 
@@ -36,15 +37,20 @@ public class DebugService extends AbstractMokaService implements IMokaExecutionL
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {
 		if (!this.debugTarget.isDisconnected()) {
 			if (nodeVisitor instanceof IActivityNodeActivation
-					|| nodeVisitor instanceof IActivityEdgeInstance) {
+					|| nodeVisitor instanceof IActivityEdgeInstance
+					|| nodeVisitor instanceof IStateMachineSemanticVisitor) {
 				IObject_ object = null;
-				if (nodeVisitor instanceof IActivityNodeActivation) {
-					if (((IActivityNodeActivation) nodeVisitor).getGroup() != null) {
-						object = ((IActivityNodeActivation) nodeVisitor).getExecutionContext();
-					}
-				} else {
-					if (((IActivityEdgeInstance) nodeVisitor).getSource().getGroup() != null) {
-						object = ((IActivityEdgeInstance) nodeVisitor).getSource().getExecutionContext();
+				if(nodeVisitor instanceof IStateMachineSemanticVisitor) {
+					object = ((IStateMachineSemanticVisitor)nodeVisitor).getExecutionContext();
+				}else {
+					if (nodeVisitor instanceof IActivityNodeActivation) {
+						if (((IActivityNodeActivation) nodeVisitor).getGroup() != null) {
+							object = ((IActivityNodeActivation) nodeVisitor).getExecutionContext();
+						}
+					} else {
+						if (((IActivityEdgeInstance) nodeVisitor).getSource().getGroup() != null) {
+							object = ((IActivityEdgeInstance) nodeVisitor).getSource().getExecutionContext();
+						}
 					}
 				}
 				if (object != null) {

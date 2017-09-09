@@ -32,7 +32,7 @@ public aspect ActivityEdgeInstanceProfiler extends SemanticVisitorProfiler{
 		call(* IActivityEdgeInstance.sendOffer(List<IToken>));
 	
 	before(IActivityEdgeInstance edgeInstance, List<IToken> tokens): sendOffer(edgeInstance, tokens){
-		this.fireNodeVisited(edgeInstance);
+		this.visit(edgeInstance);
 	}
 	
 	pointcut takeOfferedTokens(IActivityEdgeInstance edgeInstance):
@@ -41,7 +41,7 @@ public aspect ActivityEdgeInstanceProfiler extends SemanticVisitorProfiler{
 	
 	after(IActivityEdgeInstance edgeInstance) returning(List<IToken> tokens): takeOfferedTokens(edgeInstance){
 		if(!tokens.isEmpty()){
-			this.fireNodeLeft(edgeInstance);
+			this.leave(edgeInstance);
 		}
 	}
 	
@@ -52,7 +52,7 @@ public aspect ActivityEdgeInstanceProfiler extends SemanticVisitorProfiler{
 	
 	after(IActivityEdgeInstance edgeInstance, Integer maxCount) returning(List<IToken> tokens): takeOfferedTokensMax(edgeInstance, maxCount){
 		if(!edgeInstance.hasOffer()){
-			this.fireNodeLeft(edgeInstance);
+			this.leave(edgeInstance);
 		}
 	}
 }

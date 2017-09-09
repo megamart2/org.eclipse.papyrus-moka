@@ -301,7 +301,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 
 	@Override
 	public String getName() throws DebugException {
-		return "Moka Execution [fUML Application]";
+		return "Moka Execution";
 	}
 
 	@Override

@@ -15,8 +15,11 @@
 package org.eclipse.papyrus.moka.fuml.profiling.Semantics.Loci;
 
 
-import org.eclipse.papyrus.moka.fuml.profiling.MokaObservable;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.OperationCanceledException;
+import org.eclipse.papyrus.moka.engine.MokaExecutionEngineJob;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.profiling.MokaObservable;
 import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
 
 public abstract aspect SemanticVisitorProfiler extends MokaObservable{
@@ -33,13 +36,29 @@ public abstract aspect SemanticVisitorProfiler extends MokaObservable{
 	
 	after(ISemanticVisitor visitor) : endIsolation(visitor) {} 
 	
-	public void fireNodeVisited(ISemanticVisitor visitor){
+	public void visit(ISemanticVisitor visitor) {
+		IProgressMonitor monitor = MokaExecutionEngineJob.getInstance().getMonitor();
+		if (monitor != null && monitor.isCanceled()) {
+			throw new OperationCanceledException();
+		}
+		this.fireNodeVisited(visitor);
+	}
+	
+	public void leave(ISemanticVisitor visitor) {
+		IProgressMonitor monitor = MokaExecutionEngineJob.getInstance().getMonitor();
+		if (monitor != null && monitor.isCanceled()) {
+			throw new OperationCanceledException();
+		}
+		this.fireNodeLeft(visitor);
+	}
+	
+	protected void fireNodeVisited(ISemanticVisitor visitor){
 		for(IMokaExecutionListener listener: this.listeners)
 			listener.nodeVisited(visitor);
 		
 	}
 	
-	public void fireNodeLeft(ISemanticVisitor visitor){
+	protected void fireNodeLeft(ISemanticVisitor visitor){
 		for(IMokaExecutionListener listener: this.listeners)
 			listener.nodeLeft(visitor);
 	}
