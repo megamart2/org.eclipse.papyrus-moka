@@ -59,7 +59,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5RLcr0a9EeWyAIlWLcMt6g"/>
       </children>
       <element xmi:type="uml:Class" href="SimpleMasterTemplate.uml#_5LgSYEa9EeWyAIlWLcMt6g"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5RLcsEa9EeWyAIlWLcMt6g" x="20" y="-20" width="1221" height="801"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_5RLcsEa9EeWyAIlWLcMt6g" x="80" y="60" width="1221" height="801"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_5RLcsUa9EeWyAIlWLcMt6g" type="StereotypeComment">
       <styles xmi:type="notation:TitleStyle" xmi:id="_5RLcska9EeWyAIlWLcMt6g" showTitle="true"/>
@@ -329,7 +329,6 @@
     <styles xmi:type="notation:DiagramStyle" xmi:id="_fFHStCipEeaB5YKpIQCuHQ"/>
     <styles xmi:type="style_1:PapyrusDiagramStyle" xmi:id="_WhGCQDsNEeeDkKp3BvpalA">
       <owner xmi:type="uml:Activity" href="SimpleMasterTemplate.uml#_ZktV4O9VEeWQ9clF5mNilw"/>
-      <diagramKind xmi:type="gmfdiagrepresentation:PapyrusDiagram" href="platform:/plugin/org.eclipse.papyrus.uml.architecture/model/uml.architecture#_UzcgsHDtEeWh-MssWmCB_A"/>
     </styles>
     <element xmi:type="uml:Activity" href="SimpleMasterTemplate.uml#_ZktV4O9VEeWQ9clF5mNilw"/>
     <edges xmi:type="notation:Connector" xmi:id="_otMAICipEeaB5YKpIQCuHQ" type="ControlFlow_Edge" source="_mkJQACipEeaB5YKpIQCuHQ" target="_i2NlsCipEeaB5YKpIQCuHQ">
