@@ -76,8 +76,8 @@ public class RealValue extends PrimitiveValue implements IRealValue {
 					positiveValue = positiveValue * 10;
 					exponent = exponent - 1;
 				}
-			} else if (positiveValue > 1) {
-				while (positiveValue > 1) {
+			} else if (positiveValue >= 1) {
+				while (positiveValue >= 1) {
 					positiveValue = positiveValue / 10;
 					exponent = exponent + 1;
 				}
