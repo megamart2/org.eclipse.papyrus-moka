@@ -66,15 +66,17 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 	public List<IActivityNodeActivation> suspendedActivations = new ArrayList<IActivityNodeActivation>();
 
 	public void run(List<IActivityNodeActivation> activations) {
-		// Run the given node activations and then (concurrently) send an offer
-		// to all activations for nodes with no incoming edges within the given
-		// set.
+		// Run the given node activations. 
+		// Then concurrently send offers to all input activity parameter node activations (if any). 
+		// Finally, concurrently send offers to all activations of other kinds of nodes that have 
+		// no incoming edges with the given set (if any).
 		for (int i = 0; i < activations.size(); i++) {
 			IActivityNodeActivation activation = activations.get(i);
 			activation.run();
 		}
 		Debug.println("[run] Checking for enabled nodes...");
-		List<IActivityNodeActivation> enabledActivations = new ArrayList<IActivityNodeActivation>();
+		List<IActivityNodeActivation> enabledParameterNodeActivations = new ArrayList<IActivityNodeActivation>();
+		List<IActivityNodeActivation> enabledOtherActivations = new ArrayList<IActivityNodeActivation>();
 		for (int i = 0; i < activations.size(); i++) {
 			IActivityNodeActivation activation = activations.get(i);
 			Debug.println("[run] Checking node " + activation.getNode().getName() + "...");
@@ -94,14 +96,23 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 				}
 				if (isEnabled) {
 					Debug.println("[run] Node " + activation.getNode().getName() + " is enabled.");
-					enabledActivations.add(activation);
+					if (activation instanceof ActivityParameterNodeActivation) {
+					    enabledParameterNodeActivations.add(activation);
+					} else {
+					    enabledOtherActivations.add(activation);
+					}
 				}
 			}
 		}
+		// *** Send offers to all enabled activity parameter nodes concurrently. ***
+		for (Iterator<IActivityNodeActivation> i = enabledParameterNodeActivations.iterator(); i.hasNext();) {
+		    IActivityNodeActivation activation = (IActivityNodeActivation) i.next();
+		    activation.receiveOffer();
+		}
 		// Debug.println("[run] " + enabledActivations.size() +
 		// " node(s) are enabled.");
-		// *** Send offers to all enabled nodes concurrently. ***
-		for (Iterator<IActivityNodeActivation> i = enabledActivations.iterator(); i.hasNext();) {
+		// *** Send offers to all other enabled nodes concurrently. ***
+		for (Iterator<IActivityNodeActivation> i = enabledOtherActivations.iterator(); i.hasNext();) {
 			IActivityNodeActivation activation = i.next();
 			Debug.println("[run] Sending offer to node " + activation.getNode().getName() + ".");
 			activation.receiveOffer();
