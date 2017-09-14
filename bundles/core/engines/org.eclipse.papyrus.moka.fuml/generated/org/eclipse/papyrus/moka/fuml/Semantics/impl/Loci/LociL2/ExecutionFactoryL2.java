@@ -36,6 +36,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActiv
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityFinalNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityParameterNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.CentralBufferNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.DecisionNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.FlowFinalNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ForkNodeActivation;
@@ -50,6 +51,7 @@ import org.eclipse.uml2.uml.ActivityParameterNode;
 import org.eclipse.uml2.uml.AddStructuralFeatureValueAction;
 import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.CallOperationAction;
+import org.eclipse.uml2.uml.CentralBufferNode;
 import org.eclipse.uml2.uml.ClearAssociationAction;
 import org.eclipse.uml2.uml.ClearStructuralFeatureAction;
 import org.eclipse.uml2.uml.CreateLinkAction;
@@ -102,7 +104,9 @@ public class ExecutionFactoryL2 extends ExecutionFactoryL1 {
 			visitor = new ForkNodeActivation();
 		} else if (element instanceof DecisionNode) {
 			visitor = new DecisionNodeActivation();
-		} else if (element instanceof InputPin) {
+		} else if(element instanceof CentralBufferNode) {
+			visitor = new CentralBufferNodeActivation();
+		}else if (element instanceof InputPin) {
 			visitor = new InputPinActivation();
 		} else if (element instanceof OutputPin) {
 			visitor = new OutputPinActivation();

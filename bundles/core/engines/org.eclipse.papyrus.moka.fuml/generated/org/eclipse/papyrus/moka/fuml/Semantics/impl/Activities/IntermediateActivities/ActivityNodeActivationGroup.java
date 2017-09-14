@@ -19,13 +19,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.CompleteStructuredActivities.IStructuredActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.ExtraStructuredActivities.IExpansionNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivationGroup;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityParameterNodeActivation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IControlNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IActionActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IPinActivation;
 import org.eclipse.papyrus.moka.fuml.debug.Debug;
 import org.eclipse.uml2.uml.Action;
 import org.eclipse.uml2.uml.ActivityEdge;
@@ -80,7 +81,7 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 		for (int i = 0; i < activations.size(); i++) {
 			IActivityNodeActivation activation = activations.get(i);
 			Debug.println("[run] Checking node " + activation.getNode().getName() + "...");
-			if (activation instanceof IActionActivation | activation instanceof IControlNodeActivation | activation instanceof IActivityParameterNodeActivation) {
+			if (!(activation instanceof IPinActivation |activation instanceof IExpansionNodeActivation)) {
 				boolean isEnabled = this.checkIncomingEdges(activation.getIncomingEdges(), activations);
 				// For an action activation, also consider incoming edges to
 				// input pins

@@ -24,6 +24,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.Repl
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.StartClassifierBehaviorActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.CompleteActions.StartObjectBehaviorActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.CompleteStructuredActivities.ConditionalNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.CompleteStructuredActivities.DataStoreNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.CompleteStructuredActivities.LoopNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.CompleteStructuredActivities.StructuredActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.ExtraStructuredActivities.ExpansionNodeActivation;
@@ -32,6 +33,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL2.ExecutionFactory
 import org.eclipse.uml2.uml.AcceptCallAction;
 import org.eclipse.uml2.uml.AcceptEventAction;
 import org.eclipse.uml2.uml.ConditionalNode;
+import org.eclipse.uml2.uml.DataStoreNode;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.ExpansionNode;
 import org.eclipse.uml2.uml.ExpansionRegion;
@@ -56,7 +58,9 @@ public class ExecutionFactoryL3 extends ExecutionFactoryL2 {
 		// Instantiate a visitor object for the given element (at Conformance
 		// Level 3)
 		ISemanticVisitor visitor = null;
-		if (element instanceof ConditionalNode) {
+		if(element instanceof DataStoreNode) {
+			visitor = new DataStoreNodeActivation();
+		}else if (element instanceof ConditionalNode) {
 			visitor = new ConditionalNodeActivation();
 		} else if (element instanceof LoopNode) {
 			visitor = new LoopNodeActivation();

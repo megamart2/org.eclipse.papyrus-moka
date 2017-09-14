@@ -48,9 +48,9 @@ public abstract class ObjectNodeActivation extends ActivityNodeActivation implem
 
 	@Override
 	public void terminate() {
-		// Remove any offered tokens and terminate.
-		this.clearTokens();
+		// Terminate the node activation and remove any held tokens.
 		super.terminate();
+		this.clearTokens();
 	}
 
 	@Override
