@@ -59,7 +59,11 @@ public class Reference extends StructuredValue implements IReference {
 		// referent as this reference.
 		boolean isEqual = false;
 		if (otherValue instanceof Reference) {
-			isEqual = (((Reference) otherValue).referent == this.referent);
+			if (this.referent == null) {
+				isEqual = ((Reference)otherValue).referent == null;
+			} else {
+				isEqual = this.referent.equals(((Reference) otherValue).referent);
+			}
 		}
 		return isEqual;
 	}

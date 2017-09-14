@@ -140,6 +140,13 @@ public class Object_ extends ExtensionalValue implements IObject_ {
 		}
 		return types;
 	}
+	
+	@Override
+	public Boolean equals(IValue otherValue) {
+		// Test if this object is equal to the otherValue.
+		// To be equal, the otherValue must be the same object as this object.
+		return this == otherValue;
+	}
 
 	public IObjectActivation getObjectActivation() {
 		return this.objectActivation;
