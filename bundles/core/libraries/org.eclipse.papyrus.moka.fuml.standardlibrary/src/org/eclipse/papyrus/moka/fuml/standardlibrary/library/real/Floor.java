@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IIntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
@@ -28,9 +29,9 @@ public class Floor extends OpaqueBehaviorExecution {
 	public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 		try {
 			Double x = ((RealValue) inputParameters.get(0).getValues().get(0)).value;
-			IntegerValue result = new IntegerValue();
-			result.value = (int) Math.floor(x);
-			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Real");
+			IIntegerValue result = new IntegerValue();
+			result.setValue((int)Math.floor(x));
+			result.setType((PrimitiveType) this.locus.getFactory().getBuiltInType("Integer"));
 			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
 			outputParameters.get(0).setValues(outputs);
@@ -41,6 +42,6 @@ public class Floor extends OpaqueBehaviorExecution {
 
 	@Override
 	public IValue new_() {
-		return new Abs();
+		return new Floor();
 	}
 }

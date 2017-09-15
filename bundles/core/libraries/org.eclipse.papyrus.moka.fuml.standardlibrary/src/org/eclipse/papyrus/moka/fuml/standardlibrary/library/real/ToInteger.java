@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.eclipse.papyrus.infra.core.Activator;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IIntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.IntegerValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Classes.Kernel.RealValue;
@@ -29,9 +30,9 @@ public class ToInteger extends OpaqueBehaviorExecution {
 		try {
 			Double x = ((RealValue) inputParameters.get(0).getValues().get(0)).value;
 			String y = x.toString();
-			IntegerValue result = new IntegerValue();
-			result.value = new Integer(y);
-			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Real");
+			IIntegerValue result = new IntegerValue();
+			result.setValue(new Integer(y));
+			result.setType((PrimitiveType) this.locus.getFactory().getBuiltInType("Integer"));
 			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
 			outputParameters.get(0).setValues(outputs);
@@ -42,7 +43,6 @@ public class ToInteger extends OpaqueBehaviorExecution {
 
 	@Override
 	public IValue new_() {
-		// ADDED
 		return new ToInteger();
 	}
 }
