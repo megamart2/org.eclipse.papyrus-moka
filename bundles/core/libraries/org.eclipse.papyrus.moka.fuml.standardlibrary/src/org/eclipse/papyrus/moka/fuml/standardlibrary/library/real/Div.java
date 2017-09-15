@@ -28,12 +28,14 @@ public class Div extends OpaqueBehaviorExecution {
 		try {
 			Double x = ((RealValue) inputParameters.get(0).getValues().get(0)).value;
 			Double y = ((RealValue) inputParameters.get(1).getValues().get(0)).value;
-			RealValue result = new RealValue();
-			result.value = x / y;
-			result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Real");
-			List<IValue> outputs = new ArrayList<IValue>();
-			outputs.add(result);
-			outputParameters.get(0).setValues(outputs);
+			if(y != 0) {
+				RealValue result = new RealValue();
+				result.value = x / y;
+				result.type = (PrimitiveType) this.locus.getFactory().getBuiltInType("Real");
+				List<IValue> outputs = new ArrayList<IValue>();
+				outputs.add(result);
+				outputParameters.get(0).setValues(outputs);
+			}
 		} catch (Exception e) {
 			Activator.log.error("An error occured during the execution of Div " + e.getMessage(), e);
 		}
