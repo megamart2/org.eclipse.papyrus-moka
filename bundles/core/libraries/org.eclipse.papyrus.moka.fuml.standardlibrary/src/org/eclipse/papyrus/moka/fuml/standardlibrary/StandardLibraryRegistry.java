@@ -39,6 +39,8 @@ public class StandardLibraryRegistry extends AbstractOpaqueBehaviorExecutionRegi
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer.Times(), "FoundationalModelLibrary::PrimitiveBehaviors::IntegerFunctions::*");
 			// Abs
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer.Abs(), "FoundationalModelLibrary::PrimitiveBehaviors::IntegerFunctions::Abs");
+			// '/'
+			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer.Div_(), "FoundationalModelLibrary::PrimitiveBehaviors::IntegerFunctions::/");
 			// Div
 			this.registerOpaqueBehaviorExecution(new org.eclipse.papyrus.moka.fuml.standardlibrary.library.integer.Div(), "FoundationalModelLibrary::PrimitiveBehaviors::IntegerFunctions::Div");
 			// Mod
