@@ -29,9 +29,8 @@ public class ToInteger extends OpaqueBehaviorExecution {
 	public void doBody(List<IParameterValue> inputParameters, List<IParameterValue> outputParameters) {
 		try {
 			Double x = ((RealValue) inputParameters.get(0).getValues().get(0)).value;
-			String y = x.toString();
 			IIntegerValue result = new IntegerValue();
-			result.setValue(new Integer(y));
+			result.setValue((int) (x >= 0 ? Math.floor(x) : -Math.floor(Math.abs(x))));
 			result.setType((PrimitiveType) this.locus.getFactory().getBuiltInType("Integer"));
 			List<IValue> outputs = new ArrayList<IValue>();
 			outputs.add(result);
