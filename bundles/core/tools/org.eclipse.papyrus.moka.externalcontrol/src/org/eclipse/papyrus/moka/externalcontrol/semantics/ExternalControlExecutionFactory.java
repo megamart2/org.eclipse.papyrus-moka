@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
 import org.eclipse.papyrus.moka.externalcontrol.advice.IControllerAdvice;
 import org.eclipse.papyrus.moka.externalcontrol.advice.IControllerAdviceFactory;
 import org.eclipse.papyrus.moka.externalcontrol.controller.ExternalController;
@@ -29,8 +30,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.CallAct
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ExecutionFactory;
+import org.eclipse.uml2.uml.CallAction;
+import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.Element;
-
+import org.eclipse.uml2.uml.LoopNode;
+import org.eclipse.uml2.uml.UMLPackage;
 /**
  * @author sr246418
  *
@@ -40,7 +44,8 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 	IExecutionFactory delegatedExecutionFactory;
 	ExternalController controller;
 	List<IControllerAdviceFactory> adviceFactories = new ArrayList<>();
-
+	CS_DefaultConstructStrategy strategy; 
+	
 
 	public ExternalControlExecutionFactory(IExecutionFactory delegatedExecutionFactory, ExternalController controller, IControllerAdviceFactory... adviceFactories) {
 		init(delegatedExecutionFactory, controller, Arrays.asList(adviceFactories));
@@ -65,6 +70,7 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 		for (IControllerAdviceFactory adviceFactory : adviceFactories) {
 			this.adviceFactories.add(adviceFactory);
 		}
+
 	}
 
 	@Override
@@ -72,15 +78,17 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 		
 		
 		ISemanticVisitor delegatedVisitor = delegatedExecutionFactory.instantiateVisitor(element);
+		
 		IExternallyControlledVisitor<? extends ISemanticVisitor> controlledVisitor= null;
 		
 		List<IControllerAdvice> adviceList = getControllerAdvices(element, delegatedVisitor);
 		if(delegatedVisitor instanceof ActivityExecution){
 			
 			controlledVisitor= new ExternallyControlledActivityExecution((ActivityExecution)delegatedVisitor, controller, adviceList);
-		}else if (delegatedVisitor instanceof CallActionActivation) {
+		}else if (delegatedVisitor instanceof CallActionActivation && isNotInLoopNodeTest(element)) {
 			controlledVisitor= new ExternallyControlledCallActionActivation((CallActionActivation) delegatedVisitor, controller, adviceList);
 		}
+
 		
 		if (!adviceList.isEmpty()&& controlledVisitor == null) {
 			if (delegatedVisitor instanceof ActivityEdgeInstance) {
@@ -104,6 +112,21 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 	}
 
 
+	private boolean isNotInLoopNodeTest(Element element) {
+		//LoopNode test is not allowed to be suspended currently
+		if (element instanceof CallAction) {
+			CallAction action = (CallAction)element;
+			if (action.getInStructuredNode() instanceof LoopNode) {
+				LoopNode loopNode = (LoopNode) action.getInStructuredNode();
+				return  (!loopNode.getTests().contains(action));
+			}
+		
+		}
+		return true;
+	}
+
+	
+	
 	private List<IControllerAdvice> getControllerAdvices(Element element, ISemanticVisitor delegatedVisitor) {
 		List<IControllerAdvice> adviceList = new ArrayList<>();
 		for (IControllerAdviceFactory factory : adviceFactories) {
