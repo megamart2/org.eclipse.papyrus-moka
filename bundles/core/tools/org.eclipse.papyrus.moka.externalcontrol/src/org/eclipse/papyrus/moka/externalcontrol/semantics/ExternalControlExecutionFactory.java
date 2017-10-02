@@ -23,18 +23,22 @@ import org.eclipse.papyrus.moka.externalcontrol.advice.IControllerAdviceFactory;
 import org.eclipse.papyrus.moka.externalcontrol.controller.ExternalController;
 import org.eclipse.papyrus.moka.externalcontrol.controller.IExternallyControlledVisitor;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IEvaluation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.IExecutionFactory;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.ActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.BasicActions.CallActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ActivityExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.ExecutionFactory;
+import org.eclipse.uml2.uml.Behavior;
 import org.eclipse.uml2.uml.CallAction;
-import org.eclipse.uml2.uml.CallBehaviorAction;
 import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.LoopNode;
-import org.eclipse.uml2.uml.UMLPackage;
+import org.eclipse.uml2.uml.ValueSpecification;
 /**
  * @author sr246418
  *
@@ -44,7 +48,6 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 	IExecutionFactory delegatedExecutionFactory;
 	ExternalController controller;
 	List<IControllerAdviceFactory> adviceFactories = new ArrayList<>();
-	CS_DefaultConstructStrategy strategy; 
 	
 
 	public ExternalControlExecutionFactory(IExecutionFactory delegatedExecutionFactory, ExternalController controller, IControllerAdviceFactory... adviceFactories) {
@@ -139,5 +142,21 @@ public class ExternalControlExecutionFactory extends ExecutionFactory {
 	}
 
 
+	
+	@Override
+	public IEvaluation createEvaluation(ValueSpecification specification) {
+		return this.delegatedExecutionFactory.createEvaluation(specification);
+	}
+	
+	@Override
+	public IExecution createExecution(Behavior behavior, IObject_ context) {
+		return this.delegatedExecutionFactory.createExecution(behavior, context);
+	}
+	
+	@Override
+	public void setLocus(ILocus locus) {
+		super.setLocus(locus);
+		delegatedExecutionFactory.setLocus(locus);
+	}
 
 }
