@@ -23,6 +23,7 @@ import org.eclipse.nebula.visualization.xygraph.figures.IXYGraph;
 import org.eclipse.nebula.visualization.xygraph.figures.ToolbarArmedXYGraph;
 import org.eclipse.nebula.visualization.xygraph.figures.XYGraph;
 import org.eclipse.papyrus.moka.xygraph.mapping.common.XYGraphCoordinator;
+import org.eclipse.papyrus.moka.xygraph.mapping.writing.impl.MouseWheelZoomer;
 import org.eclipse.papyrus.moka.xygraph.model.xygraph.XYGraphDescriptor;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Canvas;
@@ -80,13 +81,17 @@ public class XYGraphEditorPart extends EditorPart implements PropertyChangeListe
 		Canvas canvas = new Canvas(parent, SWT.NONE);
 		
 		LightweightSystem lws = new LightweightSystem(canvas);
-		lws.setContents(buildGraphFromModel());
+		lws.setContents(buildGraphFromModel(canvas));
 	}
 	
-	protected ToolbarArmedXYGraph buildGraphFromModel(){
+	protected ToolbarArmedXYGraph buildGraphFromModel(Canvas canvas){
 		IXYGraph xyGraph = coordinator.buildXYGraph();
+		
 		xyGraph.addPropertyChangeListener(IXYGraph.PROPERTY_CONFIG, this);
 		xyGraph.addPropertyChangeListener(IXYGraph.PROPERTY_ZOOMTYPE, this);
+
+		canvas.addMouseWheelListener(new MouseWheelZoomer(xyGraph));
+		
 		return new ToolbarArmedXYGraph(xyGraph);
 	}
 

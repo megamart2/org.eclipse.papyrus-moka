@@ -166,4 +166,5 @@ public class LightDataProvider extends AbstractDataProvider {
 	public TraceDataBounds getBounds() {
 		return bounds;
 	}
+
 }

@@ -193,7 +193,7 @@ public class XYGraphCoordinator{
 		
 		//Update the range in the axis?
 		factory.getAxisUpdateStrategy().updateAxisDescriptor(axis, graphMap);
-		System.out.println("Updated axis Range: " + aDesc.getRangeLower() + ", " + aDesc.getRangeUpper());
+		//System.out.println("Updated axis Range: " + aDesc.getRangeLower() + ", " + aDesc.getRangeUpper());
 	}
 
 	public void dispose() {
