@@ -20,6 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.papyrus.moka.ui.table.instancespecification.util.InstanceSpecificationTableUtil;
 import org.eclipse.papyrus.uml.nattable.manager.axis.AbstractUMLSynchronizedOnFeatureAxisManager;
@@ -29,7 +30,7 @@ import org.eclipse.uml2.uml.UMLPackage;
 
 public class InstanceSpecificationRowAxisManager extends AbstractUMLSynchronizedOnFeatureAxisManager {
 
-	private Map<Slot, String> slotToNameMap = null;
+	protected Map<Slot, String> slotToNameMap = null;
 
 	@Override
 	protected List<Object> getFeaturesValue() {
@@ -59,9 +60,31 @@ public class InstanceSpecificationRowAxisManager extends AbstractUMLSynchronized
 	protected Collection<EStructuralFeature> getListenFeatures() {
 		Collection<EStructuralFeature> listenedFeatures = super.getListenFeatures();
 		listenedFeatures.add(UMLPackage.eINSTANCE.getSlot_Value());
+		listenedFeatures.add(UMLPackage.eINSTANCE.getInstanceSpecification_Slot());
 		return listenedFeatures;
 	}
 
+	
+	@Override
+	protected void featureValueHasChanged(Notification notification) {
+		//we need to rebuild completely the instance tree if a slot is removed or added
+		switch (notification.getEventType()) {
+			case Notification.ADD:
+			case Notification.ADD_MANY :
+			case Notification.REMOVE:
+			case Notification.REMOVE_MANY :
+				this.managedObject.clear();
+				this.managedObject.addAll(getFeaturesValue());
+				getTableManager().updateAxisContents(getRepresentedContentProvider());
+				break;
+			default :
+				super.featureValueHasChanged(notification);
+				break;
+				
+		}
+		
+		
+	}
 	
 	
 	public Map<Slot, String> getSlotToNameMap() {
@@ -70,7 +93,7 @@ public class InstanceSpecificationRowAxisManager extends AbstractUMLSynchronized
 		return slotToNameMap;
 	}
 
-	private void updateSlotToNameMap() {
+	protected void updateSlotToNameMap() {
 		if (this.getTableContext() instanceof InstanceSpecification) {
 			InstanceSpecification contextInstance = (InstanceSpecification) this.getTableContext();
 			slotToNameMap = InstanceSpecificationTableUtil.collectSlotsAndNames(contextInstance);

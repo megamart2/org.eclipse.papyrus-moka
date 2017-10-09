@@ -23,3 +23,5 @@ Require-Bundle: org.eclipse.papyrus.infra.properties;bundle-version="1.2.0",
  org.eclipse.papyrus.infra.services.validation;bundle-version="3.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
+Export-Package: org.eclipse.papyrus.moka.ui.table.instancespecification,
+ org.eclipse.papyrus.moka.ui.table.instancespecification.util
