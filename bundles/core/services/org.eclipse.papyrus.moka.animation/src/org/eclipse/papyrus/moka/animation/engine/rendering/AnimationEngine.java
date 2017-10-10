@@ -284,4 +284,30 @@ public class AnimationEngine implements IRenderingEngine {
 			this.modelElementMarkers.get(modelElement).clear();
 		}
 	}
+
+	@Override
+	public void renderAs(EObject modelElement, IObject_ object, AnimationKind targetStyle) {
+		// Apply the style  to model element if the context is allowed to perform animation.
+		this.removeRenderingRules(modelElement);
+		this.startRendering(modelElement, object, targetStyle);
+	}
+
+	@Override
+	public void renderAs(EObject modelElement, IObject_ object, AnimationKind sourceStyle, AnimationKind targetStyle,
+			int duration) {
+		// Apply the source style to model element during the specified duration. As soon as this period of time as elapsed then
+		// the target style is applied to the model element.
+		this.removeRenderingRules(modelElement);
+		this.startRendering(modelElement, object, sourceStyle);
+		if(duration >= 25){	
+			try {
+				Thread.sleep(duration);
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+		this.stopRendering(modelElement, object, sourceStyle);
+		this.startRendering(modelElement, object, targetStyle);
+		
+	}
 }

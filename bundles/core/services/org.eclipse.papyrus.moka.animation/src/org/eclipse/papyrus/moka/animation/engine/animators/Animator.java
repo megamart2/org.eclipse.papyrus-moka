@@ -11,20 +11,27 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.animation.engine.animators;
 
-import org.eclipse.emf.ecore.EObject;
+import java.util.List;
+
+import org.eclipse.papyrus.moka.animation.engine.animators.actions.DerivedAnimationAction;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationEngine;
-import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationKind;
-import org.eclipse.papyrus.moka.animation.engine.rendering.IAnimation;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
 
-public abstract class Animator implements IMokaExecutionListener, IAnimation{
+public abstract class Animator implements IMokaExecutionListener{
 
+	// The animation engine associated to the animator
 	protected AnimationEngine engine;
 	
+	// The priority of this animator (used to resolve conflicts
+	// in case two animator can be elected to animate the same type
+	// of element).
 	protected int priority;
+	
+	// The list of actions to be executed in addition to the
+	// animation an element type
+	protected List<DerivedAnimationAction> derivedAnimationAction;
 	
 	public AnimationEngine getAnimationEngine(){
 		return this.engine;
@@ -42,7 +49,55 @@ public abstract class Animator implements IMokaExecutionListener, IAnimation{
 		this.priority = priority;
 	}
 	
+	public void setDerivedAnimationAction(List<DerivedAnimationAction> derivedAnimationActions) {
+		this.derivedAnimationAction = derivedAnimationActions;
+	}
+	
+	public List<DerivedAnimationAction> getDerivedAnimationAction(){
+		return this.derivedAnimationAction;
+	}
+	
+	// Constrain the set of element type that can be animated by
+	// this animator
 	public abstract boolean accept(ISemanticVisitor visitor);
+	
+	@Override
+	public void nodeVisited(ISemanticVisitor nodeVisitor) {
+		// Apply PRE and POST actions attached to the animator when
+		// an acceptable node is visited.
+		for(DerivedAnimationAction derivedAction : this.derivedAnimationAction) {
+			if(derivedAction.accept(nodeVisitor)) {
+				derivedAction.preVisitAction(this.engine, nodeVisitor);
+			}
+		}
+		this.nodeVisited_(nodeVisitor);
+		for(DerivedAnimationAction derivedAction : this.derivedAnimationAction) {
+			if(derivedAction.accept(nodeVisitor)) {
+				derivedAction.postVisitAction(this.engine, nodeVisitor);
+			}
+		}
+	}
+	
+	public abstract void nodeVisited_(ISemanticVisitor nodeVisitor);
+	
+	@Override
+	public final void nodeLeft(ISemanticVisitor nodeVisitor) {
+		// Apply PRE and POST actions attached to the animator when
+		// an acceptable node is left.
+		for(DerivedAnimationAction derivedAction : this.derivedAnimationAction) {
+			if(derivedAction.accept(nodeVisitor)) {
+				derivedAction.preLeftAction(this.engine, nodeVisitor);
+			}
+		}
+		this.nodeLeft_(nodeVisitor);
+		for(DerivedAnimationAction derivedAction : this.derivedAnimationAction) {
+			if(derivedAction.accept(nodeVisitor)) {
+				derivedAction.postLeftAction(this.engine, nodeVisitor);
+			}
+		}
+	}
+	
+	public abstract void nodeLeft_(ISemanticVisitor nodeVisitor);
 	
 	@Override
 	public void valueCreated(IValue value) {
@@ -52,30 +107,6 @@ public abstract class Animator implements IMokaExecutionListener, IAnimation{
 	@Override
 	public void valueDestroyed(IValue value) {
 		// Do nothing
-	}
-	
-	@Override
-	public void renderAs(EObject modelElement, IObject_ object, AnimationKind targetStyle) {
-		// Apply the style  to model element if the context is allowed to perform animation.
-		this.engine.removeRenderingRules(modelElement);
-		this.engine.startRendering(modelElement, object, targetStyle);
-	}
-
-	@Override
-	public void renderAs(EObject modelElement, IObject_ object, AnimationKind sourceStyle, AnimationKind targetStyle, int duration) {
-		// Apply the source style to model element during the specified duration. As soon as this period of time as elapsed then
-		// the target style is applied to the model element.
-		this.engine.removeRenderingRules(modelElement);
-		this.engine.startRendering(modelElement, object, sourceStyle);
-		if(duration >= 25){	
-			try {
-				Thread.sleep(duration);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
-		this.engine.stopRendering(modelElement, object, sourceStyle);
-		this.engine.startRendering(modelElement, object, targetStyle);
 	}
 	
 }

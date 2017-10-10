@@ -12,6 +12,7 @@ Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)";visibil
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipse.papyrus.moka.fuml.Profiling,
+ org.eclipse.papyrus.moka.fuml.Profiling.Semantics.Kernel.Classes,
  org.eclipse.papyrus.moka.fuml.Semantics,
  org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions,
  org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions,
@@ -22,5 +23,4 @@ Export-Package: org.eclipse.papyrus.moka.fuml.Profiling,
  org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel,
  org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors,
  org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications,
- org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1,
- org.eclipse.papyrus.moka.fuml.profiling.Semantics.Kernel.Classes
+ org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1

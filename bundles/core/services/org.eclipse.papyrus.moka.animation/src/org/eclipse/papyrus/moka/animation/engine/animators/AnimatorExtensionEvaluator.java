@@ -18,6 +18,7 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IConfigurationElement;
 import org.eclipse.core.runtime.IExtensionRegistry;
 import org.eclipse.core.runtime.Platform;
+import org.eclipse.papyrus.moka.animation.engine.animators.actions.DerivedAnimationAction;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationEngine;
 
 public class AnimatorExtensionEvaluator {
@@ -27,7 +28,9 @@ public class AnimatorExtensionEvaluator {
 	private static final String PRIORITY_ATTR = "priority";
 	
 	private static final String CLASS_ATTR = "class";
-
+	
+	private static final String DERIVED_ACTIONS_ATTR = "derivedAnimationAction";
+	
 	public static List<Animator> evaluateAnimators(AnimationEngine engine){
 		// Evaluate all contributions to the ANIMATOR extension points. The evaluation
 		// process includes the instantiation of the contributed animator classes as
@@ -57,9 +60,24 @@ public class AnimatorExtensionEvaluator {
 				}else{
 					animator.setPriority(0);
 				}
+				animator.setDerivedAnimationAction(evaluateDerivedActions(contribution.getChildren(DERIVED_ACTIONS_ATTR)));
 				animators.add(animator);
 			}
 		}
 		return animators;
+	}
+	
+	private static List<DerivedAnimationAction> evaluateDerivedActions(final IConfigurationElement[] contributions){
+		List<DerivedAnimationAction> derivedActions = new ArrayList<DerivedAnimationAction>();
+		for(IConfigurationElement contribution : contributions) {
+			DerivedAnimationAction derivedAction = null;
+			try {
+				derivedAction = (DerivedAnimationAction) contribution.createExecutableExtension(CLASS_ATTR);
+			} catch (CoreException e) {
+				e.printStackTrace();
+			}
+			derivedActions.add(derivedAction);
+		}
+		return derivedActions;
 	}
 }

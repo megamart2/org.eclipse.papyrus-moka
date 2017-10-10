@@ -18,13 +18,11 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
-import org.eclipse.uml2.uml.ActivityNode;
-import org.eclipse.uml2.uml.SendSignalAction;
 
 public class ActivityAnimator extends Animator{
 
 	@Override
-	public void nodeVisited(ISemanticVisitor nodeVisitor) {
+	public void nodeVisited_(ISemanticVisitor nodeVisitor) {
 		// When a node is visited by the execution engine, the following animation logic applies:
 		// 1] If the visitor is for an activity node then if its an accept event action or a call action then the
 		// representation of this node gets the ANIMATED style applied. If it is any other kind of activity
@@ -35,9 +33,9 @@ public class ActivityAnimator extends Animator{
 			IActivityNodeActivation activation = (IActivityNodeActivation) nodeVisitor;
 			if (activation.getNode() != null) {
 				if (activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation) {
-					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED);
+					this.engine.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED);
 				} else {
-					this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED, AnimationKind.VISITED, MokaConstants.MOKA_ANIMATION_DELAY);
+					this.engine.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.ANIMATED, AnimationKind.VISITED, MokaConstants.MOKA_ANIMATION_DELAY);
 				}
 			}
 		} else{
@@ -51,7 +49,7 @@ public class ActivityAnimator extends Animator{
 	}
 
 	@Override
-	public void nodeLeft(ISemanticVisitor nodeVisitor) {
+	public void nodeLeft_(ISemanticVisitor nodeVisitor) {
 		// When a node is left by the execution engine (i.e., the execution of this node is done), the following
 		// animation logic applies.
 		// 1] If the visitor is for a node that is either an accept event action or a call action then the VISITED
@@ -60,13 +58,13 @@ public class ActivityAnimator extends Animator{
 		if (nodeVisitor instanceof IActivityNodeActivation) {
 			IActivityNodeActivation activation = (IActivityNodeActivation) nodeVisitor;
 			if (activation.getNode() != null && (activation instanceof IAcceptEventActionActivation | activation instanceof ICallActionActivation)) {
-				this.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.VISITED);
+				this.engine.renderAs(activation.getNode(), activation.getExecutionContext(), AnimationKind.VISITED);
 			}
 		} else {
 			if (nodeVisitor instanceof IActivityEdgeInstance) {
 				IActivityEdgeInstance edgeInstance = (IActivityEdgeInstance) nodeVisitor;
 				if (edgeInstance.getEdge() != null) {
-					this.renderAs(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.VISITED);
+					this.engine.renderAs(edgeInstance.getEdge(), edgeInstance.getGroup().getActivityExecution().getContext(), AnimationKind.VISITED);
 				}
 			}
 		}
@@ -78,14 +76,7 @@ public class ActivityAnimator extends Animator{
 		// by this animator to perform animation.
 		boolean accept = false;
 		if(visitor instanceof IActivityNodeActivation){
-			ActivityNode activityNode = ((IActivityNodeActivation) visitor).getNode();
-			if(!(activityNode instanceof SendSignalAction)) {
-				accept = true;
-			} else {
-				if(((SendSignalAction)activityNode).getOnPort() == null) {
-					accept = true;
-				}
-			}
+			accept = true;
 		}else if (visitor instanceof IActivityEdgeInstance) {
 			accept = true;
 		}

@@ -57,6 +57,9 @@
          </documentation>
       </annotation>
       <complexType>
+         <sequence minOccurs="0" maxOccurs="unbounded">
+            <element ref="derivedAnimationAction"/>
+         </sequence>
          <attribute name="class" type="string" use="required">
             <annotation>
                <documentation>
@@ -72,6 +75,21 @@
                <documentation>
                   Priority is included in the interval [0..100]. As the number tends toward 100 the priority is considered as higher.
                </documentation>
+            </annotation>
+         </attribute>
+      </complexType>
+   </element>
+
+   <element name="derivedAnimationAction">
+      <complexType>
+         <attribute name="class" type="string">
+            <annotation>
+               <documentation>
+                  
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.papyrus.moka.animation.engine.animators.actions.DerivedAnimationAction:"/>
+               </appinfo>
             </annotation>
          </attribute>
       </complexType>

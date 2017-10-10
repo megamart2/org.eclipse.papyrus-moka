@@ -16,8 +16,8 @@ package org.eclipse.papyrus.moka.composites.profiling.Semantics.CompositeStructu
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.profiling.Semantics.Loci.SemanticVisitorProfiler;
 import org.eclipse.papyrus.moka.fuml.profiling.Semantics.Classes.Kernel.FeatureValueWrapper;
+import org.eclipse.papyrus.moka.fuml.profiling.Semantics.Loci.SemanticVisitorProfiler;
 import org.eclipse.uml2.uml.Property;
 
 public aspect CS_DefaultConstructStrategyProfiler extends SemanticVisitorProfiler {

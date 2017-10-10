@@ -12,7 +12,7 @@
  *
  *****************************************************************************/
 
-package org.eclipse.papyrus.moka.fuml.profiling.Semantics.Kernel.Classes;
+package org.eclipse.papyrus.moka.fuml.Profiling.Semantics.Kernel.Classes;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;

@@ -24,4 +24,8 @@ public interface IRenderingEngine {
 
 	public void stopRendering(EObject modelElement, IObject_ animator, AnimationKind kind);
 
+	public void renderAs(EObject modelElement, IObject_ object, AnimationKind targetStyle);
+	
+	public void renderAs(EObject modelElement, IObject_ object, AnimationKind sourceStyle, AnimationKind targetStyle, int duration);
+
 }

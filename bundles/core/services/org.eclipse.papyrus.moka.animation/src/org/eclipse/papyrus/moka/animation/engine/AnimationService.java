@@ -103,21 +103,33 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 
 	@Override
 	public void valueCreated(IValue value) {
-		if (value instanceof IObject_) {
-			DiagramHandler diagramHandler = this.engine.getDiagramHandler();
-			if (!diagramHandler.isRegistered((IObject_) value)) {
-				Set<Diagram> relatedDiagrams = diagramHandler.findDiagramsInvolved((IObject_) value);
-				for (Diagram diagram : relatedDiagrams) {
-					diagramHandler.addRenderable((IObject_) value, diagram);
+		if (MokaConstants.MOKA_AUTOMATIC_ANIMATION) {
+			if (value instanceof IObject_) {
+				DiagramHandler diagramHandler = this.engine.getDiagramHandler();
+				if (!diagramHandler.isRegistered((IObject_) value)) {
+					Set<Diagram> relatedDiagrams = diagramHandler.findDiagramsInvolved((IObject_) value);
+					for (Diagram diagram : relatedDiagrams) {
+						diagramHandler.addRenderable((IObject_) value, diagram);
+					}
 				}
+			}
+			Animator animator = this.getAnimator(value);
+			if (animator != null) {
+				animator.valueCreated(value);
 			}
 		}
 	}
 
 	@Override
 	public void valueDestroyed(IValue value) {
-		if (value instanceof IObject_) {
-			this.engine.getDiagramHandler().deleteRenderable((IObject_) value);
+		if (MokaConstants.MOKA_AUTOMATIC_ANIMATION) {
+			if (value instanceof IObject_) {
+				this.engine.getDiagramHandler().deleteRenderable((IObject_) value);
+			}
+			Animator animator = this.getAnimator(value);
+			if (animator != null) {
+				animator.valueDestroyed(value);
+			}
 		}
 	}
 

@@ -18,7 +18,7 @@ import java.util.List;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
-import org.eclipse.papyrus.moka.fuml.profiling.Semantics.Kernel.Classes.IFeatureValueWrapper;
+import org.eclipse.papyrus.moka.fuml.Profiling.Semantics.Kernel.Classes.IFeatureValueWrapper;
 import org.eclipse.uml2.uml.StructuralFeature;
 
 public class FeatureValueWrapper implements IFeatureValueWrapper{
