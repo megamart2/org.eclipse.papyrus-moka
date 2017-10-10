@@ -18,6 +18,8 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
+import org.eclipse.uml2.uml.ActivityNode;
+import org.eclipse.uml2.uml.SendSignalAction;
 
 public class ActivityAnimator extends Animator{
 
@@ -74,11 +76,20 @@ public class ActivityAnimator extends Animator{
 	public boolean accept(ISemanticVisitor visitor) {
 		// If the visitor are either for activity nodes or activity edges then they can be accepted
 		// by this animator to perform animation.
-		if(visitor instanceof IActivityNodeActivation 
-				|| visitor instanceof IActivityEdgeInstance){
-			return true;
+		boolean accept = false;
+		if(visitor instanceof IActivityNodeActivation){
+			ActivityNode activityNode = ((IActivityNodeActivation) visitor).getNode();
+			if(!(activityNode instanceof SendSignalAction)) {
+				accept = true;
+			} else {
+				if(((SendSignalAction)activityNode).getOnPort() == null) {
+					accept = true;
+				}
+			}
+		}else if (visitor instanceof IActivityEdgeInstance) {
+			accept = true;
 		}
-		return false;
+		return accept;
 	}
 
 }

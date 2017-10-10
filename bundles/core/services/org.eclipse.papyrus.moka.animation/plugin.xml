@@ -75,6 +75,10 @@
             class="org.eclipse.papyrus.moka.animation.engine.animators.ActivityAnimator"
             priority="0">
       </animator>
+      <animator
+            class="org.eclipse.papyrus.moka.animation.engine.animators.CompositeAnimator"
+            priority="0">
+      </animator>
    </extension>
 
 </plugin>

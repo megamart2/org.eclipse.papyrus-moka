@@ -16,9 +16,9 @@ package org.eclipse.papyrus.moka.fuml.statemachines;
 import org.eclipse.papyrus.moka.composites.CompositeStructuresExecutionEngine;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_DispatchOperationOfInterfaceStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CommonBehaviors.Communications.CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy;
-import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultRequestPropagationStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
+import org.eclipse.papyrus.moka.composites.extensions.Semantics.CompositeStructures.CS_NotNormativeDefaultConstructStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
@@ -44,7 +44,7 @@ public class StateMachineExecutionEngine extends CompositeStructuresExecutionEng
 		locus.getFactory().setStrategy(new CS_DispatchOperationOfInterfaceStrategy());
 		locus.getFactory().setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
 		locus.getFactory().setStrategy(new CS_DefaultRequestPropagationStrategy());
-		locus.getFactory().setStrategy(new CS_DefaultConstructStrategy());
+		locus.getFactory().setStrategy(new CS_NotNormativeDefaultConstructStrategy());
 		locus.getFactory().setStrategy(new DefaultGetAssociationStrategy());
 		locus.getFactory().setStrategy(new DefaultCreateObjectActionStrategy());
 	}

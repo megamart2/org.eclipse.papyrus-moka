@@ -15,9 +15,9 @@ package org.eclipse.papyrus.moka.fuml.cosimulation.semantics;
 
 import java.util.List;
 
-import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions.CS_DefaultConstructStrategy;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_InteractionPoint;
 import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses.CS_Reference;
+import org.eclipse.papyrus.moka.composites.extensions.Semantics.CompositeStructures.CS_NotNormativeDefaultConstructStrategy;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Object;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_Reference;
@@ -29,7 +29,7 @@ import org.eclipse.uml2.uml.Port;
 import org.eclipse.uml2.uml.Property;
 
 
-public class CosimulationDefaultConstructStrategy extends CS_DefaultConstructStrategy {
+public class CosimulationDefaultConstructStrategy extends CS_NotNormativeDefaultConstructStrategy {
 
 	@Override
 	public void addStructuralFeatureValue(ICS_Reference context, Property feature, IValue value) {
@@ -55,7 +55,5 @@ public class CosimulationDefaultConstructStrategy extends CS_DefaultConstructStr
 			}
 		}
 	}
-
-
 
 }
