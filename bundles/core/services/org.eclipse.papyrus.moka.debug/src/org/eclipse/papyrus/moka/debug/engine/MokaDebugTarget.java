@@ -56,7 +56,7 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 		this.executionThreads = new HashSet<IMokaThread>();
 		this.targetLock = new ReentrantLock(true);
 		this.status = MokaDebugTargetState.RUNNING;
-		fireCreationEvent();
+		this.fireCreationEvent();
 	}
 
 	public void setProcess(MokaProcess process) {
@@ -94,7 +94,6 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 		this.executionThreads.clear();
 		this.executionEngineProcess.terminate();
 		this.status = MokaDebugTargetState.TERMINATED;
-		this.fireTerminateEvent();
 	}
 
 	@Override
@@ -151,7 +150,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 
 	@Override
 	public void registerThread(IObject_ object) {
-		this.executionThreads.add(new MokaThread(this, object));
+		IMokaThread thread = new MokaThread(this, object);
+		this.executionThreads.add(thread);
+		thread.registered();
 	}
 
 	public boolean isNewThread(IObject_ object) {
@@ -177,6 +178,9 @@ public class MokaDebugTarget extends MokaDebugElement implements IMokaDebugTarge
 			targetThread = threadIterator.next();
 			if (targetThread.getLogicalThread() == object) {
 				threadIterator.remove();
+				targetThread.unregistered();
+			}else {
+				targetThread = null;
 			}
 		}
 	}

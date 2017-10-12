@@ -18,6 +18,7 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IExecution;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.IStateMachineSemanticVisitor;
 import org.eclipse.papyrus.moka.service.AbstractMokaService;
@@ -79,9 +80,15 @@ public class DebugService extends AbstractMokaService implements IMokaExecutionL
 		if (!this.debugTarget.isDisconnected()) {
 			if (value instanceof IObject_) {
 				IObject_ object = (IObject_) value;
-				if (DebugServiceHelper.INSTANCE.isActive(object)
-						&& this.debugTarget.isNewThread(object)) {
-					this.debugTarget.registerThread(object);
+				if(this.debugTarget.isNewThread(object)) {
+					if(object instanceof IExecution
+							&& ((IExecution)object).getContext() == object) {
+						this.debugTarget.registerThread(object);
+					}else {
+						if(DebugServiceHelper.INSTANCE.isActive(object)) {
+							this.debugTarget.registerThread(object);
+						}
+					}
 				}
 			}
 		}

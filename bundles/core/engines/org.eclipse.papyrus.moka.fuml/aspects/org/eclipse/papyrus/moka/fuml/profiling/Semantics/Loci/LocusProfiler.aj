@@ -14,15 +14,12 @@
 
 package org.eclipse.papyrus.moka.fuml.profiling.Semantics.Loci;
 
-import org.eclipse.papyrus.moka.fuml.profiling.MokaObservable;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
-import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
 import org.eclipse.uml2.uml.Class;
 
-public aspect LocusProfiler extends MokaObservable{
+public aspect LocusProfiler extends ValueLifecycleObservable{
 	
 	pointcut instantiate(ILocus locus, Class type): 
 		target(locus) &&
@@ -42,17 +39,4 @@ public aspect LocusProfiler extends MokaObservable{
 		this.fireValueDestroyed(value);
 	}
 	
-	public void fireValueCreated(final IValue value){
-		for(int i=0; i < this.listeners.size(); i++){
-			IMokaExecutionListener listener = this.listeners.get(i); 
-			listener.valueCreated(value);			
-		}
-	}
-	
-	public void fireValueDestroyed(final IValue value){
-		for(int i=0; i < this.listeners.size(); i++){
-			IMokaExecutionListener listener = this.listeners.get(i); 
-			listener.valueDestroyed(value);
-		}
-	} 
 }

@@ -57,7 +57,6 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 		this.resumeCondition = this.threadLock.newCondition();
 		this.suspensionRequired = false;
 		this.status = MokaThreadState.RUNNING;
-		fireCreationEvent();
 	}
 
 	@Override
@@ -265,6 +264,18 @@ public class MokaThread extends MokaDebugElement implements IMokaThread {
 	@Override
 	public void setSuspensionPoint(ISemanticVisitor visitor) {
 		this.suspensionPoint = visitor;
+	}
+
+	@Override
+	public void registered() {
+		// Notify the debug interface that a new thread was registered
+		this.fireCreationEvent();
+	}
+
+	@Override
+	public void unregistered() {
+		// Notify the debug interface that a existing thread was destroyed
+		this.fireTerminateEvent();
 	}
 
 }

@@ -30,5 +30,9 @@ public interface IMokaThread extends IThread {
 	public boolean getSuspensionFlag();
 
 	public void setSuspensionFlag(boolean mustSuspend);
+	
+	public void registered();
+	
+	public void unregistered();
 
 }
