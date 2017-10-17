@@ -163,8 +163,6 @@ public class ActivityNodeActivationGroup implements IActivityNodeActivationGroup
 
 	public void terminateAll() {
 		// Terminate all node activations in the group.
-		Debug.println("[terminateAll] Terminating activation group for "
-				+ (this.activityExecution != null ? "activity " + this.activityExecution.getTypes().get(0).getName() : this.containingNodeActivation != null ? "node " + this.containingNodeActivation.getNode().getName() : "expansion region") + ".");
 		List<IActivityNodeActivation> nodeActivations = this.nodeActivations;
 		for (int i = 0; i < nodeActivations.size(); i++) {
 			IActivityNodeActivation nodeActivation = nodeActivations.get(i);

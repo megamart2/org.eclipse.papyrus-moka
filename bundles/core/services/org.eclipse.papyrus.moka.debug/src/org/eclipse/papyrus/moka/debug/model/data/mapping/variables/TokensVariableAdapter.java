@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.variables;
 
 import java.util.Iterator;
@@ -21,24 +22,21 @@ import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapter
 import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueList;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 
-public class TokensVariableAdapter extends MokaVariableAdapter {
-
-	protected List<IToken> heldTokens;
+public class TokensVariableAdapter extends MokaVariableAdapter<List<IToken>> {
 
 	private final String NAME = "tokens";
 
-	private final String REFERENCE_TYPE_NAME = "List<IToken>";
-
 	public TokensVariableAdapter(MokaDebugTarget debugTarget, List<IToken> tokens) {
-		super(debugTarget);
-		this.heldTokens = tokens;
+		super(debugTarget, tokens);
 	}
 
 	@Override
 	public IValue getValue() throws DebugException {
+		// The value adapter corresponding to a list of token consist in a list
+		// of adapter. Each adapter in the list is an adapter for a token.
 		if (this.value == null) {
 			MokaValueList tokensList = new MokaValueList(debugTarget);
-			Iterator<IToken> tokensIterator = this.heldTokens.iterator();
+			Iterator<IToken> tokensIterator = this.adaptedVariable.iterator();
 			while (tokensIterator.hasNext()) {
 				tokensList.add(MokaValueAdapterFactory.getInstance().instantiate(tokensIterator.next(), this.debugTarget));
 			}
@@ -49,48 +47,8 @@ public class TokensVariableAdapter extends MokaVariableAdapter {
 
 	@Override
 	public String getName() throws DebugException {
+		// Return the variable name
 		return this.NAME;
-	}
-
-	@Override
-	public String getReferenceTypeName() throws DebugException {
-		return this.REFERENCE_TYPE_NAME;
-	}
-
-	@Override
-	public boolean hasValueChanged() throws DebugException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setValue(String expression) throws DebugException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setValue(IValue value) throws DebugException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean supportsValueModification() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean verifyValue(String expression) throws DebugException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean verifyValue(IValue value) throws DebugException {
-		// TODO Auto-generated method stub
-		return false;
 	}
 
 }

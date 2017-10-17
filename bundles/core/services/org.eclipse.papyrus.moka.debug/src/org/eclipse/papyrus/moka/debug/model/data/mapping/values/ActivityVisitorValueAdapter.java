@@ -1,5 +1,3 @@
-package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
-
 /*****************************************************************************
  * Copyright (c) 2016 CEA LIST.
  * 
@@ -11,6 +9,9 @@ package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
+package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -25,17 +26,17 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.uml2.uml.NamedElement;
 
 public abstract class ActivityVisitorValueAdapter extends VisitorValueAdapter {
-
+	
 	public ActivityVisitorValueAdapter(MokaDebugTarget debugTarget, ISemanticVisitor visitor) {
 		super(debugTarget, visitor);
 	}
-	
+
 	protected abstract NamedElement getNode();
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
 		if (this.variables.isEmpty()) {
-			this.variables.add(new TokensVariableAdapter(this.debugTarget, getTokens(this.visitor)));
+			this.variables.add(new TokensVariableAdapter(this.debugTarget, getTokens(this.adaptedObject)));
 		}
 		return this.variables.toArray(new IVariable[0]);
 	}

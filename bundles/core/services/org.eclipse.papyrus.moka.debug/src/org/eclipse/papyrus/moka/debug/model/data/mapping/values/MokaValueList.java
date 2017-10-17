@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import java.util.ArrayList;

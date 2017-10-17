@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.debug.core.DebugException;
@@ -28,14 +29,14 @@ public class ObjectValueAdapter extends StructuredValueAdapter {
 
 	@Override
 	public String getValueString() throws DebugException {
-		return ((IObject_) this.value).getIdentifier();
+		return ((IObject_) this.adaptedObject).getIdentifier();
 	}
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
 		super.getVariables();
 		if (this.eventPoolVariable == null) {
-			IObjectActivation objectActivation = ((IObject_) this.value).getObjectActivation();
+			IObjectActivation objectActivation = ((IObject_) this.adaptedObject).getObjectActivation();
 			if (objectActivation != null) {
 				this.eventPoolVariable = new EventPoolVariableAdapter(this.debugTarget, objectActivation);
 				this.variables.add(0, this.eventPoolVariable);

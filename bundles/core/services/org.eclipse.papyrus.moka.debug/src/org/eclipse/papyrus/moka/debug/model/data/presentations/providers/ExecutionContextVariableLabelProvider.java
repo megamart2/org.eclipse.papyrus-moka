@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.presentations.providers;
 
 import org.eclipse.papyrus.moka.debug.MokaDebugPlugin;

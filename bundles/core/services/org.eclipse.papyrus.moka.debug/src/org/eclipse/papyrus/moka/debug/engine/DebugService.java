@@ -14,6 +14,7 @@ package org.eclipse.papyrus.moka.debug.engine;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.ILaunch;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
@@ -36,6 +37,12 @@ public class DebugService extends AbstractMokaService implements IMokaExecutionL
 
 	@Override
 	public void nodeVisited(ISemanticVisitor nodeVisitor) {
+		// If an activity or a state machine semantic visitor shall
+		// be suspended then the execution thread of the object executing
+		// the node is suspended.
+		// Note: An accept event action is never suspended when it fires.
+		// Instead it is suspended when an event is accepted by this action
+		// from the event pool.
 		if (!this.debugTarget.isDisconnected()) {
 			if (nodeVisitor instanceof IActivityNodeActivation
 					|| nodeVisitor instanceof IActivityEdgeInstance
@@ -44,14 +51,13 @@ public class DebugService extends AbstractMokaService implements IMokaExecutionL
 				if(nodeVisitor instanceof IStateMachineSemanticVisitor) {
 					object = ((IStateMachineSemanticVisitor)nodeVisitor).getExecutionContext();
 				}else {
-					if (nodeVisitor instanceof IActivityNodeActivation) {
-						if (((IActivityNodeActivation) nodeVisitor).getGroup() != null) {
+					if (nodeVisitor instanceof IActivityNodeActivation
+							&& !(nodeVisitor instanceof IAcceptEventActionActivation)
+							&& (((IActivityNodeActivation) nodeVisitor).getGroup() != null)) {
 							object = ((IActivityNodeActivation) nodeVisitor).getExecutionContext();
-						}
-					} else {
-						if (((IActivityEdgeInstance) nodeVisitor).getSource().getGroup() != null) {
+					} else if (nodeVisitor instanceof IActivityEdgeInstance
+							&& ((IActivityEdgeInstance) nodeVisitor).getSource().getGroup() != null) {
 							object = ((IActivityEdgeInstance) nodeVisitor).getSource().getExecutionContext();
-						}
 					}
 				}
 				if (object != null) {
@@ -66,7 +72,22 @@ public class DebugService extends AbstractMokaService implements IMokaExecutionL
 
 	@Override
 	public void nodeLeft(ISemanticVisitor nodeVisitor) {
-		// Do nothing
+		// If an accept event action is left this means it has accepted an event
+		// from the event pool. This accept event action is therefore suspended for
+		// debug which provides the designer to observe which event triggered the action.
+		if (!this.debugTarget.isDisconnected()) {
+			IObject_ object = null;
+			if(nodeVisitor instanceof IAcceptEventActionActivation
+					&& ((IAcceptEventActionActivation)nodeVisitor).getGroup() != null) {
+				object = ((IAcceptEventActionActivation)nodeVisitor).getExecutionContext();
+			}
+			if(object != null) {
+				this.debugTarget.update(object, nodeVisitor);
+				if (this.debugTarget.isSuspensionRequired(object, nodeVisitor)) {
+					this.debugTarget.suspend(object, nodeVisitor);
+				}
+			}
+		}
 	}
 
 	@Override

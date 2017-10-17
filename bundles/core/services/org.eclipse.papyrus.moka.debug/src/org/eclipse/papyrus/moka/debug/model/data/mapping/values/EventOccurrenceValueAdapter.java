@@ -9,28 +9,30 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 
-public class EventOccurrenceValueAdapter extends MokaValueAdapter {
+public abstract class EventOccurrenceValueAdapter extends MokaValueAdapter<IEventOccurrence> {
 
-	protected IEventOccurrence eventOccurrence;
-
+	// Representation of the event occurrence
+	protected String representation;
+	
 	public EventOccurrenceValueAdapter(MokaDebugTarget debugTarget, IEventOccurrence eventOccurrence) {
-		super(debugTarget);
-		this.eventOccurrence = eventOccurrence;
-	}
-
-	@Override
-	public String getReferenceTypeName() throws DebugException {
-		return "";
+		super(debugTarget, eventOccurrence);
 	}
 
 	@Override
 	public String getValueString() throws DebugException {
-		return this.eventOccurrence.toString();
+		// The string representation is the one specified in the representation
+		// attribute or the result of toString operation applied on the adapted
+		// object.
+		if(this.representation == null || this.representation.isEmpty()) {
+			return this.adaptedObject.toString();
+		}
+		return this.representation;
 	}
 }

@@ -15,11 +15,16 @@ import java.net.URL;
 
 import org.eclipse.jface.resource.ImageDescriptor;
 import org.eclipse.jface.resource.ImageRegistry;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.CS_InteractionPointVariableLabelProvider;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.CallEventOccurrenceVariableLabelProvider;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.CompletionEventOccurrenceVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.EventPoolVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.ExecutionContextVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.FeatureValueVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.ItemVariableLabelProvider;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.SignalEventOccurrenceVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.SuspensionPointVariableLabelProvider;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.TimeEventOccurrenceVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.TokensVariableLabelProvider;
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -81,6 +86,11 @@ public class MokaDebugPlugin extends AbstractUIPlugin {
 		registry.put(FeatureValueVariableLabelProvider.PUBLIC_ICON, this.getDescriptor(FeatureValueVariableLabelProvider.PUBLIC_ICON));
 		registry.put(ItemVariableLabelProvider.ITEM_ICON, this.getDescriptor(ItemVariableLabelProvider.ITEM_ICON));
 		registry.put(TokensVariableLabelProvider.TOKEN_SET_ICON, this.getDescriptor(TokensVariableLabelProvider.TOKEN_SET_ICON));
+		registry.put(TimeEventOccurrenceVariableLabelProvider.TIME_EVENT_ICON, this.getDescriptor(TimeEventOccurrenceVariableLabelProvider.TIME_EVENT_ICON));
+		registry.put(SignalEventOccurrenceVariableLabelProvider.SIGNAL_EVENT_ICON, this.getDescriptor(SignalEventOccurrenceVariableLabelProvider.SIGNAL_EVENT_ICON));
+		registry.put(CallEventOccurrenceVariableLabelProvider.CALL_EVENT_ICON, this.getDescriptor(CallEventOccurrenceVariableLabelProvider.CALL_EVENT_ICON));
+		registry.put(CS_InteractionPointVariableLabelProvider.PORT_ICON, this.getDescriptor(CS_InteractionPointVariableLabelProvider.PORT_ICON));
+		registry.put(CompletionEventOccurrenceVariableLabelProvider.COMPLETION_EVENT_ICON, this.getDescriptor(CompletionEventOccurrenceVariableLabelProvider.COMPLETION_EVENT_ICON));
 	}
 
 	public ImageDescriptor getDescriptor(final String path) {

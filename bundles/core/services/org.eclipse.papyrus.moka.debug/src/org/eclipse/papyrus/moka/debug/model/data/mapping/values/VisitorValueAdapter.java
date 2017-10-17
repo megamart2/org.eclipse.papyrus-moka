@@ -14,13 +14,10 @@ package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 
-public abstract class VisitorValueAdapter extends MokaValueAdapter {
+public abstract class VisitorValueAdapter extends MokaValueAdapter<ISemanticVisitor> {
 
-	protected ISemanticVisitor visitor;
-	
 	public VisitorValueAdapter(MokaDebugTarget debugTarget, ISemanticVisitor visitor) {
-		super(debugTarget);
-		this.visitor = visitor;
+		super(debugTarget, visitor);
 	}
 	
 }

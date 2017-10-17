@@ -9,15 +9,17 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.variables;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.DefaultValueAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterFactory;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueList;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
@@ -31,56 +33,35 @@ import org.eclipse.uml2.uml.Property;
 import org.eclipse.uml2.uml.StructuralFeature;
 import org.eclipse.uml2.uml.VisibilityKind;
 
-public class FeatureValueVariableAdapter extends MokaVariableAdapter {
+public class FeatureValueVariableAdapter extends MokaVariableAdapter<IFeatureValue> {
 
-	// Feature value that is adapted in the debug model context
-	protected IFeatureValue featureValue;
-
+	// The owner of the adapted variable
 	protected IStructuredValue featureValueOwner;
 
-	public FeatureValueVariableAdapter(MokaDebugTarget debugTarget, IStructuredValue owner, IFeatureValue featureValue) {
-		super(debugTarget);
-		this.featureValue = featureValue;
+	public FeatureValueVariableAdapter(MokaDebugTarget debugTarget, IStructuredValue owner,
+			IFeatureValue featureValue) {
+		super(debugTarget, featureValue);
 		this.featureValueOwner = owner;
-		this.value = null;
 	}
 
 	@Override
 	public org.eclipse.debug.core.model.IValue getValue() throws DebugException {
+		// Build the value adapter for the adapted feature value. This adapter can be single
+		// value adapter or a list of value adapter depending if the feature value has a single
+		// value or multiple values. If no value is found for the feature then the default value
+		// adapter is returned.
 		if (this.value == null) {
-			int upperBound = this.featureValue.getFeature().getUpper();
-			if (upperBound == 1) {
-				Association association = null;
-				if (this.featureValueOwner instanceof IExtensionalValue) {
-					StructuralFeature feature = this.featureValue.getFeature();
-					if (feature instanceof Property) {
-						association = ((Property) feature).getAssociation();
-					}
+			List<IValue> resultValues = this.getValues();
+			if(resultValues.size() == 1) {
+				this.value = MokaValueAdapterFactory.getInstance().instantiate(resultValues.iterator().next(), this.debugTarget);
+			} else if(resultValues.size() > 1) {
+				MokaValueList valueList = new MokaValueList(this.debugTarget);
+				for(IValue currentValue : resultValues) {
+					valueList.add(MokaValueAdapterFactory.getInstance().instantiate(currentValue, this.debugTarget));
 				}
-				IValue fumlValue = null;
-				if (association != null) {
-					List<ILink> links = this.getMatchingLinks(association,
-							this.featureValue.getFeature(),
-							this.featureValueOwner,
-							((IExtensionalValue) this.featureValueOwner).getLocus());
-					List<IValue> resultValues = new ArrayList<IValue>();
-					for (int i = 0; i < links.size(); i++) {
-						ILink link = links.get(i);
-						resultValues.add(link.getFeatureValue(this.featureValue.getFeature()).getValues().iterator().next());
-					}
-					Iterator<IValue> valuesIterator = resultValues.iterator();
-					if (valuesIterator.hasNext()) {
-						fumlValue = valuesIterator.next();
-					}
-				} else {
-					Iterator<IValue> valuesIterator = this.featureValue.getValues().iterator();
-					if (valuesIterator.hasNext()) {
-						fumlValue = valuesIterator.next();
-					}
-				}
-				this.value = MokaValueAdapterFactory.getInstance().instantiate(fumlValue, this.debugTarget);
+				this.value = valueList;
 			} else {
-
+				this.value = new DefaultValueAdapter(this.debugTarget, null);
 			}
 		}
 		return this.value;
@@ -88,81 +69,70 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter {
 
 	@Override
 	public String getName() throws DebugException {
-		Feature feature = this.featureValue.getFeature();
+		// The name of the variable is the name of the feature. If no
+		// feature can be accessed then '<unamed feature>' is returned.
+		Feature feature = this.adaptedVariable.getFeature();
 		if (feature != null) {
 			return feature.getName();
 		}
-		return "";
+		return "<unamed feature>";
 	}
 
-	@Override
-	public String getReferenceTypeName() throws DebugException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public boolean hasValueChanged() throws DebugException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public void setValue(String expression) throws DebugException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void setValue(org.eclipse.debug.core.model.IValue value) throws DebugException {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public boolean supportsValueModification() {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean verifyValue(String expression) throws DebugException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean verifyValue(org.eclipse.debug.core.model.IValue value) throws DebugException {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	public boolean isFeaturePublic(){
-		if(this.featureValue != null){
-			return this.featureValue.getFeature().getVisibility() == VisibilityKind.PUBLIC_LITERAL;
+	public boolean isFeaturePublic() {
+		// Determine if the value adapter is for public feature
+		if (this.adaptedVariable != null) {
+			return this.adaptedVariable.getFeature().getVisibility() == VisibilityKind.PUBLIC_LITERAL;
 		}
 		return false;
 	}
-	
-	public boolean isFeatureProtected(){
-		if(this.featureValue != null){
-			return this.featureValue.getFeature().getVisibility() == VisibilityKind.PROTECTED_LITERAL;
+
+	public boolean isFeatureProtected() {
+		// Determine if the value adapter is for protected feature
+		if (this.adaptedVariable != null) {
+			return this.adaptedVariable.getFeature().getVisibility() == VisibilityKind.PROTECTED_LITERAL;
 		}
 		return false;
 	}
-	
-	public boolean isFeaturePrivate(){
-		if(this.featureValue != null){
-			return this.featureValue.getFeature().getVisibility() == VisibilityKind.PRIVATE_LITERAL;
+
+	public boolean isFeaturePrivate() {
+		// Determine if the value adapter is for private feature
+		if (this.adaptedVariable != null) {
+			return this.adaptedVariable.getFeature().getVisibility() == VisibilityKind.PRIVATE_LITERAL;
 		}
 		return false;
 	}
-	
-	protected List<ILink> getMatchingLinks(Association association, StructuralFeature end, IValue oppositeValue, ILocus locus) {
+
+	protected List<IValue> getValues() {
+		// Return the values associated to the feature. These values shall
+		// be adapted in order to be accessed and displayed in the variables
+		// view associated to a debug perspective.
+		List<IValue> resultValues = null;
+		Association association = null;
+		StructuralFeature feature = this.adaptedVariable.getFeature();
+		if (this.featureValueOwner instanceof IExtensionalValue
+				&& feature instanceof Property) {
+			association = ((Property) feature).getAssociation();
+		}
+		if (association != null) {
+			List<ILink> links = this.getMatchingLinks(association, this.adaptedVariable.getFeature(),
+					this.featureValueOwner, ((IExtensionalValue) this.featureValueOwner).getLocus());
+			resultValues = new ArrayList<IValue>();
+			for (int i = 0; i < links.size(); i++) {
+				resultValues.addAll(links.get(i).getFeatureValue(this.adaptedVariable.getFeature()).getValues());
+			}
+		} else {
+			resultValues = this.adaptedVariable.getValues();
+		}
+		return resultValues;
+	}
+
+	protected List<ILink> getMatchingLinks(Association association, StructuralFeature end, IValue oppositeValue,
+			ILocus locus) {
 		return this.getMatchingLinksForEndValue(association, end, oppositeValue, null, locus);
 	}
 
-	private List<ILink> getMatchingLinksForEndValue(Association association, StructuralFeature end, IValue oppositeValue, IValue endValue, ILocus locus) {
+	private List<ILink> getMatchingLinksForEndValue(Association association, StructuralFeature end,
+			IValue oppositeValue, IValue endValue, ILocus locus) {
 		Property oppositeEnd = this.getOppositeEnd(association, end);
 		List<IExtensionalValue> extent = locus.getExtent(association);
 		List<ILink> links = new ArrayList<ILink>();

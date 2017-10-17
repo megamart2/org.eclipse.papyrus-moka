@@ -26,7 +26,7 @@ public aspect TransitionActivationProfiler extends SemanticVisitorProfiler{
 		if(monitor!=null && monitor.isCanceled()){
 			throw new OperationCanceledException();
 		}
-		this.fireNodeVisited(activation);
+		this.fireNodeVisited(new TransitionActivationWrapper(activation, eventOccurrence));
 	}
 	
 	// Define a point cut for each class that implements the enterTarget operation
@@ -42,6 +42,6 @@ public aspect TransitionActivationProfiler extends SemanticVisitorProfiler{
 		if(monitor!=null && monitor.isCanceled()){
 			throw new OperationCanceledException();
 		}
-		this.fireNodeLeft(activation);
+		this.fireNodeLeft(new TransitionActivationWrapper(activation, eventOccurrence));
 	}
 }

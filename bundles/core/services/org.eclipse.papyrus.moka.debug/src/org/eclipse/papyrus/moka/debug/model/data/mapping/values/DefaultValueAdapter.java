@@ -9,24 +9,32 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 
-public class NullValueAdapter extends MokaValueAdapter {
+public class DefaultValueAdapter extends MokaValueAdapter<Object> {
 
-	public NullValueAdapter(MokaDebugTarget debugTarget) {
-		super(debugTarget);
+	public DefaultValueAdapter(MokaDebugTarget debugTarget, Object adapted) {
+		super(debugTarget, adapted);
 	}
 
 	@Override
 	public String getReferenceTypeName() throws DebugException {
-		return "null (or not supported)";
+		// No value adapter could handle the object to be adapted.
+		// Hence the default value adapter is used.
+		return "<no reference type>";
 	}
 
 	@Override
 	public String getValueString() throws DebugException {
-		return "null (or not supported)";
+		// No value adapter could handle the object to be adapted.
+		// Hence the default value adapter is used.
+		if(this.adaptedObject != null) {
+			return this.toString();
+		}
+		return "<null or no representation>";
 	}
 }

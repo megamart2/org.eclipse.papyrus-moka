@@ -9,29 +9,23 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IPrimitiveValue;
 
-public class PrimitiveValueAdapter extends MokaValueAdapter {
-
-	protected IPrimitiveValue value;
+public class PrimitiveValueAdapter extends MokaValueAdapter<IPrimitiveValue> {
 
 	public PrimitiveValueAdapter(MokaDebugTarget debugTarget, IPrimitiveValue value) {
-		super(debugTarget);
-		this.value = value;
-	}
-
-	@Override
-	public String getReferenceTypeName() throws DebugException {
-		return this.value.getTypes().iterator().next().getName();
+		super(debugTarget, value);
 	}
 
 	@Override
 	public String getValueString() throws DebugException {
-		return this.value.toString();
+		// The string is the value represented by this primitive value.
+		return this.adaptedObject.toString();
 	}
 
 }

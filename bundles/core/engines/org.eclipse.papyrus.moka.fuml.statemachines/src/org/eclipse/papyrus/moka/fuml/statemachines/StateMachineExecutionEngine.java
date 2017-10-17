@@ -21,7 +21,7 @@ import org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.In
 import org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3.CS_Executor;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ILocus;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultCreateObjectActionStrategy;
-import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.RestrictiveGetAssociationStrategy;
+import org.eclipse.papyrus.moka.fuml.Semantics.impl.Actions.IntermediateActions.DefaultGetAssociationStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.CommonBehaviors.Communications.FIFOGetNextEventStrategy;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Loci.LociL1.FirstChoiceStrategy;
 import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.Loci.SM_ExecutionFactory;
@@ -45,7 +45,7 @@ public class StateMachineExecutionEngine extends CompositeStructuresExecutionEng
 		locus.getFactory().setStrategy(new CS_NameBased_StructuralFeatureOfInterfaceAccessStrategy());
 		locus.getFactory().setStrategy(new CS_DefaultRequestPropagationStrategy());
 		locus.getFactory().setStrategy(new CS_DefaultConstructStrategy());
-		locus.getFactory().setStrategy(new RestrictiveGetAssociationStrategy());
+		locus.getFactory().setStrategy(new DefaultGetAssociationStrategy());
 		locus.getFactory().setStrategy(new DefaultCreateObjectActionStrategy());
 	}
 	

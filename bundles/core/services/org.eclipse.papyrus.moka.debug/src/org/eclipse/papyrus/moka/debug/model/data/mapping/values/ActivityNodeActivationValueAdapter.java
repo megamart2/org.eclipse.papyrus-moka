@@ -22,6 +22,6 @@ public class ActivityNodeActivationValueAdapter extends ActivityVisitorValueAdap
 	}
 	@Override
 	protected NamedElement getNode() {
-		return ((IActivityNodeActivation)this.visitor).getNode();
+		return ((IActivityNodeActivation)this.adaptedObject).getNode();
 	}
 }

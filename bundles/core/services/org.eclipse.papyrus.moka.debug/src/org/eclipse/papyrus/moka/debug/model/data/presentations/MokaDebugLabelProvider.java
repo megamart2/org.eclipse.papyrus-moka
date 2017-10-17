@@ -20,33 +20,30 @@ public abstract class MokaDebugLabelProvider implements ILabelProvider {
 
 	@Override
 	public void addListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
-		
+		// Do nothing
 	}
 
 	@Override
 	public void removeListener(ILabelProviderListener listener) {
-		// TODO Auto-generated method stub
-		
+		// Do nothing
 	}
 	
 	@Override
 	public boolean isLabelProperty(Object element, String property) {
-		// TODO Auto-generated method stub
+		// Do nothing
 		return false;
 	}
 	
 	@Override
 	public void dispose() {
-		// TODO Auto-generated method stub
-
+		// Do nothing
 	}
 	
 	@Override
 	public String getText(Object element) {
 		if(element != null){
 			try {
-				return ((MokaVariableAdapter)element).getName();
+				return ((MokaVariableAdapter<?>)element).getName();
 			} catch (DebugException e) {
 				e.printStackTrace();
 			}

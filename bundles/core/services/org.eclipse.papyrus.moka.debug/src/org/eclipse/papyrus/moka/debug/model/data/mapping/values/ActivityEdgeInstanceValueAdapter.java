@@ -24,7 +24,7 @@ public class ActivityEdgeInstanceValueAdapter extends ActivityVisitorValueAdapte
 
 	@Override
 	protected NamedElement getNode() {
-		return ((IActivityEdgeInstance)this.visitor).getEdge();
+		return ((IActivityEdgeInstance)this.adaptedObject).getEdge();
 	}
 
 }

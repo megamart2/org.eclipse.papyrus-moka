@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import java.util.Iterator;
@@ -18,49 +19,33 @@ import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.FeatureValueVariableAdapter;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
-import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
-import org.eclipse.uml2.uml.Classifier;
 
-public class StructuredValueAdapter extends MokaValueAdapter {
-
-	// Value that is adapted in the debug model context
-	protected IStructuredValue value;
+public class StructuredValueAdapter extends MokaValueAdapter<IStructuredValue> {
 
 	public StructuredValueAdapter(MokaDebugTarget debugTarget, IStructuredValue value) {
-		super(debugTarget);
-		this.value = value;
-	}
-
-	@Override
-	public String getReferenceTypeName() throws DebugException {
-		String type = "[";
-		Iterator<Classifier> typeIterator = this.value.getTypes().iterator();
-		while (typeIterator.hasNext()) {
-			Classifier classifier = typeIterator.next();
-			type += classifier.getName();
-			if (typeIterator.hasNext()) {
-				type += ", ";
-			}
-		}
-		type += "]";
-		return type;
+		super(debugTarget, value);
 	}
 
 	@Override
 	public String getValueString() throws DebugException {
-		if(this.value instanceof IReference){
-			return ((IReference)this.value).getReferent().getIdentifier();
+		// By default the representation of a structured value
+		// as string is given by the toString operation applied
+		// on an executable UML value
+		if(this.adaptedObject != null){
+			return this.adaptedObject.toString();
 		}
-		return value.toString();
+		return "";
 	}
 
 	@Override
 	public IVariable[] getVariables() throws DebugException {
+		// Variables available for a structured value are variable adapters
+		// built from features values owned by the structured value.
 		if (this.variables.isEmpty()) {
-			Iterator<IFeatureValue> featureValueIterator = this.value.getFeatureValues().iterator();
+			Iterator<IFeatureValue> featureValueIterator = this.adaptedObject.getFeatureValues().iterator();
 			while (featureValueIterator.hasNext()) {
-				this.variables.add(new FeatureValueVariableAdapter(this.debugTarget, value, featureValueIterator.next()));
+				this.variables.add(new FeatureValueVariableAdapter(this.debugTarget, this.adaptedObject, featureValueIterator.next()));
 			}
 		}
 		return this.variables.toArray(new IVariable[0]);

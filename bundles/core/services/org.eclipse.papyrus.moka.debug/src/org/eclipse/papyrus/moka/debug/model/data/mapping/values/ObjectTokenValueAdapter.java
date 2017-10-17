@@ -9,6 +9,7 @@
  * Contributors:
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
+
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.debug.core.DebugException;
@@ -27,13 +28,13 @@ public class ObjectTokenValueAdapter extends TokenValueAdapter {
 	@Override
 	public IVariable[] getVariables() throws DebugException {
 		if (this.variables.isEmpty()) {
-			this.variables.add(new ObjectTokenVariableValueAdapter(debugTarget, ((IObjectToken)this.token).getValue()));
+			this.variables.add(new ObjectTokenVariableValueAdapter(debugTarget, ((IObjectToken)this.adaptedObject).getValue()));
 		}
 		return this.variables.toArray(new IVariable[0]);
 	}
 	
 	@Override
 	public String getValueString() throws DebugException {
-		return "Object";
+		return "";
 	}
 }

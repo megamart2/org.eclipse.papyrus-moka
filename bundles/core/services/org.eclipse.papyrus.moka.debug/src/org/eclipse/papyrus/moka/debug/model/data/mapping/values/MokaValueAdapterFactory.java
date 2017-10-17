@@ -11,7 +11,10 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.InvocationActions.ICS_EventOccurrence;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IForkedToken;
@@ -19,10 +22,16 @@ import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IPrimitiveValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IStructuredValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ICallEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.ISignalEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ICompletionEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.statemachines.interfaces.Semantics.StateMachines.ITransitionActivation;
+import org.eclipse.papyrus.moka.timedfuml.interfaces.semantics.CommonBehaviors.ITimedEventOccurrence;
 
 public class MokaValueAdapterFactory {
 
@@ -38,11 +47,21 @@ public class MokaValueAdapterFactory {
 		return INSTANCE;
 	}
 
-	public MokaValueAdapter instantiate(Object value, MokaDebugTarget debugTarget) {
-		MokaValueAdapter adapter = null;
+	public MokaValueAdapter<?> instantiate(Object value, MokaDebugTarget debugTarget) {
+		MokaValueAdapter<?> adapter = null;
 		if (value != null) {
 			if (value instanceof IEventOccurrence) {
-				adapter = new EventOccurrenceValueAdapter(debugTarget, (IEventOccurrence) value);
+				if(value instanceof ICS_EventOccurrence) {
+					adapter = new CS_EventOccurrenceValueAdapter(debugTarget, (ICS_EventOccurrence) value);
+				} else if(value instanceof ITimedEventOccurrence) {
+					adapter = new TimeEventOccurrenceValueAdapter(debugTarget, (ITimedEventOccurrence) value);
+				} else if(value instanceof ISignalEventOccurrence) {
+					adapter = new SignalEventOccurrenceValueAdapter(debugTarget, (ISignalEventOccurrence) value);
+				} else if(value instanceof ICallEventOccurrence) {
+					adapter = new CallEventOccurrenceValueAdapter(debugTarget, (ICallEventOccurrence) value);
+				} else if(value instanceof ICompletionEventOccurrence) {
+					adapter = new CompletionEventOccurrenceValueAdapter(debugTarget, (ICompletionEventOccurrence) value);
+				}
 			} else if (value instanceof IToken) {
 				if (value instanceof IObjectToken) {
 					adapter = new ObjectTokenValueAdapter(debugTarget, (IObjectToken) value);
@@ -52,7 +71,13 @@ public class MokaValueAdapterFactory {
 					adapter = new TokenValueAdapter(debugTarget, (IToken) value);
 				}
 			} else if (value instanceof IValue) {
-				if (value instanceof IObject_) {
+				if (value instanceof IReference) {
+					if(value instanceof ICS_InteractionPoint) {
+						adapter = new CS_InteractionPointValueAdapter(debugTarget, (ICS_InteractionPoint )value);
+					}else {
+						adapter = new ReferenceValueAdapter(debugTarget, (IReference) value);
+					}
+				} else if (value instanceof IObject_) {
 					adapter = new ObjectValueAdapter(debugTarget, (IObject_) value);
 				} else if (value instanceof IStructuredValue) {
 					adapter = new StructuredValueAdapter(debugTarget, (IStructuredValue) value);
@@ -61,14 +86,20 @@ public class MokaValueAdapterFactory {
 				}
 			} else if (value instanceof ISemanticVisitor) {
 				if (value instanceof IActivityNodeActivation) {
-					adapter = new ActivityNodeActivationValueAdapter(debugTarget, (IActivityNodeActivation) value);
+					if(value instanceof IAcceptEventActionActivation) {
+						adapter = new TriggeredVisitorValueAdapter(debugTarget, (IAcceptEventActionActivation) value);
+					}else {
+						adapter = new ActivityNodeActivationValueAdapter(debugTarget, (IActivityNodeActivation) value);
+					}
 				}else if (value instanceof IActivityEdgeInstance){
 					adapter = new ActivityEdgeInstanceValueAdapter(debugTarget, (IActivityEdgeInstance)value);
+				} else if (value instanceof ITransitionActivation) {
+					adapter = new TriggeredVisitorValueAdapter(debugTarget, (ITransitionActivation)value);
 				}
 			}
 		}
 		if (adapter == null) {
-			adapter = new NullValueAdapter(debugTarget);
+			adapter = new DefaultValueAdapter(debugTarget, value);
 		}
 		return adapter;
 	}
