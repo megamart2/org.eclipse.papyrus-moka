@@ -59,7 +59,7 @@ public class MokaConstants {
 	 * Default delay between two animation steps.
 	 * To be used by clients providing automatic animation.
 	 */
-	public static int MOKA_ANIMATION_DELAY = 25;
+	public static int MOKA_ANIMATION_DELAY = 10;
 
 
 	/** Constants underlying the communication protocol between the debug target and the actual execution engine. */
