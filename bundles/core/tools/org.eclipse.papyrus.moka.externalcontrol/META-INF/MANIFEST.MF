@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Moka External Control Manager (Incubation)
 Bundle-SymbolicName: org.eclipse.papyrus.moka.externalcontrol
-Bundle-Version: 2.0.0.qualifier
+Bundle-Version: 2.1.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.externalcontrol.Activator
 Require-Bundle: org.eclipse.core.runtime;bundle-version="[3.13.0,4.0.0)",
  org.aspectj.runtime;bundle-version="[1.8.10,2.0.0)",

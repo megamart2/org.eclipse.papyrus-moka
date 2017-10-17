@@ -2,7 +2,7 @@
 <feature
       id="org.eclipse.papyrus.moka.feature"
       label="Moka Core (Incubation)"
-      version="3.0.0.qualifier"
+      version="3.1.0.qualifier"
       provider-name="Eclipse Modeling Project">
 
    <description url="http://www.example.com/description">
