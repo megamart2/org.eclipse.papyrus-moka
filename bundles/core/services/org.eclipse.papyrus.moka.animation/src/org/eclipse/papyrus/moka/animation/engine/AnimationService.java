@@ -25,13 +25,15 @@ import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationKind;
 import org.eclipse.papyrus.moka.animation.engine.rendering.DiagramHandler;
 import org.eclipse.papyrus.moka.animation.engine.rendering.IAnimation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.AbstractMokaService;
 import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
+import org.eclipse.papyrus.moka.service.IMokaStepListener;
 import org.eclipse.papyrus.moka.utils.constants.MokaConstants;
 
-public class AnimationService extends AbstractMokaService implements IAnimation, IMokaExecutionListener {
+public class AnimationService extends AbstractMokaService implements IAnimation, IMokaExecutionListener, IMokaStepListener {
 
 	// The handler responsible for markers application
 	// TODO: the animation engine shall be contributed through an extension point.
@@ -133,6 +135,26 @@ public class AnimationService extends AbstractMokaService implements IAnimation,
 		}
 	}
 
+	@Override
+	public void stepStart(IReference context) {
+		if (MokaConstants.MOKA_AUTOMATIC_ANIMATION) {
+			Animator animator = this.getAnimator(context);
+			if (animator != null) {
+				animator.stepStart(context);
+			}
+		}
+	}
+
+	@Override
+	public void stepEnd(IReference context) {
+		if (MokaConstants.MOKA_AUTOMATIC_ANIMATION) {
+			Animator animator = this.getAnimator(context);
+			if (animator != null) {
+				animator.stepEnd(context);
+			}
+		}
+	}
+	
 	public void dispose() {
 		this.engine.clean();
 	}

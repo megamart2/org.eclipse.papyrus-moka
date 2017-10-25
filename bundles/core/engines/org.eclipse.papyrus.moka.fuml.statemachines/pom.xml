@@ -16,6 +16,11 @@
 	<name>org.eclipse.papyrus.moka.fuml.statemachines</name>
 	<description>Execution engine implementing PSSM (Precise Semantics for UML State Machines)</description>
 
+	<!-- Properties -->
+	<properties>
+		<fuml-aspects>${project.basedir}/../org.eclipse.papyrus.moka.fuml/aspects</fuml-aspects>
+	</properties>
+	
 	<!-- Build specificities -->
 	<build>
 		<plugins>
@@ -35,6 +40,7 @@
 						<configuration>
 							<verbose>true</verbose>
 							<showWeaveInfo>true</showWeaveInfo>
+							<aspectDirectory>${fuml-aspects}</aspectDirectory>
 							<aspectDirectory>${project.basedir}/aspects</aspectDirectory>
 							<source>1.8</source>
 							<target>1.8</target>

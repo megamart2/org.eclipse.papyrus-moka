@@ -15,11 +15,13 @@ import java.util.List;
 
 import org.eclipse.papyrus.moka.animation.engine.animators.actions.DerivedAnimationAction;
 import org.eclipse.papyrus.moka.animation.engine.rendering.AnimationEngine;
+import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IReference;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 import org.eclipse.papyrus.moka.service.IMokaExecutionListener;
+import org.eclipse.papyrus.moka.service.IMokaStepListener;
 
-public abstract class Animator implements IMokaExecutionListener{
+public abstract class Animator implements IMokaExecutionListener, IMokaStepListener{
 
 	// The animation engine associated to the animator
 	protected AnimationEngine engine;
@@ -62,7 +64,7 @@ public abstract class Animator implements IMokaExecutionListener{
 	public abstract boolean accept(ISemanticVisitor visitor);
 	
 	@Override
-	public void nodeVisited(ISemanticVisitor nodeVisitor) {
+	public final void nodeVisited(ISemanticVisitor nodeVisitor) {
 		// Apply PRE and POST actions attached to the animator when
 		// an acceptable node is visited.
 		for(DerivedAnimationAction derivedAction : this.derivedAnimationAction) {
@@ -101,12 +103,20 @@ public abstract class Animator implements IMokaExecutionListener{
 	
 	@Override
 	public void valueCreated(IValue value) {
-		// Do nothing
+		// By default do nothing
 	}
 
 	@Override
 	public void valueDestroyed(IValue value) {
-		// Do nothing
+		// By default do nothing
+	}
+	
+	public void stepStart(IReference context) {
+		// By default do nothing
+	}
+	
+	public void stepEnd(IReference context) {
+		// By default do nothing
 	}
 	
 }

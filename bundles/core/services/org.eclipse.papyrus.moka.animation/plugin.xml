@@ -74,18 +74,10 @@
       <animator
             class="org.eclipse.papyrus.moka.animation.engine.animators.ActivityAnimator"
             priority="0">
-         <derivedAnimationAction
-               class="org.eclipse.papyrus.moka.animation.engine.animators.actions.fuml.InvocationActionDerivedAnimation"></derivedAnimationAction>
-         <derivedAnimationAction
-               class="org.eclipse.papyrus.moka.animation.engine.animators.actions.fuml.AddStructuralFeatureValueActionDerivedAnimation">
-         </derivedAnimationAction>
       </animator>
       <animator
             class="org.eclipse.papyrus.moka.animation.engine.animators.StructuralAnimator"
             priority="0">
-         <derivedAnimationAction
-               class="org.eclipse.papyrus.moka.animation.engine.animators.actions.composite.FeatureValueTypeDerivedAnimation">
-         </derivedAnimationAction>
       </animator>
    </extension>
 
