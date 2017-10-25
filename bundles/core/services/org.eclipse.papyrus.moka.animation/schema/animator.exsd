@@ -77,6 +77,16 @@
                </documentation>
             </annotation>
          </attribute>
+         <attribute name="redefined" type="string">
+            <annotation>
+               <documentation>
+                  Identify an existing animator that is redefined by this animator. This animator will replace at runtime the redefined animator.
+               </documentation>
+               <appinfo>
+                  <meta.attribute kind="java" basedOn="org.eclipse.papyrus.moka.animation.engine.animators.Animator:"/>
+               </appinfo>
+            </annotation>
+         </attribute>
       </complexType>
    </element>
 

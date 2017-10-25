@@ -79,7 +79,11 @@ public class DiagramHandler {
 		// 2 - Build a cache linking a model element to a list of diagrams in which it appears
 		if (modelElement instanceof Element) {
 			// Find all diagrams available in this model
-			Job diagramsLoading = new InitiliazeDiagramManagerJob(((Element) modelElement).getModel());
+			Element owner = ((Element)modelElement).getOwner();
+			while(owner.getOwner() != null) {
+				owner = owner.getOwner();
+			}
+			Job diagramsLoading = new InitiliazeDiagramManagerJob(owner.getModel());
 			diagramsLoading.schedule();
 			try {
 				diagramsLoading.join();

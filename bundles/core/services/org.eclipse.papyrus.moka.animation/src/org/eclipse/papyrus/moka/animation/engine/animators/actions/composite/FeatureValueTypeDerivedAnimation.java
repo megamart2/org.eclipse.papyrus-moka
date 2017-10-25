@@ -26,9 +26,7 @@ public class FeatureValueTypeDerivedAnimation extends DerivedAnimationAction{
 		// Enable the animation of the type of the new value
 		org.eclipse.papyrus.moka.fuml.Profiling.Semantics.Kernel.Classes.IFeatureValueWrapper featureValue = (IFeatureValueWrapper) visitor;
 		Type type = featureValue.getFeature().getType();
-		if(type instanceof Class && ((Class)type).isActive()) {
-			engine.renderAs(type, featureValue.getContext(), AnimationKind.ANIMATED);
-		}else {
+		if(type instanceof Class) {
 			engine.renderAs(type, featureValue.getContext(), AnimationKind.VISITED);
 		}
 	}

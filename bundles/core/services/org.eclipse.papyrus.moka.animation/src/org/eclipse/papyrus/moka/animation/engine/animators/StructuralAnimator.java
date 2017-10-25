@@ -47,16 +47,10 @@ public class StructuralAnimator extends Animator {
 					AnimationKind.VISITED, MokaConstants.MOKA_ANIMATION_DELAY);
 		} else if (nodeVisitor instanceof IFeatureValueWrapper) {
 			// If the visited element is a structural feature newly associated to values
-			// then two different animation behavior can occur:
-			// 1] The structural feature has a type that is an active class then the feature
-			// is marked as being animated (i.e., it is currently executed).
-			// 2] The structural feature is not typed by an active class then the feature is
-			// marked as being visited (i.e., it is not currently executing)
+			// then the structural feature is marked as being visited
 			IFeatureValueWrapper featureValue = (IFeatureValueWrapper) nodeVisitor;
 			Type type = featureValue.getFeature().getType();
-			if (type instanceof Class && ((Class) type).isActive()) {
-				this.engine.renderAs(featureValue.getFeature(), featureValue.getContext(), AnimationKind.ANIMATED);
-			} else {
+			if (type instanceof Class) {
 				this.engine.renderAs(featureValue.getFeature(), featureValue.getContext(), AnimationKind.VISITED);
 			}
 		}
@@ -74,12 +68,7 @@ public class StructuralAnimator extends Animator {
 		// while if it is passive it remains in the VISITED state
 		IObject_ object = (IObject_) value;
 		for (Classifier classifier : object.getTypes()) {
-			Class clazz = (Class) classifier;
-			if (clazz.isActive()) {
-				this.engine.renderAs(clazz, object, AnimationKind.ANIMATED);
-			} else {
-				this.engine.renderAs(clazz, object, AnimationKind.VISITED);
-			}
+			this.engine.renderAs((Class) classifier, object, AnimationKind.VISITED);
 		}
 	}
 
