@@ -12,10 +12,13 @@
 
 package org.eclipse.papyrus.moka.fuml.Profiling;
 
-import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
+import java.util.List;
 
-public interface ITriggeredVisitor {
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
+
+public interface IObjectNodeActivationWrapper extends IObjectNodeActivation {
 	
-	public IEventOccurrence getTriggeringEventOccurrence();
-	
+	public List<IToken> getOffer();
+
 }

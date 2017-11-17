@@ -14,7 +14,12 @@ package org.eclipse.papyrus.moka.debug.model.data.presentations;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.jface.viewers.ILabelProvider;
 import org.eclipse.jface.viewers.ILabelProviderListener;
+import org.eclipse.papyrus.infra.core.services.ServiceException;
+import org.eclipse.papyrus.infra.core.services.ServicesRegistry;
+import org.eclipse.papyrus.infra.emf.utils.ServiceUtilsForResource;
+import org.eclipse.papyrus.infra.services.labelprovider.service.LabelProviderService;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.MokaVariableAdapter;
+import org.eclipse.uml2.uml.Element;
 
 public abstract class MokaDebugLabelProvider implements ILabelProvider {
 
@@ -49,6 +54,31 @@ public abstract class MokaDebugLabelProvider implements ILabelProvider {
 			}
 		}
 		return null;
+	}
+	
+	protected ILabelProvider getPapyrusLabelProvider(Element element) {
+		ILabelProvider papyrusProvider = null;
+		if(element != null && element.eResource() != null) {
+			ServicesRegistry registry = null;
+			try {
+				registry = ServiceUtilsForResource.getInstance().getServiceRegistry(element.eResource());
+			} catch (ServiceException e) {
+				e.printStackTrace();
+			}
+			if(registry != null) {
+				LabelProviderService service = null;
+				try {
+					service = registry.getService(LabelProviderService.class);
+				} catch (ServiceException e) {
+					e.printStackTrace();
+				}
+				if(service != null) {
+					papyrusProvider = service.getLabelProvider(element);
+				}
+			}
+		}
+		
+		return papyrusProvider;
 	}
 
 }

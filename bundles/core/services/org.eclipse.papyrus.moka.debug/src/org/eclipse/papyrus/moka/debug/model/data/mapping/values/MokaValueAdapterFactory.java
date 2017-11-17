@@ -14,10 +14,13 @@ package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.InvocationActions.ICS_EventOccurrence;
 import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
+import org.eclipse.papyrus.moka.fuml.Profiling.ITriggeredVisitorWrapper;
+import org.eclipse.papyrus.moka.fuml.Semantics.Actions.BasicActions.IActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Actions.CompleteActions.IAcceptEventActionActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityEdgeInstance;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IForkedToken;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
@@ -87,14 +90,16 @@ public class MokaValueAdapterFactory {
 			} else if (value instanceof ISemanticVisitor) {
 				if (value instanceof IActivityNodeActivation) {
 					if(value instanceof IAcceptEventActionActivation) {
-						adapter = new TriggeredVisitorValueAdapter(debugTarget, (IAcceptEventActionActivation) value);
-					}else {
-						adapter = new ActivityNodeActivationValueAdapter(debugTarget, (IActivityNodeActivation) value);
+						adapter = new TriggeredVisitorValueAdapter(debugTarget, (ITriggeredVisitorWrapper) value);
+					}else if(value instanceof IActionActivation) {
+						adapter = new ActionActivationValueAdapter<IActionActivation>(debugTarget, (IActionActivation) value);
+					} else if(value instanceof IObjectNodeActivation) {
+						adapter = new ObjectNodeActivationValueAdapter(debugTarget, (IObjectNodeActivation)value);
 					}
 				}else if (value instanceof IActivityEdgeInstance){
 					adapter = new ActivityEdgeInstanceValueAdapter(debugTarget, (IActivityEdgeInstance)value);
 				} else if (value instanceof ITransitionActivation) {
-					adapter = new TriggeredVisitorValueAdapter(debugTarget, (ITransitionActivation)value);
+					adapter = new TriggeredVisitorValueAdapter(debugTarget, (ITriggeredVisitorWrapper)value);
 				}
 			}
 		}

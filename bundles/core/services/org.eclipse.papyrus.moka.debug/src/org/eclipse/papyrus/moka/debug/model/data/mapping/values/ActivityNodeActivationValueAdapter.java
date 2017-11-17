@@ -13,15 +13,10 @@ package org.eclipse.papyrus.moka.debug.model.data.mapping.values;
 
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
-import org.eclipse.uml2.uml.NamedElement;
 
-public class ActivityNodeActivationValueAdapter extends ActivityVisitorValueAdapter{
+public abstract class ActivityNodeActivationValueAdapter<T extends IActivityNodeActivation> extends VisitorValueAdapter<T>{
 
-	public ActivityNodeActivationValueAdapter(MokaDebugTarget debugTarget, IActivityNodeActivation visitor) {
+	public ActivityNodeActivationValueAdapter(MokaDebugTarget debugTarget, T visitor) {
 		super(debugTarget, visitor);
-	}
-	@Override
-	protected NamedElement getNode() {
-		return ((IActivityNodeActivation)this.adaptedObject).getNode();
 	}
 }

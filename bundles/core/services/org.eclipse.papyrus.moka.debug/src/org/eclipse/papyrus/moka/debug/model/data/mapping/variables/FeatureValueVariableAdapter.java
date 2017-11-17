@@ -19,7 +19,7 @@ import org.eclipse.debug.core.DebugException;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.values.DefaultValueAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterFactory;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueList;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterList;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IExtensionalValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IFeatureValue;
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.ILink;
@@ -55,11 +55,11 @@ public class FeatureValueVariableAdapter extends MokaVariableAdapter<IFeatureVal
 			if(resultValues.size() == 1) {
 				this.value = MokaValueAdapterFactory.getInstance().instantiate(resultValues.iterator().next(), this.debugTarget);
 			} else if(resultValues.size() > 1) {
-				MokaValueList valueList = new MokaValueList(this.debugTarget);
+				MokaValueAdapterList adapterList = new MokaValueAdapterList(this.debugTarget);
 				for(IValue currentValue : resultValues) {
-					valueList.add(MokaValueAdapterFactory.getInstance().instantiate(currentValue, this.debugTarget));
+					adapterList.add(currentValue);
 				}
-				this.value = valueList;
+				this.value = adapterList;
 			} else {
 				this.value = new DefaultValueAdapter(this.debugTarget, null);
 			}

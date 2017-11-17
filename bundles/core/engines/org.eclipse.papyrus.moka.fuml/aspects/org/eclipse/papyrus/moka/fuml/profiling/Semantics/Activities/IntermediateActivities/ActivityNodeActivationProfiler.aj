@@ -17,6 +17,7 @@ package org.eclipse.papyrus.moka.fuml.profiling.Semantics.Activities.Intermediat
 import java.util.List;
 
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IActivityNodeActivation;
+import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IObjectNodeActivation;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 import org.eclipse.papyrus.moka.fuml.Semantics.impl.Activities.IntermediateActivities.ObjectNodeActivation;
 import org.eclipse.papyrus.moka.fuml.profiling.Semantics.Loci.SemanticVisitorProfiler;
@@ -34,7 +35,11 @@ public aspect ActivityNodeActivationProfiler extends SemanticVisitorProfiler {
 		call(* IActivityNodeActivation.fire(List<IToken>));
 
 	before(IActivityNodeActivation activation, List<IToken> tokens): fire(activation, tokens) {
-		this.visit(activation);
+		if(activation instanceof IObjectNodeActivation) {
+			//this.visit(new ObjectNodeActivationWrapper((IObjectNodeActivation)activation, tokens));
+		}else {
+			this.visit(activation);
+		}
 	}
 
 }

@@ -16,7 +16,7 @@ import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IValue;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterFactory;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueList;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterList;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.values.DefaultValueAdapter;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 
@@ -43,11 +43,10 @@ public class ParameterValueVariableAdapter extends MokaVariableAdapter<IParamete
 				this.value = MokaValueAdapterFactory.getInstance()
 						.instantiate(this.adaptedVariable.getValues().iterator().next(), debugTarget);
 			} else if (this.adaptedVariable.getValues().size() > 1) {
-				MokaValueList valueList = new MokaValueList(debugTarget);
+				MokaValueAdapterList valueList = new MokaValueAdapterList(debugTarget);
 				for (org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IValue currentValue : this.adaptedVariable
 						.getValues()) {
-					valueList.add( MokaValueAdapterFactory.getInstance()
-						.instantiate(currentValue ,debugTarget));
+					valueList.add(currentValue);
 				}
 				this.value = valueList;
 			} else {

@@ -25,6 +25,7 @@ import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.ExecutionCont
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.FeatureValueVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.ItemVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.MokaVariableAdapter;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.ObjectNodeActivationVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.ParameterValueVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.SuspensionPointVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.TokensVariableAdapter;
@@ -36,6 +37,7 @@ import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.EventPo
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.ExecutionContextVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.FeatureValueVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.ItemVariableLabelProvider;
+import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.ObjectNodeActivationVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.ParameterValueVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.SignalEventOccurrenceVariableLabelProvider;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.providers.SuspensionPointVariableLabelProvider;
@@ -91,6 +93,8 @@ public class MokaDebugLabelProviderFactory {
 			}
 		} else if (variable instanceof ParameterValueVariableAdapter) {
 			provider = new ParameterValueVariableLabelProvider();
+		} else if(variable instanceof ObjectNodeActivationVariableAdapter) {
+			provider = new ObjectNodeActivationVariableLabelProvider();
 		}
 		return provider;
 	}

@@ -16,33 +16,24 @@ import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IVariable;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
 import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.EventOccurrenceVariableAdapter;
-import org.eclipse.papyrus.moka.fuml.Profiling.ITriggeredVisitor;
-import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
+import org.eclipse.papyrus.moka.fuml.Profiling.ITriggeredVisitorWrapper;
 
-public class TriggeredVisitorValueAdapter extends VisitorValueAdapter{
+public class TriggeredVisitorValueAdapter extends VisitorValueAdapter<ITriggeredVisitorWrapper> {
 
-	public TriggeredVisitorValueAdapter(MokaDebugTarget debugTarget, ISemanticVisitor visitor) {
+	public TriggeredVisitorValueAdapter(MokaDebugTarget debugTarget, ITriggeredVisitorWrapper visitor) {
 		super(debugTarget, visitor);
-	}
-
-	@Override
-	public String getValueString() throws DebugException {
-		// Returns this value as a String.
-		// The string representation of this value is given by the toString
-		// operation implemented by a semantic visitor.
-		if(this.adaptedObject != null){
-			return this.adaptedObject.toString();
-		}
-		return "<empty>";
 	}
 	
 	@Override
 	public IVariable[] getVariables() throws DebugException {
+		// The only variable that is accessible from a triggered visitor is the
+		// event occurrence that triggered the visitor. This event occurrence may
+		// itself have event variables.
 		if (this.variables.isEmpty()) {
-			this.variables.add(new EventOccurrenceVariableAdapter(debugTarget,
-					((ITriggeredVisitor) this.adaptedObject).getTriggeringEventOccurrence()));
+			this.variables.add(
+					new EventOccurrenceVariableAdapter(debugTarget, this.adaptedObject.getTriggeringEventOccurrence()));
 		}
 		return this.variables.toArray(new IVariable[0]);
 	}
-
+	
 }

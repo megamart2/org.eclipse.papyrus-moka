@@ -12,19 +12,23 @@
 
 package org.eclipse.papyrus.moka.debug.model.data.presentations.providers;
 
-import org.eclipse.papyrus.moka.debug.MokaDebugPlugin;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses.ICS_InteractionPoint;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.MokaVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.MokaDebugLabelProvider;
 import org.eclipse.swt.graphics.Image;
 
 public class CS_InteractionPointVariableLabelProvider extends MokaDebugLabelProvider{
 
-	// Icon to represent the interaction point
-	public final static String PORT_ICON = "resources/icons/interaction-point.gif";
-	
 	@Override
 	public Image getImage(Object element) {
 		if(element != null){
-			return MokaDebugPlugin.getDefault().getImageRegistry().get(PORT_ICON);
+			MokaVariableAdapter<?> variableAdapter = (MokaVariableAdapter<?>) element; 
+			ICS_InteractionPoint interactionPoint = (ICS_InteractionPoint) variableAdapter.getAdapted();
+			ILabelProvider provider = this.getPapyrusLabelProvider(interactionPoint.getDefiningPort());
+			if(provider != null) {
+				return provider.getImage(interactionPoint.getDefiningPort());
+			}
 		}
 		return null;
 	}

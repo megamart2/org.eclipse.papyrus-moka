@@ -30,7 +30,7 @@ public aspect ObjectNodeActivationProfiler extends SemanticVisitorProfiler{
 	
 	
 	before(IObjectNodeActivation activation, List<IToken> tokens) : sendOffer(activation, tokens){
-		this.visit(activation);
+		this.visit(new ObjectNodeActivationWrapper(activation, tokens));
 	}
 	
 }

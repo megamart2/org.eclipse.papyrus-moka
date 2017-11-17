@@ -18,8 +18,7 @@ import java.util.List;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IValue;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterFactory;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueList;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterList;
 import org.eclipse.papyrus.moka.fuml.Semantics.Activities.IntermediateActivities.IToken;
 
 public class TokensVariableAdapter extends MokaVariableAdapter<List<IToken>> {
@@ -35,10 +34,10 @@ public class TokensVariableAdapter extends MokaVariableAdapter<List<IToken>> {
 		// The value adapter corresponding to a list of token consist in a list
 		// of adapter. Each adapter in the list is an adapter for a token.
 		if (this.value == null) {
-			MokaValueList tokensList = new MokaValueList(debugTarget);
+			MokaValueAdapterList tokensList = new MokaValueAdapterList(debugTarget);
 			Iterator<IToken> tokensIterator = this.adaptedVariable.iterator();
 			while (tokensIterator.hasNext()) {
-				tokensList.add(MokaValueAdapterFactory.getInstance().instantiate(tokensIterator.next(), this.debugTarget));
+				tokensList.add(tokensIterator.next());
 			}
 			this.value = tokensList;
 		}

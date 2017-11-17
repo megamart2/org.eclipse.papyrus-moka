@@ -17,8 +17,7 @@ import java.util.Iterator;
 import org.eclipse.debug.core.DebugException;
 import org.eclipse.debug.core.model.IValue;
 import org.eclipse.papyrus.moka.debug.engine.MokaDebugTarget;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterFactory;
-import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueList;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.values.MokaValueAdapterList;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IObjectActivation;
 
@@ -34,14 +33,15 @@ public class EventPoolVariableAdapter extends MokaVariableAdapter<IObjectActivat
 	public IValue getValue() throws DebugException {
 		// The variable corresponding to the event pool may have multiple values.
 		// This implies it is not sufficient to request a value adapter to the factory.
-		// Instead a list of value adapter is provided, each adapter corresponds to a
+		// Instead a list of value adapter is provided, each adapted corresponds to a
 		// event occurrence available in the pool.
 		if (this.value == null) {
-			this.value = new MokaValueList(this.debugTarget);
+			MokaValueAdapterList adapterList = new MokaValueAdapterList(this.debugTarget);
 			Iterator<IEventOccurrence> eventsIterator = this.adaptedVariable.getEvents().iterator();
 			while (eventsIterator.hasNext()) {
-				((MokaValueList) this.value).add(MokaValueAdapterFactory.getInstance().instantiate(eventsIterator.next(), this.debugTarget));
+				adapterList.add(eventsIterator.next());
 			}
+			this.value = adapterList;
 		}
 		return this.value;
 	}

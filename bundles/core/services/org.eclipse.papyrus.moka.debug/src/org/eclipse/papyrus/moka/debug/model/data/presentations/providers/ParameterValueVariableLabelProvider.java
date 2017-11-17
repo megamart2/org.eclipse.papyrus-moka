@@ -12,8 +12,10 @@
 
 package org.eclipse.papyrus.moka.debug.model.data.presentations.providers;
 
-import org.eclipse.papyrus.moka.debug.MokaDebugPlugin;
+import org.eclipse.jface.viewers.ILabelProvider;
+import org.eclipse.papyrus.moka.debug.model.data.mapping.variables.MokaVariableAdapter;
 import org.eclipse.papyrus.moka.debug.model.data.presentations.MokaDebugLabelProvider;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.swt.graphics.Image;
 
 public class ParameterValueVariableLabelProvider extends MokaDebugLabelProvider{
@@ -21,7 +23,12 @@ public class ParameterValueVariableLabelProvider extends MokaDebugLabelProvider{
 	@Override
 	public Image getImage(Object element) {
 		if(element != null) {
-			return MokaDebugPlugin.getDefault().getImageRegistry().get(FeatureValueVariableLabelProvider.PUBLIC_ICON);
+			MokaVariableAdapter<?> variableAdapter = (MokaVariableAdapter<?>) element; 
+			IParameterValue parameterValue = (IParameterValue) variableAdapter.getAdapted();
+			ILabelProvider provider = this.getPapyrusLabelProvider(parameterValue.getParameter());
+			if(provider != null) {
+				return provider.getImage(parameterValue.getParameter());
+			}
 		}
 		return null;
 	}

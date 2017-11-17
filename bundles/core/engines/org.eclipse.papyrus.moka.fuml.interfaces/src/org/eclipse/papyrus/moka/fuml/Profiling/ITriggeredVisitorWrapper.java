@@ -10,22 +10,13 @@
  *  CEA LIST Initial API and implementation
  *****************************************************************************/
 
-package org.eclipse.papyrus.moka.fuml.profiling.Semantics.CommonBehaviors.Communications;
+package org.eclipse.papyrus.moka.fuml.Profiling;
 
-import org.eclipse.papyrus.moka.fuml.Profiling.ITriggeredVisitorWrapper;
 import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.Communications.IEventOccurrence;
+import org.eclipse.papyrus.moka.fuml.Semantics.Loci.LociL1.ISemanticVisitor;
 
-public abstract class TriggeredVisitorWrapper implements ITriggeredVisitorWrapper{
+public interface ITriggeredVisitorWrapper extends ISemanticVisitor{
 	
-	protected IEventOccurrence eventOccurrence;
+	public IEventOccurrence getTriggeringEventOccurrence();
 	
-	public TriggeredVisitorWrapper(IEventOccurrence eventOccurrence) {
-		this.eventOccurrence = eventOccurrence;
-	}
-	
-	@Override
-	public IEventOccurrence getTriggeringEventOccurrence() {
-		return this.eventOccurrence;
-	}
-
 }
