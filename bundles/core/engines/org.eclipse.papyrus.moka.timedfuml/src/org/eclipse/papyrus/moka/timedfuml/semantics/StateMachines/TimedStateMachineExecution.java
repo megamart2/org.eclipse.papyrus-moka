@@ -12,8 +12,13 @@
  *****************************************************************************/
 package org.eclipse.papyrus.moka.timedfuml.semantics.StateMachines;
 
+import java.util.List;
+
 import org.eclipse.papyrus.moka.fuml.Semantics.Classes.Kernel.IObject_;
+import org.eclipse.papyrus.moka.fuml.Semantics.CommonBehaviors.BasicBehaviors.IParameterValue;
 import org.eclipse.papyrus.moka.fuml.statemachines.Semantics.StateMachines.StateMachineExecution;
+import org.eclipse.papyrus.moka.timedfuml.semantics.CommonBehaviors.TimedObjectActivation;
+import org.eclipse.uml2.uml.Class;
 
 public class TimedStateMachineExecution extends StateMachineExecution{
 
@@ -25,5 +30,16 @@ public class TimedStateMachineExecution extends StateMachineExecution{
 	public TimedStateMachineExecution(IObject_ context) {
 		super();
 		this.configuration = new TimedStateMachineConfiguration(this);
+	}
+	
+	public void startBehavior(Class classifier, List<IParameterValue> inputs) {
+		// The behavior captured here is almost identical to the one provide by Object_.
+		// Instead of using a simple ObjectActivation we use a StateMachineObjectActivation.
+		// This specialized kind of ObjectActivation allows the registering of time events.
+		if (this.objectActivation == null) {
+			this.objectActivation = new TimedObjectActivation();
+			this.objectActivation.setObject(this);
+		}
+		this.objectActivation.startBehavior(classifier, inputs);
 	}
 }
