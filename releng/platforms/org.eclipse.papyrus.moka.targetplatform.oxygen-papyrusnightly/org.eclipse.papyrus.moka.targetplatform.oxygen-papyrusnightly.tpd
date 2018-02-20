@@ -20,10 +20,10 @@ location "http://download.eclipse.org/tools/ajdt/47/dev/update/ajdt-e47-2.2.4.20
 
 location "http://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" orbit{
 	org.eclipse.orbit.category.json
-	jnr.ffi
-	jnr.constants
-	jnr.enxio
 	javax.xml
+	com.github.jnr.constants
+	com.github.jnr.enxio
+	com.github.jnr.ffi
 	com.github.jnr.jffi
 }
 

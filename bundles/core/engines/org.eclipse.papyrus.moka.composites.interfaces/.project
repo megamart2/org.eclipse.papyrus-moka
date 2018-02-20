@@ -20,7 +20,7 @@
 			<arguments>
 			</arguments>
 		</buildCommand>
-		<buildCommand>
+	<buildCommand>
 			<name>edu.umd.cs.findbugs.plugin.eclipse.findbugsBuilder</name>
 			<arguments>
 			</arguments>

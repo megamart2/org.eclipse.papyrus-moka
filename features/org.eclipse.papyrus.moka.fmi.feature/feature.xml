@@ -18,61 +18,48 @@ http://www.eclipse.org/legal/epl-v10.html
    </copyright>
 
    <requires>
-      <import plugin="org.eclipse.core.runtime" version="3.12.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.10.1" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore.xmi" version="2.12.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.core.resources" version="3.11.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.emf.ecore" version="2.12.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.uml" version="5.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fuml" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.composites" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.uml.extensionpoints" version="1.0.2" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fuml.interfaces" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.composites.interfaces" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.composites" version="1.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.discreteevent" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.timedfuml" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.debug.core" version="3.10.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui" version="3.107.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.ui" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fuml.standardlibrary" version="2.0.0" match="greaterOrEqual"/>
-      <import feature="org.eclipse.papyrus.moka.feature" version="2.0.0.qualifier"/>
-      <import plugin="org.eclipse.uml2.types"/>
-      <import plugin="jnr.ffi"/>
-      <import plugin="org.eclipse.jface" version="3.12.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fuml.statemachines.interfaces" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fuml.statemachines" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.uml.profile.standard"/>
-      <import plugin="org.eclipse.uml2.uml" version="5.1.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.uml2.uml.resources" version="5.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.ui.ide" version="3.12.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.composites.utils"/>
-      <import plugin="org.eclipse.emf.transaction" version="1.9.0" match="greaterOrEqual"/>
       <import plugin="org.eclipse.papyrus.infra.core" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.infra.ui"/>
-      <import plugin="org.eclipse.papyrus.moka.fmi"/>
-      <import plugin="org.eclipse.papyrus.moka.fmi.fmi2uml"/>
-      <import plugin="org.eclipse.papyrus.infra.gmfdiag.dnd" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gef" version="3.11.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.8.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.infra.gmfdiag.css" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.uml.diagram.composite" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.uml.diagram.wizards" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.uml.tools.utils" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.timedfuml" version="1.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.composites" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fuml" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="com.fasterxml.jackson.core.jackson-core" version="2.5.0" match="greaterOrEqual"/>
-      <import plugin="com.fasterxml.jackson.core.jackson-annotations" version="2.5.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.service" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.utils" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.debug.core" version="3.10.100" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.moka.fmu.rcp" version="2.0.0" match="greaterOrEqual"/>
-      <import plugin="org.eclipse.papyrus.uml.extensionpoints" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.apache.commons.cli" version="1.2.0" match="greaterOrEqual"/>
-      <import plugin="org.aspectj.runtime" version="1.8.9" match="greaterOrEqual"/>
+      <import feature="org.eclipse.papyrus.moka.feature" version="2.0.0.qualifier"/>
+      <import plugin="org.eclipse.core.runtime" version="3.13.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore" version="2.13.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.types" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.ecore.xmi" version="2.13.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.moka.fmi.profile" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.composites" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.uml.extensionpoints" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.jface" version="3.12.0" match="compatible"/>
+      <import plugin="com.github.jnr.jffi" version="1.2.11" match="greaterOrEqual"/>
+      <import plugin="com.github.jnr.ffi" version="2.0.9" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.fmi.master" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.timedfuml" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.uml2.uml.resources" version="5.3.0" match="compatible"/>
+      <import plugin="org.eclipse.uml2.uml.profile.standard" version="1.0.100" match="compatible"/>
+      <import plugin="org.eclipse.uml2.uml" version="5.3.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.moka.fmi" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.ui" version="3.109.0" match="compatible"/>
+      <import plugin="org.eclipse.ui.ide" version="3.13.0" match="compatible"/>
+      <import plugin="org.eclipse.gef" version="3.11.0" match="compatible"/>
+      <import plugin="org.eclipse.emf.transaction" version="1.9.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.moka.ui" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.composites.utils" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.fmu.engine" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.fmi.fmi2uml" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.gmf.runtime.diagram.ui" version="1.8.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.css" version="2.1.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.composite" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.infra.gmfdiag.dnd" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.uml.diagram.wizards" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.infra.ui" version="2.0.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.uml.tools.utils" version="3.0.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.moka.service" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.eclipse.papyrus.moka.utils" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="com.fasterxml.jackson.core.jackson-core" version="2.5.0" match="compatible"/>
+      <import plugin="com.fasterxml.jackson.core.jackson-annotations" version="2.5.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.moka.fmu.engine" version="3.0.0" match="greaterOrEqual"/>
+      <import plugin="org.apache.commons.cli" version="1.2.0" match="compatible"/>
+      <import plugin="org.eclipse.papyrus.moka.timedfuml" version="2.0.100" match="greaterOrEqual"/>
+      <import plugin="org.aspectj.runtime" version="1.8.10" match="compatible"/>
    </requires>
 
    <plugin
