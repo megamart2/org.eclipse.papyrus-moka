@@ -20,4 +20,5 @@ Export-Package: org.eclipse.papyrus.moka.datavisualization.handlers,
  org.eclipse.papyrus.moka.datavisualization.services,
  org.eclipse.papyrus.moka.datavisualization.ui,
  org.eclipse.papyrus.moka.datavisualization.ui.diagram,
+ org.eclipse.papyrus.moka.datavisualization.ui.dialogs,
  org.eclipse.papyrus.moka.datavisualization.ui.tester
