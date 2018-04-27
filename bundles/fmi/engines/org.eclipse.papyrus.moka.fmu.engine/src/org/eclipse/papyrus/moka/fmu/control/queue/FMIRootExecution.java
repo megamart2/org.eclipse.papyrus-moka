@@ -33,8 +33,8 @@ public class FMIRootExecution extends RootExecution {
 	
 	public FMUObject getFMUObject(){
 		// Return the FMU instance corresponding to the class.
-		if(this.fmuObject == null && FMIProfileUtil.isCS_FMU(this.classifier)) {
-			this.fmuObject = (FMUObject) this.locus.instantiate(this.classifier);
+		if(this.fmuObject == null && FMIProfileUtil.isCS_FMU(this.executedClass)) {
+			this.fmuObject = (FMUObject) this.locus.instantiate(this.executedClass);
 			this.fmuObject.init();
 		}
 		return this.fmuObject;
@@ -45,11 +45,11 @@ public class FMIRootExecution extends RootExecution {
 		// If the class to execute is an FMU then instantiate the corresponding
 		// object and start its classifier behavior. In any other situation apply
 		// the regular instantiation strategy.
-		if(FMIProfileUtil.isCS_FMU(this.classifier)) {
+		if(FMIProfileUtil.isCS_FMU(this.executedClass)) {
 			if(this.fmuObject == null) {
 				this.getFMUObject();
 			}
-			this.fmuObject.startBehavior(this.classifier, this.parameterValues);
+			this.fmuObject.startBehavior(this.executedClass, this.parameterValues);
 		}else {
 			super.execute();
 		}
