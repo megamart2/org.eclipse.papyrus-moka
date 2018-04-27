@@ -38,9 +38,15 @@ public class _displayCurrentTimeAction extends Action {
 		if (out == null) {
 			this.out = System.out;
 		}
-		String message = "Step: " + this.step + ", Current time: " + DEScheduler.getInstance().getCurrentTime() + "\n";
+		StringBuilder builder = new StringBuilder();
+		builder.append("\n------------------------------------------------------------------------\n");
+		builder.append("Step: ");
+		builder.append(this.step);
+		builder.append(", Current time: ");
+		builder.append(DEScheduler.getInstance().getCurrentTime());
+		builder.append("\n------------------------------------------------------------------------\n");
 		try {
-			out.write(message.getBytes());
+			out.write(builder.toString().getBytes());
 		} catch (IOException e) {
 
 		}
