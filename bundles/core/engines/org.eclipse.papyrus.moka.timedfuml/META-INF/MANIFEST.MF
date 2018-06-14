@@ -20,6 +20,7 @@ Export-Package: org.eclipse.papyrus.moka.timedfuml,
  org.eclipse.papyrus.moka.timedfuml.semantics.Actions.CompleteActions,
  org.eclipse.papyrus.moka.timedfuml.semantics.CommonBehaviors,
  org.eclipse.papyrus.moka.timedfuml.semantics.Loci,
+ org.eclipse.papyrus.moka.timedfuml.semantics.StateMachines,
  org.eclipse.papyrus.moka.timedfuml.semantics.StructuredClassifiers,
  org.eclipse.papyrus.moka.timedfuml.utils
 Bundle-Vendor: Eclipse Modeling Project

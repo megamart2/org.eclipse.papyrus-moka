@@ -11,7 +11,8 @@ Export-Package: org.eclipse.papyrus.moka.composites,
  org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.InvocationActions,
  org.eclipse.papyrus.moka.composites.Semantics.impl.CompositeStructures.StructuredClasses,
  org.eclipse.papyrus.moka.composites.Semantics.impl.Loci.LociL3,
- org.eclipse.papyrus.moka.composites.extensions.Semantics.CompositeStructures
+ org.eclipse.papyrus.moka.composites.extensions.Semantics.CompositeStructures,
+ org.eclipse.papyrus.moka.composites.extensions.Semantics.InvocationActions
 Bundle-Vendor: Eclipse Modeling Project
 Bundle-ActivationPolicy: lazy
 Bundle-Version: 3.0.0.qualifier

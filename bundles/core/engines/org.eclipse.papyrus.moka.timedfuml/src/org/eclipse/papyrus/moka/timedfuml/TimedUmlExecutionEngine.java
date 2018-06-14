@@ -22,7 +22,7 @@ import org.eclipse.papyrus.moka.timedfuml.actions._displayCurrentTimeAction;
 import org.eclipse.papyrus.moka.timedfuml.control.queue.TimedExecutionLoop;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Loci.TimedExecutionFactory;
 import org.eclipse.papyrus.moka.timedfuml.semantics.Loci.TimedLocus;
-import org.eclipse.uml2.uml.Behavior;
+import org.eclipse.uml2.uml.Class;
 
 public class TimedUmlExecutionEngine extends StateMachineExecutionEngine {
 
@@ -59,7 +59,7 @@ public class TimedUmlExecutionEngine extends StateMachineExecutionEngine {
 	@Override
 	protected void run_() {
 		// Starts the execution loop
-		RootExecution rootExecution = new RootExecution((Behavior) this.executionEntryPoint, this.executionArguments, locus);
+		RootExecution rootExecution = new RootExecution((Class)this.executionEntryPoint, this.executionArguments, locus);
 		ExecutionController.getInstance().setExecutionLoop(new TimedExecutionLoop());
 		ExecutionController.getInstance().start(rootExecution);
 	}
