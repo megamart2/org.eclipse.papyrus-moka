@@ -1,6 +1,6 @@
-target "Moka Oxygen Target Platform" with source requirements
+target "Moka Photon Target Platform" with source requirements
 
-location "http://download.eclipse.org/releases/oxygen" eclipse {
+location "http://download.eclipse.org/releases/photon" eclipse {
  org.eclipse.platform.feature.group lazy
  org.eclipse.rcp.feature.group lazy
  org.eclipse.jdt.feature.group lazy
@@ -9,22 +9,22 @@ location "http://download.eclipse.org/releases/oxygen" eclipse {
  org.eclipse.papyrus.sdk.feature.feature.group lazy
 }
 
-location "http://download.eclipse.org/tools/ajdt/47/dev/update/ajdt-e47-2.2.4.201704242114/" aspectj{
+location "http://download.eclipse.org/tools/ajdt/48/dev/update/" aspectj{
 	org.aspectj.feature.group
 	org.eclipse.ajdt.feature.group
 	org.eclipse.equinox.weaving.sdk.feature.group
 }
 
-location "http://download.eclipse.org/tools/orbit/downloads/drops/R20170307180635/repository/" orbit{
-	org.eclipse.orbit.category.json
-	javax.xml
+location "http://download.eclipse.org/tools/orbit/downloads/drops/S20180820175350/repository" orbit{
+	com.fasterxml.jackson.core.jackson-annotations
+	com.fasterxml.jackson.core.jackson-core
 	com.github.jnr.constants
 	com.github.jnr.enxio
 	com.github.jnr.ffi
 	com.github.jnr.jffi
 }
 
-location "http://download.eclipse.org/nebula/releases/1.2.0" nebula{
+location "http://download.eclipse.org/nebula/releases/2.0.1" nebula{
 	org.eclipse.nebula.widgets.xviewer.feature.feature.group
 	org.eclipse.nebula.visualization.feature.feature.group
 }

@@ -26,9 +26,6 @@ public class LightDataProvider extends AbstractDataProvider {
 	private List<Double> xValues, yValues;
 	private List<LightDataSample> samples = new ArrayList<>();
 	
-	private boolean dataRangedirty; 
-	
-	//private double xMin, xMax, yMin, yMax;
 	private TraceDataBounds bounds;
 	
 	public LightDataProvider(boolean chronological) {
@@ -64,7 +61,6 @@ public class LightDataProvider extends AbstractDataProvider {
 
 		fireDataChange();
 
-		dataRangedirty = false;
 	}
 
 	@Override
@@ -99,54 +95,6 @@ public class LightDataProvider extends AbstractDataProvider {
 		
 		fireDataChange();
 
-		dataRangedirty = false;
-	}
-
-	@Override
-	protected void innerUpdate() {
-		dataRangedirty = true;
-	}
-
-	@Override
-	protected void updateDataRange() {
-		if (!dataRangedirty)
-			return;
-
-		dataRangedirty = false;
-
-		if (getSize() > 0) {
-			int lowerBound = 0;
-
-			double xMin;
-			double xMax;
-			xMin = getXValue(lowerBound);//getSample(lowerBound).getXValue();
-			xMax = xMin;
-
-			double yMin;
-			double yMax;
-			yMin = getYValue(lowerBound);//getSample(lowerBound).getYValue();
-			yMax = yMin;
-
-			for (int i = lowerBound + 1; i < getSize(); i++) {
-				ISample dp = getSample(i);
-				if (xMin > dp.getXValue() - dp.getXMinusError())
-					xMin = dp.getXValue() - dp.getXMinusError();
-				if (xMax < dp.getXValue() + dp.getXPlusError())
-					xMax = dp.getXValue() + dp.getXPlusError();
-
-				if (yMin > dp.getYValue() - dp.getYMinusError())
-					yMin = dp.getYValue() - dp.getYMinusError();
-				if (yMax < dp.getYValue() + dp.getYPlusError())
-					yMax = dp.getYValue() + dp.getYPlusError();
-			}
-
-			xDataMinMax = new Range(xMin, xMax);
-			yDataMinMax = new Range(yMin, yMax);
-
-		} else {
-			xDataMinMax = null;
-			yDataMinMax = null;
-		}
 	}
 
 	public double getXValue(int index) {

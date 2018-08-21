@@ -5,3 +5,4 @@ Bundle-SymbolicName: org.eclipse.papyrus.moka.fmi.rcp.export
 Bundle-Version: 1.0.0.qualifier
 Bundle-Vendor: Eclipse Modeling project
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Automatic-Module-Name: org.eclipse.papyrus.moka.fmi.rcp.export

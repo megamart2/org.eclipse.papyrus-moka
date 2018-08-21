@@ -12,7 +12,6 @@
 package org.eclipse.papyrus.moka.fmi.master.fmilibrary;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 import org.eclipse.papyrus.moka.fmi.fmiprofile.CS_FMU;

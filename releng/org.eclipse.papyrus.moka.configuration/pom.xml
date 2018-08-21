@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.components</groupId>
 		<artifactId>org.eclipse.papyrus.components.parent</artifactId>
-		<version>0.0.22</version>
+		<version>0.0.24</version>
 		<relativePath></relativePath>
 	</parent>
 	
@@ -22,13 +22,15 @@
 
 	<!-- Moka properties -->
 	<properties>
+		<tycho-version>1.1.0</tycho-version>
+		<tychoExtrasVersion>1.1.0</tychoExtrasVersion>
 		<component.shortname>moka</component.shortname>
 		<component.hudson.tabname>Moka</component.hudson.tabname>
 		<component.fullartifactId>org.eclipse.papyrus.moka</component.fullartifactId>
 		<component.bugzilla.name>Moka</component.bugzilla.name>
 		<component.package.rootname>org.eclipse.papyrus.moka</component.package.rootname>
 		<component.apibaseline.url>http://download.eclipse.org/modeling/mdt/papyrus/components/moka/</component.apibaseline.url>
-		<eclipse.targetrelease>oxygen</eclipse.targetrelease>
+		<eclipse.targetrelease>photon</eclipse.targetrelease>
 		<target.version>3.1.0-SNAPSHOT</target.version>
 	</properties>
 
@@ -41,7 +43,6 @@
 	<!-- Moka Bugzilla -->
 	<issueManagement>
 		<url>https://bugs.eclipse.org/bugs/buglist.cgi?product=Papyrus&amp;component=${component.bugzilla.name}</url>
-		<system>Bugzilla</system>
 	</issueManagement>
 	
 	<!-- Moka Developpers -->

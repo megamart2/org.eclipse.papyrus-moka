@@ -10,9 +10,8 @@
 	</parent>
 	
 	<!-- POM description -->
-	<artifactId>org.eclipse.papyrus.moka.targetplatform.neon</artifactId>
+	<artifactId>org.eclipse.papyrus.moka.targetplatform.photon</artifactId>
 	<packaging>eclipse-target-definition</packaging>
-	<version>2.0.100-SNAPSHOT</version>
-	<name>Moka Neon Target Platform</name>
+	<name>Moka Photon Target Platform</name>
 	
 </project>

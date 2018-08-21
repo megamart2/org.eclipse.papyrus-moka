@@ -4,7 +4,7 @@ Bundle-Name: Moka Composites Interfaces
 Bundle-SymbolicName: org.eclipse.papyrus.moka.composites.interfaces
 Bundle-Version: 3.0.0.qualifier
 Bundle-Activator: org.eclipse.papyrus.moka.composites.interfaces.Activator
-Require-Bundle: org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="3.0.0";visibility:=reexport
+Require-Bundle: org.eclipse.papyrus.moka.fuml.interfaces;bundle-version="3.0.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: Eclipse Modeling Project
@@ -15,3 +15,4 @@ Export-Package: org.eclipse.papyrus.moka.composites.interfaces,
  org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.InvocationActions,
  org.eclipse.papyrus.moka.composites.interfaces.Semantics.CompositeStructures.StructuredClasses,
  org.eclipse.papyrus.moka.composites.interfaces.extensions.Semantics.CompositeStructures.StructuredClasses
+Automatic-Module-Name: org.eclipse.papyrus.moka.composites.interfaces
