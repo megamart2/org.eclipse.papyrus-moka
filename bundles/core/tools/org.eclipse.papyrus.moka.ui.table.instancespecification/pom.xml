@@ -7,7 +7,7 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.core.tools</artifactId>
-		<version>3.1.0-SNAPSHOT</version>
+		<version>4.0.0-SNAPSHOT</version>
 	</parent>
 
 	<!-- POM Description -->
@@ -15,6 +15,5 @@
 	<packaging>eclipse-plugin</packaging>
 	<name>org.eclipse.papyrus.moka.ui.table.instancespecification</name>
 	<description>InstanceSpecification Table plugin</description>
-	<version>2.0.100-SNAPSHOT</version>
 
 </project>

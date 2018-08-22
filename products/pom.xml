@@ -9,14 +9,13 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.root</artifactId>
-		<version>3.1.0-SNAPSHOT</version>
+		<version>4.0.0-SNAPSHOT</version>
 	</parent>
 	
 	<!-- POM Description -->
 	<artifactId>org.eclipse.papyrus.moka.products</artifactId>
 	<packaging>pom</packaging>
 	<name>Moka RCP (Bundles folder)</name>
-	<version>2.0.100-SNAPSHOT</version>
 	
 	<!-- Modules to build -->
 	<modules>

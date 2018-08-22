@@ -6,13 +6,12 @@
 	<parent>
 		<groupId>org.eclipse.papyrus.moka</groupId>
 		<artifactId>org.eclipse.papyrus.moka.bundles.fmi.engines</artifactId>
-		<version>3.0.0-SNAPSHOT</version>
+		<version>4.0.0-SNAPSHOT</version>
 	</parent>
 
 	<!-- POM Description -->
 	<artifactId>org.eclipse.papyrus.moka.fmi.master</artifactId>
 	<packaging>eclipse-plugin</packaging>
-	<version>2.1.0-SNAPSHOT</version>
 	<name>org.eclipse.papyrus.moka.fmi.master</name>
 	<description>Moka FMI 2.0 Master implementation</description>
 
