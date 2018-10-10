@@ -3,6 +3,7 @@
 
 <product name="FMU Embedded Moka" uid="fmu_embedded_moka" application="org.eclipse.papyrus.moka.fmu.rcpapplication" version="0.1" useFeatures="false" includeLaunchers="true">
 
+
    <configIni use="default">
    </configIni>
 
@@ -17,11 +18,13 @@
 
    <windowImages/>
 
+
    <launcher name="fmu_rcp">
       <win useIco="false">
          <bmp/>
       </win>
    </launcher>
+
 
    <vm>
    </vm>
