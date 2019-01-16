@@ -1,6 +1,6 @@
 target "Moka Photon Target Platform" with source requirements
 
-location "http://download.eclipse.org/releases/2018-09" eclipse {
+location "http://download.eclipse.org/releases/2018-12" eclipse {
 	org.eclipse.platform.feature.group lazy
 	org.eclipse.rcp.feature.group lazy
 	org.eclipse.jdt.feature.group lazy
@@ -22,7 +22,7 @@ location "http://download.eclipse.org/tools/ajdt/48/dev/update/" aspectj {
 	org.eclipse.equinox.weaving.sdk.feature.group lazy
 }
 
-location "http://download.eclipse.org/tools/orbit/downloads/drops/S20180820175350/repository" orbit {
+location "http://download.eclipse.org/tools/orbit/downloads/drops/R20181128170323/repository" orbit {
 	com.fasterxml.jackson.core.jackson-annotations lazy
 	com.fasterxml.jackson.core.jackson-core lazy
 	com.github.jnr.constants lazy

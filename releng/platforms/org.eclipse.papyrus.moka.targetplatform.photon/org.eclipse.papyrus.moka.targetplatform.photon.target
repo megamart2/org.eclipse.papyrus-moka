@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?pde?>
-<!-- generated with https://github.com/mbarbero/fr.obeo.releng.targetplatform -->
-<target name="Moka Photon Target Platform" sequenceNumber="1539165333">
+<!-- generated with https://github.com/eclipse-cbi/targetplatform-dsl -->
+<target name="Moka Photon Target Platform" sequenceNumber="1547738508">
   <locations>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.platform.feature.group" version="0.0.0"/>
@@ -9,7 +9,7 @@
       <unit id="org.eclipse.jdt.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.equinox.p2.discovery.feature.feature.group" version="0.0.0"/>
       <unit id="org.eclipse.equinox.executable.feature.group" version="0.0.0"/>
-      <repository id="eclipse" location="http://download.eclipse.org/releases/2018-09"/>
+      <repository id="eclipse" location="http://download.eclipse.org/releases/2018-12"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.papyrus.sdk.feature.feature.group" version="0.0.0"/>
@@ -32,7 +32,7 @@
       <unit id="com.github.jnr.enxio" version="0.0.0"/>
       <unit id="com.github.jnr.ffi" version="0.0.0"/>
       <unit id="com.github.jnr.jffi" version="0.0.0"/>
-      <repository id="orbit" location="http://download.eclipse.org/tools/orbit/downloads/drops/S20180820175350/repository"/>
+      <repository id="orbit" location="http://download.eclipse.org/tools/orbit/downloads/drops/R20181128170323/repository"/>
     </location>
     <location includeMode="planner" includeAllPlatforms="false" includeSource="true" includeConfigurePhase="false" type="InstallableUnit">
       <unit id="org.eclipse.nebula.widgets.xviewer.feature.feature.group" version="0.0.0"/>
