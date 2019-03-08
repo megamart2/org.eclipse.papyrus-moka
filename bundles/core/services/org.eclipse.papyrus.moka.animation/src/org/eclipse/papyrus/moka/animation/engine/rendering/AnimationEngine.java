@@ -253,6 +253,7 @@ public class AnimationEngine implements IRenderingEngine {
 		// The clean operation is in charge of:
 		// 1 - Releasing all model elements from their makers (if placed by the animation framework)
 		// 2 - Releasing all diagram referenced by the animation diagram manager
+		this.isReady = false;
 		this.deleteAllMarkers();
 		this.diagramManager.clean();
 	}

@@ -1,16 +1,17 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	
+
 	<modelVersion>4.0.0</modelVersion>
 
 	<!-- Moka depends on generic Papyrus component POM file -->
 	<parent>
 		<groupId>org.eclipse.papyrus.components</groupId>
 		<artifactId>org.eclipse.papyrus.components.parent</artifactId>
-		<version>0.0.24</version>
+		<version>0.0.26</version>
 		<relativePath></relativePath>
 	</parent>
-	
+
 	<!-- Moka root POM: general information -->
 	<groupId>org.eclipse.papyrus.moka</groupId>
 	<artifactId>org.eclipse.papyrus.moka.releng.configuration</artifactId>
@@ -22,8 +23,6 @@
 
 	<!-- Moka properties -->
 	<properties>
-		<tycho-version>1.1.0</tycho-version>
-		<tychoExtrasVersion>1.1.0</tychoExtrasVersion>
 		<component.shortname>moka</component.shortname>
 		<component.hudson.tabname>Moka</component.hudson.tabname>
 		<component.fullartifactId>org.eclipse.papyrus.moka</component.fullartifactId>
@@ -34,17 +33,17 @@
 		<target.version>4.0.0-SNAPSHOT</target.version>
 	</properties>
 
-	<!-- Moka CI system-->
+	<!-- Moka CI system -->
 	<ciManagement>
 		<system>Hudson</system>
 		<url>https://hudson.eclipse.org/papyrus/view/${component.hudson.tabname}/</url>
 	</ciManagement>
-	
+
 	<!-- Moka Bugzilla -->
 	<issueManagement>
 		<url>https://bugs.eclipse.org/bugs/buglist.cgi?product=Papyrus&amp;component=${component.bugzilla.name}</url>
 	</issueManagement>
-	
+
 	<!-- Moka Developpers -->
 	<developers>
 		<developer>
@@ -66,7 +65,7 @@
 			<id>jtatibouet</id>
 		</developer>
 	</developers>
-	
+
 	<!-- Moka Contributors -->
 	<contributors>
 		<contributor>
@@ -86,7 +85,7 @@
 			<url>scm:git:https://git.eclipse.org/gitroot/www.eclipse.org/papyrus/components/${component.shortname}</url>
 		</site>
 	</distributionManagement>
-	
+
 
 	<!-- Location to resolve Papyrus tools -->
 	<repositories>
@@ -129,6 +128,13 @@
 				<enabled>false</enabled>
 			</snapshots>
 		</pluginRepository>
-		
+		<pluginRepository>
+			<id>jboss-public-repository-group</id>
+			<name>JBoss Public Repository Group</name>
+			<url>http://repository.jboss.org/nexus/content/groups/public/</url>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
 	</pluginRepositories>
 </project>
