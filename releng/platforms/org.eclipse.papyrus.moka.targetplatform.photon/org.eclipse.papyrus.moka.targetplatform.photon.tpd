@@ -8,12 +8,8 @@ location "http://download.eclipse.org/releases/2018-12" eclipse {
 	org.eclipse.equinox.executable.feature.group lazy
 }
 
-location "https://hudson.eclipse.org/papyrus/view/Master/job/Papyrus-Master/lastSuccessfulBuild/artifact/repository/" papyrus {
+location "https://download.eclipse.org/modeling/mdt/papyrus/updates/releases/2018-09/" papyrus {
 	org.eclipse.papyrus.sdk.feature.feature.group lazy
-}
-
-location "https://hudson.eclipse.org/papyrus/job/Papyrus-Master-Toolsmiths/lastSuccessfulBuild/artifact/repository/" papyrus-toolsmith {
-	org.eclipse.papyrus.junit.feature.feature.group lazy
 }
 
 location "http://download.eclipse.org/tools/ajdt/48/dev/update/" aspectj {
